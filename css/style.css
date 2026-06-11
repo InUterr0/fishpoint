@@ -153,8 +153,8 @@ img { max-width: 100%; display: block; }
 .carousel-btn[disabled] { opacity: .35; cursor: default; }
 @media (max-width: 840px) {
   /* Jedna duża karta na środku, sąsiednie lekko widoczne po bokach */
-  .category-grid.carousel { gap: 14px; padding-left: 11%; padding-right: 11%; }
-  .category-grid.carousel > .category-card { flex: 0 0 78%; scroll-snap-align: center; padding: 22px; }
+  .category-grid.carousel { gap: 12px; padding-left: 5%; padding-right: 5%; }
+  .category-grid.carousel > .category-card { flex: 0 0 90%; scroll-snap-align: center; padding: 20px 18px; }
   .carousel-btn { width: 44px; height: 44px; font-size: 1.25rem; box-shadow: 0 6px 18px rgba(17,49,47,.35); }
   .carousel-btn.prev { left: 2px; }
   .carousel-btn.next { right: 2px; }
