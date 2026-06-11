@@ -152,15 +152,12 @@ img { max-width: 100%; display: block; }
 .carousel-btn.next { right: -14px; }
 .carousel-btn[disabled] { opacity: .35; cursor: default; }
 @media (max-width: 840px) {
-  .category-grid.carousel { gap: 10px; }
-  .category-grid.carousel > .category-card { flex: 0 0 calc((100% - 20px) / 3); padding: 14px; }
-  .category-grid.carousel .icon { font-size: 1.5rem; }
-  .category-grid.carousel .category-card h3 { font-size: .95rem; margin: 8px 0 6px; }
-  .category-grid.carousel .category-card p { font-size: .78rem; }
-  .category-grid.carousel .card-img { height: 80px; margin-bottom: 8px; }
-  .carousel-btn { width: 36px; height: 36px; font-size: 1.05rem; }
-  .carousel-btn.prev { left: -8px; }
-  .carousel-btn.next { right: -8px; }
+  /* Jedna duża karta na środku, sąsiednie lekko widoczne po bokach */
+  .category-grid.carousel { gap: 14px; padding-left: 11%; padding-right: 11%; }
+  .category-grid.carousel > .category-card { flex: 0 0 78%; scroll-snap-align: center; padding: 22px; }
+  .carousel-btn { width: 44px; height: 44px; font-size: 1.25rem; box-shadow: 0 6px 18px rgba(17,49,47,.35); }
+  .carousel-btn.prev { left: 2px; }
+  .carousel-btn.next { right: 2px; }
 }
 .subpage-hero {
   padding: 110px 0 76px;
