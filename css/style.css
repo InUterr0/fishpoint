@@ -230,6 +230,10 @@ img { max-width: 100%; display: block; }
   .equipment-grid, .article-layout { grid-template-columns: 1fr; }
   .side-nav, .side-rail { position: static; }
   .side-rail .article-figure { transform: none; }
+  /* Szerszy tekst artykułów: bez kolorowych pasków i ramek */
+  .article-card { padding: 18px 14px; }
+  .info-block { padding: 0; margin: 0 0 22px; background: none; border: 0; border-radius: 0; }
+  .info-block:hover { transform: none; box-shadow: none; }
 }
 .article-image { width: 100%; max-height: 430px; object-fit: cover; border-radius: 20px; margin-bottom: 10px; }
 .image-caption { margin: 0 0 26px; color: var(--muted); font-size: .88rem; }
