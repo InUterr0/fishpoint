@@ -23,6 +23,41 @@ if (form) {
   });
 }
 
+// Karuzele kategorii na stronie głównej: strzałki w lewo i w prawo.
+document.querySelectorAll('.category-grid.carousel').forEach((grid) => {
+  const wrap = document.createElement('div');
+  wrap.className = 'carousel-wrap';
+  grid.parentNode.insertBefore(wrap, grid);
+  wrap.appendChild(grid);
+
+  const makeBtn = (dir, label) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `carousel-btn ${dir}`;
+    btn.setAttribute('aria-label', label);
+    btn.textContent = dir === 'prev' ? '←' : '→';
+    wrap.appendChild(btn);
+    return btn;
+  };
+  const prev = makeBtn('prev', 'Przewiń w lewo');
+  const next = makeBtn('next', 'Przewiń w prawo');
+
+  const cardWidth = () => {
+    const card = grid.querySelector('.category-card');
+    return card ? card.getBoundingClientRect().width + 20 : grid.clientWidth;
+  };
+  prev.addEventListener('click', () => grid.scrollBy({ left: -cardWidth(), behavior: 'smooth' }));
+  next.addEventListener('click', () => grid.scrollBy({ left: cardWidth(), behavior: 'smooth' }));
+
+  const update = () => {
+    prev.disabled = grid.scrollLeft <= 2;
+    next.disabled = grid.scrollLeft >= grid.scrollWidth - grid.clientWidth - 2;
+  };
+  grid.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+});
+
 // Podstrony artykułowe: przenieś zdjęcie z treści do prawej, przyklejonej kolumny.
 const articleFigure = document.querySelector('.article-card .article-figure');
 const sideNav = document.querySelector('.side-nav');

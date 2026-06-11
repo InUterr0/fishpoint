@@ -140,6 +140,20 @@ img { max-width: 100%; display: block; }
 
 .equipment-grid { grid-template-columns: repeat(3, 1fr); }
 .category-card { display: block; }
+
+/* Karuzela kategorii na stronie głównej */
+.carousel-wrap { position: relative; }
+.category-grid.carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-bottom: 10px; scrollbar-width: none; }
+.category-grid.carousel::-webkit-scrollbar { display: none; }
+.category-grid.carousel > .category-card { flex: 0 0 calc((100% - 40px) / 3); scroll-snap-align: start; }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 46px; height: 46px; border: 0; border-radius: 999px; background: var(--green, #0f5b4c); color: var(--white, #fff); font-size: 1.3rem; font-weight: 800; cursor: pointer; box-shadow: var(--shadow, 0 12px 30px rgba(17,49,47,.25)); display: flex; align-items: center; justify-content: center; transition: opacity .2s ease, transform .2s ease; }
+.carousel-btn:hover { transform: translateY(-50%) scale(1.08); }
+.carousel-btn.prev { left: -14px; }
+.carousel-btn.next { right: -14px; }
+.carousel-btn[disabled] { opacity: .35; cursor: default; }
+@media (max-width: 840px) {
+  .category-grid.carousel > .category-card { flex: 0 0 85%; }
+}
 .subpage-hero {
   padding: 110px 0 76px;
   color: var(--white);
