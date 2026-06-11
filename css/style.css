@@ -152,7 +152,15 @@ img { max-width: 100%; display: block; }
 .carousel-btn.next { right: -14px; }
 .carousel-btn[disabled] { opacity: .35; cursor: default; }
 @media (max-width: 840px) {
-  .category-grid.carousel > .category-card { flex: 0 0 85%; }
+  .category-grid.carousel { gap: 10px; }
+  .category-grid.carousel > .category-card { flex: 0 0 calc((100% - 20px) / 3); padding: 14px; }
+  .category-grid.carousel .icon { font-size: 1.5rem; }
+  .category-grid.carousel .category-card h3 { font-size: .95rem; margin: 8px 0 6px; }
+  .category-grid.carousel .category-card p { font-size: .78rem; }
+  .category-grid.carousel .card-img { height: 80px; margin-bottom: 8px; }
+  .carousel-btn { width: 36px; height: 36px; font-size: 1.05rem; }
+  .carousel-btn.prev { left: -8px; }
+  .carousel-btn.next { right: -8px; }
 }
 .subpage-hero {
   padding: 110px 0 76px;
