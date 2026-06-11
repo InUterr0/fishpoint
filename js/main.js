@@ -59,14 +59,26 @@ document.querySelectorAll('.category-grid.carousel').forEach((grid) => {
 });
 
 // Podstrony artykułowe: przenieś zdjęcie z treści do prawej, przyklejonej kolumny.
+// Na telefonie zdjęcie zostaje na początku tekstu.
 const articleFigure = document.querySelector('.article-card .article-figure');
+const articleCard = document.querySelector('.article-card');
 const sideNav = document.querySelector('.side-nav');
 if (articleFigure && sideNav) {
   const rail = document.createElement('div');
   rail.className = 'side-rail';
   sideNav.parentNode.insertBefore(rail, sideNav);
-  rail.appendChild(articleFigure);
   rail.appendChild(sideNav);
+
+  const wide = window.matchMedia('(min-width: 841px)');
+  const placeFigure = () => {
+    if (wide.matches) {
+      rail.insertBefore(articleFigure, sideNav);
+    } else {
+      articleCard.insertBefore(articleFigure, articleCard.firstChild);
+    }
+  };
+  placeFigure();
+  wide.addEventListener('change', placeFigure);
 }
 
 // Podświetl w bocznym menu link do bieżącej strony.
