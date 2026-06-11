@@ -1,0 +1,110 @@
+{
+ "sandacz": {
+  "file": "assets/img/ryby/sandacz.jpg",
+  "artist": "eLNuko",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=1806446"
+ },
+ "szczupak": {
+  "file": "assets/img/ryby/szczupak.jpg",
+  "artist": "Jik jik",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=14631780"
+ },
+ "okon": {
+  "file": "assets/img/ryby/okon.jpg",
+  "artist": "Dellex",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=20549886"
+ },
+ "sum": {
+  "file": "assets/img/ryby/sum.jpg",
+  "artist": "Dieter Florian (To contact the author, ask the uploader or take a look at tauchshop-florian.de.)",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=8755863"
+ },
+ "bolen": {
+  "file": "assets/img/ryby/bolen.jpg",
+  "artist": "Jenny Glans",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=1958630"
+ },
+ "wegorz": {
+  "file": "assets/img/ryby/wegorz.jpg",
+  "artist": "GerardM",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=284678"
+ },
+ "karp": {
+  "file": "assets/img/ryby/karp.jpg",
+  "artist": "George Chernilevsky",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=77657476"
+ },
+ "lin": {
+  "file": "assets/img/ryby/lin.jpg",
+  "artist": "",
+  "license": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3A3840px-Tinca_tinca_Natural_History_Museum_University_of_Pisa.jpg"
+ },
+ "karas": {
+  "file": "assets/img/ryby/karas.jpg",
+  "artist": "Viridiflavus",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=5694245"
+ },
+ "ploc": {
+  "file": "assets/img/ryby/ploc.jpg",
+  "artist": "Scardinius_erythropthalmus1_resize.jpg: Original uploader was Algirdas at lt.wikipedia\nderivative work: George Chernilevsky talk",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=8341939"
+ },
+ "leszcz": {
+  "file": "assets/img/ryby/leszcz.jpg",
+  "artist": "Микова Наталия",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=3567807"
+ },
+ "jaz": {
+  "file": "assets/img/ryby/jaz.jpg",
+  "artist": "Viridiflavus",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=6780782"
+ },
+ "klen": {
+  "file": "assets/img/ryby/klen.jpg",
+  "artist": "Karelj",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=14941862"
+ },
+ "amur": {
+  "file": "assets/img/ryby/amur.jpg",
+  "artist": "",
+  "license": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3A3840px-2x_amur_b%C3%ADl%C3%BD.jpg"
+ },
+ "pstrag": {
+  "file": "assets/img/ryby/pstrag.jpg",
+  "artist": "",
+  "license": "",
+  "page": "https://commons.wikimedia.org/wiki/File%3A3840px-Brown_Trout_%28Salmo_trutta%29_%2853678765394%29.jpg"
+ },
+ "lipien": {
+  "file": "assets/img/ryby/lipien.jpg",
+  "artist": "Zsoldos Márton",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=10796695"
+ },
+ "mietus": {
+  "file": "assets/img/ryby/mietus.jpg",
+  "artist": "",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=247447"
+ },
+ "troc-losos": {
+  "file": "assets/img/ryby/troc-losos.jpg",
+  "artist": "User:Wolfgang Striewski",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=1148722"
+ }
+}
