@@ -418,6 +418,13 @@ html.dark .icon.icon-glass {
   color: var(--green);
 }
 
-/* Szerszy układ artykułów — mniej pustych marginesów po bokach */
-.container.article-layout { width: min(1560px, calc(100% - 48px)); }
-.article-layout { grid-template-columns: minmax(0, 1fr) 320px; }
+/* Szerszy układ artykułów — mniej pustych marginesów po bokach (tylko desktop;
+   bez media query nadpisywało mobilną regułę jednej kolumny i ściskało tekst) */
+@media (min-width: 841px) {
+  .container.article-layout { width: min(1560px, calc(100% - 48px)); }
+  .article-layout { grid-template-columns: minmax(0, 1fr) 320px; }
+}
+@media (max-width: 840px) {
+  .container.article-layout { width: calc(100% - 24px); }
+  .article-layout { grid-template-columns: 1fr; }
+}
