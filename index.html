@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 </head>
 <body>
   <header class="site-header">
@@ -276,12 +279,15 @@
         <div>
           <p class="eyebrow">Łowiska</p>
           <h2>Znajdź dobre miejsce na weekend</h2>
-          <p>Moduł pod przyszłą mapę łowisk, opisy dojazdu, gatunki ryb, regulaminy i opinie użytkowników.</p>
-          <a class="btn btn-primary" href="#kontakt">Dodaj łowisko</a>
+          <p>Interaktywna mapa znanych polskich łowisk. Kliknij znacznik, aby zobaczyć krótki opis, główne gatunki i link do szczegółów.</p>
+          <p>Pełne bazy łowisk z regulaminami i opiniami znajdziesz w serwisach:</p>
+          <ul class="map-links">
+            <li><a href="https://wedkuje.pl/lowiska" target="_blank" rel="noopener">Mapa łowisk wedkuje.pl</a> — największa społecznościowa baza łowisk w Polsce</li>
+            <li><a href="https://www.pzw.org.pl/" target="_blank" rel="noopener">Polski Związek Wędkarski</a> — wody PZW, regulaminy i zezwolenia okręgowe</li>
+            <li><a href="https://www.gov.pl/web/wody-polskie" target="_blank" rel="noopener">Wody Polskie</a> — obwody rybackie i wody publiczne</li>
+          </ul>
         </div>
-        <div class="map-card">
-          <span>Wisła</span><span>Jezioro</span><span>Rzeka</span><span>Staw</span>
-        </div>
+        <div class="map-card" id="fishing-map" aria-label="Mapa łowisk w Polsce"></div>
       </div>
     </section>
 
@@ -310,5 +316,8 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="js/lowiska-mapa.js"></script>
 </body>
 </html>
