@@ -391,3 +391,29 @@ html.dark .leaflet-popup-content-wrapper, html.dark .leaflet-popup-tip { backgro
 
 html.dark .aff-box { background: linear-gradient(135deg, rgba(62,201,180,.08), rgba(232,199,124,.06)); border-color: rgba(62,201,180,.25); }
 html.dark .aff-box h4 { color: var(--ink); }
+
+/* === Szklane plakietki ikon (glassmorphism) === */
+.icon.icon-glass {
+  display: grid; place-items: center;
+  width: 64px; height: 64px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,.55), rgba(255,255,255,.2));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.65);
+  box-shadow: 0 10px 26px rgba(13,43,48,.14), inset 0 1px 0 rgba(255,255,255,.7);
+  color: var(--green);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.icon.icon-glass svg { width: 32px; height: 32px; }
+.category-card:hover .icon.icon-glass {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 34px rgba(13,43,48,.2), inset 0 1px 0 rgba(255,255,255,.7);
+  color: var(--orange);
+}
+html.dark .icon.icon-glass {
+  background: linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.04));
+  border-color: rgba(255,255,255,.22);
+  box-shadow: 0 10px 26px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.18);
+  color: var(--green);
+}
