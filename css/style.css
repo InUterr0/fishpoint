@@ -355,3 +355,39 @@ html.dark .badge { background: rgba(62,201,180,.16); color: var(--green); }
 html.dark .price { color: var(--green); }
 html.dark .blog-card a { color: var(--green); }
 html.dark .leaflet-popup-content-wrapper, html.dark .leaflet-popup-tip { background: #10333a; color: var(--ink); }
+
+/* === Komponenty afiliacyjne === */
+.btn-aff {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 20px; margin-top: 14px;
+  border-radius: 999px; font-weight: 800; font-size: .95rem;
+  background: linear-gradient(135deg, var(--amber), var(--orange));
+  color: var(--white) !important;
+  box-shadow: 0 10px 24px rgba(240,138,60,.35);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-aff:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(240,138,60,.45); }
+.btn-aff::after { content: " →"; }
+
+/* Ramka polecanego produktu w artykułach */
+.aff-box {
+  margin: 26px 0; padding: 24px 26px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(42,167,161,.1), rgba(232,199,124,.12));
+  border: 1px solid rgba(42,167,161,.3);
+  position: relative;
+}
+.aff-box::before {
+  content: "Nasz typ";
+  position: absolute; top: -12px; left: 20px;
+  padding: 3px 12px; border-radius: 999px;
+  background: var(--green); color: var(--white);
+  font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+}
+.aff-box h4 { margin: 4px 0 8px; font-size: 1.2rem; color: var(--ink); }
+.aff-box p { margin: 0; color: var(--muted); line-height: 1.65; }
+.aff-box .aff-meta { margin-top: 6px; font-size: .85rem; color: var(--muted); }
+.aff-note { font-size: .8rem; color: rgba(255,255,255,.55); margin-top: 10px; flex-basis: 100%; }
+
+html.dark .aff-box { background: linear-gradient(135deg, rgba(62,201,180,.08), rgba(232,199,124,.06)); border-color: rgba(62,201,180,.25); }
+html.dark .aff-box h4 { color: var(--ink); }

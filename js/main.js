@@ -112,3 +112,37 @@ if (sideNav) {
 
   nav.appendChild(btn);
 })();
+
+// === Afiliacja ===
+// Centralny rejestr linków partnerskich: podmieniasz URL w jednym miejscu,
+// a wszystkie przyciski <a data-aff="klucz"> na stronie dostają właściwy adres.
+// Po zapisaniu się do sieci (Ceneo Partner, Awin, webePartners...) wklej tu swoje linki.
+const AFF_LINKS = {
+  'zestaw-feeder-start': 'https://www.ceneo.pl/Wedkarstwo;szukaj-zestaw+feeder',
+  'zestaw-spinning-predator': 'https://www.ceneo.pl/Wedkarstwo;szukaj-zestaw+spinningowy',
+  'zestaw-karp-weekend': 'https://www.ceneo.pl/Wedkarstwo;szukaj-zestaw+karpiowy',
+  'wedka-spinning-start': 'https://www.ceneo.pl/Wedkarstwo;szukaj-wedka+spinningowa',
+  'wedka-feeder-start': 'https://www.ceneo.pl/Wedkarstwo;szukaj-wedka+feeder',
+  'kolowrotek-uniwersalny': 'https://www.ceneo.pl/Wedkarstwo;szukaj-kolowrotek+2500',
+};
+
+(function () {
+  const links = document.querySelectorAll('a[data-aff]');
+  if (!links.length) return;
+
+  links.forEach((a) => {
+    const url = AFF_LINKS[a.dataset.aff];
+    if (url) a.href = url;
+    a.target = '_blank';
+    a.rel = 'sponsored noopener';
+  });
+
+  // Automatyczna nota o linkach partnerskich w stopce (wymóg przejrzystości / UOKiK).
+  const footer = document.querySelector('.footer .container');
+  if (footer && !footer.querySelector('.aff-note')) {
+    const note = document.createElement('p');
+    note.className = 'aff-note';
+    note.textContent = 'Niektóre odnośniki na tej stronie to linki partnerskie — kupując przez nie, wspierasz rozwój serwisu, a Ty nie płacisz ani grosza więcej.';
+    footer.appendChild(note);
+  }
+})();
