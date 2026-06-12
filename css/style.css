@@ -21,10 +21,14 @@ body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
-  /* Subtelna faktura fal na tle strony */
+  /* Tło: fale + miękkie poświaty toni jeziora zamiast płaskiej bieli */
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='24' viewBox='0 0 120 24'%3E%3Cpath d='M0 12c10-8 20-8 30 0s20 8 30 0 20-8 30 0 20 8 30 0' fill='none' stroke='%230e5e54' stroke-opacity='.05' stroke-width='2'/%3E%3C/svg%3E"),
-    var(--bg);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='24' viewBox='0 0 120 24'%3E%3Cpath d='M0 12c10-8 20-8 30 0s20 8 30 0 20-8 30 0 20 8 30 0' fill='none' stroke='%230e5e54' stroke-opacity='.07' stroke-width='2'/%3E%3C/svg%3E"),
+    radial-gradient(1100px 700px at 85% 5%, rgba(42, 167, 161, .16), transparent 60%),
+    radial-gradient(900px 650px at 0% 40%, rgba(232, 199, 124, .2), transparent 55%),
+    radial-gradient(1000px 800px at 100% 85%, rgba(14, 94, 84, .14), transparent 60%),
+    linear-gradient(180deg, #e2ede5, #dce9e4);
+  background-attachment: fixed;
   line-height: 1.6;
 }
 
@@ -77,7 +81,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   left: 0; right: 0; bottom: -1px;
   height: 70px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath d='M0 45c160 30 320-35 480-25s320 50 480 30 320-45 480-10v30H0z' fill='%23eef3ee'/%3E%3C/svg%3E") bottom/100% 100% no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath d='M0 45c160 30 320-35 480-25s320 50 480 30 320-45 480-10v30H0z' fill='%23e2ede5'/%3E%3C/svg%3E") bottom/100% 100% no-repeat;
   pointer-events: none;
 }
 .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; padding: 80px 0; }
@@ -162,7 +166,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   left: 0; right: 0; top: -1px;
   height: 40px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0 0c180 25 360-15 540-5s360 30 540 10 240-15 360 0v-5H0z' fill='%23eef3ee'/%3E%3C/svg%3E") top/100% 100% no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0 0c180 25 360-15 540-5s360 30 540 10 240-15 360 0v-5H0z' fill='%23e2ede5'/%3E%3C/svg%3E") top/100% 100% no-repeat;
   pointer-events: none;
 }
 .footer-grid { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
@@ -213,7 +217,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   left: 0; right: 0; bottom: -1px;
   height: 50px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50' preserveAspectRatio='none'%3E%3Cpath d='M0 32c160 22 320-25 480-18s320 36 480 21 320-32 480-7v22H0z' fill='%23eef3ee'/%3E%3C/svg%3E") bottom/100% 100% no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50' preserveAspectRatio='none'%3E%3Cpath d='M0 32c160 22 320-25 480-18s320 36 480 21 320-32 480-7v22H0z' fill='%23e2ede5'/%3E%3C/svg%3E") bottom/100% 100% no-repeat;
   pointer-events: none;
 }
 .subpage-hero h1 { max-width: 850px; margin: 0 0 18px; font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: 1; letter-spacing: -.05em; }
