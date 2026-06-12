@@ -21,13 +21,12 @@ body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
-  /* Tło: fale + miękkie poświaty toni jeziora zamiast płaskiej bieli */
+  /* Tło: zdjęcie jeziora pod jasną mgiełką — treść leży na kartach, więc czytelność zostaje */
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='24' viewBox='0 0 120 24'%3E%3Cpath d='M0 12c10-8 20-8 30 0s20 8 30 0 20-8 30 0 20 8 30 0' fill='none' stroke='%230e5e54' stroke-opacity='.07' stroke-width='2'/%3E%3C/svg%3E"),
-    radial-gradient(1100px 700px at 85% 5%, rgba(42, 167, 161, .16), transparent 60%),
-    radial-gradient(900px 650px at 0% 40%, rgba(232, 199, 124, .2), transparent 55%),
-    radial-gradient(1000px 800px at 100% 85%, rgba(14, 94, 84, .14), transparent 60%),
-    linear-gradient(180deg, #e2ede5, #dce9e4);
+    radial-gradient(1100px 700px at 85% 5%, rgba(42, 167, 161, .14), transparent 60%),
+    radial-gradient(900px 650px at 0% 45%, rgba(232, 199, 124, .18), transparent 55%),
+    linear-gradient(180deg, rgba(226, 237, 229, .76), rgba(218, 232, 227, .8)),
+    url('https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=1800&q=70') center/cover;
   background-attachment: fixed;
   line-height: 1.6;
 }
