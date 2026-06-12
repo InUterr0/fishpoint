@@ -88,3 +88,27 @@ if (sideNav) {
     if (a.getAttribute('href') === here) a.classList.add('active');
   });
 }
+
+// Przełącznik ciemnego motywu — wstrzykiwany do nawigacji na każdej stronie.
+(function () {
+  const saved = localStorage.getItem('fishpoint-theme');
+  if (saved === 'dark') document.documentElement.classList.add('dark');
+
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'theme-toggle';
+  btn.setAttribute('aria-label', 'Przełącz ciemny motyw');
+  const setIcon = () => { btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙'; };
+  setIcon();
+
+  btn.addEventListener('click', () => {
+    const dark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('fishpoint-theme', dark ? 'dark' : 'light');
+    setIcon();
+  });
+
+  nav.appendChild(btn);
+})();
