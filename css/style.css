@@ -417,3 +417,7 @@ html.dark .icon.icon-glass {
   box-shadow: 0 10px 26px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.18);
   color: var(--green);
 }
+
+/* Szerszy układ artykułów — mniej pustych marginesów po bokach */
+.container.article-layout { width: min(1560px, calc(100% - 48px)); }
+.article-layout { grid-template-columns: minmax(0, 1fr) 320px; }
