@@ -1,0 +1,17 @@
+{
+  "name": "FishPoint — poradnik wędkarski",
+  "short_name": "FishPoint",
+  "description": "Sprzęt, przynęty, poradniki, atlas ryb i przepisy dla pasjonatów wędkarstwa.",
+  "lang": "pl",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eef3ee",
+  "theme_color": "#0e5e54",
+  "icons": [
+    {
+      "src": "/assets/img/tematy/wedki.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

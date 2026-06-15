@@ -30,6 +30,36 @@ title_re = re.compile(r"<title>(.*?)</title>", re.S)
 desc_re = re.compile(r'<meta\s+name="description"\s+content="(.*?)"', re.S)
 img_re = re.compile(r'<img[^>]+src="([^"]+)"', re.S)
 block_re = re.compile(re.escape(BEGIN) + r".*?" + re.escape(END) + r"\n", re.S)
+tag_re = re.compile(r"<[^>]+>")
+
+
+def _clean(s):
+    return html.unescape(tag_re.sub("", s)).strip()
+
+
+def _list_after(src, heading_pat):
+    """Zwraca teksty <li> z pierwszej NIEPUSTEJ listy następującej po nagłówku
+    pasującym do heading_pat (do najbliższego kolejnego <h2>/<h3>).
+    Iteruje po wszystkich pasujących nagłówkach — pomija te, pod którymi
+    znajduje się akapit bez listy."""
+    for hm in re.finditer(heading_pat, src, re.I):
+        rest = src[hm.end():]
+        nxt = re.search(r"<h[23][\s>]", rest)
+        chunk = rest[: nxt.start()] if nxt else rest
+        items = [_clean(li) for li in re.findall(r"<li>(.*?)</li>", chunk, re.S)]
+        items = [i for i in items if i]
+        if items:
+            return items
+    return []
+
+
+def extract_recipe(src):
+    """Zwraca (skladniki, kroki) jeśli strona wygląda na przepis, inaczej None."""
+    ingredients = _list_after(src, r"<h[23][^>]*>\s*Składnik")
+    steps = _list_after(src, r"<h[23][^>]*>[^<]*(?:krok po kroku|Przygotowanie)")
+    if ingredients and steps:
+        return ingredients, steps
+    return None
 
 
 def rel_url(path):
@@ -93,6 +123,8 @@ def build(path):
     head = [
         BEGIN,
         f'  <link rel="canonical" href="{url}" />',
+        '  <meta name="theme-color" content="#0e5e54" />',
+        '  <link rel="manifest" href="/site.webmanifest" />',
         f'  <meta property="og:site_name" content="{SITE_NAME}" />',
         '  <meta property="og:locale" content="pl_PL" />',
         f'  <meta property="og:type" content="{og_type}" />',
@@ -157,6 +189,33 @@ def build(path):
                 "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": BASE + "/"},
             }))
         else:
+            recipe = extract_recipe(src) if section == "kuchnia" else None
+            if recipe:
+                ingredients, steps = recipe
+                head.append(jsonld({
+                    "@context": "https://schema.org",
+                    "@type": "Recipe",
+                    "name": title_txt.split(" — ")[0].split(" - ")[0],
+                    "description": desc_txt,
+                    "url": url,
+                    "mainEntityOfPage": url,
+                    "image": img_url,
+                    "inLanguage": "pl-PL",
+                    "datePublished": mtime,
+                    "recipeCategory": "Danie główne",
+                    "recipeCuisine": "Polska",
+                    "keywords": "ryby, wędkarstwo, przepis rybny",
+                    "author": {"@type": "Organization", "name": SITE_NAME},
+                    "recipeIngredient": ingredients,
+                    "recipeInstructions": [
+                        {"@type": "HowToStep", "position": i + 1, "text": s}
+                        for i, s in enumerate(steps)
+                    ],
+                }))
+                head.append(END)
+                block = "\n".join(head) + "\n"
+                new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
+                return new_src, url, mtime, is_home or is_section_index
             head.append(jsonld({
                 "@context": "https://schema.org",
                 "@type": "BlogPosting",
@@ -189,7 +248,7 @@ def main():
         if "/.git" in dirpath:
             continue
         for fn in files:
-            if fn.endswith(".html"):
+            if fn.endswith(".html") and fn != "404.html":
                 pages.append(os.path.join(dirpath, fn))
     pages.sort()
 
