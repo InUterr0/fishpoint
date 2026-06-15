@@ -1,0 +1,8 @@
+/* TEAM */
+Serwis: FishPoint — poradnik wędkarski
+Kontakt: kerlinbygg [at] gmail.com
+
+/* SITE */
+Język: polski (pl-PL)
+Standardy: HTML5, CSS3, JavaScript
+Tematyka: sprzęt wędkarski, atlas ryb, poradniki, techniki, kuchnia
