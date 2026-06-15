@@ -53,6 +53,24 @@ def _list_after(src, heading_pat):
     return []
 
 
+def extract_faq(src):
+    """Zwraca listę (pytanie, odpowiedź) z widocznej sekcji FAQ na stronie.
+    Kotwiczy się na nagłówku zawierającym 'FAQ' i bierze pary
+    <h3>...?</h3><p>...</p>. Pomija nagłówki nie będące pytaniami
+    (np. 'Źródła i weryfikacja'). Zwraca [] gdy brak FAQ."""
+    fm = re.search(r"<h2[^>]*>[^<]*FAQ", src, re.I)
+    if not fm:
+        return []
+    region = src[fm.end():]
+    pairs = []
+    for m in re.finditer(r"<h3[^>]*>\s*([^<]*\?)\s*</h3>\s*<p>(.*?)</p>", region, re.S):
+        q = _clean(m.group(1))
+        a = _clean(m.group(2))
+        if q and a:
+            pairs.append((q, a))
+    return pairs
+
+
 def extract_recipe(src):
     """Zwraca (skladniki, kroki) jeśli strona wygląda na przepis, inaczej None."""
     ingredients = _list_after(src, r"<h[23][^>]*>\s*Składnik")
@@ -189,6 +207,20 @@ def build(path):
                 "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": BASE + "/"},
             }))
         else:
+            faq = extract_faq(src)
+            if faq:
+                head.append(jsonld({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": q,
+                            "acceptedAnswer": {"@type": "Answer", "text": a},
+                        }
+                        for q, a in faq
+                    ],
+                }))
             recipe = extract_recipe(src) if section == "kuchnia" else None
             if recipe:
                 ingredients, steps = recipe
