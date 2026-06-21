@@ -23,7 +23,7 @@ body {
   color: var(--ink);
   /* Tło: zdjęcie jeziora pod jasną mgiełką — treść leży na kartach, więc czytelność zostaje */
   background:
-    linear-gradient(180deg, rgba(226, 237, 229, .42), rgba(214, 230, 224, .5)),
+    linear-gradient(180deg, rgba(236, 242, 237, .9), rgba(228, 238, 232, .93)),
     url('https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=1800&q=70') center/cover;
   background-attachment: fixed;
   line-height: 1.6;
@@ -139,7 +139,7 @@ img { max-width: 100%; height: auto; display: block; }
 .section { padding: 96px 0; }
 .section-heading { max-width: 720px; margin-bottom: 38px; }
 .section-heading h2, .map-grid h2, .contact h2 { margin: 0 0 14px; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.05; letter-spacing: -.04em; }
-.section-heading p:not(.eyebrow), .map-grid p, .contact p { color: var(--muted); }
+.section-heading p:not(.eyebrow), .map-grid p, .contact p { color: #41544f; }
 .light h2 { color: var(--white); }
 .light p:not(.eyebrow) { color: rgba(255,255,255,.72); }
 
@@ -376,6 +376,7 @@ html.dark .side-rail .article-figure {
   border-color: rgba(255,255,255,.08);
 }
 html.dark .category-card p, html.dark .blog-card p { color: var(--muted); }
+html.dark .section-heading p:not(.eyebrow), html.dark .map-grid p, html.dark .contact p { color: #aebfba; }
 html.dark .hero-card { background: rgba(13, 40, 46, .94); color: var(--ink); }
 html.dark .map-section { background: linear-gradient(180deg, rgba(8, 30, 34, .65), rgba(7, 26, 30, .7)); }
 html.dark .map-card { border-color: rgba(255,255,255,.14); background: #0d282e; }
