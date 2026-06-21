@@ -37,13 +37,18 @@ img { max-width: 100%; height: auto; display: block; }
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(238, 243, 238, .86);
-  backdrop-filter: blur(14px);
-  border-bottom: 2px solid rgba(42, 167, 161, .25);
+  /* Ciemne, przejrzyste tło menu: głęboka toń jeziora + delikatna poświata */
+  background:
+    radial-gradient(120% 160% at 85% -40%, rgba(42, 167, 161, .28), transparent 60%),
+    linear-gradient(180deg, rgba(8, 34, 38, .82), rgba(6, 26, 30, .72));
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  box-shadow: 0 10px 30px rgba(4, 18, 22, .25);
 }
 
-.nav { display: flex; align-items: center; justify-content: space-between; min-height: 78px; }
-.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; }
+.nav { display: flex; align-items: center; justify-content: space-between; min-height: 78px; gap: 16px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; color: var(--white); }
 .logo-mark {
   display: grid; place-items: center;
   width: 40px; height: 40px;
@@ -51,11 +56,43 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--white);
   background: linear-gradient(135deg, var(--green), var(--aqua));
   font-size: 1.7rem;
+  box-shadow: 0 6px 16px rgba(42, 167, 161, .4);
 }
-.nav-menu { display: flex; align-items: center; gap: 26px; list-style: none; padding: 0; margin: 0; font-weight: 600; }
-.nav-menu a:hover { color: var(--aqua); }
-.nav-cta { padding: 10px 16px; border-radius: 999px; background: linear-gradient(135deg, var(--green), var(--green-2)); color: var(--white); transition: box-shadow .15s ease; }
-.nav-cta:hover { box-shadow: 0 8px 20px rgba(14,94,84,.35); color: var(--white) !important; }
+
+/* Przejrzysta „pigułka" menu zamiast surowej listy */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  padding: 6px;
+  margin: 0;
+  font-weight: 600;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.nav-menu li { display: flex; }
+.nav-menu a {
+  position: relative;
+  padding: 9px 15px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, .82);
+  white-space: nowrap;
+  transition: color .18s ease, background .18s ease;
+}
+.nav-menu a:hover { color: var(--white); background: rgba(255, 255, 255, .12); }
+.nav-cta {
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--amber), var(--orange));
+  color: var(--white) !important;
+  box-shadow: 0 8px 20px rgba(240, 138, 60, .35);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.nav-cta:hover { transform: translateY(-1px); background: linear-gradient(135deg, var(--amber), var(--orange)); box-shadow: 0 12px 26px rgba(240, 138, 60, .5); }
 .nav-toggle { display: none; }
 
 .hero {
@@ -165,9 +202,21 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-grid { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
 @media (max-width: 840px) {
-  .nav-toggle { display: inline-flex; border: 0; border-radius: 999px; padding: 10px 14px; background: var(--ink); color: var(--white); font-weight: 800; }
-  .nav-menu { position: absolute; inset: 78px 16px auto; display: none; flex-direction: column; align-items: stretch; gap: 6px; padding: 18px; border-radius: 22px; background: var(--paper); box-shadow: var(--shadow); }
+  .nav-toggle { display: inline-flex; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 10px 16px; background: rgba(255,255,255,.1); color: var(--white); font-weight: 800; }
+  .nav-menu {
+    position: absolute; inset: 82px 16px auto;
+    display: none; flex-direction: column; align-items: stretch; gap: 4px;
+    padding: 12px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(10, 38, 43, .96), rgba(7, 28, 32, .96));
+    border: 1px solid rgba(255,255,255,.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 24px 60px rgba(4, 18, 22, .5);
+  }
   .nav-menu.open { display: flex; }
+  .nav-menu a { padding: 12px 16px; }
+  .nav-cta { text-align: center; margin-top: 4px; }
   .hero-grid, .map-grid, .contact-card { grid-template-columns: 1fr; }
   .hero { min-height: auto; }
   .hero-card { transform: none; }
@@ -291,11 +340,11 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === Ciemny motyw (przełącznik przy menu) === */
 .theme-toggle {
-  margin-left: 14px;
+  margin-left: 6px;
   width: 42px; height: 42px;
-  border: 1px solid rgba(13,43,48,.18);
+  border: 1px solid rgba(255,255,255,.18);
   border-radius: 999px;
-  background: var(--paper);
+  background: rgba(255,255,255,.1);
   font-size: 1.15rem;
   cursor: pointer;
   display: inline-flex; align-items: center; justify-content: center;
@@ -318,8 +367,7 @@ html.dark body {
     url('https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=1800&q=70') center/cover;
   background-attachment: fixed;
 }
-html.dark .site-header { background: rgba(8, 30, 34, .85); border-bottom-color: rgba(62, 201, 180, .25); }
-html.dark .nav-menu { color: var(--ink); }
+html.dark .site-header { box-shadow: 0 10px 30px rgba(2, 12, 15, .45); }
 html.dark .theme-toggle { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.2); }
 html.dark .category-card, html.dark .blog-card, html.dark .contact-card,
 html.dark .article-card, html.dark .side-nav, html.dark .product-card,
@@ -349,7 +397,6 @@ html.dark .contact-form input, html.dark .contact-form textarea {
   color: var(--ink);
 }
 html.dark .contact-form input::placeholder, html.dark .contact-form textarea::placeholder { color: var(--muted); }
-html.dark .nav-menu.open { background: #0d282e; }
 html.dark .product-body strong { color: var(--green); }
 html.dark .badge { background: rgba(62,201,180,.16); color: var(--green); }
 html.dark .price { color: var(--green); }
