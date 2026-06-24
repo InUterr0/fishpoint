@@ -1,0 +1,6 @@
+.git
+.gitignore
+README.md
+*.py
+node_modules
+.claude
