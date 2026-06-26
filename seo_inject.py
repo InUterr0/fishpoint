@@ -8,7 +8,7 @@ i uruchomić ponownie: python3 seo_inject.py
 """
 import os, re, html, json, datetime
 
-BASE = "https://example.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
+BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
 SITE_NAME = "FishPoint"
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
 
