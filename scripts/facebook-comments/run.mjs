@@ -3,15 +3,21 @@ import { spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { latestArticles } from '../lib/latest-articles.mjs';
 
-// Targets are built live from the freshest published articles (featured first).
-// Use --latest=N to widen the candidate pool.
+// Targets are drawn at RANDOM from the published articles — not "the newest".
+// Read a wide pool of articles, then shuffle so each run promotes a different,
+// arbitrary mix. Use --latest=N to widen/narrow the candidate pool.
 const latestArg = process.argv.find(a => a.startsWith('--latest='));
-const poolSize = Number(latestArg?.split('=')[1] || 8);
+const poolSize = Number(latestArg?.split('=')[1] || 50);
 const pool = latestArticles(process.cwd(), poolSize).map(a => ({
   slug: a.slug,
   search: `https://www.facebook.com/search/posts?q=${encodeURIComponent(a.query)}`,
   comment: `${a.note} Więcej: ${a.url}`,
 }));
+// Fisher–Yates shuffle: pick articles in a random order every run.
+for (let i = pool.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [pool[i], pool[j]] = [pool[j], pool[i]];
+}
 
 // Per-article rotation: each run targets articles we haven't used as comment
 // subjects yet, so we don't keep hammering the same stale top-of-pool topics.
@@ -185,15 +191,81 @@ def assert_page_identity(context='preflight'):
     return True
 
 
+def click_text(patterns):
+    # Click the FIRST visible element whose text/aria-label matches any of the
+    # given (case-insensitive) regex patterns. Returns the matched label or None.
+    cfg = json.dumps({'pats': patterns})
+    return js(r'''((cfg)=>{
+      const {pats}=cfg;
+      const els=[...document.querySelectorAll('[role="button"],[role="menuitem"],[role="link"],a,span,div[tabindex]')];
+      for(const p of pats){
+        const rx=new RegExp(p,'i');
+        for(const e of els){
+          const r=e.getBoundingClientRect();
+          if(r.width<8||r.height<8) continue;
+          const t=((e.innerText||'')+' '+(e.getAttribute('aria-label')||'')).trim();
+          if(t && rx.test(t)){ e.scrollIntoView({block:'center'}); e.click(); return t.slice(0,80); }
+        }
+      }
+      return null;
+    })(''' + cfg + r''')''')
+
+
+def switch_to_page():
+    # Try to switch the acting FB identity to the FishPoint Page via the account
+    # switcher menu. Best-effort: open the account menu, hit "Switch profile",
+    # then click the entry whose name matches PAGE_NAME. Re-probe to confirm.
+    print(f'[fejs-komcie] wrong identity — trying to switch to "{PAGE_NAME}"')
+    esc = PAGE_NAME.replace('.', r'\.')
+    for attempt in range(3):
+        new_tab('https://www.facebook.com/')
+        try:
+            wait_for_load()
+        except Exception:
+            pass
+        time.sleep(4)
+        # Open the account menu (top-right). FB renders a "Szybkie przełączanie
+        # profili" panel with a direct "Przełącz na profil <Name>" control.
+        opened = click_text(['^Twoje konto', '^Konto$', '^Account$', 'Twój profil', 'Menu konta', 'Your profile'])
+        print(f'[fejs-komcie] account menu[{attempt}]: {opened}')
+        time.sleep(3)
+        # Click the explicit "switch to <PAGE_NAME>" control — match the precise
+        # phrasing first so we never land on a different profile by accident.
+        hit = click_text([
+            f'Przełącz na profil {esc}',
+            f'Switch to.*{esc}.*profile',
+            f'Przejdź na profil {esc}',
+        ])
+        print(f'[fejs-komcie] switch click[{attempt}]: {hit}')
+        time.sleep(5)
+        try:
+            wait_for_load()
+        except Exception:
+            pass
+        time.sleep(4)
+        p = js_retry(identity_probe, tries=3, wait=3) or {}
+        if p.get('pageSeen') and not p.get('badHit'):
+            print('[fejs-komcie] switch OK — now acting as the Page')
+            return True
+        shot(f'switch-attempt-{attempt}')
+    print('[fejs-komcie] automatic switch failed')
+    return False
+
+
 def preflight_identity():
-    # Open FB home once and assert the session is acting as the Page before any
-    # commenting begins. Aborts the run on a wrong/unconfirmed identity.
+    # Open FB home once and ensure the session is acting as the Page before any
+    # commenting begins. If we're on the wrong account, try to switch
+    # automatically; only abort if the switch fails.
     new_tab('https://www.facebook.com/')
     try:
         wait_for_load()
     except Exception as e:
         print(f'[fejs-komcie] home nav slow ({e}); checking anyway')
     time.sleep(5)
+    p = js_retry(identity_probe, tries=4, wait=3) or {}
+    if not (p.get('pageSeen') and not p.get('badHit')):
+        if not switch_to_page():
+            assert_page_identity('home')  # raises WrongIdentity / aborts
     assert_page_identity('home')
     print('[fejs-komcie] preflight identity OK — acting as the FishPoint Page')
 
