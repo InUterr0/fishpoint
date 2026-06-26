@@ -484,23 +484,32 @@ def click_editor_near(pos):
 
 
 def click_send_button():
-    # Click the comment composer's SEND button (the blue arrow). Returns True if
-    # a send control was found and clicked. We pick a visible control low on the
-    # page (composer area) whose aria-label means "send/comment", rightmost first.
-    pos = js(r'''(()=>{
-      const re=/^komentarz$|wyślij|^comment$|^post$|^send$|opublikuj/i;
-      const btns=[...document.querySelectorAll('[role="button"],button,[aria-label]')]
+    # Click the comment composer's SEND control via a real DOM .click() (more
+    # reliable than coordinate clicks). Pick a visible, NOT-disabled button whose
+    # aria-label means "send/comment", lowest on the page (the composer bar).
+    res = js(r'''(()=>{
+      // The comment SEND control (paper-plane). In PL FB its aria-label is
+      // exactly "Komentarz" / "Skomentuj"; EN "Comment"/"Reply". Must EXCLUDE
+      // unrelated controls that also contain "wyślij" — the share button
+      // ("Wyślij do znajomych…"), Messenger, etc.
+      const ok=/^komentarz$|^skomentuj$|^comment$|^odpowiedz$|^reply$|wyślij komentarz|post comment/i;
+      const bad=/znajom|profil|messenger|udost|share|prześlij|wątek|story|relacj/i;
+      const btns=[...document.querySelectorAll('[role="button"],button,div[aria-label]')]
         .filter(e=>{
           const a=(e.getAttribute('aria-label')||'').trim();
+          if(!ok.test(a) || bad.test(a)) return false;
+          if(e.getAttribute('aria-disabled')==='true' || e.disabled) return false;
           const r=e.getBoundingClientRect();
-          return re.test(a) && r.width>0 && r.height>0 && r.top>500;
+          return r.width>0 && r.height>0 && r.top>300;
         })
-        .map(e=>{const r=e.getBoundingClientRect();return [r.x+r.width/2, r.y+r.height/2, r.x];})
-        .sort((a,b)=>b[2]-a[2]);
-      return btns.length? [btns[0][0], btns[0][1]] : null;
+        .sort((a,b)=>b.getBoundingClientRect().top-a.getBoundingClientRect().top);
+      if(!btns.length) return null;
+      btns[0].scrollIntoView({block:'center'});
+      btns[0].click();
+      return btns[0].getAttribute('aria-label')||'sent';
     })()''')
-    if pos:
-        click_at_xy(float(pos[0]), float(pos[1]))
+    if res:
+        print(f'[fejs-komcie] send button clicked: {res}')
         return True
     return False
 
@@ -531,24 +540,40 @@ def focus_editor():
     return ed
 
 
+def type_real(text):
+    # Type with REAL key events (keyDown/char/keyUp) so FB's React/Lexical editor
+    # registers each character and enables sending. type_text() uses
+    # Input.insertText, which bypasses framework listeners — the text shows up in
+    # the DOM but the composer's state stays "empty", so Enter/Send do nothing.
+    for ch in text:
+        if ch == '\n':
+            continue
+        press_key(ch)
+
+
 def submit_comment(comment):
-    focus_editor()
-    type_text(comment)
-    # Let the link preview/url unfurl settle before sending.
+    ed = focus_editor()
+    if not ed:
+        return False
+    time.sleep(.5)
+    type_real(comment)
+    # Let the link preview/url unfurl and editor state settle before sending.
     time.sleep(3)
-    # Alternate Enter and an explicit send-button click, RE-FOCUSING the editor
-    # before each try. Repeat with a generous budget — never report success
-    # unless the comment actually left the editor and is visible on the page.
+    # FIRST try Enter while the caret is still in the editor (don't refocus —
+    # a stray click could blur or open the link preview). Lexical submits a
+    # comment on Enter once it has registered real keystrokes.
+    press_key('Enter')
+    time.sleep(3)
+    # Then alternate the explicit comment-send button and a refocused Enter.
+    # Never report success unless the comment is actually visible on the page.
     for attempt in range(8):
-        st = comment_state(comment)
-        if st == 'posted':
+        if comment_state(comment) == 'posted':
             return True
+        if click_send_button():
+            time.sleep(4)
+            continue
         focus_editor()
-        if attempt % 2 == 0:
-            press_key('Enter')
-        else:
-            if not click_send_button():
-                press_key('Enter')
+        press_key('Enter')
         time.sleep(4)
     # Final settle window for slow publishing.
     deadline = time.time() + 25
