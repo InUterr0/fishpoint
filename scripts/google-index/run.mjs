@@ -25,7 +25,7 @@ const arg = (name, def) => {
 
 const count = Math.min(Number(arg('count', 15)), 30);
 const property = arg('property', 'sc-domain:fish-point.pl');
-const userIdx = arg('user', '1'); // Google multi-account index (/u/<n>/)
+const userIdx = arg('user', '0'); // Google multi-account index (/u/<n>/)
 const delayMs = Number(arg('delay-ms', 8000));
 const dryRun = process.argv.includes('--dry-run');
 
