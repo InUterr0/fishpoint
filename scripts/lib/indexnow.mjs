@@ -1,5 +1,5 @@
 // Wspólny helper IndexNow (Bing/Yandex/Seznam — Google nie wspiera).
-// Używany przez skrypty promo (/fejs-posty, /x-posty) jako dodatkowy
+// Używany przez skrypty promo (/x-posty) jako dodatkowy
 // „szturchaniec" dla świeżo promowanych artykułów.
 //
 // UWAGA: IndexNow wymaga pliku-klucza dostępnego pod https://fish-point.pl/<KEY>.txt

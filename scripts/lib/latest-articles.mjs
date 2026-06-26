@@ -1,4 +1,4 @@
-// Wspólne źródło promowanych artykułów dla skryptów X/Facebook/Google.
+// Wspólne źródło promowanych artykułów dla skryptów X/Google.
 // Czyta najświeższe wpisy z aktualnosci/*.html (po dacie modyfikacji pliku),
 // żeby skrypty nigdy się nie zestarzały — żadnych list na sztywno.
 import { readFileSync, readdirSync, statSync } from 'node:fs';
