@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://example.pl/sitemap.xml
+Sitemap: https://fish-point.pl/sitemap.xml
