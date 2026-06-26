@@ -520,26 +520,38 @@ def comment_state(comment):
     })(''' + cfg + r''')''')
 
 
+def focus_editor():
+    # Re-focus the comment composer. FB frequently steals focus to the link
+    # unfurl preview after typing, which makes a plain Enter do nothing — so we
+    # re-locate and click the editor right before every send attempt.
+    ed = find_editor()
+    if ed:
+        click_at_xy(float(ed[0]), float(ed[1]))
+        time.sleep(.6)
+    return ed
+
+
 def submit_comment(comment):
+    focus_editor()
     type_text(comment)
     # Let the link preview/url unfurl settle before sending.
     time.sleep(3)
-    # Try Enter first, then explicitly click the send button if the text is still
-    # sitting in the editor. Repeat a few times — never report success unless the
-    # comment actually left the editor and is visible on the page.
-    for attempt in range(4):
+    # Alternate Enter and an explicit send-button click, RE-FOCUSING the editor
+    # before each try. Repeat with a generous budget — never report success
+    # unless the comment actually left the editor and is visible on the page.
+    for attempt in range(8):
         st = comment_state(comment)
         if st == 'posted':
             return True
-        if st == 'in-editor':
-            if attempt == 0:
+        focus_editor()
+        if attempt % 2 == 0:
+            press_key('Enter')
+        else:
+            if not click_send_button():
                 press_key('Enter')
-            else:
-                if not click_send_button():
-                    press_key('Enter')
-        time.sleep(3)
+        time.sleep(4)
     # Final settle window for slow publishing.
-    deadline = time.time() + 20
+    deadline = time.time() + 25
     while time.time() < deadline:
         if comment_state(comment) == 'posted':
             return True
