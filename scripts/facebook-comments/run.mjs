@@ -394,11 +394,14 @@ CARD_JS = r'''
 
 
 def first_comment_target():
-    # DEAD SIMPLE: comment under the FIRST post in the results. Find every
-    # "Comment/Skomentuj" action button on the page, take the TOP-MOST one
-    # (that's the first post), and click it to open the composer. No scoring,
-    # no thresholds, no engagement parsing, no dedup — just the first post shown.
-    return js(r'''(()=>{
+    # Comment under the FIRST post in the results — but NEVER under a post we have
+    # already commented on. Find every "Comment/Skomentuj" action button, sort
+    # top-to-bottom, and click the FIRST one whose card (a) has no existing
+    # FishPoint comment and (b) whose post id/signature isn't in seen. This is
+    # the dedup gate: one post/article = at most one FishPoint comment, ever.
+    cfg = json.dumps({'seen': sorted(seen)})
+    return js(r'''((cfg)=>{
+      const seenSet=new Set(cfg.seen||[]);
       function isComment(el){
         const a=(el.getAttribute('aria-label')||'').toLowerCase().trim();
         if(!a) return false;
@@ -423,13 +426,33 @@ def first_comment_target():
       }
       if(!cands.length) return null;
       cands.sort((a,b)=>a.getBoundingClientRect().top-b.getBoundingClientRect().top);
-      const b=cands[0];
-      b.scrollIntoView({block:'center'});
-      b.click();
-      const card=b.closest('div[role="article"]') || b.closest('div[role="feed"] > div');
-      const info=(card?card.innerText:'').replace(/\s+/g,' ').trim().slice(0,180);
-      return ['comment-click', 0, info, '', 0, null, null];
-    })()''')
+      function postId(card){
+        for(const a of card.querySelectorAll('a[href]')){
+          const h=a.getAttribute('href')||'';
+          let m=h.match(/pfbid[0-9A-Za-z]+/); if(m) return 'fb:'+m[0];
+          m=h.match(/story_fbid=([0-9A-Za-z.]+)/); if(m) return 'fb:sf:'+m[1];
+          m=h.match(/\/permalink\/(\d+)/); if(m) return 'fb:pl:'+m[1];
+          m=h.match(/\/posts\/([0-9A-Za-z]+)/); if(m) return 'fb:po:'+m[1];
+        }
+        return null;
+      }
+      // Walk candidates top-to-bottom; take the first post that is NOT ours and
+      // NOT already seen. Skip (don't click) any post FishPoint already touched.
+      for(const b of cands){
+        const card=b.closest('div[role="article"]') || b.closest('div[role="feed"] > div');
+        const txt=(card?card.innerText:'')||'';
+        const ours=/fish-point\.pl|FishPoint/i.test(txt);
+        const pid=card?postId(card):null;
+        const psig=txt? 'sig:'+txt.replace(/\s+/g,' ').trim().slice(0,120) : null;
+        const seenBefore=(pid&&seenSet.has(pid))||(psig&&seenSet.has(psig));
+        if(ours||seenBefore) continue;
+        b.scrollIntoView({block:'center'});
+        b.click();
+        const info=txt.replace(/\s+/g,' ').trim().slice(0,180);
+        return ['comment-click', 0, info, '', 0, pid, psig];
+      }
+      return null; // every visible post was already commented on — skip this run
+    })(''' + cfg + r''')''')
 
 
 def debug_targets():
@@ -543,9 +566,9 @@ def focus_editor():
 def type_char_once(ch):
     # Insert a SINGLE printable char with real key events. We deliberately do NOT
     # call the harness's press_key() here: for a printable char it dispatches
-    # BOTH a keyDown carrying `text` AND a separate `char` event, and FB's Lexical
-    # editor inserts the character on each — so every letter comes out doubled
-    # ("JJaakk wwyy…"). A keyDown-with-text plus keyUp inserts the char exactly
+    # BOTH a keyDown carrying text AND a separate char event, and FB's Lexical
+    # editor inserts the character on each -- so every letter comes out doubled
+    # ("JJaakk wwyy"). A keyDown-with-text plus keyUp inserts the char exactly
     # once while still firing the key listeners Lexical needs to enable sending.
     vk = ord(ch)
     base = {'key': ch, 'code': '', 'modifiers': 0,
