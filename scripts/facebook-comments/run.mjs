@@ -540,15 +540,29 @@ def focus_editor():
     return ed
 
 
+def type_char_once(ch):
+    # Insert a SINGLE printable char with real key events. We deliberately do NOT
+    # call the harness's press_key() here: for a printable char it dispatches
+    # BOTH a keyDown carrying `text` AND a separate `char` event, and FB's Lexical
+    # editor inserts the character on each — so every letter comes out doubled
+    # ("JJaakk wwyy…"). A keyDown-with-text plus keyUp inserts the char exactly
+    # once while still firing the key listeners Lexical needs to enable sending.
+    vk = ord(ch)
+    base = {'key': ch, 'code': '', 'modifiers': 0,
+            'windowsVirtualKeyCode': vk, 'nativeVirtualKeyCode': vk}
+    cdp('Input.dispatchKeyEvent', type='keyDown', text=ch, **base)
+    cdp('Input.dispatchKeyEvent', type='keyUp', **base)
+
+
 def type_real(text):
-    # Type with REAL key events (keyDown/char/keyUp) so FB's React/Lexical editor
-    # registers each character and enables sending. type_text() uses
-    # Input.insertText, which bypasses framework listeners — the text shows up in
-    # the DOM but the composer's state stays "empty", so Enter/Send do nothing.
+    # Type with REAL key events so FB's React/Lexical editor registers each
+    # character and enables sending. type_text() uses Input.insertText, which
+    # bypasses framework listeners — the text shows up in the DOM but the
+    # composer's state stays "empty", so Enter/Send do nothing.
     for ch in text:
         if ch == '\n':
             continue
-        press_key(ch)
+        type_char_once(ch)
 
 
 def submit_comment(comment):
