@@ -10,6 +10,7 @@ const latestArg = process.argv.find(a => a.startsWith('--latest='));
 const poolSize = Number(latestArg?.split('=')[1] || 50);
 const pool = latestArticles(process.cwd(), poolSize).map(a => ({
   slug: a.slug,
+  url: a.url,
   search: `https://www.facebook.com/search/posts?q=${encodeURIComponent(a.query)}`,
   comment: `${a.note} Więcej: ${a.url}`,
 }));
@@ -394,14 +395,14 @@ CARD_JS = r'''
 
 
 def first_comment_target():
-    # Comment under the FIRST post in the results — but NEVER under a post we have
-    # already commented on. Find every "Comment/Skomentuj" action button, sort
-    # top-to-bottom, and click the FIRST one whose card (a) has no existing
-    # FishPoint comment and (b) whose post id/signature isn't in seen. This is
-    # the dedup gate: one post/article = at most one FishPoint comment, ever.
-    cfg = json.dumps({'seen': sorted(seen)})
-    return js(r'''((cfg)=>{
-      const seenSet=new Set(cfg.seen||[]);
+    # DEAD SIMPLE: comment under the FIRST post in the results. Find every
+    # "Comment/Skomentuj" action button on the page, take the TOP-MOST one
+    # (that's the first post), and click it to open the composer. Dedup is NOT
+    # done here — the feed's comment buttons have no reliable post card around
+    # them, so we gate duplicates AFTER the post dialog opens (see
+    # article_already_promoted), where the post URL and existing comments are
+    # actually readable.
+    return js(r'''(()=>{
       function isComment(el){
         const a=(el.getAttribute('aria-label')||'').toLowerCase().trim();
         if(!a) return false;
@@ -426,33 +427,36 @@ def first_comment_target():
       }
       if(!cands.length) return null;
       cands.sort((a,b)=>a.getBoundingClientRect().top-b.getBoundingClientRect().top);
-      function postId(card){
-        for(const a of card.querySelectorAll('a[href]')){
-          const h=a.getAttribute('href')||'';
-          let m=h.match(/pfbid[0-9A-Za-z]+/); if(m) return 'fb:'+m[0];
-          m=h.match(/story_fbid=([0-9A-Za-z.]+)/); if(m) return 'fb:sf:'+m[1];
-          m=h.match(/\/permalink\/(\d+)/); if(m) return 'fb:pl:'+m[1];
-          m=h.match(/\/posts\/([0-9A-Za-z]+)/); if(m) return 'fb:po:'+m[1];
-        }
-        return null;
-      }
-      // Walk candidates top-to-bottom; take the first post that is NOT ours and
-      // NOT already seen. Skip (don't click) any post FishPoint already touched.
-      for(const b of cands){
-        const card=b.closest('div[role="article"]') || b.closest('div[role="feed"] > div');
-        const txt=(card?card.innerText:'')||'';
-        const ours=/fish-point\.pl|FishPoint/i.test(txt);
-        const pid=card?postId(card):null;
-        const psig=txt? 'sig:'+txt.replace(/\s+/g,' ').trim().slice(0,120) : null;
-        const seenBefore=(pid&&seenSet.has(pid))||(psig&&seenSet.has(psig));
-        if(ours||seenBefore) continue;
-        b.scrollIntoView({block:'center'});
-        b.click();
-        const info=txt.replace(/\s+/g,' ').trim().slice(0,180);
-        return ['comment-click', 0, info, '', 0, pid, psig];
-      }
-      return null; // every visible post was already commented on — skip this run
+      const b=cands[0];
+      b.scrollIntoView({block:'center'});
+      b.click();
+      const card=b.closest('div[role="article"]') || b.closest('div[role="feed"] > div');
+      const info=(card?card.innerText:'').replace(/\s+/g,' ').trim().slice(0,180);
+      return ['comment-click', 0, info, '', 0, null, null];
+    })()''')
+
+
+def article_already_promoted(url):
+    # Dedup gate, run with the post dialog OPEN. Returns True if this exact
+    # article URL (or its slug) already appears in the open post — i.e. FishPoint
+    # has already promoted it here, so we must NOT comment again. Scans the
+    # dialog (or whole document as a fallback) for the article link/slug.
+    slug = url.rstrip('/').split('/')[-1]
+    cfg = json.dumps({'url': url, 'slug': slug})
+    res = js(r'''((cfg)=>{
+      const {url, slug}=cfg;
+      const scope=document.querySelector('div[role="dialog"]') || document.body;
+      const txt=(scope.innerText||'');
+      // Normalised compare: FB strips dots from displayed links (fish-pointpl),
+      // so match on the slug, which is stable, plus the raw url when present.
+      const norm=s=>s.replace(/\s+/g,'').toLowerCase();
+      const hay=norm(txt);
+      const needle=norm(slug);
+      const hrefHit=[...scope.querySelectorAll('a[href]')]
+        .some(a=>(a.getAttribute('href')||'').includes(slug));
+      return (needle && hay.includes(needle)) || hrefHit;
     })(''' + cfg + r''')''')
+    return bool(res)
 
 
 def debug_targets():
@@ -649,6 +653,13 @@ def comment_once(item, idx):
     print(f'[fejs-komcie] editor {idx}: {ed}')
     if not ed:
         shot(f'no-editor-{idx}')
+        return False
+    # DEDUP GATE: never comment twice for the same article under the same post.
+    # If the opened post already contains this article's link, skip it entirely
+    # (the rule "no duplicate posts" wins over "always comment the first post").
+    if article_already_promoted(item['url']):
+        print(f'[fejs-komcie] skip {idx}: article already promoted under this post ({item["url"]})')
+        shot(f'already-promoted-{idx}')
         return False
     click_at_xy(float(ed[0]), float(ed[1]))
     time.sleep(1)
