@@ -712,12 +712,45 @@ def type_real(text):
         type_char_once(ch)
 
 
+def expand_composer():
+    # On permalink pages the comment box can be COLLAPSED to a placeholder
+    # ("Skomentuj jako FishPoint" / "Napisz komentarz"); typing then goes nowhere
+    # because no contenteditable is focused yet. Click the placeholder to expand
+    # the real editor before we type.
+    js(r'''(()=>{
+      for(const e of document.querySelectorAll('[aria-label],div[role="button"]')){
+        const a=(e.getAttribute('aria-label')||'').toLowerCase();
+        const r=e.getBoundingClientRect();
+        if(/skomentuj jako|napisz komentarz|dodaj komentarz/.test(a) && r.width>40 && r.top>250){
+          e.scrollIntoView({block:'center'}); e.click(); return true;
+        }
+      }
+      return false;
+    })()''')
+    time.sleep(1.5)
+
+
+def editor_has_text(frag):
+    cfg = json.dumps({'frag': frag})
+    return bool(js(r'''((cfg)=>[...document.querySelectorAll('[contenteditable="true"],div[role="textbox"]')]
+      .some(e=>(e.innerText||'').includes(cfg.frag)))(''' + cfg + r''')'''))
+
+
 def submit_comment(comment):
+    expand_composer()
     ed = focus_editor()
     if not ed:
         return False
     time.sleep(.5)
     type_real(comment)
+    # Verify the text actually landed in the editor; if not, re-expand, re-focus
+    # and retype once (handles collapsed/late-rendering composers).
+    if not editor_has_text(comment[:20]):
+        expand_composer()
+        ed = focus_editor()
+        if ed:
+            time.sleep(.5)
+            type_real(comment)
     # Let the link preview/url unfurl and editor state settle before sending.
     time.sleep(3)
     # FIRST try Enter while the caret is still in the editor (don't refocus —
