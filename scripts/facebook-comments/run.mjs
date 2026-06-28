@@ -32,10 +32,24 @@ function topicKeywords(a) {
     .map(w => w.slice(0, 6)); // przedrostek, by łapać odmiany
   return [...new Set([...FISHING_LEXICON, ...fromText])];
 }
+// Kotwica wędkarska doklejana TYLKO do wyszukiwarki FB (nie ruszamy wspólnego
+// a.query, którego używa też /x-posty): biasuje wyniki na posty o wędkarstwie,
+// żeby ogólne tytuły ("przegląd nowości", "błędy początkujących") nie zwracały
+// mody/tradingu/ogrodnictwa. Pomijana, gdy zapytanie już jest jednoznacznie
+// wędkarskie (zawiera któryś mocny termin). --fb-anchor= nadpisuje słowo,
+// --no-fb-anchor wyłącza.
+const STRONG_FISHING = /wędk|wedk|spinning|feeder|przynęt|przynet|wobler|kołowrotek|kolowrotek|żyłk|zylk|plecionk|spławik|splawik|zanęt|zanet|zasiadk|łowisk|lowisk|szczupak|sandacz|okoń|okon|karp|leszcz|płoć|ploc|pstrąg|pstrag|wędzisk|wedzisk/i;
+const anchorArg = process.argv.find(a => a.startsWith('--fb-anchor='));
+const FB_ANCHOR = process.argv.includes('--no-fb-anchor')
+  ? '' : (anchorArg ? anchorArg.split('=')[1] : 'wędkarstwo');
+function fbSearchQuery(q) {
+  const anchored = (FB_ANCHOR && !STRONG_FISHING.test(q)) ? `${q} ${FB_ANCHOR}` : q;
+  return `https://www.facebook.com/search/posts?q=${encodeURIComponent(anchored)}`;
+}
 const pool = latestArticles(process.cwd(), poolSize).map(a => ({
   slug: a.slug,
   url: a.url,
-  search: `https://www.facebook.com/search/posts?q=${encodeURIComponent(a.query)}`,
+  search: fbSearchQuery(a.query),
   comment: `${a.note} Więcej: ${a.url}`,
   topic: topicKeywords(a),
 }));
