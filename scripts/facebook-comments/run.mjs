@@ -8,11 +8,36 @@ import { latestArticles } from '../lib/latest-articles.mjs';
 // arbitrary mix. Use --latest=N to widen/narrow the candidate pool.
 const latestArg = process.argv.find(a => a.startsWith('--latest='));
 const poolSize = Number(latestArg?.split('=')[1] || 50);
+// Wspólny leksykon wędkarski: post w wynikach FB musi zahaczać o TEMAT, inaczej
+// nie komentujemy (żeby artykuł wędkarski nie trafił pod post o sukienkach itp.).
+const FISHING_LEXICON = [
+  'wędk', 'ryb', 'połów', 'połow', 'łowi', 'lowi', 'spinning', 'spinningow',
+  'feeder', 'method', 'grunt', 'spławik', 'splawik', 'muchow', 'muszk',
+  'szczupak', 'okoń', 'okon', 'sandacz', 'karp', 'leszcz', 'płoć', 'ploc',
+  'lin ', 'sum', 'pstrąg', 'pstrag', 'kleń', 'klen', 'jaź', 'jaz', 'boleń', 'bolen',
+  'przynęt', 'przynet', 'wobler', 'błystk', 'blystk', 'guma', 'twister', 'jig',
+  'kołowrotek', 'kolowrotek', 'żyłka', 'zylka', 'plecionka', 'haczyk', 'kotwic',
+  'spławik', 'zanęt', 'zanet', 'przyponów', 'przypon', 'wędzisk', 'wedzisk',
+  'jezioro', 'rzeka', 'staw', 'łowisko', 'lowisko', 'zbiornik', 'brania', 'branie',
+  'zacięcie', 'zaciecie', 'hol ', 'holowan', 'zasiadk', 'wyprawa', 'zawody',
+];
+// Zbiera słowa-klucze tematyczne dla artykułu: leksykon + mocne słowa z tytułu,
+// zapytania i slug-a (po polsku, małymi literami, bez ogonkowych wariantów).
+function topicKeywords(a) {
+  const fromText = `${a.title} ${a.query} ${a.slug.replace(/-/g, ' ')}`
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .split(/\s+/)
+    .filter(w => w.length >= 4)
+    .map(w => w.slice(0, 6)); // przedrostek, by łapać odmiany
+  return [...new Set([...FISHING_LEXICON, ...fromText])];
+}
 const pool = latestArticles(process.cwd(), poolSize).map(a => ({
   slug: a.slug,
   url: a.url,
   search: `https://www.facebook.com/search/posts?q=${encodeURIComponent(a.query)}`,
   comment: `${a.note} Więcej: ${a.url}`,
+  topic: topicKeywords(a),
 }));
 // Fisher–Yates shuffle: pick articles in a random order every run.
 for (let i = pool.length - 1; i > 0; i--) {
@@ -219,7 +244,8 @@ def switch_to_page():
     print(f'[fejs-komcie] wrong identity — trying to switch to "{PAGE_NAME}"')
     esc = PAGE_NAME.replace('.', r'\.')
     for attempt in range(3):
-        new_tab('https://www.facebook.com/')
+        # Navigate in the SAME tab — never spawn new tabs on each attempt.
+        goto_url('https://www.facebook.com/')
         try:
             wait_for_load()
         except Exception:
@@ -237,7 +263,34 @@ def switch_to_page():
             f'Switch to.*{esc}.*profile',
             f'Przejdź na profil {esc}',
         ])
+        # If the Page is not in the quick-switch panel, open the full profile
+        # list via "Zobacz wszystkie profile" and pick FishPoint there. FB then
+        # shows a "Przełącz profil" confirm dialog with a blue "Przełącz" button.
+        if not hit:
+            seeall = click_text(['^Zobacz wszystkie profile$', '^See all profiles$'])
+            print(f'[fejs-komcie] see-all-profiles[{attempt}]: {seeall}')
+            time.sleep(5)
+            hit = click_text([
+                f'Przełącz na profil {esc}',
+                f'Switch to.*{esc}.*profile',
+                f'Przejdź na profil {esc}',
+                f'^{esc}$',
+            ])
         print(f'[fejs-komcie] switch click[{attempt}]: {hit}')
+        time.sleep(4)
+        # Confirm the "Przełącz profil" dialog if it appears (blue "Przełącz").
+        confirm = js(r'''(()=>{
+          const dlg=document.querySelector('[role="dialog"]')||document;
+          const btns=[...dlg.querySelectorAll('[role="button"],button,a')];
+          for(const b of btns){
+            const r=b.getBoundingClientRect(); if(r.width<8||r.height<8) continue;
+            const t=(b.innerText||'').trim();
+            if(/^Przełącz$/i.test(t)){ b.scrollIntoView({block:'center'}); b.click(); return 'ok'; }
+          }
+          return null;
+        })()''')
+        if confirm:
+            print(f'[fejs-komcie] confirm dialog[{attempt}]: {confirm}')
         time.sleep(5)
         try:
             wait_for_load()
@@ -394,46 +447,99 @@ CARD_JS = r'''
 '''
 
 
-def first_comment_target():
-    # DEAD SIMPLE: comment under the FIRST post in the results. Find every
-    # "Comment/Skomentuj" action button on the page, take the TOP-MOST one
-    # (that's the first post), and click it to open the composer. Dedup is NOT
-    # done here — the feed's comment buttons have no reliable post card around
-    # them, so we gate duplicates AFTER the post dialog opens (see
-    # article_already_promoted), where the post URL and existing comments are
-    # actually readable.
-    return js(r'''(()=>{
+def open_nth_post(n):
+    # Open the Nth post (0-based, top-to-bottom) from the search results by
+    # clicking its comment-action button. Returns 'opened' / 'no-post' (n is
+    # past the last visible result). Selection of WHICH post to keep is decided
+    # later on the OPENED post body (see inspect_post) — here we only open it.
+    cfg = json.dumps({'n': n})
+    return js(r'''((cfg)=>{
+      const {n}=cfg;
       function isComment(el){
         const a=(el.getAttribute('aria-label')||'').toLowerCase().trim();
         if(!a) return false;
-        // Match the comment ACTION (write), not "see N comments" preview links.
-        return /^skomentuj$|^komentarz$|napisz komentarz|leave a comment|^comment$|write a comment/.test(a);
+        // The "write a comment" action: matches FB's "Dodaj komentarz" /
+        // "Skomentuj" / "Napisz komentarz" (not "see N comments" previews).
+        return /^skomentuj$|^komentarz$|napisz komentarz|dodaj komentarz|leave a comment|^comment$|write a comment/.test(a);
       }
       let cands=[...document.querySelectorAll('[role="button"],[aria-label]')]
-        .filter(el=>{
-          if(!isComment(el)) return false;
-          const r=el.getBoundingClientRect();
-          return r.width>0 && r.height>0 && r.top>140; // skip the top nav bar
-        });
-      // Fallback: if no explicit "Skomentuj" button matched, use any clickable
-      // whose aria-label merely mentions a comment.
+        .filter(el=>{ if(!isComment(el)) return false;
+          const r=el.getBoundingClientRect(); return r.width>0&&r.height>0&&r.top>140; });
       if(!cands.length){
         cands=[...document.querySelectorAll('[role="button"],[aria-label],a')]
-          .filter(el=>{
-            const a=(el.getAttribute('aria-label')||'').toLowerCase();
+          .filter(el=>{ const a=(el.getAttribute('aria-label')||'').toLowerCase();
             const r=el.getBoundingClientRect();
-            return /komentarz|comment/.test(a) && r.width>0 && r.height>0 && r.top>140;
-          });
+            return /komentarz|comment/.test(a) && r.width>0&&r.height>0&&r.top>140; });
       }
-      if(!cands.length) return null;
       cands.sort((a,b)=>a.getBoundingClientRect().top-b.getBoundingClientRect().top);
-      const b=cands[0];
-      b.scrollIntoView({block:'center'});
-      b.click();
-      const card=b.closest('div[role="article"]') || b.closest('div[role="feed"] > div');
-      const info=(card?card.innerText:'').replace(/\s+/g,' ').trim().slice(0,180);
-      return ['comment-click', 0, info, '', 0, null, null];
-    })()''')
+      if(n>=cands.length) return 'no-post';
+      cands[n].scrollIntoView({block:'center'}); cands[n].click(); return 'opened';
+    })(''' + cfg + r''')''')
+
+
+def inspect_post(topic):
+    # Read the OPENED post dialog and judge relevance on the POST'S OWN BODY
+    # only — everything BEFORE the comments section. This is the fix for the
+    # "fishing article under a dresses post" bug: we must not match keywords that
+    # belong to OTHER search results or to existing comments. Returns a JSON dict
+    # {url, body, hits, bodyLen} or None when no dialog is open.
+    cfg = json.dumps({'topic': topic or []})
+    return js(r'''((cfg)=>{
+      const topic=(cfg.topic||[]).map(s=>s.toLowerCase()).filter(Boolean);
+      // Use the narrow post-viewer modal, not the full-page dialog (which also
+      // contains nav + the whole results column).
+      const dgs=[...document.querySelectorAll('[role="dialog"]')]
+        .filter(d=>{const w=d.getBoundingClientRect().width; return w>350 && w<1000;});
+      const dlg=dgs.pop()||[...document.querySelectorAll('[role="dialog"]')].pop();
+      if(!dlg) return null;
+      // Where do the comments start? (the sort bar "Najtrafniejsze/Najnowsze/…")
+      let commentsTop=Infinity;
+      for(const e of dlg.querySelectorAll('*')){
+        const t=(e.innerText||'').trim();
+        if(/^(Najtrafniejsze|Najnowsze|Wszystkie komentarze|Most relevant|All comments)$/i.test(t)){
+          const y=e.getBoundingClientRect().top; if(y>0&&y<commentsTop) commentsTop=y;
+        }
+      }
+      // Post body = the top-most substantial dir=auto text blocks ABOVE the
+      // comments. This excludes nav noise AND every comment (so a commenter named
+      // "… Szczupak" or a diet post's fish list can't fake topical relevance).
+      let blocks=[...dlg.querySelectorAll('[dir="auto"]')]
+        .map(e=>({t:(e.innerText||'').replace(/\s+/g,' ').trim(), y:e.getBoundingClientRect().top}))
+        .filter(o=>o.t.length>25 && o.y<commentsTop)
+        .sort((a,b)=>a.y-b.y);
+      const seen=new Set(); const picked=[];
+      for(const b of blocks){
+        if(seen.has(b.t)) continue;
+        if([...seen].some(s=>s.includes(b.t)||b.t.includes(s))) continue;
+        seen.add(b.t); picked.push(b.t); if(picked.length>=3) break;
+      }
+      const body=picked.join(' | ');
+      const low=body.toLowerCase();
+      const hits=topic.filter(k=>k && low.includes(k));
+      return JSON.stringify({url:location.href, bodyLen:body.length,
+        body:body.slice(0,400), hits});
+    })(''' + cfg + r''')''')
+
+
+def close_dialog():
+    # Return to the search feed by closing any open post dialog.
+    try:
+        press_key('Escape')
+    except Exception:
+        pass
+    time.sleep(2)
+
+
+def post_id_from_url(url):
+    # Stable per-post id for cross-run dedup (so we never comment twice on the
+    # same post, even for different articles).
+    import re
+    for pat in (r'pfbid[0-9A-Za-z]+', r'story_fbid=(\d+)', r'/posts/(\d+)',
+                r'/videos/(\d+)', r'/(\d{6,})(?:[/?]|$)'):
+        m = re.search(pat, url or '')
+        if m:
+            return m.group(0) if pat.startswith('pfbid') else m.group(1)
+    return (url or '').split('?')[0]
 
 
 def article_already_promoted(url):
@@ -626,90 +732,226 @@ def submit_comment(comment):
     return False
 
 
+# How many of the top search results to try before giving up on an article.
+MAX_POSTS_TRIED = 6
+
+
 def comment_once(item, idx):
+    # Open the top results one by one and, for EACH, VERIFY before commenting:
+    #   1) WHERE — judge relevance on the opened post's OWN body (inspect_post);
+    #      an off-topic post (e.g. dresses) is closed and skipped.
+    #   2) NO REPEAT — skip posts we've already commented under (post id in seen,
+    #      across runs) and posts that already contain this article's link.
+    #   3) WHAT — only then type the comment, and only confirm success if the
+    #      comment is actually visible (submit_comment verifies).
+    # Move to the next result when a post fails any check; stop at the first that
+    # passes. Better to comment nowhere than under the wrong post.
+    global seen
+    topic = item.get('topic') or []
     new_tab(item['search'])
     try:
         wait_for_load()
     except Exception:
         pass
     time.sleep(6)
-    # SIMPLE RULE: comment under the FIRST post shown. DO NOT scroll the feed —
-    # just wait for the top result to render and take it. Retry in place only to
-    # ride out a slow render, never to move down the page.
-    pos = None
-    for _ in range(5):
-        pos = js_retry(first_comment_target, tries=2)
-        if pos:
+    for n in range(MAX_POSTS_TRIED):
+        close_dialog()  # make sure we're on the feed before opening result #n
+        op = js_retry(lambda: open_nth_post(n), tries=2)
+        if op != 'opened':
+            print(f'[fejs-komcie] {idx}: no more results at #{n} ({op})')
             break
-        time.sleep(2)
-    print(f'[fejs-komcie] comment target {idx}: {pos}')
-    if not pos:
-        shot(f'no-target-{idx}')
+        time.sleep(5)
+        raw = js_retry(lambda: inspect_post(topic), tries=4, wait=3)
+        if not raw:
+            print(f'[fejs-komcie] {idx} post#{n}: dialog did not open; skipping')
+            close_dialog()
+            continue
+        info = json.loads(raw)
+        pid = post_id_from_url(info.get('url', ''))
+        body = info.get('body', '')
+        hits = info.get('hits', [])
+        print(f'[fejs-komcie] {idx} post#{n}: id={pid} hits={hits[:6]} body="{body[:120]}"')
+        # NO REPEAT: same post already commented on (any earlier run/article).
+        if pid in seen:
+            print(f'[fejs-komcie] {idx} post#{n}: already commented under this post — next')
+            close_dialog()
+            continue
+        # WHERE: post body must be on-topic (skip off-topic placement).
+        if topic and not hits:
+            print(f'[fejs-komcie] {idx} post#{n}: OFF-TOPIC (no fishing keyword in post body) — next')
+            shot(f'off-topic-{idx}-{n}')
+            close_dialog()
+            continue
+        # NO REPEAT (per article): this article's link is already under this post.
+        if article_already_promoted(item['url']):
+            print(f'[fejs-komcie] {idx} post#{n}: article already promoted here — next')
+            close_dialog()
+            continue
+        ed = js_retry(find_editor, tries=6, wait=3)
+        if not ed:
+            print(f'[fejs-komcie] {idx} post#{n}: no composer — next')
+            close_dialog()
+            continue
+        click_at_xy(float(ed[0]), float(ed[1]))
+        time.sleep(1)
+        # Last line of defence: re-assert identity with the composer open.
+        assert_page_identity(f'composer-{idx}-{n}')
+        ok = submit_comment(item['comment'])
+        shot(f'after-submit-{idx}-{n}')
+        print(f'[fejs-komcie] {idx} post#{n}: submitted={ok} (where=id:{pid})')
+        if ok:
+            seen.add(pid)
+            save_seen(seen)
+            shot(f'verified-success-{idx}')
+            return True
+        # Posting failed on this post — try the next one.
+        close_dialog()
+    print(f'[fejs-komcie] {idx}: no suitable on-topic post found in first {MAX_POSTS_TRIED} results')
+    return False
+
+def collect_candidates(item, idx):
+    # READ-ONLY: open the top results for an article and return each candidate
+    # post's body + permalink so an external judge (the agent) can decide WHERE
+    # it is appropriate to comment. Never types anything.
+    new_tab(item['search'])
+    try:
+        wait_for_load()
+    except Exception:
+        pass
+    time.sleep(6)
+    cands = []
+    for n in range(MAX_POSTS_TRIED):
+        close_dialog()
+        op = js_retry(lambda: open_nth_post(n), tries=2)
+        if op != 'opened':
+            break
+        time.sleep(5)
+        raw = js_retry(lambda: inspect_post(item.get('topic') or []), tries=4, wait=3)
+        if not raw:
+            close_dialog()
+            continue
+        info = json.loads(raw)
+        url = info.get('url', '')
+        pid = post_id_from_url(url)
+        cands.append({
+            'n': n,
+            'postUrl': url,
+            'postId': pid,
+            'body': info.get('body', ''),
+            'keywordHits': info.get('hits', []),
+            'alreadyCommented': pid in seen,
+            'articleAlreadyPromoted': bool(article_already_promoted(item['url'])),
+        })
+    close_dialog()
+    return cands
+
+
+def post_to_decision(dec, idx):
+    # Comment on a SPECIFIC post chosen by the judge. Re-checks dedup (post id +
+    # article-already-promoted) right before posting, then verifies the comment
+    # is visible. dec = {postUrl, comment, postId, url(article)}.
+    global seen
+    pid = dec.get('postId') or post_id_from_url(dec.get('postUrl', ''))
+    if pid in seen:
+        print(f'[fejs-komcie] {idx}: post {pid} already commented — skip')
         return False
-    # The picker already DOM-clicked the comment count; wait for the post
-    # dialog to render, then locate its composer (with busy-page retries).
-    time.sleep(5)
+    new_tab(dec['postUrl'])
+    try:
+        wait_for_load()
+    except Exception:
+        pass
+    time.sleep(6)
+    if article_already_promoted(dec.get('url') or dec.get('postUrl')):
+        print(f'[fejs-komcie] {idx}: article already promoted under {pid} — skip')
+        return False
     ed = js_retry(find_editor, tries=6, wait=3)
-    print(f'[fejs-komcie] editor {idx}: {ed}')
     if not ed:
-        shot(f'no-editor-{idx}')
-        return False
-    # DEDUP GATE: never comment twice for the same article under the same post.
-    # If the opened post already contains this article's link, skip it entirely
-    # (the rule "no duplicate posts" wins over "always comment the first post").
-    if article_already_promoted(item['url']):
-        print(f'[fejs-komcie] skip {idx}: article already promoted under this post ({item["url"]})')
-        shot(f'already-promoted-{idx}')
+        print(f'[fejs-komcie] {idx}: no composer on {dec["postUrl"]}')
+        shot(f'no-editor-decision-{idx}')
         return False
     click_at_xy(float(ed[0]), float(ed[1]))
     time.sleep(1)
-    # Last line of defence: re-assert identity with the comment composer open,
-    # so we never type as a personal account even if FB switched mid-run.
-    assert_page_identity(f'composer-{idx}')
-    ok = submit_comment(item['comment'])
-    shot(f'after-submit-{idx}')
-    print(f'[fejs-komcie] submitted {idx}: {ok}')
+    assert_page_identity(f'decision-{idx}')
+    ok = submit_comment(dec['comment'])
+    shot(f'decision-after-{idx}')
+    print(f'[fejs-komcie] {idx}: posted={ok} where={pid} url={dec["postUrl"]}')
     if ok:
-        # Persist the post id + signature so future runs skip this post.
-        global seen
-        for key in (pos[5] if len(pos) > 5 else None, pos[6] if len(pos) > 6 else None):
-            if key:
-                seen.add(key)
+        seen.add(pid)
         save_seen(seen)
     return ok
 
-posted=0
-completed = [False] * len(items)
-# Verify acting identity ONCE up front; abort the whole run if it is wrong.
-preflight_identity()
-for attempt in range(1, max_attempts + 1):
-    print(f'[fejs-komcie] pass {attempt}/{max_attempts}; posted={posted}; target={min_success}')
-    for i,item in enumerate(items,1):
-        if completed[i-1]:
-            continue
+
+MODE = __MODE__
+DECISIONS = __DECISIONS__
+
+if MODE == 'collect':
+    # No identity gate needed — we never post in this phase.
+    out = []
+    for i, item in enumerate(items, 1):
         try:
-            if comment_once(item,i):
-                completed[i-1] = True
+            cands = collect_candidates(item, i)
+        except Exception as e:
+            print(f'[fejs-komcie] collect error on {i}: {e}')
+            cands = []
+        out.append({'slug': item.get('slug'), 'url': item['url'],
+                    'comment': item['comment'], 'candidates': cands})
+    print('FEJS_COLLECT_JSON ' + json.dumps(out, ensure_ascii=False))
+elif MODE == 'post':
+    posted = 0
+    preflight_identity()
+    for i, dec in enumerate(DECISIONS, 1):
+        try:
+            if post_to_decision(dec, i):
                 posted += 1
-                shot(f'verified-success-{i}')
         except WrongIdentity as e:
-            # Never publish from the wrong account — stop everything immediately.
             print(f'[fejs-komcie] ABORT: {e}')
             raise
         except Exception as e:
             print(f'[fejs-komcie] error on {i}: {e}')
-            shot(f'error-{i}')
+            shot(f'error-decision-{i}')
+        time.sleep(delay_ms/1000)
+    print(f'[fejs-komcie] done verified={posted} planned={len(DECISIONS)}')
+else:
+    posted=0
+    completed = [False] * len(items)
+    # Verify acting identity ONCE up front; abort the whole run if it is wrong.
+    preflight_identity()
+    for attempt in range(1, max_attempts + 1):
+        print(f'[fejs-komcie] pass {attempt}/{max_attempts}; posted={posted}; target={min_success}')
+        for i,item in enumerate(items,1):
+            if completed[i-1]:
+                continue
+            try:
+                if comment_once(item,i):
+                    completed[i-1] = True
+                    posted += 1
+                    shot(f'verified-success-{i}')
+            except WrongIdentity as e:
+                # Never publish from the wrong account — stop everything immediately.
+                print(f'[fejs-komcie] ABORT: {e}')
+                raise
+            except Exception as e:
+                print(f'[fejs-komcie] error on {i}: {e}')
+                shot(f'error-{i}')
+            if min_success and posted >= min_success:
+                break
+            time.sleep(delay_ms/1000)
         if min_success and posted >= min_success:
             break
-        time.sleep(delay_ms/1000)
-    if min_success and posted >= min_success:
-        break
-    if not min_success:
-        break  # single pass when no success quota was requested
-print(f'[fejs-komcie] done verified={posted} planned={len(items)} min_success={min_success}')
-if posted < min_success:
-    raise RuntimeError(f'Only verified {posted}/{min_success} required Facebook comments')
+        if not min_success:
+            break  # single pass when no success quota was requested
+    print(f'[fejs-komcie] done verified={posted} planned={len(items)} min_success={min_success}')
+    if posted < min_success:
+        raise RuntimeError(f'Only verified {posted}/{min_success} required Facebook comments')
 `;
+
+const mode = process.argv.includes('--collect') ? 'collect'
+  : (process.argv.find(a => a.startsWith('--decisions=')) ? 'post' : 'auto');
+let decisions = [];
+if (mode === 'post') {
+  const decPath = process.argv.find(a => a.startsWith('--decisions=')).split('=')[1];
+  decisions = JSON.parse(readFileSync(decPath, 'utf8'));
+}
 
 runHarness(py
   .replace('__ITEMS__', JSON.stringify(selected))
@@ -718,4 +960,6 @@ runHarness(py
   .replace('__MAX_ATTEMPTS__', String(maxAttempts))
   .replace('__MIN_COMMENTS__', String(minComments))
   .replace('__MAX_AGE_HOURS__', String(maxAgeHours))
-  .replace('__MIN_REACTIONS__', String(minReactions)));
+  .replace('__MIN_REACTIONS__', String(minReactions))
+  .replace('__MODE__', JSON.stringify(mode))
+  .replace('__DECISIONS__', JSON.stringify(decisions)));
