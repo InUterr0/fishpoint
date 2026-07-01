@@ -19,6 +19,30 @@ AUTHOR = {
     "url": BASE + "/",
 }
 
+# Encje gatunków ryb -> Wikipedia + Wikidata (weryfikowane przez pl.wikipedia API).
+# Pozwala Google i modelom AI jednoznacznie powiązać podstrony atlasu ze znanymi
+# encjami (entity grounding = większa szansa na cytowanie w odpowiedziach AI).
+FISH_ENTITIES = {
+    "szczupak": {"name": "Szczupak pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Szczupak_pospolity", "https://www.wikidata.org/wiki/Q165278"]},
+    "sandacz": {"name": "Sandacz pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Sandacz_pospolity", "https://www.wikidata.org/wiki/Q146641"]},
+    "okon": {"name": "Okoń pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Okoń_pospolity", "https://www.wikidata.org/wiki/Q166812"]},
+    "sum": {"name": "Sum pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Sum_pospolity", "https://www.wikidata.org/wiki/Q159323"]},
+    "bolen": {"name": "Boleń", "sameAs": ["https://pl.wikipedia.org/wiki/Boleń", "https://www.wikidata.org/wiki/Q16277070"]},
+    "wegorz": {"name": "Węgorz europejski", "sameAs": ["https://pl.wikipedia.org/wiki/Węgorz_europejski", "https://www.wikidata.org/wiki/Q26387"]},
+    "karp": {"name": "Karp", "sameAs": ["https://pl.wikipedia.org/wiki/Karp", "https://www.wikidata.org/wiki/Q81110"]},
+    "lin": {"name": "Lin (ryba)", "sameAs": ["https://pl.wikipedia.org/wiki/Lin_(ryba)", "https://www.wikidata.org/wiki/Q76280"]},
+    "leszcz": {"name": "Leszcz", "sameAs": ["https://pl.wikipedia.org/wiki/Leszcz", "https://www.wikidata.org/wiki/Q144534"]},
+    "jaz": {"name": "Jaź", "sameAs": ["https://pl.wikipedia.org/wiki/Jaź", "https://www.wikidata.org/wiki/Q144497"]},
+    "pstrag": {"name": "Pstrąg potokowy", "sameAs": ["https://pl.wikipedia.org/wiki/Pstrąg_potokowy", "https://www.wikidata.org/wiki/Q1671485"]},
+    "mietus": {"name": "Miętus pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Miętus_pospolity", "https://www.wikidata.org/wiki/Q144700"]},
+    "lipien": {"name": "Lipień pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Lipień_pospolity", "https://www.wikidata.org/wiki/Q627960"]},
+    "ploc": {"name": "Płoć", "sameAs": ["https://pl.wikipedia.org/wiki/Płoć", "https://www.wikidata.org/wiki/Q182976"]},
+    "klen": {"name": "Kleń", "sameAs": ["https://pl.wikipedia.org/wiki/Kleń", "https://www.wikidata.org/wiki/Q26821893"]},
+    "amur": {"name": "Amur biały", "sameAs": ["https://pl.wikipedia.org/wiki/Amur_biały", "https://www.wikidata.org/wiki/Q76098"]},
+    "karas": {"name": "Karaś pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Karaś_pospolity", "https://www.wikidata.org/wiki/Q194031"]},
+    "troc-losos": {"name": "Troć wędrowna", "sameAs": ["https://pl.wikipedia.org/wiki/Troć_wędrowna", "https://www.wikidata.org/wiki/Q1095355"]},
+}
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BEGIN = "  <!-- seo:meta begin (auto) -->"
 END = "  <!-- seo:meta end (auto) -->"
@@ -314,7 +338,7 @@ def build(path):
                 block = "\n".join(head) + "\n"
                 new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
                 return new_src, url, mtime, is_home or is_section_index, title_txt, desc_txt
-            head.append(jsonld({
+            posting = {
                 "@context": "https://schema.org",
                 "@type": "BlogPosting",
                 "headline": title_txt.split(" — ")[0].split(" - ")[0],
@@ -330,7 +354,17 @@ def build(path):
                     "@type": "Organization", "name": SITE_NAME,
                     "logo": {"@type": "ImageObject", "url": BASE + DEFAULT_IMG},
                 },
-            }))
+            }
+            # Powiązanie z encją gatunku ryby (Wikipedia + Wikidata) na stronach atlasu
+            slug = os.path.splitext(parts[-1])[0]
+            fish = FISH_ENTITIES.get(slug) if section in ("ryby", "rodzaje-ryb") or "rodzaje-ryb" in rel else None
+            if fish:
+                posting["about"] = {
+                    "@type": "Thing",
+                    "name": fish["name"],
+                    "sameAs": fish["sameAs"],
+                }
+            head.append(jsonld(posting))
 
     head.append(END)
     block = "\n".join(head) + "\n"
