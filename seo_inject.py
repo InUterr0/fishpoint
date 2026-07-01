@@ -6,7 +6,7 @@ Idempotentny: blok SEO jest oznaczony znacznikami i przy ponownym uruchomieniu
 zostaje podmieniony, a nie zdublowany. Wystarczy zmienić BASE po kupnie domeny
 i uruchomić ponownie: python3 seo_inject.py
 """
-import os, re, html, json, datetime
+import os, re, html, json, datetime, subprocess, functools
 
 BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
 SITE_NAME = "FishPoint"
@@ -161,6 +161,30 @@ def resolve_img(src, page_dir):
     return "/" + rel
 
 
+def _git(args):
+    try:
+        out = subprocess.run(["git", "-C", ROOT] + args,
+                             capture_output=True, text=True, timeout=15)
+        return out.stdout.strip()
+    except Exception:
+        return ""
+
+
+@functools.lru_cache(maxsize=None)
+def git_dates(path):
+    """(datePublished, dateModified) z historii git: data dodania pliku i
+    data ostatniej zmiany. Odporne na to, że przebudowa zmienia mtime pliku.
+    Fallback do mtime, gdy plik nie jest jeszcze w gicie."""
+    rel = os.path.relpath(path, ROOT)
+    added = _git(["log", "--diff-filter=A", "--follow", "--format=%as", "--", rel])
+    modified = _git(["log", "-1", "--format=%as", "--", rel])
+    added = added.splitlines()[-1] if added else ""
+    if not added or not modified:
+        mt = datetime.datetime.fromtimestamp(os.path.getmtime(path)).strftime("%Y-%m-%d")
+        return mt, mt
+    return added, modified
+
+
 def jsonld(obj):
     return '  <script type="application/ld+json">\n' + json.dumps(
         obj, ensure_ascii=False, indent=2
@@ -196,7 +220,7 @@ def build(path):
     is_home = rel == "index.html"
     is_section_index = len(parts) == 2 and parts[1] == "index.html"
 
-    mtime = datetime.datetime.fromtimestamp(os.path.getmtime(path)).strftime("%Y-%m-%d")
+    pubdate, mtime = git_dates(path)
 
     # --- OpenGraph + Twitter ---
     og_type = "website" if (is_home or is_section_index) else "article"
@@ -223,7 +247,7 @@ def build(path):
         f'  <meta name="twitter:image" content="{img_url}" />',
     ]
     if og_type == "article":
-        head.append(f'  <meta property="article:published_time" content="{mtime}" />')
+        head.append(f'  <meta property="article:published_time" content="{pubdate}" />')
         head.append(f'  <meta property="article:modified_time" content="{mtime}" />')
         head.append('  <meta property="article:publisher" content="' + BASE + '/" />')
 
@@ -352,7 +376,8 @@ def build(path):
                     "mainEntityOfPage": url,
                     "image": img_url,
                     "inLanguage": "pl-PL",
-                    "datePublished": mtime,
+                    "datePublished": pubdate,
+                    "dateModified": mtime,
                     "recipeCategory": "Danie główne",
                     "recipeCuisine": "Polska",
                     "keywords": "ryby, wędkarstwo, przepis rybny",
@@ -376,7 +401,7 @@ def build(path):
                 "mainEntityOfPage": url,
                 "image": img_url,
                 "inLanguage": "pl-PL",
-                "datePublished": mtime,
+                "datePublished": pubdate,
                 "dateModified": mtime,
                 "author": AUTHOR,
                 "publisher": {
