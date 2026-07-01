@@ -1,5 +1,6 @@
 /* TEAM */
 Serwis: FishPoint — poradnik wędkarski
+Autor: Maciej Baniewicz
 Kontakt: kerlinbygg [at] gmail.com
 
 /* SITE */

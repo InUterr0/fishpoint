@@ -10,7 +10,14 @@ import os, re, html, json, datetime
 
 BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
 SITE_NAME = "FishPoint"
+AUTHOR_NAME = "Maciej Baniewicz"
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
+
+AUTHOR = {
+    "@type": "Person",
+    "name": AUTHOR_NAME,
+    "url": BASE + "/",
+}
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BEGIN = "  <!-- seo:meta begin (auto) -->"
@@ -142,6 +149,7 @@ def build(path):
         BEGIN,
         f'  <link rel="canonical" href="{url}" />',
         '  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />',
+        f'  <meta name="author" content="{AUTHOR_NAME}" />',
         '  <meta name="theme-color" content="#0e5e54" />',
         '  <link rel="manifest" href="/site.webmanifest" />',
         f'  <meta property="og:site_name" content="{SITE_NAME}" />',
@@ -170,6 +178,8 @@ def build(path):
             "url": BASE + "/",
             "logo": img_url,
             "email": "kerlinbygg@gmail.com",
+            "founder": AUTHOR,
+            "author": AUTHOR,
             "sameAs": [
                 "https://www.facebook.com/profile.php?id=61591546555168",
             ],
@@ -250,7 +260,7 @@ def build(path):
                     "recipeCategory": "Danie główne",
                     "recipeCuisine": "Polska",
                     "keywords": "ryby, wędkarstwo, przepis rybny",
-                    "author": {"@type": "Organization", "name": SITE_NAME},
+                    "author": AUTHOR,
                     "recipeIngredient": ingredients,
                     "recipeInstructions": [
                         {"@type": "HowToStep", "position": i + 1, "text": s}
@@ -272,7 +282,7 @@ def build(path):
                 "inLanguage": "pl-PL",
                 "datePublished": mtime,
                 "dateModified": mtime,
-                "author": {"@type": "Organization", "name": SITE_NAME},
+                "author": AUTHOR,
                 "publisher": {
                     "@type": "Organization", "name": SITE_NAME,
                     "logo": {"@type": "ImageObject", "url": BASE + DEFAULT_IMG},
