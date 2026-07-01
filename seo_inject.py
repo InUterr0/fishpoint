@@ -170,6 +170,9 @@ def build(path):
             "url": BASE + "/",
             "logo": img_url,
             "email": "kerlinbygg@gmail.com",
+            "sameAs": [
+                "https://www.facebook.com/profile.php?id=61591546555168",
+            ],
             "description": desc_txt,
             "knowsAbout": [
                 "wędkarstwo", "sprzęt wędkarski", "atlas ryb słodkowodnych",
