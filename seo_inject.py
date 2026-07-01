@@ -141,6 +141,7 @@ def build(path):
     head = [
         BEGIN,
         f'  <link rel="canonical" href="{url}" />',
+        '  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />',
         '  <meta name="theme-color" content="#0e5e54" />',
         '  <link rel="manifest" href="/site.webmanifest" />',
         f'  <meta property="og:site_name" content="{SITE_NAME}" />',
@@ -155,6 +156,10 @@ def build(path):
         f'  <meta name="twitter:description" content="{desc_raw}" />',
         f'  <meta name="twitter:image" content="{img_url}" />',
     ]
+    if og_type == "article":
+        head.append(f'  <meta property="article:published_time" content="{mtime}" />')
+        head.append(f'  <meta property="article:modified_time" content="{mtime}" />')
+        head.append('  <meta property="article:publisher" content="' + BASE + '/" />')
 
     # --- JSON-LD ---
     if is_home:
@@ -164,7 +169,12 @@ def build(path):
             "name": SITE_NAME,
             "url": BASE + "/",
             "logo": img_url,
+            "email": "kerlinbygg@gmail.com",
             "description": desc_txt,
+            "knowsAbout": [
+                "wędkarstwo", "sprzęt wędkarski", "atlas ryb słodkowodnych",
+                "techniki wędkarskie", "przynęty", "łowiska", "kuchnia rybna",
+            ],
         }))
         head.append(jsonld({
             "@context": "https://schema.org",
@@ -247,7 +257,7 @@ def build(path):
                 head.append(END)
                 block = "\n".join(head) + "\n"
                 new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
-                return new_src, url, mtime, is_home or is_section_index
+                return new_src, url, mtime, is_home or is_section_index, title_txt, desc_txt
             head.append(jsonld({
                 "@context": "https://schema.org",
                 "@type": "BlogPosting",
@@ -271,7 +281,7 @@ def build(path):
 
     # wstaw przed </head>
     new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
-    return new_src, url, mtime, is_home or is_section_index
+    return new_src, url, mtime, is_home or is_section_index, title_txt, desc_txt
 
 
 def main():
@@ -291,16 +301,17 @@ def main():
         if not res:
             print("POMINIĘTO (brak title/desc):", p)
             continue
-        new_src, url, mtime, is_index = res
+        new_src, url, mtime, is_index, title_txt, desc_txt = res
         with open(p, "w", encoding="utf-8") as f:
             f.write(new_src)
-        urls.append((url, mtime, is_index, rel_url(p)))
+        section = rel_url(p).strip("/").split("/")[0] if rel_url(p) != "/" else ""
+        urls.append((url, mtime, is_index, rel_url(p), title_txt, desc_txt, section))
         changed += 1
 
     # sitemap.xml
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemap s.org/schemas/sitemap/0.9">'.replace("sitemap s", "sitemaps")]
-    for url, mtime, is_index, rp in sorted(urls):
+    for url, mtime, is_index, rp, _title, _desc, _sec in sorted(urls):
         prio = "1.0" if rp == "/" else ("0.8" if is_index else "0.6")
         freq = "weekly" if is_index or rp == "/" else "monthly"
         sm.append("  <url>")
@@ -314,17 +325,55 @@ def main():
         f.write("\n".join(sm) + "\n")
 
     # robots.txt
-    robots = (
-        "User-agent: *\n"
-        "Allow: /\n\n"
-        f"Sitemap: {BASE}/sitemap.xml\n"
-    )
+    # Jawnie wpuszczamy roboty AI (GEO) — chcemy być cytowani w odpowiedziach
+    # ChatGPT, Claude, Perplexity, Gemini itd.
+    ai_bots = [
+        "GPTBot", "OAI-SearchBot", "ChatGPT-User",
+        "ClaudeBot", "Claude-Web", "anthropic-ai",
+        "PerplexityBot", "Perplexity-User",
+        "Google-Extended", "Applebot-Extended",
+        "CCBot", "Bytespider", "Amazonbot", "cohere-ai",
+    ]
+    robots = "User-agent: *\nAllow: /\n\n"
+    for bot in ai_bots:
+        robots += f"User-agent: {bot}\nAllow: /\n\n"
+    robots += f"Sitemap: {BASE}/sitemap.xml\n"
     with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(robots)
+
+    # llms.txt — mapa treści dla modeli AI (GEO). Standard: https://llmstxt.org
+    ll = [
+        "# FishPoint",
+        "",
+        "> FishPoint to polski poradnik wędkarski: dobór sprzętu, atlas ryb "
+        "słodkowodnych, techniki połowu, opisy łowisk, poradniki dla początkujących "
+        "i przepisy kuchni rybnej. Treści są autorskie, po polsku (pl-PL).",
+        "",
+    ]
+    by_sec = {}
+    home = None
+    for url, mtime, is_index, rp, title, desc, sec in sorted(urls):
+        if rp == "/":
+            home = (url, title, desc)
+            continue
+        by_sec.setdefault(sec or "inne", []).append((url, title, desc, is_index))
+    if home:
+        ll.append(f"- [{home[1]}]({home[0]}): {home[2]}")
+        ll.append("")
+    for sec in sorted(by_sec):
+        ll.append(f"## {SECTIONS.get(sec, sec.capitalize())}")
+        ll.append("")
+        for url, title, desc, is_index in by_sec[sec]:
+            short = title.split(" — ")[0].split(" - ")[0]
+            ll.append(f"- [{short}]({url}): {desc}")
+        ll.append("")
+    with open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8") as f:
+        f.write("\n".join(ll).rstrip() + "\n")
 
     print(f"Zaktualizowano stron: {changed}")
     print(f"sitemap.xml: {len(urls)} URL-i")
     print("robots.txt: ok")
+    print(f"llms.txt: {sum(len(v) for v in by_sec.values())} wpisów")
 
 
 if __name__ == "__main__":
