@@ -9,9 +9,15 @@
   "theme_color": "#0e5e54",
   "icons": [
     {
-      "src": "/assets/img/tematy/wedki.jpg",
+      "src": "/assets/img/logo.png",
       "sizes": "512x512",
-      "type": "image/jpeg"
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/img/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }

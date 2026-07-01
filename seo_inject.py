@@ -12,6 +12,7 @@ BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i urucho
 SITE_NAME = "FishPoint"
 AUTHOR_NAME = "Maciej Baniewicz"
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
+LOGO = "/assets/img/logo.png"          # kwadratowe logo marki (dla schema.org)
 
 AUTHOR = {
     "@type": "Person",
@@ -205,6 +206,9 @@ def build(path):
         '  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />',
         f'  <meta name="author" content="{AUTHOR_NAME}" />',
         '  <meta name="theme-color" content="#0e5e54" />',
+        '  <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg" />',
+        '  <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/logo.png" />',
+        '  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />',
         '  <link rel="manifest" href="/site.webmanifest" />',
         f'  <meta property="og:site_name" content="{SITE_NAME}" />',
         '  <meta property="og:locale" content="pl_PL" />',
@@ -230,7 +234,8 @@ def build(path):
             "@type": "Organization",
             "name": SITE_NAME,
             "url": BASE + "/",
-            "logo": img_url,
+            "logo": {"@type": "ImageObject", "url": BASE + LOGO, "width": 512, "height": 512},
+            "image": img_url,
             "email": "kerlinbygg@gmail.com",
             "founder": AUTHOR,
             "author": AUTHOR,
@@ -376,7 +381,7 @@ def build(path):
                 "author": AUTHOR,
                 "publisher": {
                     "@type": "Organization", "name": SITE_NAME,
-                    "logo": {"@type": "ImageObject", "url": BASE + DEFAULT_IMG},
+                    "logo": {"@type": "ImageObject", "url": BASE + LOGO, "width": 512, "height": 512},
                 },
             }
             # Powiązanie z encją gatunku ryby (Wikipedia + Wikidata) na stronach atlasu
