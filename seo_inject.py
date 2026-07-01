@@ -87,6 +87,35 @@ def extract_recipe(src):
     return None
 
 
+def extract_listitems(src, url):
+    """Dla strony-indeksu sekcji zwraca [(nazwa, absolutny_url)] z kart
+    linkujących do podstron tej sekcji. Nazwa = tekst <h3> w karcie."""
+    base_dir = url.rsplit("/", 1)[0] + "/"
+    items, seen = [], set()
+    for m in re.finditer(r'<a[^>]+href="([^"]+\.html)"[^>]*>(.*?)</a>', src, re.S):
+        href, inner = m.group(1), m.group(2)
+        if href.startswith(("http", "..", "/")) or "index.html" in href:
+            continue
+        # 1) nagłówek wewnątrz karty-linku (kafelki kategorii)
+        hm = re.search(r"<h[234][^>]*>(.*?)</h[234]>", inner, re.S)
+        name = _clean(hm.group(1)) if hm else ""
+        # 2) fallback: najbliższy nagłówek PRZED linkiem (karty blog/artykuł,
+        #    gdzie link to samo "Czytaj więcej →")
+        if not name:
+            before = src[:m.start()]
+            hs = re.findall(r"<h[234][^>]*>(.*?)</h[234]>", before, re.S)
+            if hs:
+                name = _clean(hs[-1])
+        if not name:
+            continue
+        full = base_dir + href
+        if full in seen:
+            continue
+        seen.add(full)
+        items.append((name, full))
+    return items
+
+
 def rel_url(path):
     """Ścieżka pliku -> URL względny od korenia serwisu (zachowuje .html)."""
     rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
@@ -229,6 +258,20 @@ def build(path):
                 "inLanguage": "pl-PL",
                 "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": BASE + "/"},
             }))
+            li = extract_listitems(src, url)
+            if li:
+                head.append(jsonld({
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": title_txt,
+                    "itemListOrder": "https://schema.org/ItemListOrderAscending",
+                    "numberOfItems": len(li),
+                    "itemListElement": [
+                        {"@type": "ListItem", "position": i + 1,
+                         "name": name, "url": u}
+                        for i, (name, u) in enumerate(li)
+                    ],
+                }))
         else:
             faq = extract_faq(src)
             if faq:
