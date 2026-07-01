@@ -25,6 +25,10 @@
 - [Wędzenie ryb](https://fish-point.pl/kuchnia/wedzenie-ryb.html): Poradnik wędzenia ryb FishPoint: dlaczego pstrąg, makrela i węgorz wędzą się najlepiej, proporcje solanki i czasy solenia, dobór drewna, etapy wędzenia na gorąco z czasami dla każdego gatunku, wędzenie na zimno, budowa prostej wędzarni domowej i przechowywanie ryb wędzonych.
 - [Zupa rybna](https://fish-point.pl/kuchnia/zupa-rybna.html): Zupa rybna od podstaw: esencjonalny wywar z głów i kręgosłupów, klarowna uha po polsku, ognista węgierska halászlé z karpia oraz zabielana zupa rybna ze śmietaną i koperkiem. Przepisy krok po kroku z czasami i zasadami bezpieczeństwa żywności.
 
+## O-autorze.html
+
+- [O autorze](https://fish-point.pl/o-autorze.html): Maciej Baniewicz — wędkarz i autor serwisu FishPoint. Poznaj osobę, która stoi za poradnikami, atlasem ryb i opisami sprzętu na fish-point.pl.
+
 ## Pierwsze kroki
 
 - [Łowiska](https://fish-point.pl/pierwsze-kroki/lowiska/): Łowisko wpływa na metodę bardziej niż reklama sprzętu. Inaczej łowi się na jeziorze, inaczej w rzece, stawie i kanale.

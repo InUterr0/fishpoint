@@ -16,7 +16,8 @@ DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
 AUTHOR = {
     "@type": "Person",
     "name": AUTHOR_NAME,
-    "url": BASE + "/",
+    "url": BASE + "/o-autorze.html",
+    "sameAs": ["https://www.facebook.com/profile.php?id=61591546555168"],
 }
 
 # Encje gatunków ryb -> Wikipedia + Wikidata (weryfikowane przez pl.wikipedia API).
@@ -272,7 +273,30 @@ def build(path):
             "itemListElement": crumbs,
         }))
 
-        if is_section_index:
+        if rel == "o-autorze.html":
+            head.append(jsonld({
+                "@context": "https://schema.org",
+                "@type": "ProfilePage",
+                "name": title_txt,
+                "description": desc_txt,
+                "url": url,
+                "inLanguage": "pl-PL",
+                "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": BASE + "/"},
+                "mainEntity": {
+                    "@type": "Person",
+                    "name": AUTHOR_NAME,
+                    "url": url,
+                    "sameAs": ["https://www.facebook.com/profile.php?id=61591546555168"],
+                    "email": "kerlinbygg@gmail.com",
+                    "jobTitle": "Autor i twórca serwisu FishPoint",
+                    "knowsAbout": [
+                        "wędkarstwo", "sprzęt wędkarski", "atlas ryb słodkowodnych",
+                        "techniki wędkarskie", "przynęty", "łowiska", "kuchnia rybna",
+                    ],
+                    "worksFor": {"@type": "Organization", "name": SITE_NAME, "url": BASE + "/"},
+                },
+            }))
+        elif is_section_index:
             head.append(jsonld({
                 "@context": "https://schema.org",
                 "@type": "CollectionPage",
