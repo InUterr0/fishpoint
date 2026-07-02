@@ -422,6 +422,25 @@ def build(path):
                 block = "\n".join(head) + "\n"
                 new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
                 return new_src, url, mtime, is_home or is_section_index, title_txt, desc_txt, page_images
+            slug = os.path.splitext(parts[-1])[0]
+            fish = FISH_ENTITIES.get(slug) if section in ("ryby", "rodzaje-ryb") or "rodzaje-ryb" in rel else None
+            # ImageObject reprezentatywny: podpis z alt pierwszego obrazu, autor
+            # i atrybucja. Na stronach atlasu obraz jawnie "przedstawia" gatunek
+            # (about -> encja Wikipedia/Wikidata) — mocny sygnał dla Grafiki
+            # Google i modeli AI (obraz powiązany ze znaną encją).
+            first_alt = page_images[0][1] if page_images else ""
+            img_obj = {
+                "@type": "ImageObject",
+                "url": img_url,
+                "contentUrl": img_url,
+                "creditText": SITE_NAME,
+                "creator": AUTHOR,
+                "copyrightNotice": f"© {SITE_NAME}",
+            }
+            if first_alt:
+                img_obj["caption"] = first_alt
+            if fish:
+                img_obj["about"] = {"@type": "Thing", "name": fish["name"], "sameAs": fish["sameAs"]}
             posting = {
                 "@context": "https://schema.org",
                 "@type": "BlogPosting",
@@ -429,7 +448,7 @@ def build(path):
                 "description": desc_txt,
                 "url": url,
                 "mainEntityOfPage": url,
-                "image": img_url,
+                "image": img_obj,
                 "inLanguage": "pl-PL",
                 "datePublished": pubdate,
                 "dateModified": mtime,
@@ -440,8 +459,6 @@ def build(path):
                 },
             }
             # Powiązanie z encją gatunku ryby (Wikipedia + Wikidata) na stronach atlasu
-            slug = os.path.splitext(parts[-1])[0]
-            fish = FISH_ENTITIES.get(slug) if section in ("ryby", "rodzaje-ryb") or "rodzaje-ryb" in rel else None
             if fish:
                 posting["about"] = {
                     "@type": "Thing",
