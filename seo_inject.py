@@ -65,6 +65,21 @@ img_re = re.compile(r'<img[^>]+src="([^"]+)"', re.S)
 block_re = re.compile(re.escape(BEGIN) + r".*?" + re.escape(END) + r"\n", re.S)
 tag_re = re.compile(r"<[^>]+>")
 
+# Idempotentne wstrzyknięcia w BODY (usuwane i odtwarzane przy każdym uruchomieniu)
+BYLINE_BEGIN, BYLINE_END = "<!--byline:auto-->", "<!--/byline:auto-->"
+byline_re = re.compile(re.escape(BYLINE_BEGIN) + r".*?" + re.escape(BYLINE_END), re.S)
+MONTHS_PL = ["", "stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
+             "lipca", "sierpnia", "września", "października", "listopada", "grudnia"]
+
+
+def fmt_date_pl(iso):
+    """'2026-06-11' -> '11 czerwca 2026'."""
+    try:
+        y, m, d = iso.split("-")
+        return f"{int(d)} {MONTHS_PL[int(m)]} {y}"
+    except Exception:
+        return iso
+
 
 def _clean(s):
     return html.unescape(tag_re.sub("", s)).strip()
@@ -222,8 +237,9 @@ def jsonld(obj):
 def build(path):
     with open(path, encoding="utf-8") as f:
         src = f.read()
-    # usuń poprzedni blok, by działać idempotentnie
+    # usuń poprzednie wstrzyknięcia, by działać idempotentnie
     src = block_re.sub("", src)
+    src = byline_re.sub("", src)
 
     tm = title_re.search(src)
     dm = desc_re.search(src)
@@ -253,6 +269,18 @@ def build(path):
 
     # --- OpenGraph + Twitter ---
     og_type = "website" if (is_home or is_section_index) else "article"
+
+    # --- Widoczny podpis autora + daty (E-E-A-T, świeżość) na artykułach ---
+    # Wstrzykiwany po pierwszym </h1>; pomijamy strony autora, słownik i przepisy.
+    if og_type == "article" and rel not in ("o-autorze.html",):
+        byline = (
+            f'{BYLINE_BEGIN}<p class="article-meta">'
+            f'Autor: <a href="{BASE}/o-autorze.html" rel="author">{AUTHOR_NAME}</a>'
+            f' · <time datetime="{pubdate}">Opublikowano {fmt_date_pl(pubdate)}</time>'
+            f' · <time datetime="{mtime}">aktualizacja {fmt_date_pl(mtime)}</time>'
+            f'</p>{BYLINE_END}'
+        )
+        src, n = re.subn(r"(</h1>)", r"\1" + byline, src, count=1)
     head = [
         BEGIN,
         f'  <link rel="canonical" href="{url}" />',
@@ -276,6 +304,8 @@ def build(path):
         f'  <meta name="twitter:image" content="{img_url}" />',
     ]
     if og_type == "article":
+        if im:
+            head.append(f'  <link rel="preload" as="image" href="{img_path}" fetchpriority="high" />')
         head.append(f'  <meta property="article:published_time" content="{pubdate}" />')
         head.append(f'  <meta property="article:modified_time" content="{mtime}" />')
         head.append('  <meta property="article:publisher" content="' + BASE + '/" />')

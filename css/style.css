@@ -530,3 +530,17 @@ html.dark .author-photo figcaption { color: rgba(255,255,255,.6); }
 @media (max-width: 640px) {
   .author-photo { float: none; width: 100%; max-width: 340px; margin: 0 auto 1.5rem; }
 }
+
+/* Podpis autora + daty pod tytułem artykułu */
+.article-meta {
+  margin: .5rem 0 0;
+  font-size: .9rem;
+  color: rgba(255,255,255,.8);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .6rem;
+  align-items: center;
+}
+.subpage-hero .article-meta { color: rgba(255,255,255,.82); }
+.article-meta a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.article-meta time { white-space: nowrap; }
