@@ -505,3 +505,28 @@ html.dark .icon.icon-glass {
 }
 .video-embed figcaption a { color: inherit; text-decoration: underline; }
 html.dark .video-embed figcaption { color: rgba(255,255,255,.65); }
+
+/* Zdjęcie autora na stronie /o-autorze.html */
+.author-photo {
+  float: right;
+  width: 260px;
+  max-width: 42%;
+  margin: 0 0 1.25rem 1.75rem;
+}
+.author-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+.author-photo figcaption {
+  margin-top: .5rem;
+  font-size: .85rem;
+  color: rgba(0,0,0,.6);
+  text-align: center;
+}
+html.dark .author-photo figcaption { color: rgba(255,255,255,.6); }
+@media (max-width: 640px) {
+  .author-photo { float: none; width: 100%; max-width: 340px; margin: 0 auto 1.5rem; }
+}

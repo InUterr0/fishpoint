@@ -315,6 +315,7 @@ def build(path):
                     "@type": "Person",
                     "name": AUTHOR_NAME,
                     "url": url,
+                    "image": BASE + "/assets/img/maciej-baniewicz-kwadrat.jpg",
                     "sameAs": ["https://www.facebook.com/profile.php?id=61591546555168"],
                     "email": "kerlinbygg@gmail.com",
                     "jobTitle": "Autor i twórca serwisu FishPoint",
