@@ -626,3 +626,22 @@ html.dark .author-photo figcaption { color: rgba(255,255,255,.6); }
 .subpage-hero .article-meta { color: rgba(255,255,255,.82); }
 .article-meta a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .article-meta time { white-space: nowrap; }
+
+/* Spis treści w artykułach */
+.toc {
+  margin: 0 0 1.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(14,94,84,.06);
+  border: 1px solid rgba(14,94,84,.15);
+  border-radius: 12px;
+}
+.toc-title { margin: 0 0 .5rem; font-weight: 700; font-size: .95rem; color: #0e5e54; }
+.toc ol { margin: 0; padding-left: 1.25rem; display: grid; gap: .3rem; }
+.toc a { color: #14524a; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+html.dark .toc { background: rgba(95,208,191,.08); border-color: rgba(95,208,191,.2); }
+html.dark .toc-title { color: #5fd0bf; }
+html.dark .toc a { color: #bfe9e1; }
+/* płynne przewijanie do kotwic + offset pod sticky nagłówek */
+html { scroll-behavior: smooth; }
+.article-card h2[id] { scroll-margin-top: 90px; }

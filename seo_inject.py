@@ -81,6 +81,53 @@ def fmt_date_pl(iso):
         return iso
 
 
+TOC_BEGIN, TOC_END = "<!--toc:auto-->", "<!--/toc:auto-->"
+toc_re = re.compile(re.escape(TOC_BEGIN) + r".*?" + re.escape(TOC_END), re.S)
+_PL = str.maketrans("ąćęłńóśźżĄĆĘŁŃÓŚŹŻ", "acelnoszzACELNOSZZ")
+
+
+def slugify(text):
+    s = _clean(text).translate(_PL).lower()
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return s or "sekcja"
+
+
+def add_toc_and_anchors(src):
+    """Na stronach z <article class="article-card"> nadaje nagłówkom h2 kotwice
+    (id ze slug-a) i wstawia spis treści na początku artykułu. Idempotentne.
+    Zwraca (nowy_src, liczba_pozycji_toc)."""
+    m = re.search(r'(<article class="article-card">)(.*?)(</article>)', src, re.S)
+    if not m:
+        return src, 0
+    inner = m.group(2)
+    seen, toc = {}, []
+
+    def repl(hm):
+        attrs, text = hm.group(1), hm.group(2)
+        if re.search(r'\bid=', attrs):
+            hid = re.search(r'id="([^"]+)"', attrs)
+            hid = hid.group(1) if hid else slugify(text)
+        else:
+            base = slugify(text)
+            hid = base
+            i = 2
+            while hid in seen:
+                hid = f"{base}-{i}"; i += 1
+            attrs = attrs + f' id="{hid}"'
+        seen[hid] = True
+        toc.append((hid, _clean(text)))
+        return f"<h2{attrs}>{text}</h2>"
+
+    new_inner = re.sub(r"<h2([^>]*)>(.*?)</h2>", repl, inner, flags=re.S)
+    if len(toc) < 3:
+        return src, 0
+    items = "".join(f'<li><a href="#{hid}">{html.escape(t)}</a></li>' for hid, t in toc)
+    toc_html = (f'{TOC_BEGIN}<nav class="toc" aria-label="Spis treści">'
+                f'<p class="toc-title">Spis treści</p><ol>{items}</ol></nav>{TOC_END}')
+    new_inner = toc_html + new_inner
+    return src[:m.start()] + m.group(1) + new_inner + m.group(3) + src[m.end():], len(toc)
+
+
 def _clean(s):
     return html.unescape(tag_re.sub("", s)).strip()
 
@@ -240,6 +287,7 @@ def build(path):
     # usuń poprzednie wstrzyknięcia, by działać idempotentnie
     src = block_re.sub("", src)
     src = byline_re.sub("", src)
+    src = toc_re.sub("", src)
 
     tm = title_re.search(src)
     dm = desc_re.search(src)
@@ -281,6 +329,7 @@ def build(path):
             f'</p>{BYLINE_END}'
         )
         src, n = re.subn(r"(</h1>)", r"\1" + byline, src, count=1)
+        src, _toc_n = add_toc_and_anchors(src)
     head = [
         BEGIN,
         f'  <link rel="canonical" href="{url}" />',
