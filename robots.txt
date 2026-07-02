@@ -1,46 +1,61 @@
 User-agent: *
 Allow: /
+Disallow: /obrazy/
 
 User-agent: GPTBot
 Allow: /
+Disallow: /obrazy/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /obrazy/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /obrazy/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /obrazy/
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /obrazy/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /obrazy/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /obrazy/
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /obrazy/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /obrazy/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /obrazy/
 
 User-agent: CCBot
 Allow: /
+Disallow: /obrazy/
 
 User-agent: Bytespider
 Allow: /
+Disallow: /obrazy/
 
 User-agent: Amazonbot
 Allow: /
+Disallow: /obrazy/
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /obrazy/
 
 Sitemap: https://fish-point.pl/sitemap.xml

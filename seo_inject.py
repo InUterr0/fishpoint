@@ -537,9 +537,11 @@ def main():
         "Google-Extended", "Applebot-Extended",
         "CCBot", "Bytespider", "Amazonbot", "cohere-ai",
     ]
-    robots = "User-agent: *\nAllow: /\n\n"
+    # /obrazy/ to wewnętrzne zrzuty robocze — nie deployujemy ich (patrz
+    # .dockerignore); Disallow to dodatkowe zabezpieczenie na wypadek indeksacji.
+    robots = "User-agent: *\nAllow: /\nDisallow: /obrazy/\n\n"
     for bot in ai_bots:
-        robots += f"User-agent: {bot}\nAllow: /\n\n"
+        robots += f"User-agent: {bot}\nAllow: /\nDisallow: /obrazy/\n\n"
     robots += f"Sitemap: {BASE}/sitemap.xml\n"
     with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(robots)
