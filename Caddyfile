@@ -7,6 +7,29 @@
 :{$PORT:80} {
 	root * /usr/share/caddy
 	encode gzip zstd
+
+	# Negocjacja nowoczesnych formatów obrazów — podmiana zachodzi TYLKO gdy
+	# przeglądarka deklaruje wsparcie (Accept), a wariant istnieje na dysku.
+	# Scrapery (FB/Twitter) i starsze klienty dostają oryginalny JPG/PNG.
+	# Kolejność: AVIF (najmniejszy) -> WebP -> oryginał.
+	@avif {
+		header Accept *image/avif*
+		path *.jpg *.jpeg *.png
+		file {
+			try_files {path}.avif
+		}
+	}
+	rewrite @avif {path}.avif
+
+	@webp {
+		header Accept *image/webp*
+		path *.jpg *.jpeg *.png
+		file {
+			try_files {path}.webp
+		}
+	}
+	rewrite @webp {path}.webp
+
 	file_server
 
 	# Ładne 404 zgodne ze stroną
@@ -19,4 +42,8 @@
 	# Cache dla zasobów statycznych
 	@assets path /assets/* /css/* /js/*
 	header @assets Cache-Control "public, max-age=2592000"
+
+	# Warianty obrazów zależą od nagłówka Accept — cache/CDN ma je rozróżniać
+	@imgvariants path /assets/*.jpg /assets/*.jpeg /assets/*.png
+	header @imgvariants Vary Accept
 }
