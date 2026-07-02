@@ -7,15 +7,15 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Szczupak</image:title>
+      <image:title>Szczupak pospolity (Esox lucius) — drapieżnik zasadzkowy polskich wód</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
-      <image:title>Karp</image:title>
+      <image:title>Karp (Cyprinus carpio) — król wód stojących</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/pstrag.jpg</image:loc>
-      <image:title>Pstrąg</image:title>
+      <image:title>Pstrąg potokowy (Salmo trutta fario) — ryba czystych, chłodnych rzek</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/kuchnia/przygotowanie.jpg</image:loc>
@@ -31,21 +31,27 @@
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/jak-dobrac-przynete-do-pory-roku.jpg</image:loc>
+      <image:title>Zestaw woblerów spinningowych w różnych kolorach</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/bledy-poczatkujacych.jpg</image:loc>
+      <image:title>Wędkarz łowiący w nurcie górskiej rzeki</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/zylka-czy-plecionka.jpg</image:loc>
+      <image:title>Wędka spinningowa z kołowrotkiem i nawiniętą linką</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/sezon-na-szczupaka.jpg</image:loc>
+      <image:title>Wędkarz w łodzi prezentujący dużego szczupaka złowionego na otwarcie sezonu</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/relacja-nocna-zasiadka.jpg</image:loc>
+      <image:title>Rzeka o zmierzchu z wędkarzami na kamienistym brzegu — nocna zasiadka</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/przeglad-nowosci-sezonu.jpg</image:loc>
+      <image:title>Nowoczesne woblery spinningowe — model crank i przegubowy</image:title>
     </image:image>
   </url>
   <url>
@@ -84,7 +90,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/bledy-poczatkujacych.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -94,7 +100,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/jak-dobrac-przynete-do-pory-roku.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -104,7 +110,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -114,7 +120,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/relacja-nocna-zasiadka.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -124,7 +130,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/sezon-na-szczupaka.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -134,7 +140,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/zawody-feederowe-poradnik.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -144,7 +150,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/zylka-czy-plecionka.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -176,7 +182,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/przygotowanie-ryby.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -192,7 +198,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/wedzenie-ryb.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -222,13 +228,13 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/jeziora.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -238,7 +244,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/kanaly.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -248,7 +254,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/rzeki.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -258,7 +264,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/stawy.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -268,71 +274,71 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/okresy-ochronne-wymiary.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/pozwolenia-karta-wedkarska.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/karp.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
-      <image:title>Karp</image:title>
+      <image:title>Karp (Cyprinus carpio) — król wód stojących</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/leszcz.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/leszcz.jpg</image:loc>
-      <image:title>Leszcz</image:title>
+      <image:title>Leszcz (Abramis brama) — wysokociała ryba stadna</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/okon.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
-      <image:title>Okoń</image:title>
+      <image:title>Okoń pospolity (Perca fluviatilis) — pręgowany drapieżnik stadny</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Szczupak</image:title>
+      <image:title>Szczupak pospolity (Esox lucius) — drapieżnik zasadzkowy polskich wód</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/akcesoria.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -342,7 +348,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/kolowrotki.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -352,7 +358,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/przynety.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -362,7 +368,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/wedki.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -372,13 +378,13 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/wprowadzenie.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/zylki-plecionki.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -394,7 +400,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/catch-and-release.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -404,19 +410,19 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/echosondy.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/etyka-i-przepisy.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -426,7 +432,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/lowienie-nocne.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -436,7 +442,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/lowienie-zima.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -446,7 +452,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/pogoda-a-brania.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -456,13 +462,13 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/wedkarstwo-z-lodzi.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/wezly-wedkarskie.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -472,7 +478,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/zanety-domowe.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -484,193 +490,193 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/amur.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/amur.jpg</image:loc>
-      <image:title>Amur — zdjęcie ryby</image:title>
+      <image:title>Amur biały (Ctenopharyngodon idella) — roślinożerna ryba pochodzenia azjatyckiego</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/bolen.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/bolen.jpg</image:loc>
-      <image:title>Boleń — zdjęcie ryby</image:title>
+      <image:title>Boleń (Leuciscus aspius) — jedyny drapieżny gatunek karpiowatych</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/jaz.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/jaz.jpg</image:loc>
-      <image:title>Jaź — zdjęcie ryby</image:title>
+      <image:title>Jaź (Leuciscus idus) — karpiowaty o czerwonawych płetwach</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/karas.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karas.jpg</image:loc>
-      <image:title>Karaś — zdjęcie ryby</image:title>
+      <image:title>Karaś pospolity (Carassius carassius) — wytrzymała ryba stawów i starorzeczy</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/karp.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
-      <image:title>Karp — zdjęcie ryby</image:title>
+      <image:title>Karp (Cyprinus carpio) — król wód stojących</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/klen.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/klen.jpg</image:loc>
-      <image:title>Kleń — zdjęcie ryby</image:title>
+      <image:title>Kleń (Squalius cephalus) — silny karpiowaty rzek i strumieni</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/leszcz.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/leszcz.jpg</image:loc>
-      <image:title>Leszcz — zdjęcie ryby</image:title>
+      <image:title>Leszcz (Abramis brama) — wysokociała ryba stadna</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/lin.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/lin.jpg</image:loc>
-      <image:title>Lin — zdjęcie ryby</image:title>
+      <image:title>Lin (Tinca tinca) — oliwkowa ryba zarośniętych jezior</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/lipien.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/lipien.jpg</image:loc>
-      <image:title>Lipień — zdjęcie ryby</image:title>
+      <image:title>Lipień (Thymallus thymallus) — ryba o okazałej płetwie grzbietowej</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/mietus.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/mietus.jpg</image:loc>
-      <image:title>Miętus — zdjęcie ryby</image:title>
+      <image:title>Miętus (Lota lota) — jedyny słodkowodny przedstawiciel dorszokształtnych</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/okon.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
-      <image:title>Okoń — zdjęcie ryby</image:title>
+      <image:title>Okoń pospolity (Perca fluviatilis) — pręgowany drapieżnik stadny</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/ploc.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/ploc.jpg</image:loc>
-      <image:title>Płoć — zdjęcie ryby</image:title>
+      <image:title>Płoć (Rutilus rutilus) — najpospolitsza ryba polskich wód</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/pstrag.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/pstrag.jpg</image:loc>
-      <image:title>Pstrąg — zdjęcie ryby</image:title>
+      <image:title>Pstrąg potokowy (Salmo trutta fario) — ryba czystych, chłodnych rzek</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sandacz.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sandacz.jpg</image:loc>
-      <image:title>Sandacz — zdjęcie ryby</image:title>
+      <image:title>Sandacz pospolity (Sander lucioperca) — nocny drapieżnik o szklistych oczach</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sum.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sum.jpg</image:loc>
-      <image:title>Sum — zdjęcie ryby</image:title>
+      <image:title>Sum pospolity (Silurus glanis) — największa ryba polskich wód</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/szczupak.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Szczupak — zdjęcie ryby</image:title>
+      <image:title>Szczupak pospolity (Esox lucius) — drapieżnik zasadzkowy polskich wód</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/troc-losos.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/troc-losos.jpg</image:loc>
-      <image:title>Troć i łosoś — zdjęcie ryby</image:title>
+      <image:title>Troć wędrowna (Salmo trutta) i łosoś (Salmo salar) — łososiowate ryby dwuśrodowiskowe</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/wegorz.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/wegorz.jpg</image:loc>
-      <image:title>Węgorz — zdjęcie ryby</image:title>
+      <image:title>Węgorz europejski (Anguilla anguilla) — wężowata ryba wędrowna</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/slownik.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/akcesoria.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -680,7 +686,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/kolowrotki.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -690,13 +696,13 @@
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/odziez.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/plecionki-zylki.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -706,7 +712,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/przynety.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -716,7 +722,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/wedki.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -732,7 +738,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/feeder.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -742,7 +748,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/karpiowanie.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -752,7 +758,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/morskie.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -762,7 +768,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/muchowe.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -772,7 +778,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/podlodowe.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -782,7 +788,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/spinning.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -792,7 +798,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/splawik.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -802,13 +808,13 @@
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/trolling.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/zgodnie-z-zasadami.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
