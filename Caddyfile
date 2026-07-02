@@ -43,7 +43,9 @@
 	@assets path /assets/* /css/* /js/*
 	header @assets Cache-Control "public, max-age=2592000"
 
-	# Warianty obrazów zależą od nagłówka Accept — cache/CDN ma je rozróżniać
-	@imgvariants path /assets/*.jpg /assets/*.jpeg /assets/*.png
-	header @imgvariants Vary Accept
+	# Warianty obrazów zależą od nagłówka Accept — cache/CDN ma je rozróżniać.
+	# Matcher łapie też ścieżki po przepisaniu na .avif/.webp; +Vary dokłada
+	# nagłówek obok istniejącego Vary: Accept-Encoding (z encode).
+	@imgvariants path /assets/*.jpg /assets/*.jpeg /assets/*.png /assets/*.avif /assets/*.webp
+	header @imgvariants +Vary Accept
 }
