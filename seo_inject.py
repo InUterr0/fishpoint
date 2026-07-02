@@ -142,6 +142,34 @@ def extract_listitems(src, url):
     return items
 
 
+img_tag_re = re.compile(r"<img\b[^>]*>", re.I)
+attr_src_re = re.compile(r'src="([^"]+)"')
+attr_alt_re = re.compile(r'alt="([^"]*)"')
+
+
+def collect_images(src, page_dir):
+    """Zwraca [(absolutny_url_obrazu, alt)] dla wszystkich <img> na stronie
+    wskazujących na zasoby serwisu. Dedup po URL, zachowuje kolejność.
+    Zasila image sitemap (indeksacja w Grafice Google) i GEO."""
+    out, seen = [], set()
+    for tag in img_tag_re.findall(src):
+        m = attr_src_re.search(tag)
+        if not m:
+            continue
+        s = m.group(1)
+        if s.startswith("data:"):
+            continue
+        img_path = resolve_img(s, page_dir)
+        u = img_path if img_path.startswith("http") else BASE + img_path
+        if u in seen:
+            continue
+        seen.add(u)
+        alt_m = attr_alt_re.search(tag)
+        alt = html.unescape(alt_m.group(1).strip()) if alt_m else ""
+        out.append((u, alt))
+    return out
+
+
 def rel_url(path):
     """Ścieżka pliku -> URL względny od korenia serwisu (zachowuje .html)."""
     rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
@@ -214,6 +242,7 @@ def build(path):
     im = img_re.search(src)
     img_path = resolve_img(im.group(1), page_dir) if im else DEFAULT_IMG
     img_url = BASE + img_path
+    page_images = collect_images(src, page_dir)
 
     parts = rel.split("/")
     section = parts[0] if len(parts) > 1 else None
@@ -392,7 +421,7 @@ def build(path):
                 head.append(END)
                 block = "\n".join(head) + "\n"
                 new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
-                return new_src, url, mtime, is_home or is_section_index, title_txt, desc_txt
+                return new_src, url, mtime, is_home or is_section_index, title_txt, desc_txt, page_images
             posting = {
                 "@context": "https://schema.org",
                 "@type": "BlogPosting",
@@ -426,7 +455,7 @@ def build(path):
 
     # wstaw przed </head>
     new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
-    return new_src, url, mtime, is_home or is_section_index, title_txt, desc_txt
+    return new_src, url, mtime, is_home or is_section_index, title_txt, desc_txt, page_images
 
 
 def main():
@@ -446,17 +475,22 @@ def main():
         if not res:
             print("POMINIĘTO (brak title/desc):", p)
             continue
-        new_src, url, mtime, is_index, title_txt, desc_txt = res
+        new_src, url, mtime, is_index, title_txt, desc_txt, page_images = res
         with open(p, "w", encoding="utf-8") as f:
             f.write(new_src)
         section = rel_url(p).strip("/").split("/")[0] if rel_url(p) != "/" else ""
-        urls.append((url, mtime, is_index, rel_url(p), title_txt, desc_txt, section))
+        urls.append((url, mtime, is_index, rel_url(p), title_txt, desc_txt, section, page_images))
         changed += 1
 
-    # sitemap.xml
+    # sitemap.xml (z rozszerzeniem Image — indeksacja w Grafice Google)
+    def xesc(s):
+        return (s.replace("&", "&amp;").replace("<", "&lt;")
+                 .replace(">", "&gt;").replace('"', "&quot;"))
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
-          '<urlset xmlns="http://www.sitemap s.org/schemas/sitemap/0.9">'.replace("sitemap s", "sitemaps")]
-    for url, mtime, is_index, rp, _title, _desc, _sec in sorted(urls):
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'
+          ' xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
+    total_imgs = 0
+    for url, mtime, is_index, rp, _title, _desc, _sec, imgs in sorted(urls, key=lambda t: t[0]):
         prio = "1.0" if rp == "/" else ("0.8" if is_index else "0.6")
         freq = "weekly" if is_index or rp == "/" else "monthly"
         sm.append("  <url>")
@@ -464,6 +498,13 @@ def main():
         sm.append(f"    <lastmod>{mtime}</lastmod>")
         sm.append(f"    <changefreq>{freq}</changefreq>")
         sm.append(f"    <priority>{prio}</priority>")
+        for iu, alt in imgs:
+            sm.append("    <image:image>")
+            sm.append(f"      <image:loc>{xesc(iu)}</image:loc>")
+            if alt:
+                sm.append(f"      <image:title>{xesc(alt)}</image:title>")
+            sm.append("    </image:image>")
+            total_imgs += 1
         sm.append("  </url>")
     sm.append("</urlset>")
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
@@ -497,7 +538,7 @@ def main():
     ]
     by_sec = {}
     home = None
-    for url, mtime, is_index, rp, title, desc, sec in sorted(urls):
+    for url, mtime, is_index, rp, title, desc, sec, _imgs in sorted(urls):
         if rp == "/":
             home = (url, title, desc)
             continue
@@ -516,7 +557,7 @@ def main():
         f.write("\n".join(ll).rstrip() + "\n")
 
     print(f"Zaktualizowano stron: {changed}")
-    print(f"sitemap.xml: {len(urls)} URL-i")
+    print(f"sitemap.xml: {len(urls)} URL-i, {total_imgs} obrazów")
     print("robots.txt: ok")
     print(f"llms.txt: {sum(len(v) for v in by_sec.values())} wpisów")
 
