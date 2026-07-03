@@ -9,9 +9,11 @@
 - [Aktualności](https://fish-point.pl/aktualnosci/): Blog FishPoint: aktualności wędkarskie sezonu 2026 — otwarcie sezonu na szczupaka, dobór przynęt do pory roku, błędy początkujących, żyłka czy plecionka, relacja z nocnej zasiadki, trendy sprzętowe i poradnik startu w zawodach feederowych.
 - [Najczęstsze błędy początkujących](https://fish-point.pl/aktualnosci/bledy-poczatkujacych.html): Poradnik FishPoint 2026: najczęstsze błędy początkujących wędkarzy — przenęcanie, zbyt grube zestawy, brak punktu nęcenia na feederze, źle ustawiony hamulec, siłowy hol i ignorowanie przepisów. Jak ich uniknąć od pierwszej zasiadki.
 - [Jak dobrać przynętę do pory roku](https://fish-point.pl/aktualnosci/jak-dobrac-przynete-do-pory-roku.html): Spinningowy poradnik FishPoint na sezon 2026: jak temperatura wody i aktywność drapieżników zmieniają się przez rok i jak dobrać do tego przynętę — gumy, woblery, obrotówki i wahadłówki od zimy po jesień.
+- [Karp w upały](https://fish-point.pl/aktualnosci/karp-w-upaly-taktyka-na-lipiec.html): Sezonowy poradnik FishPoint: jak łowić karpia w lipcowe upały. Pory doby, miejsca na ciepłej wodzie, łowienie z powierzchni i przy dnie, przynęty, zanęta oraz bezpieczny C&R w wysokiej temperaturze.
 - [Przegląd nowości sezonu 2026](https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html): FishPoint o trendach sprzętowych sezonu 2026: lżejsze blanki wysokomodułowe, finezyjne metody spinningowe, rozwój sprzętu feederowego, elektronika i echosondy brzegowe, akcesoria do bezpiecznego obchodzenia się z rybą oraz moda na minimalizm.
 - [Nocna zasiadka karpiowa](https://fish-point.pl/aktualnosci/relacja-nocna-zasiadka.html): Relacja FishPoint z nocnej zasiadki karpiowej na żwirowni, sezon 2026: sondowanie, nęcenie, dwadzieścia godzin oczekiwania, brania o trzeciej nad ranem i praktyczne wnioski o taktyce, sprzęcie i bezpiecznym obchodzeniu się z rybą.
 - [Sezon na szczupaka](https://fish-point.pl/aktualnosci/sezon-na-szczupaka.html): Otwarcie sezonu na szczupaka 2026: jak łowić tuż po okresie ochronnym — wolna prezentacja, płytkie zatoki, gumy i woblery o spokojnej pracy, przygotowanie sprzętu i bezpieczne wypuszczanie wychudzonych po tarle ryb.
+- [Sum nocą](https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html): Sezonowy poradnik FishPoint: sum nocą w lipcu i sierpniu. Kiedy i gdzie szukać suma latem, metody (grunt, żywiec, spinning, klongowanie), mocny sprzęt bez kompromisów oraz bezpieczeństwo i etyka nocnego łowienia.
 - [Pierwsze zawody feederowe](https://fish-point.pl/aktualnosci/zawody-feederowe-poradnik.html): Jak wystartować w pierwszych zawodach feederowych — poradnik FishPoint na sezon 2026: zapisy i regulaminy, losowanie sektorów, przygotowanie stanowiska, taktyka na pięciogodzinną turę, lista sprzętu i najczęstsze błędy debiutantów.
 - [Żyłka czy plecionka](https://fish-point.pl/aktualnosci/zylka-czy-plecionka.html): FishPoint porównuje żyłkę i plecionkę: rozciągliwość, średnica, czułość, odporność na przetarcia, zachowanie w mrozie i cena. Którą linkę wybrać do spinningu, feedera, spławika i karpia — poradnik na sezon 2026.
 
@@ -25,18 +27,28 @@
 - [Wędzenie ryb](https://fish-point.pl/kuchnia/wedzenie-ryb.html): Poradnik wędzenia ryb FishPoint: dlaczego pstrąg, makrela i węgorz wędzą się najlepiej, proporcje solanki i czasy solenia, dobór drewna, etapy wędzenia na gorąco z czasami dla każdego gatunku, wędzenie na zimno, budowa prostej wędzarni domowej i przechowywanie ryb wędzonych.
 - [Zupa rybna](https://fish-point.pl/kuchnia/zupa-rybna.html): Zupa rybna od podstaw: esencjonalny wywar z głów i kręgosłupów, klarowna uha po polsku, ognista węgierska halászlé z karpia oraz zabielana zupa rybna ze śmietaną i koperkiem. Przepisy krok po kroku z czasami i zasadami bezpieczeństwa żywności.
 
+## Narzędzia
+
+- [Narzędzia wędkarskie](https://fish-point.pl/narzedzia/): Interaktywne narzędzia wędkarskie FishPoint: tabela okresów ochronnych i wymiarów, kalendarz brań, kreator doboru sprzętu i klucz do rozpoznawania ryb. Praktyczne kalkulatory, które podpowiedzą, kiedy, na co i czym łowić.
+- [Kreator doboru sprzętu wędkarskiego](https://fish-point.pl/narzedzia/dobor-sprzetu.html): Interaktywny kreator doboru sprzętu: wybierz rybę, rodzaj wody i poziom zaawansowania, a otrzymasz gotowy zestaw — wędka, kołowrotek, żyłka lub plecionka, przynęty i akcesoria — z linkami do szczegółowych poradników FishPoint.
+- [Interaktywny kalendarz brań](https://fish-point.pl/narzedzia/kalendarz-bran.html): Interaktywny kalendarz brań: heatmapa aktywności szczupaka, sandacza, okonia, suma, karpia, leszcza, płoci, lina, węgorza i pstrąga w każdym miesiącu roku. Wybierz miesiąc i zobacz, co bierze najlepiej oraz jak i gdzie łowić.
+- [Okresy ochronne i wymiary ryb](https://fish-point.pl/narzedzia/okresy-ochronne.html): Interaktywna, filtrowana tabela okresów ochronnych, wymiarów ochronnych i limitów dobowych najważniejszych ryb w Polsce. Szukaj po nazwie, filtruj po kategorii i sortuj kolumny. Wartości orientacyjne — zawsze sprawdź aktualny regulamin PZW.
+- [Rozpoznaj rybę](https://fish-point.pl/narzedzia/rozpoznaj-rybe.html): Nie wiesz, jaką rybę złowiłeś? Zaznacz cechy — kształt ciała, pysk, ubarwienie, płetwy i siedlisko — a interaktywny klucz FishPoint wskaże najbardziej pasujące gatunki polskich wód z odnośnikami do atlasu ryb.
+
 ## O-autorze.html
 
 - [O autorze](https://fish-point.pl/o-autorze.html): Maciej Baniewicz — wędkarz i autor serwisu FishPoint. Poznaj osobę, która stoi za poradnikami, atlasem ryb i opisami sprzętu na fish-point.pl.
 
 ## Pierwsze kroki
 
+- [Jak nabić przynętę i bezpiecznie odhaczyć rybę](https://fish-point.pl/pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html): Praktyczny poradnik dla początkujących: jak nabijać robaki, kukurydzę, chleb i przynęty sztuczne na haczyk oraz jak bezpiecznie, humanitarnie odhaczyć i wypuścić rybę bez szkody dla niej i dla siebie.
 - [Łowiska](https://fish-point.pl/pierwsze-kroki/lowiska/): Łowisko wpływa na metodę bardziej niż reklama sprzętu. Inaczej łowi się na jeziorze, inaczej w rzece, stawie i kanale.
 - [Jeziora](https://fish-point.pl/pierwsze-kroki/lowiska/jeziora.html): Jeziora uczą szukania głębokości, roślinności, spadów i miejsc, gdzie ryby przemieszczają się między żerowiskiem a schronieniem.
 - [Kanały](https://fish-point.pl/pierwsze-kroki/lowiska/kanaly.html): Kanały uczą dokładności, delikatności i powtarzalności. Często liczy się precyzja rzutu oraz obserwacja niewielkich zmian uciągu.
 - [Rzeki](https://fish-point.pl/pierwsze-kroki/lowiska/rzeki.html): Rzeki wymagają czytania nurtu, cofek, przelewów i spokojniejszych fragmentów, w których pokarm zatrzymuje się naturalnie.
 - [Stawy](https://fish-point.pl/pierwsze-kroki/lowiska/stawy.html): Stawy są wygodne na start, bo często mają dostępne brzegi, przewidywalną głębokość i ryby przyzwyczajone do regularnego nęcenia.
 - [Okresy ochronne i wymiary](https://fish-point.pl/pierwsze-kroki/okresy-ochronne-wymiary.html): Przewodnik po wymiarach ochronnych, okresach ochronnych i limitach dobowych ryb w Polsce: szczupak, sandacz, sum, lipień, pstrąg, węgorz i inne gatunki, górne wymiary, zasady postępowania z rybą niewymiarową i kary.
+- [Pierwszy zestaw wędkarski do 200–300 zł](https://fish-point.pl/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html): Praktyczny poradnik, jak za 200–300 zł skompletować pierwszy zestaw wędkarski: uniwersalna wędka, kołowrotek 2500–3000, żyłka, haczyki, przynęty i akcesoria, które naprawdę są potrzebne — bez zbędnych zakupów.
 - [Pozwolenia i karta wędkarska](https://fish-point.pl/pierwsze-kroki/pozwolenia-karta-wedkarska.html): Kompletny przewodnik po formalnościach wędkarskich w Polsce: karta wędkarska, egzamin, zezwolenia na połów, składki PZW, łowiska komercyjne, kontrole PSR i SSR oraz kary za brak dokumentów.
 - [Rodzaje ryb](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/): Ryby różnią się sposobem żerowania, stanowiskami i reakcją na przynętę. Początkujący powinien poznać kilka najczęstszych gatunków.
 - [Karp](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/karp.html): Kompletny poradnik łowienia karpia: biologia, miejscówki, sezonowość żerowania, method feeder i klasyczny grunt, przynęty, nęcenie, wymiar ochronny PZW, błędy początkujących i etyka karpiowa.
@@ -50,6 +62,7 @@
 - [Wędki dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/wedki.html): Kompletny przewodnik po wędkach dla początkujących: typy wędzisk, długość, ciężar wyrzutowy, akcja, materiały blanków, przegląd marek oraz typowe błędy przy pierwszym zakupie.
 - [Sprzęt na start](https://fish-point.pl/pierwsze-kroki/sprzet/wprowadzenie.html): Od czego zacząć kompletowanie sprzętu na ryby: uniwersalny zestaw na start, który sprawdzi się nad większością wód, oraz to, co naprawdę przyda się początkującemu, a co spokojnie może poczekać.
 - [Żyłki, plecionki i przypony](https://fish-point.pl/pierwsze-kroki/sprzet/zylki-plecionki.html): Żyłka czy plecionka? Średnice 0,12-0,30 mm, wytrzymałość, rozciągliwość, fluorocarbon, przypony stalowe na szczupaka, węzły i marki linek — kompletny poradnik dla początkujących.
+- [Twój pierwszy wyjazd na ryby](https://fish-point.pl/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html): Praktyczny poradnik dla początkującego wędkarza: checklist przed wyjazdem, wybór łatwego łowiska, prosty zestaw spławikowy, krok po kroku nad wodą i najczęstsze błędy pierwszego razu.
 
 ## Poradniki
 
@@ -96,9 +109,14 @@
 - [Akcesoria wędkarskie](https://fish-point.pl/sprzet/akcesoria.html): Rzetelny poradnik FishPoint: Haczyki, krętliki, agrafki, pudełka i narzędzia nie są efektowne, ale od ich jakości często zależy skuteczność i bezpieczeństwo ryby.
 - [Kołowrotki wędkarskie](https://fish-point.pl/sprzet/kolowrotki.html): Poradnik FishPoint o kołowrotkach: rozmiary, przełożenie, hamulec, łożyska, kołowrotki stacjonarne, multiplikatory i wolny bieg. Przegląd marek Shimano, Daiwa, Okuma, Abu Garcia, Penn, Mikado. Dobór, błędy, konserwacja i FAQ.
 - [Odzież i bezpieczeństwo](https://fish-point.pl/sprzet/odziez.html): Rzetelny poradnik FishPoint: Dobra odzież nie łowi za wędkarza, ale chroni przed zimnem, deszczem, słońcem i poślizgnięciem na brzegu.
+- [Pierwsza wędka spinningowa](https://fish-point.pl/sprzet/pierwsza-wedka-spinningowa.html): Poradnik zakupowy FishPoint: jak wybrać pierwszą wędkę spinningową na okonia i szczupaka. Długość, ciężar wyrzutowy, akcja, dobór kołowrotka i plecionki, ile realnie wydać na start i czego unikać oraz gotowe propozycje pod cel.
 - [Żyłki i plecionki](https://fish-point.pl/sprzet/plecionki-zylki.html): Poradnik FishPoint o linkach wędkarskich: żyłka, plecionka i fluorocarbon — średnice, wytrzymałość, rozciągliwość, splot 4x/8x. Marki Stroft, Sufix, Power Pro, Spiderwire, Berkley, Dragon. Dobór do metody, węzły, błędy i FAQ.
 - [Przynęty](https://fish-point.pl/sprzet/przynety.html): Rzetelny poradnik FishPoint: Wybór przynęty zależy od gatunku ryby, głębokości, uciągu, temperatury wody i aktywności drapieżników lub ryb spokojnego żeru.
 - [Wędki wędkarskie](https://fish-point.pl/sprzet/wedki.html): Kompletny poradnik FishPoint o wędkach: długość, ciężar wyrzutowy, akcja i moc blanku, materiały, podział na metody (spinning, feeder, karp, spławik), przegląd producentów od Shimano po Mikado, najczęstsze błędy przy zakupie i konserwacja.
+
+## Szukaj.html
+
+- [Wyszukiwarka serwisu](https://fish-point.pl/szukaj.html): Przeszukaj cały serwis FishPoint: poradniki wędkarskie, atlas ryb, techniki połowu, sprzęt, przepisy kuchni rybnej i narzędzia. Wpisz frazę i znajdź to, czego szukasz.
 
 ## Techniki
 

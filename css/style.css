@@ -645,3 +645,159 @@ html.dark .toc a { color: #bfe9e1; }
 /* płynne przewijanie do kotwic + offset pod sticky nagłówek */
 html { scroll-behavior: smooth; }
 .article-card h2[id] { scroll-margin-top: 90px; }
+
+/* ============================================================= */
+/* === Narzędzia interaktywne (/narzedzia/) ==================== */
+/* ============================================================= */
+.tool-card {
+  background: var(--paper);
+  border: 1px solid rgba(17,49,47,.08);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 30px rgba(17,49,47,.07);
+  padding: clamp(22px, 3.5vw, 40px);
+  margin-bottom: 26px;
+}
+html.dark .tool-card { background: rgba(13,40,46,.92); border-color: rgba(255,255,255,.08); }
+.tool-card > h2:first-child, .tool-card > h2 { margin-top: 0; }
+
+/* Pasek narzędzi: filtr + zakładki */
+.tool-toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 20px; }
+.tool-search {
+  flex: 1 1 240px; min-width: 200px;
+  padding: 13px 16px; font: inherit;
+  border: 1px solid rgba(17,49,47,.16); border-radius: 14px;
+  background: var(--white); color: var(--ink);
+}
+html.dark .tool-search { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); color: var(--ink); }
+.tool-search::placeholder { color: var(--muted); }
+
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 9px 16px; border-radius: 999px; cursor: pointer;
+  font-weight: 700; font-size: .92rem;
+  border: 1px solid rgba(17,49,47,.16); background: var(--white); color: var(--ink);
+  transition: transform .12s ease, background .15s ease, color .15s ease, border-color .15s ease;
+}
+.chip:hover { transform: translateY(-1px); }
+.chip[aria-pressed="true"], .chip.active {
+  background: linear-gradient(135deg, var(--green), var(--aqua));
+  color: var(--white); border-color: transparent;
+}
+html.dark .chip { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); }
+
+/* Tabela okresów ochronnych */
+.tool-table-wrap { overflow-x: auto; border-radius: 16px; border: 1px solid rgba(17,49,47,.1); }
+html.dark .tool-table-wrap { border-color: rgba(255,255,255,.1); }
+table.tool-table { width: 100%; border-collapse: collapse; font-size: .96rem; min-width: 640px; }
+table.tool-table th, table.tool-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid rgba(17,49,47,.08); }
+html.dark table.tool-table th, html.dark table.tool-table td { border-bottom-color: rgba(255,255,255,.08); }
+table.tool-table thead th {
+  position: sticky; top: 0; z-index: 1; cursor: pointer; white-space: nowrap;
+  background: linear-gradient(180deg, var(--green-2), var(--deep)); color: var(--white);
+  font-weight: 700;
+}
+table.tool-table thead th:hover { color: var(--amber); }
+table.tool-table tbody tr:hover { background: rgba(42,167,161,.07); }
+table.tool-table td strong { color: var(--green-2); }
+html.dark table.tool-table td strong { color: var(--green); }
+.tt-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: .82rem; font-weight: 700; white-space: nowrap; }
+.pill-free { background: rgba(42,167,161,.16); color: #0e6b60; }
+.pill-warn { background: rgba(255,178,94,.22); color: #9a5a12; }
+.pill-none { background: rgba(120,140,135,.16); color: #566963; }
+html.dark .pill-free { background: rgba(62,201,180,.18); color: #7fe6d5; }
+html.dark .pill-warn { background: rgba(255,178,94,.16); color: #ffca8a; }
+html.dark .pill-none { background: rgba(255,255,255,.08); color: #a9bcb6; }
+
+.tool-empty { padding: 26px; text-align: center; color: var(--muted); }
+.tool-count { color: var(--muted); font-size: .9rem; margin: 4px 0 0; }
+
+.disclaimer {
+  margin: 0 0 22px; padding: 16px 20px; border-radius: 14px;
+  background: rgba(255,178,94,.14); border-left: 5px solid var(--orange);
+  color: #6b4a1e; font-size: .95rem; line-height: 1.6;
+}
+.disclaimer strong { color: #7a3f00; }
+html.dark .disclaimer { background: rgba(255,178,94,.1); color: #f0d3a8; }
+html.dark .disclaimer strong { color: #ffca8a; }
+
+/* Kalendarz brań — heatmapa */
+.heat-legend { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 8px 0 18px; font-size: .88rem; color: var(--muted); }
+.heat-key { display: inline-flex; align-items: center; gap: 7px; }
+.heat-swatch { width: 20px; height: 14px; border-radius: 4px; display: inline-block; }
+.h0 { background: #e7ede9; } .h1 { background: #bfe0d6; } .h2 { background: #6fc7b4; } .h3 { background: #199e86; }
+html.dark .h0 { background: #24393b; } html.dark .h1 { background: #2f5f57; } html.dark .h2 { background: #3a9484; } html.dark .h3 { background: #35c9ad; }
+.heat-table-wrap { overflow-x: auto; border-radius: 16px; }
+table.heat { border-collapse: collapse; width: 100%; min-width: 720px; }
+table.heat th, table.heat td { text-align: center; padding: 0; }
+table.heat thead th { font-size: .82rem; font-weight: 700; color: var(--muted); padding: 6px 4px; }
+table.heat tbody th { text-align: left; padding: 6px 12px 6px 4px; white-space: nowrap; font-weight: 700; }
+table.heat tbody th a { color: var(--green); }
+.heat-cell { width: 100%; aspect-ratio: 1/1; min-width: 30px; border-radius: 6px; cursor: default; position: relative; border: 2px solid transparent; }
+table.heat td { padding: 3px; }
+.heat-cell:hover { border-color: var(--ink); }
+.heat-cell.pick { outline: 2px solid var(--orange); outline-offset: 1px; }
+
+/* Kreator (wizard) doboru sprzętu / klucz ryb */
+.wizard-steps { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.wizard-steps .step { flex: 1 1 auto; text-align: center; padding: 10px 8px; border-radius: 12px; font-weight: 700; font-size: .85rem; background: var(--white); border: 1px solid rgba(17,49,47,.12); color: var(--muted); }
+.wizard-steps .step.done { color: var(--green); border-color: rgba(42,167,161,.4); }
+.wizard-steps .step.current { background: linear-gradient(135deg, var(--green), var(--aqua)); color: var(--white); border-color: transparent; }
+html.dark .wizard-steps .step { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); }
+
+.opt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 8px 0 6px; }
+.opt-card {
+  padding: 18px 16px; border-radius: 16px; cursor: pointer; text-align: left;
+  border: 2px solid rgba(17,49,47,.12); background: var(--white); color: var(--ink);
+  transition: transform .14s ease, border-color .15s ease, box-shadow .15s ease;
+  font: inherit;
+}
+.opt-card:hover { transform: translateY(-3px); border-color: var(--aqua); box-shadow: 0 12px 26px rgba(17,49,47,.1); }
+.opt-card.sel { border-color: var(--green); background: rgba(42,167,161,.08); }
+.opt-card .opt-emoji { font-size: 1.8rem; display: block; margin-bottom: 6px; }
+.opt-card .opt-title { font-weight: 800; display: block; }
+.opt-card .opt-desc { color: var(--muted); font-size: .86rem; display: block; margin-top: 3px; }
+html.dark .opt-card { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); }
+html.dark .opt-card.sel { background: rgba(62,201,180,.1); border-color: var(--green); }
+
+.wizard-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+.btn-ghost { background: transparent; border: 1px solid rgba(17,49,47,.2); color: var(--ink); }
+html.dark .btn-ghost { border-color: rgba(255,255,255,.2); color: var(--ink); }
+
+.result-box { margin-top: 6px; }
+.result-box h3 { margin: 0 0 6px; font-size: 1.5rem; color: var(--green-2); }
+html.dark .result-box h3 { color: var(--green); }
+.result-kit { display: grid; gap: 12px; margin: 18px 0; }
+.kit-row { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; border-radius: 14px; background: #faf6ec; border-left: 5px solid var(--aqua); }
+.kit-row:nth-child(even) { border-left-color: var(--orange); }
+html.dark .kit-row { background: rgba(255,255,255,.04); }
+.kit-row .kit-ico { font-size: 1.5rem; }
+.kit-row .kit-label { font-weight: 800; display: block; }
+.kit-row .kit-val { color: #3d4c48; }
+html.dark .kit-row .kit-val { color: #c5d6d0; }
+.kit-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+
+/* Klucz rozpoznawania ryb — wyniki */
+.fish-results { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; margin-top: 10px; }
+.fish-hit { display: block; border-radius: 16px; overflow: hidden; background: var(--paper); border: 1px solid rgba(17,49,47,.1); box-shadow: 0 10px 24px rgba(17,49,47,.08); transition: transform .15s ease, box-shadow .15s ease; }
+.fish-hit:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+html.dark .fish-hit { background: rgba(13,40,46,.92); border-color: rgba(255,255,255,.08); }
+.fish-hit img { width: 100%; height: 110px; object-fit: cover; }
+.fish-hit .fh-body { padding: 10px 12px 14px; }
+.fish-hit .fh-name { font-weight: 800; }
+.fish-hit .fh-latin { font-style: italic; color: var(--muted); font-size: .82rem; }
+.fish-score { font-size: .78rem; color: var(--green); font-weight: 700; margin-top: 4px; }
+
+/* Sekcja narzędzi na stronie głównej — reuse category-card */
+
+/* Wyszukiwarka witryny */
+.search-hits { display: grid; gap: 14px; margin-top: 18px; }
+.search-hit { display: block; padding: 18px 20px; border-radius: 16px; background: var(--paper); border: 1px solid rgba(17,49,47,.1); box-shadow: 0 8px 20px rgba(17,49,47,.06); transition: transform .14s ease, box-shadow .14s ease; }
+.search-hit:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+html.dark .search-hit { background: rgba(13,40,46,.92); border-color: rgba(255,255,255,.08); }
+.search-hit .sh-sec { font-size: .74rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 800; color: var(--orange); }
+.search-hit .sh-title { font-size: 1.15rem; font-weight: 800; margin: 4px 0; color: var(--ink); }
+.search-hit .sh-desc { color: var(--muted); margin: 0; font-size: .95rem; }
+.search-hit mark { background: rgba(255,178,94,.4); color: inherit; border-radius: 3px; padding: 0 2px; }
+html.dark .search-hit mark { background: rgba(255,178,94,.28); }

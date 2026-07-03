@@ -60,6 +60,14 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
+      <image:title>Karp — król wód stojących, łowiony w letnie upały</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/sum.jpg</image:loc>
+      <image:title>Sum — największy drapieżnik polskich wód, łowiony nocą latem</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/sezon-na-szczupaka.jpg</image:loc>
       <image:title>Wędkarz prezentujący dużego szczupaka</image:title>
     </image:image>
@@ -109,6 +117,12 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/aktualnosci/karp-w-upaly-taktyka-na-lipiec.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -137,6 +151,12 @@
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/sezon-na-szczupaka.jpg</image:loc>
       <image:title>Wędkarz prezentujący dużego szczupaka złowionego z łodzi</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/zawody-feederowe-poradnik.html</loc>
@@ -217,6 +237,36 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/narzedzia/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/narzedzia/dobor-sprzetu.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/narzedzia/kalendarz-bran.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/narzedzia/okresy-ochronne.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/narzedzia/rozpoznaj-rybe.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/o-autorze.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -225,6 +275,12 @@
       <image:loc>https://fish-point.pl/assets/img/maciej-baniewicz.jpg</image:loc>
       <image:title>Maciej Baniewicz — autor serwisu FishPoint</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/</loc>
@@ -275,6 +331,12 @@
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/okresy-ochronne-wymiary.html</loc>
     <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html</loc>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -391,6 +453,12 @@
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/zylka-czy-plecionka.jpg</image:loc>
       <image:title>Kołowrotek z nawiniętą plecionką</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/</loc>
@@ -701,6 +769,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://fish-point.pl/sprzet/pierwsza-wedka-spinningowa.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/sprzet/plecionki-zylki.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -729,6 +803,12 @@
       <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
       <image:title>Wędki ustawione na brzegu morza</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/szukaj.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/</loc>
