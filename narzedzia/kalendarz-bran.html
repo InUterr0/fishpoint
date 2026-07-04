@@ -138,7 +138,7 @@
   <!-- seo:meta end (auto) -->
 </head>
 <body>
-<header class="site-header"><nav class="nav container"><a class="logo" href="../index.html"><span class="logo-mark">≈</span><span>FishPoint</span></a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button><ul id="nav-menu" class="nav-menu"><li><a href="../index.html#pierwsze-kroki">Pierwsze kroki</a></li><li><a href="../index.html#sprzet">Sprzęt</a></li><li><a href="../index.html#techniki">Techniki</a></li><li><a href="../index.html#ryby">Atlas ryb</a></li><li><a href="../index.html#poradniki">Poradniki</a></li><li><a href="../narzedzia/index.html">Narzędzia</a></li><li><a href="../aktualnosci/index.html">Blog</a></li><li><a href="../slownik.html">Słownik</a></li><li><a class="nav-cta" href="../index.html#kontakt">Kontakt</a></li></ul></nav></header>
+<header class="site-header"><nav class="nav container"><a class="logo" href="../index.html"><span class="logo-mark">≈</span><span>FishPoint</span></a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button><ul id="nav-menu" class="nav-menu"><li><a href="../index.html#pierwsze-kroki">Pierwsze kroki</a></li><li><a href="../index.html#sprzet">Sprzęt</a></li><li><a href="../index.html#techniki">Techniki</a></li><li><a href="../index.html#ryby">Atlas ryb</a></li><li><a href="../index.html#poradniki">Poradniki</a></li><li><a href="../narzedzia/index.html">Narzędzia</a></li><li><a href="../szukaj.html">Szukaj</a></li><li><a href="../aktualnosci/index.html">Blog</a></li><li><a href="../slownik.html">Słownik</a></li><li><a class="nav-cta" href="../index.html#kontakt">Kontakt</a></li></ul></nav></header>
 <main>
 <section class="subpage-hero"><div class="container"><p class="eyebrow">Narzędzia</p><h1>Interaktywny kalendarz brań</h1><!--byline:auto--><p class="article-meta">Autor: <a href="https://fish-point.pl/o-autorze.html" rel="author">Maciej Baniewicz</a> · <time datetime="2026-07-03">Opublikowano 3 lipca 2026</time> · <time datetime="2026-07-03">aktualizacja 3 lipca 2026</time></p><!--/byline:auto--><p>Kolorowa mapa aktywności najważniejszych gatunków miesiąc po miesiącu. Wybierz miesiąc, aby zobaczyć ranking brań i praktyczne wskazówki, albo kliknij gatunek, by przejść do jego opisu w atlasie.</p></div></section>
 <section class="section container article-layout"><article class="article-card">
@@ -147,12 +147,13 @@
 
 <div class="chip-row" id="months" role="group" aria-label="Wybierz miesiąc" style="margin-bottom:14px"></div>
 
+<p class="tool-count" style="margin-bottom:8px;font-weight:700;color:var(--ink)">Legenda — kolor i ikona pokazują, jak mocno dany gatunek żeruje w danym miesiącu:</p>
 <div class="heat-legend">
-  <span class="heat-key"><span class="heat-swatch h0"></span> zastój</span>
-  <span class="heat-key"><span class="heat-swatch h1"></span> słabo</span>
-  <span class="heat-key"><span class="heat-swatch h2"></span> dobrze</span>
-  <span class="heat-key"><span class="heat-swatch h3"></span> szczyt</span>
-  <span class="heat-key">🛡 okres ochronny</span>
+  <span class="heat-key"><span class="heat-swatch h3"></span> 🔥 szczyt — najlepsze brania</span>
+  <span class="heat-key"><span class="heat-swatch h2"></span> 🎣 dobrze — warto jechać</span>
+  <span class="heat-key"><span class="heat-swatch h1"></span> 🐟 słabo — pojedyncze brania</span>
+  <span class="heat-key"><span class="heat-swatch h0"></span> 💤 zastój — raczej odpuść</span>
+  <span class="heat-key"><span class="heat-swatch" style="background:transparent">🛡</span> okres ochronny (orientacyjnie)</span>
 </div>
 
 <div class="heat-table-wrap">
@@ -194,6 +195,7 @@
     { slug:'pstrag', name:'Pstrąg potokowy', a:[0,1,2,3,3,2,1,2,0,0,0,0], p:[8,9,10,11,0], tip:'Małe woblery, obrotówki i nimfa; kraina pstrąga, uwaga na jesienną ochronę.' },
   ];
   const LEVEL = ['zastój','słabo','dobrze','szczyt'];
+  const LICON = ['💤','🐟','🎣','🔥'];
 
   const hhead = document.getElementById('hhead');
   const hbody = document.getElementById('hbody');
@@ -211,7 +213,7 @@
     let cells = '';
     for (let i=0;i<12;i++){
       const lvl=f.a[i], prot=f.p.includes(i);
-      cells += '<td><div class="heat-cell h'+lvl+'" data-m="'+i+'" title="'+f.name+' w '+MFULL[i]+': '+LEVEL[lvl]+(prot?' (okres ochronny)':'')+'">'+(prot?'🛡':'')+'</div></td>';
+      cells += '<td><div class="heat-cell h'+lvl+'" data-m="'+i+'" title="'+f.name+' w '+MFULL[i]+': '+LEVEL[lvl]+(prot?' (okres ochronny)':'')+'"><span class="hc-ico">'+LICON[lvl]+'</span>'+(prot?'<span class="hc-shield">🛡</span>':'')+'</div></td>';
     }
     return '<tr><th><a href="../ryby/'+f.slug+'.html">'+f.name+'</a></th>'+cells+'</tr>';
   }).join('');

@@ -734,10 +734,13 @@ table.heat th, table.heat td { text-align: center; padding: 0; }
 table.heat thead th { font-size: .82rem; font-weight: 700; color: var(--muted); padding: 6px 4px; }
 table.heat tbody th { text-align: left; padding: 6px 12px 6px 4px; white-space: nowrap; font-weight: 700; }
 table.heat tbody th a { color: var(--green); }
-.heat-cell { width: 100%; aspect-ratio: 1/1; min-width: 30px; border-radius: 6px; cursor: default; position: relative; border: 2px solid transparent; }
+.heat-cell { width: 100%; aspect-ratio: 1/1; min-width: 38px; border-radius: 8px; cursor: pointer; position: relative; border: 2px solid transparent; display: grid; place-items: center; font-size: 1.05rem; line-height: 1; }
+.heat-cell .hc-ico { filter: saturate(1.1); }
+.heat-cell .hc-shield { position: absolute; top: 1px; right: 2px; font-size: .7rem; line-height: 1; }
 table.heat td { padding: 3px; }
 .heat-cell:hover { border-color: var(--ink); }
 .heat-cell.pick { outline: 2px solid var(--orange); outline-offset: 1px; }
+@media (max-width: 560px) { .heat-cell { min-width: 30px; font-size: .9rem; } .heat-cell .hc-shield { font-size: .6rem; } }
 
 /* Kreator (wizard) doboru sprzętu / klucz ryb */
 .wizard-steps { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
@@ -801,3 +804,15 @@ html.dark .search-hit { background: rgba(13,40,46,.92); border-color: rgba(255,2
 .search-hit .sh-desc { color: var(--muted); margin: 0; font-size: .95rem; }
 .search-hit mark { background: rgba(255,178,94,.4); color: inherit; border-radius: 3px; padding: 0 2px; }
 html.dark .search-hit mark { background: rgba(255,178,94,.28); }
+
+/* Panel wybranych cech (Rozpoznaj rybę) */
+.picked-panel {
+  margin: 8px 0 4px; padding: 14px 16px;
+  border-radius: 14px; background: rgba(42,167,161,.08);
+  border: 1px dashed rgba(42,167,161,.4);
+}
+html.dark .picked-panel { background: rgba(62,201,180,.08); border-color: rgba(62,201,180,.3); }
+.chip-rm { display: inline-flex; align-items: center; gap: 4px; }
+.chip-rm .chip-dim { opacity: .8; font-weight: 800; }
+.chip-rm .chip-x { margin-left: 4px; font-weight: 800; opacity: .85; }
+.chip-rm:hover { background: linear-gradient(135deg, var(--orange), var(--amber)); }

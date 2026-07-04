@@ -138,7 +138,7 @@
   <!-- seo:meta end (auto) -->
 </head>
 <body>
-<header class="site-header"><nav class="nav container"><a class="logo" href="../index.html"><span class="logo-mark">≈</span><span>FishPoint</span></a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button><ul id="nav-menu" class="nav-menu"><li><a href="../index.html#pierwsze-kroki">Pierwsze kroki</a></li><li><a href="../index.html#sprzet">Sprzęt</a></li><li><a href="../index.html#techniki">Techniki</a></li><li><a href="../index.html#ryby">Atlas ryb</a></li><li><a href="../index.html#poradniki">Poradniki</a></li><li><a href="../narzedzia/index.html">Narzędzia</a></li><li><a href="../aktualnosci/index.html">Blog</a></li><li><a href="../slownik.html">Słownik</a></li><li><a class="nav-cta" href="../index.html#kontakt">Kontakt</a></li></ul></nav></header>
+<header class="site-header"><nav class="nav container"><a class="logo" href="../index.html"><span class="logo-mark">≈</span><span>FishPoint</span></a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button><ul id="nav-menu" class="nav-menu"><li><a href="../index.html#pierwsze-kroki">Pierwsze kroki</a></li><li><a href="../index.html#sprzet">Sprzęt</a></li><li><a href="../index.html#techniki">Techniki</a></li><li><a href="../index.html#ryby">Atlas ryb</a></li><li><a href="../index.html#poradniki">Poradniki</a></li><li><a href="../narzedzia/index.html">Narzędzia</a></li><li><a href="../szukaj.html">Szukaj</a></li><li><a href="../aktualnosci/index.html">Blog</a></li><li><a href="../slownik.html">Słownik</a></li><li><a class="nav-cta" href="../index.html#kontakt">Kontakt</a></li></ul></nav></header>
 <main>
 <section class="subpage-hero"><div class="container"><p class="eyebrow">Narzędzia</p><h1>Kreator doboru sprzętu</h1><!--byline:auto--><p class="article-meta">Autor: <a href="https://fish-point.pl/o-autorze.html" rel="author">Maciej Baniewicz</a> · <time datetime="2026-07-03">Opublikowano 3 lipca 2026</time> · <time datetime="2026-07-03">aktualizacja 3 lipca 2026</time></p><!--/byline:auto--><p>Odpowiedz na trzy pytania, a złożymy dla Ciebie sensowny zestaw na start: wędka, kołowrotek, linka, przynęty i akcesoria — wraz z linkami do szczegółowych poradników.</p></div></section>
 <section class="section container article-layout"><article class="article-card">
@@ -178,8 +178,10 @@
   const TARGETS = [
     { id:'okon', emoji:'🐟', title:'Okoń / drapieżnik z brzegu', desc:'Lekki spinning, uniwersalny start' },
     { id:'szczupak', emoji:'🦈', title:'Szczupak', desc:'Mocniejszy spinning, gumy i woblery' },
+    { id:'sandacz', emoji:'🌙', title:'Sandacz', desc:'Jig przy dnie, zmierzch i noc' },
     { id:'karp', emoji:'👑', title:'Karp', desc:'Zasiadka, metoda włosowa' },
     { id:'biala', emoji:'🎣', title:'Ryba biała (płoć, leszcz)', desc:'Feeder i spławik z zanętą' },
+    { id:'lin', emoji:'🌿', title:'Lin / karaś ze stawu', desc:'Delikatny spławik, świt przy trzcinach' },
     { id:'sum', emoji:'🐋', title:'Sum', desc:'Ciężki grunt, mocny sprzęt' },
     { id:'pstrag', emoji:'🎯', title:'Pstrąg w rzece', desc:'Ultralekki spinning / mucha' },
   ];
@@ -196,17 +198,37 @@
 
   // Bazowe zestawy per cel
   const KITS = {
-    okon: { metoda:'Spinning', wedka:'Spinning 2,1–2,4 m, c.w. ok. 3–15 g, akcja fast (L/ML)', kol:'Rozmiar 2000–2500, gładki hamulec', linka:'Plecionka 0,08–0,12 mm lub żyłka 0,18 mm', przyneta:'Małe gumy na główkach 3–7 g, mikroobrotówki, woblery 3–5 cm', akces:'Krętliki, agrafki, peang, pudełko, polaryzacyjne okulary',
+    okon: { metoda:'Spinning lekki', wedka:'Spinning 2,1–2,4 m, c.w. ok. 3–15 g, akcja fast (L/ML)', kol:'Rozmiar 2000–2500, gładki hamulec', linka:'Plecionka 0,08–0,12 mm lub żyłka 0,18 mm', przyneta:'Małe gumy na główkach 3–7 g, mikroobrotówki, woblery 3–5 cm', akces:'Krętliki, agrafki, peang, pudełko, okulary polaryzacyjne',
+      why:'Okoń to najlepsza ryba na naukę spinningu: lekki, czuły zestaw daje frajdę z małych ryb, a jednocześnie poradzi sobie z przypadkowym większym drapieżnikiem. To najbardziej uniwersalny start ze wszystkich celów.',
+      uwaga:'Nie idź za lekko z plecionką — zbyt cienka rwie się na zaczepach. Uważaj na kolce płetwy grzbietowej okonia przy odhaczaniu.',
       links:[['../ryby/okon.html','Atlas: okoń'],['../techniki/spinning.html','Technika: spinning'],['../sprzet/pierwsza-wedka-spinningowa.html','Pierwsza wędka spinningowa']] },
-    szczupak: { metoda:'Spinning', wedka:'Spinning 2,4–2,7 m, c.w. 10–35 g, akcja fast (M/MH)', kol:'Rozmiar 3000–4000, mocny hamulec', linka:'Plecionka 0,13–0,17 mm + przypon stalowy/fluorocarbon', przyneta:'Gumy 10–13 cm, woblery, błystki podłużne, spinnerbaity', akces:'Przypony antyszczupakowe, duży podbierak, szczypce, mata',
+    szczupak: { metoda:'Spinning średni', wedka:'Spinning 2,4–2,7 m, c.w. 10–35 g, akcja fast (M/MH)', kol:'Rozmiar 3000–4000, mocny hamulec', linka:'Plecionka 0,13–0,17 mm + przypon stalowy/fluorocarbon', przyneta:'Gumy 10–13 cm, woblery, błystki podłużne, spinnerbaity', akces:'Przypony antyszczupakowe, duży podbierak, szczypce, mata',
+      why:'Szczupak wymaga zestawu, który uniesie większe przynęty i wytrzyma gwałtowne ataki. Kluczowy jest przypon chroniący przed przecięciem żyłki ostrymi zębami — bez niego stracisz rybę i przynętę.',
+      uwaga:'Nigdy nie łów szczupaka bez przyponu. Do odhaczania używaj długich szczypiec i rozwieracza — zęby są bardzo ostre.',
       links:[['../ryby/szczupak.html','Atlas: szczupak'],['../techniki/spinning.html','Technika: spinning'],['../sprzet/plecionki-zylki.html','Żyłki, plecionki, przypony']] },
+    sandacz: { metoda:'Jig przy dnie', wedka:'Spinning 2,4–2,7 m, c.w. 7–28 g, akcja fast, czuła szczytówka', kol:'Rozmiar 2500–3000, płynny hamulec', linka:'Plecionka 0,12–0,15 mm + przypon fluorocarbon', przyneta:'Gumy 10–12 cm na główkach jigowych, prowadzone tuż przy dnie', akces:'Latarka czołowa, mata, peang, pudełko na jigi, echosonda (opcjonalnie)',
+      why:'Sandacz żeruje głównie o zmierzchu i nocą, przy samym dnie — zestaw musi dawać precyzyjny kontakt z gruntem i wyczuwalne, delikatne brania. Fluorocarbon jest mniej widoczny w przejrzystej wodzie.',
+      uwaga:'Sandacz bierze bardzo subtelnie — nie przegap „skubnięcia”. Trzymaj kontakt z jigiem podczas opadania przynęty.',
+      links:[['../ryby/sandacz.html','Atlas: sandacz'],['../techniki/spinning.html','Technika: spinning'],['../poradniki/lowienie-nocne.html','Łowienie nocne']] },
     karp: { metoda:'Karpiowanie / method feeder', wedka:'Karpiówka 3,0–3,6 m, 2,5–3,0 lbs (lub feeder na start)', kol:'Rozmiar 5000–6000 z systemem baitrunner', linka:'Żyłka 0,28–0,35 mm, przypony plecione', przyneta:'Kulki proteinowe, kukurydza, pellet; metoda włosowa', akces:'Sygnalizatory, podpórki/rod pod, duży podbierak, mata karpiowa, worek',
+      why:'Karp bywa duży i silny, więc liczy się wytrzymały, amortyzujący zestaw i bezpieczne obchodzenie się z rybą. Metoda włosowa (przynęta na włosku, nie na haczyku) daje najlepszą samozacinalność.',
+      uwaga:'Zawsze miej matę i duży podbierak — karp to często ryba do wypuszczenia. Latem nie przenęcaj: zanęta w cieple szybko się psuje.',
       links:[['../ryby/karp.html','Atlas: karp'],['../techniki/karpiowanie.html','Technika: karpiowanie'],['../poradniki/catch-and-release.html','Catch & Release']] },
     biala: { metoda:'Feeder / spławik', wedka:'Feeder 3,3–3,6 m (lub match/bolonka na spławik)', kol:'Rozmiar 3000–4000', linka:'Żyłka główna 0,18–0,22 mm, przypon 0,12–0,16 mm', przyneta:'Robaki, kukurydza, pęczak; zanęta dobrana do gatunku', akces:'Koszyki zanętowe, haczyki 10–16, spławiki, podbierak, wiaderko',
+      why:'Płoć, leszcz i wzdręga to ryby stadne, które trzeba przynętą przyciągnąć i utrzymać zanętą. Delikatny zestaw i cienki przypon są ważniejsze niż moc — brania bywają bardzo ostrożne.',
+      uwaga:'Klucz to regularne, drobne nęcenie w jeden punkt. Zbyt gruby przypon potrafi całkowicie zabić brania ostrożnej ryby białej.',
       links:[['../techniki/feeder.html','Technika: feeder'],['../techniki/splawik.html','Technika: spławik'],['../poradniki/zanety-domowe.html','Zanęty domowe']] },
+    lin: { metoda:'Spławik / lekki grunt', wedka:'Bat lub match 3,6–4,2 m (albo lekki feeder na stawie)', kol:'Rozmiar 3000, delikatny hamulec', linka:'Żyłka 0,16–0,20 mm, przypon 0,12–0,14 mm', przyneta:'Kukurydza, robak, biały robak, pęczak; delikatna słodka zanęta', akces:'Wrażliwe spławiki, haczyki 8–14, podbierak, odhaczacz, wiaderko',
+      why:'Lin i karaś żerują wolno, przy dnie, często w gęstej roślinności przy trzcinach — najlepszy jest cichy, delikatny zestaw spławikowy i podanie przynęty tuż przy krawędzi roślin o świcie.',
+      uwaga:'Łów cicho i blisko roślinności — lin płoszy się hałasem. Brania bywają leniwe: czekaj na wyraźne zanurzenie spławika, zanim zetniesz.',
+      links:[['../ryby/lin.html','Atlas: lin'],['../techniki/splawik.html','Technika: spławik'],['../pierwsze-kroki/lowiska/stawy.html','Łowiska: stawy']] },
     sum: { metoda:'Grunt ciężki', wedka:'Wędka sumowa 2,7–3,0 m, mocny kręgosłup, c.w. 100–300 g', kol:'Duży multiplikator lub kołowrotek 8000–10000', linka:'Plecionka 0,40–0,60 mm + gruby przypon', przyneta:'Żywiec/martwa ryba, kulki z wątroby, pęk rosówek; duże haczyki', akces:'Rękawica, mocny podbierak/mata, sygnalizator, latarka czołowa',
+      why:'Sum to największy drapieżnik naszych wód — potrzebujesz sprzętu bez kompromisów, który wytrzyma długą, siłową walkę. Nocne, letnie żerowanie wymaga też dobrego oświetlenia i asekuracji.',
+      uwaga:'Nie łów suma na sprzęt „szczupakowy” — pęknie. Duże osobniki chwytaj w rękawicy za żuchwę i traktuj jak cenne tarlaki (C&R).',
       links:[['../ryby/sum.html','Atlas: sum'],['../poradniki/lowienie-nocne.html','Łowienie nocne'],['../aktualnosci/sum-noca-szczyt-sezonu-lato.html','Sum nocą — sezon']] },
     pstrag: { metoda:'Ultralekki spinning / mucha', wedka:'UL spinning 1,8–2,1 m, c.w. 1–7 g (lub wędka muchowa #4–5)', kol:'Rozmiar 1000–2000, bardzo płynny hamulec', linka:'Plecionka 0,06–0,08 mm lub cienka żyłka; fluorocarbon jako przypon', przyneta:'Małe obrotówki, mikrowoblery, mikrogumy; mucha: nimfy i suche', akces:'Kaseton na mikroprzynęty, polaryzacja, podbierak gumowy do C&R',
+      why:'Pstrąg w krainie górnych rzek jest płochliwy i żeruje w przejrzystej wodzie, dlatego liczy się finezja: bardzo lekki zestaw, cienki przypon i drobne przynęty prezentowane delikatnie i z ukrycia.',
+      uwaga:'Poruszaj się cicho i z ukrycia — pstrąg widzi wędkarza. Uważaj na jesienny okres ochronny (różny wg dorzecza) i używaj podbieraka gumowego do wypuszczania.',
       links:[['../ryby/pstrag.html','Atlas: pstrąg'],['../techniki/muchowe.html','Technika: muchowa'],['../techniki/spinning.html','Technika: spinning']] },
   };
 
@@ -250,6 +272,27 @@
       ? 'Jako początkujący kup jeden kompletny, uniwersalny zestaw i nie przepłacaj — priorytetem jest nauka rzutu i holu. Zobacz też poradnik o pierwszym zestawie do 300 zł.'
       : 'Na wyższym poziomie warto zainwestować w lepszy kołowrotek i blank oraz dobrać dwie wędki pod różne przynęty/dystanse.';
   }
+  function budgetTip(){
+    const heavy = (state.target==='sum');
+    if(state.level==='start'){
+      return heavy
+        ? 'Sprzęt na suma trudno złożyć bardzo tanio — na start celuj w solidny, mocny komplet średniej półki, bo tu oszczędności mszczą się przy pierwszej dużej rybie.'
+        : 'Kompletny, sensowny zestaw dla początkującego zmieścisz zwykle w kilkuset złotych. Wydaj rozsądnie na wędkę i kołowrotek, a na drobnicy (żyłka, haczyki, przynęty) nie warto szaleć na starcie.';
+    }
+    return heavy
+      ? 'Na wyższym poziomie inwestuj w markowy kołowrotek z zapasem mocy i wytrzymały blank — to elementy, które przy sumie naprawdę decydują.'
+      : 'Mając już doświadczenie, przesuń budżet na lepszy kołowrotek i blank oraz rozważ dwie wędki (np. lżejszą i mocniejszą) pod różne warunki.';
+  }
+  function chipSummary(){
+    const t = TARGETS.find(x=>x.id===state.target);
+    const w = WATERS.find(x=>x.id===state.water);
+    const l = LEVELS.find(x=>x.id===state.level);
+    return '<div class="chip-row" style="margin:2px 0 18px">'+
+      '<span class="chip active">'+t.emoji+' '+t.title+'</span>'+
+      '<span class="chip active">'+w.emoji+' '+w.title+'</span>'+
+      '<span class="chip active">'+l.emoji+' '+l.title+'</span>'+
+    '</div>';
+  }
   function result(){
     const k = KITS[state.target];
     const rows = [
@@ -259,11 +302,17 @@
     const t = TARGETS.find(x=>x.id===state.target).title;
     const w = WATERS.find(x=>x.id===state.water).title.toLowerCase();
     let html = '<div class="result-box"><h3>Twój zestaw: '+t+' — '+w+'</h3>';
-    html += '<p class="tool-count">Dobór poglądowy — kieruj się parametrami, nie marką.</p>';
+    html += '<p class="tool-count">Twoje wybory (kliknij „Zacznij od nowa”, aby zmienić):</p>';
+    html += chipSummary();
+    html += '<div class="info-block"><h3>Dlaczego taki zestaw</h3><p>'+k.why+'</p></div>';
+    html += '<p class="tool-count" style="font-weight:700;color:var(--ink);margin:22px 0 8px">Rekomendowany zestaw — kieruj się parametrami, nie marką:</p>';
     html += '<div class="result-kit">'+rows.map(r=>'<div class="kit-row"><span class="kit-ico">'+r[0]+'</span><div><span class="kit-label">'+r[1]+'</span><span class="kit-val">'+r[2]+'</span></div></div>').join('')+'</div>';
-    html += '<div class="info-block"><h3>Dopasowanie do wody</h3><p>'+waterTweak()+'</p></div>';
-    html += '<div class="info-block"><h3>Wskazówka dla Twojego poziomu</h3><p>'+levelTweak()+'</p></div>';
-    html += '<div class="kit-links">'+k.links.map(l=>'<a class="btn btn-secondary" href="'+l[0]+'">'+l[1]+'</a>').join('')+'</div>';
+    html += '<div class="info-block"><h3>📍 Dopasowanie do wody</h3><p>'+waterTweak()+'</p></div>';
+    html += '<div class="info-block"><h3>💰 Ile wydać (Twój poziom)</h3><p>'+budgetTip()+'</p></div>';
+    html += '<div class="info-block"><h3>⚠️ Na co uważać</h3><p>'+k.uwaga+'</p></div>';
+    html += '<p class="tool-count" style="font-weight:700;color:var(--ink);margin:22px 0 8px">Doczytaj szczegóły:</p>';
+    html += '<div class="kit-links">'+k.links.map(l=>'<a class="btn btn-secondary" href="'+l[0]+'">'+l[1]+'</a>').join('')+
+      '<a class="btn btn-secondary" href="okresy-ochronne.html">Sprawdź wymiar i okres ochronny</a></div>';
     html += '</div>';
     return html;
   }

@@ -138,14 +138,18 @@
   <!-- seo:meta end (auto) -->
 </head>
 <body>
-<header class="site-header"><nav class="nav container"><a class="logo" href="../index.html"><span class="logo-mark">≈</span><span>FishPoint</span></a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button><ul id="nav-menu" class="nav-menu"><li><a href="../index.html#pierwsze-kroki">Pierwsze kroki</a></li><li><a href="../index.html#sprzet">Sprzęt</a></li><li><a href="../index.html#techniki">Techniki</a></li><li><a href="../index.html#ryby">Atlas ryb</a></li><li><a href="../index.html#poradniki">Poradniki</a></li><li><a href="../narzedzia/index.html">Narzędzia</a></li><li><a href="../aktualnosci/index.html">Blog</a></li><li><a href="../slownik.html">Słownik</a></li><li><a class="nav-cta" href="../index.html#kontakt">Kontakt</a></li></ul></nav></header>
+<header class="site-header"><nav class="nav container"><a class="logo" href="../index.html"><span class="logo-mark">≈</span><span>FishPoint</span></a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button><ul id="nav-menu" class="nav-menu"><li><a href="../index.html#pierwsze-kroki">Pierwsze kroki</a></li><li><a href="../index.html#sprzet">Sprzęt</a></li><li><a href="../index.html#techniki">Techniki</a></li><li><a href="../index.html#ryby">Atlas ryb</a></li><li><a href="../index.html#poradniki">Poradniki</a></li><li><a href="../narzedzia/index.html">Narzędzia</a></li><li><a href="../szukaj.html">Szukaj</a></li><li><a href="../aktualnosci/index.html">Blog</a></li><li><a href="../slownik.html">Słownik</a></li><li><a class="nav-cta" href="../index.html#kontakt">Kontakt</a></li></ul></nav></header>
 <main>
 <section class="subpage-hero"><div class="container"><p class="eyebrow">Narzędzia</p><h1>Rozpoznaj rybę</h1><!--byline:auto--><p class="article-meta">Autor: <a href="https://fish-point.pl/o-autorze.html" rel="author">Maciej Baniewicz</a> · <time datetime="2026-07-03">Opublikowano 3 lipca 2026</time> · <time datetime="2026-07-03">aktualizacja 3 lipca 2026</time></p><!--/byline:auto--><p>Zaznacz cechy złowionej ryby, a klucz podpowie, które gatunki pasują najlepiej. Im więcej cech wskażesz, tym trafniejszy wynik — a każdy prowadzi wprost do opisu w atlasie.</p></div></section>
 <section class="section container article-layout"><article class="article-card"><!--toc:auto--><nav class="toc" aria-label="Spis treści"><p class="toc-title">Spis treści</p><ol><li><a href="#wyniki">Pasujące gatunki</a></li><li><a href="#jak-rozpoznawac">Jak rozpoznawać ryby nad wodą</a></li><li><a href="#faq-najczestsze-pytania">FAQ — najczęstsze pytania</a></li></ol></nav><!--/toc:auto-->
 
 <div id="dims"></div>
-<div class="wizard-nav" style="margin-top:8px">
-  <button class="btn btn-ghost" id="clear">Wyczyść cechy</button>
+<div class="picked-panel" id="pickedPanel" hidden>
+  <p class="tool-count" style="margin:0 0 8px;font-weight:700;color:var(--ink)">Wybrane cechy <span id="pickedCount"></span> — kliknij ✕, aby usunąć:</p>
+  <div class="chip-row" id="picked"></div>
+</div>
+<div class="wizard-nav" style="margin-top:14px">
+  <button class="btn btn-ghost" id="clear">Wyczyść wszystkie cechy</button>
 </div>
 
 <h2 id="wyniki" style="margin-top:34px">Pasujące gatunki</h2>
@@ -211,6 +215,26 @@
   const dims = document.getElementById('dims');
   const results = document.getElementById('results');
   const hint = document.getElementById('hint');
+  const pickedPanel = document.getElementById('pickedPanel');
+  const picked = document.getElementById('picked');
+  const pickedCount = document.getElementById('pickedCount');
+  // słowniki etykiet: klucz -> nazwa wymiaru, oraz klucz:wartość -> nazwa cechy
+  const DIMLABEL = {}, OPTLABEL = {};
+  DIMS.forEach(d=>{ DIMLABEL[d.key]=d.label; d.opts.forEach(o=>OPTLABEL[d.key+':'+o[0]]=o[1]); });
+
+  function renderPicked(){
+    const active = Object.keys(sel).filter(k=>sel[k]);
+    pickedPanel.hidden = active.length===0;
+    pickedCount.textContent = active.length ? '('+active.length+')' : '';
+    picked.innerHTML = active.map(k=>
+      '<button class="chip active chip-rm" data-key="'+k+'" title="Usuń cechę">'+
+      '<span class="chip-dim">'+DIMLABEL[k]+':</span> '+OPTLABEL[k+':'+sel[k]]+' <span class="chip-x">✕</span></button>'
+    ).join('');
+  }
+  function deactivateChip(key){
+    const row = dims.querySelector('[data-key="'+key+'"]');
+    if(row) row.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  }
 
   dims.innerHTML = DIMS.map(d =>
     '<div style="margin-bottom:16px"><p class="tool-count" style="margin-bottom:8px;font-weight:700;color:var(--ink)">'+d.label+'</p>'+
@@ -220,6 +244,7 @@
   ).join('');
 
   function render(){
+    renderPicked();
     const active = Object.keys(sel).filter(k=>sel[k]);
     if(!active.length){ results.innerHTML=''; hint.hidden=false; return; }
     hint.hidden=true;
@@ -248,6 +273,12 @@
     const row = b.closest('.chip-row');
     if(sel[key]===val){ sel[key]=null; b.classList.remove('active'); }
     else { sel[key]=val; row.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active', c===b)); }
+    render();
+  });
+  picked.addEventListener('click', e=>{
+    const b = e.target.closest('.chip-rm'); if(!b) return;
+    const key = b.dataset.key;
+    sel[key]=null; deactivateChip(key);
     render();
   });
   document.getElementById('clear').addEventListener('click', ()=>{
