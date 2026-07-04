@@ -84,6 +84,67 @@ def fmt_date_pl(iso):
 
 TOC_BEGIN, TOC_END = "<!--toc:auto-->", "<!--/toc:auto-->"
 toc_re = re.compile(re.escape(TOC_BEGIN) + r".*?" + re.escape(TOC_END), re.S)
+
+TLDR_BEGIN, TLDR_END = "<!--tldr:auto-->", "<!--/tldr:auto-->"
+tldr_re = re.compile(re.escape(TLDR_BEGIN) + r".*?" + re.escape(TLDR_END), re.S)
+RELATED_BEGIN, RELATED_END = "<!--related:auto-->", "<!--/related:auto-->"
+related_re = re.compile(re.escape(RELATED_BEGIN) + r".*?" + re.escape(RELATED_END), re.S)
+
+# Mapa sekcja -> [(url, krótki_tytuł)] budowana w main() przed pętlą (dla bloku
+# „Powiązane artykuły"). Puste do czasu prescanu.
+SECTION_PAGES = {}
+
+
+def short_title(title_txt):
+    return title_txt.split(" — ")[0].split(" - ")[0]
+
+
+def article_text(src):
+    """Czysty tekst artykułu (z <article class="article-card">) — do wordCount
+    i llms-full.txt. Usuwa skrypty, style, TOC i znaczniki."""
+    m = re.search(r'<article class="article-card">(.*?)</article>', src, re.S)
+    chunk = m.group(1) if m else src
+    chunk = re.sub(r"<script.*?</script>", " ", chunk, flags=re.S)
+    chunk = re.sub(r"<style.*?</style>", " ", chunk, flags=re.S)
+    chunk = toc_re.sub(" ", chunk)
+    chunk = tldr_re.sub(" ", chunk)
+    chunk = related_re.sub(" ", chunk)
+    return re.sub(r"\s+", " ", _clean(chunk)).strip()
+
+
+def build_related(section, url):
+    """Do 4 innych artykułów z tej samej sekcji (deterministycznie)."""
+    pool = [(u, t) for (u, t) in SECTION_PAGES.get(section, []) if u != url]
+    pool.sort(key=lambda x: x[1].lower())
+    return pool[:4]
+
+
+def extract_howto(src):
+    """Zwraca listę kroków, jeśli strona ma wyraźną listę „krok po kroku"
+    (uporządkowaną <ol> z min. 3 <li> pod nagłówkiem zawierającym 'krok').
+    Inaczej []. Pomija przepisy (obsługiwane osobno jako Recipe)."""
+    for hm in re.finditer(r"<h[23][^>]*>[^<]*krok[^<]*</h[23]>", src, re.I):
+        rest = src[hm.end():]
+        nxt = re.search(r"<h[23][\s>]", rest)
+        chunk = rest[: nxt.start()] if nxt else rest
+        om = re.search(r"<ol[^>]*>(.*?)</ol>", chunk, re.S)
+        if not om:
+            continue
+        steps = [_clean(li) for li in re.findall(r"<li>(.*?)</li>", om.group(1), re.S)]
+        steps = [s for s in steps if s]
+        if len(steps) >= 3:
+            return steps
+    return []
+
+
+def extract_glossary(src):
+    """Dla słownika: pary (termin, definicja) z <h3>Termin</h3><p>...</p>."""
+    pairs = []
+    for m in re.finditer(r"<h3[^>]*>(.*?)</h3>\s*<p>(.*?)</p>", src, re.S):
+        term, definition = _clean(m.group(1)), _clean(m.group(2))
+        if term and definition and len(term) < 60:
+            pairs.append((term, definition))
+    return pairs
 _PL = str.maketrans("ąćęłńóśźżĄĆĘŁŃÓŚŹŻ", "acelnoszzACELNOSZZ")
 
 
@@ -289,6 +350,8 @@ def build(path):
     src = block_re.sub("", src)
     src = byline_re.sub("", src)
     src = toc_re.sub("", src)
+    src = tldr_re.sub("", src)
+    src = related_re.sub("", src)
 
     tm = title_re.search(src)
     dm = desc_re.search(src)
@@ -306,6 +369,17 @@ def build(path):
     page_dir = os.path.dirname(path)
     im = img_re.search(src)
     img_path = resolve_img(im.group(1), page_dir) if im else DEFAULT_IMG
+    # Strony narzędzi budują <img> w JS (brak statycznego) — nadaj sensowny OG
+    TOOL_IMG = {
+        "narzedzia/okresy-ochronne.html": "/assets/img/tematy/wedki.jpg",
+        "narzedzia/kalendarz-bran.html": "/assets/img/tematy/kalendarz.jpg",
+        "narzedzia/dobor-sprzetu.html": "/assets/img/tematy/wedki.jpg",
+        "narzedzia/rozpoznaj-rybe.html": "/assets/img/ryby/okon.jpg",
+        "narzedzia/index.html": "/assets/img/tematy/wedki.jpg",
+    }
+    rel_now = os.path.relpath(path, ROOT).replace(os.sep, "/")
+    if rel_now in TOOL_IMG:
+        img_path = TOOL_IMG[rel_now]
     img_url = BASE + img_path
     page_images = collect_images(src, page_dir)
 
@@ -331,6 +405,21 @@ def build(path):
         )
         src, n = re.subn(r"(</h1>)", r"\1" + byline, src, count=1)
         src, _toc_n = add_toc_and_anchors(src)
+        # „W skrócie" (TL;DR) — z opisu meta; łatwe do wyciągnięcia przez AI/Google
+        tldr = (f'{TLDR_BEGIN}<aside class="tldr" aria-label="W skrócie">'
+                f'<p class="tldr-label">W skrócie</p><p>{html.escape(desc_txt)}</p>'
+                f'</aside>{TLDR_END}')
+        src = re.sub(r'(<article class="article-card">)', r"\1" + tldr, src, count=1)
+        # „Powiązane artykuły" — linki wewnętrzne z tej samej sekcji
+        if section:
+            rel_items = build_related(section, url)
+            if rel_items:
+                links = "".join(
+                    f'<a href="{u}">{html.escape(t)}</a>' for u, t in rel_items)
+                related = (f'{RELATED_BEGIN}<section class="related" aria-label="Powiązane artykuły">'
+                           f'<h2>Powiązane artykuły</h2><div class="related-grid">{links}</div>'
+                           f'</section>{RELATED_END}')
+                src = re.sub(r"(</article>)", related + r"\1", src, count=1)
     head = [
         BEGIN,
         f'  <link rel="canonical" href="{url}" />',
@@ -341,6 +430,7 @@ def build(path):
         '  <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/logo.png" />',
         '  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />',
         '  <link rel="manifest" href="/site.webmanifest" />',
+        '  <link rel="alternate" type="application/rss+xml" title="FishPoint — aktualności" href="/feed.xml" />',
         f'  <meta property="og:site_name" content="{SITE_NAME}" />',
         '  <meta property="og:locale" content="pl_PL" />',
         f'  <meta property="og:type" content="{og_type}" />',
@@ -387,6 +477,14 @@ def build(path):
             "name": SITE_NAME,
             "url": BASE + "/",
             "inLanguage": "pl-PL",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": BASE + "/szukaj.html?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+            },
         }))
     else:
         # breadcrumb
@@ -457,6 +555,22 @@ def build(path):
                         {"@type": "ListItem", "position": i + 1,
                          "name": name, "url": u}
                         for i, (name, u) in enumerate(li)
+                    ],
+                }))
+        elif rel == "slownik.html":
+            terms = extract_glossary(src)
+            if terms:
+                head.append(jsonld({
+                    "@context": "https://schema.org",
+                    "@type": "DefinedTermSet",
+                    "name": short_title(title_txt),
+                    "description": desc_txt,
+                    "url": url,
+                    "inLanguage": "pl-PL",
+                    "hasDefinedTerm": [
+                        {"@type": "DefinedTerm", "name": term, "description": definition,
+                         "inDefinedTermSet": url}
+                        for term, definition in terms
                     ],
                 }))
         else:
@@ -538,6 +652,33 @@ def build(path):
                     "logo": {"@type": "ImageObject", "url": BASE + LOGO, "width": 512, "height": 512},
                 },
             }
+            # Wzbogacenie: wordCount, sekcja, szacowany czas czytania, słowa kluczowe
+            wc = len(article_text(src).split())
+            if wc > 50:
+                posting["wordCount"] = wc
+                posting["timeRequired"] = f"PT{max(1, round(wc / 200))}M"
+            if section:
+                posting["articleSection"] = SECTIONS.get(section, section.capitalize())
+            kw = [short_title(title_txt)]
+            if section:
+                kw.append(SECTIONS.get(section, section.capitalize()))
+            kw.append("wędkarstwo")
+            posting["keywords"] = ", ".join(dict.fromkeys(kw))
+            # HowTo (poza kuchnią — przepisy mają własny Recipe): wyraźna lista kroków
+            if section != "kuchnia":
+                steps = extract_howto(src)
+                if steps:
+                    head.append(jsonld({
+                        "@context": "https://schema.org",
+                        "@type": "HowTo",
+                        "name": short_title(title_txt),
+                        "description": desc_txt,
+                        "inLanguage": "pl-PL",
+                        "step": [
+                            {"@type": "HowToStep", "position": i + 1, "text": s}
+                            for i, s in enumerate(steps)
+                        ],
+                    }))
             # Powiązanie z encją gatunku ryby (Wikipedia + Wikidata) na stronach atlasu
             if fish:
                 posting["about"] = {
@@ -564,6 +705,20 @@ def main():
             if fn.endswith(".html") and fn != "404.html":
                 pages.append(os.path.join(dirpath, fn))
     pages.sort()
+
+    # Pre-scan: mapa sekcja -> [(url, tytuł)] dla bloku „Powiązane artykuły".
+    SECTION_PAGES.clear()
+    for p in pages:
+        rel = os.path.relpath(p, ROOT).replace(os.sep, "/")
+        parts = rel.split("/")
+        if len(parts) < 2 or parts[-1] == "index.html" or parts[0] not in SECTIONS:
+            continue
+        with open(p, encoding="utf-8") as f:
+            tm = title_re.search(f.read())
+        if not tm:
+            continue
+        SECTION_PAGES.setdefault(parts[0], []).append(
+            (BASE + rel_url(p), short_title(html.unescape(tm.group(1).strip()))))
 
     urls = []
     changed = 0
@@ -655,7 +810,69 @@ def main():
     with open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8") as f:
         f.write("\n".join(ll).rstrip() + "\n")
 
+    # llms-full.txt — pełny zrzut treści dla modeli AI (opcjonalny standard llmstxt)
+    full = ["# FishPoint — pełna treść",
+            "",
+            "> Kompletny, tekstowy zrzut treści serwisu FishPoint (polski poradnik "
+            "wędkarski: sprzęt, atlas ryb, techniki, poradniki, kuchnia, narzędzia). "
+            "Autor: " + AUTHOR_NAME + ". Język: pl-PL.",
+            ""]
+    full_n = 0
+    for p in pages:
+        with open(p, encoding="utf-8") as f:
+            s = f.read()
+        tm = title_re.search(s)
+        if not tm:
+            continue
+        txt = article_text(s)
+        if len(txt) < 120:
+            continue
+        full.append(f"## {short_title(html.unescape(tm.group(1).strip()))}")
+        full.append(f"URL: {BASE + rel_url(p)}")
+        full.append("")
+        full.append(txt)
+        full.append("")
+        full_n += 1
+    with open(os.path.join(ROOT, "llms-full.txt"), "w", encoding="utf-8") as f:
+        f.write("\n".join(full).rstrip() + "\n")
+
+    # feed.xml (RSS 2.0) — kanał bloga (aktualnosci)
+    import email.utils
+
+    def rfc822(d):
+        try:
+            return email.utils.format_datetime(
+                datetime.datetime.strptime(d, "%Y-%m-%d"))
+        except Exception:
+            return d
+
+    blog = [u for u in urls if u[6] == "aktualnosci" and not u[2]]
+    blog.sort(key=lambda t: t[1], reverse=True)
+    rss = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+           '  <channel>',
+           f'    <title>FishPoint — aktualności wędkarskie</title>',
+           f'    <link>{BASE}/aktualnosci/</link>',
+           '    <description>Blog wędkarski FishPoint: poradniki, relacje znad wody, '
+           'sezon i sprzęt.</description>',
+           '    <language>pl-PL</language>',
+           f'    <atom:link href="{BASE}/feed.xml" rel="self" type="application/rss+xml" />']
+    if blog:
+        rss.append(f'    <lastBuildDate>{rfc822(blog[0][1])}</lastBuildDate>')
+    for url, mtime, _is_index, _rp, title, desc, _sec, _imgs in blog:
+        rss += ['    <item>',
+                f'      <title>{xesc(short_title(title))}</title>',
+                f'      <link>{url}</link>',
+                f'      <guid isPermaLink="true">{url}</guid>',
+                f'      <pubDate>{rfc822(mtime)}</pubDate>',
+                f'      <description>{xesc(desc)}</description>',
+                '    </item>']
+    rss += ['  </channel>', '</rss>']
+    with open(os.path.join(ROOT, "feed.xml"), "w", encoding="utf-8") as f:
+        f.write("\n".join(rss) + "\n")
+
     print(f"Zaktualizowano stron: {changed}")
+    print(f"llms-full.txt: {full_n} stron; feed.xml: {len(blog)} wpisów")
     print(f"sitemap.xml: {len(urls)} URL-i, {total_imgs} obrazów")
     print("robots.txt: ok")
     print(f"llms.txt: {sum(len(v) for v in by_sec.values())} wpisów")

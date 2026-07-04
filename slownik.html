@@ -17,6 +17,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/logo.png" />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+  <link rel="alternate" type="application/rss+xml" title="FishPoint — aktualności" href="/feed.xml" />
   <meta property="og:site_name" content="FishPoint" />
   <meta property="og:locale" content="pl_PL" />
   <meta property="og:type" content="article" />
@@ -29,7 +30,7 @@
   <meta name="twitter:description" content="Słownik pojęć wędkarskich FishPoint od A do Z: ponad 60 haseł z zakresu spinningu, feedera, karpiarstwa i metody spławikowej — od agrafki i akcji wędki po zanętę i żyłkę, z krótkimi, rzeczowymi definicjami po polsku." />
   <meta name="twitter:image" content="https://fish-point.pl/assets/img/tematy/wedki.jpg" />
   <meta property="article:published_time" content="2026-06-11" />
-  <meta property="article:modified_time" content="2026-07-02" />
+  <meta property="article:modified_time" content="2026-07-04" />
   <meta property="article:publisher" content="https://fish-point.pl/" />
   <script type="application/ld+json">
 {
@@ -54,47 +55,385 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Słownik pojęć wędkarskich",
+  "@type": "DefinedTermSet",
+  "name": "Słownik pojęć wędkarskich",
   "description": "Słownik pojęć wędkarskich FishPoint od A do Z: ponad 60 haseł z zakresu spinningu, feedera, karpiarstwa i metody spławikowej — od agrafki i akcji wędki po zanętę i żyłkę, z krótkimi, rzeczowymi definicjami po polsku.",
   "url": "https://fish-point.pl/slownik.html",
-  "mainEntityOfPage": "https://fish-point.pl/slownik.html",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://fish-point.pl/assets/img/tematy/wedki.jpg",
-    "contentUrl": "https://fish-point.pl/assets/img/tematy/wedki.jpg",
-    "creditText": "FishPoint",
-    "creator": {
-      "@type": "Person",
-      "name": "Maciej Baniewicz",
-      "url": "https://fish-point.pl/o-autorze.html",
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61591546555168"
-      ]
-    },
-    "copyrightNotice": "© FishPoint"
-  },
   "inLanguage": "pl-PL",
-  "datePublished": "2026-06-11",
-  "dateModified": "2026-07-02",
-  "author": {
-    "@type": "Person",
-    "name": "Maciej Baniewicz",
-    "url": "https://fish-point.pl/o-autorze.html",
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61591546555168"
-    ]
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "FishPoint",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://fish-point.pl/assets/img/logo.png",
-      "width": 512,
-      "height": 512
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Agrafka",
+      "description": "Mały zapinany łącznik z drutu, montowany na końcu żyłki lub przyponu, służący do szybkiej wymiany przynęty bez wiązania węzłów. Niezbędna w spinningu, gdzie często zmienia się woblery i błystki. Często występuje w komplecie z krętlikiem, który dodatkowo zapobiega skręcaniu linki.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Akcja wędki",
+      "description": "Określa, w którym miejscu blank ugina się pod obciążeniem. Akcja szczytowa (fast) oznacza pracę głównie końcówki — daje szybkie zacięcia i dobre czucie przynęty. Akcja paraboliczna (slow) to ugięcie na całej długości kija, które świetnie amortyzuje zrywy ryby podczas holu. Akcja regularna (moderate) jest kompromisem między nimi.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Amur biały",
+      "description": "Duża ryba karpiowata pochodząca z Azji Wschodniej, introdukowana w Polsce m.in. do ograniczania zarastania zbiorników, bo żywi się głównie roślinnością. Osiąga ponad metr długości i kilkanaście kilogramów masy. Łowiony najczęściej metodami gruntowymi i spławikowymi, słynie z bardzo silnego, długiego holu.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Backing",
+      "description": "Podkład nawijany na szpulę kołowrotka pod właściwą linkę. W spinningu i feederze to zwykle tańsza żyłka wypełniająca szpulę, by droższa plecionka leżała blisko jej krawędzi i nie marnowała pojemności. W wędkarstwie muchowym backing to zapas mocnej linki pod sznurem muchowym, wykorzystywany podczas holu dużych ryb.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Bait runner (wolny bieg)",
+      "description": "System w kołowrotku pozwalający rybie swobodnie ściągać linkę ze szpuli przy zamkniętym kabłąku, bez ryzyka ściągnięcia wędki do wody. Po przełożeniu dźwigni lub obrocie korbką kołowrotek wraca do normalnego hamulca. Rozwiązanie szczególnie popularne w wędkarstwie karpiowym i gruntowym.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Blank",
+      "description": "Surowa rura kompozytowa stanowiąca „kręgosłup\" wędki — to na nią montuje się przelotki, uchwyt kołowrotka i rękojeść. Współczesne blanki wykonuje się niemal wyłącznie z włókna węglowego o różnym module sztywności. Od jakości blanku zależą czułość, waga i wytrzymałość całego kija.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Bolonka",
+      "description": "Długa (zwykle 5–7 m) teleskopowa wędka z przelotkami, wywodząca się z włoskiego Bolonia, przeznaczona przede wszystkim do prowadzenia spławika w nurcie rzeki. Pozwala kontrolować przepływ zestawu na dużym odcinku i skutecznie łowić ryby białe, np. płocie, leszcze i jelce. W Polsce to klasyka łowienia rzecznego.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Branie",
+      "description": "Moment, w którym ryba atakuje lub pobiera przynętę, sygnalizowany ruchem spławika, drgnięciem szczytówki, szarpnięciem linki albo dźwiękiem sygnalizatora. Charakter brania bywa różny: od delikatnego „dziobania\" płoci po zdecydowane uderzenie szczupaka. Prawidłowe odczytanie brania decyduje o skutecznym zacięciu.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Chwytacz (mata karpiowa)",
+      "description": "Miękka, wyściełana mata lub kołyska, na której kładzie się rybę po wyholowaniu, by chronić jej śluz, łuski i płetwy podczas odhaczania, ważenia i fotografowania. Standard etycznego wędkarstwa, zwłaszcza w karpiarstwie. Na wielu łowiskach komercyjnych posiadanie maty jest obowiązkowe.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Drgająca szczytówka (quiver tip)",
+      "description": "Cienka, elastyczna i często jaskrawo pomalowana końcówka wędki gruntowej lub feederowej, pełniąca rolę sygnalizatora brań. Ryba pobierająca przynętę powoduje wyraźne drganie lub wygięcie szczytówki. Wędki feederowe mają zwykle komplet wymiennych szczytówek o różnej sztywności, dobieranych do siły nurtu.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Drop shot",
+      "description": "Technika spinningowa, w której haczyk z przynętą (najczęściej miękką gumą) wiązany jest bezpośrednio na lince powyżej obciążenia umieszczonego na samym końcu zestawu. Pozwala prezentować przynętę nieruchomo lub subtelnie nad dnem, w jednym punkcie. Bardzo skuteczna na okonie i sandacze, szczególnie przy słabym żerowaniu.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Echosonda",
+      "description": "Urządzenie elektroniczne wykorzystujące fale ultradźwiękowe do odczytywania głębokości, ukształtowania dna, roślinności i obecności ryb. Przetwornik wysyła impuls, a echosonda interpretuje odbite echo i rysuje obraz na ekranie. Stosowana z łodzi, kajaka, a w wersjach rzutowych także z brzegu.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Feeder",
+      "description": "Metoda gruntowa, w której zanętę dostarcza się w koszyku zanętowym wpiętym w zestaw, a brania odczytuje z drgającej szczytówki. Nazwa odnosi się też do samej wędki feederowej, zwykle o długości 3,0–3,9 m. To jedna z najskuteczniejszych metod łowienia leszczy, płoci i karpi zarówno w rzekach, jak i wodach stojących.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Fluorocarbon",
+      "description": "Linka z polifluorku winylidenu (PVDF) o współczynniku załamania światła zbliżonym do wody, przez co jest w niej słabo widoczna. Jest sztywniejsza i odporniejsza na przetarcia niż klasyczna żyłka, a przy tym szybko tonie. Stosowana głównie na przypony, w spinningu także jako materiał przyponowy odporny na zęby drapieżników (poza szczupakiem, gdzie bezpieczniejszy jest przypon stalowy).",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Grunt (łowienie gruntowe)",
+      "description": "Ogólna nazwa metod, w których przynęta leży na dnie, utrzymywana ciężarkiem lub koszykiem zanętowym, a brania sygnalizuje szczytówka, sygnalizator elektroniczny lub swinger. Klasyczna metoda na leszcza, lina, karpia, węgorza i suma. Obejmuje zarówno prosty zestaw z ciężarkiem przelotowym, jak i nowoczesny feeder.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Haczyk",
+      "description": "Podstawowy element uzbrojenia każdego zestawu: zagięty drut z ostrzem, zadziorem (lub bez, w wersjach bezzadziorowych) i uchem albo łopatką do wiązania. Rozmiary opisuje się numeracją, w której wyższy numer oznacza mniejszy haczyk (np. 18 to drobny haczyk spławikowy, 2 — duży karpiowy). Kształt, grubość drutu i ostrość dobiera się do przynęty i pyska ryby.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Hair rig (zestaw włosowy)",
+      "description": "Karpiowy sposób prezentacji przynęty, w którym kulka proteinowa lub pellet nie tkwi na haczyku, lecz wisi obok niego na cienkim „włosie\". Ryba zasysa przynętę razem z gołym haczykiem, który łatwiej wbija się w wargę. Wynalazek z lat 70.–80., który zrewolucjonizował skuteczność łowienia ostrożnych karpi.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Hol",
+      "description": "Etap walki z rybą od zacięcia do podebrania, podczas którego wędkarz wykorzystuje sprężystość wędki i hamulec kołowrotka, by zmęczyć rybę. Dobry hol polega na utrzymywaniu stałego napięcia linki i spokojnym odzyskiwaniu jej, bez forsowania. Błędy w holu — luz na lince lub zbyt mocno zakręcony hamulec — to najczęstsze przyczyny zejść.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Jerk",
+      "description": "Duża, zwykle pozbawiona steru twarda przynęta spinningowa, której pracę nadaje sam wędkarz krótkimi szarpnięciami (ang. jerk — szarpnięcie) sztywnym kijem. Jerki prowadzi się w charakterystycznym zygzaku tuż pod powierzchnią lub w toni. Przynęta typowo szczupakowa, wymagająca mocnej wędki i przyponu odpornego na zęby.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Jig (główka jigowa)",
+      "description": "Ołowiana lub wolframowa główka odlana razem z haczykiem, na którą nasadza się miękką przynętę gumową (twister, ripper). Masa główki decyduje o tempie opadania przynęty i możliwości utrzymania kontaktu z dnem. Łowienie jigiem — opad i podciągnięcia przy dnie — to podstawowa technika na sandacza i okonia.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Karpiarstwo",
+      "description": "Wyspecjalizowana gałąź wędkarstwa nastawiona na łowienie dużych karpi (i amurów), zwykle metodą „złów i wypuść\". Charakteryzuje się długimi zasiadkami, rozbudowanym sprzętem (rod pod, sygnalizatory, mata, namiot) oraz zestawami włosowymi z kulkami proteinowymi. Wywodzi się z Wielkiej Brytanii, w Polsce ma ogromną rzeszę pasjonatów.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Kobra",
+      "description": "Zakrzywiona rurka do wyrzucania kulek proteinowych na duże odległości, działająca na zasadzie procy-rynny: kulkę wkłada się do rurki i energicznym zamachem posyła w stronę łowiska. Pozwala nęcić punktowo na dystansach przekraczających możliwości ręcznego rzutu. Podstawowe narzędzie nęcenia w karpiarstwie.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Krętlik",
+      "description": "Drobny element łączący dwie linki, zbudowany z dwóch oczek obracających się niezależnie na wspólnym korpusie. Zapobiega skręcaniu się żyłki powodowanemu przez obracającą się przynętę lub zestaw. Występuje samodzielnie albo w połączeniu z agrafką; jego wytrzymałość podawana jest w kilogramach.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Kulki proteinowe (boilies)",
+      "description": "Gotowane kulki z ciasta na bazie mąk, jajek, aromatów i atraktorów, o średnicy zwykle 10–24 mm — podstawowa przynęta i zanęta karpiowa. Dzięki twardej skorupce są odporne na drobnicę i raki, a długo zalegając w wodzie selekcjonują większe ryby. Występują w wersjach tonących, pływających (pop-up) i o neutralnej pływalności (wafters).",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Łowisko",
+      "description": "Miejsce, w którym łowi się ryby — zarówno w znaczeniu całego akwenu (jezioro, odcinek rzeki, łowisko komercyjne), jak i konkretnego punktu, w którym prezentowana jest przynęta. Wybór i rozpoznanie łowiska (głębokość, struktura dna, przeszkody) to często ważniejsza połowa sukcesu niż sam sprzęt. Łowiska specjalne i komercyjne rządzą się własnymi regulaminami.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Main line (linka główna)",
+      "description": "Podstawowa linka nawinięta na szpulę kołowrotka, biegnąca od wędki do zestawu końcowego — w odróżnieniu od przyponu i strzałówki. Może być żyłką, plecionką lub fluorocarbonem, a jej średnicę i wytrzymałość dobiera się do metody oraz wielkości łowionych ryb. Stan linki głównej warto regularnie kontrolować, bo to ona przenosi wszystkie obciążenia rzutu i holu.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Marker",
+      "description": "Zestaw (i specjalna wędka) służący do sondowania dna przed łowieniem: pływak markerowy wypuszczany z głębin na powierzchnię pozwala zmierzyć głębokość i „wymacać\" charakter dna, a następnie oznaczyć miejsce nęcenia. Powszechnie stosowany w karpiarstwie przed rozpoczęciem zasiadki. Markerem bywa też nazywana sama boja oznaczająca punkt łowienia.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Metoda (method feeder)",
+      "description": "Odmiana feedera, w której płaski koszyk oblepia się zanętą, a krótki przypon z przynętą (często pellet lub mini kulka na włosie) chowa się bezpośrednio w niej. Ryba żerując na zanęcie zasysa przynętę, a ciężar koszyka często powoduje samozacięcie. Bardzo skuteczna i prosta metoda na karpie, leszcze i liny, szczególnie na łowiskach komercyjnych.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Mormyszka",
+      "description": "Drobna przynęta o ciężkim korpusie z wtopionym haczykiem, wywodząca się z wędkarstwa rosyjskiego, używana przede wszystkim w łowieniu podlodowym. Pracę nadaje jej wędkarz drobnymi, szybkimi drganiami krótkiej wędki ze stroikiem. Mormyszki uzbraja się larwami (ochotka, biały robak) albo łowi „na goło\" na bezmotylkę.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Nęcenie",
+      "description": "Dostarczanie do łowiska zanęty w celu zwabienia i przytrzymania ryb w miejscu łowienia. Może być jednorazowe (nęcenie wstępne przed łowieniem) albo systematyczne, prowadzone przez kilka dni przed zasiadką. Kluczem jest umiar i celność: przekarmione ryby przestają interesować się przynętą, a rozrzucona zanęta rozprasza je po łowisku.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Odległościówka (wędka odległościowa, match)",
+      "description": "Smukła, zwykle trzyczęściowa wędka spławikowa o długości 3,9–4,5 m, z dużą liczbą małych przelotek, przeznaczona do rzucania zestawem z waglerem na znaczne odległości. Pozwala precyzyjnie łowić spławikiem tam, gdzie nie sięga tyczka ani bat. Popularna na jeziorach i łowiskach komercyjnych przy łowieniu płoci, leszczy i karasi.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Okres ochronny",
+      "description": "Ustalony przepisami przedział czasu, najczęściej obejmujący tarło, w którym obowiązuje zakaz połowu danego gatunku — np. sandacz i szczupak mają okresy ochronne wiosną. Złowioną w tym czasie rybę należy niezwłocznie wypuścić. Terminy różnią się zależnie od gatunku i wód, dlatego zawsze trzeba sprawdzać aktualny regulamin PZW i przepisy lokalne.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Paternoster",
+      "description": "Klasyczny zestaw gruntowy, w którym ciężarek lub koszyk zanętowy biegnie na bocznej odnodze, a przypon z haczykiem odchodzi od linki głównej osobno. Taka konstrukcja dobrze przekazuje brania na szczytówkę i ogranicza plątanie zestawu. Jeden z podstawowych montaży feederowych, łatwy do wykonania nawet bez akcesoriów.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Pellet",
+      "description": "Granulat paszowy tłoczony z mączek rybnych, zbóż i olejów, używany jako zanęta i przynęta — szczególnie w metodzie i na łowiskach karpowych. Tonie i stopniowo się rozpuszcza, uwalniając aromat; twardsze pellety haczykowe mocuje się na włosie lub w gumce. Średnice od 2 mm (zanętowe) do kilkunastu milimetrów (przynętowe).",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Pilker",
+      "description": "Ciężka, podłużna przynęta metalowa do połowów morskich, opadająca pionowo w toni i prowadzona rytmicznymi podciągnięciami. Standard przy łowieniu dorszy z kutra na Bałtyku; masy pilkerów sięgają od kilkudziesięciu do kilkuset gramów, zależnie od głębokości i dryfu. Często uzupełniany dodatkowymi przyponami z gumami powyżej przynęty.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Plecionka",
+      "description": "Linka spleciona z wielu cienkich włókien (najczęściej polietylenowych), niemal nierozciągliwa i bardzo wytrzymała przy małej średnicy. Brak rozciągliwości daje doskonałe czucie przynęty i skuteczne zacięcia na dystansie, dlatego dominuje w spinningu i feederze rzecznym. Wadą jest widoczność w wodzie i mała odporność na przetarcia o kamienie czy muszle, stąd często łączy się ją z przyponem z fluorocarbonu.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Pływalność woblera (floating/suspending/sinking)",
+      "description": "Cecha określająca zachowanie woblera w wodzie po zatrzymaniu prowadzenia. Floating (pływający) wypływa ku powierzchni, sinking (tonący) opada, a suspending utrzymuje się w toni na stałej głębokości. Dobór pływalności pozwala dopasować prezentację do głębokości żerowania ryb i charakteru łowiska, np. suspending świetnie sprawdza się przy wolnym prowadzeniu z przystankami.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Podbierak",
+      "description": "Siatka na sztywnej obręczy z rękojeścią, służąca do bezpiecznego wyjęcia wyholowanej ryby z wody. Chroni zarówno rybę (siatki bezwęzłowe i gumowane nie uszkadzają śluzu), jak i sprzęt — podnoszenie ryby „na wędce\" to częsta przyczyna złamań. Rozmiar i głębokość kosza dobiera się do łowionych gatunków; w karpiarstwie standardem są duże podbieraki o ramionach 42 cala.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Pompowanie",
+      "description": "Technika odzyskiwania linki podczas holu dużej ryby: wędkarz unosi wędkę, ściągając rybę ku sobie, a następnie opuszczając kij szybko nawija powstały luz na kołowrotek. Pozwala holować siłą blanku, a nie przekładni kołowrotka, co oszczędza sprzęt i skraca walkę. Kluczowe jest utrzymanie napiętej linki przez cały cykl.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Przelotka",
+      "description": "Pierścień z wkładką ceramiczną (np. SiC, Alconite) mocowany na blanku, prowadzący linkę wzdłuż wędki. Jakość wkładek decyduje o tarciu podczas rzutu i odporności na przecieranie plecionką — pęknięta wkładka potrafi zniszczyć linkę w jeden dzień. Rozmieszczenie i rozmiar przelotek wpływają na dystans rzutu i pracę blanku.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Przypon",
+      "description": "Końcowy odcinek zestawu między linką główną a haczykiem lub przynętą, wykonany z żyłki, fluorocarbonu, plecionki bądź materiału stalowego. Pełni różne role: maskuje zestaw, chroni przed zębami drapieżnika (przypon stalowy na szczupaka), stanowi też zaplanowane najsłabsze ogniwo, które zerwie się przed linką główną. Długość i materiał dobiera się do metody i ostrożności ryb.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Ripper",
+      "description": "Miękka przynęta gumowa o kształcie rybki z płaskim, pionowym ogonkiem (tzw. kopytkiem), który podczas prowadzenia intensywnie pracuje na boki. Uzbraja się ją najczęściej na główce jigowej i prowadzi skokowo przy dnie. Obok twistera to podstawowa guma na sandacza, okonia i szczupaka.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Rod pod",
+      "description": "Wolnostojący stelaż na dwie do czterech wędek, wyposażony w poprzeczki do montażu sygnalizatorów brań i tylnych podpórek. Niezastąpiony tam, gdzie nie da się wbić zwykłych podpórek — na pomostach, betonie czy twardym gruncie. Standardowe wyposażenie karpiarza podczas wielodniowych zasiadek.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Sbirolino",
+      "description": "Podłużny, przelotowy spławik obciążony, pełniący rolę ciężaru rzutowego dla bardzo lekkich przynęt — much, małych gum czy ciasta. Występuje w wersjach pływających, wolno i szybko tonących, co pozwala prezentować przynętę na różnych głębokościach. Metoda wywodząca się z Włoch, w Polsce popularna głównie na łowiskach pstrągowych.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Spinning",
+      "description": "Aktywna metoda łowienia drapieżników polegająca na rzucaniu i prowadzeniu sztucznej przynęty (woblera, błystki, gumy) imitującej rybkę lub inny pokarm. Wymaga ciągłego ruchu i poszukiwania ryby, stąd bywa nazywany „polowaniem z wędką\". Nazwa odnosi się też do samej wędki spinningowej.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Spławik",
+      "description": "Pływający sygnalizator brań utrzymujący przynętę na zadanej głębokości; jego antenka reaguje zanurzeniem, uniesieniem lub przesunięciem, gdy ryba pobiera przynętę. Wyporność spławika (w gramach) równoważy się obciążeniem śrucinowym tak, by z wody wystawała tylko antenka. Kształt dobiera się do warunków: smukłe na wodę stojącą, bardziej pękate na nurt.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Stroik",
+      "description": "Sprężysty sygnalizator brań montowany na szczytówce krótkiej wędki podlodowej (a czasem łodziowej), wykonany z lavsanu, tworzywa lub sprężynki. Ugina się pod ciężarem mormyszki, a każde branie — nawet „podnoszone\" — wyraźnie zmienia jego położenie. Czułość stroika dobiera się do masy przynęty.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Swinger (awizo)",
+      "description": "Mechaniczny sygnalizator brań zawieszany na lince między kołowrotkiem a elektronicznym sygnalizatorem w zestawach karpiowych. Unosi się przy braniu „do przodu\", a opada przy braniu „na luz\", pokazując kierunek ucieczki ryby i utrzymując stałe napięcie linki. Obciążenie swingera reguluje się zależnie od dystansu i nurtu.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Szczytówka",
+      "description": "Najcieńsza, końcowa część wędki, odpowiadająca za czułość zestawu i sygnalizację brań. W wędkach feederowych szczytówki są wymienne i występują w różnych sztywnościach (oznaczanych w uncjach), w spławikowych i spinningowych stanowią integralną część blanku. To najdelikatniejszy element kija, najbardziej narażony na złamanie w transporcie.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Tarło",
+      "description": "Okres rozrodu ryb, podczas którego składają ikrę i mlecz, często migrując na płycizny lub w górę rzek. Termin zależy od gatunku: szczupak trze się wczesną wiosną, sandacz późną wiosną, miętus zimą. Z tarłem powiązane są okresy ochronne — w tym czasie ryby są szczególnie podatne i wymagają ochrony.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Trolling",
+      "description": "Metoda polegająca na holowaniu przynęty (najczęściej woblera) za płynącą łodzią, pozwalająca przeszukać duże obszary wody na kontrolowanej głębokości. Skuteczna na szczupaki, sandacze, trocie i łososie. Uwaga: na wielu wodach w Polsce trolling jest zabroniony lub ograniczony regulaminem, co należy sprawdzić przed łowieniem.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Twister",
+      "description": "Miękka przynęta gumowa z karbowanym korpusem i sierpowatym, falującym ogonkiem, który pracuje nawet przy bardzo wolnym prowadzeniu. Uzbrojony na główce jigowej należy do najbardziej uniwersalnych przynęt na okonia, sandacza i szczupaka. Małe twistery 3–5 cm to klasyka ultralightu.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Tyczka",
+      "description": "Bardzo długa (9–13 m i więcej), wieloskładowa wędka bez przelotek i kołowrotka, w której zestaw o stałej długości łączy się z kijem przez gumowy amortyzator ukryty w końcowych sekcjach. Daje najprecyzyjniejszą możliwą prezentację przynęty w jednym punkcie. Domena wędkarstwa wyczynowego, wymaga specjalnych podpór (rollerów) do odkładania.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Ultralight (UL)",
+      "description": "Najlżejsza odmiana spinningu: wędki o ciężarze wyrzutowym do około 7 g, cienkie linki i drobne przynęty — mikrogumy, małe obrotówki, miniwoblery. Daje pełnię emocji przy łowieniu okoni, kleni czy pstrągów, bo nawet niewielka ryba mocno ugina delikatny kij. Wymaga starannego holu i rozsądku przy zacięciach większych drapieżników.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Wagler",
+      "description": "Smukły spławik mocowany do żyłki tylko w dolnym punkcie, przeznaczony do dalekich rzutów wędką odległościową (match). Dzięki własnemu obciążeniu lub dociążeniu leci stabilnie jak strzałka, a po rzucie linkę zatapia się, by wiatr nie znosił zestawu. Podstawowy spławik do łowienia na jeziorach na dystansie.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Wahadłówka (błystka wahadłowa)",
+      "description": "Metalowa przynęta w kształcie wygiętego płatka, która podczas prowadzenia kołysze się i błyska na boki, imitując ranną rybkę. Jedna z najstarszych przynęt spinningowych, wciąż skuteczna na szczupaki, a w wersjach łososiowych — na trocie i łososie. Tempo prowadzenia i kształt płatka decydują o charakterze pracy.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Wobler",
+      "description": "Twarda przynęta spinningowa imitująca rybkę, najczęściej wyposażona w ster, który nadaje jej drgającą pracę i sprowadza na zadaną głębokość. Występuje w niezliczonych kształtach, rozmiarach i wersjach pływalności (floating, suspending, sinking). Skuteczny na praktycznie wszystkie drapieżniki — od klenia po suma.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Wymiar ochronny",
+      "description": "Minimalna (czasem także maksymalna — tzw. widełki) długość ciała ryby, poniżej której złowiony osobnik musi zostać niezwłocznie wypuszczony do wody. Wymiary różnią się między gatunkami i wodami, np. okręgi PZW oraz łowiska specjalne mogą zaostrzać przepisy ogólne. Mierzy się od początku głowy do końca najdłuższego promienia płetwy ogonowej.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Zacięcie",
+      "description": "Energiczny, krótki ruch wędką po zauważeniu brania, mający wbić haczyk w pysk ryby. Siłę i moment zacięcia dobiera się do metody: w spinningu z plecionką wystarczy zdecydowane uniesienie kija, przy żyłce na dystansie zacięcie musi być szersze, a w metodzie z ciężkim koszykiem ryba często zacina się sama. Zbyt wczesne lub zbyt mocne zacięcie to częsta przyczyna pustych brań i zerwań.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Zanęta",
+      "description": "Mieszanka pokarmowa (zwykle na bazie mielonych zbóż, bułki tartej, mączek i aromatów) wprowadzana do wody w celu zwabienia ryb w łowisko. Skład, kolor i wilgotność dobiera się do gatunku, głębokości i nurtu — zanęta rzeczna musi być cięższa i bardziej klejąca niż jeziorowa. Często wzbogaca się ją dodatkami żywymi (ochotka, robaki) i ziarnami.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Żyłka",
+      "description": "Jednowłóknowa linka nylonowa (monofilament), najpopularniejszy materiał liniowy w wędkarstwie. Jest rozciągliwa, co świetnie amortyzuje zrywy ryby, tania i łatwa w wiązaniu, ale daje słabsze czucie niż plecionka i z czasem traci parametry pod wpływem światła UV. Średnicę (np. 0,16–0,30 mm) dobiera się do metody i wielkości łowionych ryb.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Źródła i weryfikacja",
+      "description": "Definicje w słowniku mają charakter poglądowy i edukacyjny — porządkują potoczne i branżowe znaczenie pojęć, a nie stanowią wykładni przepisów. Kwestie prawne, w szczególności wymiary ochronne, okresy ochronne, limity połowowe oraz dozwolone metody, należy zawsze weryfikować w aktualnym Regulaminie Amatorskiego Połowu Ryb PZW oraz w regulaminach okręgów i konkretnych łowisk.",
+      "inDefinedTermSet": "https://fish-point.pl/slownik.html"
     }
-  }
+  ]
 }
   </script>
   <!-- seo:meta end (auto) -->
@@ -102,8 +441,8 @@
 <body>
 <header class="site-header"><nav class="nav container"><a class="logo" href="index.html"><span class="logo-mark">≈</span><span>FishPoint</span></a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button><ul id="nav-menu" class="nav-menu"><li><a href="index.html#pierwsze-kroki">Pierwsze kroki</a></li><li><a href="index.html#sprzet">Sprzęt</a></li><li><a href="index.html#techniki">Techniki</a></li><li><a href="index.html#ryby">Atlas ryb</a></li><li><a href="index.html#poradniki">Poradniki</a></li><li><a href="narzedzia/index.html">Narzędzia</a></li><li><a href="szukaj.html">Szukaj</a></li><li><a href="index.html#kuchnia">Kuchnia</a></li><li><a href="aktualnosci/index.html">Blog</a></li><li><a href="zgodnie-z-zasadami.html">Przepisy</a></li><li><a href="slownik.html">Słownik</a></li><li><a class="nav-cta" href="index.html#kontakt">Kontakt</a></li></ul></nav></header>
 <main>
-<section class="subpage-hero"><div class="container"><p class="eyebrow">Poradniki</p><h1>Słownik pojęć wędkarskich</h1><!--byline:auto--><p class="article-meta">Autor: <a href="https://fish-point.pl/o-autorze.html" rel="author">Maciej Baniewicz</a> · <time datetime="2026-06-11">Opublikowano 11 czerwca 2026</time> · <time datetime="2026-07-02">aktualizacja 2 lipca 2026</time></p><!--/byline:auto--><p>Wędkarski żargon potrafi przytłoczyć: blank, wagler, hair rig, sbirolino… W tym słowniku zebraliśmy ponad sześćdziesiąt najważniejszych pojęć ze spinningu, feedera, karpiarstwa i metody spławikowej. Hasła ułożyliśmy alfabetycznie, a każde opisaliśmy w kilku zdaniach prostym językiem — tak, by początkujący zrozumiał, a zaawansowany mógł szybko coś sobie przypomnieć.</p></div></section>
-<section class="section container article-layout"><article class="article-card"><!--toc:auto--><nav class="toc" aria-label="Spis treści"><p class="toc-title">Spis treści</p><ol><li><a href="#a">A</a></li><li><a href="#b">B</a></li><li><a href="#c">C</a></li><li><a href="#d">D</a></li><li><a href="#e">E</a></li><li><a href="#f">F</a></li><li><a href="#g">G</a></li><li><a href="#h">H</a></li><li><a href="#j">J</a></li><li><a href="#k">K</a></li><li><a href="#l">L</a></li><li><a href="#m">M</a></li><li><a href="#n">N</a></li><li><a href="#o">O</a></li><li><a href="#p">P</a></li><li><a href="#r">R</a></li><li><a href="#s">S</a></li><li><a href="#t">T</a></li><li><a href="#u">U</a></li><li><a href="#w">W</a></li><li><a href="#z">Z</a></li><li><a href="#zz">Ż</a></li></ol></nav><!--/toc:auto-->
+<section class="subpage-hero"><div class="container"><p class="eyebrow">Poradniki</p><h1>Słownik pojęć wędkarskich</h1><!--byline:auto--><p class="article-meta">Autor: <a href="https://fish-point.pl/o-autorze.html" rel="author">Maciej Baniewicz</a> · <time datetime="2026-06-11">Opublikowano 11 czerwca 2026</time> · <time datetime="2026-07-04">aktualizacja 4 lipca 2026</time></p><!--/byline:auto--><p>Wędkarski żargon potrafi przytłoczyć: blank, wagler, hair rig, sbirolino… W tym słowniku zebraliśmy ponad sześćdziesiąt najważniejszych pojęć ze spinningu, feedera, karpiarstwa i metody spławikowej. Hasła ułożyliśmy alfabetycznie, a każde opisaliśmy w kilku zdaniach prostym językiem — tak, by początkujący zrozumiał, a zaawansowany mógł szybko coś sobie przypomnieć.</p></div></section>
+<section class="section container article-layout"><article class="article-card"><!--tldr:auto--><aside class="tldr" aria-label="W skrócie"><p class="tldr-label">W skrócie</p><p>Słownik pojęć wędkarskich FishPoint od A do Z: ponad 60 haseł z zakresu spinningu, feedera, karpiarstwa i metody spławikowej — od agrafki i akcji wędki po zanętę i żyłkę, z krótkimi, rzeczowymi definicjami po polsku.</p></aside><!--/tldr:auto--><!--toc:auto--><nav class="toc" aria-label="Spis treści"><p class="toc-title">Spis treści</p><ol><li><a href="#a">A</a></li><li><a href="#b">B</a></li><li><a href="#c">C</a></li><li><a href="#d">D</a></li><li><a href="#e">E</a></li><li><a href="#f">F</a></li><li><a href="#g">G</a></li><li><a href="#h">H</a></li><li><a href="#j">J</a></li><li><a href="#k">K</a></li><li><a href="#l">L</a></li><li><a href="#m">M</a></li><li><a href="#n">N</a></li><li><a href="#o">O</a></li><li><a href="#p">P</a></li><li><a href="#r">R</a></li><li><a href="#s">S</a></li><li><a href="#t">T</a></li><li><a href="#u">U</a></li><li><a href="#w">W</a></li><li><a href="#z">Z</a></li><li><a href="#zz">Ż</a></li></ol></nav><!--/toc:auto-->
 
 <h2 id="a">A</h2>
 

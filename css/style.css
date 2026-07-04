@@ -816,3 +816,34 @@ html.dark .picked-panel { background: rgba(62,201,180,.08); border-color: rgba(6
 .chip-rm .chip-dim { opacity: .8; font-weight: 800; }
 .chip-rm .chip-x { margin-left: 4px; font-weight: 800; opacity: .85; }
 .chip-rm:hover { background: linear-gradient(135deg, var(--orange), var(--amber)); }
+
+/* === „W skrócie" (TL;DR) — pod ekstrakcję AI / featured snippet === */
+.tldr {
+  margin: 0 0 22px; padding: 16px 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(42,167,161,.12), rgba(232,199,124,.12));
+  border: 1px solid rgba(42,167,161,.3);
+  border-left: 5px solid var(--green);
+}
+.tldr-label {
+  margin: 0 0 6px; font-size: .72rem; font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--green);
+}
+.tldr p:not(.tldr-label) { margin: 0; color: #3d4c48; line-height: 1.7; font-size: 1.02rem; }
+html.dark .tldr { background: linear-gradient(135deg, rgba(62,201,180,.1), rgba(232,199,124,.06)); border-color: rgba(62,201,180,.28); }
+html.dark .tldr-label { color: var(--green); }
+html.dark .tldr p:not(.tldr-label) { color: #c5d6d0; }
+
+/* === Powiązane artykuły === */
+.related { margin-top: 34px; }
+.related h2 { margin: 0 0 18px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.related-grid a {
+  display: block; padding: 14px 16px; border-radius: 14px;
+  background: #faf6ec; border: 1px solid rgba(17,49,47,.08);
+  border-left: 4px solid var(--aqua); color: var(--green-2);
+  font-weight: 700; line-height: 1.4;
+  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+}
+.related-grid a:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(17,49,47,.1); border-left-color: var(--orange); }
+html.dark .related-grid a { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.08); border-left-color: var(--aqua); color: var(--green); }

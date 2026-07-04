@@ -20,6 +20,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/logo.png" />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+  <link rel="alternate" type="application/rss+xml" title="FishPoint — aktualności" href="/feed.xml" />
   <meta property="og:site_name" content="FishPoint" />
   <meta property="og:locale" content="pl_PL" />
   <meta property="og:type" content="website" />
@@ -82,7 +83,15 @@
   "@type": "WebSite",
   "name": "FishPoint",
   "url": "https://fish-point.pl/",
-  "inLanguage": "pl-PL"
+  "inLanguage": "pl-PL",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://fish-point.pl/szukaj.html?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
 }
   </script>
   <!-- seo:meta end (auto) -->
