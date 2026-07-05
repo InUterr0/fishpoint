@@ -30,6 +30,7 @@
 ## Narzędzia
 
 - [Narzędzia wędkarskie](https://fish-point.pl/narzedzia/): Interaktywne narzędzia wędkarskie FishPoint: tabela okresów ochronnych i wymiarów, kalendarz brań, kreator doboru sprzętu i klucz do rozpoznawania ryb. Praktyczne kalkulatory, które podpowiedzą, kiedy, na co i czym łowić.
+- [Czy mogę zabrać tę rybę?](https://fish-point.pl/narzedzia/czy-moge-zabrac-rybe.html): Sprawdź w kilka sekund, czy wolno zabrać złowioną rybę: wybierz gatunek, podaj datę i długość, a kalkulator porówna je z orientacyjnym wymiarem i okresem ochronnym PZW.
 - [Kreator doboru sprzętu wędkarskiego](https://fish-point.pl/narzedzia/dobor-sprzetu.html): Interaktywny kreator doboru sprzętu: wybierz rybę, rodzaj wody i poziom zaawansowania, a otrzymasz gotowy zestaw — wędka, kołowrotek, żyłka lub plecionka, przynęty i akcesoria — z linkami do szczegółowych poradników FishPoint.
 - [Interaktywny kalendarz brań](https://fish-point.pl/narzedzia/kalendarz-bran.html): Interaktywny kalendarz brań: heatmapa aktywności szczupaka, sandacza, okonia, suma, karpia, leszcza, płoci, lina, węgorza i pstrąga w każdym miesiącu roku. Wybierz miesiąc i zobacz, co bierze najlepiej oraz jak i gdzie łowić.
 - [Okresy ochronne i wymiary ryb](https://fish-point.pl/narzedzia/okresy-ochronne.html): Interaktywna, filtrowana tabela okresów ochronnych, wymiarów ochronnych i limitów dobowych najważniejszych ryb w Polsce. Szukaj po nazwie, filtruj po kategorii i sortuj kolumny. Wartości orientacyjne — zawsze sprawdź aktualny regulamin PZW.
@@ -75,6 +76,7 @@
 - [Łowienie zimą na otwartej wodzie](https://fish-point.pl/poradniki/lowienie-zima.html): Poradnik FishPoint o zimowym łowieniu na otwartej wodzie: metabolizm ryb zimą, gdzie szukać zimowisk, spowolniony spinning (jig wleczony, drop shot), przynęty zimowe, sandacz, okoń, szczupak i kleń zimą, grunt z ochotką, żyłka vs plecionka na mrozie, ubiór warstwowy i bezpieczeństwo.
 - [Pogoda a brania ryb](https://fish-point.pl/poradniki/pogoda-a-brania.html): Poradnik FishPoint o wpływie pogody na brania: ciśnienie atmosferyczne i fronty, wiatr i nawiew pokarmu, temperatura wody i ektotermia ryb, światło, zachmurzenie, opady oraz fazy księżyca — z uczciwym rozdzieleniem tego, co potwierdza biologia, od wędkarskich anegdot.
 - [Wędkarstwo z łodzi](https://fish-point.pl/poradniki/wedkarstwo-z-lodzi.html): Poradnik FishPoint o wędkarstwie z łodzi: porównanie łódki, pontonu, belly boata i kajaka, bezpieczeństwo i kamizelka ratunkowa, rejestracja jednostek i patenty w Polsce, strefy ciszy, echosonda, dryf i driftsock, kotwiczenie, silnik elektryczny, trolling, organizacja sprzętu i hol z łodzi.
+- [Węzły wędkarskie krok po kroku](https://fish-point.pl/poradniki/wezly-wedkarskie.html): Poradnik FishPoint o węzłach wędkarskich: clinch i clinch ulepszony, palomar, grinner/uni i podwójny grinner, FG do łączenia plecionki z fluorocarbonem, albright, pętla w pętlę, pętla perfection oraz knotless knot do włosa karpiowego — krok po kroku, z wytrzymałością, zaletami i typowymi błędami.
 - [Zanęty domowe](https://fish-point.pl/poradniki/zanety-domowe.html): Poradnik FishPoint o domowych zanętach: rola bazy z bułki tartej i biszkoptu, śruty i ziarna (kukurydza, konopie, pszenica), glina i PV1, aromaty słodkie i korzenne, dodatek robaków, kolor i frakcja, nawilżanie i przesiewanie oraz sprawdzone receptury na leszcza, płoć, lina i karpia.
 
 ## Atlas ryb
@@ -135,11 +137,6 @@
 - [Spinning](https://fish-point.pl/techniki/spinning.html): Poradnik spinningowy FishPoint: zasady metody, techniki prowadzenia przynęt (jigowanie, opadanie, twitching, jerkowanie, jednostajne, stop&go), dobór wędki, kołowrotka, plecionki i przyponów, taktyka na pory roku oraz charakterystyka szczupaka, sandacza, okonia, bolenia i klenia.
 - [Metoda spławikowa](https://fish-point.pl/techniki/splawik.html): Poradnik FishPoint o metodzie spławikowej: odmiany (bat, bolonka, match, tyczka), gruntowanie i sondowanie, budowa i wyważenie zestawu, prezentacja przynęty w nurcie, zanęcanie, przynęty na ryby białe oraz taktyka na różne pory roku.
 - [Trolling](https://fish-point.pl/techniki/trolling.html): Poradnik FishPoint o trollingu: zasady metody, wędki i multiplikatory z licznikiem, woblery głęboko schodzące, down rigger i planer boards, prędkość i trasa holowania, echosonda, przepisy w Polsce, trolling morski na Bałtyku i jeziorowy oraz bezpieczeństwo na łodzi.
-
-## Zgodnie-z-zasadami.html
-
-- [Zgodnie z zasadami](https://fish-point.pl/zgodnie-z-zasadami.html): Przepisy wędkarskie w jednym miejscu: ustawa o rybactwie śródlądowym, rozporządzenie o wymiarach i okresach ochronnych, Regulamin Amatorskiego Połowu Ryb PZW, karta wędkarska, zezwolenia i kontrola. Opisy, wyciągi, oficjalne linki i dokumenty do pobrania.
-u i jeziorowy oraz bezpieczeństwo na łodzi.
 
 ## Zgodnie-z-zasadami.html
 

@@ -243,6 +243,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fish-point.pl/narzedzia/czy-moge-zabrac-rybe.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/narzedzia/dobor-sprzetu.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -558,7 +564,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/amur.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -568,7 +574,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/bolen.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -590,7 +596,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/jaz.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -600,7 +606,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/karas.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -610,7 +616,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/karp.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -620,7 +626,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/klen.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -630,7 +636,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/leszcz.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -640,7 +646,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/lin.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -650,7 +656,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/lipien.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -660,7 +666,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/mietus.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -670,7 +676,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/okon.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -680,7 +686,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/ploc.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -690,7 +696,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/pstrag.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -700,7 +706,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sandacz.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -722,7 +728,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sum.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -738,7 +744,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/szczupak.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -748,7 +754,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/troc-losos.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -764,7 +770,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/wegorz.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
