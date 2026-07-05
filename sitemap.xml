@@ -577,6 +577,18 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/ryby/brzana.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/certa.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/ryby/jaz.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -697,6 +709,18 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/ryby/sieja.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/sielawa.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/ryby/sum.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -705,6 +729,12 @@
       <image:loc>https://fish-point.pl/assets/img/ryby/sum.jpg</image:loc>
       <image:title>Sum pospolity (Silurus glanis) — największa ryba polskich wód</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/swinka.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/szczupak.html</loc>
@@ -727,6 +757,12 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/ryby/ukleja.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/ryby/wegorz.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -735,6 +771,12 @@
       <image:loc>https://fish-point.pl/assets/img/ryby/wegorz.jpg</image:loc>
       <image:title>Węgorz europejski (Anguilla anguilla) — wężowata ryba wędrowna</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/wzdrega.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/slownik.html</loc>

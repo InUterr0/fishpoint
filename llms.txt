@@ -75,7 +75,6 @@
 - [Łowienie zimą na otwartej wodzie](https://fish-point.pl/poradniki/lowienie-zima.html): Poradnik FishPoint o zimowym łowieniu na otwartej wodzie: metabolizm ryb zimą, gdzie szukać zimowisk, spowolniony spinning (jig wleczony, drop shot), przynęty zimowe, sandacz, okoń, szczupak i kleń zimą, grunt z ochotką, żyłka vs plecionka na mrozie, ubiór warstwowy i bezpieczeństwo.
 - [Pogoda a brania ryb](https://fish-point.pl/poradniki/pogoda-a-brania.html): Poradnik FishPoint o wpływie pogody na brania: ciśnienie atmosferyczne i fronty, wiatr i nawiew pokarmu, temperatura wody i ektotermia ryb, światło, zachmurzenie, opady oraz fazy księżyca — z uczciwym rozdzieleniem tego, co potwierdza biologia, od wędkarskich anegdot.
 - [Wędkarstwo z łodzi](https://fish-point.pl/poradniki/wedkarstwo-z-lodzi.html): Poradnik FishPoint o wędkarstwie z łodzi: porównanie łódki, pontonu, belly boata i kajaka, bezpieczeństwo i kamizelka ratunkowa, rejestracja jednostek i patenty w Polsce, strefy ciszy, echosonda, dryf i driftsock, kotwiczenie, silnik elektryczny, trolling, organizacja sprzętu i hol z łodzi.
-- [Węzły wędkarskie krok po kroku](https://fish-point.pl/poradniki/wezly-wedkarskie.html): Poradnik FishPoint o węzłach wędkarskich: clinch i clinch ulepszony, palomar, grinner/uni i podwójny grinner, FG do łączenia plecionki z fluorocarbonem, albright, pętla w pętlę, pętla perfection oraz knotless knot do włosa karpiowego — krok po kroku, z wytrzymałością, zaletami i typowymi błędami.
 - [Zanęty domowe](https://fish-point.pl/poradniki/zanety-domowe.html): Poradnik FishPoint o domowych zanętach: rola bazy z bułki tartej i biszkoptu, śruty i ziarna (kukurydza, konopie, pszenica), glina i PV1, aromaty słodkie i korzenne, dodatek robaków, kolor i frakcja, nawilżanie i przesiewanie oraz sprawdzone receptury na leszcza, płoć, lina i karpia.
 
 ## Atlas ryb
@@ -83,6 +82,8 @@
 - [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas ryb FishPoint: 18 gatunków polskich wód w trzech grupach — drapieżniki (szczupak, sandacz, sum, okoń, boleń, węgorz), ryby spokojnego żeru (karp, lin, leszcz, płoć, karaś, jaź, kleń, amur) oraz łososiowate i inne (pstrąg, lipień, miętus, troć i łosoś). Rozpoznawanie, biologia, wymiary ochronne i metody łowienia.
 - [Amur](https://fish-point.pl/ryby/amur.html): Amur biały (Ctenopharyngodon idella) w atlasie FishPoint: rozpoznawanie, introdukcja z Azji Wschodniej, żerowanie roślinożercy, regulaminy łowisk, przynęty roślinne, taktyka, ostrożny hol i FAQ.
 - [Boleń](https://fish-point.pl/ryby/bolen.html): Boleń (Leuciscus aspius) w atlasie FishPoint: jedyny drapieżny karpiowaty polskich rzek. Rozpoznawanie, siedliska, tarło, żerowanie sezonowe, orientacyjne przepisy PZW, przynęty powierzchniowe i taktyka spinningu.
+- [Brzana](https://fish-point.pl/ryby/brzana.html): Brzana (Barbus barbus) w atlasie FishPoint: ryba reofilna krainy brzany, prąd i kamieniste dno, feeder i grunt na rzece, tarło, wędrówki oraz uwaga — ikra jest trująca.
+- [Certa](https://fish-point.pl/ryby/certa.html): Certa (Vimba vimba) — atlas ryb FishPoint: rozpoznawanie, wędrówki na tarło, łowienie na Wiśle i dużych rzekach feederem i spławikiem, przynęty, taktyka i kuchnia.
 - [Jaź](https://fish-point.pl/ryby/jaz.html): Jaź (Leuciscus idus) w atlasie FishPoint: rozpoznawanie i różnice względem klenia i płoci, środowisko, tarło, żerowanie, wymiary ochronne PZW, metody połowu na grunt, spławik, spinning i muchę.
 - [Karaś](https://fish-point.pl/ryby/karas.html): Karaś pospolity i srebrzysty w polskich wodach: rozpoznawanie, biologia, gynogeneza, żerowanie, metody połowu na spławik i grunt, przepisy PZW oraz praktyczne wskazówki taktyczne.
 - [Karp](https://fish-point.pl/ryby/karp.html): Karp (Cyprinus carpio) w atlasie FishPoint: rozpoznawanie, środowisko, tarło, żerowanie wg pór roku, orientacyjne wymiary i limity PZW, metody gruntowe i karpiowe, nęcenie, zasady C&R oraz ciekawostki.
@@ -95,10 +96,15 @@
 - [Płoć](https://fish-point.pl/ryby/ploc.html): Płoć Rutilus rutilus w atlasie FishPoint: jak odróżnić ją od wzdręgi i jazia, biologia i tarło, żerowanie w ciągu roku, przepisy PZW, zestawy spławikowe i feederowe oraz taktyka nęcenia.
 - [Pstrąg potokowy](https://fish-point.pl/ryby/pstrag.html): Pstrąg potokowy w atlasie FishPoint: rozpoznawanie, środowisko górskich rzek, tarło, metody muchowe i spinningowe, orientacyjne wymiary i okresy ochronne PZW oraz taktyka na łowiskach pstrągowych.
 - [Sandacz](https://fish-point.pl/ryby/sandacz.html): Sandacz (Sander lucioperca) w atlasie FishPoint: rozpoznawanie, środowisko, tarło, żerowanie w sezonach, orientacyjne wymiary i okresy ochronne PZW, metody, taktyka i kuchnia. Rzetelny poradnik bez obietnic brań.
+- [Sieja](https://fish-point.pl/ryby/sieja.html): Sieja (Coregonus maraena) w atlasie FishPoint: biologia, występowanie w polskich jeziorach północnych, reintrodukcja, tarło jesienno-zimowe, status ochronny i metody.
+- [Sielawa](https://fish-point.pl/ryby/sielawa.html): Sielawa (Coregonus albula): rozpoznawanie, biologia, jesienne tarło, występowanie w polskich jeziorach, metody połowu, przynęty, przepisy i wartość kulinarna.
 - [Sum](https://fish-point.pl/ryby/sum.html): Sum europejski (Silurus glanis) w atlasie FishPoint: rozpoznawanie, siedliska w Polsce, tarło, żerowanie w sezonach, orientacyjne przepisy PZW, sprzęt, metody i taktyka połowu największego drapieżnika naszych rzek.
+- [Świnka](https://fish-point.pl/ryby/swinka.html): Świnka (Chondrostoma nasus) w atlasie FishPoint: stadna ryba czystych rzek o twardym dnie, dolny poprzeczny pysk, kraina brzany i lipienia, wiosenne tarło, łowienie spławikowe i feederowe z prądem.
 - [Szczupak](https://fish-point.pl/ryby/szczupak.html): Szczupak (Esox lucius) w atlasie FishPoint: rozpoznawanie, stanowiska w jeziorach i rzekach, tarło, żerowanie w sezonach, orientacyjny wymiar i okres ochronny PZW, przynęty, taktyka spinningu oraz zasady bezpiecznego wypuszczania.
 - [Troć i łosoś](https://fish-point.pl/ryby/troc-losos.html): Troć wędrowna i łosoś atlantycki w atlasie FishPoint: jak je odróżnić, rzeki pomorskie i Wisła, anadromiczne wędrówki i tarło, spinning rzeczny, zezwolenia, orientacyjne przepisy PZW oraz program restytucji łososia.
+- [Ukleja](https://fish-point.pl/ryby/ukleja.html): Ukleja Alburnus alburnus w atlasie FishPoint: srebrzysta ryba przypowierzchniowa, jej rola w łańcuchu pokarmowym, łowienie na lekki spławik i „na ślinę
 - [Węgorz](https://fish-point.pl/ryby/wegorz.html): Węgorz europejski (Anguilla anguilla) w atlasie FishPoint: niezwykła biologia i wędrówka na Morze Sargassowe, status gatunku krytycznie zagrożonego, orientacyjne przepisy PZW, metody nocnego połowu i uwagi o zanieczyszczeniach.
+- [Wzdręga](https://fish-point.pl/ryby/wzdrega.html): Wzdręga (Scardinius erythrophthalmus) w atlasie FishPoint: jak odróżnić ją od płoci, biologia i tarło, żerowanie latem, łowienie spławikowe przy powierzchni i przy roślinności oraz taktyka.
 
 ## Slownik.html
 
@@ -129,6 +135,11 @@
 - [Spinning](https://fish-point.pl/techniki/spinning.html): Poradnik spinningowy FishPoint: zasady metody, techniki prowadzenia przynęt (jigowanie, opadanie, twitching, jerkowanie, jednostajne, stop&go), dobór wędki, kołowrotka, plecionki i przyponów, taktyka na pory roku oraz charakterystyka szczupaka, sandacza, okonia, bolenia i klenia.
 - [Metoda spławikowa](https://fish-point.pl/techniki/splawik.html): Poradnik FishPoint o metodzie spławikowej: odmiany (bat, bolonka, match, tyczka), gruntowanie i sondowanie, budowa i wyważenie zestawu, prezentacja przynęty w nurcie, zanęcanie, przynęty na ryby białe oraz taktyka na różne pory roku.
 - [Trolling](https://fish-point.pl/techniki/trolling.html): Poradnik FishPoint o trollingu: zasady metody, wędki i multiplikatory z licznikiem, woblery głęboko schodzące, down rigger i planer boards, prędkość i trasa holowania, echosonda, przepisy w Polsce, trolling morski na Bałtyku i jeziorowy oraz bezpieczeństwo na łodzi.
+
+## Zgodnie-z-zasadami.html
+
+- [Zgodnie z zasadami](https://fish-point.pl/zgodnie-z-zasadami.html): Przepisy wędkarskie w jednym miejscu: ustawa o rybactwie śródlądowym, rozporządzenie o wymiarach i okresach ochronnych, Regulamin Amatorskiego Połowu Ryb PZW, karta wędkarska, zezwolenia i kontrola. Opisy, wyciągi, oficjalne linki i dokumenty do pobrania.
+u i jeziorowy oraz bezpieczeństwo na łodzi.
 
 ## Zgodnie-z-zasadami.html
 

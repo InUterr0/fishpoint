@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Czy mogę zabrać tę rybę? — kalkulator legalności połowu — FishPoint</title>
+  <meta name="description" content="Sprawdź w kilka sekund, czy wolno zabrać złowioną rybę: wybierz gatunek, podaj datę i długość, a kalkulator porówna je z orientacyjnym wymiarem i okresem ochronnym PZW." />
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-400-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-400-latin-ext.woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header"><nav class="nav container"><a class="logo" href="../index.html"><span class="logo-mark">≈</span><span>FishPoint</span></a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button><ul id="nav-menu" class="nav-menu"><li><a href="../index.html#pierwsze-kroki">Pierwsze kroki</a></li><li><a href="../index.html#sprzet">Sprzęt</a></li><li><a href="../index.html#techniki">Techniki</a></li><li><a href="../index.html#ryby">Atlas ryb</a></li><li><a href="../index.html#poradniki">Poradniki</a></li><li><a href="../narzedzia/index.html">Narzędzia</a></li><li><a href="../szukaj.html">Szukaj</a></li><li><a href="../index.html#kuchnia">Kuchnia</a></li><li><a href="../aktualnosci/index.html">Blog</a></li><li><a href="../zgodnie-z-zasadami.html">Przepisy</a></li><li><a href="../slownik.html">Słownik</a></li><li><a class="nav-cta" href="../index.html#kontakt">Kontakt</a></li></ul></nav></header>
+<main>
+<section class="subpage-hero"><div class="container"><p class="eyebrow">Narzędzia</p><h1>Czy mogę zabrać tę rybę?</h1><p>Kalkulator legalności połowu. Wybierz gatunek, podaj datę i zmierzoną długość ryby — narzędzie porówna je z orientacyjnym wymiarem i okresem ochronnym i podpowie, czy rybę wolno zabrać, czy trzeba ją wypuścić.</p></div></section>
+<section class="section container article-layout"><article class="article-card">
+
+<div class="disclaimer"><strong>Ważne — wynik orientacyjny.</strong> Kalkulator korzysta z <strong>ogólnopolskich</strong> wymiarów i okresów ochronnych. Poszczególne okręgi PZW i gospodarze łowisk powszechnie je <strong>zaostrzają</strong> (wyższe wymiary, wymiary maksymalne i „okna”, dodatkowe okresy, niższe limity). Wynik „można” nigdy nie zwalnia z obowiązku sprawdzenia aktualnego regulaminu Twojego okręgu i zezwolenia na dane łowisko. To narzędzie nie jest źródłem prawa.</div>
+
+<div class="calc-tool">
+  <div class="calc-field">
+    <label for="species">Gatunek ryby</label>
+    <select id="species" class="tool-search"></select>
+  </div>
+  <div class="calc-row">
+    <div class="calc-field">
+      <label for="date">Data połowu</label>
+      <input type="date" id="date" class="tool-search">
+    </div>
+    <div class="calc-field">
+      <label for="len">Długość ryby (cm)</label>
+      <input type="number" id="len" class="tool-search" min="0" max="300" step="1" placeholder="np. 48" inputmode="numeric">
+    </div>
+  </div>
+  <button class="btn btn-primary" id="check" type="button">Sprawdź</button>
+  <div class="calc-result" id="result" hidden aria-live="polite"></div>
+</div>
+
+<h2 id="jak-to-dziala">Jak to działa</h2>
+<section class="info-block"><h3>Co sprawdza kalkulator</h3><p>Narzędzie wykonuje trzy testy w kolejności: czy podana data mieści się w orientacyjnym okresie ochronnym gatunku, czy zmierzona długość osiąga orientacyjny wymiar ochronny oraz czy dla gatunku obowiązują istotne zastrzeżenia lokalne. Jeśli którykolwiek warunek wypada na niekorzyść zabrania ryby, kalkulator wskaże, że rybę należy wypuścić, i wyjaśni powód. Wszystkie wartości pochodzą z tej samej bazy, co <a href="okresy-ochronne.html">interaktywna tabela okresów ochronnych</a> — są ogólnopolskie i orientacyjne.</p></section>
+<section class="info-block"><h3>Jak prawidłowo zmierzyć rybę</h3><p>Długość całkowitą mierzy się od początku głowy (czubka zamkniętego pyska) do końca najdłuższego promienia płetwy ogonowej, przy naturalnie ułożonej rybie. Pomiar wykonuj szybko, na mokrej macie, i w razie wątpliwości zaokrąglaj na korzyść ryby — jeśli wynik jest bliski granicy wymiaru, rozsądniej i bezpieczniej jest rybę wypuścić. Pamiętaj, że zawyżony pomiar przy kontroli to Twoja odpowiedzialność.</p></section>
+<section class="info-block"><h3>Dlaczego „można” to nie wszystko</h3><p>Nawet gdy data i długość są w porządku, obowiązuje jeszcze limit dobowy, łączny limit masy ryb na dobę oraz lokalne zasady łowiska (wody „no-kill”, wymiary maksymalne, ograniczenia sprzętowe). Coraz więcej wędkarzy dobrowolnie wypuszcza duże tarlaki niezależnie od litery przepisów — to najlepsza inwestycja w przyszłość łowiska. Kalkulator jest szybką podpowiedzią, a nie zastępstwem dla regulaminu okręgu.</p></section>
+
+<h2 id="faq-najczestsze-pytania">FAQ — najczęstsze pytania</h2>
+<section class="info-block"><h3>Skąd pochodzą wymiary i okresy w kalkulatorze?</h3><p>Z ogólnopolskich przepisów: ustawy o rybactwie śródlądowym z rozporządzeniem wykonawczym oraz Regulaminu Amatorskiego Połowu Ryb PZW. Są to wartości bazowe — okręgi PZW mają prawo je zaostrzać i bardzo często to robią. Dlatego wynik traktuj jako orientacyjny punkt wyjścia, a rozstrzygający jest regulamin Twojego okręgu i zezwolenie na konkretną wodę.</p></section>
+<section class="info-block"><h3>Rybę złowiłem w okresie ochronnym przez przypadek — co robić?</h3><p>Natychmiast, z maksymalną ostrożnością wypuścić ją do wody, w której została złowiona: mokre ręce lub mata, delikatne odhaczenie, minimalny czas poza wodą. Zabranie ryby niewymiarowej lub złowionej w okresie ochronnym jest wykroczeniem, a w części przypadków przestępstwem. Przypadkowe branie nie jest karane, o ile rybę bezzwłocznie i prawidłowo wypuścisz.</p></section>
+<section class="info-block"><h3>Dlaczego przy niektórych gatunkach kalkulator każe „sprawdzić okręg”?</h3><p>Bo dla części ryb (np. okoń, leszcz, karaś, płoć) przepisy ogólnopolskie nie ustanawiają wymiaru ani okresu, ale wprowadzają je lokalnie poszczególne okręgi. „Sprawdź okręg” oznacza brak wartości ogólnopolskiej, a nie brak jakiejkolwiek ochrony. Podobnie ryby wędrowne (troć, łosoś, węgorz) podlegają odrębnym, zaostrzonym przepisom i osobnym zezwoleniom.</p></section>
+<section class="info-block"><h3>Czy kalkulator uwzględnia wymiary maksymalne i „okna”?</h3><p>Nie w pełni — wymiary maksymalne i przedziały „okien” wprowadzają lokalnie okręgi i różnią się między wodami, więc nie da się ich ująć w jednej ogólnopolskiej bazie. Jeśli na Twoim łowisku obowiązuje wymiar górny (np. zakaz zabierania ryb powyżej pewnej długości), stosuj go niezależnie od wyniku kalkulatora. W razie wątpliwości zawsze wybieraj wariant chroniący rybę.</p></section>
+
+<div class="source-box"><h3>Źródła i weryfikacja</h3><p>Kalkulator opracowano na podstawie ogólnodostępnych przepisów: ustawy o rybactwie śródlądowym wraz z rozporządzeniem wykonawczym oraz Regulaminu Amatorskiego Połowu Ryb PZW. Ze względu na zmienność przepisów i lokalne zaostrzenia wynik ma charakter wyłącznie orientacyjny. Przed zabraniem ryby potwierdź aktualne wymiary, okresy i limity w regulaminie swojego okręgu PZW oraz w zezwoleniu na dane łowisko. Pełne zestawienie znajdziesz w <a href="okresy-ochronne.html">tabeli okresów ochronnych</a>, a opisy gatunków w <a href="../ryby/index.html">atlasie ryb</a>.</p></div>
+
+</article><aside class="side-nav"><h3>Narzędzia</h3><a href="index.html">Wszystkie narzędzia</a><a href="czy-moge-zabrac-rybe.html">Czy mogę zabrać tę rybę?</a><a href="okresy-ochronne.html">Okresy ochronne i wymiary</a><a href="kalendarz-bran.html">Interaktywny kalendarz brań</a><a href="dobor-sprzetu.html">Kreator doboru sprzętu</a><a href="rozpoznaj-rybe.html">Rozpoznaj rybę</a><a href="../ryby/index.html">Atlas ryb</a></aside></section>
+</main>
+<footer class="footer"><div class="container footer-grid"><p class="footer-author">Autor treści: <span rel="author">Maciej Baniewicz</span></p><p>© 2026 FishPoint.</p><p>Wędkarski przewodnik i atlas ryb</p><p class="footer-legal"><a href="../zgodnie-z-zasadami.html">Przepisy i dokumenty</a> · <a href="../slownik.html">Słownik</a> · <a href="https://fish-point.pl/o-autorze.html">O autorze</a></p></div></footer>
+<script src="../js/main.js"></script>
+<script>
+(function () {
+  // Wartości ORIENTACYJNE, ogólnopolskie — spójne z narzędziem okresy-ochronne.html.
+  // sizeMin: wymiar ochronny w cm (0 = brak ogólnopolskiego).
+  // period: {from:[m,d], to:[m,d]} lub null. periodLocal: okres bywa wprowadzany lokalnie.
+  // sizeLocal: wymiar bywa wprowadzany lokalnie. special: ryba o odrębnych przepisach.
+  const DATA = [
+    { slug:'szczupak', name:'Szczupak', sizeMin:50, period:{from:[1,1],to:[4,30]}, limit:'2 szt. (często łącznie z sandaczem)' },
+    { slug:'sandacz', name:'Sandacz', sizeMin:50, period:{from:[1,1],to:[5,31]}, limit:'2 szt. (często łącznie ze szczupakiem)' },
+    { slug:'sum', name:'Sum', sizeMin:70, period:null, periodLocal:true, limit:'1 szt.' },
+    { slug:'okon', name:'Okoń', sizeMin:0, sizeLocal:true, period:null, periodLocal:true, limit:'wg okręgu' },
+    { slug:'bolen', name:'Boleń', sizeMin:40, period:{from:[1,1],to:[4,30]}, limit:'wg okręgu' },
+    { slug:'wegorz', name:'Węgorz', sizeMin:50, period:null, periodLocal:true, special:true, limit:'2 szt.' },
+    { slug:'karp', name:'Karp', sizeMin:30, period:null, limit:'wg okręgu' },
+    { slug:'lin', name:'Lin', sizeMin:25, period:null, periodLocal:true, limit:'wg okręgu' },
+    { slug:'leszcz', name:'Leszcz', sizeMin:0, sizeLocal:true, period:null, limit:'wg okręgu' },
+    { slug:'ploc', name:'Płoć', sizeMin:0, period:null, limit:'wg okręgu (łączny limit masy)' },
+    { slug:'karas', name:'Karaś', sizeMin:0, period:null, limit:'wg okręgu' },
+    { slug:'jaz', name:'Jaź', sizeMin:25, sizeLocal:true, period:null, limit:'wg okręgu' },
+    { slug:'klen', name:'Kleń', sizeMin:25, sizeLocal:true, period:null, limit:'wg okręgu' },
+    { slug:'amur', name:'Amur biały', sizeMin:0, period:null, limit:'wg okręgu' },
+    { slug:'pstrag', name:'Pstrąg potokowy', sizeMin:30, period:{from:[9,1],to:[1,31]}, limit:'wg okręgu' },
+    { slug:'lipien', name:'Lipień', sizeMin:30, period:{from:[3,1],to:[5,31]}, limit:'wg okręgu' },
+    { slug:'mietus', name:'Miętus', sizeMin:25, period:{from:[12,1],to:[2,29]}, limit:'wg okręgu' },
+    { slug:'troc-losos', name:'Troć / łosoś', sizeMin:35, period:null, special:true, limit:'osobne zezwolenie' },
+  ];
+  const MONTHS = ['','stycznia','lutego','marca','kwietnia','maja','czerwca','lipca','sierpnia','września','października','listopada','grudnia'];
+  const fmt = md => md[1] + ' ' + MONTHS[md[0]];
+
+  const sel = document.getElementById('species');
+  const dateEl = document.getElementById('date');
+  const lenEl = document.getElementById('len');
+  const result = document.getElementById('result');
+
+  DATA.forEach((d,i) => {
+    const o = document.createElement('option');
+    o.value = i; o.textContent = d.name; sel.appendChild(o);
+  });
+  // domyślnie dzisiejsza data
+  try { dateEl.value = new Date().toISOString().slice(0,10); } catch(e) {}
+
+  function inPeriod(period, m, d) {
+    if (!period) return false;
+    const a = period.from[0]*100 + period.from[1];
+    const b = period.to[0]*100 + period.to[1];
+    const x = m*100 + d;
+    return a <= b ? (x >= a && x <= b) : (x >= a || x <= b); // obsługa przełomu roku
+  }
+
+  function check() {
+    const d = DATA[+sel.value];
+    const dateVal = dateEl.value;
+    const len = parseFloat(lenEl.value);
+    const notes = [];
+    let verdict = 'ok'; // ok | no | check
+    let title = '';
+
+    // 1. okres ochronny
+    if (dateVal) {
+      const dt = new Date(dateVal + 'T12:00:00');
+      const m = dt.getMonth()+1, day = dt.getDate();
+      if (d.period && inPeriod(d.period, m, day)) {
+        verdict = 'no';
+        title = 'Nie — trwa okres ochronny';
+        notes.push('Orientacyjny okres ochronny gatunku ' + d.name.toLowerCase() + ' to ' + fmt(d.period.from) + ' – ' + fmt(d.period.to) + '. Rybę należy wypuścić.');
+      }
+    }
+    // 2. wymiar ochronny
+    if (verdict !== 'no' && d.sizeMin > 0 && !isNaN(len)) {
+      if (len < d.sizeMin) {
+        verdict = 'no';
+        title = 'Nie — ryba niewymiarowa';
+        notes.push('Orientacyjny wymiar ochronny to ' + d.sizeMin + ' cm, a podana długość (' + len + ' cm) jest mniejsza. Rybę należy wypuścić.');
+      }
+    }
+    // 3. zastrzeżenia
+    if (verdict !== 'no') {
+      if (d.special) {
+        verdict = 'check';
+        title = 'Uwaga — przepisy odrębne';
+        notes.push(d.name + ' podlega odrębnym, zaostrzonym przepisom i wymaga osobnego zezwolenia. Nie zabieraj ryby bez sprawdzenia szczegółowych zasad dla danej wody.');
+      } else {
+        if (d.sizeMin === 0 && d.sizeLocal) notes.push('Brak wymiaru ogólnopolskiego, ale wiele okręgów wprowadza własny (często 15–25 cm) — sprawdź regulamin.');
+        else if (d.sizeMin === 0) notes.push('Brak ogólnopolskiego wymiaru ochronnego dla tego gatunku.');
+        if (d.periodLocal && !d.period) notes.push('Okres ochronny bywa wprowadzany lokalnie przez okręgi — zweryfikuj przed połowem.');
+        if (d.sizeMin > 0 && isNaN(len)) { verdict = 'check'; notes.unshift('Podaj długość ryby, aby sprawdzić wymiar ochronny (' + d.sizeMin + ' cm).'); }
+        if (verdict === 'ok') { title = 'Wg zasad ogólnopolskich — można, ale sprawdź okręg'; }
+        else if (!title) { title = 'Sprawdź szczegóły w regulaminie okręgu'; }
+      }
+    }
+    notes.push('Limit dobowy (orientacyjnie): ' + d.limit + '. Obowiązuje też łączny limit masy ryb na dobę oraz lokalne zasady łowiska.');
+
+    const cls = verdict === 'no' ? 'calc-no' : verdict === 'ok' ? 'calc-ok' : 'calc-check';
+    const icon = verdict === 'no' ? '✕' : verdict === 'ok' ? '✓' : '!';
+    result.className = 'calc-result ' + cls;
+    result.innerHTML = '<p class="calc-verdict"><span class="calc-icon">'+icon+'</span>'+title+'</p>'+
+      '<ul class="calc-notes">'+notes.map(n=>'<li>'+n+'</li>').join('')+'</ul>'+
+      '<p class="calc-link"><a href="../ryby/'+d.slug+'.html">Więcej o gatunku: '+d.name+' →</a></p>';
+    result.hidden = false;
+  }
+
+  document.getElementById('check').addEventListener('click', check);
+  lenEl.addEventListener('keydown', e => { if (e.key==='Enter') check(); });
+})();
+</script>
+<style>
+.calc-tool{background:var(--card,#fff);border:1px solid var(--border,#e2e8e6);border-radius:14px;padding:1.25rem;margin:1.25rem 0}
+.calc-field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.9rem}
+.calc-field label{font-weight:600;font-size:.95rem}
+.calc-row{display:flex;gap:1rem;flex-wrap:wrap}
+.calc-row .calc-field{flex:1;min-width:150px}
+.calc-tool select.tool-search,.calc-tool input.tool-search{width:100%}
+.calc-result{margin-top:1rem;border-radius:12px;padding:1rem 1.15rem;border:1px solid}
+.calc-ok{background:#eaf7ef;border-color:#8fd3a8}
+.calc-no{background:#fdecec;border-color:#eaa2a2}
+.calc-check{background:#fff6e6;border-color:#f0d089}
+.calc-verdict{font-weight:700;font-size:1.1rem;margin:0 0 .5rem;display:flex;align-items:center;gap:.55rem}
+.calc-icon{display:inline-flex;align-items:center;justify-content:center;width:1.7rem;height:1.7rem;border-radius:50%;background:rgba(0,0,0,.08);font-size:1rem}
+.calc-no .calc-icon{background:#e05555;color:#fff}
+.calc-ok .calc-icon{background:#2e9e5b;color:#fff}
+.calc-check .calc-icon{background:#e0a92e;color:#fff}
+.calc-notes{margin:.4rem 0 .2rem;padding-left:1.1rem}
+.calc-notes li{margin:.28rem 0}
+.calc-link{margin:.6rem 0 0}
+@media (prefers-color-scheme:dark){.calc-ok{background:#16311f;border-color:#2e6b41}.calc-no{background:#3a1a1a;border-color:#7a3535}.calc-check{background:#38300f;border-color:#7a651f}}
+</style>
+</body>
+</html>
