@@ -81,7 +81,7 @@
 
 ## Atlas ryb
 
-- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas ryb FishPoint: 18 gatunków polskich wód w trzech grupach — drapieżniki (szczupak, sandacz, sum, okoń, boleń, węgorz), ryby spokojnego żeru (karp, lin, leszcz, płoć, karaś, jaź, kleń, amur) oraz łososiowate i inne (pstrąg, lipień, miętus, troć i łosoś). Rozpoznawanie, biologia, wymiary ochronne i metody łowienia.
+- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas ryb FishPoint: 19 gatunków polskich wód w trzech grupach — drapieżniki (szczupak, sandacz, sum, okoń, boleń, węgorz), ryby spokojnego żeru (karp, lin, leszcz, płoć, ukleja, karaś, jaź, kleń, amur) oraz łososiowate i inne (pstrąg, lipień, miętus, troć i łosoś). Rozpoznawanie, biologia, wymiary ochronne i metody łowienia.
 - [Amur](https://fish-point.pl/ryby/amur.html): Amur biały (Ctenopharyngodon idella) w atlasie FishPoint: rozpoznawanie, introdukcja z Azji Wschodniej, żerowanie roślinożercy, regulaminy łowisk, przynęty roślinne, taktyka, ostrożny hol i FAQ.
 - [Boleń](https://fish-point.pl/ryby/bolen.html): Boleń (Leuciscus aspius) w atlasie FishPoint: jedyny drapieżny karpiowaty polskich rzek. Rozpoznawanie, siedliska, tarło, żerowanie sezonowe, orientacyjne przepisy PZW, przynęty powierzchniowe i taktyka spinningu.
 - [Brzana](https://fish-point.pl/ryby/brzana.html): Brzana (Barbus barbus) w atlasie FishPoint: ryba reofilna krainy brzany, prąd i kamieniste dno, feeder i grunt na rzece, tarło, wędrówki oraz uwaga — ikra jest trująca.
