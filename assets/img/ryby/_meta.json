@@ -106,5 +106,53 @@
   "artist": "User:Wolfgang Striewski",
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/w/index.php?curid=1148722"
+ },
+ "certa": {
+  "file": "assets/img/ryby/certa.jpg",
+  "artist": "No machine-readable author provided. Tokic assumed (based on copyright claims).",
+  "license": "CC BY-SA 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Vimba_vimba.jpg"
+ },
+ "wzdrega": {
+  "file": "assets/img/ryby/wzdrega.jpg",
+  "artist": "Iidkk",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Common_rudd_wroclaw_zoo.jpg"
+ },
+ "jesiotr": {
+  "file": "assets/img/ryby/jesiotr.jpg",
+  "artist": "Duane Raver/U.S. Fish and Wildlife Service",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Acipenser_oxyrhynchus.jpg"
+ },
+ "swinka": {
+  "file": "assets/img/ryby/swinka.jpg",
+  "artist": "André Karwath aka Aka",
+  "license": "CC BY-SA 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Chondrostoma_nasus_(aka).jpg"
+ },
+ "sielawa": {
+  "file": "assets/img/ryby/sielawa.jpg",
+  "artist": "Markus Kauppinen",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Coregonus_albula.jpg"
+ },
+ "sieja": {
+  "file": "assets/img/ryby/sieja.jpg",
+  "artist": "Apple2000",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Coregonus_lavaretus_maraena_1.jpg"
+ },
+ "brzana": {
+  "file": "assets/img/ryby/brzana.jpg",
+  "artist": "Bernd Sauerwein",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Barbus_barbus_in_Losse_-_DE.jpg"
+ },
+ "ukleja": {
+  "file": "assets/img/ryby/ukleja.jpg",
+  "artist": "Piet Spaans",
+  "license": "CC BY-SA 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:AlburnusAlburnus1.JPG"
  }
 }

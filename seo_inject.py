@@ -43,6 +43,14 @@ FISH_ENTITIES = {
     "amur": {"name": "Amur biały", "sameAs": ["https://pl.wikipedia.org/wiki/Amur_biały", "https://www.wikidata.org/wiki/Q76098"]},
     "karas": {"name": "Karaś pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Karaś_pospolity", "https://www.wikidata.org/wiki/Q194031"]},
     "troc-losos": {"name": "Troć wędrowna", "sameAs": ["https://pl.wikipedia.org/wiki/Troć_wędrowna", "https://www.wikidata.org/wiki/Q1095355"]},
+    "sielawa": {"name": "Sielawa", "sameAs": ["https://pl.wikipedia.org/wiki/Sielawa_europejska", "https://www.wikidata.org/wiki/Q754061"]},
+    "sieja": {"name": "Sieja", "sameAs": ["https://pl.wikipedia.org/wiki/Sieja", "https://www.wikidata.org/wiki/Q9336436"]},
+    "brzana": {"name": "Brzana", "sameAs": ["https://pl.wikipedia.org/wiki/Brzana", "https://www.wikidata.org/wiki/Q16290471"]},
+    "certa": {"name": "Certa", "sameAs": ["https://pl.wikipedia.org/wiki/Certa", "https://www.wikidata.org/wiki/Q247370"]},
+    "swinka": {"name": "Świnka pospolita", "sameAs": ["https://pl.wikipedia.org/wiki/Świnka_pospolita", "https://www.wikidata.org/wiki/Q654583"]},
+    "wzdrega": {"name": "Wzdręga", "sameAs": ["https://pl.wikipedia.org/wiki/Wzdręga", "https://www.wikidata.org/wiki/Q200594"]},
+    "ukleja": {"name": "Ukleja", "sameAs": ["https://pl.wikipedia.org/wiki/Ukleja", "https://www.wikidata.org/wiki/Q9364547"]},
+    "jesiotr": {"name": "Jesiotr ostronosy", "sameAs": ["https://pl.wikipedia.org/wiki/Jesiotr_ostronosy", "https://www.wikidata.org/wiki/Q756969"]},
 }
 
 ROOT = os.path.dirname(os.path.abspath(__file__))

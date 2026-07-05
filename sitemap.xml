@@ -261,6 +261,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://fish-point.pl/narzedzia/kalkulator-wagi-ryby.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/narzedzia/okresy-ochronne.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -495,6 +501,42 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-karp.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-okon.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-ploc.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -587,12 +629,20 @@
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/brzana.jpg</image:loc>
+      <image:title>Brzana (Barbus barbus) — reofilna ryba rzek krainy brzany</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/certa.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/certa.jpg</image:loc>
+      <image:title>Certa (Vimba vimba) — wędrowna ryba karpiowata polskich rzek</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/jaz.html</loc>
@@ -609,6 +659,10 @@
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/jesiotr.jpg</image:loc>
+      <image:title>Jesiotr ostronosy (Acipenser oxyrinchus) — wędrowna ryba jesiotrowata objęta restytucją</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/karas.html</loc>
@@ -725,12 +779,20 @@
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/sieja.jpg</image:loc>
+      <image:title>Sieja (Coregonus maraena) — łososiowata ryba czystych jezior północnej Polski</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sielawa.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/sielawa.jpg</image:loc>
+      <image:title>Sielawa (Coregonus albula) — sieja z rodziny łososiowatych, ryba jezior północnej Polski</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sum.html</loc>
@@ -747,6 +809,10 @@
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/swinka.jpg</image:loc>
+      <image:title>Świnka (Chondrostoma nasus) — stadna ryba bystrych, czystych rzek</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/szczupak.html</loc>
@@ -773,6 +839,10 @@
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/ukleja.jpg</image:loc>
+      <image:title>Ukleja (Alburnus alburnus) — mała, srebrzysta ryba ławic przypowierzchniowych</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/wegorz.html</loc>
@@ -789,6 +859,10 @@
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/wzdrega.jpg</image:loc>
+      <image:title>Wzdręga (Scardinius erythrophthalmus) — karpiowata ryba przypowierzchniowa o czerwonych płetwach</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/slownik.html</loc>
