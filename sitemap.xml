@@ -625,6 +625,10 @@
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/belona.jpg</image:loc>
+      <image:title>Belona (Belone belone) — morska ryba z wydłużonym dziobem</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/bolen.html</loc>
@@ -654,6 +658,26 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/certa.jpg</image:loc>
       <image:title>Certa (Vimba vimba) — wędrowna ryba karpiowata polskich rzek</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/dorsz.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/dorsz.jpg</image:loc>
+      <image:title>Dorsz (Gadus morhua) — ryba morska dna Bałtyku</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/fladra.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/fladra.jpg</image:loc>
+      <image:title>Flądra (stornia) (Platichthys flesus) — płaska ryba przydenna Bałtyku</image:title>
     </image:image>
   </url>
   <url>
@@ -811,6 +835,10 @@
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/sledz.jpg</image:loc>
+      <image:title>Śledź (Clupea harengus) — ławicowa ryba morska Bałtyku</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sum.html</loc>

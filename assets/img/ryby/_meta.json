@@ -154,5 +154,29 @@
   "artist": "Piet Spaans",
   "license": "CC BY-SA 2.5",
   "page": "https://commons.wikimedia.org/wiki/File:AlburnusAlburnus1.JPG"
+ },
+ "dorsz": {
+  "file": "assets/img/ryby/dorsz.jpg",
+  "artist": "Aotearoa",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Gadus_morhua-Atlantic_cod.png"
+ },
+ "sledz": {
+  "file": "assets/img/ryby/sledz.jpg",
+  "artist": "encyclopedia, \"Pieni Tietosanakirja\"",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Clupea_harengus_(Pieni).jpg"
+ },
+ "belona": {
+  "file": "assets/img/ryby/belona.jpg",
+  "artist": "Krüger",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Belone_belone1.jpg"
+ },
+ "fladra": {
+  "file": "assets/img/ryby/fladra.jpg",
+  "artist": "Hans Hillewaert",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Platichthys_flesus_1.jpg"
  }
 }

@@ -89,12 +89,14 @@
 
 ## Atlas ryb
 
-- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas ryb FishPoint: 26 gatunki polskich wód w trzech grupach — drapieżniki (szczupak, sandacz, sum, okoń, boleń, węgorz), ryby spokojnego żeru (karp, lin, leszcz, płoć, ukleja, karaś, jaź, certa, kleń, amur, świnka) oraz łososiowate i inne (pstrąg, lipień, miętus, sieja, troć i łosoś). Rozpoznawanie, biologia, wymiary ochronne i metody łowienia.
+- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas ryb FishPoint: 30 gatunki polskich wód w trzech grupach — drapieżniki (szczupak, sandacz, sum, okoń, boleń, węgorz), ryby spokojnego żeru (karp, lin, leszcz, płoć, ukleja, karaś, jaź, certa, kleń, amur, świnka) oraz łososiowate i inne (pstrąg, lipień, miętus, sieja, troć i łosoś). Rozpoznawanie, biologia, wymiary ochronne i metody łowienia.
 - [Amur](https://fish-point.pl/ryby/amur.html): Amur biały (Ctenopharyngodon idella) w atlasie FishPoint: rozpoznawanie, introdukcja z Azji Wschodniej, żerowanie roślinożercy, regulaminy łowisk, przynęty roślinne, taktyka, ostrożny hol i FAQ.
 - [Belona](https://fish-point.pl/ryby/belona.html): Belona (Belone belone) — morska ryba Bałtyku o wydłużonym dziobie i zielonych ościach. Rozpoznawanie, majowe podejścia za śledziem, spinning i spławik z plaży.
 - [Boleń](https://fish-point.pl/ryby/bolen.html): Boleń (Leuciscus aspius) w atlasie FishPoint: jedyny drapieżny karpiowaty polskich rzek. Rozpoznawanie, siedliska, tarło, żerowanie sezonowe, orientacyjne przepisy PZW, przynęty powierzchniowe i taktyka spinningu.
 - [Brzana](https://fish-point.pl/ryby/brzana.html): Brzana (Barbus barbus) w atlasie FishPoint: ryba reofilna krainy brzany, prąd i kamieniste dno, feeder i grunt na rzece, tarło, wędrówki oraz uwaga — ikra jest trująca.
 - [Certa](https://fish-point.pl/ryby/certa.html): Certa (Vimba vimba) — atlas ryb FishPoint: rozpoznawanie, wędrówki na tarło, łowienie na Wiśle i dużych rzekach feederem i spławikiem, przynęty, taktyka i kuchnia.
+- [Dorsz](https://fish-point.pl/ryby/dorsz.html): Dorsz bałtycki (Gadus morhua) w atlasie FishPoint: rozpoznawanie, biologia i tarło, kryzys populacji wschodniej, połów morski z kutra i brzegu, pilkery i gumy oraz zmienne ograniczenia UE.
+- [Flądra (stornia)](https://fish-point.pl/ryby/fladra.html): Flądra (stornia) w atlasie FishPoint: płaska ryba przydenna Bałtyku, łowienie z plaży i mola na zestaw gruntowy z piaskówką, sezon jesienny, ujścia rzek i przepisy morskie.
 - [Jaź](https://fish-point.pl/ryby/jaz.html): Jaź (Leuciscus idus) w atlasie FishPoint: rozpoznawanie i różnice względem klenia i płoci, środowisko, tarło, żerowanie, wymiary ochronne PZW, metody połowu na grunt, spławik, spinning i muchę.
 - [Jesiotr](https://fish-point.pl/ryby/jesiotr.html): Jesiotr ostronosy w Polsce: biologia ryby wędrownej, program restytucji do Bałtyku, ochrona gatunkowa i obowiązek wypuszczenia oraz łowiska komercyjne.
 - [Karaś](https://fish-point.pl/ryby/karas.html): Karaś pospolity i srebrzysty w polskich wodach: rozpoznawanie, biologia, gynogeneza, żerowanie, metody połowu na spławik i grunt, przepisy PZW oraz praktyczne wskazówki taktyczne.

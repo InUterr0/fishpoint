@@ -51,6 +51,10 @@ FISH_ENTITIES = {
     "wzdrega": {"name": "Wzdręga", "sameAs": ["https://pl.wikipedia.org/wiki/Wzdręga", "https://www.wikidata.org/wiki/Q200594"]},
     "ukleja": {"name": "Ukleja", "sameAs": ["https://pl.wikipedia.org/wiki/Ukleja", "https://www.wikidata.org/wiki/Q9364547"]},
     "jesiotr": {"name": "Jesiotr ostronosy", "sameAs": ["https://pl.wikipedia.org/wiki/Jesiotr_ostronosy", "https://www.wikidata.org/wiki/Q756969"]},
+    "dorsz": {"name": "Dorsz atlantycki", "sameAs": ["https://pl.wikipedia.org/wiki/Dorsz_atlantycki", "https://www.wikidata.org/wiki/Q199788"]},
+    "sledz": {"name": "Śledź atlantycki", "sameAs": ["https://pl.wikipedia.org/wiki/Śledź_oceaniczny", "https://www.wikidata.org/wiki/Q2396858"]},
+    "belona": {"name": "Belona", "sameAs": ["https://pl.wikipedia.org/wiki/Belona_(ryba)", "https://www.wikidata.org/wiki/Q643373"]},
+    "fladra": {"name": "Flądra (stornia)", "sameAs": ["https://pl.wikipedia.org/wiki/Stornia", "https://www.wikidata.org/wiki/Q214034"]},
 }
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
