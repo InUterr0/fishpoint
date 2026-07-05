@@ -513,7 +513,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-klen.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-lin.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -531,7 +543,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-sum.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
