@@ -9,7 +9,7 @@ i uruchomić ponownie: python3 seo_inject.py
 import os, re, html, json, datetime, subprocess, functools
 
 BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
-GA_ID = ""                              # <-- Google Analytics 4 Measurement ID (G-XXXXXXX); puste = wyłączone
+GA_ID = "G-33TKR9MEB7"                   # <-- Google Analytics 4 Measurement ID (G-XXXXXXX); puste = wyłączone
 SITE_NAME = "FishPoint"
 AUTHOR_NAME = "Maciej Baniewicz"
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
