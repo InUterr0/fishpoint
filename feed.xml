@@ -6,7 +6,28 @@
     <description>Blog wędkarski FishPoint: poradniki, relacje znad wody, sezon i sprzęt.</description>
     <language>pl-PL</language>
     <atom:link href="https://fish-point.pl/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 04 Jul 2026 00:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 00:00:00 -0000</lastBuildDate>
+    <item>
+      <title>Rekordowy okoń 2026</title>
+      <link>https://fish-point.pl/aktualnosci/rekord-okonia-2026.html</link>
+      <guid isPermaLink="true">https://fish-point.pl/aktualnosci/rekord-okonia-2026.html</guid>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Nowy rekordowy okoń sezonu 2026: według zestawień wędkarskich Zbigniew Czarny złowił okazałego okonia 52 cm i 2,76 kg pod koniec stycznia. Co ten wynik mówi o łowieniu dużych okoni zimą i jak wygląda dziś system rekordów ryb w Polsce.</description>
+    </item>
+    <item>
+      <title>Rekordowy sum 292 cm z Zalewu Rybnickiego</title>
+      <link>https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html</link>
+      <guid isPermaLink="true">https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html</guid>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Sum długości 292 cm złowiony na Zalewie Rybnickim to jeden z najgłośniejszych okazów ostatnich sezonów — ryba wzięta na spinning z łodzi i wypuszczona po pomiarze. Opowiadamy, jak łowi się takie sumy i dlaczego długość zamiast wagi staje się standardem rekordów.</description>
+    </item>
+    <item>
+      <title>Zawody wędkarskie 2026</title>
+      <link>https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html</link>
+      <guid isPermaLink="true">https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html</guid>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Sezon zawodów wędkarskich 2026 w pełni: spławik, feeder, method feeder, karp, spinning i grunt. Podpowiadamy, gdzie szukać terminarzy startów w całej Polsce, jak wybrać pierwsze zawody i co przygotować przed debiutem.</description>
+    </item>
     <item>
       <title>Najczęstsze błędy początkujących</title>
       <link>https://fish-point.pl/aktualnosci/bledy-poczatkujacych.html</link>
