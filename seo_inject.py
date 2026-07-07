@@ -392,6 +392,11 @@ def build(path):
     rel_now = os.path.relpath(path, ROOT).replace(os.sep, "/")
     if rel_now in TOOL_IMG:
         img_path = TOOL_IMG[rel_now]
+    # Jawny obraz OG per-strona: <!--og-image:/assets/img/...-->. Przydatne dla
+    # wpisów bez zdjęcia w treści (blog), by każdy miał własny podgląd na FB/X.
+    m_og = re.search(r"<!--\s*og-image:\s*([^\s>]+?)\s*-->", src)
+    if m_og:
+        img_path = m_og.group(1)
     img_url = BASE + img_path
     page_images = collect_images(src, page_dir)
 
