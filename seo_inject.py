@@ -9,6 +9,7 @@ i uruchomić ponownie: python3 seo_inject.py
 import os, re, html, json, datetime, subprocess, functools
 
 BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
+GA_ID = ""                              # <-- Google Analytics 4 Measurement ID (G-XXXXXXX); puste = wyłączone
 SITE_NAME = "FishPoint"
 AUTHOR_NAME = "Maciej Baniewicz"
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
@@ -460,6 +461,13 @@ def build(path):
         f'  <meta name="twitter:description" content="{desc_raw}" />',
         f'  <meta name="twitter:image" content="{img_url}" />',
     ]
+    # Google Analytics 4 (gtag) — na wszystkich stronach, gdy ustawiono GA_ID.
+    if GA_ID:
+        head.append(f'  <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>')
+        head.append(
+            '  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
+            f"gtag('js',new Date());gtag('config','{GA_ID}');</script>"
+        )
     if og_type == "article":
         if im:
             head.append(f'  <link rel="preload" as="image" href="{img_path}" fetchpriority="high" />')
