@@ -6,7 +6,7 @@ Idempotentny: blok SEO jest oznaczony znacznikami i przy ponownym uruchomieniu
 zostaje podmieniony, a nie zdublowany. Wystarczy zmienić BASE po kupnie domeny
 i uruchomić ponownie: python3 seo_inject.py
 """
-import os, re, html, json, datetime, subprocess, functools
+import os, re, html, json, datetime, subprocess, functools, hashlib
 
 BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
 GA_ID = "G-33TKR9MEB7"                   # <-- Google Analytics 4 Measurement ID (G-XXXXXXX); puste = wyłączone
@@ -107,6 +107,15 @@ NAV_MORE = [
     ("szukaj.html", "Szukaj w serwisie"),
 ]
 nav_re = re.compile(r'<header class="site-header">.*?</header>', re.S)
+
+# Cache-busting CSS: wersja z hasha zawartości arkusza — po każdej zmianie CSS
+# link zmienia się, więc przeglądarki pobierają nowy plik (koniec ze starym cache).
+try:
+    with open(os.path.join(ROOT, "css", "style.css"), "rb") as _f:
+        CSS_VER = hashlib.md5(_f.read()).hexdigest()[:8]
+except OSError:
+    CSS_VER = "1"
+css_ver_re = re.compile(r'css/style\.css(\?v=[0-9a-f]+)?"')
 
 
 def _nav_children(section, prefix):
@@ -436,6 +445,7 @@ def build(path):
     # kanoniczny (z rozwijanymi działami). Prefiks ścieżek wg głębokości strony.
     depth = os.path.relpath(path, ROOT).replace(os.sep, "/").count("/")
     src = nav_re.sub(lambda m: build_nav("../" * depth), src, count=1)
+    src = css_ver_re.sub(f'css/style.css?v={CSS_VER}"', src)
     # usuń poprzednie wstrzyknięcia, by działać idempotentnie
     src = block_re.sub("", src)
     src = byline_re.sub("", src)
@@ -843,6 +853,16 @@ def main():
             continue
         SECTION_PAGES.setdefault(parts[0], []).append(
             (BASE + rel_url(p), short_title(html.unescape(tm.group(1).strip()))))
+
+    # 404 jest pomijane w pętli (ścieżki absolutne), ale też ma mieć wspólne menu.
+    p404 = os.path.join(ROOT, "404.html")
+    if os.path.exists(p404):
+        with open(p404, encoding="utf-8") as f:
+            s404 = f.read()
+        s404 = nav_re.sub(lambda m: build_nav("/"), s404, count=1)
+        s404 = css_ver_re.sub(f'css/style.css?v={CSS_VER}"', s404)
+        with open(p404, "w", encoding="utf-8") as f:
+            f.write(s404)
 
     urls = []
     changed = 0
