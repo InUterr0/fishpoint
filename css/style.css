@@ -847,3 +847,12 @@ html.dark .tldr p:not(.tldr-label) { color: #c5d6d0; }
 }
 .related-grid a:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(17,49,47,.1); border-left-color: var(--orange); }
 html.dark .related-grid a { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.08); border-left-color: var(--aqua); color: var(--green); }
+
+/* Komentarze (giscus) i newsletter */
+.comments{margin-top:2.2rem;padding-top:1.4rem;border-top:1px solid rgba(0,0,0,.1)}
+.comments h2{margin-bottom:1rem}
+html.dark .comments{border-top-color:rgba(255,255,255,.1)}
+.newsletter{margin-top:2.2rem;padding:1.5rem 1.4rem;border-radius:14px;background:linear-gradient(135deg,rgba(14,94,84,.10),rgba(43,167,152,.10));border:1px solid rgba(14,94,84,.18)}
+.newsletter h2{margin:0 0 .4rem}
+.newsletter p{margin:0 0 1rem;max-width:56ch}
+html.dark .newsletter{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.10)}

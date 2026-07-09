@@ -10,6 +10,15 @@ import os, re, html, json, datetime, subprocess, functools
 
 BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
 GA_ID = "G-33TKR9MEB7"                   # <-- Google Analytics 4 Measurement ID (G-XXXXXXX); puste = wyłączone
+# Komentarze giscus (GitHub Discussions) — na wpisach blogowych (aktualnosci).
+# Puste GISCUS_REPO = wyłączone. Wymaga zainstalowania aplikacji giscus na repo.
+GISCUS_REPO = "InUterr0/fishpoint"
+GISCUS_REPO_ID = "R_kgDOS3rnng"
+GISCUS_CATEGORY = "Announcements"
+GISCUS_CATEGORY_ID = "DIC_kwDOS3rnns4DA1tx"
+# Newsletter — wklej TU pełny kod osadzenia formularza MailerLite (HTML/script).
+# Puste = sekcja newslettera się nie pojawia. Po wklejeniu pojawi się na wpisach blogowych.
+NEWSLETTER_EMBED = ""
 SITE_NAME = "FishPoint"
 AUTHOR_NAME = "Maciej Baniewicz"
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
@@ -102,6 +111,10 @@ TLDR_BEGIN, TLDR_END = "<!--tldr:auto-->", "<!--/tldr:auto-->"
 tldr_re = re.compile(re.escape(TLDR_BEGIN) + r".*?" + re.escape(TLDR_END), re.S)
 RELATED_BEGIN, RELATED_END = "<!--related:auto-->", "<!--/related:auto-->"
 related_re = re.compile(re.escape(RELATED_BEGIN) + r".*?" + re.escape(RELATED_END), re.S)
+NEWSLETTER_BEGIN, NEWSLETTER_END = "<!--newsletter:auto-->", "<!--/newsletter:auto-->"
+newsletter_re = re.compile(re.escape(NEWSLETTER_BEGIN) + r".*?" + re.escape(NEWSLETTER_END), re.S)
+GISCUS_BEGIN, GISCUS_END = "<!--giscus:auto-->", "<!--/giscus:auto-->"
+giscus_re = re.compile(re.escape(GISCUS_BEGIN) + r".*?" + re.escape(GISCUS_END), re.S)
 
 # Mapa sekcja -> [(url, krótki_tytuł)] budowana w main() przed pętlą (dla bloku
 # „Powiązane artykuły"). Puste do czasu prescanu.
@@ -122,6 +135,8 @@ def article_text(src):
     chunk = toc_re.sub(" ", chunk)
     chunk = tldr_re.sub(" ", chunk)
     chunk = related_re.sub(" ", chunk)
+    chunk = newsletter_re.sub(" ", chunk)
+    chunk = giscus_re.sub(" ", chunk)
     return re.sub(r"\s+", " ", _clean(chunk)).strip()
 
 
@@ -365,6 +380,8 @@ def build(path):
     src = toc_re.sub("", src)
     src = tldr_re.sub("", src)
     src = related_re.sub("", src)
+    src = newsletter_re.sub("", src)
+    src = giscus_re.sub("", src)
 
     tm = title_re.search(src)
     dm = desc_re.search(src)
@@ -439,6 +456,24 @@ def build(path):
                            f'<h2>Powiązane artykuły</h2><div class="related-grid">{links}</div>'
                            f'</section>{RELATED_END}')
                 src = re.sub(r"(</article>)", related + r"\1", src, count=1)
+        # Newsletter (MailerLite) — na wpisach blogowych, gdy ustawiono embed
+        if section == "aktualnosci" and NEWSLETTER_EMBED:
+            nl = (f'{NEWSLETTER_BEGIN}<section class="newsletter" aria-label="Newsletter">'
+                  f'<h2>Bierze? Bądź pierwszy nad wodą</h2>'
+                  f'<p>Zapisz się na newsletter FishPoint — najlepsze brania weekendu, nowe poradniki '
+                  f'i sezonowe wskazówki prosto na e-mail. Bez spamu, wypiszesz się jednym kliknięciem.</p>'
+                  f'{NEWSLETTER_EMBED}</section>{NEWSLETTER_END}')
+            src = re.sub(r"(</article>)", nl + r"\1", src, count=1)
+        # Komentarze giscus — na wpisach blogowych (aktualnosci)
+        if section == "aktualnosci" and GISCUS_REPO:
+            giscus = (f'{GISCUS_BEGIN}<section class="comments" aria-label="Komentarze"><h2>Komentarze</h2>'
+                      f'<script src="https://giscus.app/client.js" data-repo="{GISCUS_REPO}" '
+                      f'data-repo-id="{GISCUS_REPO_ID}" data-category="{GISCUS_CATEGORY}" '
+                      f'data-category-id="{GISCUS_CATEGORY_ID}" data-mapping="pathname" data-strict="1" '
+                      f'data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" '
+                      f'data-theme="light" data-lang="pl" data-loading="lazy" crossorigin="anonymous" async>'
+                      f'</script></section>{GISCUS_END}')
+            src = re.sub(r"(</article>)", giscus + r"\1", src, count=1)
     head = [
         BEGIN,
         f'  <link rel="canonical" href="{url}" />',
