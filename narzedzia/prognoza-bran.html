@@ -232,34 +232,34 @@
 
   // Ocena pogody dnia → 0..100 + opis czynników
   function scoreDay(d) {
-    var s = 50, why = [];
+    var s = 44, why = [];
     // Ciśnienie (hPa): ideał ~1008–1016; skrajności gorzej
     var pr = d.pressure;
-    if (pr >= 1006 && pr <= 1018) { s += 12; why.push(['Ciśnienie stabilne', 1]); }
-    else if (pr > 1024) { s -= 14; why.push(['Wysokie ciśnienie (wyż)', -1]); }
-    else if (pr < 998) { s -= 8; why.push(['Bardzo niskie ciśnienie', -1]); }
+    if (pr >= 1008 && pr <= 1017) { s += 9; why.push(['Ciśnienie stabilne', 1]); }
+    else if (pr > 1024) { s -= 15; why.push(['Wysokie ciśnienie (wyż)', -1]); }
+    else if (pr < 998) { s -= 9; why.push(['Bardzo niskie ciśnienie', -1]); }
     // Trend ciśnienia względem dnia poprzedniego
     if (d.dp !== null) {
-      if (d.dp <= -1 && d.dp >= -6) { s += 14; why.push(['Ciśnienie łagodnie spada — brania przed frontem', 1]); }
-      else if (d.dp > 6 || d.dp < -9) { s -= 12; why.push(['Gwałtowna zmiana ciśnienia', -1]); }
-      else if (d.dp >= 2 && d.dp <= 6) { s += 4; why.push(['Ciśnienie rośnie', 1]); }
+      if (d.dp <= -1 && d.dp >= -6) { s += 13; why.push(['Ciśnienie łagodnie spada — brania przed frontem', 1]); }
+      else if (d.dp > 6 || d.dp < -9) { s -= 14; why.push(['Gwałtowna zmiana ciśnienia', -1]); }
+      else if (d.dp >= 2 && d.dp <= 6) { s += 3; why.push(['Ciśnienie rośnie', 1]); }
     }
     // Wiatr km/h
     var w = d.wind;
-    if (w >= 6 && w <= 22) { s += 10; why.push(['Lekka fala natlenia wodę', 1]); }
-    else if (w < 3) { s -= 6; why.push(['Cisza — woda jak lustro', -1]); }
-    else if (w > 38) { s -= 14; why.push(['Silny wiatr utrudnia łowienie', -1]); }
+    if (w >= 6 && w <= 22) { s += 8; why.push(['Lekka fala natlenia wodę', 1]); }
+    else if (w < 3) { s -= 7; why.push(['Cisza — woda jak lustro', -1]); }
+    else if (w > 38) { s -= 16; why.push(['Silny wiatr utrudnia łowienie', -1]); }
     // Zachmurzenie %
     var c = d.cloud;
-    if (c >= 40 && c <= 90) { s += 8; why.push(['Pochmurno — dłuższe żerowanie', 1]); }
-    else if (c < 15 && d.tmax > 24) { s -= 8; why.push(['Ostre słońce w upał', -1]); }
+    if (c >= 40 && c <= 90) { s += 6; why.push(['Pochmurno — dłuższe żerowanie', 1]); }
+    else if (c < 15 && d.tmax > 24) { s -= 10; why.push(['Ostre słońce w upał', -1]); }
     // Opady
-    if (d.rain > 12) { s -= 8; why.push(['Intensywny deszcz', -1]); }
-    else if (d.rain > 0.5 && d.rain <= 6) { s += 4; why.push(['Lekki deszcz — plus', 1]); }
-    // Księżyc
+    if (d.rain > 12) { s -= 10; why.push(['Intensywny deszcz', -1]); }
+    else if (d.rain > 0.5 && d.rain <= 6) { s += 3; why.push(['Lekki deszcz — plus', 1]); }
+    // Księżyc — wąskie okno wokół nowiu/pełni, delikatny bonus
     var mb = moonBonus(d.moon);
-    if (mb > 0.7) { s += Math.round(mb * 8); why.push(['Blisko ' + (d.moon < 0.25 || d.moon > 0.75 ? 'nowiu' : 'pełni'), 1]); }
-    s = Math.max(3, Math.min(98, Math.round(s)));
+    if (mb > 0.85) { s += Math.round((mb - 0.85) / 0.15 * 6); why.push(['Blisko ' + (d.moon < 0.25 || d.moon > 0.75 ? 'nowiu' : 'pełni'), 1]); }
+    s = Math.max(3, Math.min(97, Math.round(s)));
     return { score: s, why: why };
   }
   function rating(s) {
