@@ -403,6 +403,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://fish-point.pl/narzedzia/prognoza-bran.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/narzedzia/rozpoznaj-rybe.html</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
