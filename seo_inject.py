@@ -81,6 +81,7 @@ SECTIONS = {
     "pierwsze-kroki": "Pierwsze kroki",
     "narzedzia": "Narzędzia",
     "lowiska": "Łowiska",
+    "forum": "Forum",
 }
 
 title_re = re.compile(r"<title>(.*?)</title>", re.S)
