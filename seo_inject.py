@@ -84,6 +84,62 @@ SECTIONS = {
     "forum": "Forum",
 }
 
+# --- Wspólna nawigacja z rozwijanymi działami (dropdown), wstrzykiwana na KAŻDĄ
+# stronę, żeby menu było identyczne wszędzie. (etykieta, href względny od korzenia,
+# klucz sekcji dla dzieci menu lub None). Dzieci pobierane są z SECTION_PAGES. ---
+NAV_TOP = [
+    ("Pierwsze kroki", "index.html#pierwsze-kroki", "pierwsze-kroki"),
+    ("Sprzęt", "index.html#sprzet", "sprzet"),
+    ("Techniki", "index.html#techniki", "techniki"),
+    ("Atlas ryb", "ryby/index.html", "ryby"),
+    ("Poradniki", "index.html#poradniki", "poradniki"),
+    ("Narzędzia", "narzedzia/index.html", "narzedzia"),
+    ("Łowiska", "lowiska/index.html", "lowiska"),
+    ("Forum", "forum/index.html", None),
+    ("Blog", "aktualnosci/index.html", "aktualnosci"),
+    ("Więcej", "slownik.html", "__more__"),
+]
+NAV_CTA = ("Kontakt", "index.html#kontakt")
+NAV_MORE = [
+    ("index.html#kuchnia", "Kuchnia wędkarska"),
+    ("zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
+    ("slownik.html", "Słownik pojęć"),
+    ("szukaj.html", "Szukaj w serwisie"),
+]
+nav_re = re.compile(r'<header class="site-header">.*?</header>', re.S)
+
+
+def _nav_children(section, prefix):
+    if section == "__more__":
+        return [(prefix + href, title) for href, title in NAV_MORE]
+    out = []
+    for url, title in SECTION_PAGES.get(section, []):
+        rel = url[len(BASE) + 1:] if url.startswith(BASE + "/") else url
+        if rel == "" or rel.endswith("/"):   # pomiń stronę-indeks sekcji
+            continue
+        out.append((prefix + rel, title))
+    return out[:9]
+
+
+def build_nav(prefix):
+    items = []
+    for label, href, section in NAV_TOP:
+        top = f'<a href="{prefix}{href}">{html.escape(label)}</a>'
+        kids = _nav_children(section, prefix) if section else []
+        if kids:
+            sub = "".join(
+                f'<li><a href="{u}">{html.escape(t)}</a></li>' for u, t in kids)
+            items.append(f'<li class="has-sub">{top}<ul class="sub">{sub}</ul></li>')
+        else:
+            items.append(f'<li>{top}</li>')
+    items.append(
+        f'<li><a class="nav-cta" href="{prefix}{NAV_CTA[1]}">{html.escape(NAV_CTA[0])}</a></li>')
+    return (
+        '<header class="site-header"><nav class="nav container">'
+        f'<a class="logo" href="{prefix}index.html"><span class="logo-mark">≈</span><span>FishPoint</span></a>'
+        '<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>'
+        f'<ul id="nav-menu" class="nav-menu">{"".join(items)}</ul></nav></header>')
+
 title_re = re.compile(r"<title>(.*?)</title>", re.S)
 desc_re = re.compile(r'<meta\s+name="description"\s+content="(.*?)"', re.S)
 img_re = re.compile(r'<img[^>]+src="([^"]+)"', re.S)
@@ -376,6 +432,10 @@ def jsonld(obj):
 def build(path):
     with open(path, encoding="utf-8") as f:
         src = f.read()
+    # Wspólna nawigacja na każdej stronie — podmień istniejący nagłówek na
+    # kanoniczny (z rozwijanymi działami). Prefiks ścieżek wg głębokości strony.
+    depth = os.path.relpath(path, ROOT).replace(os.sep, "/").count("/")
+    src = nav_re.sub(lambda m: build_nav("../" * depth), src, count=1)
     # usuń poprzednie wstrzyknięcia, by działać idempotentnie
     src = block_re.sub("", src)
     src = byline_re.sub("", src)

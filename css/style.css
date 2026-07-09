@@ -159,7 +159,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-menu li { display: flex; }
 .nav-menu a {
   position: relative;
-  padding: 9px 15px;
+  padding: 8px 12px;
   border-radius: 999px;
   color: rgba(255, 255, 255, .82);
   white-space: nowrap;
@@ -865,3 +865,33 @@ html.dark .newsletter{background:rgba(255,255,255,.04);border-color:rgba(255,255
 .nl-msg{margin:10px 0 0;font-weight:600}
 .nl-msg--ok{color:#16a34a}
 .nl-note{font-size:.8rem;margin:10px 0 0;color:var(--muted,#5b6b68)}
+
+/* === Rozwijane działy w nawigacji (dropdown) === */
+.nav-menu { gap: 2px; }
+.nav-menu .has-sub { position: relative; }
+.nav-menu .has-sub > a::after { content: "▾"; font-size: .66em; margin-left: 4px; opacity: .7; }
+.nav-menu .sub {
+  position: absolute; top: 100%; left: 0; margin: 6px 0 0; padding: 8px;
+  display: none; flex-direction: column; gap: 2px; min-width: 214px; max-height: 74vh; overflow-y: auto;
+  list-style: none; border-radius: 16px; z-index: 60;
+  background: linear-gradient(180deg, rgba(10,38,43,.98), rgba(7,28,32,.98));
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 22px 55px rgba(4,18,22,.5);
+}
+/* niewidzialny „mostek", żeby przejście kursora nie zamykało menu */
+.nav-menu .has-sub::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 8px; }
+.nav-menu .has-sub:hover > .sub, .nav-menu .has-sub:focus-within > .sub { display: flex; }
+.nav-menu .sub li { display: block; }
+.nav-menu .sub a { display: block; white-space: nowrap; padding: 9px 13px; border-radius: 10px; color: rgba(255,255,255,.82); font-weight: 600; }
+.nav-menu .sub a:hover { background: rgba(255,255,255,.12); color: var(--white); }
+/* przy prawej krawędzi (dział „Więcej") rozwiń w lewo, by nie wychodził poza ekran */
+.nav-menu > li:nth-last-child(2).has-sub > .sub { left: auto; right: 0; }
+
+@media (max-width: 840px) {
+  /* na mobile brak najechania — podstrony pokazujemy wcięte pod działem */
+  .nav-menu .sub { position: static; display: flex; min-width: 0; max-height: none; overflow: visible;
+    margin: 0 0 4px; padding: 2px 0 4px 14px; background: none; border: 0; box-shadow: none; }
+  .nav-menu .has-sub::after { display: none; }
+  .nav-menu .has-sub > a::after { display: none; }
+  .nav-menu > li:nth-last-child(2).has-sub > .sub { right: auto; }
+}
