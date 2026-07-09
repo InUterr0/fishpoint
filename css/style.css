@@ -856,3 +856,12 @@ html.dark .comments{border-top-color:rgba(255,255,255,.1)}
 .newsletter h2{margin:0 0 .4rem}
 .newsletter p{margin:0 0 1rem;max-width:56ch}
 html.dark .newsletter{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.10)}
+/* Formularz newslettera */
+.nl-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.nl-form input{flex:1 1 220px;min-width:180px;padding:11px 14px;border:1px solid var(--line,#cfd8d6);border-radius:8px;font-size:1rem}
+.nl-form button{padding:11px 22px;background:var(--green,#0e5e54);color:#fff;border:0;border-radius:8px;font-weight:700;cursor:pointer}
+.nl-form button:hover{filter:brightness(1.08)}
+.nl-form button:disabled{opacity:.6;cursor:default}
+.nl-msg{margin:10px 0 0;font-weight:600}
+.nl-msg--ok{color:#16a34a}
+.nl-note{font-size:.8rem;margin:10px 0 0;color:var(--muted,#5b6b68)}
