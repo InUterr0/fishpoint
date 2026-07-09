@@ -18,25 +18,7 @@ GISCUS_CATEGORY = "Announcements"
 GISCUS_CATEGORY_ID = "DIC_kwDOTTiC_s4DA1zO"
 # Newsletter — wklej TU pełny kod osadzenia formularza MailerLite (HTML/script).
 # Puste = sekcja newslettera się nie pojawia. Po wklejeniu pojawi się na wpisach blogowych.
-NEWSLETTER_EMBED = (
-    '<form class="nl-form" data-fp-newsletter novalidate>'
-    '<input type="email" name="email" required maxlength="254" '
-    'placeholder="Twój adres e-mail" aria-label="Twój adres e-mail" autocomplete="email" />'
-    '<button type="submit">Zapisz się</button></form>'
-    '<p class="nl-msg" data-fp-newsletter-msg hidden></p>'
-    '<p class="nl-note">Bez spamu, wypiszesz się jednym kliknięciem.</p>'
-    '<script>(function(){var f=document.querySelector("[data-fp-newsletter]");'
-    'if(!f||f.dataset.bound)return;f.dataset.bound="1";'
-    'var m=document.querySelector("[data-fp-newsletter-msg]");'
-    'f.addEventListener("submit",function(e){e.preventDefault();'
-    'var b=f.querySelector("button");if(b)b.disabled=true;'
-    'fetch("https://globbrief.com/api/newsletter-fishpoint/",{method:"POST",body:new FormData(f)})'
-    '.then(function(r){return r.json();}).catch(function(){return{ok:false};})'
-    '.then(function(d){if(m){m.hidden=false;'
-    'm.textContent=d&&d.ok?"Dzięki! Jesteś na liście — potwierdzenie brań wkrótce.":"Coś poszło nie tak — spróbuj ponownie.";'
-    'm.className="nl-msg"+(d&&d.ok?" nl-msg--ok":"");}if(d&&d.ok)f.reset();})'
-    '.finally(function(){if(b)b.disabled=false;});});})();</script>'
-)
+NEWSLETTER_EMBED = ""
 SITE_NAME = "FishPoint"
 AUTHOR_NAME = "Maciej Baniewicz"
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
