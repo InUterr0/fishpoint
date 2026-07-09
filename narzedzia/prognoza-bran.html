@@ -279,15 +279,15 @@
     setStatus('Pobieram prognozę…', true);
     suggest.style.display = 'none';
     var u = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat.toFixed(3) + '&longitude=' + lon.toFixed(3) +
-      '&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max,cloudcover_mean,surface_pressure_mean' +
+      '&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max,cloudcover_mean,pressure_msl_mean' +
       '&timezone=auto&forecast_days=6';
     fetchJSON(u).then(function (j) {
       if (!j.daily || !j.daily.time) throw new Error('Brak danych');
       var D = j.daily, days = [];
       for (var i = 0; i < D.time.length; i++) {
         var dt = new Date(D.time[i] + 'T12:00:00');
-        var pr = D.surface_pressure_mean ? D.surface_pressure_mean[i] : 1013;
-        var prev = i > 0 && D.surface_pressure_mean ? D.surface_pressure_mean[i - 1] : null;
+        var pr = D.pressure_msl_mean ? D.pressure_msl_mean[i] : 1013;
+        var prev = i > 0 && D.pressure_msl_mean ? D.pressure_msl_mean[i - 1] : null;
         days.push({
           date: dt, pressure: Math.round(pr), dp: prev === null ? null : Math.round((pr - prev) * 10) / 10,
           wind: Math.round(D.windspeed_10m_max[i]), cloud: Math.round(D.cloudcover_mean ? D.cloudcover_mean[i] : 50),
