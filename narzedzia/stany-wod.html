@@ -204,10 +204,19 @@
     var m = /^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2})/.exec(s);
     return m ? (m[3] + '.' + m[2] + ' ' + m[4] + ':' + m[5]) : s;
   }
+  // IMGW przechowuje ostatni odczyt zjawiska lodowego/zarastania z JEGO datą —
+  // w lecie to zwykle zaległy zapis z zimy. Pokazuj zjawisko tylko, gdy zostało
+  // zmierzone blisko (±3 dni) daty aktualnego pomiaru stanu wody.
+  function fresh(phenDate, refDate) {
+    var p = Date.parse((phenDate || '').replace(' ', 'T'));
+    var r = Date.parse((refDate || '').replace(' ', 'T'));
+    if (isNaN(p) || isNaN(r)) return false;
+    return Math.abs(r - p) <= 3 * 24 * 3600 * 1000;
+  }
   function ice(d) {
     var out = [];
-    if (d.zjawisko_lodowe && d.zjawisko_lodowe !== '0') out.push('🧊 lód');
-    if (d.zjawisko_zarastania && d.zjawisko_zarastania !== '0') out.push('🌿 zarastanie');
+    if (d.zjawisko_lodowe && d.zjawisko_lodowe !== '0' && fresh(d.zjawisko_lodowe_data_pomiaru, d.stan_wody_data_pomiaru)) out.push('🧊 zjawiska lodowe');
+    if (d.zjawisko_zarastania && d.zjawisko_zarastania !== '0' && fresh(d.zjawisko_zarastania_data_pomiaru, d.stan_wody_data_pomiaru)) out.push('🌿 zarastanie');
     return out.join(' ') || '—';
   }
   function num(v, unit) {
