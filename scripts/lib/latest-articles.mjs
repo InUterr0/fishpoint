@@ -63,17 +63,22 @@ export function latestArticles(root, limit = 10) {
     const description = decode(
       pick(html, /<meta\s+name="description"\s+content="([\s\S]*?)"/i)
     );
+    // Data publikacji z meta (article:published_time) — stabilna i niezależna
+    // od tego, że przebudowa serwisu ujednolica mtime wszystkich plików.
+    const pubStr = pick(html, /article:published_time"\s+content="([^"]+)"/i);
+    const pub = Date.parse(pubStr) || 0;
     items.push({
       slug,
       url: `${SITE}/aktualnosci/${slug}.html`,
       title,
       description,
       mtime: statSync(path).mtimeMs,
+      pub,
       query: searchQueryFromTitle(title),
       note: description,
     });
   }
-  // Od najświeższego (po dacie modyfikacji pliku).
-  items.sort((a, b) => b.mtime - a.mtime);
+  // Od najświeższego: najpierw po dacie publikacji, tie-break po mtime.
+  items.sort((a, b) => (b.pub - a.pub) || (b.mtime - a.mtime));
   return items.slice(0, limit);
 }
