@@ -69,23 +69,46 @@ def shot(name):
     except Exception as e:
         print("[fb] screenshot err:", e); return ""
 
-def bottom_button():
-    # Znajdź dolny przycisk dialogu: „Opublikuj" (priorytet) albo „Dalej".
-    return js(r'''(() => {
-      const dlgs = document.querySelectorAll('div[role="dialog"]');
-      const scope = dlgs[dlgs.length-1] || document;
-      const btns = Array.from(scope.querySelectorAll('[role="button"], button'));
-      for (const label of ['Opublikuj','Dalej']){
-        for (const e of btns){
+def click_button(labels):
+    # Szuka WIDOCZNEGO, aktywnego przycisku o danym tekście w DOWOLNYM dialogu
+    # (FB miewa 2 nakładające się dialogi) i klika go realną sekwencją zdarzeń
+    # myszy — sam click_at_xy bywa ignorowany przez handlery Reacta FB.
+    # labels: lista etykiet wg priorytetu, np. ['Opublikuj','Dalej'].
+    payload = js(r'''(() => {
+      const want = __LABELS__;
+      const all = Array.from(document.querySelectorAll('[role="button"], button'));
+      for (const label of want){
+        let best=null;
+        for (const e of all){
           const txt=(e.innerText||e.textContent||'').trim();
           const a=e.getAttribute('aria-label')||'';
-          const dis=e.getAttribute('aria-disabled')==='true'||e.disabled;
+          if(txt!==label && a!==label) continue;
+          if(e.getAttribute('aria-disabled')==='true'||e.disabled) continue;
           const r=e.getBoundingClientRect();
-          if(!dis && r.width>40 && r.height>20 && (txt===label||a===label)) return [r.x+r.width/2, r.y+r.height/2, label];
+          if(r.width<60||r.height<20||r.y<0||r.y>909) continue;
+          if(!e.closest('div[role="dialog"]')) continue;
+          if(!best||r.width>best.w) best={el:e,x:r.x+r.width/2,y:r.y+r.height/2,w:r.width};
+        }
+        if(best){
+          const el=best.el,x=best.x,y=best.y;
+          for(const t of ['pointerover','pointerdown','mousedown','pointerup','mouseup','click'])
+            el.dispatchEvent(new MouseEvent(t,{bubbles:true,cancelable:true,view:window,clientX:x,clientY:y,button:0}));
+          return label;
         }
       }
-      return null;
-    })()''')
+      return '';
+    })()'''.replace('__LABELS__', __import__('json').dumps(labels)))
+    return (payload or '').strip().strip('"')
+
+def composer_open():
+    # Czy w dialogu wciąż jest widoczny przycisk Dalej/Opublikuj (kompozytor żyje)?
+    return js(r'''(() => {
+      const all=Array.from(document.querySelectorAll('[role="button"]'));
+      for(const e of all){const t=(e.innerText||e.textContent||'').trim();const a=e.getAttribute('aria-label')||'';
+        if((/^(Dalej|Opublikuj)$/.test(t)||/^(Dalej|Opublikuj)$/.test(a))&&e.closest('div[role="dialog"]')){
+          const r=e.getBoundingClientRect(); if(r.width>60&&r.y>=0&&r.y<=909) return '1';}}
+      return '0';
+    })()''').strip().strip('"') == '1'
 
 def post_one(idx, item):
     # Świeża karta FB (uaktywnia ją) — wszystko dzieje się na niej.
@@ -96,22 +119,23 @@ def post_one(idx, item):
     click_at_xy(863.0, 390.0)          # pole tekstowe
     time.sleep(1)
     type_text(item['text'])
-    time.sleep(11)                     # podglad linku (obraz OG)
+    time.sleep(12)                     # podglad linku (obraz OG)
     shot('wpisano-%d' % idx)
-    # Dalej -> Opublikuj (dolny przycisk; szukamy po tekście, klikamy wsp.)
+    # Klikaj „Dalej" aż pojawi się „Opublikuj", potem kliknij „Opublikuj” DOKŁADNIE
+    # RAZ (powtarzanie grozi duplikatami na wolniejszym łączu) i zweryfikuj wynik.
     published = False
-    for step in range(8):
-        b = bottom_button()
-        if b:
-            click_at_xy(float(b[0]), float(b[1]))
-            print('[fb] %d klik: %s' % (idx, b[2]))
+    for step in range(12):
+        clicked = click_button(['Opublikuj', 'Dalej'])
+        if clicked == 'Opublikuj':
+            print('[fb] %d klik: Opublikuj' % idx)
+            time.sleep(9)                       # FB kończy publikowanie
+            published = not composer_open()      # dialog zniknął => opublikowano
+            break                                # nigdy nie klikaj Opublikuj drugi raz
+        elif clicked == 'Dalej':
+            print('[fb] %d klik: Dalej' % idx)
             time.sleep(5)
-            if b[2] == 'Opublikuj':
-                published = True
-                break
         else:
             time.sleep(2)
-    time.sleep(8)                      # dokoncz publikowanie
     p = shot('opublikowano-%d' % idx)
     print('[fb] %d slug=%s published=%s shot=%s' % (idx, item['slug'], published, p))
     if published:
