@@ -907,3 +907,15 @@ html.dark .newsletter{background:rgba(255,255,255,.04);border-color:rgba(255,255
   .nav-menu .has-sub > a::after { display: none; }
   .nav-menu > li:nth-last-child(2).has-sub > .sub { right: auto; }
 }
+
+/* === Sekcja Humor: dowcipy, memy, filmiki === */
+.joke-grid, .meme-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin: 14px 0 10px; }
+.joke-card { background: var(--paper, #fdfcf7); border: 1px solid rgba(13,43,48,.1); border-radius: 14px; padding: 16px 18px; box-shadow: 0 6px 18px rgba(13,43,48,.06); }
+.joke-card p { margin: 0; }
+.meme-card { border: 1px solid rgba(13,43,48,.12); border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 6px 18px rgba(13,43,48,.06); }
+.meme-top { margin: 0; padding: 14px 16px; font-weight: 800; color: var(--ink); background: linear-gradient(135deg, rgba(14,94,84,.1), rgba(43,167,152,.1)); }
+.meme-bot { margin: 0; padding: 13px 16px; color: var(--muted); }
+.video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; margin: 14px 0; }
+.video-grid .video-embed { margin: 0; }
+html.dark .joke-card, html.dark .meme-card { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.1); }
+html.dark .meme-top { color: #eef3ee; background: rgba(255,255,255,.06); }

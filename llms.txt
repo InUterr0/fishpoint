@@ -44,6 +44,13 @@
 
 - [Forum wędkarskie FishPoint](https://fish-point.pl/forum/): Forum wędkarskie FishPoint: zadawaj pytania i dziel się poradami, pochwal się połowem, proponuj tematy. Rozmawiaj z innymi wędkarzami — logowanie przez GitHub, za darmo. Dołącz do dyskusji o spinningu, karpiu, łowiskach i sprzęcie.
 
+## Humor
+
+- [Humor wędkarski](https://fish-point.pl/humor/): Humor wędkarski w jednym miejscu: dowcipy o wędkarzach i rybach, memy tekstowe z wędkarskimi prawdami życiowymi oraz śmieszne filmiki — wpadki i fishing fails. Wszystko z podziałem na kategorie.
+- [Dowcipy wędkarskie](https://fish-point.pl/humor/dowcipy.html): Najlepsze dowcipy wędkarskie: kawały o wędkarzu i żonie, krótkie one-linery, absurdy o gadających rybach i o słynnej „wędkarskiej prawdzie”. 30 autorskich żartów na poprawę humoru nad wodą.
+- [Śmieszne filmiki wędkarskie](https://fish-point.pl/humor/filmiki.html): Najzabawniejsze filmiki wędkarskie: polskie wpadki znad wody, kawały i światowe fishing fails. Kompilacje z YouTube na dobry humor między braniami.
+- [Memy wędkarskie](https://fish-point.pl/humor/memy.html): Memy wędkarskie w formie tekstowej: wędkarskie prawdy życiowe, wędkarz kontra reszta świata i sceny znad wody. Autorskie, darmowe, do dzielenia się ze znajomymi.
+
 ## Kuchnia
 
 - [Kuchnia wędkarska](https://fish-point.pl/kuchnia/): Kuchnia wędkarska FishPoint: przygotowanie ryby od patroszenia po filetowanie, smażony okoń i sandacz, karp wigilijny, wędzenie pstrąga i makreli, zupa rybna z głów oraz pstrąg z grilla i ogniska. Przepisy krok po kroku z zasadami bezpieczeństwa żywności.

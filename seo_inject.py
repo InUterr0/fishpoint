@@ -82,6 +82,7 @@ SECTIONS = {
     "narzedzia": "Narzędzia",
     "lowiska": "Łowiska",
     "forum": "Forum",
+    "humor": "Humor",
 }
 
 # --- Wspólna nawigacja z rozwijanymi działami (dropdown), wstrzykiwana na KAŻDĄ
@@ -101,6 +102,7 @@ NAV_TOP = [
 ]
 NAV_CTA = ("Kontakt", "index.html#kontakt")
 NAV_MORE = [
+    ("humor/index.html", "Humor wędkarski"),
     ("kuchnia/index.html", "Kuchnia wędkarska"),
     ("zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
     ("slownik.html", "Słownik pojęć"),
