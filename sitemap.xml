@@ -60,12 +60,16 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Wymiary i okresy ochronne ryb 2026 — pełna tabela</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/sandacz.jpg</image:loc>
+      <image:title>Jak łowić sandacza jesienią — spinning, jig i najlepsze brania roku</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/sandacz.jpg</image:loc>
-      <image:title>Kiedy sezon na ryby 2026 — otwarcia i zamknięcia</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
+      <image:title>Spinning na szczupaka jesienią — złota jesień drapieżnika</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
+      <image:title>Okoń jesienią na mikrogumę i drop shot — jak znaleźć i rozgrzać ławicę</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/akcesoria.jpg</image:loc>
@@ -74,10 +78,6 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/cr.jpg</image:loc>
       <image:title>Wędkarz wypuszcza dużą rybę — zasada złów i wypuść</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
-      <image:title>Okoń — okazały garbus, rekordowa ryba sezonu zimowego</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sum.jpg</image:loc>
@@ -153,6 +153,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://fish-point.pl/aktualnosci/jak-dobrac-gume-na-drapieznika.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/sandacz.jpg</image:loc>
+      <image:title>Przynęty gumowe i główki jigowe na sandacza i szczupaka</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/aktualnosci/jak-dobrac-przynete-do-pory-roku.html</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -173,6 +183,26 @@
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/jak-lowic-sandacza-jesienia.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/sandacz.jpg</image:loc>
+      <image:title>Wędkarz prezentujący sandacza złowionego jesienią na gumę</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/jerki-na-szczupaka-poradnik.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
+      <image:title>Jerkbait i szczupak — łowienie na jerki jesienią</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/kalendarz-wedkarski-2026.html</loc>
@@ -197,6 +227,16 @@
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/okon-jesienia-mikroguma.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
+      <image:title>Okoń złowiony jesienią na mikrogumę</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html</loc>
@@ -244,6 +284,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/sezon-na-szczupaka.jpg</image:loc>
       <image:title>Wędkarz prezentujący dużego szczupaka złowionego z łodzi</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/spinning-na-szczupaka-jesienia.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
+      <image:title>Duży szczupak złowiony jesienią na spinning</image:title>
     </image:image>
   </url>
   <url>
