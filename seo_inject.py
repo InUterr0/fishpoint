@@ -80,6 +80,7 @@ SECTIONS = {
     "techniki": "Techniki",
     "pierwsze-kroki": "Pierwsze kroki",
     "narzedzia": "Narzędzia",
+    "lowiska": "Łowiska",
 }
 
 title_re = re.compile(r"<title>(.*?)</title>", re.S)
@@ -402,6 +403,7 @@ def build(path):
     # Strony narzędzi budują <img> w JS (brak statycznego) — nadaj sensowny OG
     TOOL_IMG = {
         "narzedzia/okresy-ochronne.html": "/assets/img/tematy/wedki.jpg",
+        "narzedzia/stany-wod.html": "/assets/img/tematy/pogoda.jpg",
         "narzedzia/prognoza-bran.html": "/assets/img/tematy/kalendarz.jpg",
         "narzedzia/kalendarz-bran.html": "/assets/img/tematy/kalendarz.jpg",
         "narzedzia/dobor-sprzetu.html": "/assets/img/tematy/wedki.jpg",

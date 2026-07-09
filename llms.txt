@@ -50,6 +50,26 @@
 - [Wędzenie ryb](https://fish-point.pl/kuchnia/wedzenie-ryb.html): Poradnik wędzenia ryb FishPoint: dlaczego pstrąg, makrela i węgorz wędzą się najlepiej, proporcje solanki i czasy solenia, dobór drewna, etapy wędzenia na gorąco z czasami dla każdego gatunku, wędzenie na zimno, budowa prostej wędzarni domowej i przechowywanie ryb wędzonych.
 - [Zupa rybna](https://fish-point.pl/kuchnia/zupa-rybna.html): Zupa rybna od podstaw: esencjonalny wywar z głów i kręgosłupów, klarowna uha po polsku, ognista węgierska halászlé z karpia oraz zabielana zupa rybna ze śmietaną i koperkiem. Przepisy krok po kroku z czasami i zasadami bezpieczeństwa żywności.
 
+## Łowiska
+
+- [Łowiska w Polsce wg województw](https://fish-point.pl/lowiska/): Gdzie łowić w Polsce? Przewodnik po łowiskach wszystkich 16 województw — rzeki, jeziora, zbiorniki i morze, dominujące gatunki, okręgi PZW i zezwolenia. Wybierz swój region i sprawdź stany wód na żywo.
+- [Łowiska w województwie dolnośląskim](https://fish-point.pl/lowiska/dolnoslaskie.html): Wędkarstwo na Dolnym Śląsku: Odra, Bóbr, Kwisa, Nysa Kłodzka, zbiorniki Mietkowski i Słup, pstrąg w Kotlinie Kłodzkiej. Gatunki, okręgi PZW i sezony.
+- [Łowiska w województwie kujawsko-pomorskim](https://fish-point.pl/lowiska/kujawsko-pomorskie.html): Łowiska kujawsko-pomorskie: Wisła, Brda, Drwęca, Noteć, Wda, Gopło, Zbiornik Włocławski i jeziora Borów Tucholskich. Gdzie łowić, gatunki i formalności PZW.
+- [Łowiska w województwie łódzkim](https://fish-point.pl/lowiska/lodzkie.html): Wędkarstwo w województwie łódzkim: Warta, Pilica, Bzura, Widawka, Zbiornik Jeziorsko i Sulejowski. Gatunki, okręgi PZW, zezwolenia i porady, gdzie i kiedy łowić.
+- [Łowiska w województwie lubelskim](https://fish-point.pl/lowiska/lubelskie.html): Łowiska lubelskie w pigułce: Wisła, Bug, Wieprz, Krzna, Zbiornik Nielisz, Zalew Zemborzycki i jeziora Pojezierza Łęczyńsko-Włodawskiego. Gdzie łowić i jak.
+- [Łowiska w województwie lubuskim](https://fish-point.pl/lowiska/lubuskie.html): Łowiska lubuskie w pigułce: Odra, Warta, Noteć, Bóbr, Obra, jezioro Sławskie i Pojezierze Łagowskie. Gatunki, okręgi PZW, zezwolenia i porady, gdzie łowić.
+- [Łowiska w województwie małopolskim](https://fish-point.pl/lowiska/malopolskie.html): Łowiska małopolskie — gdzie łowić w Małopolsce: Dunajec, Wisła, Raba, Poprad, zbiorniki Rożnowski i Czorsztyński. Wody górskie i nizinne, okręgi PZW, zezwolenia.
+- [Łowiska w województwie mazowieckim](https://fish-point.pl/lowiska/mazowieckie.html): Łowiska mazowieckie w pigułce: Wisła i street fishing w Warszawie, Zalew Zegrzyński, Bug, Narew, Pilica, Wkra. Gdzie łowić, gatunki, okręgi PZW i zezwolenia.
+- [Łowiska w województwie opolskim](https://fish-point.pl/lowiska/opolskie.html): Łowiska opolskie w pigułce — Odra, Mała Panew, Nysa Kłodzka, zbiorniki Turawski, Nyski i Otmuchowski. Gatunki, okręg PZW Opole i porady, gdzie łowić.
+- [Łowiska w województwie podkarpackim](https://fish-point.pl/lowiska/podkarpackie.html): Wędkarstwo Podkarpacie: gdzie łowić na Podkarpaciu — Zbiornik Soliński i Myczkowce, San poniżej Soliny, Wisłok, Wisłoka, Strwiąż. Gatunki, okręgi PZW, zezwolenia.
+- [Łowiska w województwie podlaskim](https://fish-point.pl/lowiska/podlaskie.html): Łowiska podlaskie w praktyce: Biebrza, Narew, Bug, Czarna Hańcza, Rospuda, Supraśl, Wigry i Siemianówka. Gdzie łowić, formalności PZW i parki narodowe.
+- [Łowiska w województwie pomorskim](https://fish-point.pl/lowiska/pomorskie.html): Gdzie łowić w województwie pomorskim: Bałtyk i Zatoka Gdańska, jeziora kaszubskie, rzeki trociowe. Gatunki, okręgi PZW, zezwolenia i sezony.
+- [Łowiska w województwie śląskim](https://fish-point.pl/lowiska/slaskie.html): Gdzie łowić na Śląsku? Zbiornik Goczałkowicki, Jezioro Żywieckie, Pogoria i Poraj, rzeki Wisła, Odra i Soła — gatunki, okręgi PZW i porady dla wędkarzy.
+- [Łowiska w województwie świętokrzyskim](https://fish-point.pl/lowiska/swietokrzyskie.html): Gdzie łowić w świętokrzyskiem? Rzeki Nida, Wisła, Kamienna i Czarna, zbiornik Chańcza oraz zalewy Cedzyna i Borków. Gatunki, zezwolenia PZW Kielce i porady.
+- [Łowiska na Mazurach](https://fish-point.pl/lowiska/warminsko-mazurskie.html): Gdzie łowić na Mazurach i Warmii: Śniardwy, Mamry, Niegocin, Jeziorak, rzeki Łyna i Krutynia. Gatunki, okręgi PZW i pozwolenia turystyczne.
+- [Łowiska w województwie wielkopolskim](https://fish-point.pl/lowiska/wielkopolskie.html): Gdzie łowić w Wielkopolsce: Warta, Noteć, Prosna, Gwda, jeziora powidzkie i gnieźnieńskie, ciepłe wody konińskie. Gatunki, okręgi PZW, sezon i porady wędkarskie.
+- [Łowiska w województwie zachodniopomorskim](https://fish-point.pl/lowiska/zachodniopomorskie.html): Gdzie łowić w zachodniopomorskiem: Bałtyk i kutry z Kołobrzegu, Zalew Szczeciński, jezioro Dąbie i Miedwie, Drawa, Rega. Gatunki, formalności PZW i porady.
+
 ## Narzędzia
 
 - [Narzędzia wędkarskie](https://fish-point.pl/narzedzia/): Interaktywne narzędzia wędkarskie FishPoint: tabela okresów ochronnych i wymiarów, kalendarz brań, kreator doboru sprzętu i klucz do rozpoznawania ryb. Praktyczne kalkulatory, które podpowiedzą, kiedy, na co i czym łowić.
@@ -61,6 +81,7 @@
 - [Okresy ochronne i wymiary ryb](https://fish-point.pl/narzedzia/okresy-ochronne.html): Interaktywna, filtrowana tabela okresów ochronnych, wymiarów ochronnych i limitów dobowych najważniejszych ryb w Polsce. Szukaj po nazwie, filtruj po kategorii i sortuj kolumny. Wartości orientacyjne — zawsze sprawdź aktualny regulamin PZW.
 - [Prognoza brań na dziś i weekend](https://fish-point.pl/narzedzia/prognoza-bran.html): Prognoza brań na żywo dla Twojej okolicy: indeks aktywności ryb liczony z pogody, ciśnienia i jego trendu, wiatru, zachmurzenia oraz fazy księżyca na dziś i najbliższe dni. Podaj miasto lub użyj lokalizacji i sprawdź, kiedy warto jechać na ryby.
 - [Rozpoznaj rybę](https://fish-point.pl/narzedzia/rozpoznaj-rybe.html): Nie wiesz, jaką rybę złowiłeś? Zaznacz cechy — kształt ciała, pysk, ubarwienie, płetwy i siedlisko — a interaktywny klucz FishPoint wskaże najbardziej pasujące gatunki polskich wód z odnośnikami do atlasu ryb.
+- [Stany wód na żywo (IMGW)](https://fish-point.pl/narzedzia/stany-wod.html): Aktualne stany wód w Polsce prosto z IMGW: poziom lustra wody, temperatura, przepływ i zjawiska lodowe z ponad 900 stacji hydrologicznych. Filtruj po województwie, szukaj rzeki lub stacji i sprawdź warunki przed wyjazdem na ryby.
 
 ## O-autorze.html
 
