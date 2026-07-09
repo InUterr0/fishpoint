@@ -93,6 +93,7 @@
 
 ## Pierwsze kroki
 
+- [Pierwsze kroki w wędkarstwie](https://fish-point.pl/pierwsze-kroki/): Od wyboru pierwszej wędki i kompletowania zestawu do 300 zł, przez pozwolenia i wymiary ochronne, po pierwszy wyjazd nad wodę i rozpoznawanie ryb — spokojnie, krok po kroku.
 - [Jak nabić przynętę i bezpiecznie odhaczyć rybę](https://fish-point.pl/pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html): Praktyczny poradnik dla początkujących: jak nabijać robaki, kukurydzę, chleb i przynęty sztuczne na haczyk oraz jak bezpiecznie, humanitarnie odhaczyć i wypuścić rybę bez szkody dla niej i dla siebie.
 - [Łowiska](https://fish-point.pl/pierwsze-kroki/lowiska/): Łowisko wpływa na metodę bardziej niż reklama sprzętu. Inaczej łowi się na jeziorze, inaczej w rzece, stawie i kanale.
 - [Jeziora](https://fish-point.pl/pierwsze-kroki/lowiska/jeziora.html): Jeziora uczą szukania głębokości, roślinności, spadów i miejsc, gdzie ryby przemieszczają się między żerowiskiem a schronieniem.
@@ -180,6 +181,7 @@
 
 ## Sprzęt
 
+- [Sprzęt wędkarski](https://fish-point.pl/sprzet/): Rozbudowana baza sprzętu: realne parametry i zastosowania wędek, kołowrotków, żyłek, przynęt i akcesoriów — bez obietnic „cudownych brań”, za to z jasnym wyjaśnieniem, do czego służy dany element zestawu.
 - [Akcesoria wędkarskie](https://fish-point.pl/sprzet/akcesoria.html): Rzetelny poradnik FishPoint: Haczyki, krętliki, agrafki, pudełka i narzędzia nie są efektowne, ale od ich jakości często zależy skuteczność i bezpieczeństwo ryby.
 - [Kołowrotki wędkarskie](https://fish-point.pl/sprzet/kolowrotki.html): Poradnik FishPoint o kołowrotkach: rozmiary, przełożenie, hamulec, łożyska, kołowrotki stacjonarne, multiplikatory i wolny bieg. Przegląd marek Shimano, Daiwa, Okuma, Abu Garcia, Penn, Mikado. Dobór, błędy, konserwacja i FAQ.
 - [Odzież i bezpieczeństwo](https://fish-point.pl/sprzet/odziez.html): Rzetelny poradnik FishPoint: Dobra odzież nie łowi za wędkarza, ale chroni przed zimnem, deszczem, słońcem i poślizgnięciem na brzegu.

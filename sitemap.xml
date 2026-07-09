@@ -6,52 +6,16 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Szczupak pospolity (Esox lucius) — drapieżnik zasadzkowy polskich wód</image:title>
+      <image:loc>https://fish-point.pl/../../../../assets/img/ryby/okon.jpg</image:loc>
+      <image:title>Street fishing — od czego zacząć łowienie w mieście</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
-      <image:title>Karp (Cyprinus carpio) — król wód stojących</image:title>
+      <image:loc>https://fish-point.pl/../../../../assets/img/ryby/szczupak.jpg</image:loc>
+      <image:title>Spinning na szczupaka jesienią — złota jesień drapieżnika</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/pstrag.jpg</image:loc>
-      <image:title>Pstrąg potokowy (Salmo trutta fario) — ryba czystych, chłodnych rzek</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/kuchnia/przygotowanie.jpg</image:loc>
-      <image:title>Surowe dzwonka łososia</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/kuchnia/wedzenie.jpg</image:loc>
-      <image:title>Wędzony pstrąg</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/kuchnia/przepisy.jpg</image:loc>
-      <image:title>Smażone stynki z purée</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/jak-dobrac-przynete-do-pory-roku.jpg</image:loc>
-      <image:title>Zestaw woblerów spinningowych w różnych kolorach</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/bledy-poczatkujacych.jpg</image:loc>
-      <image:title>Wędkarz łowiący w nurcie górskiej rzeki</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/zylka-czy-plecionka.jpg</image:loc>
-      <image:title>Wędka spinningowa z kołowrotkiem i nawiniętą linką</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/sezon-na-szczupaka.jpg</image:loc>
-      <image:title>Wędkarz w łodzi prezentujący dużego szczupaka złowionego na otwarcie sezonu</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/relacja-nocna-zasiadka.jpg</image:loc>
-      <image:title>Rzeka o zmierzchu z wędkarzami na kamienistym brzegu — nocna zasiadka</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/przeglad-nowosci-sezonu.jpg</image:loc>
-      <image:title>Nowoczesne woblery spinningowe — model crank i przegubowy</image:title>
+      <image:loc>https://fish-point.pl/../../../../assets/img/ryby/sandacz.jpg</image:loc>
+      <image:title>Kajak fishing — wędkowanie z kajaka dla początkujących</image:title>
     </image:image>
   </url>
   <url>
@@ -627,6 +591,12 @@
       <image:loc>https://fish-point.pl/assets/img/maciej-baniewicz.jpg</image:loc>
       <image:title>Maciej Baniewicz — autor serwisu FishPoint</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/pierwsze-kroki/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html</loc>
@@ -1273,6 +1243,12 @@
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/sprzet/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/akcesoria.html</loc>

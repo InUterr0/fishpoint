@@ -88,11 +88,11 @@ SECTIONS = {
 # stronę, żeby menu było identyczne wszędzie. (etykieta, href względny od korzenia,
 # klucz sekcji dla dzieci menu lub None). Dzieci pobierane są z SECTION_PAGES. ---
 NAV_TOP = [
-    ("Pierwsze kroki", "index.html#pierwsze-kroki", "pierwsze-kroki"),
-    ("Sprzęt", "index.html#sprzet", "sprzet"),
-    ("Techniki", "index.html#techniki", "techniki"),
+    ("Pierwsze kroki", "pierwsze-kroki/index.html", "pierwsze-kroki"),
+    ("Sprzęt", "sprzet/index.html", "sprzet"),
+    ("Techniki", "techniki/index.html", "techniki"),
     ("Atlas ryb", "ryby/index.html", "ryby"),
-    ("Poradniki", "index.html#poradniki", "poradniki"),
+    ("Poradniki", "poradniki/index.html", "poradniki"),
     ("Narzędzia", "narzedzia/index.html", "narzedzia"),
     ("Łowiska", "lowiska/index.html", "lowiska"),
     ("Forum", "forum/index.html", None),
@@ -101,7 +101,7 @@ NAV_TOP = [
 ]
 NAV_CTA = ("Kontakt", "index.html#kontakt")
 NAV_MORE = [
-    ("index.html#kuchnia", "Kuchnia wędkarska"),
+    ("kuchnia/index.html", "Kuchnia wędkarska"),
     ("zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
     ("slownik.html", "Słownik pojęć"),
     ("szukaj.html", "Szukaj w serwisie"),
