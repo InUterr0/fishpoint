@@ -127,7 +127,7 @@ def _nav_children(section, prefix):
         if rel == "" or rel.endswith("/"):   # pomiń stronę-indeks sekcji
             continue
         out.append((prefix + rel, title))
-    return out[:9]
+    return out
 
 
 def build_nav(prefix):
@@ -136,8 +136,18 @@ def build_nav(prefix):
         top = f'<a href="{prefix}{href}">{html.escape(label)}</a>'
         kids = _nav_children(section, prefix) if section else []
         if kids:
+            vis, extra = kids[:5], kids[5:]
             sub = "".join(
-                f'<li><a href="{u}">{html.escape(t)}</a></li>' for u, t in kids)
+                f'<li><a href="{u}">{html.escape(t)}</a></li>' for u, t in vis)
+            if extra:
+                cid = f"m-{section}"
+                extra_links = "".join(
+                    f'<a href="{u}">{html.escape(t)}</a>' for u, t in extra)
+                sub += (
+                    f'<li class="sub-more-li">'
+                    f'<input type="checkbox" id="{cid}" class="sub-more-cb" />'
+                    f'<label for="{cid}" class="sub-more-btn">Więcej ({len(extra)})</label>'
+                    f'<span class="sub-more">{extra_links}</span></li>')
             items.append(f'<li class="has-sub">{top}<ul class="sub">{sub}</ul></li>')
         else:
             items.append(f'<li>{top}</li>')

@@ -886,6 +886,18 @@ html.dark .newsletter{background:rgba(255,255,255,.04);border-color:rgba(255,255
 .nav-menu .sub a:hover { background: rgba(255,255,255,.12); color: var(--white); }
 /* przy prawej krawędzi (dział „Więcej") rozwiń w lewo, by nie wychodził poza ekran */
 .nav-menu > li:nth-last-child(2).has-sub > .sub { left: auto; right: 0; }
+/* Przycisk „Więcej (N)" wewnątrz działu — rozwija pozostałe podstrony (bez JS) */
+.nav-menu .sub-more-li { display: block; }
+.nav-menu .sub-more-cb { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.nav-menu .sub-more-btn { display: block; cursor: pointer; padding: 9px 13px; margin-top: 2px;
+  border-top: 1px solid rgba(255,255,255,.1); border-radius: 0 0 10px 10px;
+  color: var(--amber, #ffb25e); font-weight: 700; font-size: .9em; white-space: nowrap; }
+.nav-menu .sub-more-btn::after { content: " ▾"; font-size: .9em; opacity: .8; }
+.nav-menu .sub-more-btn:hover { background: rgba(255,255,255,.1); }
+.nav-menu .sub-more { display: none; flex-direction: column; gap: 2px; }
+.nav-menu .sub-more-cb:checked ~ .sub-more { display: flex; }
+.nav-menu .sub-more-cb:checked ~ .sub-more-btn { color: rgba(255,255,255,.7); }
+.nav-menu .sub-more-cb:checked ~ .sub-more-btn::after { content: " ▴"; }
 
 @media (max-width: 840px) {
   /* na mobile brak najechania — podstrony pokazujemy wcięte pod działem */
