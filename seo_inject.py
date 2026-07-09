@@ -12,10 +12,10 @@ BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i urucho
 GA_ID = "G-33TKR9MEB7"                   # <-- Google Analytics 4 Measurement ID (G-XXXXXXX); puste = wyłączone
 # Komentarze giscus (GitHub Discussions) — na wpisach blogowych (aktualnosci).
 # Puste GISCUS_REPO = wyłączone. Wymaga zainstalowania aplikacji giscus na repo.
-GISCUS_REPO = "InUterr0/fishpoint"
-GISCUS_REPO_ID = "R_kgDOS3rnng"
+GISCUS_REPO = "kerlingruppen/fishpoint-comments"
+GISCUS_REPO_ID = "R_kgDOTTiC_g"
 GISCUS_CATEGORY = "Announcements"
-GISCUS_CATEGORY_ID = "DIC_kwDOS3rnns4DA1tx"
+GISCUS_CATEGORY_ID = "DIC_kwDOTTiC_s4DA1zO"
 # Newsletter — wklej TU pełny kod osadzenia formularza MailerLite (HTML/script).
 # Puste = sekcja newslettera się nie pojawia. Po wklejeniu pojawi się na wpisach blogowych.
 NEWSLETTER_EMBED = ""
