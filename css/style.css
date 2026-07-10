@@ -912,9 +912,13 @@ html.dark .newsletter{background:rgba(255,255,255,.04);border-color:rgba(255,255
     right: 10px; top: 50%; width: 30px; height: 30px; transform: translateY(-50%);
     border-radius: 50%; background: rgba(255,255,255,.09); font-size: 1.2rem; opacity: 1; }
   .nav-menu .has-sub.sub-open > a::after { content: "−"; }
-  .nav-menu .sub { position: static; display: none; min-width: 0; max-height: none; overflow: visible;
+  .nav-menu .has-sub > .sub,
+  .nav-menu .has-sub:hover > .sub,
+  .nav-menu .has-sub:focus-within > .sub { position: static; display: none; min-width: 0; max-height: none; overflow: visible;
     margin: 0 0 6px; padding: 2px 0 6px 12px; background: none; border: 0; box-shadow: none; }
-  .nav-menu .has-sub.sub-open > .sub { display: flex; }
+  .nav-menu .has-sub.sub-open > .sub,
+  .nav-menu .has-sub.sub-open:hover > .sub,
+  .nav-menu .has-sub.sub-open:focus-within > .sub { display: flex; }
   .nav-menu .sub a { white-space: normal; padding: 10px 12px; line-height: 1.35; }
   .nav-menu .has-sub::after { display: none; }
   .nav-menu > li:nth-last-child(2).has-sub > .sub { right: auto; }
