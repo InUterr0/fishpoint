@@ -284,11 +284,16 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-grid { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
 @media (max-width: 840px) {
-  .nav-toggle { display: inline-flex; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 10px 16px; background: rgba(255,255,255,.1); color: var(--white); font-weight: 800; }
+  .container { width: calc(100% - 20px); }
+  .nav { min-height: 68px; }
+  .nav-toggle { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 10px 16px; background: rgba(255,255,255,.1); color: var(--white); font-weight: 800; cursor: pointer; }
+  .nav-toggle::before { content: "☰"; font-size: 1.1rem; line-height: 1; }
+  .nav-toggle[aria-expanded="true"]::before { content: "×"; font-size: 1.35rem; }
   .nav-menu {
-    position: absolute; inset: 82px 16px auto;
+    position: fixed; inset: 68px 8px auto;
     display: none; flex-direction: column; align-items: stretch; gap: 4px;
     padding: 12px;
+    max-height: calc(100dvh - 76px); overflow-y: auto; overscroll-behavior: contain;
     border-radius: 22px;
     background: linear-gradient(180deg, rgba(10, 38, 43, .96), rgba(7, 28, 32, .96));
     border: 1px solid rgba(255,255,255,.12);
@@ -297,7 +302,8 @@ img { max-width: 100%; height: auto; display: block; }
     box-shadow: 0 24px 60px rgba(4, 18, 22, .5);
   }
   .nav-menu.open { display: flex; }
-  .nav-menu a { padding: 12px 16px; }
+  .nav-menu > li { display: block; width: 100%; }
+  .nav-menu a { display: block; padding: 13px 16px; }
   .nav-cta { text-align: center; margin-top: 4px; }
   .hero-grid, .map-grid, .contact-card { grid-template-columns: 1fr; }
   .hero { min-height: auto; }
@@ -900,11 +906,17 @@ html.dark .newsletter{background:rgba(255,255,255,.04);border-color:rgba(255,255
 .nav-menu .sub-more-cb:checked ~ .sub-more-btn::after { content: " ▴"; }
 
 @media (max-width: 840px) {
-  /* na mobile brak najechania — podstrony pokazujemy wcięte pod działem */
-  .nav-menu .sub { position: static; display: flex; min-width: 0; max-height: none; overflow: visible;
-    margin: 0 0 4px; padding: 2px 0 4px 14px; background: none; border: 0; box-shadow: none; }
+  /* Na telefonie działy działają jak akordeon, zamiast tworzyć wielometrową listę. */
+  .nav-menu .has-sub > a { padding-right: 46px; }
+  .nav-menu .has-sub > a::after { content: "+"; display: grid; place-items: center; position: absolute;
+    right: 10px; top: 50%; width: 30px; height: 30px; transform: translateY(-50%);
+    border-radius: 50%; background: rgba(255,255,255,.09); font-size: 1.2rem; opacity: 1; }
+  .nav-menu .has-sub.sub-open > a::after { content: "−"; }
+  .nav-menu .sub { position: static; display: none; min-width: 0; max-height: none; overflow: visible;
+    margin: 0 0 6px; padding: 2px 0 6px 12px; background: none; border: 0; box-shadow: none; }
+  .nav-menu .has-sub.sub-open > .sub { display: flex; }
+  .nav-menu .sub a { white-space: normal; padding: 10px 12px; line-height: 1.35; }
   .nav-menu .has-sub::after { display: none; }
-  .nav-menu .has-sub > a::after { display: none; }
   .nav-menu > li:nth-last-child(2).has-sub > .sub { right: auto; }
 }
 

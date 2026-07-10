@@ -9,9 +9,31 @@ if (toggle && menu) {
 
   menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
+      if (window.matchMedia('(max-width: 840px)').matches && link.matches('.has-sub > a')) return;
       menu.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  menu.querySelectorAll('.has-sub > a').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      if (!window.matchMedia('(max-width: 840px)').matches) return;
+      const item = link.parentElement;
+      if (!item.classList.contains('sub-open')) {
+        event.preventDefault();
+        menu.querySelectorAll('.has-sub.sub-open').forEach((openItem) => {
+          if (openItem !== item) openItem.classList.remove('sub-open');
+        });
+        item.classList.add('sub-open');
+      }
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
