@@ -528,6 +528,46 @@ html.dark .leaflet-popup-content-wrapper, html.dark .leaflet-popup-tip { backgro
 html.dark .aff-box { background: linear-gradient(135deg, rgba(62,201,180,.08), rgba(232,199,124,.06)); border-color: rgba(62,201,180,.25); }
 html.dark .aff-box h4 { color: var(--ink); }
 
+
+/* === Blok linków afiliacyjnych === */
+.affiliate-section {
+  margin: 30px 0;
+  padding: 24px;
+  border: 1px solid rgba(42,167,161,.25);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(42,167,161,.08), rgba(232,199,124,.1));
+}
+.affiliate-section h2 { margin: 4px 0 8px; }
+.affiliate-section > p:not(.eyebrow) { max-width: 720px; color: var(--muted); }
+.affiliate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+.affiliate-card {
+  display: flex;
+  min-height: 132px;
+  flex-direction: column;
+  gap: 7px;
+  padding: 16px;
+  border: 1px solid rgba(17,49,48,.12);
+  border-radius: 14px;
+  background: rgba(255,255,255,.82);
+  color: var(--ink);
+  box-shadow: 0 8px 20px rgba(17,49,48,.06);
+}
+.affiliate-card:hover { transform: translateY(-2px); }
+.affiliate-card strong { font-size: 1.02rem; }
+.affiliate-card span { color: var(--muted); font-size: .9rem; line-height: 1.45; }
+.affiliate-card .affiliate-card-cta { margin-top: auto; color: var(--green); font-weight: 800; }
+html.dark .affiliate-section { background: linear-gradient(135deg, rgba(62,201,180,.08), rgba(232,199,124,.06)); }
+html.dark .affiliate-card { border-color: rgba(62,201,180,.18); background: rgba(16,51,58,.72); }
+@media (max-width: 540px) {
+  .affiliate-section { padding: 20px 16px; }
+  .affiliate-grid { grid-template-columns: 1fr; }
+  .affiliate-card { min-height: 0; }
+}
 /* === Szklane plakietki ikon (glassmorphism) === */
 .icon.icon-glass {
   display: grid; place-items: center;

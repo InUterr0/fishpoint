@@ -202,6 +202,11 @@ content_advantage_re = re.compile(
     re.escape(CONTENT_ADVANTAGE_BEGIN) + r".*?" + re.escape(CONTENT_ADVANTAGE_END),
     re.S,
 )
+AFFILIATE_BEGIN, AFFILIATE_END = "<!--affiliate:auto-->", "<!--/affiliate:auto-->"
+affiliate_re = re.compile(
+    re.escape(AFFILIATE_BEGIN) + r".*?" + re.escape(AFFILIATE_END),
+    re.S,
+)
 
 # „Metoda FishPoint” trafia wyłącznie na strony wyliczone poniżej. Pole
 # author_practice_confirmed jest celowe: bez niego tekst nie może sugerować
@@ -541,6 +546,124 @@ CONTENT_ADVANTAGES = {
         "links": (("/sprzet/kolowrotki.html", "Kołowrotki"), ("/pierwsze-kroki/sprzet/wedki.html", "Wędki"), ("/techniki/spinning.html", "Spinning")),
     },
 }
+
+AFFILIATE_LINKS = {
+    "techniki/feeder-dla-poczatkujacych.html": (
+        (
+            "https://webep1.com/go/c4f3584fc3",
+            "Kołowrotki feederowe",
+            "Dobierz kołowrotek do wędki, koszyka i planowanego dystansu.",
+        ),
+        (
+            "https://webep1.com/go/b371c4e1c3",
+            "Wędki feederowe",
+            "Porównaj feedery i pickery przed skompletowaniem zestawu.",
+        ),
+        (
+            "https://webep1.com/go/bbf47570c3",
+            "Koszyki feederowe",
+            "Wybierz koszyk odpowiedni do zanęty, dna i siły nurtu.",
+        ),
+        (
+            "https://webep1.com/go/fee88a95c3",
+            "Zanęty",
+            "Sprawdź zanęty, gliny i ziemie do przygotowania mieszanki.",
+        ),
+    ),
+    "aktualnosci/jaka-wedka-spinningowa-kupic.html": (
+        (
+            "https://webep1.com/go/89081d9c3",
+            "Wędki spinningowe",
+            "Porównaj długości i ciężary wyrzutu pod okonia, szczupaka i sandacza.",
+        ),
+        (
+            "https://webep1.com/go/f536215bc3",
+            "Kołowrotki spinningowe",
+            "Dobierz rozmiar i hamulec do planowanej wędki oraz przynęt.",
+        ),
+        (
+            "https://webep1.com/go/9c39f3a6c3",
+            "Plecionki spinningowe",
+            "Sprawdź plecionki i średnice dopasowane do metody oraz łowiska.",
+        ),
+    ),
+    "sprzet/jak-wybrac-kolowrotek.html": (
+        (
+            "https://webep1.com/go/f536215bc3",
+            "Kołowrotki spinningowe",
+            "Porównaj modele do lekkiego i cięższego spinningu.",
+        ),
+        (
+            "https://webep1.com/go/c4f3584fc3",
+            "Kołowrotki feederowe",
+            "Sprawdź kołowrotki do feedera i method feeder.",
+        ),
+    ),
+    "sprzet/plecionki-zylki.html": (
+        (
+            "https://webep1.com/go/e7918164c3",
+            "Żyłki, plecionki i fluorocarbon",
+            "Porównaj linki do spinningu i pozostałych metod.",
+        ),
+    ),
+    "sprzet/przynety.html": (
+        (
+            "https://webep1.com/go/1a035dcfc3",
+            "Przynęty sztuczne",
+            "Zobacz gumy, woblery, błystki i inne przynęty na drapieżniki.",
+        ),
+        (
+            "https://webep1.com/go/885f8602c3",
+            "Gumy i rippery",
+            "Sprawdź klasyczne kopyta i rippery do prowadzenia z opadu.",
+        ),
+    ),
+    "aktualnosci/jak-dobrac-gume-na-drapieznika.html": (
+        (
+            "https://webep1.com/go/1a035dcfc3",
+            "Przynęty sztuczne",
+            "Porównaj gumy, woblery i błystki przed wyborem konkretnej przynęty.",
+        ),
+        (
+            "https://webep1.com/go/885f8602c3",
+            "Kopyta i rippery",
+            "Sprawdź klasyczne gumy do łowienia sandacza i szczupaka.",
+        ),
+    ),
+    "sprzet/akcesoria.html": (
+        (
+            "https://webep1.com/go/1bb1a3b3c3",
+            "Akcesoria wędkarskie",
+            "Uzupełnij zestaw o haki, agrafki, ciężarki i drobne wyposażenie.",
+        ),
+    ),
+}
+
+
+def build_affiliate_links(rel):
+    """Buduje jawny blok linków afiliacyjnych tylko dla skonfigurowanej strony."""
+    items = AFFILIATE_LINKS.get(rel)
+    if not items:
+        return ""
+    cards = "".join(
+        f'<a class="affiliate-card" href="{html.escape(url, quote=True)}" '
+        f'rel="sponsored noopener" target="_blank">'
+        f'<strong>{html.escape(label)}</strong>'
+        f'<span>{html.escape(description)}</span>'
+        f'<span class="affiliate-card-cta">Sprawdź w BigRiver →</span></a>'
+        for url, label, description in items
+    )
+    return (
+        f'{AFFILIATE_BEGIN}<section id="afiliacja" class="affiliate-section" '
+        f'aria-label="Polecane kategorie sprzętu">'
+        f'<p class="eyebrow">Sprzęt do metody</p>'
+        f'<h2>Kompletuj feeder krok po kroku</h2>'
+        f'<p>Jeśli chcesz porównać dostępne kategorie sprzętu, zacznij od tych czterech '
+        f'elementów. To linki afiliacyjne — FishPoint może otrzymać prowizję, '
+        f'ale cena dla Ciebie się nie zmienia.</p>'
+        f'<div class="affiliate-grid">{cards}</div>'
+        f'</section>{AFFILIATE_END}'
+    )
 
 
 def _existing_internal_link(href):
@@ -915,6 +1038,7 @@ def build(path):
     src = giscus_re.sub("", src)
     src = fishpoint_method_re.sub("", src)
     src = content_advantage_re.sub("", src)
+    src = affiliate_re.sub("", src)
     # Pierwsze zdjęcie artykułu jest elementem LCP — nie odkładaj jego pobrania
     # mimo lazy-loadingu odziedziczonego po starszych szablonach.
     src = re.sub(
@@ -1020,6 +1144,7 @@ def build(path):
                       f'</script></section>{GISCUS_END}')
             src = re.sub(r"(</article>)", giscus + r"\1", src, count=1)
     src = inject_content_advantage(src, rel)
+    src = re.sub(r"(</article>)", build_affiliate_links(rel) + r"\1", src, count=1)
     head = [
         BEGIN,
         f'  <link rel="canonical" href="{url}" />',
