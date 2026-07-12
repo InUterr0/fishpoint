@@ -194,6 +194,14 @@ NEWSLETTER_BEGIN, NEWSLETTER_END = "<!--newsletter:auto-->", "<!--/newsletter:au
 newsletter_re = re.compile(re.escape(NEWSLETTER_BEGIN) + r".*?" + re.escape(NEWSLETTER_END), re.S)
 GISCUS_BEGIN, GISCUS_END = "<!--giscus:auto-->", "<!--/giscus:auto-->"
 giscus_re = re.compile(re.escape(GISCUS_BEGIN) + r".*?" + re.escape(GISCUS_END), re.S)
+CONTENT_ADVANTAGE_BEGIN, CONTENT_ADVANTAGE_END = (
+    "<!--content-advantage:auto-->",
+    "<!--/content-advantage:auto-->",
+)
+content_advantage_re = re.compile(
+    re.escape(CONTENT_ADVANTAGE_BEGIN) + r".*?" + re.escape(CONTENT_ADVANTAGE_END),
+    re.S,
+)
 
 # „Metoda FishPoint” trafia wyłącznie na strony wyliczone poniżej. Pole
 # author_practice_confirmed jest celowe: bez niego tekst nie może sugerować
@@ -316,6 +324,243 @@ def inject_fishpoint_method(src, rel):
         src,
         count=1,
     )
+
+# Krótkie moduły odpowiedzi dla stron, na których użytkownik zwykle zaczyna
+# konkretną decyzję. Wszystkie odnośniki są lokalne i przed renderem dodatkowo
+# sprawdzane względem katalogu projektu.
+CONTENT_ADVANTAGES = {
+    "index.html": {
+        "answer": "Na start wybierz prostą ścieżkę: poznaj formalności, skompletuj podstawowy zestaw i zaplanuj łatwy pierwszy wyjazd. Nie musisz podejmować wszystkich decyzji naraz.",
+        "table": ("Od czego zacząć", ("Etap", "Co ustalić", "Następny krok"), (
+            ("1. Zasady", "Kto zarządza wybraną wodą i jakie dokumenty obowiązują.", "Sprawdź formalności."),
+            ("2. Zestaw", "Jaką metodą chcesz zacząć i co jest do niej niezbędne.", "Wybierz podstawowy komplet."),
+            ("3. Wyjazd", "Gdzie bezpiecznie stanąć i co zabrać.", "Przejdź checklistę."),
+        )),
+        "mistakes": ("Kupowanie przypadkowych akcesoriów przed wyborem metody.", "Traktowanie jednego regulaminu jako zasad dla wszystkich wód.", "Odkładanie przygotowania pierwszego wyjazdu na ostatnią chwilę."),
+        "method": "To mapa tematów, nie lista obowiązkowych zakupów ani obietnica wyniku nad wodą.",
+        "source_prompt": "Przy zasadach połowu zawsze porównaj poradnik z aktualnym zezwoleniem i regulaminem gospodarza wody.",
+        "links": (("/pierwsze-kroki/index.html", "Przewodnik dla początkujących"), ("/pierwsze-kroki/pozwolenia-karta-wedkarska.html", "Dokumenty i zezwolenia"), ("/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html", "Pierwszy wyjazd")),
+    },
+    "pierwsze-kroki/index.html": {
+        "answer": "Najpierw sprawdź zasady dla wody, na którą chcesz jechać. Potem wybierz prosty zestaw i przygotuj pierwszy wyjazd z krótką listą rzeczy do zabrania.",
+        "table": ("Plan początkującego", ("Kolejność", "Decyzja", "Po czym poznać, że możesz iść dalej"), (
+            ("Formalności", "Ustal gospodarza wody i wymagane dokumenty.", "Masz aktualne zezwolenie oraz regulamin."),
+            ("Sprzęt", "Dobierz zestaw do wybranej metody.", "Wiesz, jak go bezpiecznie złożyć."),
+            ("Woda", "Wybierz miejsce z bezpiecznym dostępem.", "Masz plan stanowiska i powrotu."),
+        )),
+        "mistakes": ("Porównywanie sprzętu bez określenia metody połowu.", "Mylenie karty wędkarskiej z zezwoleniem konkretnego gospodarza.", "Pakowanie bez miarki, narzędzia do odhaczania i zapasu wody."),
+        "method": "Kolejne artykuły rozdzielają decyzje sprzętowe, organizacyjne i regulaminowe, aby można było sprawdzić każdą z nich osobno.",
+        "source_prompt": "Regulamin i warunki zezwolenia dla konkretnej wody mają pierwszeństwo przed ogólną poradą.",
+        "links": (("/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html", "Pierwszy zestaw"), ("/pierwsze-kroki/pozwolenia-karta-wedkarska.html", "Pozwolenia i karta"), ("/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html", "Plan pierwszego wyjazdu")),
+    },
+    "techniki/spinning.html": {
+        "answer": "W spinningu zacznij od bezpiecznego stanowiska, jednej prostej przynęty i spokojnego prowadzenia. Zmieniaj tylko jeden element naraz, aby widzieć, co wynika z warunków.",
+        "table": ("Pierwsza decyzja spinningowa", ("Sytuacja", "Punkt wyjścia", "Co obserwować"), (
+            ("Nieznana woda", "Zacznij od krótkiego odcinka i czytaj brzeg.", "Przejścia głębokości, nurt i przeszkody."),
+            ("Brak kontaktu", "Zmień tempo albo głębokość prowadzenia.", "Czy przynęta pracuje tam, gdzie zakładasz."),
+            ("Kontakt z rybą", "Nie przyspieszaj kolejnych zmian.", "Miejsce, porę i powtarzalność sygnałów."),
+        )),
+        "mistakes": ("Zbyt wiele zmian przynęt bez obserwacji miejsca.", "Rzuty w nieznane przeszkody bez oceny dostępu i bezpieczeństwa.", "Traktowanie opisu techniki jako gwarancji brań."),
+        "spot": ("Czytanie miejsca przed rzutem", ("Sprawdź, czy dojście i brzeg są bezpieczne.", "Zauważ granice roślinności, wypłycenia, nurt lub widoczne przeszkody.", "Wybierz kierunek rzutu, który pozwala bezpiecznie poprowadzić i odzyskać przynętę.")),
+        "method": "Opis daje punkt startowy do obserwacji własnej wody; dobór prowadzenia zależy od sytuacji nad wodą.",
+        "source_prompt": "Przed łowieniem sprawdź ograniczenia metody, gatunku i miejsca w aktualnym regulaminie.",
+        "links": (("/pierwsze-kroki/sprzet/wedki.html", "Wędka dla początkującego"), ("/pierwsze-kroki/sprzet/przynety.html", "Przynęty od podstaw"), ("/pierwsze-kroki/okresy-ochronne-wymiary.html", "Okresy i wymiary")),
+    },
+    "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html": {
+        "answer": "Pierwszy zestaw ma pozwolić bezpiecznie zacząć, a nie pokryć każdą metodę. Najpierw wybierz wodę i sposób łowienia, później ogranicz zakupy do rzeczy potrzebnych na pierwszy wyjazd.",
+        "table": ("Budżet 200–300 zł: orientacyjny podział", ("Obszar", "Punkt wyjścia", "Na czym nie oszczędzać"), (
+            ("Wędka", "Około jednej trzeciej budżetu.", "Wygodzie, dopasowaniu do metody i bezpiecznym c.w."),
+            ("Kołowrotek", "Około jednej trzeciej budżetu.", "Płynnej pracy hamulca i zgodności z wędką."),
+            ("Linka, drobnica, przynęty", "Pozostała część budżetu.", "Miarce, narzędziu do odhaczania i rzeczach potrzebnych na wyjazd."),
+        )),
+        "mistakes": ("Wydawanie całego budżetu na jeden element zestawu.", "Kupowanie przynęt bez planu pierwszej metody.", "Pomijanie miarki i narzędzia do bezpiecznego odhaczania."),
+        "method": "To orientacyjny podział opisany w poradniku, a nie bieżąca wycena ani ranking produktów; ceny zmieniają się między sklepami i sezonami.",
+        "source_prompt": "Przed zakupem porównaj proporcje z aktualnymi ofertami i planowaną metodą łowienia.",
+        "links": (("/pierwsze-kroki/sprzet/wedki.html", "Jak wybrać wędkę"), ("/pierwsze-kroki/sprzet/przynety.html", "Jak dobrać przynęty"), ("/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html", "Co spakować na pierwszy wyjazd")),
+    },
+    "pierwsze-kroki/sprzet/wedki.html": {
+        "answer": "Wędkę dobieraj najpierw do miejsca i metody, a dopiero później do marki czy dodatków. Oznaczenia długości i ciężaru wyrzutowego mają pomóc porównać zastosowanie, nie zastępują dopasowania całego zestawu.",
+        "table": ("Jak zawęzić wybór wędki", ("Pytanie", "Co sprawdzić", "Decyzja na start"), (
+            ("Gdzie będziesz łowić?", "Miejsce, dostęp do brzegu i przestrzeń do rzutu.", "Wybierz rozwiązanie wygodne w tych warunkach."),
+            ("Jaką metodą?", "Typ przynęty lub zestawu oraz zakres jego użycia.", "Dopasuj oznaczenia wędziska do metody."),
+            ("Z czym ją połączysz?", "Kołowrotek, linkę i podstawowe akcesoria.", "Oceń zestaw jako całość, nie sam blank."),
+        )),
+        "mistakes": ("Wybór wyłącznie po nazwie marki lub wyglądzie.", "Ignorowanie ciężaru używanych przynęt albo zestawu.", "Kupowanie bez sprawdzenia wygody chwytu i transportu."),
+        "method": "Podane kryteria pomagają zadawać właściwe pytania; nie są testem konkretnego modelu ani rekomendacją zakupu.",
+        "source_prompt": "Przed zakupem porównaj opis producenta z planowaną metodą i warunkami własnych łowisk.",
+        "links": (("/pierwsze-kroki/sprzet/kolowrotki.html", "Kołowrotki dla początkujących"), ("/pierwsze-kroki/sprzet/zylki-plecionki.html", "Żyłka i plecionka"), ("/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html", "Kompletowanie pierwszego zestawu")),
+    },
+    "pierwsze-kroki/sprzet/przynety.html": {
+        "answer": "Zacznij od kilku przynęt pasujących do wybranej metody i ucz się ich prowadzenia w jednym miejscu. Wielkość pudełka nie zastępuje obserwacji warunków ani sprawdzenia zasad łowiska.",
+        "table": ("Dobór przynęty: prosty filtr", ("Pytanie", "Sprawdź", "Co zrobić dalej"), (
+            ("Jaka metoda?", "Czy przynęta pasuje do używanego zestawu.", "Wybierz kilka wariantów, nie cały katalog."),
+            ("Jakie miejsce?", "Głębokość, przeszkody i możliwość bezpiecznego prowadzenia.", "Dopasuj sposób prowadzenia do odcinka."),
+            ("Jakie zasady?", "Regulamin wody i ochronę gatunków.", "Nie kieruj połowu na gatunek objęty ograniczeniem."),
+        )),
+        "mistakes": ("Zmiana przynęty po każdym rzucie bez oceny miejsca.", "Dobieranie przynęty bez sprawdzenia, czy zestaw ją obsłuży.", "Kierowanie połowu na gatunek, którego zasady nie zostały sprawdzone."),
+        "method": "Przynęta jest jednym z elementów decyzji; poradnik nie przewiduje brań ani nie zastępuje oceny warunków.",
+        "source_prompt": "Dla wybranej wody zweryfikuj aktualne ograniczenia metod i gatunków przed wyjazdem.",
+        "links": (("/techniki/spinning.html", "Podstawy spinningu"), ("/pierwsze-kroki/sprzet/wedki.html", "Dobór wędki"), ("/pierwsze-kroki/okresy-ochronne-wymiary.html", "Zasady ochrony ryb")),
+    },
+    "ryby/szczupak.html": {
+        "answer": "Opis szczupaka pomaga rozpoznać gatunek i zaplanować obserwację miejsca. Przed celowym połowem sprawdź aktualne zasady ochrony oraz regulamin konkretnej wody.",
+        "table": ("Plan obserwacji szczupaka", ("Sygnał miejsca", "Co zanotować", "Bezpieczny następny krok"), (
+            ("Roślinność i osłony", "Dostęp do brzegu i możliwą drogę holu.", "Nie rzucaj tam, gdzie nie odzyskasz przynęty bez ryzyka."),
+            ("Zmiana głębokości", "Widoczne krawędzie i przejścia.", "Prowadź przynętę pod kontrolą."),
+            ("Kontakt z rybą", "Miejsce i warunki, bez uogólniania na całą wodę.", "Sprawdź, czy połów gatunku jest dozwolony."),
+        )),
+        "mistakes": ("Mylenie rozpoznania gatunku z potwierdzeniem, że można go zabrać.", "Łowienie bez sprawdzenia okresu ochronnego i lokalnych ograniczeń.", "Próba holu w miejscu bez bezpiecznego dostępu do brzegu."),
+        "spot": ("Checklist miejsca", ("Sprawdź bezpieczne dojście i wyjście ze stanowiska.", "Szukaj zmian roślinności, głębokości lub osłon widocznych z brzegu.", "Zaplanuj, gdzie bezpiecznie odhaczysz i wypuścisz rybę.")),
+        "method": "Informacje gatunkowe są punktem do nauki rozpoznawania i obserwacji, nie prognozą skuteczności.",
+        "source_prompt": "Decyzję o połowie i zabraniu ryby oprzyj na aktualnym zezwoleniu, regulaminie oraz zasadach ochrony.",
+        "links": (("/techniki/spinning.html", "Spinning krok po kroku"), ("/pierwsze-kroki/okresy-ochronne-wymiary.html", "Okresy ochronne i wymiary"), ("/ryby/okon.html", "Jak rozpoznać okonia")),
+    },
+    "ryby/okon.html": {
+        "answer": "Opis okonia służy rozpoznaniu gatunku i obserwacji miejsca. To, czy i jak możesz łowić, zawsze zależy od aktualnych zasad dla konkretnej wody.",
+        "table": ("Plan obserwacji okonia", ("Sygnał miejsca", "Co zanotować", "Następny krok"), (
+            ("Zmiana dna lub osłona", "Bezpieczny tor prowadzenia i zaczepy.", "Prowadź przynętę w kontrolowanym tempie."),
+            ("Kilka kontaktów", "Odcinek, głębokość i warunki.", "Zmieniaj jeden element naraz."),
+            ("Ryba przy brzegu", "Możliwość bezpiecznego podjęcia i wypuszczenia.", "Przygotuj narzędzie do odhaczania."),
+        )),
+        "mistakes": ("Wnioskowanie o całym łowisku po jednym kontakcie.", "Brak narzędzia do sprawnego odhaczania.", "Pomijanie identyfikacji ryby przed decyzją o jej zabraniu."),
+        "spot": ("Checklist miejsca", ("Oceń bezpieczny dostęp do brzegu.", "Zauważ widoczne przeszkody i różnice w strukturze wody.", "Wybierz tor rzutu, który pozwala kontrolować przynętę i powrót.")),
+        "method": "Wskazówki opisują sposób obserwacji, nie obiecują wyniku ani nie zastępują znajomości lokalnego łowiska.",
+        "source_prompt": "Wymiary, limity i lokalne zasady sprawdź w aktualnym zezwoleniu przed decyzją o zabraniu ryby.",
+        "links": (("/techniki/spinning.html", "Podstawy spinningu"), ("/pierwsze-kroki/sprzet/przynety.html", "Przynęty dla początkujących"), ("/pierwsze-kroki/okresy-ochronne-wymiary.html", "Wymiary i limity")),
+    },
+    "ryby/sandacz.html": {
+        "answer": "Opis sandacza ma pomóc odróżnić gatunek i ułożyć obserwację miejsca. Nie jest wskazaniem terminu połowu ani potwierdzeniem, że dany gatunek można w tym momencie łowić.",
+        "table": ("Plan obserwacji sandacza", ("Sygnał miejsca", "Co sprawdzić", "Następny krok"), (
+            ("Zmiana głębokości", "Czy możesz bezpiecznie kontrolować kontakt z przynętą.", "Obserwuj prowadzenie, nie tylko sam rzut."),
+            ("Twardsze lub miękkie dno", "Powtarzalność odczucia na krótkim odcinku.", "Zmieniaj tempo pojedynczo."),
+            ("Ryba przy brzegu", "Miejsce do bezpiecznego odhaczenia.", "Przygotuj wypuszczenie przed podjęciem ryby."),
+        )),
+        "mistakes": ("Traktowanie kalendarza lub opisu gatunku jako prognozy brań.", "Zaniedbanie aktualnej ochrony gatunku.", "Prowadzenie przynęty bez kontroli nad zaczepami i głębokością."),
+        "spot": ("Checklist miejsca", ("Sprawdź stabilne i bezpieczne stanowisko.", "Szukaj czytelnych przejść głębokości lub zmian dna, jeśli są widoczne lub wyczuwalne.", "Notuj warunki oraz miejsce kontaktu zamiast zakładać stały schemat.")),
+        "method": "Opis gatunku porządkuje obserwację, ale skuteczność i zasady zależą od warunków oraz aktualnych regulaminów.",
+        "source_prompt": "Przed wyprawą sprawdź aktualny okres ochronny, warunki zezwolenia i lokalne ograniczenia dla wybranej wody.",
+        "links": (("/techniki/spinning.html", "Spinning od podstaw"), ("/poradniki/kalendarz-bran-sandacz.html", "Kalendarz brań sandacza"), ("/pierwsze-kroki/okresy-ochronne-wymiary.html", "Ochrona ryb")),
+    },
+    "pierwsze-kroki/pozwolenia-karta-wedkarska.html": {
+        "answer": "Karta wędkarska, zezwolenie i regulamin to różne elementy. Przed wyjazdem ustal gospodarza wybranej wody, sprawdź wymagane dokumenty i przeczytaj aktualne warunki zezwolenia.",
+        "table": ("Formalności przed wyjazdem", ("Pytanie", "Gdzie sprawdzić", "Co zachować"), (
+            ("Kto zarządza wodą?", "W dokumentach i informacji gospodarza.", "Nazwę wody oraz zakres zezwolenia."),
+            ("Jakie dokumenty obowiązują?", "W aktualnych warunkach gospodarza.", "Dokumenty wymagane podczas kontroli."),
+            ("Jakie ograniczenia są lokalne?", "W regulaminie i wykazie wód.", "Wersję obowiązującą na dzień wyjazdu."),
+        )),
+        "mistakes": ("Traktowanie karty jako zezwolenia na każdą wodę.", "Korzystanie z nieaktualnej informacji o warunkach.", "Pomijanie regulaminu dlatego, że miejsce było już odwiedzane."),
+        "method": "To porządek sprawdzania informacji, nie wykładnia prawa ani potwierdzenie uprawnień dla konkretnej osoby lub wody.",
+        "source_prompt": "W sprawach formalnych wiążące są aktualne dokumenty gospodarza i właściwe źródła urzędowe wskazane w artykule.",
+        "links": (("/pierwsze-kroki/okresy-ochronne-wymiary.html", "Okresy, wymiary i limity"), ("/zgodnie-z-zasadami.html", "Przepisy i dokumenty"), ("/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html", "Checklist pierwszego wyjazdu")),
+    },
+    "pierwsze-kroki/okresy-ochronne-wymiary.html": {
+        "answer": "Przed decyzją o zabraniu ryby sprawdź jej gatunek, wymiar, aktualny okres ochronny, limit oraz regulamin konkretnej wody. Gdy wynik jest niepewny, nie ryzykuj i zweryfikuj źródło.",
+        "table": ("Kontrola przed zabraniem ryby", ("Krok", "Co sprawdzić", "Bezpieczna decyzja"), (
+            ("Rozpoznanie", "Gatunek i cechy pozwalające go odróżnić.", "Przy wątpliwości nie zabieraj ryby."),
+            ("Pomiar", "Wymiar zgodnie z zasadami danej wody.", "Użyj miarki i nie szacuj na oko."),
+            ("Regulamin", "Okres, limit i ewentualne zaostrzenia lokalne.", "Porównaj z aktualnym zezwoleniem."),
+        )),
+        "mistakes": ("Mierzenie ryby bez miarki.", "Stosowanie ogólnej tabeli bez sprawdzenia lokalnych zaostrzeń.", "Zakładanie, że brak pewności usprawiedliwia zatrzymanie ryby."),
+        "method": "Tabela i poradnik mają charakter edukacyjny; nie zastępują aktualnego zezwolenia, regulaminu ani źródeł prawa.",
+        "source_prompt": "Najpierw korzystaj z aktualnego regulaminu gospodarza wody i dokumentów wskazanych w sekcji źródeł artykułu.",
+        "links": (("/pierwsze-kroki/pozwolenia-karta-wedkarska.html", "Karta i zezwolenia"), ("/zgodnie-z-zasadami.html", "Przepisy i dokumenty"), ("/pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html", "Bezpieczne odhaczanie")),
+    },
+    "pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html": {
+        "answer": "Na pierwszy wyjazd wybierz prostą wodę z bezpiecznym dostępem, spakuj tylko potrzebny zestaw i sprawdź dokumenty przed wyjściem. Nad wodą zaczynaj spokojnie: bezpieczeństwo i zasady są ważniejsze niż tempo.",
+        "table": ("Pierwszy wyjazd: plan minimum", ("Moment", "Co zrobić", "Po co"), (
+            ("Przed wyjazdem", "Sprawdź pogodę, dojazd, zasady i dokumenty.", "Uniknąć organizacyjnych niespodzianek."),
+            ("Przed rozłożeniem sprzętu", "Oceń brzeg, dojście i miejsce do odhaczania.", "Zachować bezpieczeństwo własne i ryby."),
+            ("Po zakończeniu", "Zabierz odpady i sprawdź, czy nic nie zostało.", "Zostawić stanowisko w porządku."),
+        )),
+        "mistakes": ("Wybór stanowiska bez sprawdzenia bezpiecznego dojścia.", "Pakowanie sprzętu bez dokumentów i miarki.", "Wchodzenie do wody lub na śliski brzeg tylko po to, by odzyskać przynętę."),
+        "spot": ("Checklist stanowiska", ("Czy możesz stabilnie dojść, stanąć i wrócić po zmroku lub zmianie pogody?", "Czy masz miejsce, aby bezpiecznie przygotować sprzęt i odhaczyć rybę?", "Czy wiesz, gdzie kończy się bezpieczny brzeg oraz których przeszkód unikać?")),
+        "method": "Lista pomaga uporządkować przygotowanie, ale nie zastępuje oceny warunków na miejscu ani zasad gospodarza wody.",
+        "source_prompt": "Przed wyjazdem porównaj własny plan z aktualnym zezwoleniem, regulaminem i komunikatami dla wybranego łowiska.",
+        "links": (("/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html", "Pierwszy zestaw"), ("/pierwsze-kroki/pozwolenia-karta-wedkarska.html", "Dokumenty przed wyjazdem"), ("/pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html", "Odhaczanie ryby")),
+    },
+}
+
+
+def _existing_internal_link(href):
+    """Akceptuje wyłącznie ścieżkę do istniejącej strony statycznej."""
+    if not href.startswith("/") or href.startswith("//"):
+        return False
+    rel = href.lstrip("/") or "index.html"
+    if rel.endswith("/"):
+        rel += "index.html"
+    return os.path.isfile(os.path.join(ROOT, rel))
+
+
+def _advantage_links(items):
+    links = [
+        f'<a href="{html.escape(href, quote=True)}">{html.escape(label)}</a>'
+        for href, label in items if _existing_internal_link(href)
+    ]
+    return " · ".join(links)
+
+
+def build_content_advantage(rel, config):
+    """Buduje jawnie oznaczony, semantyczny blok odpowiedzi z konfiguracji strony."""
+    table_title, headers, rows = config["table"]
+    table_class = "starter-kit" if "pierwszy-zestaw" in rel else "decision-table"
+    table_html = (
+        f'<section class="{table_class}" aria-label="{html.escape(table_title)}">'
+        f'<h2>{html.escape(table_title)}</h2><table class="{table_class}"><thead><tr>'
+        + "".join(f"<th>{html.escape(cell)}</th>" for cell in headers)
+        + "</tr></thead><tbody>"
+        + "".join(
+            "<tr>" + "".join(f"<td>{html.escape(cell)}</td>" for cell in row) + "</tr>"
+            for row in rows
+        )
+        + "</tbody></table></section>"
+    )
+    mistakes = "".join(f"<li>{html.escape(item)}</li>" for item in config["mistakes"])
+    spot = config.get("spot")
+    spot_html = ""
+    if spot:
+        spot_title, spot_items = spot
+        spot_html = (
+            f'<h2>{html.escape(spot_title)}</h2><div class="spot-guide">'
+            + "".join(f"<div><p>{html.escape(item)}</p></div>" for item in spot_items)
+            + "</div>"
+        )
+    links = _advantage_links(config["links"])
+    next_step = (
+        f'<section class="article-next-step" aria-label="Następny krok">'
+        f'<p><strong>Następny krok:</strong> {links}</p></section>'
+        if links else ""
+    )
+    return (
+        f'{CONTENT_ADVANTAGE_BEGIN}<section class="info-block content-advantage" '
+        f'aria-label="Praktyczny skrót">'
+        f'<section class="answer-first" aria-label="Najkrótsza odpowiedź">'
+        f'<h2>Najkrótsza odpowiedź</h2><p>{html.escape(config["answer"])}</p></section>'
+        f'{table_html}<h2>Typowe błędy początkujących</h2>'
+        f'<ul class="beginner-mistakes">{mistakes}</ul>'
+        f'{spot_html}<section class="methodology" aria-label="Metodologia">'
+        f'<h2>Jak korzystać z poradnika</h2>'
+        f'<p>{html.escape(config["method"])}</p></section>'
+        f'<section class="source-list" aria-label="Źródła i weryfikacja">'
+        f'<h2>Sprawdź źródło</h2><p>{html.escape(config["source_prompt"])}</p></section>'
+        f'{next_step}</section>{CONTENT_ADVANTAGE_END}'
+    )
+
+
+def inject_content_advantage(src, rel):
+    """Wstawia moduł w miejscu pasującym do typu strony."""
+    config = CONTENT_ADVANTAGES.get(rel)
+    if not config:
+        return src
+    block = build_content_advantage(rel, config)
+    if rel in ("index.html", "pierwsze-kroki/index.html"):
+        return re.sub(r'(<section class="section\b[^>]*>)', block + r"\1", src, count=1)
+    if FISHPOINT_METHOD_END in src:
+        return src.replace(FISHPOINT_METHOD_END, FISHPOINT_METHOD_END + block, 1)
+    if TLDR_END in src:
+        return src.replace(TLDR_END, TLDR_END + block, 1)
+    if BYLINE_END in src:
+        return src.replace(BYLINE_END, BYLINE_END + block, 1)
+    return re.sub(r"(</h1>)", r"\1" + block, src, count=1)
 
 # Mapa sekcja -> [(url, krótki_tytuł)] budowana w main() przed pętlą (dla bloku
 # „Powiązane artykuły"). Puste do czasu prescanu.
@@ -607,6 +852,7 @@ def build(path):
     src = newsletter_re.sub("", src)
     src = giscus_re.sub("", src)
     src = fishpoint_method_re.sub("", src)
+    src = content_advantage_re.sub("", src)
     # Pierwsze zdjęcie artykułu jest elementem LCP — nie odkładaj jego pobrania
     # mimo lazy-loadingu odziedziczonego po starszych szablonach.
     src = re.sub(
@@ -711,6 +957,7 @@ def build(path):
                       f'data-theme="light" data-lang="pl" data-loading="lazy" crossorigin="anonymous" async>'
                       f'</script></section>{GISCUS_END}')
             src = re.sub(r"(</article>)", giscus + r"\1", src, count=1)
+    src = inject_content_advantage(src, rel)
     head = [
         BEGIN,
         f'  <link rel="canonical" href="{url}" />',

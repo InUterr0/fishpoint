@@ -197,3 +197,33 @@ if (sideNav) {
     el.classList.add('icon-glass');
   });
 })();
+
+// Tabele w artykułach: przewijalny, opisany obszar tylko tam, gdzie tabela jest szersza od ekranu.
+document.querySelectorAll('table.decision-table, table.starter-kit, .decision-table > table, .starter-kit > table').forEach((table) => {
+  if (table.parentElement.classList.contains('article-table-scroll')) return;
+
+  const wrapper = document.createElement('div');
+  const caption = table.querySelector('caption');
+  const section = table.closest('.decision-table, .starter-kit');
+  const heading = section && section.querySelector('h2, h3, h4');
+  const name = (caption && caption.textContent.trim()) || (heading && heading.textContent.trim()) || 'tabela';
+  const label = `Przewijana ${name}`;
+
+  wrapper.className = 'article-table-scroll';
+  wrapper.tabIndex = 0;
+  wrapper.setAttribute('role', 'region');
+  wrapper.setAttribute('aria-label', label);
+  table.parentNode.insertBefore(wrapper, table);
+  wrapper.appendChild(table);
+
+  const updateScrollState = () => {
+    const hasOverflow = wrapper.scrollWidth > wrapper.clientWidth + 1;
+    wrapper.classList.toggle('is-scrollable', hasOverflow);
+    wrapper.classList.toggle('is-at-end', !hasOverflow || wrapper.scrollLeft >= wrapper.scrollWidth - wrapper.clientWidth - 1);
+  };
+
+  wrapper.addEventListener('scroll', updateScrollState, { passive: true });
+  window.addEventListener('resize', updateScrollState);
+  if ('ResizeObserver' in window) new ResizeObserver(updateScrollState).observe(wrapper);
+  updateScrollState();
+});
