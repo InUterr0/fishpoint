@@ -478,6 +478,68 @@ CONTENT_ADVANTAGES = {
         "source_prompt": "Przed wyjazdem porównaj własny plan z aktualnym zezwoleniem, regulaminem i komunikatami dla wybranego łowiska.",
         "links": (("/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html", "Pierwszy zestaw"), ("/pierwsze-kroki/pozwolenia-karta-wedkarska.html", "Dokumenty przed wyjazdem"), ("/pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html", "Odhaczanie ryby")),
     },
+    "techniki/feeder-dla-poczatkujacych.html": {
+        "answer": "Na pierwszy feeder wybierz prostą wodę, jeden zestaw i koszyk dopasowany do warunków. Najpierw ustal miejsce i metodę, dopiero potem kupuj elementy.",
+        "table": ("Feeder na start", ("Decyzja", "Punkt wyjścia", "Co sprawdzić"), (
+            ("Woda", "Spokojny brzeg z bezpiecznym dostępem.", "Czy możesz powtarzalnie rzucać i odhaczyć rybę."),
+            ("Zestaw", "Wędka, kołowrotek, linka i bezpieczny montaż.", "Czy masa koszyka z zanętą mieści się w zakresie wędki."),
+            ("Taktyka", "Jeden punkt i małe, regularne porcje.", "Czy zestaw leży stabilnie i pokazuje branie."),
+        )),
+        "mistakes": ("Kupowanie ciężkiego zestawu bez określenia wody.", "Zbyt mokra albo zbyt sucha zanęta.", "Zmienianie miejsca, koszyka i przynęty jednocześnie."),
+        "method": "Poradnik ogranicza decyzje do pierwszego wyjazdu; nie jest rankingiem produktów ani obietnicą brań.",
+        "source_prompt": "Parametry sprzętu porównaj z kartą producenta, a zasady metody z aktualnym regulaminem gospodarza wody.",
+        "links": (("/techniki/feeder.html", "Pełny poradnik feederowy"), ("/pierwsze-kroki/sprzet/wedki.html", "Wybór wędki"), ("/pierwsze-kroki/sprzet/kolowrotki.html", "Dobór kołowrotka")),
+    },
+    "aktualnosci/jak-lowic-leszcza.html": {
+        "answer": "Leszcza szukaj przy powtarzalnej krawędzi dna lub spokojniejszej wodzie. Zacznij od feedera albo spławika, małych porcji zanęty i jednej kontrolowanej przynęty.",
+        "table": ("Plan łowienia leszcza", ("Etap", "Punkt wyjścia", "Co obserwować"), (
+            ("Miejsce", "Krawędź, twardszy plac albo spokojniejsza woda.", "Czy możesz dokładnie powtarzać rzut."),
+            ("Metoda", "Feeder na dystansie albo spławik w spokojnej wodzie.", "Stabilność zestawu i czytelność brania."),
+            ("Nęcenie", "Małe, regularne porcje.", "Czy ryba zostaje w punkcie bez przeładowania."),
+        )),
+        "mistakes": ("Zakładanie, że najgłębsze miejsce jest zawsze najlepsze.", "Zasypywanie punktu zanętą.", "Zmienianie kilku elementów po jednym pustym rzucie."),
+        "spot": ("Checklist miejsca", ("Sprawdź bezpieczne stanowisko.", "Znajdź punkt, który możesz powtarzalnie osiągnąć.", "Zapisz porę, odległość i warunki kontaktu.")),
+        "method": "Opis porządkuje obserwację wody i nie zastępuje oceny warunków ani lokalnych zasad.",
+        "source_prompt": "Rozpoznanie gatunku porównaj z atlasem, a ochronę i limity z aktualnym regulaminem konkretnej wody.",
+        "links": (("/ryby/leszcz.html", "Leszcz w atlasie"), ("/techniki/feeder.html", "Feeder"), ("/techniki/splawik.html", "Spławik")),
+    },
+    "aktualnosci/jak-lowic-ploc.html": {
+        "answer": "Płoci szukaj przy roślinności, spokojniejszej wodzie i granicy nurtu. Zacznij od czułego spławika albo lekkiego feedera, małych porcji i niewielkiej przynęty.",
+        "table": ("Plan łowienia płoci", ("Sytuacja", "Punkt wyjścia", "Co sprawdzić"), (
+            ("Woda stojąca", "Roślinność, zatoka albo płytsza półka.", "Czy zestaw pozostaje w aktywnej strefie."),
+            ("Rzeka", "Spokojniejsza woda przy nurcie.", "Czy dryf nie wyprowadza przynęty z punktu."),
+            ("Brania", "Jedna zmiana głębokości naraz.", "Czy ruch pokazuje rybę, a nie falę."),
+        )),
+        "mistakes": ("Używanie zbyt dużej przynęty bez obserwacji.", "Donęcanie dużymi porcjami.", "Zacinanie każdego ruchu spławika lub szczytówki."),
+        "method": "To punkt startowy do nauki głębokości i prowadzenia, nie uniwersalny przepis na każdy akwen.",
+        "source_prompt": "Gatunek porównaj z atlasem ryb, a zasady połowu z aktualnym regulaminem gospodarza wody.",
+        "links": (("/ryby/ploc.html", "Płoć w atlasie"), ("/techniki/splawik.html", "Metoda spławikowa"), ("/poradniki/zanety-domowe.html", "Zanęty")),
+    },
+    "poradniki/wedkarstwo-z-brzegu.html": {
+        "answer": "Najpierw wybierz legalny i bezpieczny dostęp, potem oceń dno, wiatr i możliwość powtarzalnego rzutu. Na pierwszy wyjazd zabierz jedną metodę i sprzęt do bezpiecznego odhaczania.",
+        "table": ("Plan wyjazdu z brzegu", ("Krok", "Co ustalić", "Bezpieczna decyzja"), (
+            ("Dostęp", "Właściciel terenu, gospodarz wody i dojście.", "Nie wchodź na niepewny lub śliski brzeg."),
+            ("Warunki", "Wiatr, fala, nurt i droga powrotu.", "Zostaw zapas bezpieczeństwa."),
+            ("Metoda", "Odległość i sposób prezentacji.", "Zacznij od jednego prostego zestawu."),
+        )),
+        "mistakes": ("Traktowanie publicznego brzegu jako automatycznie dostępnego.", "Wybieranie miejsca po reputacji zamiast warunkach.", "Brak planu odhaczenia i powrotu po zmroku."),
+        "spot": ("Ocena stanowiska", ("Sprawdź stabilne dojście i miejsce do odhaczenia.", "Zobacz, czy możesz prowadzić zestaw bez wchodzenia do wody.", "Oceń wiatr, nurt i przeszkody przed pierwszym rzutem.")),
+        "method": "Lista pomaga przygotować wyjazd, ale nie zastępuje oceny miejsca ani aktualnych dokumentów gospodarza.",
+        "source_prompt": "Dostęp, zezwolenia i ograniczenia sprawdzaj w aktualnych informacjach gospodarza konkretnej wody.",
+        "links": (("/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html", "Pierwszy wyjazd"), ("/narzedzia/stany-wod.html", "Stany wód"), ("/lowiska/index.html", "Łowiska")),
+    },
+    "sprzet/jak-wybrac-kolowrotek.html": {
+        "answer": "Kołowrotek dobierz do metody, wędki, linki i dystansu. Porównuj masę, pojemność szpuli, hamulec, przełożenie i nawój według karty konkretnego producenta.",
+        "table": ("Wybór kołowrotka", ("Pytanie", "Co sprawdzić", "Decyzja"), (
+            ("Jaka metoda?", "Spinning, feeder, spławik i sposób prowadzenia.", "Zawęź modele do konkretnego zastosowania."),
+            ("Jaka linka?", "Średnica, długość i pojemność szpuli.", "Porównaj dane producenta, nie sam numer rozmiaru."),
+            ("Jaka wędka?", "Masa, wyważenie i uchwyt.", "Połącz zestaw przed zakupem."),
+        )),
+        "mistakes": ("Wybór wyłącznie po numerze rozmiaru.", "Porównywanie maksymalnego hamulca bez testu jego pracy.", "Kupowanie bez sprawdzenia pojemności szpuli i masy zestawu."),
+        "method": "Kryteria pomagają zawęzić wybór, ale nie są testem ani rekomendacją konkretnego modelu.",
+        "source_prompt": "Parametry, kompatybilność i gwarancję sprawdzaj w karcie producenta oraz u sprzedawcy.",
+        "links": (("/sprzet/kolowrotki.html", "Kołowrotki"), ("/pierwsze-kroki/sprzet/wedki.html", "Wędki"), ("/techniki/spinning.html", "Spinning")),
+    },
 }
 
 
