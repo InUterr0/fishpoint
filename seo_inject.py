@@ -195,6 +195,128 @@ newsletter_re = re.compile(re.escape(NEWSLETTER_BEGIN) + r".*?" + re.escape(NEWS
 GISCUS_BEGIN, GISCUS_END = "<!--giscus:auto-->", "<!--/giscus:auto-->"
 giscus_re = re.compile(re.escape(GISCUS_BEGIN) + r".*?" + re.escape(GISCUS_END), re.S)
 
+# „Metoda FishPoint” trafia wyłącznie na strony wyliczone poniżej. Pole
+# author_practice_confirmed jest celowe: bez niego tekst nie może sugerować
+# osobistych testów autora.
+FISHPOINT_METHODS = {
+    "techniki/spinning.html": {
+        "practice": "Dobór przynęty i tempo prowadzenia traktuj jako punkt wyjścia do obserwacji własnej wody.",
+        "facts": "Skuteczność zależy między innymi od pory roku, warunków i zachowania ryb.",
+        "limits": "Opis nie gwarantuje brań; zasady połowu sprawdzaj w regulaminie łowiska.",
+    },
+    "poradniki/kalendarz-bran-szczupak.html": {
+        "practice": "Kalendarz wykorzystaj do zaplanowania wyprawy, a pierwsze decyzje oprzyj na obserwacji łowiska.",
+        "facts": "Aktywność szczupaka zmienia się wraz z warunkami wody i pogodą.",
+        "limits": "To orientacyjny punkt odniesienia, nie prognoza brań ani źródło zasad połowu.",
+    },
+    "poradniki/kalendarz-bran-sandacz.html": {
+        "practice": "Kalendarz wykorzystaj do zaplanowania pory i miejsca połowu, a taktykę dopasuj nad wodą.",
+        "facts": "Aktywność sandacza zależy od warunków wody, pory dnia i presji na łowisku.",
+        "limits": "To orientacyjny punkt odniesienia, nie prognoza brań ani źródło zasad połowu.",
+    },
+    "poradniki/kalendarz-bran-okon.html": {
+        "practice": "Kalendarz wykorzystaj do wyboru terminu, a wielkość przynęty dopasuj do sytuacji na łowisku.",
+        "facts": "Aktywność okonia zmienia się z porą roku, temperaturą wody i dostępnością pokarmu.",
+        "limits": "To orientacyjny punkt odniesienia, nie prognoza brań ani źródło zasad połowu.",
+    },
+    "poradniki/etyka-i-przepisy.html": {
+        "practice": "Przed wyprawą przygotuj dokumenty i sprawdź zasady dla konkretnej wody.",
+        "facts": "Obowiązujące wymagania wynikają z przepisów oraz regulaminu łowiska.",
+        "limits": "Materiał edukacyjny nie zastępuje aktualnego regulaminu, zezwolenia ani wykładni prawa.",
+    },
+    "zgodnie-z-zasadami.html": {
+        "practice": "Przed wyprawą sprawdź zasady dla konkretnej wody i zachowaj ich aktualną wersję.",
+        "facts": "Znaczenie mają przepisy, regulamin łowiska i warunki zezwolenia.",
+        "limits": "Materiał edukacyjny nie zastępuje aktualnych źródeł ani wykładni prawa.",
+    },
+    "narzedzia/okresy-ochronne.html": {
+        "practice": "Wynik tabeli porównaj z regulaminem wody, na której zamierzasz łowić.",
+        "facts": "Wymiary, okresy i limity mogą różnić się między wodami.",
+        "limits": "Tabela jest pomocą informacyjną, nie potwierdzeniem legalności połowu.",
+    },
+    "narzedzia/czy-moge-zabrac-rybe.html": {
+        "practice": "Wynik kalkulatora porównaj z regulaminem i zezwoleniem dla konkretnej wody.",
+        "facts": "Zasady mogą być zaostrzone przez gospodarza łowiska.",
+        "limits": "Wynik jest orientacyjny i nie zastępuje aktualnych źródeł zasad połowu.",
+    },
+    "aktualnosci/wymiary-i-okresy-ochronne-2026.html": {
+        "practice": "Przed wyjazdem porównaj zestawienie z aktualnym regulaminem konkretnej wody i zezwoleniem.",
+        "facts": "Ogólnopolskie przepisy nie wyczerpują zasad ustanawianych lokalnie przez gospodarza łowiska.",
+        "limits": "Tabela ma charakter pomocniczy; wiążące są aktualne przepisy i lokalny regulamin.",
+    },
+    "aktualnosci/gorne-wymiary-ochronne-2026.html": {
+        "practice": "Górny wymiar traktuj jako zasadę konkretnej wody, którą trzeba potwierdzić przed wyprawą.",
+        "facts": "Górne wymiary mogą wynikać z lokalnego regulaminu lub zezwolenia, a nie z ogólnej tabeli.",
+        "limits": "Nie zakładaj obowiązywania tej zasady na innym łowisku bez sprawdzenia źródła.",
+    },
+    "pierwsze-kroki/okresy-ochronne-wymiary.html": {
+        "practice": "Przed zabraniem ryby sprawdź gatunek, wymiar, okres oraz limity w aktualnych źródłach.",
+        "facts": "Regulamin konkretnej wody może zaostrzać zasady ogólnopolskie.",
+        "limits": "Materiał edukacyjny nie zastępuje aktualnego regulaminu ani zezwolenia.",
+    },
+    "pierwsze-kroki/pozwolenia-karta-wedkarska.html": {
+        "practice": "Najpierw ustal gospodarza wody, potem kup właściwe zezwolenie i sprawdź jego warunki.",
+        "facts": "Karta wędkarska, zezwolenie i regulamin łowiska to odrębne wymagania.",
+        "limits": "Wymagania zależą od rodzaju wody i gospodarza; nie uogólniaj zasad jednego okręgu.",
+    },
+}
+
+# Etykiety są jawnie przypisane do slugów; nie wynikają z daty publikacji ani
+# aktualizacji artykułu.
+SEASONAL_ARTICLE_LABELS = {
+    "techniki/spinning.html": "Sezon jesienny 2026",
+    "poradniki/kalendarz-bran-szczupak.html": "Sezon jesienny 2026",
+    "poradniki/kalendarz-bran-sandacz.html": "Sezon jesienny 2026",
+    "poradniki/kalendarz-bran-okon.html": "Sezon jesienny 2026",
+}
+
+FISHPOINT_METHOD_BEGIN, FISHPOINT_METHOD_END = (
+    "<!--fishpoint-method:auto-->",
+    "<!--/fishpoint-method:auto-->",
+)
+fishpoint_method_re = re.compile(
+    re.escape(FISHPOINT_METHOD_BEGIN) + r".*?" + re.escape(FISHPOINT_METHOD_END),
+    re.S,
+)
+
+
+def build_fishpoint_method(rel, config):
+    """Buduje blok wiarygodności tylko z jawnej konfiguracji artykułu."""
+    practice_label = (
+        "Praktyka autora" if config.get("author_practice_confirmed")
+        else "Wskazówki praktyczne"
+    )
+    season = SEASONAL_ARTICLE_LABELS.get(rel)
+    season_html = (
+        f'<p class="badge fishpoint-method-season">{html.escape(season)}</p>'
+        if season else ""
+    )
+    return (
+        f'{FISHPOINT_METHOD_BEGIN}<section class="info-block fishpoint-method" '
+        f'aria-label="Metoda FishPoint">{season_html}<h2>Metoda FishPoint</h2>'
+        f'<p><strong>{practice_label}:</strong> {html.escape(config["practice"])}</p>'
+        f'<p><strong>Fakty:</strong> {html.escape(config["facts"])}</p>'
+        f'<p><strong>Ograniczenia:</strong> {html.escape(config["limits"])}</p>'
+        f'</section>{FISHPOINT_METHOD_END}'
+    )
+
+
+def inject_fishpoint_method(src, rel):
+    """Wstawia blok po TL;DR, a bez TL;DR na początku treści artykułu."""
+    config = FISHPOINT_METHODS.get(rel)
+    if not config:
+        return src
+    method = build_fishpoint_method(rel, config)
+    if TLDR_END in src:
+        return src.replace(TLDR_END, TLDR_END + method, 1)
+    return re.sub(
+        r'(<article\b(?=[^>]*\bclass="[^"]*\barticle-card\b)[^>]*>|'
+        r'<section\b(?=[^>]*\bclass="[^"]*\barticle-section\b)[^>]*>)',
+        r"\1" + method,
+        src,
+        count=1,
+    )
+
 # Mapa sekcja -> [(url, krótki_tytuł)] budowana w main() przed pętlą (dla bloku
 # „Powiązane artykuły"). Puste do czasu prescanu.
 SECTION_PAGES = {}
@@ -412,10 +534,28 @@ def rel_url(path):
 
 
 def resolve_img(src, page_dir):
-    """Zamienia src obrazka (relatywny do strony) na ścieżkę od korenia serwisu."""
+    """Zamienia src obrazka (relatywny do strony) na ścieżkę od korzenia serwisu."""
     if src.startswith("http"):
         return src
+    # Ścieżki zaczynające się od / są już ścieżkami publicznymi serwisu.
+    # Nie wolno traktować ich jak ścieżek systemu plików (np. /assets -> /assets).
+    if src.startswith("/"):
+        return src
     abs_fs = os.path.normpath(os.path.join(page_dir, src))
+    try:
+        inside_root = os.path.commonpath((ROOT, abs_fs)) == ROOT
+    except ValueError:
+        inside_root = False
+    if not inside_root:
+        # Odporność na stare, błędnie nadmiarowe ../ w wygenerowanych stronach.
+        clean = src
+        while clean.startswith("../"):
+            clean = clean[3:]
+        candidate = os.path.normpath(os.path.join(ROOT, clean))
+        if os.path.isfile(candidate):
+            abs_fs = candidate
+        else:
+            return DEFAULT_IMG
     rel = os.path.relpath(abs_fs, ROOT).replace(os.sep, "/")
     return "/" + rel
 
@@ -466,6 +606,15 @@ def build(path):
     src = related_re.sub("", src)
     src = newsletter_re.sub("", src)
     src = giscus_re.sub("", src)
+    src = fishpoint_method_re.sub("", src)
+    # Pierwsze zdjęcie artykułu jest elementem LCP — nie odkładaj jego pobrania
+    # mimo lazy-loadingu odziedziczonego po starszych szablonach.
+    src = re.sub(
+        r'(<img\b(?=[^>]*class="article-image")(?=[^>]*loading="lazy")[^>]*?)\sloading="lazy"',
+        r'\1 loading="eager" fetchpriority="high"',
+        src,
+        count=1,
+    )
 
     tm = title_re.search(src)
     dm = desc_re.search(src)
@@ -477,6 +626,8 @@ def build(path):
     desc_txt = html.unescape(desc_raw)
 
     rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
+    # Ujednolic sezonowa etykiete w hero: publikacja w lipcu nie udaje wrzesniowej daty.
+    src = src.replace("wrzesień 2026", "sezon jesienny 2026")
     url = BASE + rel_url(path)
 
     # obrazek OG: pierwszy <img> w treści, inaczej domyślny
@@ -531,6 +682,7 @@ def build(path):
                 f'<p class="tldr-label">W skrócie</p><p>{html.escape(desc_txt)}</p>'
                 f'</aside>{TLDR_END}')
         src = re.sub(r'(<article class="article-card">)', r"\1" + tldr, src, count=1)
+        src = inject_fishpoint_method(src, rel)
         # „Powiązane artykuły" — linki wewnętrzne z tej samej sekcji
         if section:
             rel_items = build_related(section, url)

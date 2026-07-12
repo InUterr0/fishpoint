@@ -2,16 +2,22 @@ const toggle = document.querySelector('.nav-toggle');
 const menu = document.querySelector('#nav-menu');
 
 if (toggle && menu) {
+  const closeMenu = () => {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  };
+
   toggle.addEventListener('click', () => {
     const isOpen = menu.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(isOpen));
+    document.body.classList.toggle('nav-open', isOpen);
   });
 
   menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       if (window.matchMedia('(max-width: 840px)').matches && link.matches('.has-sub > a')) return;
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
+      closeMenu();
     });
   });
 
@@ -30,20 +36,16 @@ if (toggle && menu) {
   });
 
   document.addEventListener('click', (event) => {
-    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) closeMenu();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.classList.contains('open')) {
+      closeMenu();
+      toggle.focus();
     }
   });
 }
 
-const form = document.querySelector('.contact-form');
-if (form) {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    alert('Dzięki! Formularz jest demonstracyjny — podłączymy go w kolejnym etapie.');
-  });
-}
 
 // Karuzele kategorii na stronie głównej: strzałki w lewo i w prawo.
 document.querySelectorAll('.category-grid.carousel').forEach((grid) => {
@@ -123,7 +125,12 @@ if (sideNav) {
   btn.type = 'button';
   btn.className = 'theme-toggle';
   btn.setAttribute('aria-label', 'Przełącz ciemny motyw');
-  const setIcon = () => { btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙'; };
+  btn.setAttribute('aria-pressed', document.documentElement.classList.contains('dark') ? 'true' : 'false');
+  const setIcon = () => {
+    const dark = document.documentElement.classList.contains('dark');
+    btn.textContent = dark ? '☀️' : '🌙';
+    btn.setAttribute('aria-pressed', String(dark));
+  };
   setIcon();
 
   btn.addEventListener('click', () => {
@@ -144,6 +151,10 @@ if (sideNav) {
   const ICONS = {
     rod: svg('<path d="M4 20 18 4"/><path d="M18 4c3.2 4.2 1 9.2-4.2 10.4"/><circle cx="13.5" cy="16.5" r="1.7"/>'),
     gear: svg('<circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"/>'),
+    compass: svg('<circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8z"/>'),
+    pin: svg('<path d="M12 21s6-5.1 6-11a6 6 0 0 0-12 0c0 5.9 6 11 6 11z"/><circle cx="12" cy="10" r="2"/>'),
+    chat: svg('<path d="M5 5.5h14v10H9l-4 3v-3.5z"/><path d="M8 9.5h8M8 12.5h5"/>'),
+    smile: svg('<circle cx="12" cy="12" r="9"/><path d="M8 14.5c1.2 1.5 2.8 2.2 4 2.2s2.8-.7 4-2.2M9 9h.01M15 9h.01"/>'),
     fish: svg('<path d="M3.5 12c4-5 9.5-5 13.5 0-4 5-9.5 5-13.5 0z"/><path d="M17 12l4.5-3.5v7z"/><circle cx="7.8" cy="11" r=".4" fill="currentColor"/>'),
     moon: svg('<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4 7 7 0 0 0 20 14.5z"/>'),
     snow: svg('<path d="M12 2v20M3.3 7l17.4 10M20.7 7 3.3 17"/>'),
@@ -162,9 +173,9 @@ if (sideNav) {
     lure: svg('<path d="M3 12c3-6 6 6 9 0s6 6 9 0"/><circle cx="20" cy="9.5" r=".4" fill="currentColor"/>'),
     hook: svg('<path d="M12 3v9.5a4.5 4.5 0 0 0 9 0V11"/><circle cx="12" cy="3" r="1.2"/><path d="M21 11l-1.6 1.8"/>'),
   };
-
   const EMOJI_MAP = {
-    '🎣': 'rod', '⚙️': 'gear',
+    '🧭': 'compass', '📍': 'pin', '💬': 'chat', '😄': 'smile',
+    '🎣': 'rod', '⚙️': 'gear', '🛠️': 'gear',
     '🐟': 'fish', '🦈': 'fish', '🐋': 'fish', '🐊': 'fish', '🦓': 'fish',
     '🌙': 'moon', '❄️': 'snow', '🧊': 'snow',
     '⚓': 'anchor', '🚤': 'anchor', '🌊': 'waves',
