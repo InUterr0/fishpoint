@@ -625,6 +625,77 @@ html.dark .icon.icon-glass {
   height: 100%;
   border: 0;
 }
+.video-embed .youtube-facade {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  place-items: center;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+}
+.video-embed .youtube-facade img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .2s ease;
+}
+.video-embed .youtube-facade::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.58));
+  content: "";
+}
+.video-embed .youtube-facade-play {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 64px;
+  height: 48px;
+  place-items: center;
+  border-radius: 12px;
+  background: #f03;
+  box-shadow: 0 4px 14px rgba(0,0,0,.35);
+  font-size: 1.55rem;
+  line-height: 1;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.video-embed .youtube-facade-title {
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  bottom: .8rem;
+  left: 1rem;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 3px rgba(0,0,0,.85);
+  white-space: nowrap;
+}
+.video-embed .youtube-facade:hover img { transform: scale(1.03); }
+.video-embed .youtube-facade:hover .youtube-facade-play { background: #ff1744; transform: scale(1.06); }
+.video-embed .youtube-facade:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: -6px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .video-embed .youtube-facade img,
+  .video-embed .youtube-facade:hover img,
+  .video-embed .youtube-facade-play,
+  .video-embed .youtube-facade:hover .youtube-facade-play {
+    transform: none;
+    transition: none;
+  }
+}
 .video-embed figcaption {
   margin-top: .55rem;
   font-size: .9rem;

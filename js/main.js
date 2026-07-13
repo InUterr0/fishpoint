@@ -115,7 +115,12 @@ if (sideNav) {
 
 // Przełącznik ciemnego motywu — wstrzykiwany do nawigacji na każdej stronie.
 (function () {
-  const saved = localStorage.getItem('fishpoint-theme');
+  let saved = null;
+  try {
+    saved = window.localStorage.getItem('fishpoint-theme');
+  } catch {
+    // Prywatny tryb lub zablokowane dane witryny: użyj motywu domyślnego.
+  }
   if (saved === 'dark') document.documentElement.classList.add('dark');
 
   const nav = document.querySelector('.nav');
@@ -135,12 +140,33 @@ if (sideNav) {
 
   btn.addEventListener('click', () => {
     const dark = document.documentElement.classList.toggle('dark');
-    localStorage.setItem('fishpoint-theme', dark ? 'dark' : 'light');
+    try {
+      window.localStorage.setItem('fishpoint-theme', dark ? 'dark' : 'light');
+    } catch {
+      // Bieżący wybór pozostaje aktywny, ale nie będzie zapamiętany.
+    }
     setIcon();
   });
 
   nav.appendChild(btn);
 })();
+
+// Lekka fasada YouTube: odtwarzacz ładuje się dopiero po świadomym kliknięciu.
+document.querySelectorAll('.youtube-facade[data-video-id]').forEach((facade) => {
+  facade.addEventListener('click', () => {
+    const videoId = facade.dataset.videoId;
+    if (!/^[A-Za-z0-9_-]{11}$/.test(videoId || '')) return;
+
+    const iframe = document.createElement('iframe');
+    iframe.title = facade.dataset.videoTitle || 'Film YouTube';
+    iframe.loading = 'lazy';
+    iframe.allowFullscreen = true;
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+    facade.replaceWith(iframe);
+  }, { once: true });
+});
 
 // === Ikony SVG kart kategorii ===
 // Podmienia emoji w <span class="icon"> na liniowe ikony SVG (glassmorphism robi CSS).

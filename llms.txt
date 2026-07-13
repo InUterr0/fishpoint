@@ -38,7 +38,7 @@
 - [Wymiary i okresy ochronne ryb 2026](https://fish-point.pl/aktualnosci/wymiary-i-okresy-ochronne-2026.html): Kompletne zestawienie orientacyjnych, ogólnopolskich wymiarów i okresów ochronnych ryb na 2026 — szczupak, sandacz, sum, boleń i inne. Uwaga: okręgi PZW mogą zaostrzać zasady, zawsze sprawdzaj regulamin.
 - [Pierwsze zawody feederowe](https://fish-point.pl/aktualnosci/zawody-feederowe-poradnik.html): Jak wystartować w pierwszych zawodach feederowych — poradnik FishPoint na sezon 2026: zapisy i regulaminy, losowanie sektorów, przygotowanie stanowiska, taktyka na pięciogodzinną turę, lista sprzętu i najczęstsze błędy debiutantów.
 - [Zawody wędkarskie 2026](https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html): Sezon zawodów wędkarskich 2026 w pełni: spławik, feeder, method feeder, karp, spinning i grunt. Podpowiadamy, gdzie szukać terminarzy startów w całej Polsce, jak wybrać pierwsze zawody i co przygotować przed debiutem.
-- [Koniec papierowych zezwoleń](https://fish-point.pl/aktualnosci/zezwolenia-online-2026.html): Od 2026 roku zezwolenia na amatorski połów ryb PZW kupisz i okażesz wyłącznie cyfrowo — przez portal internetowy i aplikację mobilną, jako PDF z kodem QR. Wyjaśniamy, co się zmienia dla około 1,5 mln wędkarzy, jak działa nowy system i o czym pamiętać nad wodą.
+- [Zezwolenia online 2026](https://fish-point.pl/aktualnosci/zezwolenia-online-2026.html): Zezwolenia elektroniczne są dostępne w części okręgów PZW, ale forma zakupu i dokumentu zależy od gospodarza konkretnej wody. Sprawdź aktualne zezwolenie, regulamin i sposób okazania dokumentów.
 - [Złota alga wraca latem](https://fish-point.pl/aktualnosci/zlota-alga-lato-2026.html): Złota alga (Prymnesium parvum) znów daje o sobie znać na Odrze — latem 2026 służby odnotowały lokalne śnięcia ryb i wzmożyły monitoring. Wyjaśniamy, czym jest ten glon, dlaczego wraca co roku, jak reagować na śnięte ryby i o czym pamiętać nad zagrożoną wodą.
 - [Żyłka czy plecionka](https://fish-point.pl/aktualnosci/zylka-czy-plecionka.html): FishPoint porównuje żyłkę i plecionkę: rozciągliwość, średnica, czułość, odporność na przetarcia, zachowanie w mrozie i cena. Którą linkę wybrać do spinningu, feedera, spławika i karpia — poradnik na sezon 2026.
 
@@ -118,7 +118,7 @@
 - [Okoń](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/okon.html): Okoń jest świetnym gatunkiem do nauki spinningu. Reaguje na małe gumy, obrotówki, boczny trok i delikatne prowadzenie.
 - [Szczupak](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html): Poradnik łowienia szczupaka: biologia drapieżnika, stanowiska zasadzkowe, sezonowość, spinning i żywiec, przynęty (woblery, gumy, błystki), wymiar ochronny 50 cm i okres ochronny 1.01–30.04 wg PZW, przypony stalowe i etyka.
 - [Sprzęt dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/): Sprzęt dla początkującego wędkarza bez ściemy: jak dobrać wędkę, kołowrotek i żyłkę do pierwszych wypraw, na czym nie warto przepłacać i jakich błędów uniknąć przy kompletowaniu zestawu.
-- [Akcesoria wędkarskie](https://fish-point.pl/pierwsze-kroki/sprzet/akcesoria.html): Akcesoria wędkarskie, które realnie ułatwiają łowienie: od podbieraka i maty, przez sprzęt do bezpiecznego holu i zwalniania ryb, po drobiazgi porządkujące zestaw — i te gadżety, które można sobie odpuścić.
+- [Akcesoria dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/akcesoria.html): Akcesoria dla początkujących: minimum na pierwsze wyprawy — podbierak, wypychacz, miarka, nożyczki, pudełko i bezpieczna obsługa ryby. Co kupić teraz, co później.
 - [Kołowrotki dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/kolowrotki.html): Przewodnik po kołowrotkach: rozmiary 1000-6000, przełożenie, hamulec przedni i tylny, łożyska, free spin, nawijanie linki, przegląd marek Shimano, Daiwa, Okuma, Mikado i konserwacja.
 - [Przynęty dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/przynety.html): Przynęty dla początkującego: przynęty naturalne i sztuczne, do jakich ryb oraz warunków je dobierać i jak nie utopić budżetu w pudełku, z którego korzysta się raz w sezonie.
 - [Wędki dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/wedki.html): Kompletny przewodnik po wędkach dla początkujących: typy wędzisk, długość, ciężar wyrzutowy, akcja, materiały blanków, przegląd marek oraz typowe błędy przy pierwszym zakupie.
@@ -192,7 +192,7 @@
 ## Sprzęt
 
 - [Sprzęt wędkarski](https://fish-point.pl/sprzet/): Rozbudowana baza sprzętu: realne parametry i zastosowania wędek, kołowrotków, żyłek, przynęt i akcesoriów — bez obietnic „cudownych brań”, za to z jasnym wyjaśnieniem, do czego służy dany element zestawu.
-- [Akcesoria wędkarskie](https://fish-point.pl/sprzet/akcesoria.html): Rzetelny poradnik FishPoint: Haczyki, krętliki, agrafki, pudełka i narzędzia nie są efektowne, ale od ich jakości często zależy skuteczność i bezpieczeństwo ryby.
+- [Akcesoria wędkarskie: pełny dobór do zestawu | FishPoint](https://fish-point.pl/sprzet/akcesoria.html): Pełny dobór akcesoriów wędkarskich: haczyki, krętliki, agrafki, obciążenia, podbierak, narzędzia i organizacja zestawu — z kryteriami dopasowania do metody i ryby.
 - [Jak wybrać kołowrotek](https://fish-point.pl/sprzet/jak-wybrac-kolowrotek.html): Jak wybrać kołowrotek do wędki: rozmiar, masa, hamulec, przełożenie, pojemność szpuli i dopasowanie do spinningu, feedera oraz spławika.
 - [Kołowrotki wędkarskie](https://fish-point.pl/sprzet/kolowrotki.html): Poradnik FishPoint o kołowrotkach: rozmiary, przełożenie, hamulec, łożyska, kołowrotki stacjonarne, multiplikatory i wolny bieg. Przegląd marek Shimano, Daiwa, Okuma, Abu Garcia, Penn, Mikado. Dobór, błędy, konserwacja i FAQ.
 - [Odzież i bezpieczeństwo](https://fish-point.pl/sprzet/odziez.html): Rzetelny poradnik FishPoint: Dobra odzież nie łowi za wędkarza, ale chroni przed zimnem, deszczem, słońcem i poślizgnięciem na brzegu.
@@ -200,10 +200,6 @@
 - [Żyłki i plecionki](https://fish-point.pl/sprzet/plecionki-zylki.html): Poradnik FishPoint o linkach wędkarskich: żyłka, plecionka i fluorocarbon — średnice, wytrzymałość, rozciągliwość, splot 4x/8x. Marki Stroft, Sufix, Power Pro, Spiderwire, Berkley, Dragon. Dobór do metody, węzły, błędy i FAQ.
 - [Przynęty](https://fish-point.pl/sprzet/przynety.html): Rzetelny poradnik FishPoint: Wybór przynęty zależy od gatunku ryby, głębokości, uciągu, temperatury wody i aktywności drapieżników lub ryb spokojnego żeru.
 - [Wędki wędkarskie](https://fish-point.pl/sprzet/wedki.html): Kompletny poradnik FishPoint o wędkach: długość, ciężar wyrzutowy, akcja i moc blanku, materiały, podział na metody (spinning, feeder, karp, spławik), przegląd producentów od Shimano po Mikado, najczęstsze błędy przy zakupie i konserwacja.
-
-## Szukaj.html
-
-- [Wyszukiwarka serwisu](https://fish-point.pl/szukaj.html): Przeszukaj cały serwis FishPoint: poradniki wędkarskie, atlas ryb, techniki połowu, sprzęt, przepisy kuchni rybnej i narzędzia. Wpisz frazę i znajdź to, czego szukasz.
 
 ## Techniki
 

@@ -7,6 +7,24 @@
 :{$PORT:80} {
 	root * /usr/share/caddy
 
+	# Canonical directory URLs: tylko istniejące pliki index.html trafiają do
+	# przekierowania, więc błędne ścieżki nadal kończą jako prawdziwe 404.
+	@root_index {
+		path /index.html
+		file {
+			try_files {path}
+		}
+	}
+	redir @root_index / 301
+
+	@section_index {
+		path_regexp section_index ^/([^/]+)/index\.html$
+		file {
+			try_files {path}
+		}
+	}
+	redir @section_index /{re.section_index.1}/ 301
+
 	# Kompresja tylko treści tekstowych (HTML/CSS/JS/XML/SVG/JSON).
 	# Obrazy są już skompresowane — pomijamy je, dzięki czemu nie dostają
 	# Vary: Accept-Encoding i możemy czysto ustawić Vary: Accept dla negocjacji.

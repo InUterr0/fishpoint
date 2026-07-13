@@ -6,7 +6,7 @@ Idempotentny: blok SEO jest oznaczony znacznikami i przy ponownym uruchomieniu
 zostaje podmieniony, a nie zdublowany. Wystarczy zmienić BASE po kupnie domeny
 i uruchomić ponownie: python3 seo_inject.py
 """
-import os, re, html, json, datetime, subprocess, functools, hashlib
+import os, re, html, json, datetime, subprocess, functools, hashlib, sys
 
 BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
 GA_ID = "G-33TKR9MEB7"                   # <-- Google Analytics 4 Measurement ID (G-XXXXXXX); puste = wyłączone
@@ -89,22 +89,22 @@ SECTIONS = {
 # stronę, żeby menu było identyczne wszędzie. (etykieta, href względny od korzenia,
 # klucz sekcji dla dzieci menu lub None). Dzieci pobierane są z SECTION_PAGES. ---
 NAV_TOP = [
-    ("Pierwsze kroki", "pierwsze-kroki/index.html", "pierwsze-kroki"),
-    ("Sprzęt", "sprzet/index.html", "sprzet"),
-    ("Techniki", "techniki/index.html", "techniki"),
-    ("Atlas ryb", "ryby/index.html", "ryby"),
-    ("Poradniki", "poradniki/index.html", "poradniki"),
-    ("Narzędzia", "narzedzia/index.html", "narzedzia"),
-    ("Łowiska", "lowiska/index.html", "lowiska"),
-    ("Forum", "forum/index.html", None),
-    ("Blog", "aktualnosci/index.html", "aktualnosci"),
+    ("Pierwsze kroki", "pierwsze-kroki/", "pierwsze-kroki"),
+    ("Sprzęt", "sprzet/", "sprzet"),
+    ("Techniki", "techniki/", "techniki"),
+    ("Atlas ryb", "ryby/", "ryby"),
+    ("Poradniki", "poradniki/", "poradniki"),
+    ("Narzędzia", "narzedzia/", "narzedzia"),
+    ("Łowiska", "lowiska/", "lowiska"),
+    ("Forum", "forum/", None),
+    ("Blog", "aktualnosci/", "aktualnosci"),
     ("Zakupy", "zakupy.html", None),
     ("Więcej", "slownik.html", "__more__"),
 ]
-NAV_CTA = ("Kontakt", "index.html#kontakt")
+NAV_CTA = ("Kontakt", "./#kontakt")
 NAV_MORE = [
-    ("humor/index.html", "Humor wędkarski"),
-    ("kuchnia/index.html", "Kuchnia wędkarska"),
+    ("humor/", "Humor wędkarski"),
+    ("kuchnia/", "Kuchnia wędkarska"),
     ("zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
     ("slownik.html", "Słownik pojęć"),
     ("szukaj.html", "Szukaj w serwisie"),
@@ -119,6 +119,20 @@ try:
 except OSError:
     CSS_VER = "1"
 css_ver_re = re.compile(r'css/style\.css(\?v=[0-9a-f]+)?"')
+index_href_re = re.compile(r'href="([^"]*?)index\.html([?#][^"]*)?"', re.I)
+
+
+def canonicalize_internal_hrefs(src):
+    """Zamienia wewnętrzne odnośniki do index.html na adresy katalogowe."""
+    def repl(match):
+        prefix, suffix = match.group(1), match.group(2) or ""
+        if prefix.startswith(("http://", "https://", "//")):
+            if prefix.startswith(BASE + "/") or prefix == BASE:
+                return f'href="{prefix}{suffix}"'
+            return match.group(0)
+        return f'href="{prefix or "./"}{suffix}"'
+
+    return index_href_re.sub(repl, src)
 
 
 def _nav_children(section, prefix):
@@ -167,6 +181,74 @@ desc_re = re.compile(r'<meta\s+name="description"\s+content="(.*?)"', re.S)
 img_re = re.compile(r'<img[^>]+src="([^"]+)"', re.S)
 block_re = re.compile(re.escape(BEGIN) + r".*?" + re.escape(END) + r"\n", re.S)
 tag_re = re.compile(r"<[^>]+>")
+
+# Trwałe metadane redakcyjne są źródłem dat publikacji i aktualizacji. Nie
+# należą do bloku seo:auto, aby ponowne uruchomienie generatora ich nie usuwało.
+CONTENT_META_RE = re.compile(
+    r"<!--content-meta:\s*published=(\d{4}-\d{2}-\d{2});\s*modified=(\d{4}-\d{2}-\d{2})-->",
+)
+CONTENT_META_MARKER_RE = re.compile(r"<!--\s*content-meta:", re.I)
+robots_meta_re = re.compile(
+    r'<meta\b(?=[^>]*\bname\s*=\s*["\']robots["\'])[^>]*>\s*', re.I)
+youtube_nocookie_iframe_re = re.compile(
+    r'''<iframe\b(?=[^>]*\bsrc\s*=\s*["']https?://(?:www\.)?youtube-nocookie\.com/embed/(?P<video_id>[A-Za-z0-9_-]{11})(?:\?[^"']*)?["'])(?=[^>]*\btitle\s*=\s*["'](?P<title>[^"']*)["'])[^>]*>\s*</iframe>''',
+    re.I | re.S,
+)
+
+
+def replace_youtube_nocookie_embeds(src):
+    """Zastępuje tylko znane iframe'y YouTube fasadą bez ładowania odtwarzacza."""
+    def repl(match):
+        video_id = match.group("video_id")
+        title = html.unescape(match.group("title").strip()) or "Film YouTube"
+        title_attr = html.escape(title, quote=True)
+        return (
+            f'<button class="youtube-facade" type="button" data-video-id="{video_id}" '
+            f'data-video-title="{title_attr}" aria-label="Odtwórz film: {title_attr}">'
+            f'<img src="https://i.ytimg.com/vi/{video_id}/hqdefault.jpg" '
+            f'alt="Miniatura filmu: {title_attr}" loading="lazy" decoding="async" />'
+            f'<span class="youtube-facade-play" aria-hidden="true">▶</span>'
+            f'<span class="youtube-facade-title">{html.escape(title)}</span>'
+            f'</button>'
+        )
+
+    return youtube_nocookie_iframe_re.sub(repl, src)
+
+
+def parse_content_meta(src, path):
+    """Odczytuje dokładnie jeden poprawny komentarz content-meta."""
+    matches = CONTENT_META_RE.findall(src)
+    if len(matches) != 1:
+        raise ValueError(f"{path}: oczekiwano dokładnie jednego content-meta")
+    published, modified = matches[0]
+    try:
+        published_date = datetime.date.fromisoformat(published)
+        modified_date = datetime.date.fromisoformat(modified)
+    except ValueError as exc:
+        raise ValueError(f"{path}: nieprawidłowa data content-meta") from exc
+    if modified_date < published_date:
+        raise ValueError(f"{path}: modified jest wcześniejsze niż published")
+    return published, modified
+
+
+def ensure_content_meta(src, path):
+    """Dodaje komentarz tylko do starszych stron bez content-meta."""
+    if CONTENT_META_MARKER_RE.search(src):
+        return src, *parse_content_meta(src, path)
+    published, modified = git_dates(path)
+    comment = f"  <!--content-meta: published={published}; modified={modified}-->\n"
+    src, count = re.subn(r"(<head\b[^>]*>\s*)", r"\1" + comment, src, count=1)
+    if count != 1:
+        raise ValueError(f"{path}: brak znacznika <head> dla content-meta")
+    return src, published, modified
+
+
+def is_noindex(src):
+    """Czy dowolny meta robots strony jawnie wymaga noindex."""
+    return any(
+        re.search(r'\bnoindex\b', tag, re.I)
+        for tag in robots_meta_re.findall(src)
+    )
 
 # Idempotentne wstrzyknięcia w BODY (usuwane i odtwarzane przy każdym uruchomieniu)
 BYLINE_BEGIN, BYLINE_END = "<!--byline:auto-->", "<!--/byline:auto-->"
@@ -872,8 +954,8 @@ def inject_content_advantage(src, rel):
         return src.replace(BYLINE_END, BYLINE_END + block, 1)
     return re.sub(r"(</h1>)", r"\1" + block, src, count=1)
 
-# Mapa sekcja -> [(url, krótki_tytuł)] budowana w main() przed pętlą (dla bloku
-# „Powiązane artykuły"). Puste do czasu prescanu.
+# Powiązania są budowane z istniejących, redakcyjnie dobranych linków modułów
+# content-advantage. Każdy artykuł prowadzi też do własnego hubu sekcji.
 SECTION_PAGES = {}
 
 
@@ -896,11 +978,17 @@ def article_text(src):
     return re.sub(r"\s+", " ", _clean(chunk)).strip()
 
 
-def build_related(section, url):
-    """Do 4 innych artykułów z tej samej sekcji (deterministycznie)."""
-    pool = [(u, t) for (u, t) in SECTION_PAGES.get(section, []) if u != url]
-    pool.sort(key=lambda x: x[1].lower())
-    return pool[:4]
+def build_related(section, rel, url):
+    """Hub sekcji oraz maksymalnie trzy redakcyjnie wybrane strony-spokes."""
+    related = [(BASE + f"/{section}/", f"Przegląd: {SECTIONS[section]}")]
+    config = CONTENT_ADVANTAGES.get(rel, {})
+    for href, title in config.get("links", ()):
+        target = BASE + href
+        if target != url and target not in {item[0] for item in related}:
+            related.append((target, title))
+        if len(related) == 4:
+            break
+    return related
 
 
 def extract_howto(src):
@@ -1148,10 +1236,24 @@ def jsonld(obj):
 def build(path):
     with open(path, encoding="utf-8") as f:
         src = f.read()
+    src, pubdate, mtime = ensure_content_meta(src, path)
+    # Nie powielaj identycznego podpisu, jeśli redakcyjna edycja dodała go
+    # obok automatycznego bloku byline.
+    src = re.sub(
+        r'(?P<meta><p class="article-meta">.*?</p>)\s*(?P=meta)',
+        r'\g<meta>',
+        src,
+        count=1,
+        flags=re.S,
+    )
+    noindex = is_noindex(src)
+    # Każda strona ma jeden robots meta, odtwarzany w bloku seo:auto poniżej.
+    src = robots_meta_re.sub("", src)
     # Wspólna nawigacja na każdej stronie — podmień istniejący nagłówek na
     # kanoniczny (z rozwijanymi działami). Prefiks ścieżek wg głębokości strony.
     depth = os.path.relpath(path, ROOT).replace(os.sep, "/").count("/")
     src = nav_re.sub(lambda m: build_nav("../" * depth), src, count=1)
+    src = canonicalize_internal_hrefs(src)
     src = css_ver_re.sub(f'css/style.css?v={CSS_VER}"', src)
     # usuń poprzednie wstrzyknięcia, by działać idempotentnie
     src = block_re.sub("", src)
@@ -1164,6 +1266,7 @@ def build(path):
     src = fishpoint_method_re.sub("", src)
     src = content_advantage_re.sub("", src)
     src = affiliate_re.sub("", src)
+    src = replace_youtube_nocookie_embeds(src)
     # Pierwsze zdjęcie artykułu jest elementem LCP — nie odkładaj jego pobrania
     # mimo lazy-loadingu odziedziczonego po starszych szablonach.
     src = re.sub(
@@ -1217,7 +1320,7 @@ def build(path):
     is_home = rel == "index.html"
     is_section_index = len(parts) == 2 and parts[1] == "index.html"
 
-    pubdate, mtime = git_dates(path)
+    # Daty pochodzą z trwałego komentarza content-meta, nie z mtime przebudowy.
 
     # --- OpenGraph + Twitter ---
     og_type = "website" if (is_home or is_section_index) else "article"
@@ -1225,6 +1328,8 @@ def build(path):
     # --- Widoczny podpis autora + daty (E-E-A-T, świeżość) na artykułach ---
     # Wstrzykiwany po pierwszym </h1>; pomijamy strony autora, słownik i przepisy.
     if og_type == "article" and rel not in ("o-autorze.html",):
+        # Ręczne podpisy są zastępowane jednym blokiem automatycznym.
+        src = re.sub(r'<p class="article-meta">.*?</p>', "", src, flags=re.S)
         byline = (
             f'{BYLINE_BEGIN}<p class="article-meta">'
             f'Autor: <a href="{BASE}/o-autorze.html" rel="author">{AUTHOR_NAME}</a>'
@@ -1240,9 +1345,9 @@ def build(path):
                 f'</aside>{TLDR_END}')
         src = re.sub(r'(<article class="article-card">)', r"\1" + tldr, src, count=1)
         src = inject_fishpoint_method(src, rel)
-        # „Powiązane artykuły" — linki wewnętrzne z tej samej sekcji
+        # Hub sekcji i ręcznie wybrane powiązania z istniejących kart redakcyjnych.
         if section:
-            rel_items = build_related(section, url)
+            rel_items = build_related(section, rel, url)
             if rel_items:
                 links = "".join(
                     f'<a href="{u}">{html.escape(t)}</a>' for u, t in rel_items)
@@ -1270,10 +1375,14 @@ def build(path):
             src = re.sub(r"(</article>)", giscus + r"\1", src, count=1)
     src = inject_content_advantage(src, rel)
     src = re.sub(r"(</article>)", build_affiliate_links(rel) + r"\1", src, count=1)
+    # Wstrzyknięte bloki też mogą zawierać stare odnośniki do index.html.
+    src = canonicalize_internal_hrefs(src)
     head = [
         BEGIN,
         f'  <link rel="canonical" href="{url}" />',
-        '  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />',
+        ('  <meta name="robots" content="noindex, follow" />'
+         if noindex else
+         '  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />'),
         f'  <meta name="author" content="{AUTHOR_NAME}" />',
         '  <meta name="theme-color" content="#0e5e54" />',
         '  <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg" />',
@@ -1472,7 +1581,8 @@ def build(path):
                 head.append(END)
                 block = "\n".join(head) + "\n"
                 new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
-                return new_src, url, mtime, is_home or is_section_index, title_txt, desc_txt, page_images
+                return (new_src, url, mtime, is_home or is_section_index,
+                        title_txt, desc_txt, page_images, noindex)
             slug = os.path.splitext(parts[-1])[0]
             fish = FISH_ENTITIES.get(slug) if section in ("ryby", "rodzaje-ryb") or "rodzaje-ryb" in rel else None
             # ImageObject reprezentatywny: podpis z alt pierwszego obrazu, autor
@@ -1550,7 +1660,50 @@ def build(path):
 
     # wstaw przed </head>
     new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
-    return new_src, url, mtime, is_home or is_section_index, title_txt, desc_txt, page_images
+    return (new_src, url, mtime, is_home or is_section_index,
+            title_txt, desc_txt, page_images, noindex)
+
+
+
+def validate_generated_artifacts():
+    """Deterministyczna kontrola metadanych i artefaktów publikacyjnych."""
+    html_paths = []
+    for dirpath, _, files in os.walk(ROOT):
+        if "/.git" not in dirpath:
+            html_paths.extend(
+                os.path.join(dirpath, fn) for fn in files if fn.endswith(".html"))
+
+    noindex_urls = set()
+    for path in sorted(html_paths):
+        with open(path, encoding="utf-8") as f:
+            src = f.read()
+        parse_content_meta(src, path)
+        robots = robots_meta_re.findall(src)
+        if len(robots) != 1:
+            raise ValueError(f"{path}: oczekiwano dokładnie jednego meta robots")
+        noindex = is_noindex(src)
+        if noindex and not re.search(r'\bnoindex\s*,\s*follow\b', robots[0], re.I):
+            raise ValueError(f"{path}: noindex musi jawnie zawierać follow")
+        if os.path.basename(path) != "404.html":
+            canonical = f'<link rel="canonical" href="{BASE + rel_url(path)}" />'
+            if canonical not in src:
+                raise ValueError(f"{path}: niekanoniczny lub brakujący canonical")
+        if noindex:
+            noindex_urls.add(BASE + rel_url(path))
+
+    artifacts = ("sitemap.xml", "llms.txt", "llms-full.txt", "feed.xml")
+    contents = {}
+    for artifact in artifacts:
+        with open(os.path.join(ROOT, artifact), encoding="utf-8") as f:
+            contents[artifact] = f.read()
+    for url in noindex_urls:
+        for artifact, content in contents.items():
+            if url in content:
+                raise ValueError(f"{artifact}: zawiera noindex URL {url}")
+    import xml.etree.ElementTree as ET
+    ET.fromstring(contents["sitemap.xml"])
+    ET.fromstring(contents["feed.xml"])
+    print(f"Walidacja artefaktów: ok ({len(html_paths)} stron)")
 
 
 def main():
@@ -1571,7 +1724,10 @@ def main():
         if len(parts) < 2 or parts[-1] == "index.html" or parts[0] not in SECTIONS:
             continue
         with open(p, encoding="utf-8") as f:
-            tm = title_re.search(f.read())
+            page_src = f.read()
+        if is_noindex(page_src):
+            continue
+        tm = title_re.search(page_src)
         if not tm:
             continue
         SECTION_PAGES.setdefault(parts[0], []).append(
@@ -1582,7 +1738,15 @@ def main():
     if os.path.exists(p404):
         with open(p404, encoding="utf-8") as f:
             s404 = f.read()
+        s404, _published, _modified = ensure_content_meta(s404, p404)
+        s404 = robots_meta_re.sub("", s404)
+        s404 = CONTENT_META_RE.sub(
+            lambda match: match.group(0) + '\n  <meta name="robots" content="noindex, follow" />',
+            s404,
+            count=1,
+        )
         s404 = nav_re.sub(lambda m: build_nav("/"), s404, count=1)
+        s404 = canonicalize_internal_hrefs(s404)
         s404 = css_ver_re.sub(f'css/style.css?v={CSS_VER}"', s404)
         with open(p404, "w", encoding="utf-8") as f:
             f.write(s404)
@@ -1594,11 +1758,12 @@ def main():
         if not res:
             print("POMINIĘTO (brak title/desc):", p)
             continue
-        new_src, url, mtime, is_index, title_txt, desc_txt, page_images = res
+        new_src, url, mtime, is_index, title_txt, desc_txt, page_images, noindex = res
         with open(p, "w", encoding="utf-8") as f:
             f.write(new_src)
-        section = rel_url(p).strip("/").split("/")[0] if rel_url(p) != "/" else ""
-        urls.append((url, mtime, is_index, rel_url(p), title_txt, desc_txt, section, page_images))
+        if not noindex:
+            section = rel_url(p).strip("/").split("/")[0] if rel_url(p) != "/" else ""
+            urls.append((url, mtime, is_index, rel_url(p), title_txt, desc_txt, section, page_images))
         changed += 1
 
     # sitemap.xml (z rozszerzeniem Image — indeksacja w Grafice Google)
@@ -1688,6 +1853,8 @@ def main():
     for p in pages:
         with open(p, encoding="utf-8") as f:
             s = f.read()
+        if is_noindex(s):
+            continue
         tm = title_re.search(s)
         if not tm:
             continue
@@ -1744,6 +1911,10 @@ def main():
     print("robots.txt: ok")
     print(f"llms.txt: {sum(len(v) for v in by_sec.values())} wpisów")
 
-
 if __name__ == "__main__":
-    main()
+    if sys.argv[1:] == ["--validate"]:
+        validate_generated_artifacts()
+    elif len(sys.argv) == 1:
+        main()
+    else:
+        raise SystemExit("użycie: seo_inject.py [--validate]")

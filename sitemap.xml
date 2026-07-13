@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://fish-point.pl/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -20,40 +20,52 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kanaly.jpg</image:loc>
+      <image:title>Kanał z łodzią i wędkarzami w tle</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
+      <image:title>Jezioro — woda otwarta na pierwsze wyprawy z kajaka</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
-      <image:title>Street fishing — od czego zacząć łowienie w mieście</image:title>
+      <image:title>Mikroguma dla początkujących — pierwszy zestaw, przynęty i technika</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
+      <image:title>Wędki ustawione na brzegu — dobór wędki spinningowej</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sandacz.jpg</image:loc>
-      <image:title>Kajak fishing — wędkowanie z kajaka dla początkujących</image:title>
+      <image:title>Jak łowić sandacza jesienią — spinning, jig i najlepsze brania roku</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Jaką wędkę spinningową kupić — poradnik zakupowy według zastosowania i budżetu</image:title>
+      <image:title>Spinning na szczupaka jesienią — złota jesień drapieżnika</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/akcesoria.jpg</image:loc>
-      <image:title>Smartfon i akcesoria wędkarskie — cyfrowe zezwolenie na połów</image:title>
+      <image:loc>https://fish-point.pl/assets/img/aktualnosci/jak-dobrac-przynete-do-pory-roku.jpg</image:loc>
+      <image:title>Przynęty sztuczne w różnych kolorach — dobór gumy do drapieżnika</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
+      <image:title>Stawy Milickie z lotu ptaka — zasady połowu sprawdzaj dla konkretnej wody</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kalendarz.jpg</image:loc>
+      <image:title>Wędkarze na rzece o wschodzie słońca — planowanie sezonu</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/cr.jpg</image:loc>
-      <image:title>Wędkarz wypuszcza dużą rybę — zasada złów i wypuść</image:title>
+      <image:title>Wypuszczanie ryby do wody — zasada ochrony dużych okazów</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sum.jpg</image:loc>
       <image:title>Sum — największy drapieżnik polskich wód, rekordowy okaz z Zalewu Rybnickiego</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
-      <image:title>Rzeka latem — zagrożenie zakwitem złotej algi</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/kalendarz.jpg</image:loc>
-      <image:title>Kalendarz wędkarski 2026 — co łowić miesiąc po miesiącu</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
@@ -74,10 +86,6 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/morskie.jpg</image:loc>
       <image:title>Wędkarstwo morskie dla początkujących</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/jak-dobrac-przynete-do-pory-roku.jpg</image:loc>
-      <image:title>Woblery wędkarskie w różnych kolorach</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/zylka-czy-plecionka.jpg</image:loc>
@@ -102,23 +110,27 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/bledy-poczatkujacych.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/bledy-poczatkujacych.jpg</image:loc>
       <image:title>Wędkarz łowiący w nurcie rzeki</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/J79aWJQT7RE/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: TYCH BŁĘDÓW ŁOWIĄC na SPINNING nie POPEŁNIAJ !</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/gorne-wymiary-ochronne-2026.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/jak-dobrac-gume-na-drapieznika.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -128,23 +140,27 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/jak-dobrac-przynete-do-pory-roku.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/jak-dobrac-przynete-do-pory-roku.jpg</image:loc>
       <image:title>Woblery wędkarskie w różnych kolorach</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/89_P0i_Ye5U/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Przynęty spinningowe  #16 Poradnik Wędkarski wędkarstwo lucio</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/jak-lowic-karasia.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/jak-lowic-leszcza.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -154,13 +170,13 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/jak-lowic-lina.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/jak-lowic-ploc.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -170,7 +186,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/jak-lowic-sandacza-jesienia.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -180,7 +196,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/jaka-wedka-spinningowa-kupic.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -190,7 +206,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/jerki-na-szczupaka-poradnik.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -200,7 +216,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/kajak-fishing-dla-poczatkujacych.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -210,25 +226,25 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/kalendarz-wedkarski-2026.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/karp-w-upaly-taktyka-na-lipiec.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/kiedy-sezon-na-ryby-2026.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/mikroguma-dla-poczatkujacych.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -238,13 +254,13 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/okon-jesienia-mikroguma.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -254,55 +270,67 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/przeglad-nowosci-sezonu.jpg</image:loc>
       <image:title>Dwa woblery — przynęty spinningowe</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/DZV7Oncl9lo/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Nowości wędkarskie i ciekawostki - Targi Wędkarskie Evolution</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/przyneta-na-spinning.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/rekord-okonia-2026.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/relacja-nocna-zasiadka.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/relacja-nocna-zasiadka.jpg</image:loc>
       <image:title>Wędkarz nad rzeką o zmierzchu</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/skT7dKZV7Hk/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: ŁOWIENIE NA GRUNT czyli WĘDKARSKA ZASIADKA z METODĄ</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/sezon-na-szczupaka.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/sezon-na-szczupaka.jpg</image:loc>
       <image:title>Wędkarz prezentujący dużego szczupaka złowionego z łodzi</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/uo_gn61r5CM/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZŁOWIĆ SZCZUPAKA? Sprzęt, technika, miejsca.</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/spinning-na-szczupaka-jesienia.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -312,7 +340,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/street-fishing-od-czego-zaczac.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -322,313 +350,405 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/wymiary-i-okresy-ochronne-2026.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/zawody-feederowe-poradnik.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/zawody-feederowe-poradnik.jpg</image:loc>
       <image:title>Wędkarze na stanowiskach łowiska komercyjnego</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/w6nKVaP6Dic/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Kompletny przewodnik dla początkujących METHOD FEEDER — Naucz się WSZYSTKICH podstaw !</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/zezwolenia-online-2026.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/zlota-alga-lato-2026.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/zylka-czy-plecionka.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/zylka-czy-plecionka.jpg</image:loc>
       <image:title>Kołowrotek spinningowy z nawiniętą linką</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/EeAKL58UE9s/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Dylemat Wędkarza: Żyłka czy Plecionka? Porównanie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/forum/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/humor/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/humor/dowcipy.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/humor/filmiki.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/4liVHg8DeHs/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Wędkarskie wpadki — kompilacja</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/YosZG0uEN9Q/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Wędkarskie Wpadki #1</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/38F7ewNoVMo/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Śmieszne wędkarstwo — wycięte sceny (RaFish)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/tv1V-cHuofU/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Śmieszne wędkarstwo — 12 wędek i harce</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/Y3YRpPpPeTc/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Śmieszne wpadki i upadki — kompilacja</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/4mto-Y-Haro/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Wędkarstwo na wesoło — kawał na rybach</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/REEfkgy97uc/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Fishing bloopers (FishingWithAce)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/Rhs5OpNTBOs/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Funny Fishing Fails Compilation</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/5z9yC7NxPXo/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Funny Fishing FAILS 2021</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/9Aq0c49O9Z0/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Try Not To Laugh — Go Fishing And Fails</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/bIOW4UnypgU/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Funny Fishing Fails Compilation 2020</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/U39TjSOr_RI/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Fishing Fails of 2020</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/C_q58kjk360/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: 52 Fishing Fails — Bloopers &amp; Humor</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/2GekupS_N9s/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Funny Fishing Videos Fails Compilation</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/T4W5hnvQb-s/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Best Fishing Fails and Bloopers</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/humor/memy.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/grill-i-ognisko.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/kuchnia/przygotowanie.jpg</image:loc>
       <image:title>Dzwonka łososia na ruszcie</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/_ZlrsT8k3mc/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: RYBA Z PIEKARNIKA / GRILLA w folii z warzywami | Filet rybny z grilla | Przepis na filet z halibuta</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/karp-wigilijny.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/CyOup2dM1uA/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Karp Wigilijny. Jak Przygotować i Smażyć Karpia.Jak Zlikwidować Posmak Mułu z Karpia</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/przygotowanie-ryby.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/ffUr5cTWIA8/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Jak filetować rybę? – poradnik krok po kroku | Chef’s Gear Polska</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/smazony-okon-sandacz.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/smazony.jpg</image:loc>
       <image:title>Smażone filety rybne z warzywami</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/DnWoZXS9jUE/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: PYSZNY SANDACZ Z PATELNI PROSTY PRZEPIS</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/wedzenie-ryb.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/kuchnia/wedzenie.jpg</image:loc>
       <image:title>Wędzony pstrąg</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/rTBdawY0x0U/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Pstrąg wędzony w wędzarni. Jak uwędzić pstąga. Wędzenie ryby.</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/zupa-rybna.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/zupa.jpg</image:loc>
       <image:title>Zupa rybna w drewnianej misie</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/GfP7eV5ufT0/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Zupa rybna. Jak ugotować wyjątkową zupę rybną. Młynek FinaMill</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/dolnoslaskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/kujawsko-pomorskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/lodzkie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/lubelskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/lubuskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/malopolskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/mazowieckie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/opolskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/podkarpackie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/podlaskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/pomorskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/slaskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/swietokrzyskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/warminsko-mazurskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/wielkopolskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/zachodniopomorskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/czy-moge-zabrac-rybe.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/dobor-sprzetu.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/kalendarz-bran.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/kalendarz-ksiezycowy.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/kalkulator-wagi-ryby.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/okresy-ochronne.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/prognoza-bran.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/rozpoznaj-rybe.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/stany-wod.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/o-autorze.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -638,325 +758,417 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/jeziora.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
       <image:title>Jezioro Śniardwy</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/D-nsHYec2sE/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Jak łowić na SPŁAWIK na JEZIORACH ? Budowa PROSTEGO ZESTAWU SPŁAWIKOWEGO - PORADNIK</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/kanaly.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/kanaly.jpg</image:loc>
       <image:title>Kanał z łodzią i wędkarzami w tle</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/w6nKVaP6Dic/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Kompletny przewodnik dla początkujących METHOD FEEDER — Naucz się WSZYSTKICH podstaw !</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/rzeki.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/bledy-poczatkujacych.jpg</image:loc>
       <image:title>Wędkarz łowiący w nurcie rzeki</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/UTgVihXye54/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Jak łowić na SPŁAWIK na RZECE ? Budowa ZESTAWU do rzecznej PRZYSTAWKI SPŁAWIKOWEJ - PORADNIK</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/stawy.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
       <image:title>Stawy Milickie z lotu ptaka</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/mbsin7YwpNQ/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZŁOWIĆ 🎣🎣 KARASIA ❓❓</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/okresy-ochronne-wymiary.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/evBmvZ4ggPk/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Wymiary,Okresy i Limity Ochronne Ryb</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/pozwolenia-karta-wedkarska.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/jKtgVjzJ-WI/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: KARTA WĘDKARSKA krok po kroku - jak wyrobić, egzamin, opłaty, łowiska specjalne i CZY WARTO?</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/karp.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
       <image:title>Karp (Cyprinus carpio) — król wód stojących</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/BAJY4gMltgk/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Karpie na metodę 🎣 | Adam Niemiec prezentuje podstawy method feeder.</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/leszcz.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/leszcz.jpg</image:loc>
       <image:title>Leszcz (Abramis brama) — wysokociała ryba stadna</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/6tQee_Og3to/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Jak łowić leszcze na feeder</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/okon.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
       <image:title>Okoń pospolity (Perca fluviatilis) — pręgowany drapieżnik stadny</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/QG59NR4msvQ/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Drop Shot - metoda na leniwe okonie i sandacze</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
       <image:title>Szczupak pospolity (Esox lucius) — drapieżnik zasadzkowy polskich wód</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/uo_gn61r5CM/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZŁOWIĆ SZCZUPAKA? Sprzęt, technika, miejsca.</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/akcesoria.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/akcesoria.jpg</image:loc>
-      <image:title>Pudełko klasycznych haczyków wędkarskich</image:title>
+      <image:loc>https://fish-point.pl/assets/img/tematy/cr.jpg</image:loc>
+      <image:title>Wypuszczanie pstrąga do wody — bezpieczna obsługa ryby</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/A5m_xdtCe00/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: niezbędnik wędkarza🙂</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/kolowrotki.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/kolowrotki.jpg</image:loc>
       <image:title>Kołowrotek spinningowy</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/xMYQHwNbtnA/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Kołowrotki wędkarskie - jaki rozmiar wybrać? Kiedy? I do czego?</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/przynety.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/jak-dobrac-przynete-do-pory-roku.jpg</image:loc>
       <image:title>Woblery wędkarskie</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/89_P0i_Ye5U/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Przynęty spinningowe  #16 Poradnik Wędkarski wędkarstwo lucio</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/wedki.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
       <image:title>Wędki ustawione na brzegu morza</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/EWwuqKx3LP8/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZACZĄĆ Z WĘDKARSTWEM (Poradnik - co kupić na początek)</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/wprowadzenie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/EWwuqKx3LP8/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZACZĄĆ Z WĘDKARSTWEM (Poradnik - co kupić na początek)</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/zylki-plecionki.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/zylka-czy-plecionka.jpg</image:loc>
       <image:title>Kołowrotek z nawiniętą plecionką</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/EeAKL58UE9s/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Dylemat Wędkarza: Żyłka czy Plecionka? Porównanie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/catch-and-release.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/cr.jpg</image:loc>
       <image:title>Wypuszczanie pstrąga do wody</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/upxV4emBOnQ/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Odhaczanie i profesjonalne wypuszczenie szczupaka 110cm</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/echosondy.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/1x-wcDhIVKw/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Nauka czytania Echosondy - interpretacja zapisów i batymetria</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/etyka-i-przepisy.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/evBmvZ4ggPk/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Wymiary,Okresy i Limity Ochronne Ryb</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-karp.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-klen.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-lin.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-okon.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-ploc.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-sum.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/kalendarz.jpg</image:loc>
       <image:title>Wędkarze na rzece o wschodzie słońca</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/lrP-XUoUE8U/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Wpływ pogody na brania - ciśnienie,temperatura,wiatr,fazy ksieżyca itd</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/lowienie-nocne.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/relacja-nocna-zasiadka.jpg</image:loc>
       <image:title>Wędkarz nad rzeką o zmierzchu</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/skT7dKZV7Hk/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: ŁOWIENIE NA GRUNT czyli WĘDKARSKA ZASIADKA z METODĄ</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/lowienie-zima.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/zawody-feederowe-poradnik.jpg</image:loc>
       <image:title>Wędkarze nad zimowym łowiskiem</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/4D0u5rDftEY/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Zimowe Łowienie na feeder z chlebem tostowym – Poradnik</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/pogoda-a-brania.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/pogoda.jpg</image:loc>
       <image:title>Burzowe chmury nadciągające nad jezioro</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/lrP-XUoUE8U/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Wpływ pogody na brania - ciśnienie,temperatura,wiatr,fazy ksieżyca itd</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/wedkarstwo-z-brzegu.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -966,45 +1178,61 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/wedkarstwo-z-lodzi.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/WmIOqkgqpYs/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: ŁOWIENIE RYB na SPINNING z PONTONU Wędkarstwo 2023</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/wezly-wedkarskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/wezly.jpg</image:loc>
       <image:title>Węzeł wędkarski na haczyku</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/Kpj-mGCBM9o/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Palomar - węzeł wędkarski</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/zanety-domowe.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/vKShNefbXWM/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZROBIĆ ZANĘTĘ NA RYBY...? domowe składniki 100%</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/amur.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/amur.jpg</image:loc>
       <image:title>Amur biały (Ctenopharyngodon idella) — roślinożerna ryba pochodzenia azjatyckiego</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/MWj1BI0ZqfQ/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: AMUR! Wielkie amury! Jak, gdzie, kiedy i na co zlowic amura! Prosta i skuteczna metoda!</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/belona.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1014,17 +1242,21 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/bolen.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/bolen.jpg</image:loc>
       <image:title>Boleń (Leuciscus aspius) — jedyny drapieżny gatunek karpiowatych</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/44dxnHq9m4Q/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZŁOWIĆ BOLENIA? Technika, sprzęt, miejsca</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/brzana.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1034,7 +1266,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/certa.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1044,7 +1276,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/dorsz.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1054,7 +1286,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/fladra.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1064,17 +1296,21 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/jaz.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/jaz.jpg</image:loc>
       <image:title>Jaź (Leuciscus idus) — karpiowaty o czerwonawych płetwach</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/gXlYeYNnGJ8/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Szybki poradnik w praktyce. Jazie na spinning #wędkarstwo #2025</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/jesiotr.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1084,117 +1320,161 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/karas.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karas.jpg</image:loc>
       <image:title>Karaś pospolity (Carassius carassius) — wytrzymała ryba stawów i starorzeczy</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/mbsin7YwpNQ/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZŁOWIĆ 🎣🎣 KARASIA ❓❓</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/karp.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
       <image:title>Karp (Cyprinus carpio) — król wód stojących</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/BAJY4gMltgk/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Karpie na metodę 🎣 | Adam Niemiec prezentuje podstawy method feeder.</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/klen.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/klen.jpg</image:loc>
       <image:title>Kleń (Squalius cephalus) — silny karpiowaty rzek i strumieni</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/RG_UiWaBUWM/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Jak łowić klenie - miejsca, przynęty, sposoby prowadzenia oraz zestawy...</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/leszcz.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/leszcz.jpg</image:loc>
       <image:title>Leszcz (Abramis brama) — wysokociała ryba stadna</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/6tQee_Og3to/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Jak łowić leszcze na feeder</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/lin.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/lin.jpg</image:loc>
       <image:title>Lin (Tinca tinca) — oliwkowa ryba zarośniętych jezior</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/sraacLovcAY/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: WIOSENNE LINY - Jak złowić lina na spławik i metode?</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/lipien.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/lipien.jpg</image:loc>
       <image:title>Lipień (Thymallus thymallus) — ryba o okazałej płetwie grzbietowej</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/S0_RWp61LKI/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Jak zacząć łowić na muchę. Mucha wędkarska - podstawy oraz lipienie na nimfę.</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/mietus.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/mietus.jpg</image:loc>
       <image:title>Miętus (Lota lota) — jedyny słodkowodny przedstawiciel dorszokształtnych</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/UCm9Dh1Nv0A/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ŁOWIĆ MIĘTUSY | RZEKA WISŁA | NOCNY ZIMOWY FEEDER |  MARCH BURBOT</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/okon.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
       <image:title>Okoń pospolity (Perca fluviatilis) — pręgowany drapieżnik stadny</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/QG59NR4msvQ/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Drop Shot - metoda na leniwe okonie i sandacze</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/ploc.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/ploc.jpg</image:loc>
       <image:title>Płoć (Rutilus rutilus) — najpospolitsza ryba polskich wód</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/rDnwp9DDLXw/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: ŁOWIENIE NA SPŁAWIK JEST PROSTE ! JAK ZŁOWIĆ PŁOĆ WIOSNĄ NA BATA piękne GRUBE PŁOCIE #PŁOĆ #SPŁAWIK</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/pstrag.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/pstrag.jpg</image:loc>
       <image:title>Pstrąg potokowy (Salmo trutta fario) — ryba czystych, chłodnych rzek</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/ZJ-nricwlTE/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Jak ŁOWIĆ PSTRĄGI ? | Przynęty PROWADZENIE i Miejscówka</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sandacz.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sandacz.jpg</image:loc>
       <image:title>Sandacz pospolity (Sander lucioperca) — nocny drapieżnik o szklistych oczach</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/Ln8P6W_BytU/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZŁOWIĆ SANDACZA? miejscówki sprzęt i sposoby prowadzenia przynęty - Tu masz WSZYSTKO !!!</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sieja.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1204,7 +1484,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sielawa.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1214,7 +1494,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sledz.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1224,17 +1504,21 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sum.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sum.jpg</image:loc>
       <image:title>Sum pospolity (Silurus glanis) — największa ryba polskich wód</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/83MkK2PQR9Y/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Tak zacząć łowić sumy | Wszystko ujawnione | wędkarstwo sumowe w Polsce</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/swinka.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1244,27 +1528,35 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/szczupak.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
       <image:title>Szczupak pospolity (Esox lucius) — drapieżnik zasadzkowy polskich wód</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/uo_gn61r5CM/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZŁOWIĆ SZCZUPAKA? Sprzęt, technika, miejsca.</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/troc-losos.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/troc-losos.jpg</image:loc>
       <image:title>Troć wędrowna (Salmo trutta) i łosoś (Salmo salar) — łososiowate ryby dwuśrodowiskowe</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/vm83-k5qcio/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: TROĆ od A do Z - vademecum łowienia troci | Jak łowić i złowić Troć ???</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/ukleja.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1274,17 +1566,21 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/wegorz.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/wegorz.jpg</image:loc>
       <image:title>Węgorz europejski (Anguilla anguilla) — wężowata ryba wędrowna</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/5lHmCJaN64w/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Jak złowić węgorza/sposób na węgorza/poradnik</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/wzdrega.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1294,29 +1590,33 @@
   </url>
   <url>
     <loc>https://fish-point.pl/slownik.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/akcesoria.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/akcesoria.jpg</image:loc>
       <image:title>Pudełko klasycznych haczyków wędkarskich</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/A5m_xdtCe00/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: niezbędnik wędkarza🙂</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/jak-wybrac-kolowrotek.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1326,71 +1626,85 @@
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/kolowrotki.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/kolowrotki.jpg</image:loc>
       <image:title>Kołowrotek spinningowy</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/xMYQHwNbtnA/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Kołowrotki wędkarskie - jaki rozmiar wybrać? Kiedy? I do czego?</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/odziez.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/AFgYTseFUoE/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: W co ubrać się na ryby - test kurtek i spodni wędkarskich</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/pierwsza-wedka-spinningowa.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/plecionki-zylki.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/zylka-czy-plecionka.jpg</image:loc>
       <image:title>Kołowrotek z nawiniętą plecionką</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/EeAKL58UE9s/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Dylemat Wędkarza: Żyłka czy Plecionka? Porównanie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/przynety.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/jak-dobrac-przynete-do-pory-roku.jpg</image:loc>
       <image:title>Woblery wędkarskie</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/89_P0i_Ye5U/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Przynęty spinningowe  #16 Poradnik Wędkarski wędkarstwo lucio</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/wedki.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
       <image:title>Wędki ustawione na brzegu morza</image:title>
     </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/szukaj.html</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/EWwuqKx3LP8/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZACZĄĆ Z WĘDKARSTWEM (Poradnik - co kupić na początek)</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/feeder-dla-poczatkujacych.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1400,79 +1714,111 @@
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/feeder.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/zawody-feederowe-poradnik.jpg</image:loc>
       <image:title>Wędkarze gruntowi na stanowiskach</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/w6nKVaP6Dic/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Kompletny przewodnik dla początkujących METHOD FEEDER — Naucz się WSZYSTKICH podstaw !</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/karpiowanie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/relacja-nocna-zasiadka.jpg</image:loc>
       <image:title>Zasiadka nad wodą o zmierzchu</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/YtPYYXWL_XA/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Metoda włosowa: jak zmieniła wędkarstwo karpiowe na zawsze / Rzucam to cz.8</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/morskie.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/morskie.jpg</image:loc>
       <image:title>Wędki surfcastingowe na plaży</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/_H3rP8XZIlQ/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Łowienie dorszy z małej łódki w morzu Bałtyckim k/Łeby.Porady Piotra Mikuły</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/muchowe.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/muchowe.jpg</image:loc>
       <image:title>Wędkarz muchowy podczas rzutu na rzece</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/EFZ6FnbRCew/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Wędkarstwo muchowe - podstawy/ Dobór wędki, kołowrotka, linki, węzły! Część 1 #AKADEMIAROBINSONA 66</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/podlodowe.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/podlodowe.jpg</image:loc>
       <image:title>Wędkarz przy przerębli podczas łowienia podlodowego</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/GkeYVnBekWc/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: CO na PIERWSZY LÓD czyli JAK i NA CO ŁOWIĆ ? WĘDKARSTWO PODLODOWE</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/spinning.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/sezon-na-szczupaka.jpg</image:loc>
       <image:title>Wędkarz ze szczupakiem złowionym na spinning</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/7S5nVFbeT5I/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: SPINNING - JAK ZACZĄĆ PRZYGODĘ</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/splawik.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/splawik.jpg</image:loc>
       <image:title>Wędkarz łowiący na spławik nad kanałem</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/LmloWAuXZYw/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: JAK ZACZĄĆ ŁOWIĆ NA SPŁAWIK - PORADNIK DLA AMATORA</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/trolling.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://i.ytimg.com/vi/6VByB7NcntI/hqdefault.jpg</image:loc>
+      <image:title>Miniatura filmu: Jak łowić na trolling kilka porad/ poradnik/ wędkarstwo spinningowe</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/zakupy.html</loc>
@@ -1482,7 +1828,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/zgodnie-z-zasadami.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

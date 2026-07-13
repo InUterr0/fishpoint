@@ -18,13 +18,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
+          python-version: '3.12'
+
+      - name: Generate SEO artifacts
+        run: python3 seo_inject.py
+
+      - name: Validate generated artifacts
+        run: python3 seo_inject.py --validate
 
       - name: Install Railway CLI
-        run: npm i -g @railway/cli
+        run: |
+          curl -fsSL https://railway.com/install.sh | sh
+          echo "$HOME/.railway/bin" >> "$GITHUB_PATH"
 
       - name: Deploy
         run: railway up --service fishpoint --ci
