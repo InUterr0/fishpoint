@@ -149,9 +149,13 @@ def _nav_children(section, prefix):
 def build_nav(prefix):
     items = []
     for label, href, section in NAV_TOP:
-        top = f'<a href="{prefix}{href}">{html.escape(label)}</a>'
+        top_href = f"{prefix}{href}"
         kids = _nav_children(section, prefix) if section else []
         if kids:
+            submenu_id = f"submenu-{section.strip('_').replace('_', '-')}"
+            top = (
+                f'<a href="{top_href}" aria-haspopup="true" '
+                f'aria-controls="{submenu_id}">{html.escape(label)}</a>')
             vis, extra = kids[:5], kids[5:]
             sub = "".join(
                 f'<li><a href="{u}">{html.escape(t)}</a></li>' for u, t in vis)
@@ -164,9 +168,10 @@ def build_nav(prefix):
                     f'<input type="checkbox" id="{cid}" class="sub-more-cb" />'
                     f'<label for="{cid}" class="sub-more-btn">Więcej ({len(extra)})</label>'
                     f'<span class="sub-more">{extra_links}</span></li>')
-            items.append(f'<li class="has-sub">{top}<ul class="sub">{sub}</ul></li>')
+            items.append(
+                f'<li class="has-sub">{top}<ul id="{submenu_id}" class="sub">{sub}</ul></li>')
         else:
-            items.append(f'<li>{top}</li>')
+            items.append(f'<li><a href="{top_href}">{html.escape(label)}</a></li>')
     items.append(
         f'<li><a class="nav-cta" href="{prefix}{NAV_CTA[1]}">{html.escape(NAV_CTA[0])}</a></li>')
     return (
@@ -956,13 +961,45 @@ def inject_content_advantage(src, rel):
 # Powiązania łączą hub sekcji z linkami modułów content-advantage oraz
 # uzupełniającymi, redakcyjnie dobranymi linkami dla pogłębionych klastrów.
 RELATED_LINKS = {
+    "ryby/karp.html": (
+        ("/techniki/karpiowanie.html", "Karpiowanie od podstaw"),
+        ("/poradniki/kalendarz-bran-karp.html", "Kalendarz brań karpia"),
+    ),
+    "ryby/klen.html": (
+        ("/techniki/spinning.html", "Spinning na klenia"),
+        ("/poradniki/kalendarz-bran-klen.html", "Kalendarz brań klenia"),
+    ),
     "ryby/leszcz.html": (
         ("/techniki/feeder.html", "Feeder na leszcza"),
         ("/poradniki/kalendarz-bran-leszcz.html", "Kalendarz brań leszcza"),
     ),
-    "ryby/karp.html": (
-        ("/techniki/karpiowanie.html", "Karpiowanie od podstaw"),
-        ("/poradniki/kalendarz-bran-karp.html", "Kalendarz brań karpia"),
+    "ryby/lin.html": (
+        ("/techniki/splawik.html", "Spławik na lina"),
+        ("/poradniki/kalendarz-bran-lin.html", "Kalendarz brań lina"),
+    ),
+    "ryby/okon.html": (
+        ("/techniki/spinning.html", "Spinning na okonia"),
+        ("/poradniki/kalendarz-bran-okon.html", "Kalendarz brań okonia"),
+    ),
+    "ryby/ploc.html": (
+        ("/techniki/splawik.html", "Spławik na płoć"),
+        ("/poradniki/kalendarz-bran-ploc.html", "Kalendarz brań płoci"),
+    ),
+    "ryby/pstrag.html": (
+        ("/techniki/muchowe.html", "Wędkarstwo muchowe"),
+        ("/poradniki/kalendarz-bran-pstrag.html", "Kalendarz brań pstrąga"),
+    ),
+    "ryby/sandacz.html": (
+        ("/techniki/spinning.html", "Spinning na sandacza"),
+        ("/poradniki/kalendarz-bran-sandacz.html", "Kalendarz brań sandacza"),
+    ),
+    "ryby/sum.html": (
+        ("/techniki/spinning.html", "Spinning na suma"),
+        ("/poradniki/kalendarz-bran-sum.html", "Kalendarz brań suma"),
+    ),
+    "ryby/szczupak.html": (
+        ("/techniki/spinning.html", "Spinning na szczupaka"),
+        ("/poradniki/kalendarz-bran-szczupak.html", "Kalendarz brań szczupaka"),
     ),
 }
 SECTION_PAGES = {}
@@ -991,7 +1028,7 @@ def build_related(section, rel, url):
     """Hub sekcji oraz maksymalnie trzy redakcyjnie wybrane strony-spokes."""
     related = [(BASE + f"/{section}/", f"Przegląd: {SECTIONS[section]}")]
     config = CONTENT_ADVANTAGES.get(rel, {})
-    links = config.get("links", ()) + RELATED_LINKS.get(rel, ())
+    links = RELATED_LINKS.get(rel, ()) + config.get("links", ())
     for href, title in links:
         target = BASE + href
         if target != url and target not in {item[0] for item in related}:

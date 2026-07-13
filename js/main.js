@@ -2,10 +2,33 @@ const toggle = document.querySelector('.nav-toggle');
 const menu = document.querySelector('#nav-menu');
 
 if (toggle && menu) {
+  const mobileNav = window.matchMedia('(max-width: 840px)');
+  const submenuLinks = [...menu.querySelectorAll('.has-sub > a')];
+
+  const setSubmenuState = (item, isOpen) => {
+    item.classList.toggle('sub-open', isOpen);
+    item.querySelector(':scope > a').setAttribute('aria-expanded', String(isOpen));
+  };
+
+  const closeSubmenus = (except = null) => {
+    menu.querySelectorAll('.has-sub.sub-open').forEach((item) => {
+      if (item !== except) setSubmenuState(item, false);
+    });
+  };
+
+  const syncSubmenuSemantics = () => {
+    closeSubmenus();
+    submenuLinks.forEach((link) => {
+      if (mobileNav.matches) link.setAttribute('aria-expanded', 'false');
+      else link.removeAttribute('aria-expanded');
+    });
+  };
+
   const closeMenu = () => {
     menu.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('nav-open');
+    closeSubmenus();
   };
 
   toggle.addEventListener('click', () => {
@@ -16,21 +39,19 @@ if (toggle && menu) {
 
   menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      if (window.matchMedia('(max-width: 840px)').matches && link.matches('.has-sub > a')) return;
+      if (mobileNav.matches && link.matches('.has-sub > a')) return;
       closeMenu();
     });
   });
 
-  menu.querySelectorAll('.has-sub > a').forEach((link) => {
+  submenuLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
-      if (!window.matchMedia('(max-width: 840px)').matches) return;
+      if (!mobileNav.matches) return;
       const item = link.parentElement;
       if (!item.classList.contains('sub-open')) {
         event.preventDefault();
-        menu.querySelectorAll('.has-sub.sub-open').forEach((openItem) => {
-          if (openItem !== item) openItem.classList.remove('sub-open');
-        });
-        item.classList.add('sub-open');
+        closeSubmenus(item);
+        setSubmenuState(item, true);
       }
     });
   });
@@ -39,11 +60,19 @@ if (toggle && menu) {
     if (!menu.contains(event.target) && !toggle.contains(event.target)) closeMenu();
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && menu.classList.contains('open')) {
-      closeMenu();
-      toggle.focus();
+    if (event.key !== 'Escape' || !menu.classList.contains('open')) return;
+    const openItem = menu.querySelector('.has-sub.sub-open');
+    if (openItem) {
+      setSubmenuState(openItem, false);
+      openItem.querySelector(':scope > a').focus();
+      return;
     }
+    closeMenu();
+    toggle.focus();
   });
+
+  mobileNav.addEventListener('change', syncSubmenuSemantics);
+  syncSubmenuSemantics();
 }
 
 

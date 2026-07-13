@@ -1003,6 +1003,10 @@ html.dark .newsletter{background:rgba(255,255,255,.04);border-color:rgba(255,255
   color: var(--amber, #ffb25e); font-weight: 700; font-size: .9em; white-space: nowrap; }
 .nav-menu .sub-more-btn::after { content: " ▾"; font-size: .9em; opacity: .8; }
 .nav-menu .sub-more-btn:hover { background: rgba(255,255,255,.1); }
+.nav-menu .sub-more-cb:focus-visible + .sub-more-btn {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
 .nav-menu .sub-more { display: none; flex-direction: column; gap: 2px; }
 .nav-menu .sub-more-cb:checked ~ .sub-more { display: flex; }
 .nav-menu .sub-more-cb:checked ~ .sub-more-btn { color: rgba(255,255,255,.7); }

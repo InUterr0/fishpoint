@@ -6,6 +6,11 @@
 
 :{$PORT:80} {
 	root * /usr/share/caddy
+	# Jeden host kanoniczny. Railway przekazuje oryginalny Host do Caddy,
+	# więc wariant www nie powinien pozostawać osobną kopią 200.
+	@www host www.fish-point.pl
+	redir @www https://fish-point.pl{uri} 301
+
 
 	# Canonical directory URLs: tylko istniejące pliki index.html trafiają do
 	# przekierowania, więc błędne ścieżki nadal kończą jako prawdziwe 404.
