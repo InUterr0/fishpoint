@@ -7,15 +7,27 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
-      <image:title>Street fishing — od czego zacząć łowienie w mieście</image:title>
+      <image:title>Wędkarz łowiący spinningiem z miejskiego nabrzeża</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Spinning na szczupaka jesienią — złota jesień drapieżnika</image:title>
+      <image:title>Duży szczupak złowiony jesienią na spinning</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sandacz.jpg</image:loc>
-      <image:title>Kajak fishing — wędkowanie z kajaka dla początkujących</image:title>
+      <image:title>Wędkarz łowiący z kajaka wędkarskiego typu sit-on-top na spokojnym jeziorze</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/aktualnosci/jak-dobrac-przynete-do-pory-roku.jpg</image:loc>
+      <image:title>Woblery wędkarskie w różnych kolorach</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/aktualnosci/zylka-czy-plecionka.jpg</image:loc>
+      <image:title>Kołowrotek spinningowy z nawiniętą linką</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/aktualnosci/relacja-nocna-zasiadka.jpg</image:loc>
+      <image:title>Wędkarz nad rzeką o zmierzchu</image:title>
     </image:image>
   </url>
   <url>

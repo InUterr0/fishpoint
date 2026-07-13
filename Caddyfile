@@ -78,6 +78,6 @@
 	# Warianty obrazów zależą od nagłówka Accept — cache/CDN ma je rozróżniać.
 	# Matcher łapie też ścieżki po przepisaniu na .avif/.webp; +Vary dokłada
 	# nagłówek obok istniejącego Vary: Accept-Encoding (z encode).
-	@imgvariants path /assets/*.jpg /assets/*.jpeg /assets/*.png /assets/*.avif /assets/*.webp
+	@imgvariants path_regexp imgvariants ^/assets/.+\.(?:jpe?g|png|avif|webp)$
 	header @imgvariants +Vary Accept
 }

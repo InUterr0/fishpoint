@@ -168,6 +168,120 @@ document.querySelectorAll('.youtube-facade[data-video-id]').forEach((facade) => 
   }, { once: true });
 });
 
+// Analityka jest ładowana wyłącznie po wyraźnej zgodzie użytkownika.
+(function () {
+  const ANALYTICS_ID = 'G-33TKR9MEB7';
+  const CONSENT_KEY = 'fishpoint-analytics-consent';
+  let consent = null;
+
+  try {
+    consent = window.localStorage.getItem(CONSENT_KEY);
+  } catch {
+    // Bez dostępu do pamięci ustawienie obowiązuje tylko w bieżącej karcie.
+  }
+
+  const saveConsent = (value) => {
+    consent = value;
+    try {
+      window.localStorage.setItem(CONSENT_KEY, value);
+    } catch {
+      // Brak trwałej pamięci nie może blokować wyboru użytkownika.
+    }
+  };
+
+  const loadAnalytics = () => {
+    if (document.querySelector('script[data-fishpoint-analytics]')) return;
+    window[`ga-disable-${ANALYTICS_ID}`] = false;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', ANALYTICS_ID);
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`;
+    script.dataset.fishpointAnalytics = 'true';
+    document.head.appendChild(script);
+  };
+
+  const removeAnalyticsCookies = () => {
+    const names = document.cookie.split(';').map((item) => item.trim().split('=')[0])
+      .filter((name) => /^_(?:ga|gid|gat)(?:_|$)/.test(name));
+    const domains = location.hostname.split('.').map((_, index, parts) => `.${parts.slice(index).join('.')}`);
+    names.forEach((name) => {
+      [`${name}=; Max-Age=0; path=/`, ...domains.map((domain) => `${name}=; Max-Age=0; path=/; domain=${domain}`)]
+        .forEach((cookie) => { document.cookie = cookie; });
+    });
+  };
+
+  const revokeAnalytics = () => {
+    window[`ga-disable-${ANALYTICS_ID}`] = true;
+    document.querySelectorAll('script[data-fishpoint-analytics]').forEach((script) => script.remove());
+    removeAnalyticsCookies();
+    window.location.reload();
+  };
+
+  const settings = document.createElement('button');
+  settings.type = 'button';
+  settings.className = 'analytics-settings';
+  settings.textContent = 'Ustawienia prywatności';
+  settings.setAttribute('aria-haspopup', 'dialog');
+
+  const notice = document.createElement('section');
+  notice.className = 'analytics-consent';
+  notice.hidden = true;
+  notice.setAttribute('role', 'dialog');
+  notice.setAttribute('aria-modal', 'false');
+  notice.setAttribute('aria-labelledby', 'analytics-consent-title');
+
+  const title = document.createElement('h2');
+  title.id = 'analytics-consent-title';
+  title.textContent = 'Pomóż nam rozwijać FishPoint';
+  const copy = document.createElement('p');
+  copy.textContent = 'Za Twoją zgodą używamy Google Analytics do statystycznego pomiaru odwiedzin. Możesz zmienić decyzję w każdej chwili.';
+  const actions = document.createElement('div');
+  actions.className = 'analytics-consent-actions';
+  const reject = document.createElement('button');
+  reject.type = 'button';
+  reject.className = 'analytics-consent-reject';
+  reject.textContent = 'Odrzuć';
+  const accept = document.createElement('button');
+  accept.type = 'button';
+  accept.className = 'analytics-consent-accept';
+  accept.textContent = 'Akceptuję';
+  actions.append(reject, accept);
+  notice.append(title, copy, actions);
+  document.body.append(settings, notice);
+
+  const openNotice = () => {
+    notice.hidden = false;
+    accept.focus();
+  };
+  const closeNotice = () => {
+    notice.hidden = true;
+    settings.focus();
+  };
+
+  settings.addEventListener('click', openNotice);
+  accept.addEventListener('click', () => {
+    saveConsent('granted');
+    loadAnalytics();
+    closeNotice();
+  });
+  reject.addEventListener('click', () => {
+    const revoke = consent === 'granted';
+    saveConsent('denied');
+    closeNotice();
+    if (revoke) revokeAnalytics();
+  });
+
+  if (consent === 'granted') {
+    loadAnalytics();
+  } else if (consent !== 'denied') {
+    openNotice();
+  }
+})();
+
 // === Ikony SVG kart kategorii ===
 // Podmienia emoji w <span class="icon"> na liniowe ikony SVG (glassmorphism robi CSS).
 (function () {

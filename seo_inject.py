@@ -9,7 +9,6 @@ i uruchomić ponownie: python3 seo_inject.py
 import os, re, html, json, datetime, subprocess, functools, hashlib, sys
 
 BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
-GA_ID = "G-33TKR9MEB7"                   # <-- Google Analytics 4 Measurement ID (G-XXXXXXX); puste = wyłączone
 # Komentarze giscus (GitHub Discussions) — na wpisach blogowych (aktualnosci).
 # Puste GISCUS_REPO = wyłączone. Wymaga zainstalowania aplikacji giscus na repo.
 GISCUS_REPO = "kerlingruppen/fishpoint-comments"
@@ -954,8 +953,18 @@ def inject_content_advantage(src, rel):
         return src.replace(BYLINE_END, BYLINE_END + block, 1)
     return re.sub(r"(</h1>)", r"\1" + block, src, count=1)
 
-# Powiązania są budowane z istniejących, redakcyjnie dobranych linków modułów
-# content-advantage. Każdy artykuł prowadzi też do własnego hubu sekcji.
+# Powiązania łączą hub sekcji z linkami modułów content-advantage oraz
+# uzupełniającymi, redakcyjnie dobranymi linkami dla pogłębionych klastrów.
+RELATED_LINKS = {
+    "ryby/leszcz.html": (
+        ("/techniki/feeder.html", "Feeder na leszcza"),
+        ("/poradniki/kalendarz-bran-leszcz.html", "Kalendarz brań leszcza"),
+    ),
+    "ryby/karp.html": (
+        ("/techniki/karpiowanie.html", "Karpiowanie od podstaw"),
+        ("/poradniki/kalendarz-bran-karp.html", "Kalendarz brań karpia"),
+    ),
+}
 SECTION_PAGES = {}
 
 
@@ -982,7 +991,8 @@ def build_related(section, rel, url):
     """Hub sekcji oraz maksymalnie trzy redakcyjnie wybrane strony-spokes."""
     related = [(BASE + f"/{section}/", f"Przegląd: {SECTIONS[section]}")]
     config = CONTENT_ADVANTAGES.get(rel, {})
-    for href, title in config.get("links", ()):
+    links = config.get("links", ()) + RELATED_LINKS.get(rel, ())
+    for href, title in links:
         target = BASE + href
         if target != url and target not in {item[0] for item in related}:
             related.append((target, title))
@@ -1402,13 +1412,6 @@ def build(path):
         f'  <meta name="twitter:description" content="{desc_raw}" />',
         f'  <meta name="twitter:image" content="{img_url}" />',
     ]
-    # Google Analytics 4 (gtag) — na wszystkich stronach, gdy ustawiono GA_ID.
-    if GA_ID:
-        head.append(f'  <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>')
-        head.append(
-            '  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
-            f"gtag('js',new Date());gtag('config','{GA_ID}');</script>"
-        )
     if og_type == "article":
         if im:
             head.append(f'  <link rel="preload" as="image" href="{img_path}" fetchpriority="high" />')
