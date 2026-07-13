@@ -98,6 +98,7 @@ NAV_TOP = [
     ("Łowiska", "lowiska/index.html", "lowiska"),
     ("Forum", "forum/index.html", None),
     ("Blog", "aktualnosci/index.html", "aktualnosci"),
+    ("Zakupy", "zakupy.html", None),
     ("Więcej", "slownik.html", "__more__"),
 ]
 NAV_CTA = ("Kontakt", "index.html#kontakt")
@@ -637,9 +638,119 @@ AFFILIATE_LINKS = {
             "Uzupełnij zestaw o haki, agrafki, ciężarki i drobne wyposażenie.",
         ),
     ),
+    "zakupy.html": (
+        (
+            "https://webep1.com/go/b39ea55c3",
+            "Gotowy zestaw feederowy",
+            "Porównaj gotowe zestawy feederowe, gdy chcesz zacząć bez kompletowania każdego elementu osobno.",
+        ),
+        (
+            "https://webep1.com/go/92f2af80c3",
+            "Gotowy zestaw method feeder",
+            "Sprawdź gotowe zestawy method feeder do łowienia z koszykiem i zanętą.",
+        ),
+        (
+            "https://webep1.com/go/fe23f399c3",
+            "Gotowy zestaw spinningowy",
+            "Zobacz gotowe zestawy spinningowe na pierwsze wyprawy za drapieżnikami.",
+        ),
+        (
+            "https://webep1.com/go/86ac9324c3",
+            "Kołowrotki karpiowe",
+            "Porównaj kołowrotki karpiowe dopasowane do cięższych zestawów i dużych dystansów.",
+        ),
+        (
+            "https://webep1.com/go/9ce264e7c3",
+            "Wędki karpiowe",
+            "Wybierz wędki karpiowe pod długość rzutu, ciężar zestawu i sposób łowienia.",
+        ),
+        (
+            "https://webep1.com/go/6ff7647bc3",
+            "Kulki i pellety",
+            "Sprawdź kulki proteinowe i pellety do budowania zanęty oraz przynęty.",
+        ),
+        (
+            "https://webep1.com/go/c8227fd2c3",
+            "Dodatki zanętowe i dipy",
+            "Dobierz dodatki zanętowe i dipy do mieszanki, przynęty oraz warunków łowiska.",
+        ),
+        (
+            "https://webep1.com/go/d3253924c3",
+            "Woblery",
+            "Porównaj woblery na drapieżniki według pracy, głębokości i sposobu prowadzenia.",
+        ),
+        (
+            "https://webep1.com/go/405fc98ac3",
+            "Błystki",
+            "Zobacz błystki do aktywnego szukania okoni, szczupaków i innych drapieżników.",
+        ),
+        (
+            "https://webep1.com/go/4d1297a8c3",
+            "Twistery",
+            "Wybierz twistery do jigowania i prowadzenia przy dnie.",
+        ),
+        (
+            "https://webep1.com/go/4ea3bd70c3",
+            "Jaskółki",
+            "Sprawdź smukłe jaskółki do łowienia ostrożnych drapieżników.",
+        ),
+        (
+            "https://webep1.com/go/74ac1044c3",
+            "Żyłki",
+            "Porównaj żyłki pod średnicę, rozciągliwość i planowaną metodę.",
+        ),
+        (
+            "https://webep1.com/go/c70fbfc0c3",
+            "Fluorocarbon i mono",
+            "Dobierz fluorocarbon lub przypon mono do przejrzystości wody i rodzaju zestawu.",
+        ),
+        (
+            "https://webep1.com/go/d8ad8b8dc3",
+            "Haczyki, kotwiczki i główki jigowe",
+            "Uzupełnij zestaw o haki, kotwiczki i główki jigowe do wybranej techniki.",
+        ),
+        (
+            "https://webep1.com/go/8877c7e5c3",
+            "Agrafki i krętliki",
+            "Sprawdź agrafki, krętliki i kółka łącznikowe do szybkiej zmiany zestawu.",
+        ),
+        (
+            "https://webep1.com/go/663edc47c3",
+            "Podbieraki i osęki",
+            "Wybierz podbierak lub osękę, które ułatwią bezpieczne podebranie ryby.",
+        ),
+        (
+            "https://webep1.com/go/6608d83bc3",
+            "Wagi, miarki i chwytaki",
+            "Zobacz narzędzia do ważenia, mierzenia i bezpiecznego przytrzymania ryby.",
+        ),
+        (
+            "https://webep1.com/go/b1df355ec3",
+            "Pudełka i skrzynki",
+            "Uporządkuj przynęty i drobne akcesoria w pudełkach oraz skrzynkach.",
+        ),
+        (
+            "https://webep1.com/go/59f24cf1c3",
+            "Krzesełka i fotele wędkarskie",
+            "Wybierz wygodne siedzisko na dłuższe zasiadki i wyprawy nad wodę.",
+        ),
+        (
+            "https://webep1.com/go/3b181da2c3",
+            "Torby wędkarskie",
+            "Sprawdź torby do przenoszenia przynęt, akcesoriów i podstawowego wyposażenia.",
+        ),
+        (
+            "https://webep1.com/go/371f5146c3",
+            "Plecaki wędkarskie",
+            "Porównaj plecaki na mobilne wyprawy, gdy cały sprzęt musi być pod ręką.",
+        ),
+        (
+            "https://webep1.com/go/3f03d6c5c3",
+            "Sprzęt elektroniczny",
+            "Zobacz elektronikę wędkarską, która pomaga lepiej czytać wodę i planować wyprawę.",
+        ),
+    ),
 }
-
-
 def build_affiliate_links(rel):
     """Buduje jawny blok linków afiliacyjnych tylko dla skonfigurowanej strony."""
     items = AFFILIATE_LINKS.get(rel)
@@ -653,14 +764,28 @@ def build_affiliate_links(rel):
         f'<span class="affiliate-card-cta">Sprawdź w BigRiver →</span></a>'
         for url, label, description in items
     )
+    if rel == "zakupy.html":
+        eyebrow = "Zakupy ze wsparciem"
+        heading = "Sprzęt na kolejną wyprawę"
+        intro = (
+            "Zebraliśmy w jednym miejscu kategorie sprzętu, które pomagają skompletować "
+            "zestaw na różne metody łowienia. To linki afiliacyjne — kupując z linku, "
+            "wspierasz naszą stronę, a cena dla Ciebie się nie zmienia."
+        )
+    else:
+        eyebrow = "Sprzęt do metody"
+        heading = "Kompletuj feeder krok po kroku"
+        intro = (
+            "Jeśli chcesz porównać dostępne kategorie sprzętu, zacznij od tych czterech "
+            "elementów. To linki afiliacyjne — FishPoint może otrzymać prowizję, "
+            "ale cena dla Ciebie się nie zmienia."
+        )
     return (
         f'{AFFILIATE_BEGIN}<section id="afiliacja" class="affiliate-section" '
         f'aria-label="Polecane kategorie sprzętu">'
-        f'<p class="eyebrow">Sprzęt do metody</p>'
-        f'<h2>Kompletuj feeder krok po kroku</h2>'
-        f'<p>Jeśli chcesz porównać dostępne kategorie sprzętu, zacznij od tych czterech '
-        f'elementów. To linki afiliacyjne — FishPoint może otrzymać prowizję, '
-        f'ale cena dla Ciebie się nie zmienia.</p>'
+        f'<p class="eyebrow">{eyebrow}</p>'
+        f'<h2>{heading}</h2>'
+        f'<p>{intro}</p>'
         f'<div class="affiliate-grid">{cards}</div>'
         f'</section>{AFFILIATE_END}'
     )

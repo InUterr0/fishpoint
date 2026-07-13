@@ -218,6 +218,10 @@
 - [Metoda spławikowa](https://fish-point.pl/techniki/splawik.html): Poradnik FishPoint o metodzie spławikowej: odmiany (bat, bolonka, match, tyczka), gruntowanie i sondowanie, budowa i wyważenie zestawu, prezentacja przynęty w nurcie, zanęcanie, przynęty na ryby białe oraz taktyka na różne pory roku.
 - [Trolling](https://fish-point.pl/techniki/trolling.html): Poradnik FishPoint o trollingu: zasady metody, wędki i multiplikatory z licznikiem, woblery głęboko schodzące, down rigger i planer boards, prędkość i trasa holowania, echosonda, przepisy w Polsce, trolling morski na Bałtyku i jeziorowy oraz bezpieczeństwo na łodzi.
 
+## Zakupy.html
+
+- [Zakupy wędkarskie](https://fish-point.pl/zakupy.html): Zebrane w jednym miejscu kategorie sprzętu wędkarskiego: gotowe zestawy, wędki, przynęty, akcesoria, torby i elektronika. Kupując z linku afiliacyjnego, wspierasz FishPoint.
+
 ## Zgodnie-z-zasadami.html
 
 - [Zgodnie z zasadami](https://fish-point.pl/zgodnie-z-zasadami.html): Przepisy wędkarskie w jednym miejscu: ustawa o rybactwie śródlądowym, rozporządzenie o wymiarach i okresach ochronnych, Regulamin Amatorskiego Połowu Ryb PZW, karta wędkarska, zezwolenia i kontrola. Opisy, wyciągi, oficjalne linki i dokumenty do pobrania.
