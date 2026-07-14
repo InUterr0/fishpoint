@@ -724,6 +724,67 @@ AFFILIATE_LINKS = {
             "Uzupełnij zestaw o haki, agrafki, ciężarki i drobne wyposażenie.",
         ),
     ),
+    "techniki/feeder.html": (
+        (
+            "https://webep1.com/go/bbf47570c3",
+            "Koszyki feederowe",
+            "Porównaj koszyki do wody stojącej i rzeki, biorąc pod uwagę masę, dno oraz siłę nurtu.",
+        ),
+        (
+            "https://webep1.com/go/fee88a95c3",
+            "Zanęty",
+            "Sprawdź zanęty, gliny i dodatki do przygotowania mieszanki feederowej.",
+        ),
+    ),
+    "techniki/karpiowanie.html": (
+        (
+            "https://webep1.com/go/6ff7647bc3",
+            "Kulki i pellety",
+            "Porównaj kulki proteinowe i pellety do nęcenia oraz prezentacji przynęty.",
+        ),
+    ),
+    "poradniki/echosondy.html": (
+        (
+            "https://webep1.com/go/3f03d6c5c3",
+            "Sprzęt elektroniczny",
+            "Zobacz echosondy i elektronikę pomagającą rozpoznać głębokość oraz ukształtowanie dna.",
+        ),
+    ),
+    "techniki/spinning.html": (
+        (
+            "https://webep1.com/go/89081d9c3",
+            "Wędki spinningowe",
+            "Porównaj długość i ciężar wyrzutu wędki z przynętami oraz gatunkiem, który chcesz łowić.",
+        ),
+    ),
+    "aktualnosci/zylka-czy-plecionka.html": (
+        (
+            "https://webep1.com/go/e7918164c3",
+            "Żyłki, plecionki i fluorocarbon",
+            "Porównaj rodzaje linek według metody, średnicy, rozciągliwości i warunków łowiska.",
+        ),
+    ),
+    "aktualnosci/street-fishing-od-czego-zaczac.html": (
+        (
+            "https://webep1.com/go/371f5146c3",
+            "Plecaki wędkarskie",
+            "Sprawdź plecaki ułatwiające mobilne łowienie i szybkie przemieszczanie się między miejscówkami.",
+        ),
+    ),
+    "aktualnosci/jerki-na-szczupaka-poradnik.html": (
+        (
+            "https://webep1.com/go/89081d9c3",
+            "Wędki spinningowe",
+            "Porównaj mocniejsze wędki pod ciężar jerków i sposób prowadzenia przynęty.",
+        ),
+    ),
+    "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html": (
+        (
+            "https://webep1.com/go/fe23f399c3",
+            "Gotowy zestaw spinningowy",
+            "Porównaj gotowe zestawy, jeśli chcesz zacząć bez dobierania każdego elementu osobno.",
+        ),
+    ),
     "zakupy.html": (
         (
             "https://webep1.com/go/b39ea55c3",
@@ -859,11 +920,11 @@ def build_affiliate_links(rel):
             "wspierasz naszą stronę, a cena dla Ciebie się nie zmienia."
         )
     else:
-        eyebrow = "Sprzęt do metody"
-        heading = "Kompletuj feeder krok po kroku"
+        eyebrow = "Sprzęt do poradnika"
+        heading = "Porównaj pasujące kategorie sprzętu"
         intro = (
-            "Jeśli chcesz porównać dostępne kategorie sprzętu, zacznij od tych czterech "
-            "elementów. To linki afiliacyjne — FishPoint może otrzymać prowizję, "
+            "Poniższe kategorie odpowiadają sprzętowi omawianemu w tym poradniku. "
+            "To linki afiliacyjne — FishPoint może otrzymać prowizję, "
             "ale cena dla Ciebie się nie zmienia."
         )
     return (
