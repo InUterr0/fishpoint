@@ -750,16 +750,9 @@ AFFILIATE_LINKS = {
     ),
     "techniki/karpiowanie.html": (
         (
-            "https://webep1.com/go/6ff7647bc3",
+            "https://webep1.com/go/6608d83bc3",
             "Kulki i pellety",
             "Porównaj kulki proteinowe i pellety do nęcenia oraz prezentacji przynęty.",
-        ),
-    ),
-    "poradniki/echosondy.html": (
-        (
-            "https://webep1.com/go/3f03d6c5c3",
-            "Sprzęt elektroniczny",
-            "Zobacz echosondy i elektronikę pomagającą rozpoznać głębokość oraz ukształtowanie dna.",
         ),
     ),
     "techniki/spinning.html": (
@@ -778,7 +771,7 @@ AFFILIATE_LINKS = {
     ),
     "aktualnosci/street-fishing-od-czego-zaczac.html": (
         (
-            "https://webep1.com/go/371f5146c3",
+            "https://webep1.com/go/92f2af80c3",
             "Plecaki wędkarskie",
             "Sprawdź plecaki ułatwiające mobilne łowienie i szybkie przemieszczanie się między miejscówkami.",
         ),
@@ -792,7 +785,7 @@ AFFILIATE_LINKS = {
     ),
     "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html": (
         (
-            "https://webep1.com/go/fe23f399c3",
+            "https://webep1.com/go/3b181da2c3",
             "Gotowy zestaw spinningowy",
             "Porównaj gotowe zestawy, jeśli chcesz zacząć bez dobierania każdego elementu osobno.",
         ),
@@ -804,7 +797,7 @@ AFFILIATE_LINKS = {
             "Porównaj typy przynęt dopiero po określeniu gatunku, łowiska i sposobu prowadzenia.",
         ),
         (
-            "https://webep1.com/go/d3253924c3",
+            "https://webep1.com/go/8877c7e5c3",
             "Woblery",
             "Sprawdź pracę i głębokość prowadzenia woblerów pod warunki opisane w poradniku.",
         ),
@@ -837,19 +830,19 @@ AFFILIATE_LINKS = {
     ),
     "aktualnosci/na-co-bierze-karp-latem.html": (
         (
-            "https://webep1.com/go/6ff7647bc3",
+            "https://webep1.com/go/6608d83bc3",
             "Kulki i pellety",
             "Porównaj średnice i smaki kulek oraz pelletów do wybranego sposobu nęcenia.",
         ),
     ),
     "aktualnosci/karp-w-upaly-taktyka-na-lipiec.html": (
         (
-            "https://webep1.com/go/6ff7647bc3",
+            "https://webep1.com/go/6608d83bc3",
             "Kulki i pellety",
             "Dobierz ilość i rozmiar przynęty do temperatury, presji ryb i tempa żerowania.",
         ),
         (
-            "https://webep1.com/go/9ce264e7c3",
+            "https://webep1.com/go/b1df355ec3",
             "Wędki karpiowe",
             "Porównaj wędki dopiero po określeniu dystansu, masy zestawu i charakteru łowiska.",
         ),
@@ -873,12 +866,12 @@ AFFILIATE_LINKS = {
     ),
     "aktualnosci/relacja-nocna-zasiadka.html": (
         (
-            "https://webep1.com/go/9ce264e7c3",
+            "https://webep1.com/go/b1df355ec3",
             "Wędki karpiowe",
             "Porównaj parametry wędki z dystansem i masą zestawów opisanych w relacji.",
         ),
         (
-            "https://webep1.com/go/6ff7647bc3",
+            "https://webep1.com/go/6608d83bc3",
             "Kulki i pellety",
             "Sprawdź przynęty do punktowego, oszczędnego nęcenia na dłuższej zasiadce.",
         ),
@@ -895,7 +888,7 @@ AFFILIATE_LINKS = {
             "Sprawdź wędki feederowe według dystansu, koszyka i rodzaju łowiska.",
         ),
         (
-            "https://webep1.com/go/9ce264e7c3",
+            "https://webep1.com/go/b1df355ec3",
             "Wędki karpiowe",
             "Dobierz wędkę karpiową do dystansu, masy zestawu i techniki wywożenia.",
         ),
@@ -912,7 +905,7 @@ AFFILIATE_LINKS = {
             "Sprawdź pojemność szpuli i nawój pod dystans łowienia feederem.",
         ),
         (
-            "https://webep1.com/go/86ac9324c3",
+            "https://webep1.com/go/59f24cf1c3",
             "Kołowrotki karpiowe",
             "Dobierz kołowrotek karpiowy do dystansu, żyłki i masy całego zestawu.",
         ),
@@ -954,114 +947,109 @@ AFFILIATE_LINKS = {
     ),
     "zakupy.html": (
         (
-            "https://webep1.com/go/b39ea55c3",
+            "https://webep1.com/go/3f03d6c5c3",
             "Gotowy zestaw feederowy",
             "Porównaj gotowe zestawy feederowe, gdy chcesz zacząć bez kompletowania każdego elementu osobno.",
         ),
         (
-            "https://webep1.com/go/92f2af80c3",
+            "https://webep1.com/go/371f5146c3",
             "Gotowy zestaw method feeder",
             "Sprawdź gotowe zestawy method feeder do łowienia z koszykiem i zanętą.",
         ),
         (
-            "https://webep1.com/go/fe23f399c3",
+            "https://webep1.com/go/3b181da2c3",
             "Gotowy zestaw spinningowy",
             "Zobacz gotowe zestawy spinningowe na pierwsze wyprawy za drapieżnikami.",
         ),
         (
-            "https://webep1.com/go/86ac9324c3",
+            "https://webep1.com/go/59f24cf1c3",
             "Kołowrotki karpiowe",
             "Porównaj kołowrotki karpiowe dopasowane do cięższych zestawów i dużych dystansów.",
         ),
         (
-            "https://webep1.com/go/9ce264e7c3",
+            "https://webep1.com/go/b1df355ec3",
             "Wędki karpiowe",
             "Wybierz wędki karpiowe pod długość rzutu, ciężar zestawu i sposób łowienia.",
         ),
         (
-            "https://webep1.com/go/6ff7647bc3",
+            "https://webep1.com/go/6608d83bc3",
             "Kulki i pellety",
             "Sprawdź kulki proteinowe i pellety do budowania zanęty oraz przynęty.",
         ),
         (
-            "https://webep1.com/go/c8227fd2c3",
+            "https://webep1.com/go/663edc47c3",
             "Dodatki zanętowe i dipy",
             "Dobierz dodatki zanętowe i dipy do mieszanki, przynęty oraz warunków łowiska.",
         ),
         (
-            "https://webep1.com/go/d3253924c3",
+            "https://webep1.com/go/8877c7e5c3",
             "Woblery",
             "Porównaj woblery na drapieżniki według pracy, głębokości i sposobu prowadzenia.",
         ),
         (
-            "https://webep1.com/go/405fc98ac3",
+            "https://webep1.com/go/d8ad8b8dc3",
             "Błystki",
             "Zobacz błystki do aktywnego szukania okoni, szczupaków i innych drapieżników.",
         ),
         (
-            "https://webep1.com/go/4d1297a8c3",
+            "https://webep1.com/go/c70fbfc0c3",
             "Twistery",
             "Wybierz twistery do jigowania i prowadzenia przy dnie.",
         ),
         (
-            "https://webep1.com/go/4ea3bd70c3",
+            "https://webep1.com/go/74ac1044c3",
             "Jaskółki",
             "Sprawdź smukłe jaskółki do łowienia ostrożnych drapieżników.",
         ),
         (
-            "https://webep1.com/go/74ac1044c3",
+            "https://webep1.com/go/4ea3bd70c3",
             "Żyłki",
             "Porównaj żyłki pod średnicę, rozciągliwość i planowaną metodę.",
         ),
         (
-            "https://webep1.com/go/c70fbfc0c3",
+            "https://webep1.com/go/4d1297a8c3",
             "Fluorocarbon i mono",
             "Dobierz fluorocarbon lub przypon mono do przejrzystości wody i rodzaju zestawu.",
         ),
         (
-            "https://webep1.com/go/d8ad8b8dc3",
+            "https://webep1.com/go/405fc98ac3",
             "Haczyki, kotwiczki i główki jigowe",
             "Uzupełnij zestaw o haki, kotwiczki i główki jigowe do wybranej techniki.",
         ),
         (
-            "https://webep1.com/go/8877c7e5c3",
+            "https://webep1.com/go/d3253924c3",
             "Agrafki i krętliki",
             "Sprawdź agrafki, krętliki i kółka łącznikowe do szybkiej zmiany zestawu.",
         ),
         (
-            "https://webep1.com/go/663edc47c3",
+            "https://webep1.com/go/c8227fd2c3",
             "Podbieraki i osęki",
             "Wybierz podbierak lub osękę, które ułatwią bezpieczne podebranie ryby.",
         ),
         (
-            "https://webep1.com/go/6608d83bc3",
+            "https://webep1.com/go/6ff7647bc3",
             "Wagi, miarki i chwytaki",
             "Zobacz narzędzia do ważenia, mierzenia i bezpiecznego przytrzymania ryby.",
         ),
         (
-            "https://webep1.com/go/b1df355ec3",
+            "https://webep1.com/go/9ce264e7c3",
             "Pudełka i skrzynki",
             "Uporządkuj przynęty i drobne akcesoria w pudełkach oraz skrzynkach.",
         ),
         (
-            "https://webep1.com/go/59f24cf1c3",
+            "https://webep1.com/go/86ac9324c3",
             "Krzesełka i fotele wędkarskie",
             "Wybierz wygodne siedzisko na dłuższe zasiadki i wyprawy nad wodę.",
         ),
         (
-            "https://webep1.com/go/3b181da2c3",
+            "https://webep1.com/go/fe23f399c3",
             "Torby wędkarskie",
             "Sprawdź torby do przenoszenia przynęt, akcesoriów i podstawowego wyposażenia.",
         ),
         (
-            "https://webep1.com/go/371f5146c3",
+            "https://webep1.com/go/92f2af80c3",
             "Plecaki wędkarskie",
             "Porównaj plecaki na mobilne wyprawy, gdy cały sprzęt musi być pod ręką.",
-        ),
-        (
-            "https://webep1.com/go/3f03d6c5c3",
-            "Sprzęt elektroniczny",
-            "Zobacz elektronikę wędkarską, która pomaga lepiej czytać wodę i planować wyprawę.",
         ),
     ),
 }
