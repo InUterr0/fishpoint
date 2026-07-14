@@ -38,7 +38,7 @@ FISH_ENTITIES = {
     "sandacz": {"name": "Sandacz pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Sandacz_pospolity", "https://www.wikidata.org/wiki/Q146641"]},
     "okon": {"name": "Okoń pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Okoń_pospolity", "https://www.wikidata.org/wiki/Q166812"]},
     "sum": {"name": "Sum pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Sum_pospolity", "https://www.wikidata.org/wiki/Q159323"]},
-    "bolen": {"name": "Boleń", "sameAs": ["https://pl.wikipedia.org/wiki/Boleń", "https://www.wikidata.org/wiki/Q16277070"]},
+    "bolen": {"name": "Boleń pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Boleń_pospolity", "https://www.wikidata.org/wiki/Q25473019"]},
     "wegorz": {"name": "Węgorz europejski", "sameAs": ["https://pl.wikipedia.org/wiki/Węgorz_europejski", "https://www.wikidata.org/wiki/Q26387"]},
     "karp": {"name": "Karp", "sameAs": ["https://pl.wikipedia.org/wiki/Karp", "https://www.wikidata.org/wiki/Q81110"]},
     "lin": {"name": "Lin (ryba)", "sameAs": ["https://pl.wikipedia.org/wiki/Lin_(ryba)", "https://www.wikidata.org/wiki/Q76280"]},
@@ -50,15 +50,27 @@ FISH_ENTITIES = {
     "ploc": {"name": "Płoć", "sameAs": ["https://pl.wikipedia.org/wiki/Płoć", "https://www.wikidata.org/wiki/Q182976"]},
     "klen": {"name": "Kleń", "sameAs": ["https://pl.wikipedia.org/wiki/Kleń", "https://www.wikidata.org/wiki/Q26821893"]},
     "amur": {"name": "Amur biały", "sameAs": ["https://pl.wikipedia.org/wiki/Amur_biały", "https://www.wikidata.org/wiki/Q76098"]},
-    "karas": {"name": "Karaś pospolity", "sameAs": ["https://pl.wikipedia.org/wiki/Karaś_pospolity", "https://www.wikidata.org/wiki/Q194031"]},
-    "troc-losos": {"name": "Troć wędrowna", "sameAs": ["https://pl.wikipedia.org/wiki/Troć_wędrowna", "https://www.wikidata.org/wiki/Q1095355"]},
+    "karas": {
+        "name": "Karaś pospolity",
+        "sameAs": ["https://pl.wikipedia.org/wiki/Karaś_pospolity", "https://www.wikidata.org/wiki/Q194031"],
+        "additional": (
+            {"name": "Karaś srebrzysty", "sameAs": ["https://pl.wikipedia.org/wiki/Karaś_srebrzysty", "https://www.wikidata.org/wiki/Q725983"]},
+        ),
+    },
+    "troc-losos": {
+        "name": "Troć wędrowna",
+        "sameAs": ["https://pl.wikipedia.org/wiki/Troć_wędrowna", "https://www.wikidata.org/wiki/Q1095355"],
+        "additional": (
+            {"name": "Łosoś szlachetny", "sameAs": ["https://pl.wikipedia.org/wiki/Łosoś_szlachetny", "https://www.wikidata.org/wiki/Q188879"]},
+        ),
+    },
     "sielawa": {"name": "Sielawa", "sameAs": ["https://pl.wikipedia.org/wiki/Sielawa_europejska", "https://www.wikidata.org/wiki/Q754061"]},
-    "sieja": {"name": "Sieja", "sameAs": ["https://pl.wikipedia.org/wiki/Sieja", "https://www.wikidata.org/wiki/Q9336436"]},
-    "brzana": {"name": "Brzana", "sameAs": ["https://pl.wikipedia.org/wiki/Brzana", "https://www.wikidata.org/wiki/Q16290471"]},
+    "sieja": {"name": "Sieja", "sameAs": ["https://www.wikidata.org/wiki/Q1034400", "https://www.fishbase.se/summary/48236"]},
+    "brzana": {"name": "Brzana pospolita", "sameAs": ["https://pl.wikipedia.org/wiki/Brzana_pospolita", "https://www.wikidata.org/wiki/Q326219"]},
     "certa": {"name": "Certa", "sameAs": ["https://pl.wikipedia.org/wiki/Certa", "https://www.wikidata.org/wiki/Q247370"]},
     "swinka": {"name": "Świnka pospolita", "sameAs": ["https://pl.wikipedia.org/wiki/Świnka_pospolita", "https://www.wikidata.org/wiki/Q654583"]},
     "wzdrega": {"name": "Wzdręga", "sameAs": ["https://pl.wikipedia.org/wiki/Wzdręga", "https://www.wikidata.org/wiki/Q200594"]},
-    "ukleja": {"name": "Ukleja", "sameAs": ["https://pl.wikipedia.org/wiki/Ukleja", "https://www.wikidata.org/wiki/Q9364547"]},
+    "ukleja": {"name": "Ukleja pospolita", "sameAs": ["https://pl.wikipedia.org/wiki/Ukleja_pospolita", "https://www.wikidata.org/wiki/Q200473"]},
     "jesiotr": {"name": "Jesiotr ostronosy", "sameAs": ["https://pl.wikipedia.org/wiki/Jesiotr_ostronosy", "https://www.wikidata.org/wiki/Q756969"]},
     "dorsz": {"name": "Dorsz atlantycki", "sameAs": ["https://pl.wikipedia.org/wiki/Dorsz_atlantycki", "https://www.wikidata.org/wiki/Q199788"]},
     "sledz": {"name": "Śledź atlantycki", "sameAs": ["https://pl.wikipedia.org/wiki/Śledź_oceaniczny", "https://www.wikidata.org/wiki/Q2396858"]},
@@ -785,6 +797,161 @@ AFFILIATE_LINKS = {
             "Porównaj gotowe zestawy, jeśli chcesz zacząć bez dobierania każdego elementu osobno.",
         ),
     ),
+    "aktualnosci/przyneta-na-spinning.html": (
+        (
+            "https://webep1.com/go/1a035dcfc3",
+            "Przynęty sztuczne",
+            "Porównaj typy przynęt dopiero po określeniu gatunku, łowiska i sposobu prowadzenia.",
+        ),
+        (
+            "https://webep1.com/go/d3253924c3",
+            "Woblery",
+            "Sprawdź pracę i głębokość prowadzenia woblerów pod warunki opisane w poradniku.",
+        ),
+    ),
+    "aktualnosci/mikroguma-dla-poczatkujacych.html": (
+        (
+            "https://webep1.com/go/885f8602c3",
+            "Gumy i rippery",
+            "Porównaj małe gumy według kształtu, rozmiaru i planowanego obciążenia.",
+        ),
+    ),
+    "aktualnosci/okon-jesienia-mikroguma.html": (
+        (
+            "https://webep1.com/go/885f8602c3",
+            "Gumy i rippery",
+            "Dobierz rozmiar i kolor gumy do przejrzystości wody oraz aktywności okoni.",
+        ),
+    ),
+    "aktualnosci/spinning-na-szczupaka-jesienia.html": (
+        (
+            "https://webep1.com/go/89081d9c3",
+            "Wędki spinningowe",
+            "Porównaj ciężar wyrzutu i moc wędki z masą jesiennych przynęt szczupakowych.",
+        ),
+        (
+            "https://webep1.com/go/1a035dcfc3",
+            "Przynęty sztuczne",
+            "Sprawdź gumy, woblery i błystki po wybraniu głębokości oraz tempa prowadzenia.",
+        ),
+    ),
+    "aktualnosci/na-co-bierze-karp-latem.html": (
+        (
+            "https://webep1.com/go/6ff7647bc3",
+            "Kulki i pellety",
+            "Porównaj średnice i smaki kulek oraz pelletów do wybranego sposobu nęcenia.",
+        ),
+    ),
+    "aktualnosci/karp-w-upaly-taktyka-na-lipiec.html": (
+        (
+            "https://webep1.com/go/6ff7647bc3",
+            "Kulki i pellety",
+            "Dobierz ilość i rozmiar przynęty do temperatury, presji ryb i tempa żerowania.",
+        ),
+        (
+            "https://webep1.com/go/9ce264e7c3",
+            "Wędki karpiowe",
+            "Porównaj wędki dopiero po określeniu dystansu, masy zestawu i charakteru łowiska.",
+        ),
+    ),
+    "aktualnosci/zawody-feederowe-poradnik.html": (
+        (
+            "https://webep1.com/go/b371c4e1c3",
+            "Wędki feederowe",
+            "Porównaj długość i ciężar wyrzutu pod dystans oraz regulamin zawodów.",
+        ),
+        (
+            "https://webep1.com/go/c4f3584fc3",
+            "Kołowrotki feederowe",
+            "Dobierz pojemność szpuli i nawój do wędki oraz planowanej odległości łowienia.",
+        ),
+        (
+            "https://webep1.com/go/bbf47570c3",
+            "Koszyki feederowe",
+            "Sprawdź koszyki po ustaleniu rodzaju dna, uciągu i dopuszczalnego zestawu.",
+        ),
+    ),
+    "aktualnosci/relacja-nocna-zasiadka.html": (
+        (
+            "https://webep1.com/go/9ce264e7c3",
+            "Wędki karpiowe",
+            "Porównaj parametry wędki z dystansem i masą zestawów opisanych w relacji.",
+        ),
+        (
+            "https://webep1.com/go/6ff7647bc3",
+            "Kulki i pellety",
+            "Sprawdź przynęty do punktowego, oszczędnego nęcenia na dłuższej zasiadce.",
+        ),
+    ),
+    "sprzet/wedki.html": (
+        (
+            "https://webep1.com/go/89081d9c3",
+            "Wędki spinningowe",
+            "Porównaj długość, akcję i ciężar wyrzutu modeli spinningowych.",
+        ),
+        (
+            "https://webep1.com/go/b371c4e1c3",
+            "Wędki feederowe",
+            "Sprawdź wędki feederowe według dystansu, koszyka i rodzaju łowiska.",
+        ),
+        (
+            "https://webep1.com/go/9ce264e7c3",
+            "Wędki karpiowe",
+            "Dobierz wędkę karpiową do dystansu, masy zestawu i techniki wywożenia.",
+        ),
+    ),
+    "sprzet/kolowrotki.html": (
+        (
+            "https://webep1.com/go/f536215bc3",
+            "Kołowrotki spinningowe",
+            "Porównaj masę, przełożenie i hamulec do planowanego zestawu spinningowego.",
+        ),
+        (
+            "https://webep1.com/go/c4f3584fc3",
+            "Kołowrotki feederowe",
+            "Sprawdź pojemność szpuli i nawój pod dystans łowienia feederem.",
+        ),
+        (
+            "https://webep1.com/go/86ac9324c3",
+            "Kołowrotki karpiowe",
+            "Dobierz kołowrotek karpiowy do dystansu, żyłki i masy całego zestawu.",
+        ),
+    ),
+    "pierwsze-kroki/sprzet/wedki.html": (
+        (
+            "https://webep1.com/go/89081d9c3",
+            "Wędki spinningowe",
+            "Porównaj podstawowe parametry dopiero po wybraniu pierwszej metody łowienia.",
+        ),
+    ),
+    "pierwsze-kroki/sprzet/kolowrotki.html": (
+        (
+            "https://webep1.com/go/f536215bc3",
+            "Kołowrotki spinningowe",
+            "Sprawdź modele pasujące wielkością i masą do pierwszej wędki spinningowej.",
+        ),
+    ),
+    "pierwsze-kroki/sprzet/przynety.html": (
+        (
+            "https://webep1.com/go/1a035dcfc3",
+            "Przynęty sztuczne",
+            "Porównaj podstawowe rodzaje przynęt po wybraniu ryby i techniki łowienia.",
+        ),
+    ),
+    "pierwsze-kroki/sprzet/akcesoria.html": (
+        (
+            "https://webep1.com/go/1bb1a3b3c3",
+            "Akcesoria wędkarskie",
+            "Uzupełnij pierwszy zestaw tylko o akcesoria potrzebne do wybranej metody.",
+        ),
+    ),
+    "pierwsze-kroki/sprzet/zylki-plecionki.html": (
+        (
+            "https://webep1.com/go/e7918164c3",
+            "Żyłki, plecionki i fluorocarbon",
+            "Porównaj średnice i rodzaje linek po ustaleniu metody oraz wielkości ryb.",
+        ),
+    ),
     "zakupy.html": (
         (
             "https://webep1.com/go/b39ea55c3",
@@ -1062,6 +1229,71 @@ RELATED_LINKS = {
         ("/techniki/spinning.html", "Spinning na szczupaka"),
         ("/poradniki/kalendarz-bran-szczupak.html", "Kalendarz brań szczupaka"),
     ),
+    "techniki/feeder.html": (
+        ("/techniki/feeder-dla-poczatkujacych.html", "Feeder dla początkujących"),
+        ("/sprzet/wedki.html", "Jak dobrać wędkę"),
+        ("/aktualnosci/zawody-feederowe-poradnik.html", "Przygotowanie do zawodów feederowych"),
+    ),
+    "techniki/spinning.html": (
+        ("/aktualnosci/jaka-wedka-spinningowa-kupic.html", "Jak wybrać wędkę spinningową"),
+        ("/sprzet/przynety.html", "Rodzaje przynęt"),
+        ("/sprzet/plecionki-zylki.html", "Żyłka czy plecionka"),
+    ),
+    "techniki/karpiowanie.html": (
+        ("/poradniki/kalendarz-bran-karp.html", "Kalendarz brań karpia"),
+        ("/aktualnosci/na-co-bierze-karp-latem.html", "Przynęty na karpia latem"),
+        ("/aktualnosci/karp-w-upaly-taktyka-na-lipiec.html", "Karp podczas upałów"),
+    ),
+    "sprzet/wedki.html": (
+        ("/sprzet/jak-wybrac-kolowrotek.html", "Jak dobrać kołowrotek"),
+        ("/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html", "Pierwszy zestaw wędkarski"),
+        ("/narzedzia/dobor-sprzetu.html", "Dobór sprzętu"),
+    ),
+    "sprzet/kolowrotki.html": (
+        ("/sprzet/jak-wybrac-kolowrotek.html", "Dobór kołowrotka krok po kroku"),
+        ("/sprzet/plecionki-zylki.html", "Żyłki i plecionki"),
+        ("/narzedzia/dobor-sprzetu.html", "Dobór sprzętu"),
+    ),
+    "sprzet/przynety.html": (
+        ("/aktualnosci/przyneta-na-spinning.html", "Przynęta na spinning"),
+        ("/aktualnosci/jak-dobrac-gume-na-drapieznika.html", "Jak dobrać gumę"),
+        ("/aktualnosci/mikroguma-dla-poczatkujacych.html", "Mikroguma od podstaw"),
+    ),
+    "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html": (
+        ("/pierwsze-kroki/sprzet/", "Elementy pierwszego zestawu"),
+        ("/narzedzia/dobor-sprzetu.html", "Dobór sprzętu"),
+        ("/sprzet/akcesoria.html", "Akcesoria wędkarskie"),
+    ),
+    "aktualnosci/wymiary-i-okresy-ochronne-2026.html": (
+        ("/pierwsze-kroki/okresy-ochronne-wymiary.html", "Wymiary i okresy ochronne"),
+        ("/narzedzia/okresy-ochronne.html", "Sprawdź okres ochronny"),
+        ("/zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
+    ),
+    "aktualnosci/gorne-wymiary-ochronne-2026.html": (
+        ("/aktualnosci/wymiary-i-okresy-ochronne-2026.html", "Wymiary i okresy ochronne 2026"),
+        ("/narzedzia/czy-moge-zabrac-rybe.html", "Czy mogę zabrać rybę"),
+        ("/zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
+    ),
+    "aktualnosci/zezwolenia-online-2026.html": (
+        ("/pierwsze-kroki/pozwolenia-karta-wedkarska.html", "Pozwolenia i karta wędkarska"),
+        ("/narzedzia/czy-moge-zabrac-rybe.html", "Czy mogę zabrać rybę"),
+        ("/zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
+    ),
+    "aktualnosci/rekord-okonia-2026.html": (
+        ("/ryby/okon.html", "Atlas: okoń"),
+        ("/poradniki/kalendarz-bran-okon.html", "Kalendarz brań okonia"),
+        ("/techniki/spinning.html", "Spinning na okonia"),
+    ),
+    "aktualnosci/karp-w-upaly-taktyka-na-lipiec.html": (
+        ("/ryby/karp.html", "Atlas: karp"),
+        ("/poradniki/kalendarz-bran-karp.html", "Kalendarz brań karpia"),
+        ("/techniki/karpiowanie.html", "Karpiowanie od podstaw"),
+    ),
+    "aktualnosci/spinning-na-szczupaka-jesienia.html": (
+        ("/ryby/szczupak.html", "Atlas: szczupak"),
+        ("/techniki/spinning.html", "Spinning od podstaw"),
+        ("/aktualnosci/jaka-wedka-spinningowa-kupic.html", "Wybór wędki spinningowej"),
+    ),
 }
 SECTION_PAGES = {}
 
@@ -1069,12 +1301,26 @@ SECTION_PAGES = {}
 def short_title(title_txt):
     return title_txt.split(" — ")[0].split(" - ")[0]
 
+def fish_about(fish):
+    """Zwraca jedną encję Thing albo listę encji dla kart wielotaksonowych."""
+    entities = [
+        {"@type": "Thing", "name": fish["name"], "sameAs": fish["sameAs"]},
+        *(
+            {"@type": "Thing", "name": item["name"], "sameAs": item["sameAs"]}
+            for item in fish.get("additional", ())
+        ),
+    ]
+    return entities[0] if len(entities) == 1 else entities
+
 
 def article_text(src):
-    """Czysty tekst artykułu (z <article class="article-card">) — do wordCount
-    i llms-full.txt. Usuwa skrypty, style, TOC i znaczniki."""
-    m = re.search(r'<article class="article-card">(.*?)</article>', src, re.S)
-    chunk = m.group(1) if m else src
+    """Czysty tekst semantycznej treści — do wordCount i llms-full.txt."""
+    article = re.search(r'<article class="article-card">(.*?)</article>', src, re.S)
+    main = re.search(r"<main\b[^>]*>(.*?)</main>", src, re.S)
+    match = article or main
+    if not match:
+        return ""
+    chunk = match.group(1)
     chunk = re.sub(r"<script.*?</script>", " ", chunk, flags=re.S)
     chunk = re.sub(r"<style.*?</style>", " ", chunk, flags=re.S)
     chunk = toc_re.sub(" ", chunk)
@@ -1082,6 +1328,7 @@ def article_text(src):
     chunk = related_re.sub(" ", chunk)
     chunk = newsletter_re.sub(" ", chunk)
     chunk = giscus_re.sub(" ", chunk)
+    chunk = affiliate_re.sub(" ", chunk)
     return re.sub(r"\s+", " ", _clean(chunk)).strip()
 
 
@@ -1264,7 +1511,7 @@ def collect_images(src, page_dir):
         if s.startswith("data:"):
             continue
         img_path = resolve_img(s, page_dir)
-        u = img_path if img_path.startswith("http") else BASE + img_path
+        u = absolute_url(img_path)
         if u in seen:
             continue
         seen.add(u)
@@ -1282,6 +1529,12 @@ def rel_url(path):
     if rel.endswith("/index.html"):
         return "/" + rel[: -len("index.html")]
     return "/" + rel
+
+def absolute_url(value):
+    """Normalizuje zewnętrzny URL albo publiczną ścieżkę do adresu absolutnego."""
+    if value.startswith(("http://", "https://")):
+        return value
+    return BASE + (value if value.startswith("/") else "/" + value)
 
 
 def resolve_img(src, page_dir):
@@ -1396,7 +1649,7 @@ def build(path):
     rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
     # Ujednolic sezonowa etykiete w hero: publikacja w lipcu nie udaje wrzesniowej daty.
     src = src.replace("wrzesień 2026", "sezon jesienny 2026")
-    url = BASE + rel_url(path)
+    url = absolute_url(rel_url(path))
 
     # obrazek OG: pierwszy <img> w treści, inaczej domyślny
     page_dir = os.path.dirname(path)
@@ -1420,7 +1673,7 @@ def build(path):
     m_og = re.search(r"<!--\s*og-image:\s*([^\s>]+?)\s*-->", src)
     if m_og:
         img_path = m_og.group(1)
-    img_url = BASE + img_path
+    img_url = absolute_url(img_path)
     page_images = collect_images(src, page_dir)
 
     parts = rel.split("/")
@@ -1695,14 +1948,11 @@ def build(path):
                 "@type": "ImageObject",
                 "url": img_url,
                 "contentUrl": img_url,
-                "creditText": SITE_NAME,
-                "creator": AUTHOR,
-                "copyrightNotice": f"© {SITE_NAME}",
             }
             if first_alt:
                 img_obj["caption"] = first_alt
             if fish:
-                img_obj["about"] = {"@type": "Thing", "name": fish["name"], "sameAs": fish["sameAs"]}
+                img_obj["about"] = fish_about(fish)
             posting = {
                 "@context": "https://schema.org",
                 "@type": "BlogPosting",
@@ -1747,13 +1997,9 @@ def build(path):
                             for i, s in enumerate(steps)
                         ],
                     }))
-            # Powiązanie z encją gatunku ryby (Wikipedia + Wikidata) na stronach atlasu
+            # Powiązanie z encją gatunku ryby (Wikipedia, Wikidata i FishBase).
             if fish:
-                posting["about"] = {
-                    "@type": "Thing",
-                    "name": fish["name"],
-                    "sameAs": fish["sameAs"],
-                }
+                posting["about"] = fish_about(fish)
             head.append(jsonld(posting))
 
     head.append(END)
