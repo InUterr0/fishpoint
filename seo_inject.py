@@ -1924,7 +1924,7 @@ def build(path):
                 block = "\n".join(head) + "\n"
                 new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
                 return (new_src, url, mtime, is_home or is_section_index,
-                        title_txt, desc_txt, page_images, noindex)
+                        title_txt, desc_txt, page_images, noindex, pubdate)
             slug = os.path.splitext(parts[-1])[0]
             fish = FISH_ENTITIES.get(slug) if section in ("ryby", "rodzaje-ryb") or "rodzaje-ryb" in rel else None
             # ImageObject reprezentatywny: podpis z alt pierwszego obrazu, autor
@@ -1996,7 +1996,7 @@ def build(path):
     # wstaw przed </head>
     new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
     return (new_src, url, mtime, is_home or is_section_index,
-            title_txt, desc_txt, page_images, noindex)
+            title_txt, desc_txt, page_images, noindex, pubdate)
 
 
 
@@ -2038,6 +2038,31 @@ def validate_generated_artifacts():
     import xml.etree.ElementTree as ET
     ET.fromstring(contents["sitemap.xml"])
     ET.fromstring(contents["feed.xml"])
+    import email.utils
+    feed_root = ET.fromstring(contents["feed.xml"])
+    feed_published = []
+    for item in feed_root.findall("./channel/item"):
+        link = item.findtext("link", "")
+        pub_date = item.findtext("pubDate", "")
+        rel = link.removeprefix(BASE).lstrip("/")
+        if rel.endswith("/"):
+            rel += "index.html"
+        page_path = os.path.join(ROOT, rel)
+        if not link.startswith(BASE + "/") or not os.path.isfile(page_path):
+            raise ValueError(f"feed.xml: nieznany URL wpisu {link}")
+        with open(page_path, encoding="utf-8") as f:
+            published, _modified = parse_content_meta(f.read(), page_path)
+        try:
+            rss_date = email.utils.parsedate_to_datetime(pub_date).date().isoformat()
+        except (TypeError, ValueError) as exc:
+            raise ValueError(f"feed.xml: nieprawidłowy pubDate dla {link}") from exc
+        if rss_date != published:
+            raise ValueError(
+                f"feed.xml: pubDate {rss_date} nie zgadza się z published "
+                f"{published} dla {link}")
+        feed_published.append(published)
+    if feed_published != sorted(feed_published, reverse=True):
+        raise ValueError("feed.xml: wpisy nie są posortowane od najnowszej publikacji")
     print(f"Walidacja artefaktów: ok ({len(html_paths)} stron)")
 
 
@@ -2093,12 +2118,12 @@ def main():
         if not res:
             print("POMINIĘTO (brak title/desc):", p)
             continue
-        new_src, url, mtime, is_index, title_txt, desc_txt, page_images, noindex = res
+        new_src, url, mtime, is_index, title_txt, desc_txt, page_images, noindex, pubdate = res
         with open(p, "w", encoding="utf-8") as f:
             f.write(new_src)
         if not noindex:
             section = rel_url(p).strip("/").split("/")[0] if rel_url(p) != "/" else ""
-            urls.append((url, mtime, is_index, rel_url(p), title_txt, desc_txt, section, page_images))
+            urls.append((url, mtime, is_index, rel_url(p), title_txt, desc_txt, section, page_images, pubdate))
         changed += 1
 
     # sitemap.xml (z rozszerzeniem Image — indeksacja w Grafice Google)
@@ -2109,7 +2134,7 @@ def main():
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'
           ' xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
     total_imgs = 0
-    for url, mtime, is_index, rp, _title, _desc, _sec, imgs in sorted(urls, key=lambda t: t[0]):
+    for url, mtime, is_index, rp, _title, _desc, _sec, imgs, _pubdate in sorted(urls, key=lambda t: t[0]):
         prio = "1.0" if rp == "/" else ("0.8" if is_index else "0.6")
         freq = "weekly" if is_index or rp == "/" else "monthly"
         sm.append("  <url>")
@@ -2159,7 +2184,7 @@ def main():
     ]
     by_sec = {}
     home = None
-    for url, mtime, is_index, rp, title, desc, sec, _imgs in sorted(urls):
+    for url, mtime, is_index, rp, title, desc, sec, _imgs, _pubdate in sorted(urls):
         if rp == "/":
             home = (url, title, desc)
             continue
@@ -2216,7 +2241,7 @@ def main():
             return d
 
     blog = [u for u in urls if u[6] == "aktualnosci" and not u[2]]
-    blog.sort(key=lambda t: t[1], reverse=True)
+    blog.sort(key=lambda t: t[8], reverse=True)
     rss = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
            '  <channel>',
@@ -2227,13 +2252,13 @@ def main():
            '    <language>pl-PL</language>',
            f'    <atom:link href="{BASE}/feed.xml" rel="self" type="application/rss+xml" />']
     if blog:
-        rss.append(f'    <lastBuildDate>{rfc822(blog[0][1])}</lastBuildDate>')
-    for url, mtime, _is_index, _rp, title, desc, _sec, _imgs in blog:
+        rss.append(f'    <lastBuildDate>{rfc822(max(u[1] for u in blog))}</lastBuildDate>')
+    for url, _mtime, _is_index, _rp, title, desc, _sec, _imgs, pubdate in blog:
         rss += ['    <item>',
                 f'      <title>{xesc(short_title(title))}</title>',
                 f'      <link>{url}</link>',
                 f'      <guid isPermaLink="true">{url}</guid>',
-                f'      <pubDate>{rfc822(mtime)}</pubDate>',
+                f'      <pubDate>{rfc822(pubdate)}</pubDate>',
                 f'      <description>{xesc(desc)}</description>',
                 '    </item>']
     rss += ['  </channel>', '</rss>']
