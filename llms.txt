@@ -9,11 +9,11 @@
 - [Aktualności](https://fish-point.pl/aktualnosci/): Aktualności FishPoint: poradniki, relacje znad wody i trendy sprzętowe. Sprawdź teksty o sezonie, przynętach, zestawach oraz zawodach wędkarskich.
 - [Najczęstsze błędy początkujących](https://fish-point.pl/aktualnosci/bledy-poczatkujacych.html): Najczęstsze błędy początkujących wędkarzy: przenęcanie, zbyt grube zestawy, źle ustawiony hamulec i ignorowanie przepisów. Sprawdź, jak ich unikać.
 - [Górne wymiary ochronne i „okno łowne" 2026](https://fish-point.pl/aktualnosci/gorne-wymiary-ochronne-2026.html): Górne wymiary ochronne i okno łowne: dlaczego największe ryby trzeba wypuścić, jak czytać przepisy oraz gdzie sprawdzić zasady swojej wody.
-- [Jak dobrać gumę na sandacza i szczupaka](https://fish-point.pl/aktualnosci/jak-dobrac-gume-na-drapieznika.html): Guma na sandacza i szczupaka bez tajemnic: dobór rozmiaru, kształtu przynęty, ciężaru główki jigowej, koloru do wody i montażu. Praktyczny poradnik dla spinningistów.
+- [Jak dobrać gumę na sandacza i szczupaka](https://fish-point.pl/aktualnosci/jak-dobrac-gume-na-drapieznika.html): Dobór gumy na szczupaka, sandacza i okonia: rozmiar, kolor, praca i uzbrojenie do gatunku, łowiska i pogody, test opadu oraz typowe błędy.
 - [Jak dobrać przynętę do pory roku](https://fish-point.pl/aktualnosci/jak-dobrac-przynete-do-pory-roku.html): Jak dobrać przynętę do pory roku? Sprawdź, jak temperatura wody i aktywność drapieżników wpływają na wybór gum, woblerów, obrotówek i wahadłówek.
 - [Jak łowić karasia](https://fish-point.pl/aktualnosci/jak-lowic-karasia.html): Jak łowić karasia w ciepłych, zarośniętych stawach i starorzeczach? Poznaj przynęty, delikatny zestaw spławikowy, nęcenie i miejscówki na wiosnę oraz lato.
 - [Jak łowić leszcza](https://fish-point.pl/aktualnosci/jak-lowic-leszcza.html): Jak łowić leszcza z brzegu: wybór miejsca, feeder i spławik, zanęta, przynęty, długość przyponu oraz planowanie łowienia bez obietnic pewnego wyniku.
-- [Jak łowić lina](https://fish-point.pl/aktualnosci/jak-lowic-lina.html): Lin bierze o świcie i przedpołudniem w ciepłych, zarośniętych wodach. Podpowiadamy najlepsze przynęty, miejscówki, sposób nęcenia i dobór zestawu na lina wiosną i latem.
+- [Jak łowić lina](https://fish-point.pl/aktualnosci/jak-lowic-lina.html): Jak łowić lina skuteczniej: wybór łowiska, pory dnia, zestawu spławikowego lub method feeder, przynęty, zanęcanie, brania i bezpieczne wypuszczanie.
 - [Jak łowić płoć](https://fish-point.pl/aktualnosci/jak-lowic-ploc.html): Jak łowić płoć z brzegu: wybór spławika lub lekkiego feedera, miejsce, zanęta, przynęty, prowadzenie zestawu i typowe błędy początkujących.
 - [Jak łowić sandacza jesienią](https://fish-point.pl/aktualnosci/jak-lowic-sandacza-jesienia.html): Jak złowić sandacza jesienią? Praktyczny poradnik: spinning na sandacza, jigowanie przy dnie, dobór gum i główek, miejsca, pory doby i najlepsze brania roku.
 - [Jaką wędkę spinningową kupić? Poradnik FishPoint](https://fish-point.pl/aktualnosci/jaka-wedka-spinningowa-kupic.html): Jaka wędka spinningowa dla początkujących i na kolejny sprzęt? Poradnik zakupowy: długość, ciężar wyrzutu, akcja i dobór pod okonia, szczupaka i sandacza.
@@ -26,7 +26,7 @@
 - [Na co bierze karp latem](https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html): Na co bierze karp latem? Sprawdź kulki proteinowe, kukurydzę, pelety i method feeder oraz taktykę nęcenia, dobór miejsca i pory żerowania w upały.
 - [Okoń jesienią: mikroguma i drop shot | FishPoint](https://fish-point.pl/aktualnosci/okon-jesienia-mikroguma.html): Okoń jesienią na mikrogumę i drop shot: jak znaleźć kotły i ławice, dobrać jig, gumki i UL, prowadzić przynętę i rozgrzać branie. Praktyczny poradnik spinningowy.
 - [Przegląd nowości sezonu 2026](https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html): Trendy sezonu 2026: lżejsze blanki, finezyjny spinning, rozwój feedera, elektronika, echosondy brzegowe i akcesoria do bezpiecznego obchodzenia się z rybą.
-- [Jaka przynęta na spinning](https://fish-point.pl/aktualnosci/przyneta-na-spinning.html): Jaka przynęta na spinning? Przegląd gum, woblerów, błystek i zestawów jigowych oraz dobór do okonia, szczupaka i sandacza — kolor, ciężar i sezon. Praktyczny poradnik.
+- [Jaka przynęta na spinning](https://fish-point.pl/aktualnosci/przyneta-na-spinning.html): Przynęty spinningowe na szczupaka, okonia, sandacza i bolenia: dobór gum, woblerów, obrotówek, rozmiaru, koloru, prowadzenia oraz błędy do uniknięcia.
 - [Rekordowy okoń](https://fish-point.pl/aktualnosci/rekord-okonia-2026.html): Według zestawień wędkarskich Zbigniew Czarny złowił okonia 52 cm i 2,76 kg 23 grudnia 2025 r. Sprawdź, co ten wynik mówi o łowieniu dużych okoni zimą.
 - [Rekordowy sum 292 cm z Zalewu Rybnickiego](https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html): Sum długości 292 cm z Zalewu Rybnickiego złowiony na spinning z łodzi został wypuszczony po pomiarze. Sprawdź, jak łowi się takie sumy i czemu liczy się długość.
 - [Nocna zasiadka karpiowa](https://fish-point.pl/aktualnosci/relacja-nocna-zasiadka.html): Relacja FishPoint z nocnej zasiadki karpiowej na żwirowni: sondowanie, nęcenie, oczekiwanie na brania i praktyczne wnioski o taktyce, sprzęcie oraz rybach.
@@ -86,10 +86,10 @@
 ## Narzędzia
 
 - [Narzędzia wędkarskie](https://fish-point.pl/narzedzia/): Interaktywne narzędzia wędkarskie FishPoint: tabela okresów ochronnych i wymiarów, kalendarz brań, kreator doboru sprzętu i klucz do rozpoznawania ryb.
-- [Czy mogę legalnie zabrać złowioną rybę? | FishPoint](https://fish-point.pl/narzedzia/czy-moge-zabrac-rybe.html): Sprawdź w kilka sekund, czy wolno zabrać złowioną rybę: wybierz gatunek, podaj datę i długość, a kalkulator porówna je z orientacyjnym wymiarem i okresem ochronnym PZW.
+- [Czy mogę legalnie zabrać złowioną rybę? | FishPoint](https://fish-point.pl/narzedzia/czy-moge-zabrac-rybe.html): Sprawdź, czy możesz zabrać rybę: limity, wymiary i okresy ochronne, regulamin łowiska, zezwolenie, dokumenty i prosta checklista decyzji.
 - [Kreator doboru sprzętu wędkarskiego | FishPoint](https://fish-point.pl/narzedzia/dobor-sprzetu.html): Interaktywny kreator doboru sprzętu: wybierz rybę, rodzaj wody i poziom zaawansowania, a otrzymasz gotowy zestaw — wędka, kołowrotek, żyłka lub plecionka.
 - [Interaktywny kalendarz brań](https://fish-point.pl/narzedzia/kalendarz-bran.html): Interaktywny kalendarz brań: heatmapa aktywności szczupaka, sandacza, okonia, suma, karpia, leszcza, płoci, lina, węgorza i pstrąga w każdym miesiącu roku.
-- [Kalendarz księżycowy brań ryb](https://fish-point.pl/narzedzia/kalendarz-ksiezycowy.html): Sprawdź fazę Księżyca na wybrany dzień i 7-dniową prognozę brań według teorii solunarnej. Nów i pełnia tradycyjnie oznaczają najlepsze dni na ryby — zobacz kalendarz.
+- [Kalendarz księżycowy brań ryb](https://fish-point.pl/narzedzia/kalendarz-ksiezycowy.html): Sprawdź przybliżoną fazę Księżyca i 7-dniową ocenę według teorii solunarnej. Wynik to ciekawostka, nie prognoza brań; ważniejsze są warunki nad wodą.
 - [Kalkulator wagi ryby z długości](https://fish-point.pl/narzedzia/kalkulator-wagi-ryby.html): Oblicz orientacyjną wagę ryby na podstawie długości (i opcjonalnie obwodu). Kalkulator dla szczupaka, karpia, sandacza, leszcza i innych gatunków — szybki.
 - [Okresy ochronne i wymiary ryb](https://fish-point.pl/narzedzia/okresy-ochronne.html): Interaktywna, filtrowana tabela okresów ochronnych, wymiarów ochronnych i limitów dobowych najważniejszych ryb w Polsce. Szukaj po nazwie, filtruj po kategorii.
 - [Prognoza brań z pogody na dziś i weekend | FishPoint](https://fish-point.pl/narzedzia/prognoza-bran.html): Prognoza brań na żywo dla Twojej okolicy: indeks aktywności ryb liczony z pogody, ciśnienia i jego trendu, wiatru, zachmurzenia oraz fazy księżyca na dziś.
@@ -153,11 +153,11 @@
 
 ## Atlas ryb
 
-- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas ryb FishPoint: 30 gatunki polskich wód w trzech grupach — drapieżniki (szczupak, sandacz, sum, okoń, boleń, węgorz), ryby spokojnego żeru (karp, lin.
+- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas 30 gatunków ryb polskich wód: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary, porównania i źródła dla każdej karty.
 - [Amur](https://fish-point.pl/ryby/amur.html): Amur biały (Ctenopharyngodon idella) w atlasie FishPoint: rozpoznawanie, introdukcja z Azji Wschodniej, żerowanie roślinożercy, regulaminy łowisk, przynęty.
 - [Belona](https://fish-point.pl/ryby/belona.html): Belona (Belone belone) — morska ryba Bałtyku o wydłużonym dziobie i zielonych ościach. Rozpoznawanie, majowe podejścia za śledziem, spinning i spławik z plaży.
 - [Boleń](https://fish-point.pl/ryby/bolen.html): Boleń (Leuciscus aspius) w atlasie FishPoint: jedyny drapieżny karpiowaty polskich rzek. Rozpoznawanie, siedliska, tarło, żerowanie sezonowe, orientacyjne.
-- [Brzana](https://fish-point.pl/ryby/brzana.html): Brzana (Barbus barbus) w atlasie FishPoint: ryba reofilna krainy brzany, prąd i kamieniste dno, feeder i grunt na rzece, tarło, wędrówki oraz uwaga — ikra jest trująca.
+- [Brzana](https://fish-point.pl/ryby/brzana.html): Brzana: rozpoznawanie, siedlisko, tarło, okres i wymiar ochronny, metody połowu, zestaw gruntowy, przynęty, pora brań i bezpieczne wypuszczanie.
 - [Certa](https://fish-point.pl/ryby/certa.html): Certa (Vimba vimba) — atlas ryb FishPoint: rozpoznawanie, wędrówki na tarło, łowienie na Wiśle i dużych rzekach feederem i spławikiem, przynęty, taktyka i kuchnia.
 - [Dorsz](https://fish-point.pl/ryby/dorsz.html): Dorsz bałtycki (Gadus morhua) w atlasie FishPoint: rozpoznawanie, biologia i tarło, kryzys populacji wschodniej, połów morski z kutra i brzegu, pilkery i gumy.
 - [Flądra (stornia)](https://fish-point.pl/ryby/fladra.html): Flądra (stornia) w atlasie FishPoint: płaska ryba przydenna Bałtyku, łowienie z plaży i mola na zestaw gruntowy z piaskówką, sezon jesienny, ujścia rzek.
@@ -174,14 +174,14 @@
 - [Płoć](https://fish-point.pl/ryby/ploc.html): Płoć Rutilus rutilus w atlasie FishPoint: jak odróżnić ją od wzdręgi i jazia, biologia i tarło, żerowanie w ciągu roku, przepisy PZW, zestawy spławikowe.
 - [Pstrąg potokowy](https://fish-point.pl/ryby/pstrag.html): Pstrąg potokowy w atlasie FishPoint: rozpoznawanie, środowisko górskich rzek, tarło, metody muchowe i spinningowe, orientacyjne wymiary i okresy ochronne PZW.
 - [Sandacz](https://fish-point.pl/ryby/sandacz.html): Sandacz (Sander lucioperca) w atlasie FishPoint: rozpoznawanie, środowisko, tarło, żerowanie w sezonach, orientacyjne wymiary i okresy ochronne PZW, metody.
-- [Sieja](https://fish-point.pl/ryby/sieja.html): Sieja (Coregonus maraena) w atlasie FishPoint: biologia, występowanie w polskich jeziorach północnych, reintrodukcja, tarło jesienno-zimowe, status ochronny i metody.
+- [Sieja](https://fish-point.pl/ryby/sieja.html): Sieja: rozpoznawanie, siedlisko, tarło, wymiar i okres ochronny, zasady połowu, metody, przynęty oraz bezpieczne wypuszczanie.
 - [Sielawa](https://fish-point.pl/ryby/sielawa.html): Sielawa (Coregonus albula): rozpoznawanie, biologia, jesienne tarło, występowanie w polskich jeziorach, metody połowu, przynęty, przepisy i wartość kulinarna.
 - [Śledź](https://fish-point.pl/ryby/sledz.html): Śledź bałtycki (Clupea harengus membras): rozpoznawanie, wiosenne ławice pod brzegiem, łowienie na choinkę z portów, sezonowość, kulinaria i przepisy morskie.
 - [Sum europejski: czy ma zęby?](https://fish-point.pl/ryby/sum.html): Czy sum ma zęby? Tak — ma drobne, szczotkowate zęby. Poznaj suma europejskiego: rozpoznawanie, siedliska, tarło, sprzęt, metody połowu i przepisy PZW.
 - [Świnka](https://fish-point.pl/ryby/swinka.html): Świnka (Chondrostoma nasus) w atlasie FishPoint: stadna ryba czystych rzek o twardym dnie, dolny poprzeczny pysk, kraina brzany i lipienia, wiosenne tarło.
 - [Szczupak](https://fish-point.pl/ryby/szczupak.html): Szczupak (Esox lucius) w atlasie FishPoint: rozpoznawanie, stanowiska w jeziorach i rzekach, tarło, żerowanie w sezonach, orientacyjny wymiar i okres ochronny.
 - [Troć i łosoś](https://fish-point.pl/ryby/troc-losos.html): Troć wędrowna i łosoś atlantycki w atlasie FishPoint: jak je odróżnić, rzeki pomorskie i Wisła, anadromiczne wędrówki i tarło, spinning rzeczny, zezwolenia.
-- [Ukleja](https://fish-point.pl/ryby/ukleja.html): Ukleja Alburnus alburnus w atlasie FishPoint: srebrzysta ryba przypowierzchniowa, jej rola w łańcuchu pokarmowym, łowienie na lekki spławik i „na ślinę
+- [Ukleja](https://fish-point.pl/ryby/ukleja.html): Ukleja: rozpoznawanie, występowanie, tarło, zasady połowu, lekki zestaw spławikowy, przynęty, zanęcanie oraz bezpieczne obchodzenie się z rybą.
 - [Węgorz](https://fish-point.pl/ryby/wegorz.html): Węgorz europejski (Anguilla anguilla) w atlasie FishPoint: niezwykła biologia i wędrówka na Morze Sargassowe, status gatunku krytycznie zagrożonego.
 - [Wzdręga](https://fish-point.pl/ryby/wzdrega.html): Wzdręga (Scardinius erythrophthalmus) w atlasie FishPoint: jak odróżnić ją od płoci, biologia i tarło, żerowanie latem, łowienie spławikowe przy powierzchni.
 

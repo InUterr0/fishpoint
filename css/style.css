@@ -308,6 +308,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .equipment-grid { grid-template-columns: repeat(3, 1fr); }
 .category-card { display: block; }
+[hidden] { display: none !important; }
 
 /* Karuzela kategorii na stronie głównej */
 .carousel-wrap { position: relative; }

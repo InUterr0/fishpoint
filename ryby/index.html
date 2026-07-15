@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="pl">
 <head>
-    <!--content-meta: published=2026-06-11; modified=2026-07-13-->
+    <!--content-meta: published=2026-06-11; modified=2026-07-14-->
 <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Atlas ryb polskich wód — FishPoint</title>
-  <meta name="description" content="Atlas ryb FishPoint: 30 gatunki polskich wód w trzech grupach — drapieżniki (szczupak, sandacz, sum, okoń, boleń, węgorz), ryby spokojnego żeru (karp, lin." />
+  <meta name="description" content="Atlas 30 gatunków ryb polskich wód: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary, porównania i źródła dla każdej karty." />
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-400-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-400-latin-ext.woff2" crossorigin>
-<link rel="stylesheet" href="../css/style.css?v=c1af2dee" />
+<link rel="stylesheet" href="../css/style.css?v=4148cb86" />
   <!-- seo:meta begin (auto) -->
   <link rel="canonical" href="https://fish-point.pl/ryby/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -23,12 +23,12 @@
   <meta property="og:locale" content="pl_PL" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Atlas ryb polskich wód — FishPoint" />
-  <meta property="og:description" content="Atlas ryb FishPoint: 30 gatunki polskich wód w trzech grupach — drapieżniki (szczupak, sandacz, sum, okoń, boleń, węgorz), ryby spokojnego żeru (karp, lin." />
+  <meta property="og:description" content="Atlas 30 gatunków ryb polskich wód: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary, porównania i źródła dla każdej karty." />
   <meta property="og:url" content="https://fish-point.pl/ryby/" />
   <meta property="og:image" content="https://fish-point.pl/assets/img/tematy/wedki.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Atlas ryb polskich wód — FishPoint" />
-  <meta name="twitter:description" content="Atlas ryb FishPoint: 30 gatunki polskich wód w trzech grupach — drapieżniki (szczupak, sandacz, sum, okoń, boleń, węgorz), ryby spokojnego żeru (karp, lin." />
+  <meta name="twitter:description" content="Atlas 30 gatunków ryb polskich wód: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary, porównania i źródła dla każdej karty." />
   <meta name="twitter:image" content="https://fish-point.pl/assets/img/tematy/wedki.jpg" />
   <script type="application/ld+json">
 {
@@ -55,7 +55,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Atlas ryb polskich wód — FishPoint",
-  "description": "Atlas ryb FishPoint: 30 gatunki polskich wód w trzech grupach — drapieżniki (szczupak, sandacz, sum, okoń, boleń, węgorz), ryby spokojnego żeru (karp, lin.",
+  "description": "Atlas 30 gatunków ryb polskich wód: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary, porównania i źródła dla każdej karty.",
   "url": "https://fish-point.pl/ryby/",
   "inLanguage": "pl-PL",
   "isPartOf": {
@@ -263,7 +263,23 @@
 <main>
 <section class="subpage-hero"><div class="container"><p class="eyebrow">Atlas ryb</p><h1>Atlas ryb polskich wód</h1><p>Trzydzieści kart atlasu, które najczęściej spotkasz nad polską wodą — od szczupaka i sandacza po lipienia i miętusa. Każda karta gatunku to długi, rzetelny opis: rozpoznawanie, środowisko, biologia i tarło, żerowanie według pór roku, orientacyjne wymiary i okresy ochronne PZW, metody, taktyka, rekordy oraz zasady kuchni i C&amp;R. Wymiary i limity zawsze weryfikuj w aktualnym regulaminie swojego okręgu.</p></div></section>
 
-<section class="section container">
+<section class="section container" aria-labelledby="atlas-nawigacja">
+  <h2 id="atlas-nawigacja">Znajdź kartę gatunku</h2>
+  <form id="fish-atlas-controls" class="info-block" action="#atlas-karty">
+    <p><label for="fish-atlas-search">Szukaj po nazwie lub aliasie</label><br><input id="fish-atlas-search" name="q" type="search" autocomplete="off" /></p>
+    <fieldset><legend>Grupa atlasu</legend>
+      <label><input type="radio" name="fish-group" value="all" checked /> Wszystkie</label>
+      <label><input type="radio" name="fish-group" value="drapiezniki" /> Drapieżniki</label>
+      <label><input type="radio" name="fish-group" value="spokojny" /> Ryby spokojnego żeru</label>
+      <label><input type="radio" name="fish-group" value="lososiowate" /> Łososiowate i inne</label>
+      <label><input type="radio" name="fish-group" value="morskie" /> Morskie</label>
+    </fieldset>
+    <nav id="fish-alphabet" aria-label="Alfabet nazw ryb"></nav>
+    <p id="fish-atlas-count" role="status" aria-live="polite">Pokazano 30 z 30 kart atlasu.</p>
+    <noscript><p>Wyszukiwanie i filtry wymagają JavaScriptu; poniżej pozostają dostępne wszystkie karty atlasu.</p></noscript>
+  </form>
+</section>
+<section id="atlas-karty" class="section container">
   <h2>Drapieżniki</h2>
   <p>Ryby polujące na inne ryby — domena spinningu, żywca i martwej rybki. Wspólny mianownik: przypony odporne na zęby, mocniejszy sprzęt i czytanie wody pod kątem zasadzek oraz krawędzi.</p>
   <div class="category-grid equipment-grid">
@@ -272,7 +288,7 @@
     <a class="category-card" href="okon.html"><span class="icon">🦓</span><h3>Okoń</h3><p>Pręgowany drapieżnik stadny, wdzięczny cel lekkiego spinningu. Mikrogumy, obrotówki i łowienie przez cały rok, także spod lodu.</p></a>
     <a class="category-card" href="sum.html"><span class="icon">🐋</span><h3>Sum</h3><p>Największa ryba polskich wód — wąsaty olbrzym dużych rzek i zbiorników. Mocny sprzęt, nocne żerowanie, kwok i gruntówka.</p></a>
     <a class="category-card" href="bolen.html"><span class="icon">💨</span><h3>Boleń</h3><p>Jeden z nielicznych karpiowatych o wyraźnie rybożernej diecie dorosłych: spektakularne „bicie” uklei przy powierzchni, dalekie rzuty i szybkie prowadzenie wąskich przynęt.</p></a>
-    <a class="category-card" href="wegorz.html"><span class="icon">🪱</span><h3>Węgorz</h3><p>Tajemniczy wędrowiec rodzący się w Morzu Sargassowym. Nocna gruntówka na rosówki i status gatunku krytycznie zagrożonego.</p></a>
+    <a class="category-card" href="wegorz.html"><span class="icon">🪱</span><h3>Węgorz</h3><p>Węgorz europejski odbywa rozród w oceanie; jego globalna ocena IUCN opisuje stan gatunku, nie zasady połowu na konkretnej wodzie. Obserwacje nocne i wybór metody zawsze zależą od aktualnego regulaminu.</p></a>
   </div>
 </section>
 
@@ -289,9 +305,9 @@
     <a class="category-card" href="ukleja.html"><span class="icon">✨</span><h3>Ukleja</h3><p>Mała, srebrzysta ryba ław przypowierzchniowych i fundament łańcucha pokarmowego. Lekki spławik, łowienie „na ślinę”, żywiec i ryba na start dla dzieci.</p></a>
     <a class="category-card" href="karas.html"><span class="icon">🥇</span><h3>Karaś</h3><p>Pospolity i srebrzysty — jak je odróżnić, dlaczego srebrzysty jest inwazyjny i jak łowić oba na spławik przy roślinności.</p></a>
     <a class="category-card" href="jaz.html"><span class="icon">🟠</span><h3>Jaź</h3><p>Złocisty rzeczny wszystkożerca o czerwonych płetwach. Spławik w nurcie, drobny spinning i mucha — ryba wielu metod.</p></a>
-    <a class="category-card" href="certa.html"><span class="icon">🌊</span><h3>Certa</h3><p>Wędrowna ryba dużych rzek o srebrzystym ciele i ryjkowatym pysku. Wiosenne wędrówki na tarło, feeder i spławik w nurcie, białe robaki i rogal.</p></a><a class="category-card" href="brzana.html"><span class="icon">🐟</span><h3>Brzana</h3><p>Reofilna ryba krainy brzany — walcowate ciało, wąsiki, silny prąd i kamieniste dno. Feeder i grunt na rzece; uwaga: ikra jest trująca.</p></a><a class="category-card" href="wzdrega.html"><span class="icon">🟠</span><h3>Wzdręga</h3><p>Krewniaczka płoci z krwistoczerwonymi płetwami i górnym pyskiem. Ryba przypowierzchniowa zarośli i cichych zatok; lekki spławik.</p></a>
+    <a class="category-card" href="certa.html"><span class="icon">🌊</span><h3>Certa</h3><p>Wędrowna ryba dużych rzek o srebrzystym ciele i ryjkowatym pysku. Wiosenne wędrówki na tarło, feeder i spławik w nurcie, białe robaki i rogal.</p></a><a class="category-card" href="brzana.html"><span class="icon">🐟</span><h3>Brzana</h3><p>Reofilna ryba krainy brzany — walcowate ciało, wąsiki, silny prąd i kamieniste dno. Feeder i grunt na rzece; nie spożywaj ikry bez wiarygodnej identyfikacji i informacji o bezpieczeństwie.</p></a><a class="category-card" href="wzdrega.html"><span class="icon">🟠</span><h3>Wzdręga</h3><p>Krewniaczka płoci z krwistoczerwonymi płetwami i górnym pyskiem. Ryba przypowierzchniowa zarośli i cichych zatok; lekki spławik.</p></a>
     <a class="category-card" href="klen.html"><span class="icon">🌳</span><h3>Kleń</h3><p>Czujny mieszkaniec rzecznych rynien i podmytych brzegów. Chętnie bierze chrząszcze, czereśnie, woblerki i muchy.</p></a>
-    <a class="category-card" href="amur.html"><span class="icon">🌿</span><h3>Amur</h3><p>Introdukowany roślinożerca dorastający do imponujących rozmiarów. Ostrożny, silny w holu, łowiony metodami karpiowymi.</p></a>
+    <a class="category-card" href="amur.html"><span class="icon">🌿</span><h3>Amur</h3><p>Gatunek wprowadzony do części wód; jego obecność i rozród należy potwierdzać lokalnie. W diecie dominuje roślinność, a obserwowane żerowanie i dobór metody nie są gwarancją wyniku.</p></a>
   </div>
 </section>
 
@@ -314,12 +330,101 @@
   <div class="category-grid equipment-grid">
     <a class="category-card" href="dorsz.html"><span class="icon">🐟</span><h3>Dorsz</h3><p>Najważniejsza ryba Bałtyku — połów z kutra i z brzegu na pilkery i gumy. Uwaga: rekreacyjny połów podlega zmiennym ograniczeniom UE i krajowym.</p></a>
     <a class="category-card" href="sledz.html"><span class="icon">🐠</span><h3>Śledź</h3><p>Wiosenne ławice pod brzegiem i w portach — klasyczne łowienie na „choinkę". Ryba o ogromnym znaczeniu kulinarnym i gospodarczym.</p></a>
-    <a class="category-card" href="belona.html"><span class="icon">🦴</span><h3>Belona</h3><p>Smukła ryba z „dziobem" i zielonymi (nieszkodliwymi) ośćmi. Majowo-czerwcowe podejścia pod brzeg — sport z plaży i mola.</p></a>
+    <a class="category-card" href="belona.html"><span class="icon">🦴</span><h3>Belona</h3><p>Smukła ryba z „dziobem” i zielonymi ośćmi; barwa ości nie jest samodzielnym kryterium oznaczenia ani oceny przydatności do spożycia. Późną wiosną można obserwować ją bliżej brzegu, lecz warunki i przepisy połowu sprawdzaj przed wyjazdem.</p></a>
     <a class="category-card" href="fladra.html"><span class="icon">🥏</span><h3>Flądra (stornia)</h3><p>Płaska ryba dna — zestaw gruntowy z piaskówką z plaży, mola i kutra. Idealna na start przygody z Bałtykiem.</p></a>
   </div>
 </section>
 
+<section class="section container" aria-labelledby="atlas-porownania">
+  <div class="source-box">
+    <h2 id="atlas-porownania">Porównania oparte na kartach źródłowych</h2>
+    <p>Te pary prowadzą do oddzielnych kart z proweniencją biologiczną. Służą porównaniu opisów, a nie zastępują oznaczania ryby w terenie.</p>
+    <div class="related-grid">
+      <a href="ploc.html">Płoć</a><a href="wzdrega.html">Wzdręga</a>
+      <a href="karp.html">Karp</a><a href="amur.html">Amur</a>
+      <a href="pstrag.html">Pstrąg potokowy</a><a href="lipien.html">Lipień</a>
+      <a href="brzana.html">Brzana</a><a href="swinka.html">Świnka</a>
+      <a href="sielawa.html">Sielawa</a><a href="sieja.html">Sieja</a>
+      <a href="sledz.html">Śledź</a><a href="belona.html">Belona</a>
+    </div>
+  </div>
+</section>
 <section class="section container">
   <div class="source-box"><h3>Źródła i weryfikacja</h3><p>Atlas ma charakter przeglądowy i edukacyjny. Podane na kartach gatunków wymiary ochronne, okresy ochronne i limity dobowe są orientacyjne i odnoszą się do ogólnych zasad wędkowania w wodach PZW na dzień publikacji — okręgi i łowiska specjalne wprowadzają własne, często ostrzejsze regulacje. Przed każdą wyprawą zweryfikuj aktualne przepisy w swoim zezwoleniu, regulaminie okręgu oraz na pzw.org.pl. Treści nie gwarantują żadnych wyników połowu.</p></div>
 </section>
+<script>
+(() => {
+  const records = {
+    "szczupak.html": ["drapiezniki", "szczupak pospolity"], "sandacz.html": ["drapiezniki", "zander"],
+    "okon.html": ["drapiezniki", "perch"], "sum.html": ["drapiezniki", "sum europejski"],
+    "bolen.html": ["drapiezniki", "asp"], "wegorz.html": ["drapiezniki", "węgorz europejski"],
+    "karp.html": ["spokojny", "karp europejski"], "lin.html": ["spokojny", "tench"],
+    "leszcz.html": ["spokojny", "bream"], "ploc.html": ["spokojny", "roach"],
+    "ukleja.html": ["spokojny", "bleak"], "karas.html": ["spokojny", "karaś pospolity karaś srebrzysty"],
+    "jaz.html": ["spokojny", "ide"], "certa.html": ["spokojny", "vimba"],
+    "brzana.html": ["spokojny", "barbel"], "wzdrega.html": ["spokojny", "rudd"],
+    "klen.html": ["spokojny", "chub"], "amur.html": ["spokojny", "amur biały grass carp"],
+    "pstrag.html": ["lososiowate", "pstrąg potokowy"], "lipien.html": ["lososiowate", "grayling"],
+    "mietus.html": ["lososiowate", "burbot"], "troc-losos.html": ["lososiowate", "troć wędrowna łosoś szlachetny"],
+    "sieja.html": ["lososiowate", "sieja europejska whitefish"], "swinka.html": ["lososiowate", "nase"],
+    "sielawa.html": ["lososiowate", "vendace"], "jesiotr.html": ["lososiowate", "jesiotr ostronosy"],
+    "dorsz.html": ["morskie", "dorsz atlantycki"], "sledz.html": ["morskie", "śledź atlantycki"],
+    "belona.html": ["morskie", "garfish"], "fladra.html": ["morskie", "stornia flądra"]
+  };
+  const form = document.querySelector("#fish-atlas-controls");
+  const search = document.querySelector("#fish-atlas-search");
+  const count = document.querySelector("#fish-atlas-count");
+  const alphabet = document.querySelector("#fish-alphabet");
+  const cards = [...document.querySelectorAll("main .category-card")].filter((card) =>
+    Object.hasOwn(records, card.getAttribute("href"))
+  );
+  const promoCards = [...document.querySelectorAll("main .category-card")].filter((card) =>
+    !Object.hasOwn(records, card.getAttribute("href"))
+  );
+  if (!form || !search || !count || !alphabet || cards.length !== Object.keys(records).length) return;
+  const normalize = (value) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pl");
+  const names = new Map(cards.map((card) => [card, card.querySelector("h3").textContent.trim()]));
+  const letters = [...new Set([...names.values()].map((name) => normalize(name).charAt(0)))].sort((a, b) => a.localeCompare(b, "pl"));
+  alphabet.innerHTML = letters.map((letter) => `<button type="button" data-letter="${letter}" aria-label="Pokaż ryby na literę ${letter.toLocaleUpperCase("pl")}">${letter.toLocaleUpperCase("pl")}</button>`).join(" ");
+  let selectedLetter = "";
+  const apply = () => {
+    const query = selectedLetter ? "" : normalize(search.value.trim());
+    const group = form.elements["fish-group"].value;
+    promoCards.forEach((card) => { card.hidden = Boolean(query || selectedLetter) || group !== "all"; });
+    let shown = 0;
+    cards.forEach((card) => {
+      const [cardGroup, aliases] = records[card.getAttribute("href")];
+      const name = normalize(names.get(card));
+      const matchesText = selectedLetter
+        ? name.startsWith(selectedLetter)
+        : normalize(`${names.get(card)} ${aliases}`).includes(query);
+      const visible = (group === "all" || group === cardGroup) && matchesText;
+      card.hidden = !visible;
+      if (visible) shown += 1;
+    });
+    count.textContent = `Pokazano ${shown} z ${cards.length} kart atlasu.`;
+    alphabet.querySelectorAll("button").forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.dataset.letter === selectedLetter));
+    });
+  };
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    apply();
+  });
+  form.addEventListener("input", (event) => {
+    if (event.target === search) selectedLetter = "";
+    apply();
+  });
+  form.addEventListener("change", apply);
+  alphabet.addEventListener("click", (event) => {
+    const letter = event.target.closest("button")?.dataset.letter;
+    if (!letter) return;
+    selectedLetter = letter;
+    search.value = "";
+    form.elements["fish-group"].value = "all";
+    apply();
+    cards.find((card) => !card.hidden)?.focus();
+  });
+})();
+</script>
 </main><footer class="footer"><div class="container footer-grid"><p class="footer-author">Autor treści: <span rel="author">Maciej Baniewicz</span></p><p>© 2026 FishPoint.</p><p>Atlas ryb polskich wód</p><p class="footer-legal"><a href="../zgodnie-z-zasadami.html">Przepisy i dokumenty</a> · <a href="../slownik.html">Słownik</a> · <a href="https://fish-point.pl/o-autorze.html">O autorze</a></p></div></footer><script defer src="../js/main.js?v=f38203f2"></script></body></html>

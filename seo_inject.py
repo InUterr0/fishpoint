@@ -78,6 +78,216 @@ FISH_ENTITIES = {
     "fladra": {"name": "Flądra (stornia)", "sameAs": ["https://pl.wikipedia.org/wiki/Stornia", "https://www.wikidata.org/wiki/Q214034"]},
 }
 
+# Rejestr biologiczny atlasu. Tożsamość taksonomiczną oddzielamy od porad
+# praktycznych i od lokalnych przepisów: zewnętrzne bazy opisują gatunek, nie
+# potwierdzają obecności na konkretnej wodzie ani legalności połowu.
+BIOLOGICAL_SOURCE_DATE = "2026-07-14"
+BIOLOGICAL_SOURCE_SCOPE = (
+    "tożsamość taksonomiczna i nazewnictwo; bez potwierdzenia lokalnego "
+    "występowania, stanu łowiska ani zasad połowu"
+)
+FISH_BIOLOGICAL_REGISTRY = {
+    "szczupak": {"latin": "Esox lucius", "group": "drapieżniki", "aliases": ("szczupak pospolity",), "compare": "sandacz"},
+    "sandacz": {"latin": "Sander lucioperca", "group": "drapieżniki", "aliases": ("zander",), "compare": "okon"},
+    "okon": {"latin": "Perca fluviatilis", "group": "drapieżniki", "aliases": ("perch",), "compare": "sandacz"},
+    "sum": {"latin": "Silurus glanis", "group": "drapieżniki", "aliases": ("sum europejski",), "compare": "szczupak"},
+    "bolen": {"latin": "Leuciscus aspius", "group": "drapieżniki", "aliases": ("asp",), "compare": "ukleja"},
+    "wegorz": {"latin": "Anguilla anguilla", "group": "drapieżniki", "aliases": ("węgorz europejski",), "compare": "mietus",
+               "caution": "Globalna kategoria IUCN opisuje ocenę ochrony gatunku, a nie legalność połowu na konkretnej wodzie."},
+    "karp": {"latin": "Cyprinus carpio", "group": "spokojny żer", "aliases": ("karp europejski",), "compare": "amur"},
+    "lin": {"latin": "Tinca tinca", "group": "spokojny żer", "aliases": ("tench",), "compare": "karas"},
+    "leszcz": {"latin": "Abramis brama", "group": "spokojny żer", "aliases": ("bream",), "compare": "ploc"},
+    "jaz": {"latin": "Leuciscus idus", "group": "spokojny żer", "aliases": ("ide",), "compare": "klen"},
+    "pstrag": {"latin": "Salmo trutta", "group": "łososiowate i inne", "aliases": ("pstrąg potokowy",), "compare": "lipien"},
+    "mietus": {"latin": "Lota lota", "group": "łososiowate i inne", "aliases": ("burbot",), "compare": "wegorz"},
+    "lipien": {"latin": "Thymallus thymallus", "group": "łososiowate i inne", "aliases": ("grayling",), "compare": "pstrag"},
+    "ploc": {"latin": "Rutilus rutilus", "group": "spokojny żer", "aliases": ("roach",), "compare": "wzdrega"},
+    "klen": {"latin": "Squalius cephalus", "group": "spokojny żer", "aliases": ("chub",), "compare": "jaz"},
+    "amur": {"latin": "Ctenopharyngodon idella", "group": "spokojny żer", "aliases": ("amur biały", "grass carp"), "compare": "karp",
+             "caution": "Informacja o introdukcji nie potwierdza samodzielnego rozmnażania ani obecności populacji na wybranej wodzie."},
+    "karas": {"latin": "Carassius carassius", "taxa": ("Carassius carassius", "Carassius gibelio"), "group": "spokojny żer",
+              "aliases": ("karaś pospolity", "karaś srebrzysty"), "compare": "lin"},
+    "troc-losos": {"latin": "Salmo trutta", "taxa": ("Salmo trutta", "Salmo salar"), "group": "łososiowate i inne",
+                    "aliases": ("troć wędrowna", "łosoś szlachetny"), "compare": "sielawa"},
+    "sielawa": {"latin": "Coregonus albula", "group": "łososiowate i inne", "aliases": ("vendace",), "compare": "sieja"},
+    "sieja": {"latin": "Coregonus maraena", "group": "łososiowate i inne", "aliases": ("sieja europejska", "maraena whitefish"), "compare": "sielawa"},
+    "brzana": {"latin": "Barbus barbus", "group": "spokojny żer", "aliases": ("barbel",), "compare": "swinka",
+                "caution": "Nie traktuj wzmianki o ikrze jako porady kulinarnej: nie spożywaj jej bez wiarygodnej identyfikacji i informacji bezpieczeństwa."},
+    "certa": {"latin": "Vimba vimba", "group": "spokojny żer", "aliases": ("vimba",), "compare": "swinka"},
+    "swinka": {"latin": "Chondrostoma nasus", "group": "łososiowate i inne", "aliases": ("nase",), "compare": "brzana"},
+    "wzdrega": {"latin": "Scardinius erythrophthalmus", "group": "spokojny żer", "aliases": ("rudd",), "compare": "ploc"},
+    "ukleja": {"latin": "Alburnus alburnus", "group": "spokojny żer", "aliases": ("bleak",), "compare": "bolen"},
+    "jesiotr": {"latin": "Acipenser oxyrinchus", "group": "łososiowate i inne", "aliases": ("jesiotr ostronosy",), "compare": "dorsz"},
+    "dorsz": {"latin": "Gadus morhua", "group": "morskie", "aliases": ("dorsz atlantycki",), "compare": "sledz"},
+    "sledz": {"latin": "Clupea harengus", "group": "morskie", "aliases": ("śledź atlantycki",), "compare": "belona"},
+    "belona": {"latin": "Belone belone", "group": "morskie", "aliases": ("garfish",), "compare": "sledz",
+               "caution": "Zielona barwa ości nie jest rozstrzygającą cechą rozpoznawczą ani oceną przydatności do spożycia."},
+    "fladra": {"latin": "Platichthys flesus", "group": "morskie", "aliases": ("stornia", "flądra"), "compare": "dorsz"},
+}
+
+# Krajowy skrót prawny do kart atlasu. Tekst celowo rozróżnia wody
+# śródlądowe i morskie; zawsze prowadzi do aktu oraz zasad konkretnej wody.
+FISH_LEGAL_SUMMARIES = {
+    "szczupak": "Wody śródlądowe: wymiar 45 cm; okres ochronny 1 stycznia–30 kwietnia.",
+    "sandacz": "Wody śródlądowe: wymiar 45 cm; okres ochronny 1 marca–31 maja.",
+    "okon": "Wody śródlądowe: § 6–7 nie ustanawia krajowego wymiaru ani okresu; sprawdź zasady lokalne.",
+    "sum": "Wody śródlądowe: wymiar 70 cm; okres ochronny 1 stycznia–31 maja.",
+    "bolen": "Wody śródlądowe: wymiar 40 cm; § 7 nie ustanawia krajowego okresu ochronnego.",
+    "wegorz": "Wody śródlądowe: wymiar 50 cm; okres ochronny 1 grudnia–31 marca.",
+    "karp": "Wody śródlądowe: § 6–7 nie ustanawia krajowego wymiaru ani okresu; sprawdź zasady lokalne.",
+    "lin": "Wody śródlądowe: wymiar 25 cm; § 7 nie ustanawia krajowego okresu ochronnego.",
+    "leszcz": "Wody śródlądowe: § 6–7 nie ustanawia krajowego wymiaru ani okresu; sprawdź zasady lokalne.",
+    "jaz": "Wody śródlądowe: wymiar 25 cm; § 7 nie ustanawia krajowego okresu ochronnego.",
+    "pstrag": "Pstrąg potokowy: wymiar 25 albo 30 cm i okres 1 września–31 stycznia albo 31 grudnia, zależnie od wskazanego odcinka.",
+    "mietus": "Wody śródlądowe: wymiar 25 albo 30 cm; okres 1 grudnia–koniec lutego, z wyjątkiem wskazanego odcinka Odry.",
+    "lipien": "Wody śródlądowe: wymiar 30 cm; okres ochronny 1 marca–31 maja.",
+    "ploc": "Wody śródlądowe: § 6–7 nie ustanawia krajowego wymiaru ani okresu; sprawdź zasady lokalne.",
+    "klen": "Wody śródlądowe: wymiar 25 cm; § 7 nie ustanawia krajowego okresu ochronnego.",
+    "amur": "Wody śródlądowe: § 6–7 nie ustanawia krajowego wymiaru ani okresu. Amur jest gatunkiem nierodzimym; § 8 nakazuje złowiony okaz niezwłocznie uśmiercić i zakazuje wpuszczenia go do jakiejkolwiek wody.",
+    "karas": "Karaś pospolity: § 6–7 nie ustanawia krajowego wymiaru ani okresu. Karaś srebrzysty jest gatunkiem nierodzimym; § 8 nakazuje złowiony okaz niezwłocznie uśmiercić i zakazuje wpuszczenia go do jakiejkolwiek wody.",
+    "troc-losos": "Troć i łosoś: wymiar 35 cm; okres i dodatkowe dni zakazu zależą od odcinka. Na morzu obowiązują odrębne przepisy GIRM.",
+    "sielawa": "Wody śródlądowe: wymiar 18 cm; okres ochronny 15 października–31 grudnia.",
+    "sieja": "Wody śródlądowe: wymiar 35 cm; okres ochronny 15 października–31 grudnia.",
+    "brzana": "Wody śródlądowe: wymiar 40 cm; okres ochronny 1 stycznia–30 czerwca.",
+    "certa": "Wymiar 30 cm; okres 1 września–30 listopada w Wiśle od zapory we Włocławku do ujścia, a 1 stycznia–30 czerwca w pozostałych wodach.",
+    "swinka": "Wody śródlądowe: wymiar 25 cm; okres ochronny 1 stycznia–15 maja.",
+    "wzdrega": "Wody śródlądowe: wymiar 15 cm; § 7 nie ustanawia krajowego okresu ochronnego.",
+    "ukleja": "Wody śródlądowe: § 6–7 nie ustanawia krajowego wymiaru ani okresu; sprawdź zasady lokalne.",
+    "jesiotr": "Jesiotr ostronosy: okres ochronny przez cały rok; nie traktuj tej karty jako wskazania celu połowu.",
+    "dorsz": "Wody morskie: okres ochronny w rybołówstwie rekreacyjnym trwa cały rok; złowioną rybę niezwłocznie wypuść.",
+    "sledz": "Wody morskie: sprawdź aktualne zasady, limity i komunikaty GIRM przed połowem.",
+    "belona": "Wody morskie: sprawdź aktualne zasady, limity i komunikaty GIRM przed połowem.",
+    "fladra": "Wody morskie: sprawdź aktualne zasady, limity i komunikaty GIRM przed połowem.",
+}
+
+FISH_LEGAL_SECTION_RE = re.compile(
+    r'<section class="info-block(?: fish-legal-current)?"[^>]*><h3>'
+    r'(?:Wymiar(?: ochronny)?|Status ochronny|Ograniczenia UE|Przepisy — połów morski|Przepisy krajowe i zasady lokalne)'
+    r'.*?</h3><p>.*?</p></section>',
+    re.S,
+)
+
+
+def build_fish_legal_section(slug, group):
+    """Buduje jedyną kartę prawną atlasu z krajowym źródłem pierwotnym."""
+    legal_summary = FISH_LEGAL_SUMMARIES[slug]
+    inland_sections = "§ 6–8" if slug in {"amur", "karas"} else "§ 6–7"
+    inland_source = (
+        '<a href="https://eli.gov.pl/api/acts/DU/2023/1373/text.html" '
+        f'rel="noopener external" target="_blank">Dz.U. 2023 poz. 1373, {inland_sections}</a>'
+    )
+    marine_source = (
+        '<a href="https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego" '
+        'rel="noopener external" target="_blank">aktualne informacje GIRM</a>'
+    )
+    if group == "morskie":
+        legal_sources = marine_source
+    elif slug == "troc-losos":
+        legal_sources = inland_source + " · " + marine_source
+    else:
+        legal_sources = inland_source
+    table_label = (
+        "Otwórz tabelę i dobierz właściwy odcinek wody"
+        if slug in {"pstrag", "mietus", "troc-losos", "certa"}
+        else "Otwórz pełną tabelę okresów i wymiarów"
+    )
+    day_off_note = (
+        '<p><strong>Granica okresu ochronnego:</strong> jeżeli pierwszy lub ostatni '
+        'dzień okresu przypada w dzień ustawowo wolny od pracy, okres skraca się '
+        'o ten dzień (§ 7 ust. 2); wyjątkiem jest całoroczna ochrona jesiotra.</p>'
+        if group != "morskie" else ""
+    )
+    return (
+        '<section class="info-block fish-legal-current" '
+        'aria-label="Aktualne przepisy krajowe i zasady lokalne">'
+        '<h3>Przepisy krajowe i zasady lokalne</h3>'
+        f'<p><strong>Przepisy krajowe:</strong> {html.escape(legal_summary)} '
+        f'<strong>Źródło:</strong> {legal_sources}</p>'
+        f'{day_off_note}'
+        '<p><strong>Przed połowem:</strong> sprawdź aktualny regulamin i zezwolenie '
+        'dla konkretnej wody. Wymiar, okres, limit lub zakaz lokalny może być '
+        'ostrzejszy; brak wartości krajowej nie oznacza zgody na zabranie ryby.</p>'
+        f'<p><a href="../narzedzia/okresy-ochronne.html">{table_label}</a>.</p>'
+        '</section>'
+    )
+
+
+def normalize_fish_legal_section(src, rel):
+    """Zastępuje starszy opis PZW jedną kartą opartą na aktualnym akcie."""
+    if not rel.startswith("ryby/"):
+        return src
+    slug = os.path.splitext(os.path.basename(rel))[0]
+    record = FISH_BIOLOGICAL_REGISTRY.get(slug)
+    if not record:
+        return src
+    section = build_fish_legal_section(slug, record["group"])
+    return FISH_LEGAL_SECTION_RE.sub(section, src, count=1)
+
+# Porównania obejmują wyłącznie cechy diagnostyczne opisane w FishBase.
+# Nie zastępują oznaczenia przez ichtiologa ani oględzin całego okazu.
+FISH_IDENTIFICATION_COMPARISONS = (
+    {
+        "pages": ("ploc", "wzdrega"),
+        "names": ("Płoć", "Wzdręga"),
+        "taxa": ("Rutilus rutilus", "Scardinius erythrophthalmus"),
+        "rows": (
+            ("Pysk", "Końcowy.", "Skierowany bardziej ku górze; dolna szczęka wysunięta."),
+            ("Płetwy", "Pomarańczowo-czerwone.", "Czerwone, szczególnie płetwy brzuszne."),
+        ),
+        "caveat": "Barwa jest zmienna; bez widocznego pyska i płetw zwykłe zdjęcie może nie wystarczyć.",
+    },
+    {
+        "pages": ("leszcz",),
+        "names": ("Leszcz", "Krąp"),
+        "taxa": ("Abramis brama", "Blicca bjoerkna"),
+        "rows": (
+            ("Sylwetka i płetwa odbytowa", "Ciało wyższe i silniej spłaszczone; płetwa odbytowa dłuższa.", "Ciało mniej wysokie; płetwa odbytowa krótsza."),
+            ("Pysk", "Dolny, wysuwany rurkowato.", "Dolny, ale niewysuwany rurkowato."),
+        ),
+        "caveat": "Proporcje zależą od rozmiaru i ujęcia; pewne oznaczenie może wymagać policzenia promieni i łusek.",
+    },
+    {
+        "pages": ("klen", "jaz"),
+        "names": ("Kleń", "Jaź"),
+        "taxa": ("Squalius cephalus", "Leuciscus idus"),
+        "rows": (
+            ("Łuski", "Ciemny pigment na wolnych krawędziach łusek często tworzy siateczkę.", "Brak regularnej czarnej siateczki na łuskach boków."),
+            ("Głowa", "Masywniejsza, z wyraźnym podbródkiem.", "Bez tak wyraźnego podbródka."),
+        ),
+        "caveat": "Barwa i proporcje nakładają się; pojedyncze zdjęcie często nie daje pewnego oznaczenia.",
+    },
+    {
+        "pages": ("brzana", "swinka"),
+        "names": ("Brzana", "Świnka"),
+        "taxa": ("Barbus barbus", "Chondrostoma nasus"),
+        "rows": (
+            ("Okolica pyska", "Dwie pary wąsików i gruba dolna warga z poduszeczką.", "Bez wąsików; dolna warga tworzy twardą, rogową krawędź."),
+            ("Płetwy", "Barwa nie jest cechą rozstrzygającą.", "Płetwy piersiowe, brzuszne, odbytowa i ogonowa mogą być czerwone."),
+        ),
+        "caveat": "Wąsiki są mocniejszą cechą niż kolor, który zależy od środowiska i kondycji ryby.",
+    },
+    {
+        "pages": ("sieja", "sielawa"),
+        "names": ("Sieja", "Sielawa"),
+        "taxa": ("Coregonus maraena", "Coregonus albula"),
+        "rows": (
+            ("Rozmiar według FishBase", "Maksymalna opublikowana długość: 130 cm.", "Maksymalna opublikowana długość: 48 cm; długość typowa: 20 cm."),
+            ("Tryb życia i pokarm", "Bytuje m.in. w głębokich jeziorach; zjada bezkręgowce denne i małe ryby.", "Tworzy pelagiczne ławice w głębszych jeziorach; zjada planktonowe skorupiaki."),
+        ),
+        "caveat": "Rozmiar i środowisko nie wystarczają do oznaczenia; siejowate tworzą zmienne populacje i mogą się krzyżować.",
+    },
+    {
+        "pages": ("troc-losos",),
+        "names": ("Troć", "Łosoś"),
+        "taxa": ("Salmo trutta", "Salmo salar"),
+        "rows": (
+            ("Plamy i pysk", "Plamy występują także poniżej linii bocznej; pysk zwykle sięga za oko.", "Zwykle mniej plam poniżej linii bocznej; pysk krótszy."),
+            ("Płetwa tłuszczowa", "Krawędź bywa czerwonawa.", "Krawędź szara lub przezroczysta."),
+        ),
+        "caveat": "Cechy zmieniają się z wiekiem i fazą morską; fotografia bez skali i cech głowy nie daje pewności.",
+    },
+)
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BEGIN = "  <!-- seo:meta begin (auto) -->"
 END = "  <!-- seo:meta end (auto) -->"
@@ -390,6 +600,133 @@ fishpoint_method_re = re.compile(
     re.escape(FISHPOINT_METHOD_BEGIN) + r".*?" + re.escape(FISHPOINT_METHOD_END),
     re.S,
 )
+
+FISH_BIOLOGY_BEGIN, FISH_BIOLOGY_END = (
+    "<!--fish-biology:auto-->",
+    "<!--/fish-biology:auto-->",
+)
+fish_biology_re = re.compile(
+    re.escape(FISH_BIOLOGY_BEGIN) + r".*?" + re.escape(FISH_BIOLOGY_END),
+    re.S,
+)
+
+
+def _biology_source_links(taxon):
+    """Zwraca stałe, rozłączne źródła dla jednego nazwanego taksonu."""
+    query = taxon.replace(" ", "%20")
+    fishbase_slug = taxon.replace(" ", "_")
+    return (
+        (f"https://www.fishbase.se/summary/{fishbase_slug}.html", "FishBase"),
+        (f"https://www.gbif.org/species/search?q={query}", "GBIF"),
+        (f"https://www.iucnredlist.org/search?query={query}&searchType=species", "IUCN Red List"),
+    )
+
+
+def build_fish_biology_section(rel):
+    """Buduje proweniencję biologiczną atlasu bez wniosków o połowie."""
+    if not rel.startswith("ryby/"):
+        return ""
+    slug = os.path.splitext(os.path.basename(rel))[0]
+    record = FISH_BIOLOGICAL_REGISTRY.get(slug)
+    if not record:
+        return ""
+    taxa = record.get("taxa", (record["latin"],))
+    sources = "".join(
+        f'<a href="{html.escape(url, quote=True)}" rel="noopener external" target="_blank">'
+        f'{html.escape(label)}: {html.escape(taxon)}</a>'
+        for taxon in taxa
+        for url, label in _biology_source_links(taxon)
+    )
+    aliases = ", ".join(record["aliases"])
+    if len(taxa) > 1:
+        taxon_label = "Nazwy łacińskie"
+        taxon_html = "; ".join(f"<i>{html.escape(taxon)}</i>" for taxon in taxa)
+        alias_label = "Nazwy zwyczajowe / aliasy"
+    else:
+        taxon_label = "Nazwa łacińska"
+        taxon_html = f"<i>{html.escape(taxa[0])}</i>"
+        alias_label = "Alias"
+    identification = next(
+        (
+            item
+            for item in FISH_IDENTIFICATION_COMPARISONS
+            if slug in item["pages"]
+        ),
+        None,
+    )
+    if identification:
+        first_name, second_name = identification["names"]
+        rows_html = "".join(
+            "<tr>"
+            f"<th scope=\"row\">{html.escape(feature)}</th>"
+            f"<td>{html.escape(first)}</td>"
+            f"<td>{html.escape(second)}</td>"
+            "</tr>"
+            for feature, first, second in identification["rows"]
+        )
+        comparison_sources = " · ".join(
+            f'<a href="https://www.fishbase.se/summary/'
+            f'{html.escape(taxon.replace(" ", "_"), quote=True)}.html" '
+            f'rel="noopener external" target="_blank">'
+            f'FishBase: <i>{html.escape(taxon)}</i></a>'
+            for taxon in identification["taxa"]
+        )
+        comparison = (
+            f'<h3>Jak odróżnić: {html.escape(first_name)} i '
+            f'{html.escape(second_name)}</h3>'
+            f'<div class="tool-table-wrap"><table class="tool-table">'
+            f'<thead><tr><th>Cecha</th><th>{html.escape(first_name)}</th>'
+            f'<th>{html.escape(second_name)}</th></tr></thead>'
+            f'<tbody>{rows_html}</tbody></table></div>'
+            f'<p><strong>Źródła cech:</strong> {comparison_sources}. '
+            f'<strong>Dostęp:</strong> {BIOLOGICAL_SOURCE_DATE}.</p>'
+            f'<p><strong>Granica oznaczenia:</strong> '
+            f'{html.escape(identification["caveat"])} '
+            f'Liczenie promieni lub łusek wymaga ostrego obrazu i praktyki; '
+            f'cechy barwy i proporcji zależą od wieku, płci, populacji '
+            f'i ubarwienia godowego.</p>'
+        )
+    else:
+        compared_slug = record.get("compare")
+        if compared_slug in FISH_BIOLOGICAL_REGISTRY and compared_slug in FISH_ENTITIES:
+            compared = FISH_ENTITIES[compared_slug]["name"]
+            comparison = (
+                f'<h3>Porównanie taksonomiczne</h3><p>Porównaj z kartą '
+                f'<a href="{compared_slug}.html">{html.escape(compared)}</a>. '
+                f'Obie karty prowadzą do osobnych rekordów źródłowych; porównanie '
+                f'nie jest kluczem oznaczania w terenie ani gwarancją wyniku połowu.</p>'
+            )
+        else:
+            comparison = (
+                '<h3>Porównanie taksonomiczne</h3><p>Brak wskazanej pary '
+                'porównawczej: nie dodano podobnej ryby wyłącznie na podstawie nazwy.</p>'
+            )
+    caution = record.get("caution")
+    caution_html = (
+        f'<p><strong>Ograniczenie interpretacji:</strong> {html.escape(caution)}</p>'
+        if caution else ""
+    )
+    legal_html = ""
+
+    return (
+        f'{FISH_BIOLOGY_BEGIN}<section class="source-box fish-biological-provenance" '
+        f'aria-label="Pochodzenie danych biologicznych"><h2>Tożsamość biologiczna '
+        f'i źródła</h2><p><strong>{taxon_label}:</strong> '
+        f'{taxon_html}. <strong>Grupa atlasu:</strong> '
+        f'{html.escape(record["group"])}. <strong>{alias_label}:</strong> '
+        f'{html.escape(aliases)}.</p><p><strong>Źródła:</strong> {sources}. '
+        f'<strong>Dostęp:</strong> {BIOLOGICAL_SOURCE_DATE}. '
+        f'<strong>Zakres:</strong> {html.escape(BIOLOGICAL_SOURCE_SCOPE)}.</p>'
+        f'{legal_html}{comparison}{caution_html}</section>{FISH_BIOLOGY_END}'
+    )
+
+
+def inject_fish_biology(src, rel):
+    """Wstawia pojedynczy blok tylko do zarejestrowanej karty atlasu."""
+    section = build_fish_biology_section(rel)
+    if not section:
+        return src
+    return re.sub(r"(</article>)", section + r"\1", src, count=1)
 
 
 def build_fishpoint_method(rel, config):
@@ -1303,7 +1640,9 @@ def fish_about(fish):
 
 def article_text(src):
     """Czysty tekst semantycznej treści — do wordCount i llms-full.txt."""
-    article = re.search(r'<article class="article-card">(.*?)</article>', src, re.S)
+    article = None if "data-water=" in src else re.search(
+        r'<article class="article-card">(.*?)</article>', src, re.S
+    )
     main = re.search(r"<main\b[^>]*>(.*?)</main>", src, re.S)
     match = article or main
     if not match:
@@ -1613,6 +1952,7 @@ def build(path):
     src = newsletter_re.sub("", src)
     src = giscus_re.sub("", src)
     src = fishpoint_method_re.sub("", src)
+    src = fish_biology_re.sub("", src)
     src = content_advantage_re.sub("", src)
     src = affiliate_re.sub("", src)
     src = replace_youtube_nocookie_embeds(src)
@@ -1635,6 +1975,7 @@ def build(path):
     desc_txt = html.unescape(desc_raw)
 
     rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
+    src = normalize_fish_legal_section(src, rel)
     # Ujednolic sezonowa etykiete w hero: publikacja w lipcu nie udaje wrzesniowej daty.
     src = src.replace("wrzesień 2026", "sezon jesienny 2026")
     url = absolute_url(rel_url(path))
@@ -1694,6 +2035,7 @@ def build(path):
                 f'</aside>{TLDR_END}')
         src = re.sub(r'(<article class="article-card">)', r"\1" + tldr, src, count=1)
         src = inject_fishpoint_method(src, rel)
+        src = inject_fish_biology(src, rel)
         # Hub sekcji i ręcznie wybrane powiązania z istniejących kart redakcyjnych.
         if section:
             rel_items = build_related(section, rel, url)

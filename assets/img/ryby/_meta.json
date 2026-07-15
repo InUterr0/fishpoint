@@ -43,9 +43,9 @@
  },
  "lin": {
   "file": "assets/img/ryby/lin.jpg",
-  "artist": "",
-  "license": "",
-  "page": "https://commons.wikimedia.org/wiki/File%3A3840px-Tinca_tinca_Natural_History_Museum_University_of_Pisa.jpg"
+  "artist": "Mattia Nocciola / Natural History Museum of the University of Pisa",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tinca_tinca_Natural_History_Museum_University_of_Pisa.jpg"
  },
  "karas": {
   "file": "assets/img/ryby/karas.jpg",
@@ -79,15 +79,15 @@
  },
  "amur": {
   "file": "assets/img/ryby/amur.jpg",
-  "artist": "",
-  "license": "",
-  "page": "https://commons.wikimedia.org/wiki/File%3A3840px-2x_amur_b%C3%ADl%C3%BD.jpg"
+  "artist": "Dezidor",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2x_amur_b%C3%ADl%C3%BD.jpg"
  },
  "pstrag": {
   "file": "assets/img/ryby/pstrag.jpg",
-  "artist": "",
-  "license": "",
-  "page": "https://commons.wikimedia.org/wiki/File%3A3840px-Brown_Trout_%28Salmo_trutta%29_%2853678765394%29.jpg"
+  "artist": "Sam Stukel / USFWS",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Brown_Trout_%28Salmo_trutta%29_%2853678765394%29.jpg"
  },
  "lipien": {
   "file": "assets/img/ryby/lipien.jpg",
