@@ -87,13 +87,29 @@ BIOLOGICAL_SOURCE_SCOPE = (
     "występowania, stanu łowiska ani zasad połowu"
 )
 FISH_BIOLOGICAL_REGISTRY = {
-    "szczupak": {"latin": "Esox lucius", "group": "drapieżniki", "aliases": ("szczupak pospolity",), "compare": "sandacz"},
+    "szczupak": {
+        "latin": "Esox lucius", "group": "drapieżniki", "aliases": ("szczupak pospolity",), "compare": "sandacz",
+        "biological_sources": (
+            ("https://doi.org/10.5878/mjhw-wp21", "SLU: dane i kod badania (2025)",
+             "dynamika populacji, odłowy i przemieszczanie szczupaka w tarlisku Bałtyku (2017–2022); nie opisuje wszystkich wód"),
+            ("https://www.fishbase.se/summary/Esox_lucius.html", "FishBase: Esox lucius",
+             "tożsamość taksonomiczna i opis gatunku; nie potwierdza lokalnego występowania ani zasad połowu"),
+        ),
+    },
     "sandacz": {"latin": "Sander lucioperca", "group": "drapieżniki", "aliases": ("zander",), "compare": "okon"},
     "okon": {"latin": "Perca fluviatilis", "group": "drapieżniki", "aliases": ("perch",), "compare": "sandacz"},
     "sum": {"latin": "Silurus glanis", "group": "drapieżniki", "aliases": ("sum europejski",), "compare": "szczupak"},
     "bolen": {"latin": "Leuciscus aspius", "group": "drapieżniki", "aliases": ("asp",), "compare": "ukleja"},
-    "wegorz": {"latin": "Anguilla anguilla", "group": "drapieżniki", "aliases": ("węgorz europejski",), "compare": "mietus",
-               "caution": "Globalna kategoria IUCN opisuje ocenę ochrony gatunku, a nie legalność połowu na konkretnej wodzie."},
+    "wegorz": {
+        "latin": "Anguilla anguilla", "group": "drapieżniki", "aliases": ("węgorz europejski",), "compare": "mietus",
+        "caution": "Globalna kategoria IUCN opisuje ocenę ochrony gatunku, a nie legalność połowu na konkretnej wodzie.",
+        "biological_sources": (
+            ("https://doi.org/10.17895/ices.advice.27203028", "ICES Advice 2025: ele.2737.nea",
+             "ocena zasobu węgorza europejskiego w całym naturalnym zasięgu; porada naukowa, nie lokalne przepisy"),
+            ("https://sg.ices.dk/ViewCharts.aspx?key=21231", "ICES Stock Assessment Graphs",
+             "dane i wykresy oceny zasobu ele.2737.nea (2025); skala całego naturalnego zasięgu"),
+        ),
+    },
     "karp": {"latin": "Cyprinus carpio", "group": "spokojny żer", "aliases": ("karp europejski",), "compare": "amur"},
     "lin": {"latin": "Tinca tinca", "group": "spokojny żer", "aliases": ("tench",), "compare": "karas"},
     "leszcz": {"latin": "Abramis brama", "group": "spokojny żer", "aliases": ("bream",), "compare": "ploc"},
@@ -421,6 +437,57 @@ youtube_nocookie_iframe_re = re.compile(
     re.I | re.S,
 )
 
+youtube_facade_re = re.compile(
+    r'''(<button\b(?=[^>]*\bclass\s*=\s*["'][^"']*\byoutube-facade\b[^"']*["'])[^>]*>)(.*?)(</button>)''',
+    re.I | re.S,
+)
+
+
+def ensure_youtube_facade_dimensions(src):
+    """Nadaje stały rozmiar także fasadom utworzonym w poprzednich przebiegach."""
+    def repl(match):
+        def add_dimensions(image_match):
+            attrs = re.sub(
+                r'''\s+(?:width|height)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)''',
+                "",
+                image_match.group(2),
+                flags=re.I,
+            )
+            closing = " />" if image_match.group(3) == "/>" else ">"
+            return f'{image_match.group(1)}{attrs.rstrip()} width="480" height="360"{closing}'
+
+        content = re.sub(r"(<img\b)([^>]*?)(/?>)", add_dimensions, match.group(2), count=1, flags=re.I)
+        return f"{match.group(1)}{content}{match.group(3)}"
+
+    return youtube_facade_re.sub(repl, src)
+
+
+article_image_re = re.compile(
+    r'''<img\b(?=[^>]*\bclass\s*=\s*["'][^"']*\barticle-image\b[^"']*["'])(?=[^>]*\bsrc\s*=\s*["'](?P<src>[^"']+)["'])[^>]*>''',
+    re.I | re.S,
+)
+
+
+def prioritize_local_lcp_image(src, page_dir):
+    """Ustawia priorytet wyłącznie pierwszemu lokalnemu obrazowi artykułu."""
+    for match in article_image_re.finditer(src):
+        image_src = html.unescape(match.group("src"))
+        if image_src.startswith(("http://", "https://", "//", "data:")):
+            continue
+        image_path = resolve_img(image_src, page_dir)
+        if not os.path.isfile(os.path.join(ROOT, image_path.lstrip("/"))):
+            continue
+        tag = re.sub(
+            r'''\s+(?:loading|fetchpriority)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)''',
+            "",
+            match.group(0),
+            flags=re.I,
+        )
+        tag = re.sub(r"\s*/?>\s*$", "", tag)
+        tag = f'{tag} loading="eager" fetchpriority="high" />'
+        return f"{src[:match.start()]}{tag}{src[match.end():]}", image_path
+    return src, None
+
 
 def replace_youtube_nocookie_embeds(src):
     """Zastępuje tylko znane iframe'y YouTube fasadą bez ładowania odtwarzacza."""
@@ -432,7 +499,7 @@ def replace_youtube_nocookie_embeds(src):
             f'<button class="youtube-facade" type="button" data-video-id="{video_id}" '
             f'data-video-title="{title_attr}" aria-label="Odtwórz film: {title_attr}">'
             f'<img src="https://i.ytimg.com/vi/{video_id}/hqdefault.jpg" '
-            f'alt="Miniatura filmu: {title_attr}" loading="lazy" decoding="async" />'
+            f'alt="Miniatura filmu: {title_attr}" loading="lazy" decoding="async" width="480" height="360" />'
             f'<span class="youtube-facade-play" aria-hidden="true">▶</span>'
             f'<span class="youtube-facade-title">{html.escape(title)}</span>'
             f'</button>'
@@ -631,12 +698,20 @@ def build_fish_biology_section(rel):
     if not record:
         return ""
     taxa = record.get("taxa", (record["latin"],))
-    sources = "".join(
-        f'<a href="{html.escape(url, quote=True)}" rel="noopener external" target="_blank">'
-        f'{html.escape(label)}: {html.escape(taxon)}</a>'
-        for taxon in taxa
-        for url, label in _biology_source_links(taxon)
-    )
+    configured_sources = record.get("biological_sources")
+    if configured_sources:
+        sources = " · ".join(
+            f'<a href="{html.escape(url, quote=True)}" rel="noopener external" target="_blank">'
+            f'{html.escape(label)}</a> — {html.escape(scope)}'
+            for url, label, scope in configured_sources
+        )
+    else:
+        sources = "".join(
+            f'<a href="{html.escape(url, quote=True)}" rel="noopener external" target="_blank">'
+            f'{html.escape(label)}: {html.escape(taxon)}</a>'
+            for taxon in taxa
+            for url, label in _biology_source_links(taxon)
+        )
     aliases = ", ".join(record["aliases"])
     if len(taxa) > 1:
         taxon_label = "Nazwy łacińskie"
@@ -1955,15 +2030,7 @@ def build(path):
     src = fish_biology_re.sub("", src)
     src = content_advantage_re.sub("", src)
     src = affiliate_re.sub("", src)
-    src = replace_youtube_nocookie_embeds(src)
-    # Pierwsze zdjęcie artykułu jest elementem LCP — nie odkładaj jego pobrania
-    # mimo lazy-loadingu odziedziczonego po starszych szablonach.
-    src = re.sub(
-        r'(<img\b(?=[^>]*class="article-image")(?=[^>]*loading="lazy")[^>]*?)\sloading="lazy"',
-        r'\1 loading="eager" fetchpriority="high"',
-        src,
-        count=1,
-    )
+    src = ensure_youtube_facade_dimensions(replace_youtube_nocookie_embeds(src))
 
     tm = title_re.search(src)
     dm = desc_re.search(src)
@@ -1980,8 +2047,11 @@ def build(path):
     src = src.replace("wrzesień 2026", "sezon jesienny 2026")
     url = absolute_url(rel_url(path))
 
-    # obrazek OG: pierwszy <img> w treści, inaczej domyślny
+    # Obraz LCP jest wyłącznie pierwszym lokalnym obrazem artykułu. Zewnętrzne
+    # miniatury (np. YouTube) pozostają lazy i nie trafiają do preloadu.
     page_dir = os.path.dirname(path)
+    src, lcp_img_path = prioritize_local_lcp_image(src, page_dir)
+    # obrazek OG: pierwszy <img> w treści, inaczej domyślny
     im = img_re.search(src)
     img_path = resolve_img(im.group(1), page_dir) if im else DEFAULT_IMG
     # Strony narzędzi budują <img> w JS (brak statycznego) — nadaj sensowny OG
@@ -2094,8 +2164,8 @@ def build(path):
         f'  <meta name="twitter:image" content="{img_url}" />',
     ]
     if og_type == "article":
-        if im:
-            head.append(f'  <link rel="preload" as="image" href="{img_path}" fetchpriority="high" />')
+        if lcp_img_path:
+            head.append(f'  <link rel="preload" as="image" href="{lcp_img_path}" fetchpriority="high" />')
         head.append(f'  <meta property="article:published_time" content="{pubdate}" />')
         head.append(f'  <meta property="article:modified_time" content="{mtime}" />')
         head.append('  <meta property="article:publisher" content="' + BASE + '/" />')

@@ -23,7 +23,7 @@
 	redir @root_index / 301
 
 	@section_index {
-		path_regexp section_index ^/([^/]+)/index\.html$
+		path_regexp section_index ^/(.+)/index\.html$
 		file {
 			try_files {path}
 		}
