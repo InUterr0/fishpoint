@@ -25,10 +25,10 @@
 - [Mikroguma dla początkujących](https://fish-point.pl/aktualnosci/mikroguma-dla-poczatkujacych.html): Mikroguma dla początkujących: jak dobrać pierwszy zestaw LRF, jakie przynęty i montaże wybrać oraz jak nauczyć się techniki i rozpoznawania brań krok po kroku.
 - [Na co bierze karp latem](https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html): Na co bierze karp latem? Sprawdź kulki proteinowe, kukurydzę, pelety i method feeder oraz taktykę nęcenia, dobór miejsca i pory żerowania w upały.
 - [Okoń jesienią: mikroguma i drop shot | FishPoint](https://fish-point.pl/aktualnosci/okon-jesienia-mikroguma.html): Okoń jesienią na mikrogumę i drop shot: jak znaleźć kotły i ławice, dobrać jig, gumki i UL, prowadzić przynętę i rozgrzać branie. Praktyczny poradnik spinningowy.
-- [Przegląd nowości sezonu 2026](https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html): Trendy sezonu 2026: lżejsze blanki, finezyjny spinning, rozwój feedera, elektronika, echosondy brzegowe i akcesoria do bezpiecznego obchodzenia się z rybą.
+- [Przegląd nowości sezonu](https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html): Przegląd nowości sezonu — wybory redakcji: praktyczny poradnik sprawdzania komunikatów organizatora, regulaminu, miejsca i zgłoszenia.
 - [Jaka przynęta na spinning](https://fish-point.pl/aktualnosci/przyneta-na-spinning.html): Przynęty spinningowe na szczupaka, okonia, sandacza i bolenia: dobór gum, woblerów, obrotówek, rozmiaru, koloru, prowadzenia oraz błędy do uniknięcia.
-- [Rekordowy okoń](https://fish-point.pl/aktualnosci/rekord-okonia-2026.html): Według zestawień wędkarskich Zbigniew Czarny złowił okonia 52 cm i 2,76 kg 23 grudnia 2025 r. Sprawdź, co ten wynik mówi o łowieniu dużych okoni zimą.
-- [Rekordowy sum 292 cm z Zalewu Rybnickiego](https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html): Sum długości 292 cm z Zalewu Rybnickiego złowiony na spinning z łodzi został wypuszczony po pomiarze. Sprawdź, jak łowi się takie sumy i czemu liczy się długość.
+- [Duży okoń](https://fish-point.pl/aktualnosci/rekord-okonia-2026.html): Duży okoń — jak dokumentować wyjątkowy połów: dokumentacja, źródło pierwotne i ostrożne czytanie relacji.
+- [Duży sum](https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html): Duży sum — jak weryfikować relację o wyjątkowym połowie: dokumentacja, źródło pierwotne i ostrożne czytanie relacji.
 - [Nocna zasiadka karpiowa](https://fish-point.pl/aktualnosci/relacja-nocna-zasiadka.html): Relacja FishPoint z nocnej zasiadki karpiowej na żwirowni: sondowanie, nęcenie, oczekiwanie na brania i praktyczne wnioski o taktyce, sprzęcie oraz rybach.
 - [Sezon na szczupaka](https://fish-point.pl/aktualnosci/sezon-na-szczupaka.html): Otwarcie sezonu na szczupaka 2026: wolna prezentacja, płytkie zatoki, gumy i woblery o spokojnej pracy, przygotowanie sprzętu oraz wypuszczanie ryb po tarle.
 - [Spinning na szczupaka jesienią](https://fish-point.pl/aktualnosci/spinning-na-szczupaka-jesienia.html): Spinning na szczupaka jesienią: gdzie szukać dużych ryb, jakie przynęty i tempo prowadzenia, dobór sprzętu, pogoda i bezpieczne wypuszczanie ikrzyc.
@@ -37,9 +37,9 @@
 - [Wędkarstwo morskie dla początkujących](https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html): Wędkarstwo morskie na Bałtyku dla początkujących: łowienie z brzegu i z kutra, sprzęt odporny na sól, przynęty, gatunki, sezony, bezpieczeństwo oraz formalności.
 - [Wymiary i okresy ochronne ryb 2026](https://fish-point.pl/aktualnosci/wymiary-i-okresy-ochronne-2026.html): Orientacyjne, ogólnopolskie wymiary i okresy ochronne ryb na 2026: szczupak, sandacz, sum, boleń i inne gatunki. Sprawdź też regulamin swojego okręgu PZW.
 - [Pierwsze zawody feederowe](https://fish-point.pl/aktualnosci/zawody-feederowe-poradnik.html): Jak wystartować w pierwszych zawodach feederowych? Sprawdź zapisy i regulaminy, losowanie sektorów, przygotowanie stanowiska, taktykę, sprzęt i błędy debiutantów.
-- [Zawody wędkarskie 2026: kalendarz](https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html): Zawody wędkarskie 2026: spławik, feeder, method feeder, karp, spinning i grunt. Sprawdź, gdzie szukać terminarzy, jak wybrać start oraz przygotować się do debiutu.
+- [Jak planować udział w zawodach wędkarskich](https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html): Jak planować udział w zawodach wędkarskich: praktyczny poradnik sprawdzania komunikatów organizatora, regulaminu, miejsca i zgłoszenia.
 - [Zezwolenia online 2026](https://fish-point.pl/aktualnosci/zezwolenia-online-2026.html): Zezwolenia elektroniczne są dostępne w części okręgów PZW, lecz forma zakupu i dokumentu zależy od gospodarza wody. Sprawdź regulamin i sposób okazania zezwolenia.
-- [Złota alga wraca latem](https://fish-point.pl/aktualnosci/zlota-alga-lato-2026.html): Złota alga na Odrze: czym jest Prymnesium parvum, dlaczego wraca latem, jak reagować na śnięte ryby oraz o czym pamiętać nad zagrożoną wodą.
+- [Złota alga latem: monitoring i granice wniosków](https://fish-point.pl/aktualnosci/zlota-alga-lato-2026.html): Złota alga na Odrze: sezonowe ryzyko, monitoring z czerwca 2026, brak detekcji w 13 stałych punktach i zasady reagowania na śnięte ryby.
 - [Żyłka czy plecionka](https://fish-point.pl/aktualnosci/zylka-czy-plecionka.html): Żyłka czy plecionka? Porównujemy rozciągliwość, średnicę, czułość, odporność na przetarcia, zachowanie w mrozie i wybór linki do różnych metod łowienia.
 
 ## Forum
@@ -59,7 +59,7 @@
 - [Grill i ognisko](https://fish-point.pl/kuchnia/grill-i-ognisko.html): Ryba z grilla i ogniska: pstrąg grillowany w całości, ryba pieczona w folii z warzywami, filet flambirowany po nordycku na desce przy żarze. Marynaty.
 - [Karp wigilijny](https://fish-point.pl/kuchnia/karp-wigilijny.html): Karp wigilijny od A do Z: historia tradycji na polskim stole, jak pozbyć się posmaku mułu, sprawdzony przepis na karpia smażonego w dzwonkach i karpia.
 - [Przygotowanie ryby](https://fish-point.pl/kuchnia/przygotowanie-ryby.html): Poradnik FishPoint o przygotowaniu ryby: humanitarne uśmiercanie, patroszenie krok po kroku, skrobanie z łusek bez bałaganu, filetowanie okonia, sandacza.
-- [Smażony okoń i sandacz](https://fish-point.pl/kuchnia/smazony-okon-sandacz.html): Smażony okoń i sandacz krok po kroku: charakterystyka mięsa, przepis podstawowy ze składnikami i czasami smażenia, trzy warianty panierki (klasyczna.
+- [Smażony okoń i sandacz](https://fish-point.pl/kuchnia/smazony-okon-sandacz.html): Smażony okoń i sandacz krok po kroku: charakterystyka mięsa, przepis podstawowy ze składnikami i czasami smażenia oraz trzy warianty panierki.
 - [Wędzenie ryb](https://fish-point.pl/kuchnia/wedzenie-ryb.html): Poradnik wędzenia ryb FishPoint: dlaczego pstrąg, makrela i węgorz wędzą się najlepiej, proporcje solanki i czasy solenia, dobór drewna, etapy wędzenia.
 - [Zupa rybna](https://fish-point.pl/kuchnia/zupa-rybna.html): Zupa rybna od podstaw: esencjonalny wywar z głów i kręgosłupów, klarowna uha po polsku, ognista węgierska halászlé z karpia oraz zabielana zupa rybna.
 
@@ -182,7 +182,7 @@
 - [Szczupak](https://fish-point.pl/ryby/szczupak.html): Szczupak (Esox lucius) w atlasie FishPoint: rozpoznawanie, stanowiska w jeziorach i rzekach, tarło, żerowanie w sezonach, orientacyjny wymiar i okres ochronny.
 - [Troć i łosoś](https://fish-point.pl/ryby/troc-losos.html): Troć wędrowna i łosoś atlantycki w atlasie FishPoint: jak je odróżnić, rzeki pomorskie i Wisła, anadromiczne wędrówki i tarło, spinning rzeczny, zezwolenia.
 - [Ukleja](https://fish-point.pl/ryby/ukleja.html): Ukleja: rozpoznawanie, występowanie, tarło, zasady połowu, lekki zestaw spławikowy, przynęty, zanęcanie oraz bezpieczne obchodzenie się z rybą.
-- [Węgorz](https://fish-point.pl/ryby/wegorz.html): Węgorz europejski (Anguilla anguilla) w atlasie FishPoint: niezwykła biologia i wędrówka na Morze Sargassowe, status gatunku krytycznie zagrożonego.
+- [Węgorz](https://fish-point.pl/ryby/wegorz.html): Węgorz europejski (Anguilla anguilla) w atlasie FishPoint: biologia, wędrówka na Morze Sargassowe oraz aktualne źródła i zasady połowu.
 - [Wzdręga](https://fish-point.pl/ryby/wzdrega.html): Wzdręga (Scardinius erythrophthalmus) w atlasie FishPoint: jak odróżnić ją od płoci, biologia i tarło, żerowanie latem, łowienie spławikowe przy powierzchni.
 
 ## Slownik.html

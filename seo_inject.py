@@ -81,10 +81,10 @@ FISH_ENTITIES = {
 # Rejestr biologiczny atlasu. Tożsamość taksonomiczną oddzielamy od porad
 # praktycznych i od lokalnych przepisów: zewnętrzne bazy opisują gatunek, nie
 # potwierdzają obecności na konkretnej wodzie ani legalności połowu.
-BIOLOGICAL_SOURCE_DATE = "2026-07-14"
+BIOLOGICAL_SOURCE_DATE = "2026-07-17"
 BIOLOGICAL_SOURCE_SCOPE = (
-    "tożsamość taksonomiczna i nazewnictwo; bez potwierdzenia lokalnego "
-    "występowania, stanu łowiska ani zasad połowu"
+    "tożsamość taksonomiczna i nazewnictwo oraz, gdy wskazano, ocena ochrony; "
+    "bez potwierdzenia lokalnego występowania, stanu łowiska ani zasad połowu"
 )
 FISH_BIOLOGICAL_REGISTRY = {
     "szczupak": {
@@ -102,10 +102,13 @@ FISH_BIOLOGICAL_REGISTRY = {
     "bolen": {"latin": "Leuciscus aspius", "group": "drapieżniki", "aliases": ("asp",), "compare": "ukleja"},
     "wegorz": {
         "latin": "Anguilla anguilla", "group": "drapieżniki", "aliases": ("węgorz europejski",), "compare": "mietus",
-        "caution": "Globalna kategoria IUCN opisuje ocenę ochrony gatunku, a nie legalność połowu na konkretnej wodzie.",
+        "caution": "Porada ICES dotyczy całego naturalnego zasięgu i nie rozstrzyga legalności połowu na konkretnej wodzie.",
         "biological_sources": (
-            ("https://doi.org/10.17895/ices.advice.27203028", "ICES Advice 2025: ele.2737.nea",
-             "ocena zasobu węgorza europejskiego w całym naturalnym zasięgu; porada naukowa, nie lokalne przepisy"),
+            ("https://asd.ices.dk/viewAdvice/4001",
+             "ICES Advice: wydano 2025 r.; ocena 2025 r.; porada dla 2026 r. (ele.2737.nea)",
+             "porada naukowa dla 2026 r. w całym naturalnym zasięgu węgorza europejskiego; nie jest lokalnym przepisem"),
+            ("https://doi.org/10.17895/ices.advice.27203028", "DOI porady ICES: ele.2737.nea",
+             "trwały identyfikator porady wydanej w 2025 r., odnoszącej się do oceny 2025 r. i okresu porady 2026 r."),
             ("https://sg.ices.dk/ViewCharts.aspx?key=21231", "ICES Stock Assessment Graphs",
              "dane i wykresy oceny zasobu ele.2737.nea (2025); skala całego naturalnego zasięgu"),
         ),
@@ -140,6 +143,40 @@ FISH_BIOLOGICAL_REGISTRY = {
                "caution": "Zielona barwa ości nie jest rozstrzygającą cechą rozpoznawczą ani oceną przydatności do spożycia."},
     "fladra": {"latin": "Platichthys flesus", "group": "morskie", "aliases": ("stornia", "flądra"), "compare": "dorsz"},
 }
+
+# Tylko bezpośrednie karty gatunków potwierdzone w przeglądzie atlasu
+# 2026-07-17. Brak wpisu oznacza, że nie emitujemy odnośnika IUCN.
+FISH_BIOLOGICAL_REGISTRY_IUCN_URLS = {
+    "amur": "https://www.iucnredlist.org/species/61295/3102796",
+    "belona": "https://www.iucnredlist.org/species/198573/15536157",
+    "bolen": "https://www.iucnredlist.org/species/2178/135082600",
+    "brzana": "https://www.iucnredlist.org/species/2561/58293571",
+    "certa": "https://www.iucnredlist.org/species/254508616/135094309",
+    "dorsz": "https://www.iucnredlist.org/species/8784/12931575",
+    "fladra": "https://www.iucnredlist.org/species/170759990/135112220",
+    "jaz": "https://www.iucnredlist.org/species/11884/135089209",
+    "karas": "https://www.iucnredlist.org/species/3849/58294635",
+    "karp": "https://www.iucnredlist.org/species/6181/3107721",
+    "klen": "https://www.iucnredlist.org/species/61205/135101356",
+    "leszcz": "https://www.iucnredlist.org/species/135696/135068434",
+    "lin": "https://www.iucnredlist.org/species/21912/2780110",
+    "lipien": "https://www.iucnredlist.org/species/266178365/135093349",
+    "mietus": "https://www.iucnredlist.org/species/135675/135110342",
+    "okon": "https://www.iucnredlist.org/species/16580/58297645",
+    "ploc": "https://www.iucnredlist.org/species/19787/58301083",
+    "pstrag": "https://www.iucnredlist.org/species/19861/58301467",
+    "sandacz": "https://www.iucnredlist.org/species/20860/58302439",
+    "sieja": "https://www.iucnredlist.org/species/135672/84475793",
+    "sielawa": "https://www.iucnredlist.org/species/242158594/242163476",
+    "sledz": "https://www.iucnredlist.org/species/155123/4717767",
+    "sum": "https://www.iucnredlist.org/species/40713/58305522",
+    "swinka": "https://www.iucnredlist.org/species/225435143/135083986",
+    "troc-losos": "https://www.iucnredlist.org/species/19861/58301467",
+    "ukleja": "https://www.iucnredlist.org/species/789/135064432",
+    "wzdrega": "https://www.iucnredlist.org/species/19946/58302044",
+}
+for _fish_slug, _iucn_url in FISH_BIOLOGICAL_REGISTRY_IUCN_URLS.items():
+    FISH_BIOLOGICAL_REGISTRY[_fish_slug]["iucn_url"] = _iucn_url
 
 # Krajowy skrót prawny do kart atlasu. Tekst celowo rozróżnia wody
 # śródlądowe i morskie; zawsze prowadzi do aktu oraz zasad konkretnej wody.
@@ -423,6 +460,15 @@ desc_re = re.compile(r'<meta\s+name="description"\s+content="(.*?)"', re.S)
 img_re = re.compile(r'<img[^>]+src="([^"]+)"', re.S)
 block_re = re.compile(re.escape(BEGIN) + r".*?" + re.escape(END) + r"\n", re.S)
 tag_re = re.compile(r"<[^>]+>")
+# Jedyna korekta metadanych utrzymuje pełne zdanie na wszystkich powierzchniach
+# generowanych z opisu źródłowego; treść HTML pozostaje własnością redakcyjną.
+METADATA_DESCRIPTION_SOURCES = {
+    "kuchnia/smazony-okon-sandacz.html": (
+        "Smażony okoń i sandacz krok po kroku: charakterystyka mięsa, przepis "
+        "podstawowy ze składnikami i czasami smażenia oraz trzy warianty panierki."
+    ),
+}
+
 
 # Trwałe metadane redakcyjne są źródłem dat publikacji i aktualizacji. Nie
 # należą do bloku seo:auto, aby ponowne uruchomienie generatora ich nie usuwało.
@@ -678,15 +724,17 @@ fish_biology_re = re.compile(
 )
 
 
-def _biology_source_links(taxon):
-    """Zwraca stałe, rozłączne źródła dla jednego nazwanego taksonu."""
+def _biology_source_links(taxon, iucn_url=None):
+    """Zwraca źródła taksonu i wyłącznie zweryfikowaną bezpośrednią kartę IUCN."""
     query = taxon.replace(" ", "%20")
     fishbase_slug = taxon.replace(" ", "_")
-    return (
+    sources = [
         (f"https://www.fishbase.se/summary/{fishbase_slug}.html", "FishBase"),
         (f"https://www.gbif.org/species/search?q={query}", "GBIF"),
-        (f"https://www.iucnredlist.org/search?query={query}&searchType=species", "IUCN Red List"),
-    )
+    ]
+    if iucn_url:
+        sources.append((iucn_url, "IUCN Red List"))
+    return tuple(sources)
 
 
 def build_fish_biology_section(rel):
@@ -709,8 +757,9 @@ def build_fish_biology_section(rel):
         sources = "".join(
             f'<a href="{html.escape(url, quote=True)}" rel="noopener external" target="_blank">'
             f'{html.escape(label)}: {html.escape(taxon)}</a>'
-            for taxon in taxa
-            for url, label in _biology_source_links(taxon)
+            for index, taxon in enumerate(taxa)
+            for url, label in _biology_source_links(
+                taxon, record.get("iucn_url") if index == 0 else None)
         )
     aliases = ", ".join(record["aliases"])
     if len(taxa) > 1:
@@ -2036,12 +2085,12 @@ def build(path):
     dm = desc_re.search(src)
     if not tm or not dm:
         return None
+    rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
     title_raw = tm.group(1).strip()
-    desc_raw = dm.group(1).strip()
+    desc_raw = METADATA_DESCRIPTION_SOURCES.get(rel, dm.group(1).strip())
     title_txt = html.unescape(title_raw)
     desc_txt = html.unescape(desc_raw)
 
-    rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
     src = normalize_fish_legal_section(src, rel)
     # Ujednolic sezonowa etykiete w hero: publikacja w lipcu nie udaje wrzesniowej daty.
     src = src.replace("wrzesień 2026", "sezon jesienny 2026")
@@ -2425,6 +2474,8 @@ def validate_generated_artifacts():
         with open(path, encoding="utf-8") as f:
             src = f.read()
         parse_content_meta(src, path)
+        if "iucnredlist.org/search" in src:
+            raise ValueError(f"{path}: odnośnik IUCN musi prowadzić bezpośrednio do /species/")
         robots = robots_meta_re.findall(src)
         if len(robots) != 1:
             raise ValueError(f"{path}: oczekiwano dokładnie jednego meta robots")

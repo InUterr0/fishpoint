@@ -49,6 +49,7 @@ function runHarness(code) {
 
 const py = String.raw`
 import time, json, os
+from urllib.parse import urlparse, parse_qs
 
 urls = __URLS__
 console_url = __CONSOLE__
@@ -76,6 +77,57 @@ def body_text():
     except Exception:
         return ''
 
+
+def fishpoint_console_tabs():
+    matches = []
+    for tab in list_tabs(include_chrome=False):
+        try:
+            parsed = urlparse(tab.get('url') or '')
+            resource = parse_qs(parsed.query).get('resource_id', [''])[0]
+            if parsed.netloc == 'search.google.com' and '/search-console' in parsed.path and resource == property:
+                matches.append(tab)
+        except Exception:
+            continue
+    return matches
+
+
+def console_authenticated():
+    try:
+        parsed = urlparse((current_tab().get('url') or '').lower())
+        if parsed.netloc in ('accounts.google.com', 'consent.google.com'):
+            return False
+    except Exception:
+        return False
+    txt = body_text().lower()
+    login_markers = ('sign in to search console', 'zaloguj się w search console', 'choose an account', 'wybierz konto')
+    return not any(marker in txt for marker in login_markers)
+
+
+def activate_console_tab():
+    """Reuse exactly one FishPoint GSC tab; create one replacement only if it was closed."""
+    tabs = fishpoint_console_tabs()
+    if tabs:
+        keep = tabs[0]
+        for duplicate in tabs[1:]:
+            try:
+                close_tab(duplicate)
+                print(f"[gindex] closed duplicate FishPoint console tab: {duplicate['targetId']}")
+            except Exception as e:
+                print(f'[gindex] duplicate tab close failed: {str(e)[:80]}')
+        switch_tab(keep)
+    else:
+        print(f'[gindex] opening console: {console_url}')
+        new_tab(console_url)
+        try:
+            wait_for_load()
+        except Exception as e:
+            print(f'[gindex] console nav slow ({e}); continuing')
+        time.sleep(8)
+    if not console_authenticated():
+        shot('auth-blocked')
+        print('[gindex] AUTH_BLOCKED: logged-in Search Console access is required')
+        return False
+    return True
 
 def js_retry(code, tries=6, wait=4):
     for k in range(tries):
@@ -244,25 +296,31 @@ def process_one(url, idx, total):
     return result
 
 
-counts = {'done':0,'quota':0,'already':0,'no-button':0,'no-box':0,'unknown':0}
+counts = {'done':0,'quota':0,'already':0,'no-button':0,'no-box':0,'unknown':0,'auth-blocked':0}
 quota_hit = False
+auth_blocked = False
 total = len(urls)
 
-# Open the property console once; subsequent inspections reuse the top box.
-print(f'[gindex] opening console: {console_url}')
-new_tab(console_url)
-try:
-    wait_for_load()
-except Exception as e:
-    print(f'[gindex] console nav slow ({e}); continuing')
-time.sleep(8)
+# Reuse the authorization tab opened before the audit. If it was closed,
+# activate_console_tab creates one replacement and applies the same auth gate.
+if not activate_console_tab():
+    auth_blocked = True
 
 for i,u in enumerate(urls, start=1):
+    if auth_blocked:
+        print(f'[gindex] {i}/{total} skipped (authorization blocked): {u}')
+        counts['auth-blocked'] += 1
+        continue
     if quota_hit:
         print(f'[gindex] {i}/{total} skipped (daily quota already hit): {u}')
         counts['quota']+=1
         continue
     try:
+        if not activate_console_tab():
+            auth_blocked = True
+            counts['auth-blocked'] += 1
+            print('[gindex] authorization lost — remaining URLs will be skipped')
+            continue
         r = process_one(u, i, total)
     except Exception as e:
         print(f'[gindex] {i}: error {str(e)[:120]}')
