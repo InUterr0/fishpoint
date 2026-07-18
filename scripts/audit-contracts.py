@@ -3,16 +3,22 @@
 
 from __future__ import annotations
 
+import hashlib
+import ast
+import struct
+
 import json
 import re
 import sys
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 SITEMAP_NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+INTERNAL_HOSTS = {"fish-point.pl", "www.fish-point.pl"}
+
 
 
 class PageParser(HTMLParser):
@@ -22,20 +28,75 @@ class PageParser(HTMLParser):
         self.headings: list[list[int | str]] = []
         self.main_text: list[str] = []
         self.json_ld: list[str] = []
+        self.metadata: dict[str, str] = {}
+        self.hrefs: list[str] = []
+        self.contextual_hrefs: list[str] = []
+        self.toc_hrefs: list[str] = []
+        self.ids: list[str] = []
+        self.tables: list[dict[str, int]] = []
+        self.title_text: list[str] = []
+        self._in_document_title = False
         self._json_ld: str | None = None
+        self._main_depth = 0
+        self._toc_depth = 0
+        self._active_table: dict[str, int] | None = None
+        self._submenu_links: list[list[str]] = []
+        self.submenu_links: list[list[str]] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attr = dict(attrs)
         self.stack.append(tag)
+        if attr.get("id"):
+            self.ids.append(attr["id"])
+        if tag == "main":
+            self._main_depth += 1
+        if tag == "nav" and "toc" in (attr.get("class") or "").split():
+            self._toc_depth += 1
+        if tag == "ul" and "sub" in (attr.get("class") or "").split():
+            self._submenu_links.append([])
+        if tag == "table":
+            self._active_table = {"captions": 0, "th": 0, "scoped_th": 0}
+            self.tables.append(self._active_table)
+        elif tag == "caption" and self._active_table is not None:
+            self._active_table["captions"] += 1
+        elif tag == "th" and self._active_table is not None:
+            self._active_table["th"] += 1
+            self._active_table["scoped_th"] += int(bool(attr.get("scope")))
         if tag in {"h1", "h2", "h3", "h4", "h5", "h6"}:
             self.headings.append([int(tag[1]), ""])
         if tag == "script" and attr.get("type") == "application/ld+json":
             self._json_ld = ""
+        if tag == "title" and "head" in self.stack:
+            self._in_document_title = True
+        if tag == "meta":
+            key = attr.get("name") or attr.get("property")
+            content = attr.get("content")
+            if key and content is not None:
+                self.metadata[key] = content
+        if tag == "a" and attr.get("href") is not None:
+            href = attr["href"]
+            self.hrefs.append(href)
+            if self._main_depth:
+                self.contextual_hrefs.append(href)
+            if self._toc_depth:
+                self.toc_hrefs.append(href)
+            if self._submenu_links:
+                self._submenu_links[-1].append(href)
 
     def handle_endtag(self, tag: str) -> None:
+        if tag == "title":
+            self._in_document_title = False
         if tag == "script" and self._json_ld is not None:
             self.json_ld.append(self._json_ld)
             self._json_ld = None
+        if tag == "ul" and self._submenu_links:
+            self.submenu_links.append(self._submenu_links.pop())
+        if tag == "nav" and self._toc_depth:
+            self._toc_depth -= 1
+        if tag == "main" and self._main_depth:
+            self._main_depth -= 1
+        if tag == "table":
+            self._active_table = None
         for index in range(len(self.stack) - 1, -1, -1):
             if self.stack[index] == tag:
                 self.stack = self.stack[:index]
@@ -46,6 +107,8 @@ class PageParser(HTMLParser):
             self._json_ld += data
         if "main" in self.stack or "title" in self.stack:
             self.main_text.append(data)
+        if self._in_document_title:
+            self.title_text.append(data)
         if self.headings and self.stack and self.stack[-1] in {
             "h1", "h2", "h3", "h4", "h5", "h6"
         }:
@@ -65,6 +128,23 @@ def parse(relative: str) -> PageParser:
 def normalize(value: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", value)).strip().lower()
 
+def compact(value: str) -> str:
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def local_link_target(source: Path, href: str) -> Path | None:
+    parsed = urlparse(href)
+    if parsed.scheme and parsed.scheme not in {"http", "https"}:
+        return None
+    if parsed.netloc and parsed.netloc.lower() not in INTERNAL_HOSTS:
+        return None
+    path = unquote(parsed.path)
+    if not path:
+        return ROOT / "index.html" if parsed.netloc else source
+    target = ROOT / path.lstrip("/") if path.startswith("/") or parsed.netloc else source.parent / path
+    target = target.resolve()
+    return target / "index.html" if target == ROOT or path.endswith("/") else target
+
 
 def local_path(url: str) -> str:
     path = urlparse(url).path.lstrip("/")
@@ -81,6 +161,45 @@ def walk(value):
     elif isinstance(value, list):
         for child in value:
             yield from walk(child)
+
+
+def tool_image_map() -> dict[str, str]:
+    """Odczytuje literalną mapę obrazów narzędzi z generatora przez AST."""
+    tree = ast.parse(read("seo_inject.py"), filename="seo_inject.py")
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and any(
+            isinstance(target, ast.Name) and target.id == "TOOL_IMG" for target in node.targets
+        ):
+            value = ast.literal_eval(node.value)
+            if isinstance(value, dict) and all(
+                isinstance(key, str) and isinstance(path, str) for key, path in value.items()
+            ):
+                return value
+    raise ValueError("seo_inject.py: TOOL_IMG must be a literal string map")
+
+
+def image_width(path: Path) -> int:
+    """Zwraca szerokość PNG/JPEG bez zależności od bibliotek obrazu."""
+    data = path.read_bytes()
+    if data.startswith(b"\x89PNG\r\n\x1a\n") and len(data) >= 24:
+        return struct.unpack(">I", data[16:20])[0]
+    if data.startswith(b"\xff\xd8"):
+        offset = 2
+        while offset + 9 < len(data):
+            if data[offset] != 0xFF:
+                offset += 1
+                continue
+            while offset < len(data) and data[offset] == 0xFF:
+                offset += 1
+            marker = data[offset]
+            offset += 1
+            if marker in {0xD8, 0xD9}:
+                continue
+            length = struct.unpack(">H", data[offset:offset + 2])[0]
+            if marker in {0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF}:
+                return struct.unpack(">H", data[offset + 5:offset + 7])[0]
+            offset += length
+    raise ValueError(f"{path}: unsupported or invalid image")
 
 
 def check(condition: bool, message: str, failures: list[str]) -> None:
@@ -102,6 +221,19 @@ def main() -> int:
             continue
         page = parse(relative)
         parsed[url] = page
+        title = compact("".join(page.title_text))
+        check(
+            bool(title) and title == page.metadata.get("og:title") == page.metadata.get("twitter:title"),
+            f"{relative}: title/OG/Twitter title mismatch",
+            failures,
+        )
+        description = page.metadata.get("description")
+        check(
+            bool(description)
+            and description == page.metadata.get("og:description") == page.metadata.get("twitter:description"),
+            f"{relative}: description/OG/Twitter mismatch",
+            failures,
+        )
         levels = [int(level) for level, _ in page.headings]
         check(levels.count(1) == 1, f"{relative}: expected exactly one H1", failures)
         check(
@@ -114,6 +246,129 @@ def main() -> int:
                 json.loads(raw_json)
             except json.JSONDecodeError as error:
                 failures.append(f"{relative}: invalid JSON-LD: {error}")
+
+    js_version = hashlib.md5((ROOT / "js/main.js").read_bytes()).hexdigest()[:8]
+    for html_path in sorted(ROOT.rglob("*.html")):
+        if ".git" in html_path.parts:
+            continue
+        relative = html_path.relative_to(ROOT).as_posix()
+        source = html_path.read_text(encoding="utf-8", errors="replace")
+        main_js_sources = [
+            src for src in re.findall(r'<script\b[^>]*\bsrc=["\']([^"\']*)["\']', source, re.I)
+            if urlparse(src).path.endswith("/js/main.js") or urlparse(src).path == "js/main.js"
+        ]
+        check(len(main_js_sources) == 1, f"{relative}: expected one local js/main.js reference", failures)
+        if main_js_sources:
+            check(
+                urlparse(main_js_sources[0]).query == f"v={js_version}",
+                f"{relative}: stale or malformed js/main.js version",
+                failures,
+            )
+        page = parse(relative)
+        for href in page.hrefs:
+            target = local_link_target(html_path, href)
+            if target is None:
+                continue
+            check(
+                target.is_relative_to(ROOT) and target.is_file(),
+                f"{relative}: missing local target for {href}",
+                failures,
+            )
+
+    # Navigation is deliberately shallow: hubs remain reachable, submenus do not
+    # grow into a second sitemap, and contextual links carry the long tail.
+    menu = parse("index.html")
+    check(all(len(links) <= 8 for links in menu.submenu_links),
+          "navigation submenu exceeds eight links", failures)
+    hub_paths = {
+        "pierwsze-kroki/index.html", "sprzet/index.html", "techniki/index.html",
+        "ryby/index.html", "poradniki/index.html", "narzedzia/index.html",
+        "lowiska/index.html", "forum/index.html", "aktualnosci/index.html",
+    }
+    menu_targets = {
+        local_link_target(ROOT / "index.html", href)
+        for href in menu.hrefs
+    }
+    for hub in hub_paths:
+        check((ROOT / hub).resolve() in menu_targets, f"navigation omits hub: {hub}", failures)
+
+    indexed_paths = {
+        (ROOT / local_path(url)).resolve(): url
+        for url in urls
+    }
+    contextual_inlinks = {path: 0 for path in indexed_paths}
+    for url, page in parsed.items():
+        source = (ROOT / local_path(url)).resolve()
+        for href in page.contextual_hrefs:
+            target = local_link_target(source, href)
+            if target in contextual_inlinks and target != source:
+                contextual_inlinks[target] += 1
+    for target, count in contextual_inlinks.items():
+        check(count > 0, f"{target.relative_to(ROOT)}: missing contextual inlink", failures)
+
+    for html_path in sorted(ROOT.rglob("*.html")):
+        if ".git" in html_path.parts:
+            continue
+        relative = html_path.relative_to(ROOT).as_posix()
+        page = parse(relative)
+        check(len(page.ids) == len(set(page.ids)), f"{relative}: duplicate HTML id", failures)
+        for href in page.toc_hrefs:
+            anchor = urlparse(href).fragment
+            check(bool(anchor) and anchor in page.ids,
+                  f"{relative}: TOC anchor does not exist: {href}", failures)
+        for table in page.tables:
+            check(table["captions"] == 1, f"{relative}: table needs exactly one caption", failures)
+            check(table["th"] == table["scoped_th"],
+                  f"{relative}: every table header needs scope", failures)
+
+    llms_urls = {}
+    for artifact in ("llms.txt", "llms-full.txt"):
+        content = read(artifact)
+        for marker in (
+            "> Język: pl-PL.", "> Autor/redakcja:", "> Zakres:",
+            "> Najnowsza merytoryczna zmiana:", "> Polityka źródeł i korekt:",
+            "> Kanoniczny URL:",
+        ):
+            check(marker in content, f"{artifact}: missing llms metadata {marker}", failures)
+        if artifact == "llms.txt":
+            found = set(re.findall(
+                r"^- \[[^\]]+\]\((https://fish-point\.pl/[^\s)]*)\):",
+                content,
+                re.M,
+            ))
+        else:
+            found = set(re.findall(
+                r"^URL: (https://fish-point\.pl/[^\s]*)$",
+                content,
+                re.M,
+            ))
+        llms_urls[artifact] = found
+        check(found == set(urls), f"{artifact}: URLs differ from indexable sitemap", failures)
+
+    for url, page in parsed.items():
+        relative = local_path(url)
+        if not relative.endswith("/index.html"):
+            continue
+        section_dir = (ROOT / relative).parent
+        child_dates = []
+        for child in sorted(section_dir.glob("*.html")):
+            if child.name == "index.html":
+                continue
+            match = re.search(r"content-meta:\s*published=\d{4}-\d{2}-\d{2};\s*modified=(\d{4}-\d{2}-\d{2})", child.read_text(encoding="utf-8"))
+            if match:
+                child_dates.append(match.group(1))
+        if not child_dates:
+            continue
+        expected = max(child_dates)
+        visible_dates = re.findall(r"<time\b[^>]*\bdatetime=[\"']([^\"']+)", read(relative))
+        collection_dates = [
+            node.get("dateModified") for raw in page.json_ld
+            for node in walk(json.loads(raw))
+            if isinstance(node, dict) and node.get("@type") == "CollectionPage"
+        ]
+        check(expected in visible_dates, f"{relative}: visible hub freshness is stale", failures)
+        check(collection_dates == [expected],
+              f"{relative}: CollectionPage dateModified is not max child date", failures)
 
     # The three legal FAQ corrections must be identical in schema and visible copy.
     for relative in ("lowiska/slaskie.html", "lowiska/pomorskie.html", "lowiska/zachodniopomorskie.html"):
@@ -153,6 +408,14 @@ def main() -> int:
             check(bool(filename), f"{family}/{key}: attribution record lacks file", failures)
             if filename:
                 check((ROOT / "assets" / "img" / family / filename).is_file(), f"{family}/{key}: missing {filename}", failures)
+
+    for source_page, image_path in tool_image_map().items():
+        image = ROOT / image_path.lstrip("/")
+        check(image.is_file(), f"{source_page}: TOOL_IMG asset is missing: {image_path}", failures)
+        if image.is_file():
+            check(image_width(image) >= 1200,
+                  f"{source_page}: TOOL_IMG asset is narrower than 1200 px: {image_path}",
+                  failures)
 
     check("2GekupS_N9s/hqdefault.jpg" not in read("humor/filmiki.html"), "known 404 video thumbnail remains", failures)
     check("(klasyczna." not in read("kuchnia/smazony-okon-sandacz.html"), "truncated recipe description remains", failures)

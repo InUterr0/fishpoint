@@ -34,6 +34,9 @@ jobs:
       - name: Validate generated artifacts
         run: python3 seo_inject.py --validate
 
+      - name: Audit content contracts
+        run: python3 scripts/audit-contracts.py
+
       - name: Install Railway CLI
         run: npm install --global @railway/cli
 

@@ -7,6 +7,7 @@ zostaje podmieniony, a nie zdublowany. Wystarczy zmienić BASE po kupnie domeny
 i uruchomić ponownie: python3 seo_inject.py
 """
 import os, re, html, json, datetime, subprocess, functools, hashlib, sys
+from pathlib import Path
 
 BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
 # Komentarze giscus (GitHub Discussions) — na wpisach blogowych (aktualnosci).
@@ -21,6 +22,15 @@ NEWSLETTER_EMBED = ""
 SITE_NAME = "FishPoint"
 AUTHOR_NAME = "Maciej Baniewicz"
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
+TOOL_IMG = {
+    "narzedzia/okresy-ochronne.html": "/assets/img/tematy/wedki.jpg",
+    "narzedzia/stany-wod.html": "/assets/img/tematy/pogoda.jpg",
+    "narzedzia/prognoza-bran.html": "/assets/img/tematy/kalendarz.jpg",
+    "narzedzia/kalendarz-bran.html": "/assets/img/tematy/kalendarz.jpg",
+    "narzedzia/dobor-sprzetu.html": "/assets/img/tematy/wedki.jpg",
+    "narzedzia/rozpoznaj-rybe.html": "/assets/img/ryby/okon.jpg",
+    "narzedzia/index.html": "/assets/img/tematy/wedki.jpg",
+}
 LOGO = "/assets/img/logo.png"          # kwadratowe logo marki (dla schema.org)
 
 AUTHOR = {
@@ -373,26 +383,99 @@ NAV_TOP = [
     ("Forum", "forum/", None),
     ("Blog", "aktualnosci/", "aktualnosci"),
     ("Zakupy", "zakupy.html", None),
+    ("Szukaj", "szukaj.html", None),
     ("Więcej", "slownik.html", "__more__"),
 ]
 NAV_CTA = ("Kontakt", "./#kontakt")
+NAV_CHILD_LIMIT = 8
+# Ręcznie dobrane wejścia do najczęstszych zadań; pełne klastry pozostają na
+# hubach, w side-nav i w modułach „Powiązane artykuły”.
+NAV_FEATURED = {
+    "pierwsze-kroki": (
+        "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html",
+        "pierwsze-kroki/pozwolenia-karta-wedkarska.html",
+        "pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html",
+        "pierwsze-kroki/okresy-ochronne-wymiary.html",
+        "pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html",
+        "pierwsze-kroki/lowiska/jeziora.html",
+        "pierwsze-kroki/lowiska/rzeki.html",
+        "pierwsze-kroki/lowiska/stawy.html",
+    ),
+    "techniki": (
+        "techniki/spinning.html", "techniki/feeder.html", "techniki/splawik.html",
+        "techniki/karpiowanie.html", "techniki/muchowe.html", "techniki/podlodowe.html",
+        "techniki/morskie.html", "techniki/feeder-dla-poczatkujacych.html",
+    ),
+    "ryby": (
+        "ryby/szczupak.html", "ryby/sandacz.html", "ryby/okon.html", "ryby/karp.html",
+        "ryby/leszcz.html", "ryby/ploc.html", "ryby/sum.html", "ryby/pstrag.html",
+    ),
+    "poradniki": (
+        "poradniki/kalendarz-bran.html", "poradniki/pogoda-a-brania.html",
+        "poradniki/wedkarstwo-z-brzegu.html", "poradniki/wedkarstwo-z-lodzi.html",
+        "poradniki/wezly-wedkarskie.html", "poradniki/catch-and-release.html",
+        "poradniki/lowienie-zima.html", "poradniki/lowienie-nocne.html",
+    ),
+    "narzedzia": (
+        "narzedzia/prognoza-bran.html", "narzedzia/stany-wod.html",
+        "narzedzia/okresy-ochronne.html", "narzedzia/czy-moge-zabrac-rybe.html",
+        "narzedzia/kalendarz-bran.html", "narzedzia/dobor-sprzetu.html",
+        "narzedzia/rozpoznaj-rybe.html", "narzedzia/kalkulator-wagi-ryby.html",
+    ),
+    "lowiska": (
+        "lowiska/mazowieckie.html", "lowiska/wielkopolskie.html", "lowiska/slaskie.html",
+        "lowiska/malopolskie.html", "lowiska/pomorskie.html", "lowiska/lodzkie.html",
+        "lowiska/dolnoslaskie.html", "lowiska/warminsko-mazurskie.html",
+    ),
+}
 NAV_MORE = [
     ("humor/", "Humor wędkarski"),
     ("kuchnia/", "Kuchnia wędkarska"),
     ("zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
     ("slownik.html", "Słownik pojęć"),
-    ("szukaj.html", "Szukaj w serwisie"),
 ]
 nav_re = re.compile(r'<header class="site-header">.*?</header>', re.S)
 
-# Cache-busting CSS: wersja z hasha zawartości arkusza — po każdej zmianie CSS
+# Cache-busting lokalnych zasobów: wersja z hasha zawartości — po każdej zmianie
 # link zmienia się, więc przeglądarki pobierają nowy plik (koniec ze starym cache).
-try:
-    with open(os.path.join(ROOT, "css", "style.css"), "rb") as _f:
-        CSS_VER = hashlib.md5(_f.read()).hexdigest()[:8]
-except OSError:
-    CSS_VER = "1"
-css_ver_re = re.compile(r'css/style\.css(\?v=[0-9a-f]+)?"')
+def asset_content_hash(relative_path):
+    try:
+        with open(os.path.join(ROOT, relative_path), "rb") as asset:
+            return hashlib.md5(asset.read()).hexdigest()[:8]
+    except OSError:
+        return "00000000"
+
+
+CSS_VER = asset_content_hash("css/style.css")
+JS_VER = asset_content_hash("js/main.js")
+
+
+def versioned_asset_re(asset):
+    return re.compile(
+        rf'(?P<attribute>\b(?:href|src)=["\'])'
+        rf'(?P<prefix>(?:(?:\./|\.\./)+|/)?)'
+        rf'{re.escape(asset)}(?:[?#][^"\']*)?(?P<quote>["\'])',
+        re.I,
+    )
+
+
+def normalize_versioned_asset(src, asset, version, pattern):
+    return pattern.sub(
+        lambda match: (
+            f'{match.group("attribute")}{match.group("prefix")}{asset}'
+            f'?v={version}{match.group("quote")}'
+        ),
+        src,
+    )
+
+def escape_metadata_attribute(value):
+    """Koduje pełną, tekstową wartość meta dla bezpiecznego atrybutu HTML."""
+    return html.escape(html.unescape(value), quote=True)
+
+
+
+css_ver_re = versioned_asset_re("css/style.css")
+js_ver_re = versioned_asset_re("js/main.js")
 index_href_re = re.compile(r'href="([^"]*?)index\.html([?#][^"]*)?"', re.I)
 
 
@@ -411,14 +494,17 @@ def canonicalize_internal_hrefs(src):
 
 def _nav_children(section, prefix):
     if section == "__more__":
-        return [(prefix + href, title) for href, title in NAV_MORE]
-    out = []
+        return [(prefix + href, title) for href, title in NAV_MORE[:NAV_CHILD_LIMIT]]
+    available = {}
     for url, title in SECTION_PAGES.get(section, []):
         rel = url[len(BASE) + 1:] if url.startswith(BASE + "/") else url
-        if rel == "" or rel.endswith("/"):   # pomiń stronę-indeks sekcji
-            continue
-        out.append((prefix + rel, title))
-    return out
+        if rel and not rel.endswith("/"):  # pomiń stronę-indeks sekcji
+            available[rel] = title
+    featured = NAV_FEATURED.get(section, ())
+    selected = [rel for rel in featured if rel in available]
+    if len(selected) < NAV_CHILD_LIMIT:
+        selected.extend(rel for rel in available if rel not in selected)
+    return [(prefix + rel, available[rel]) for rel in selected[:NAV_CHILD_LIMIT]]
 
 
 def build_nav(prefix):
@@ -431,18 +517,8 @@ def build_nav(prefix):
             top = (
                 f'<a href="{top_href}" aria-haspopup="true" '
                 f'aria-controls="{submenu_id}">{html.escape(label)}</a>')
-            vis, extra = kids[:5], kids[5:]
             sub = "".join(
-                f'<li><a href="{u}">{html.escape(t)}</a></li>' for u, t in vis)
-            if extra:
-                cid = f"m-{section}"
-                extra_links = "".join(
-                    f'<a href="{u}">{html.escape(t)}</a>' for u, t in extra)
-                sub += (
-                    f'<li class="sub-more-li">'
-                    f'<input type="checkbox" id="{cid}" class="sub-more-cb" />'
-                    f'<label for="{cid}" class="sub-more-btn">Więcej ({len(extra)})</label>'
-                    f'<span class="sub-more">{extra_links}</span></li>')
+                f'<li><a href="{u}">{html.escape(t)}</a></li>' for u, t in kids)
             items.append(
                 f'<li class="has-sub">{top}<ul id="{submenu_id}" class="sub">{sub}</ul></li>')
         else:
@@ -588,6 +664,27 @@ def is_noindex(src):
         re.search(r'\bnoindex\b', tag, re.I)
         for tag in robots_meta_re.findall(src)
     )
+
+
+def collection_child_modified(section, root=ROOT):
+    """Zwraca ostatnią realną zmianę bezpośredniej karty hubu."""
+    dates = []
+    for child in sorted((Path(root) / section).glob("*.html")):
+        if child.name == "index.html":
+            continue
+        with open(child, encoding="utf-8") as f:
+            _published, modified = parse_content_meta(f.read(), child)
+        dates.append(modified)
+    return max(dates, default=None)
+
+
+# Idempotentny, widoczny ślad świeżości CollectionPage.
+HUB_FRESHNESS_BEGIN, HUB_FRESHNESS_END = (
+    "<!--hub-freshness:auto-->", "<!--/hub-freshness:auto-->"
+)
+hub_freshness_re = re.compile(
+    re.escape(HUB_FRESHNESS_BEGIN) + r".*?" + re.escape(HUB_FRESHNESS_END), re.S
+)
 
 # Idempotentne wstrzyknięcia w BODY (usuwane i odtwarzane przy każdym uruchomieniu)
 BYLINE_BEGIN, BYLINE_END = "<!--byline:auto-->", "<!--/byline:auto-->"
@@ -799,8 +896,9 @@ def build_fish_biology_section(rel):
             f'<h3>Jak odróżnić: {html.escape(first_name)} i '
             f'{html.escape(second_name)}</h3>'
             f'<div class="tool-table-wrap"><table class="tool-table">'
-            f'<thead><tr><th>Cecha</th><th>{html.escape(first_name)}</th>'
-            f'<th>{html.escape(second_name)}</th></tr></thead>'
+            f'<caption>Porównanie cech: {html.escape(first_name)} i {html.escape(second_name)}</caption>'
+            f'<thead><tr><th scope="col">Cecha</th><th scope="col">{html.escape(first_name)}</th>'
+            f'<th scope="col">{html.escape(second_name)}</th></tr></thead>'
             f'<tbody>{rows_html}</tbody></table></div>'
             f'<p><strong>Źródła cech:</strong> {comparison_sources}. '
             f'<strong>Dostęp:</strong> {BIOLOGICAL_SOURCE_DATE}.</p>'
@@ -1578,11 +1676,13 @@ def build_content_advantage(rel, config):
     table_class = "starter-kit" if "pierwszy-zestaw" in rel else "decision-table"
     table_html = (
         f'<section class="{table_class}" aria-label="{html.escape(table_title)}">'
-        f'<h2>{html.escape(table_title)}</h2><table class="{table_class}"><thead><tr>'
-        + "".join(f"<th>{html.escape(cell)}</th>" for cell in headers)
+        f'<h2>{html.escape(table_title)}</h2><table class="{table_class}">'
+        f'<caption>{html.escape(table_title)}</caption><thead><tr>'
+        + "".join(f'<th scope="col">{html.escape(cell)}</th>' for cell in headers)
         + "</tr></thead><tbody>"
         + "".join(
-            "<tr>" + "".join(f"<td>{html.escape(cell)}</td>" for cell in row) + "</tr>"
+            '<tr><th scope="row">' + html.escape(row[0]) + "</th>"
+            + "".join(f"<td>{html.escape(cell)}</td>" for cell in row[1:]) + "</tr>"
             for row in rows
         )
         + "</tbody></table></section>"
@@ -2066,7 +2166,8 @@ def build(path):
     depth = os.path.relpath(path, ROOT).replace(os.sep, "/").count("/")
     src = nav_re.sub(lambda m: build_nav("../" * depth), src, count=1)
     src = canonicalize_internal_hrefs(src)
-    src = css_ver_re.sub(f'css/style.css?v={CSS_VER}"', src)
+    src = normalize_versioned_asset(src, "css/style.css", CSS_VER, css_ver_re)
+    src = normalize_versioned_asset(src, "js/main.js", JS_VER, js_ver_re)
     # usuń poprzednie wstrzyknięcia, by działać idempotentnie
     src = block_re.sub("", src)
     src = byline_re.sub("", src)
@@ -2079,6 +2180,7 @@ def build(path):
     src = fish_biology_re.sub("", src)
     src = content_advantage_re.sub("", src)
     src = affiliate_re.sub("", src)
+    src = hub_freshness_re.sub("", src)
     src = ensure_youtube_facade_dimensions(replace_youtube_nocookie_embeds(src))
 
     tm = title_re.search(src)
@@ -2090,6 +2192,8 @@ def build(path):
     desc_raw = METADATA_DESCRIPTION_SOURCES.get(rel, dm.group(1).strip())
     title_txt = html.unescape(title_raw)
     desc_txt = html.unescape(desc_raw)
+    title_attr = escape_metadata_attribute(title_raw)
+    desc_attr = escape_metadata_attribute(desc_raw)
 
     src = normalize_fish_legal_section(src, rel)
     # Ujednolic sezonowa etykiete w hero: publikacja w lipcu nie udaje wrzesniowej daty.
@@ -2103,16 +2207,6 @@ def build(path):
     # obrazek OG: pierwszy <img> w treści, inaczej domyślny
     im = img_re.search(src)
     img_path = resolve_img(im.group(1), page_dir) if im else DEFAULT_IMG
-    # Strony narzędzi budują <img> w JS (brak statycznego) — nadaj sensowny OG
-    TOOL_IMG = {
-        "narzedzia/okresy-ochronne.html": "/assets/img/tematy/wedki.jpg",
-        "narzedzia/stany-wod.html": "/assets/img/tematy/pogoda.jpg",
-        "narzedzia/prognoza-bran.html": "/assets/img/tematy/kalendarz.jpg",
-        "narzedzia/kalendarz-bran.html": "/assets/img/tematy/kalendarz.jpg",
-        "narzedzia/dobor-sprzetu.html": "/assets/img/tematy/wedki.jpg",
-        "narzedzia/rozpoznaj-rybe.html": "/assets/img/ryby/okon.jpg",
-        "narzedzia/index.html": "/assets/img/tematy/wedki.jpg",
-    }
     rel_now = os.path.relpath(path, ROOT).replace(os.sep, "/")
     if rel_now in TOOL_IMG:
         img_path = TOOL_IMG[rel_now]
@@ -2127,7 +2221,16 @@ def build(path):
     parts = rel.split("/")
     section = parts[0] if len(parts) > 1 else None
     is_home = rel == "index.html"
-    is_section_index = len(parts) == 2 and parts[1] == "index.html"
+    is_section_index = not is_home and rel.endswith("/index.html")
+    collection_dir = os.path.dirname(rel)
+    collection_modified = collection_child_modified(collection_dir) if is_section_index else None
+    if collection_modified:
+        freshness = (
+            f'{HUB_FRESHNESS_BEGIN}<p class="article-meta hub-freshness">'
+            f'<time datetime="{collection_modified}">Karty w dziale sprawdzone '
+            f'{fmt_date_pl(collection_modified)}</time></p>{HUB_FRESHNESS_END}'
+        )
+        src = re.sub(r"(</h1>)", r"\1" + freshness, src, count=1)
 
     # Daty pochodzą z trwałego komentarza content-meta, nie z mtime przebudowy.
 
@@ -2203,13 +2306,13 @@ def build(path):
         f'  <meta property="og:site_name" content="{SITE_NAME}" />',
         '  <meta property="og:locale" content="pl_PL" />',
         f'  <meta property="og:type" content="{og_type}" />',
-        f'  <meta property="og:title" content="{title_raw}" />',
-        f'  <meta property="og:description" content="{desc_raw}" />',
+        f'  <meta property="og:title" content="{title_attr}" />',
+        f'  <meta property="og:description" content="{desc_attr}" />',
         f'  <meta property="og:url" content="{url}" />',
         f'  <meta property="og:image" content="{img_url}" />',
         '  <meta name="twitter:card" content="summary_large_image" />',
-        f'  <meta name="twitter:title" content="{title_raw}" />',
-        f'  <meta name="twitter:description" content="{desc_raw}" />',
+        f'  <meta name="twitter:title" content="{title_attr}" />',
+        f'  <meta name="twitter:description" content="{desc_attr}" />',
         f'  <meta name="twitter:image" content="{img_url}" />',
     ]
     if og_type == "article":
@@ -2310,6 +2413,7 @@ def build(path):
                 "description": desc_txt,
                 "url": url,
                 "inLanguage": "pl-PL",
+                **({"dateModified": collection_modified} if collection_modified else {}),
                 "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": BASE + "/"},
             }))
             li = extract_listitems(src, url)
@@ -2529,6 +2633,21 @@ def validate_generated_artifacts():
     print(f"Walidacja artefaktów: ok ({len(html_paths)} stron)")
 
 
+
+
+def llms_metadata_lines(canonical_url, newest_modified, scope):
+    """Stałe metadane llms wyprowadzone wyłącznie z treści indeksowalnych."""
+    return [
+        f"> Język: pl-PL.",
+        f"> Autor/redakcja: {AUTHOR_NAME}, redakcja {SITE_NAME}.",
+        f"> Zakres: {scope}",
+        f"> Najnowsza merytoryczna zmiana: {newest_modified}.",
+        f"> Polityka źródeł i korekt: {BASE}/o-autorze.html.",
+        f"> Kanoniczny URL: {canonical_url}.",
+        "",
+    ]
+
+
 def main():
     pages = []
     for dirpath, _, files in os.walk(ROOT):
@@ -2570,7 +2689,8 @@ def main():
         )
         s404 = nav_re.sub(lambda m: build_nav("/"), s404, count=1)
         s404 = canonicalize_internal_hrefs(s404)
-        s404 = css_ver_re.sub(f'css/style.css?v={CSS_VER}"', s404)
+        s404 = normalize_versioned_asset(s404, "css/style.css", CSS_VER, css_ver_re)
+        s404 = normalize_versioned_asset(s404, "js/main.js", JS_VER, js_ver_re)
         with open(p404, "w", encoding="utf-8") as f:
             f.write(s404)
 
@@ -2637,13 +2757,18 @@ def main():
         f.write(robots)
 
     # llms.txt — mapa treści dla modeli AI (GEO). Standard: https://llmstxt.org
+    newest_modified = max(mtime for _url, mtime, *_rest in urls)
     ll = [
         "# FishPoint",
         "",
         "> FishPoint to polski poradnik wędkarski: dobór sprzętu, atlas ryb "
         "słodkowodnych, techniki połowu, opisy łowisk, poradniki dla początkujących "
-        "i przepisy kuchni rybnej. Treści są autorskie, po polsku (pl-PL).",
+        "i przepisy kuchni rybnej.",
         "",
+        *llms_metadata_lines(
+            BASE + "/llms.txt", newest_modified,
+            "Mapa wszystkich indeksowalnych stron FishPoint.",
+        ),
     ]
     by_sec = {}
     home = None
@@ -2665,29 +2790,29 @@ def main():
     with open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8") as f:
         f.write("\n".join(ll).rstrip() + "\n")
 
-    # llms-full.txt — pełny zrzut treści dla modeli AI (opcjonalny standard llmstxt)
-    full = ["# FishPoint — pełna treść",
-            "",
-            "> Kompletny, tekstowy zrzut treści serwisu FishPoint (polski poradnik "
-            "wędkarski: sprzęt, atlas ryb, techniki, poradniki, kuchnia, narzędzia). "
-            "Autor: " + AUTHOR_NAME + ". Język: pl-PL.",
-            ""]
+    # llms-full.txt — pełny zrzut każdej indeksowalnej strony bez progów długości.
+    full = [
+        "# FishPoint — pełna treść",
+        "",
+        "> Kompletny, tekstowy zrzut indeksowalnej treści serwisu FishPoint.",
+        "",
+        *llms_metadata_lines(
+            BASE + "/llms-full.txt", newest_modified,
+            "Pełny tekst wszystkich indeksowalnych stron FishPoint.",
+        ),
+    ]
     full_n = 0
-    for p in pages:
-        with open(p, encoding="utf-8") as f:
-            s = f.read()
-        if is_noindex(s):
-            continue
-        tm = title_re.search(s)
-        if not tm:
-            continue
-        txt = article_text(s)
-        if len(txt) < 120:
-            continue
-        full.append(f"## {short_title(html.unescape(tm.group(1).strip()))}")
-        full.append(f"URL: {BASE + rel_url(p)}")
+    for url, _mtime, _is_index, rp, title, _desc, _sec, _imgs, _pubdate in sorted(urls):
+        rel_path = rp.lstrip("/") or "index.html"
+        if rel_path.endswith("/"):
+            rel_path += "index.html"
+        path = os.path.join(ROOT, rel_path)
+        with open(path, encoding="utf-8") as f:
+            text = article_text(f.read())
+        full.append(f"## {short_title(title)}")
+        full.append(f"URL: {url}")
         full.append("")
-        full.append(txt)
+        full.append(text)
         full.append("")
         full_n += 1
     with open(os.path.join(ROOT, "llms-full.txt"), "w", encoding="utf-8") as f:

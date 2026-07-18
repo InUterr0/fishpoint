@@ -1,6 +1,13 @@
 # FishPoint
 
-> FishPoint to polski poradnik wędkarski: dobór sprzętu, atlas ryb słodkowodnych, techniki połowu, opisy łowisk, poradniki dla początkujących i przepisy kuchni rybnej. Treści są autorskie, po polsku (pl-PL).
+> FishPoint to polski poradnik wędkarski: dobór sprzętu, atlas ryb słodkowodnych, techniki połowu, opisy łowisk, poradniki dla początkujących i przepisy kuchni rybnej.
+
+> Język: pl-PL.
+> Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
+> Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
+> Najnowsza merytoryczna zmiana: 2026-07-17.
+> Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
+> Kanoniczny URL: https://fish-point.pl/llms.txt.
 
 - [FishPoint — poradnik wędkarski, atlas ryb i techniki](https://fish-point.pl/): Nowoczesna strona wędkarska: sprzęt, przynęty, poradniki, łowiska i aktualności dla pasjonatów wędkarstwa.
 
