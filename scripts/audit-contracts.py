@@ -423,20 +423,20 @@ def main() -> int:
     modified_dates = {
         relative: "2026-07-17"
         for relative in (
-            "aktualnosci/jak-lowic-lina.html",
-            "lowiska/index.html",
-            "lowiska/pomorskie.html",
             "narzedzia/czy-moge-zabrac-rybe.html",
-            "narzedzia/kalendarz-ksiezycowy.html",
             "pierwsze-kroki/index.html",
             "poradniki/index.html",
-            "ryby/leszcz.html",
-            "ryby/ploc.html",
-            "ryby/szczupak.html",
-            "ryby/wegorz.html",
         )
     }
     modified_dates.update({
+        "aktualnosci/jak-lowic-lina.html": "2026-07-20",
+        "lowiska/index.html": "2026-07-20",
+        "lowiska/pomorskie.html": "2026-07-20",
+        "narzedzia/kalendarz-ksiezycowy.html": "2026-07-20",
+        "ryby/leszcz.html": "2026-07-20",
+        "ryby/ploc.html": "2026-07-20",
+        "ryby/szczupak.html": "2026-07-20",
+        "ryby/wegorz.html": "2026-07-20",
         "aktualnosci/przyneta-na-spinning.html": "2026-07-20",
         "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html": "2026-07-20",
         "pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html": "2026-07-20",
