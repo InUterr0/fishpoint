@@ -420,31 +420,41 @@ def main() -> int:
     check("2GekupS_N9s/hqdefault.jpg" not in read("humor/filmiki.html"), "known 404 video thumbnail remains", failures)
     check("(klasyczna." not in read("kuchnia/smazony-okon-sandacz.html"), "truncated recipe description remains", failures)
 
-    modified_pages = (
-        "aktualnosci/jak-lowic-lina.html",
-        "aktualnosci/przyneta-na-spinning.html",
-        "lowiska/index.html",
-        "lowiska/pomorskie.html",
-        "narzedzia/czy-moge-zabrac-rybe.html",
-        "narzedzia/kalendarz-ksiezycowy.html",
-        "pierwsze-kroki/index.html",
-        "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html",
-        "pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html",
-        "poradniki/index.html",
-        "ryby/leszcz.html",
-        "ryby/ploc.html",
-        "ryby/szczupak.html",
-        "ryby/wegorz.html",
-    )
-    for relative in modified_pages:
+    modified_dates = {
+        relative: "2026-07-17"
+        for relative in (
+            "aktualnosci/jak-lowic-lina.html",
+            "lowiska/index.html",
+            "lowiska/pomorskie.html",
+            "narzedzia/czy-moge-zabrac-rybe.html",
+            "narzedzia/kalendarz-ksiezycowy.html",
+            "pierwsze-kroki/index.html",
+            "poradniki/index.html",
+            "ryby/leszcz.html",
+            "ryby/ploc.html",
+            "ryby/szczupak.html",
+            "ryby/wegorz.html",
+        )
+    }
+    modified_dates.update({
+        "aktualnosci/przyneta-na-spinning.html": "2026-07-20",
+        "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html": "2026-07-20",
+        "pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html": "2026-07-20",
+    })
+    index_pages = {"lowiska/index.html", "pierwsze-kroki/index.html", "poradniki/index.html"}
+    for relative, expected_modified in modified_dates.items():
         html = read(relative)
         check(
-            re.search(r"content-meta:[^\n]*modified=2026-07-17", html) is not None,
+            re.search(rf"content-meta:[^\n]*modified={expected_modified}", html) is not None,
             f"{relative}: stale content-meta modified date",
             failures,
         )
-        if relative not in {"lowiska/index.html", "pierwsze-kroki/index.html", "poradniki/index.html"}:
-            check('article:modified_time" content="2026-07-17' in html, f"{relative}: stale generated modified time", failures)
+        if relative not in index_pages:
+            check(
+                f'article:modified_time" content="{expected_modified}' in html,
+                f"{relative}: stale generated modified time",
+                failures,
+            )
 
     if failures:
         print("Audit contracts failed:", file=sys.stderr)

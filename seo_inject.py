@@ -369,25 +369,19 @@ SECTIONS = {
     "humor": "Humor",
 }
 
-# --- Wspólna nawigacja z rozwijanymi działami (dropdown), wstrzykiwana na KAŻDĄ
-# stronę, żeby menu było identyczne wszędzie. (etykieta, href względny od korzenia,
-# klucz sekcji dla dzieci menu lub None). Dzieci pobierane są z SECTION_PAGES. ---
+# --- Wspólna nawigacja z ograniczoną liczbą decyzji pierwszego poziomu. ---
+# Każdy dział ma osobny link i przycisk rozwijania; grupa „Odkrywaj” zbiera
+# treści uzupełniające bez udawania osobnej strony docelowej.
 NAV_TOP = [
-    ("Pierwsze kroki", "pierwsze-kroki/", "pierwsze-kroki"),
+    ("Zacznij", "pierwsze-kroki/", "pierwsze-kroki"),
     ("Sprzęt", "sprzet/", "sprzet"),
     ("Techniki", "techniki/", "techniki"),
-    ("Atlas ryb", "ryby/", "ryby"),
-    ("Poradniki", "poradniki/", "poradniki"),
-    ("Narzędzia", "narzedzia/", "narzedzia"),
+    ("Ryby", "ryby/", "ryby"),
     ("Łowiska", "lowiska/", "lowiska"),
-    ("Forum", "forum/", None),
-    ("Blog", "aktualnosci/", "aktualnosci"),
-    ("Zakupy", "zakupy.html", None),
-    ("Szukaj", "szukaj.html", None),
-    ("Więcej", "slownik.html", "__more__"),
+    ("Poradniki", "poradniki/", "poradniki"),
+    ("Odkrywaj", None, "__discover__"),
 ]
-NAV_CTA = ("Kontakt", "./#kontakt")
-NAV_CHILD_LIMIT = 8
+NAV_CHILD_LIMIT = 7
 # Ręcznie dobrane wejścia do najczęstszych zadań; pełne klastry pozostają na
 # hubach, w side-nav i w modułach „Powiązane artykuły”.
 NAV_FEATURED = {
@@ -416,25 +410,22 @@ NAV_FEATURED = {
         "poradniki/wezly-wedkarskie.html", "poradniki/catch-and-release.html",
         "poradniki/lowienie-zima.html", "poradniki/lowienie-nocne.html",
     ),
-    "narzedzia": (
-        "narzedzia/prognoza-bran.html", "narzedzia/stany-wod.html",
-        "narzedzia/okresy-ochronne.html", "narzedzia/czy-moge-zabrac-rybe.html",
-        "narzedzia/kalendarz-bran.html", "narzedzia/dobor-sprzetu.html",
-        "narzedzia/rozpoznaj-rybe.html", "narzedzia/kalkulator-wagi-ryby.html",
-    ),
     "lowiska": (
         "lowiska/mazowieckie.html", "lowiska/wielkopolskie.html", "lowiska/slaskie.html",
         "lowiska/malopolskie.html", "lowiska/pomorskie.html", "lowiska/lodzkie.html",
         "lowiska/dolnoslaskie.html", "lowiska/warminsko-mazurskie.html",
     ),
 }
-NAV_MORE = [
-    ("humor/", "Humor wędkarski"),
-    ("kuchnia/", "Kuchnia wędkarska"),
+NAV_DISCOVER = [
+    ("aktualnosci/", "Aktualności"),
+    ("narzedzia/", "Narzędzia"),
+    ("kuchnia/", "Kuchnia"),
+    ("forum/", "Forum"),
+    ("humor/", "Humor"),
+    ("zakupy.html", "Zakupy"),
     ("zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
-    ("slownik.html", "Słownik pojęć"),
 ]
-nav_re = re.compile(r'<header class="site-header">.*?</header>', re.S)
+nav_re = re.compile(r'(?:<a class="skip-link" href="#main-content">Przejdź do treści</a>)?<header class="site-header">.*?</header>', re.S)
 
 # Cache-busting lokalnych zasobów: wersja z hasha zawartości — po każdej zmianie
 # link zmienia się, więc przeglądarki pobierają nowy plik (koniec ze starym cache).
@@ -493,8 +484,8 @@ def canonicalize_internal_hrefs(src):
 
 
 def _nav_children(section, prefix):
-    if section == "__more__":
-        return [(prefix + href, title) for href, title in NAV_MORE[:NAV_CHILD_LIMIT]]
+    if section == "__discover__":
+        return [(prefix + href, title) for href, title in NAV_DISCOVER]
     available = {}
     for url, title in SECTION_PAGES.get(section, []):
         rel = url[len(BASE) + 1:] if url.startswith(BASE + "/") else url
@@ -510,26 +501,48 @@ def _nav_children(section, prefix):
 def build_nav(prefix):
     items = []
     for label, href, section in NAV_TOP:
-        top_href = f"{prefix}{href}"
-        kids = _nav_children(section, prefix) if section else []
-        if kids:
-            submenu_id = f"submenu-{section.strip('_').replace('_', '-')}"
-            top = (
-                f'<a href="{top_href}" aria-haspopup="true" '
-                f'aria-controls="{submenu_id}">{html.escape(label)}</a>')
-            sub = "".join(
-                f'<li><a href="{u}">{html.escape(t)}</a></li>' for u, t in kids)
-            items.append(
-                f'<li class="has-sub">{top}<ul id="{submenu_id}" class="sub">{sub}</ul></li>')
+        kids = _nav_children(section, prefix)
+        submenu_id = f"submenu-{section.strip('_').replace('_', '-')}"
+        sub = "".join(
+            f'<li><a href="{url}">{html.escape(title)}</a></li>'
+            for url, title in kids
+        )
+        if href is None:
+            control = (
+                f'<button class="nav-group-toggle submenu-toggle" type="button" '
+                f'aria-expanded="false" aria-controls="{submenu_id}">'
+                f'{html.escape(label)}<span aria-hidden="true">▾</span></button>'
+            )
+            overview = ""
         else:
-            items.append(f'<li><a href="{top_href}">{html.escape(label)}</a></li>')
-    items.append(
-        f'<li><a class="nav-cta" href="{prefix}{NAV_CTA[1]}">{html.escape(NAV_CTA[0])}</a></li>')
+            top_href = f"{prefix}{href}"
+            control = (
+                f'<a href="{top_href}">{html.escape(label)}</a>'
+                f'<button class="submenu-toggle" type="button" aria-expanded="false" '
+                f'aria-controls="{submenu_id}"><span class="sr-only">Rozwiń menu '
+                f'{html.escape(label)}</span><span aria-hidden="true">▾</span></button>'
+            )
+            overview = (
+                f'<li class="sub-overview"><a href="{top_href}">'
+                f'Zobacz cały dział {html.escape(label)}</a></li>'
+            )
+        items.append(
+            f'<li class="has-sub">{control}<ul id="{submenu_id}" class="sub">'
+            f'{overview}{sub}</ul></li>'
+        )
+    search_icon = (
+        '<a class="nav-search" href="' + prefix + 'szukaj.html" aria-label="Szukaj">'
+        '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+        '<circle cx="11" cy="11" r="6.5"></circle>'
+        '<path d="m16 16 4.5 4.5"></path></svg></a>'
+    )
     return (
-        '<header class="site-header"><nav class="nav container">'
+        '<a class="skip-link" href="#main-content">Przejdź do treści</a>'
+        '<header class="site-header"><nav class="nav container" aria-label="Główna">'
         f'<a class="logo" href="{prefix}index.html"><span class="logo-mark">≈</span><span>FishPoint</span></a>'
         '<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>'
-        f'<ul id="nav-menu" class="nav-menu">{"".join(items)}</ul></nav></header>')
+        f'<ul id="nav-menu" class="nav-menu">{"".join(items)}</ul>{search_icon}</nav></header>'
+    )
 
 title_re = re.compile(r"<title>(.*?)</title>", re.S)
 desc_re = re.compile(r'<meta\s+name="description"\s+content="(.*?)"', re.S)
@@ -1672,6 +1685,7 @@ def _advantage_links(items):
 
 def build_content_advantage(rel, config):
     """Buduje jawnie oznaczony, semantyczny blok odpowiedzi z konfiguracji strony."""
+    block_class = "info-block content-advantage home-journey" if rel == "index.html" else "info-block content-advantage"
     table_title, headers, rows = config["table"]
     table_class = "starter-kit" if "pierwszy-zestaw" in rel else "decision-table"
     table_html = (
@@ -1703,8 +1717,17 @@ def build_content_advantage(rel, config):
         f'<p><strong>Następny krok:</strong> {links}</p></section>'
         if links else ""
     )
+    if rel == "index.html":
+        return (
+            f'{CONTENT_ADVANTAGE_BEGIN}<section class="{block_class}" '
+            f'aria-label="Praktyczny skrót">'
+            f'<section class="answer-first" aria-label="Najkrótsza odpowiedź">'
+            f'<h2>Plan pierwszego wyjazdu</h2>'
+            f'<p>{html.escape(config["answer"])}</p></section>'
+            f'{table_html}{next_step}</section>{CONTENT_ADVANTAGE_END}'
+        )
     return (
-        f'{CONTENT_ADVANTAGE_BEGIN}<section class="info-block content-advantage" '
+        f'{CONTENT_ADVANTAGE_BEGIN}<section class="{block_class}" '
         f'aria-label="Praktyczny skrót">'
         f'<section class="answer-first" aria-label="Najkrótsza odpowiedź">'
         f'<h2>Najkrótsza odpowiedź</h2><p>{html.escape(config["answer"])}</p></section>'
@@ -2165,6 +2188,7 @@ def build(path):
     # kanoniczny (z rozwijanymi działami). Prefiks ścieżek wg głębokości strony.
     depth = os.path.relpath(path, ROOT).replace(os.sep, "/").count("/")
     src = nav_re.sub(lambda m: build_nav("../" * depth), src, count=1)
+    src = re.sub(r'<main(?![^>]*\bid=)([^>]*)>', r'<main id="main-content"\1>', src, count=1)
     src = canonicalize_internal_hrefs(src)
     src = normalize_versioned_asset(src, "css/style.css", CSS_VER, css_ver_re)
     src = normalize_versioned_asset(src, "js/main.js", JS_VER, js_ver_re)
@@ -2290,6 +2314,7 @@ def build(path):
     src = re.sub(r"(</article>)", build_affiliate_links(rel) + r"\1", src, count=1)
     # Wstrzyknięte bloki też mogą zawierać stare odnośniki do index.html.
     src = canonicalize_internal_hrefs(src)
+    src = re.sub(r'<link\b(?=[^>]*\brel\s*=\s*["\']canonical["\'])[^>]*>\s*', "", src, flags=re.I)
     head = [
         BEGIN,
         f'  <link rel="canonical" href="{url}" />',
@@ -2688,6 +2713,7 @@ def main():
             count=1,
         )
         s404 = nav_re.sub(lambda m: build_nav("/"), s404, count=1)
+        s404 = re.sub(r'<main(?![^>]*\bid=)([^>]*)>', r'<main id="main-content"\1>', s404, count=1)
         s404 = canonicalize_internal_hrefs(s404)
         s404 = normalize_versioned_asset(s404, "css/style.css", CSS_VER, css_ver_re)
         s404 = normalize_versioned_asset(s404, "js/main.js", JS_VER, js_ver_re)

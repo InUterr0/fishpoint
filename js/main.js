@@ -2,25 +2,16 @@ const toggle = document.querySelector('.nav-toggle');
 const menu = document.querySelector('#nav-menu');
 
 if (toggle && menu) {
-  const mobileNav = window.matchMedia('(max-width: 840px)');
-  const submenuLinks = [...menu.querySelectorAll('.has-sub > a')];
+  const submenuButtons = [...menu.querySelectorAll('.has-sub > .submenu-toggle')];
 
   const setSubmenuState = (item, isOpen) => {
     item.classList.toggle('sub-open', isOpen);
-    item.querySelector(':scope > a').setAttribute('aria-expanded', String(isOpen));
+    item.querySelector(':scope > .submenu-toggle').setAttribute('aria-expanded', String(isOpen));
   };
 
   const closeSubmenus = (except = null) => {
     menu.querySelectorAll('.has-sub.sub-open').forEach((item) => {
       if (item !== except) setSubmenuState(item, false);
-    });
-  };
-
-  const syncSubmenuSemantics = () => {
-    closeSubmenus();
-    submenuLinks.forEach((link) => {
-      if (mobileNav.matches) link.setAttribute('aria-expanded', 'false');
-      else link.removeAttribute('aria-expanded');
     });
   };
 
@@ -38,21 +29,15 @@ if (toggle && menu) {
   });
 
   menu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      if (mobileNav.matches && link.matches('.has-sub > a')) return;
-      closeMenu();
-    });
+    link.addEventListener('click', closeMenu);
   });
 
-  submenuLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      if (!mobileNav.matches) return;
-      const item = link.parentElement;
-      if (!item.classList.contains('sub-open')) {
-        event.preventDefault();
-        closeSubmenus(item);
-        setSubmenuState(item, true);
-      }
+  submenuButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      const isOpen = !item.classList.contains('sub-open');
+      closeSubmenus(item);
+      setSubmenuState(item, isOpen);
     });
   });
 
@@ -60,19 +45,18 @@ if (toggle && menu) {
     if (!menu.contains(event.target) && !toggle.contains(event.target)) closeMenu();
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key !== 'Escape' || !menu.classList.contains('open')) return;
+    if (event.key !== 'Escape') return;
     const openItem = menu.querySelector('.has-sub.sub-open');
     if (openItem) {
       setSubmenuState(openItem, false);
-      openItem.querySelector(':scope > a').focus();
+      openItem.querySelector(':scope > .submenu-toggle').focus();
       return;
     }
-    closeMenu();
-    toggle.focus();
+    if (menu.classList.contains('open')) {
+      closeMenu();
+      toggle.focus();
+    }
   });
-
-  mobileNav.addEventListener('change', syncSubmenuSemantics);
-  syncSubmenuSemantics();
 }
 
 
@@ -158,12 +142,12 @@ if (sideNav) {
   const btn = document.createElement('button');
   btn.type = 'button';
   btn.className = 'theme-toggle';
-  btn.setAttribute('aria-label', 'Przełącz ciemny motyw');
   btn.setAttribute('aria-pressed', document.documentElement.classList.contains('dark') ? 'true' : 'false');
   const setIcon = () => {
     const dark = document.documentElement.classList.contains('dark');
     btn.textContent = dark ? '☀️' : '🌙';
     btn.setAttribute('aria-pressed', String(dark));
+    btn.setAttribute('aria-label', dark ? 'Włącz jasny motyw' : 'Włącz ciemny motyw');
   };
   setIcon();
 
@@ -395,4 +379,47 @@ document.querySelectorAll('table.decision-table, table.starter-kit, .decision-ta
   window.addEventListener('resize', updateScrollState);
   if ('ResizeObserver' in window) new ResizeObserver(updateScrollState).observe(wrapper);
   updateScrollState();
+});
+
+// Filtr długich katalogów: działa bez przeładowania i zachowuje strukturę sekcji.
+document.querySelectorAll('[data-card-filter]').forEach((form) => {
+  const input = form.querySelector('input[type="search"]');
+  const result = form.querySelector('.card-filter-result');
+  const scope = document.querySelector(form.dataset.filterScope || 'main');
+  if (!input || !scope) return;
+
+  const normalize = (value) => value
+    .toLocaleLowerCase('pl')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+  const cards = [...scope.querySelectorAll(form.dataset.cardFilter)]
+    .map((card) => ({ card, haystack: normalize(card.textContent) }));
+  const grids = [...new Set(cards.map(({ card }) => card.closest('.blog-grid')).filter(Boolean))];
+
+  const update = () => {
+    const query = normalize(input.value.trim());
+    let visibleCount = 0;
+
+    cards.forEach(({ card, haystack }) => {
+      const visible = !query || haystack.includes(query);
+      card.hidden = !visible;
+      if (visible) visibleCount += 1;
+    });
+
+    grids.forEach((grid) => {
+      const hasVisibleCard = [...grid.querySelectorAll(form.dataset.cardFilter)]
+        .some((card) => !card.hidden);
+      grid.hidden = !hasVisibleCard;
+      const heading = grid.previousElementSibling;
+      if (heading && heading.classList.contains('section-heading')) heading.hidden = !hasVisibleCard;
+    });
+
+    if (result) result.textContent = query
+      ? `${visibleCount} ${visibleCount === 1 ? 'wynik' : 'wyników'}`
+      : `${cards.length} artykułów`;
+  };
+
+  input.addEventListener('input', update);
+  form.addEventListener('submit', (event) => event.preventDefault());
+  update();
 });
