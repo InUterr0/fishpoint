@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-07-17.
+> Najnowsza merytoryczna zmiana: 2026-07-20.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -32,6 +32,7 @@
 - [Mikroguma dla początkujących](https://fish-point.pl/aktualnosci/mikroguma-dla-poczatkujacych.html): Mikroguma dla początkujących: jak dobrać pierwszy zestaw LRF, jakie przynęty i montaże wybrać oraz jak nauczyć się techniki i rozpoznawania brań krok po kroku.
 - [Na co bierze karp latem](https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html): Na co bierze karp latem? Sprawdź kulki proteinowe, kukurydzę, pelety i method feeder oraz taktykę nęcenia, dobór miejsca i pory żerowania w upały.
 - [Okoń jesienią: mikroguma i drop shot | FishPoint](https://fish-point.pl/aktualnosci/okon-jesienia-mikroguma.html): Okoń jesienią na mikrogumę i drop shot: jak znaleźć kotły i ławice, dobrać jig, gumki i UL, prowadzić przynętę i rozgrzać branie. Praktyczny poradnik spinningowy.
+- [Arkadiusz Fit wygrał zawody Method Feeder w Opolu](https://fish-point.pl/aktualnosci/pierwsze-okregowe-method-feeder-opole-2026.html): Arkadiusz Fit zwyciężył w pierwszych okręgowych zawodach Method Feeder Okręgu PZW Opole, rozegranych 5 lipca 2026 r. na Poliwodzie.
 - [Przegląd nowości sezonu](https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html): Przegląd nowości sezonu — wybory redakcji: praktyczny poradnik sprawdzania komunikatów organizatora, regulaminu, miejsca i zgłoszenia.
 - [Jaka przynęta na spinning](https://fish-point.pl/aktualnosci/przyneta-na-spinning.html): Przynęty spinningowe na szczupaka, okonia, sandacza i bolenia: dobór gum, woblerów, obrotówek, rozmiaru, koloru, prowadzenia oraz błędy do uniknięcia.
 - [Duży okoń](https://fish-point.pl/aktualnosci/rekord-okonia-2026.html): Duży okoń — jak dokumentować wyjątkowy połów: dokumentacja, źródło pierwotne i ostrożne czytanie relacji.
@@ -43,6 +44,8 @@
 - [Sum nocą](https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html): Sum nocą w lipcu i sierpniu: kiedy i gdzie szukać ryb latem, metody gruntowe, żywiec, spinning i klongowanie, mocny sprzęt oraz etyka nocnego łowienia.
 - [Wędkarstwo morskie dla początkujących](https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html): Wędkarstwo morskie na Bałtyku dla początkujących: łowienie z brzegu i z kutra, sprzęt odporny na sól, przynęty, gatunki, sezony, bezpieczeństwo oraz formalności.
 - [Wymiary i okresy ochronne ryb 2026](https://fish-point.pl/aktualnosci/wymiary-i-okresy-ochronne-2026.html): Orientacyjne, ogólnopolskie wymiary i okresy ochronne ryb na 2026: szczupak, sandacz, sum, boleń i inne gatunki. Sprawdź też regulamin swojego okręgu PZW.
+- [Nowe wytyczne dla Wód Polskich a łowiska](https://fish-point.pl/aktualnosci/wytyczne-wody-polskie-obwody-rybackie-2026.html): MRiRW opublikowało wytyczne dla Wód Polskich dotyczące rybactwa śródlądowego. Sprawdzamy, co dokument zmienia w zarządzaniu obwodami rybackimi, a czego nie zmienia w zasadach połowu.
+- [Bóbr pod Pilchowicami: monitoring i zakaz połowu](https://fish-point.pl/aktualnosci/zakaz-polowu-bobr-lipiec-2026.html): Bóbr w lipcu 2026: co potwierdziły pomiary WIOŚ, gdzie obowiązywał zakaz połowu i czego wędkarz nie powinien zakładać na podstawie samego monitoringu.
 - [Pierwsze zawody feederowe](https://fish-point.pl/aktualnosci/zawody-feederowe-poradnik.html): Jak wystartować w pierwszych zawodach feederowych? Sprawdź zapisy i regulaminy, losowanie sektorów, przygotowanie stanowiska, taktykę, sprzęt i błędy debiutantów.
 - [Jak planować udział w zawodach wędkarskich](https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html): Jak planować udział w zawodach wędkarskich: praktyczny poradnik sprawdzania komunikatów organizatora, regulaminu, miejsca i zgłoszenia.
 - [Zezwolenia online 2026](https://fish-point.pl/aktualnosci/zezwolenia-online-2026.html): Zezwolenia elektroniczne są dostępne w części okręgów PZW, lecz forma zakupu i dokumentu zależy od gospodarza wody. Sprawdź regulamin i sposób okazania zezwolenia.

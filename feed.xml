@@ -6,7 +6,28 @@
     <description>Blog wędkarski FishPoint: poradniki, relacje znad wody, sezon i sprzęt.</description>
     <language>pl-PL</language>
     <atom:link href="https://fish-point.pl/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 17 Jul 2026 00:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 00:00:00 -0000</lastBuildDate>
+    <item>
+      <title>Arkadiusz Fit wygrał zawody Method Feeder w Opolu</title>
+      <link>https://fish-point.pl/aktualnosci/pierwsze-okregowe-method-feeder-opole-2026.html</link>
+      <guid isPermaLink="true">https://fish-point.pl/aktualnosci/pierwsze-okregowe-method-feeder-opole-2026.html</guid>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Arkadiusz Fit zwyciężył w pierwszych okręgowych zawodach Method Feeder Okręgu PZW Opole, rozegranych 5 lipca 2026 r. na Poliwodzie.</description>
+    </item>
+    <item>
+      <title>Nowe wytyczne dla Wód Polskich a łowiska</title>
+      <link>https://fish-point.pl/aktualnosci/wytyczne-wody-polskie-obwody-rybackie-2026.html</link>
+      <guid isPermaLink="true">https://fish-point.pl/aktualnosci/wytyczne-wody-polskie-obwody-rybackie-2026.html</guid>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 -0000</pubDate>
+      <description>MRiRW opublikowało wytyczne dla Wód Polskich dotyczące rybactwa śródlądowego. Sprawdzamy, co dokument zmienia w zarządzaniu obwodami rybackimi, a czego nie zmienia w zasadach połowu.</description>
+    </item>
+    <item>
+      <title>Bóbr pod Pilchowicami: monitoring i zakaz połowu</title>
+      <link>https://fish-point.pl/aktualnosci/zakaz-polowu-bobr-lipiec-2026.html</link>
+      <guid isPermaLink="true">https://fish-point.pl/aktualnosci/zakaz-polowu-bobr-lipiec-2026.html</guid>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Bóbr w lipcu 2026: co potwierdziły pomiary WIOŚ, gdzie obowiązywał zakaz połowu i czego wędkarz nie powinien zakładać na podstawie samego monitoringu.</description>
+    </item>
     <item>
       <title>Jak łowić leszcza</title>
       <link>https://fish-point.pl/aktualnosci/jak-lowic-leszcza.html</link>
