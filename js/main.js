@@ -18,6 +18,7 @@ if (toggle && menu) {
   const closeMenu = () => {
     menu.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Otwórz menu');
     document.body.classList.remove('nav-open');
     closeSubmenus();
   };
@@ -25,6 +26,7 @@ if (toggle && menu) {
   toggle.addEventListener('click', () => {
     const isOpen = menu.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
     document.body.classList.toggle('nav-open', isOpen);
   });
 
@@ -45,6 +47,26 @@ if (toggle && menu) {
     if (!menu.contains(event.target) && !toggle.contains(event.target)) closeMenu();
   });
   document.addEventListener('keydown', (event) => {
+    if (
+      event.key === 'Tab'
+      && menu.classList.contains('open')
+      && window.matchMedia('(max-width: 1080px)').matches
+    ) {
+      const focusable = [
+        toggle,
+        ...menu.querySelectorAll('a[href], button:not([disabled])'),
+      ].filter((element) => element.offsetParent !== null);
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+      return;
+    }
     if (event.key !== 'Escape') return;
     const openItem = menu.querySelector('.has-sub.sub-open');
     if (openItem) {

@@ -42,6 +42,9 @@ class PageParser(HTMLParser):
         self._active_table: dict[str, int] | None = None
         self._submenu_links: list[list[str]] = []
         self.submenu_links: list[list[str]] = []
+        self.news_cards: list[tuple[str | None, list[str]]] = []
+        self._news_category: str | None = None
+        self._blog_card_links: list[str] | None = None
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attr = dict(attrs)
@@ -54,6 +57,10 @@ class PageParser(HTMLParser):
             self._toc_depth += 1
         if tag == "ul" and "sub" in (attr.get("class") or "").split():
             self._submenu_links.append([])
+        if tag == "div" and "section-heading" in (attr.get("class") or "").split():
+            self._news_category = attr.get("id")
+        if tag == "article" and "blog-card" in (attr.get("class") or "").split():
+            self._blog_card_links = []
         if tag == "table":
             self._active_table = {"captions": 0, "th": 0, "scoped_th": 0}
             self.tables.append(self._active_table)
@@ -82,8 +89,13 @@ class PageParser(HTMLParser):
                 self.toc_hrefs.append(href)
             if self._submenu_links:
                 self._submenu_links[-1].append(href)
+            if self._blog_card_links is not None:
+                self._blog_card_links.append(href)
 
     def handle_endtag(self, tag: str) -> None:
+        if tag == "article" and self._blog_card_links is not None:
+            self.news_cards.append((self._news_category, self._blog_card_links))
+            self._blog_card_links = None
         if tag == "title":
             self._in_document_title = False
         if tag == "script" and self._json_ld is not None:
@@ -275,15 +287,31 @@ def main() -> int:
                 failures,
             )
 
-    # Navigation is deliberately shallow: hubs remain reachable, submenus do not
-    # grow into a second sitemap, and contextual links carry the long tail.
+    # Każdy główny dział pokazuje wszystkie indeksowalne artykuły; strony-huby
+    # pozostają dostępne przez osobne linki „Zobacz cały dział”.
     menu = parse("index.html")
-    check(all(len(links) <= 8 for links in menu.submenu_links),
-          "navigation submenu exceeds eight links", failures)
+    nav_sections = ("pierwsze-kroki", "sprzet", "techniki", "ryby", "lowiska", "poradniki")
+    check(len(menu.submenu_links) == len(nav_sections),
+          "navigation needs one submenu per main section", failures)
+    for section, links in zip(nav_sections, menu.submenu_links):
+        actual_targets = {
+            local_link_target(ROOT / "index.html", href)
+            for href in links
+        }
+        expected_targets = {
+            (ROOT / local_path(url)).resolve()
+            for url in urls
+            if Path(local_path(url)).parts[0] == section
+            and not urlparse(url).path.endswith("/")
+        }
+        missing = expected_targets - actual_targets
+        check(not missing, f"navigation omits {len(missing)} pages from {section}", failures)
     hub_paths = {
         "pierwsze-kroki/index.html", "sprzet/index.html", "techniki/index.html",
         "ryby/index.html", "poradniki/index.html", "narzedzia/index.html",
         "lowiska/index.html", "forum/index.html", "aktualnosci/index.html",
+        "kuchnia/index.html", "humor/index.html", "zakupy.html",
+        "zgodnie-z-zasadami.html",
     }
     menu_targets = {
         local_link_target(ROOT / "index.html", href)
@@ -291,6 +319,37 @@ def main() -> int:
     }
     for hub in hub_paths:
         check((ROOT / hub).resolve() in menu_targets, f"navigation omits hub: {hub}", failures)
+
+    news = parse("aktualnosci/index.html")
+    expected_news_cards = {
+        path.resolve()
+        for path in (ROOT / "aktualnosci").glob("*.html")
+        if path.name != "index.html"
+    }
+    news_card_targets = [
+        local_link_target(ROOT / "aktualnosci/index.html", href)
+        for _category, hrefs in news.news_cards
+        for href in hrefs
+    ]
+    expected_news_categories = {
+        "najnowsze", "rekordy", "srodowisko", "sezon", "poradniki",
+        "sprzet", "pierwsze-kroki", "zawody", "relacje",
+    }
+    check(
+        {category for category, _hrefs in news.news_cards} == expected_news_categories,
+        "news index category sections are incomplete",
+        failures,
+    )
+    check(
+        len(news_card_targets) == len(set(news_card_targets)),
+        "news index contains duplicate article cards",
+        failures,
+    )
+    check(
+        set(news_card_targets) == expected_news_cards,
+        "news index must contain every article exactly once",
+        failures,
+    )
 
     indexed_paths = {
         (ROOT / local_path(url)).resolve(): url

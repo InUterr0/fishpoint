@@ -369,9 +369,9 @@ SECTIONS = {
     "humor": "Humor",
 }
 
-# --- Wspólna nawigacja z ograniczoną liczbą decyzji pierwszego poziomu. ---
-# Każdy dział ma osobny link i przycisk rozwijania; grupa „Odkrywaj” zbiera
-# treści uzupełniające bez udawania osobnej strony docelowej.
+# --- Wspólna nawigacja: główne działy oraz stale widoczny pasek „Odkrywaj”. ---
+# Każdy główny dział ma osobny link i pełne podmenu. Linki pomocnicze są
+# widoczne w drugim rzędzie na desktopie i w osobnej grupie w menu mobilnym.
 NAV_TOP = [
     ("Zacznij", "pierwsze-kroki/", "pierwsze-kroki"),
     ("Sprzęt", "sprzet/", "sprzet"),
@@ -379,11 +379,9 @@ NAV_TOP = [
     ("Ryby", "ryby/", "ryby"),
     ("Łowiska", "lowiska/", "lowiska"),
     ("Poradniki", "poradniki/", "poradniki"),
-    ("Odkrywaj", None, "__discover__"),
 ]
-NAV_CHILD_LIMIT = 7
-# Ręcznie dobrane wejścia do najczęstszych zadań; pełne klastry pozostają na
-# hubach, w side-nav i w modułach „Powiązane artykuły”.
+# Najważniejsze wejścia są pierwsze, a pozostałe strony klastra dołączamy
+# poniżej. Dzięki temu menu nie ukrywa żadnej strony działu.
 NAV_FEATURED = {
     "pierwsze-kroki": (
         "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html",
@@ -484,8 +482,6 @@ def canonicalize_internal_hrefs(src):
 
 
 def _nav_children(section, prefix):
-    if section == "__discover__":
-        return [(prefix + href, title) for href, title in NAV_DISCOVER]
     available = {}
     for url, title in SECTION_PAGES.get(section, []):
         rel = url[len(BASE) + 1:] if url.startswith(BASE + "/") else url
@@ -493,44 +489,49 @@ def _nav_children(section, prefix):
             available[rel] = title
     featured = NAV_FEATURED.get(section, ())
     selected = [rel for rel in featured if rel in available]
-    if len(selected) < NAV_CHILD_LIMIT:
-        selected.extend(rel for rel in available if rel not in selected)
-    return [(prefix + rel, available[rel]) for rel in selected[:NAV_CHILD_LIMIT]]
+    selected.extend(rel for rel in available if rel not in selected)
+    return [(prefix + rel, available[rel]) for rel in selected]
 
 
 def build_nav(prefix):
     items = []
     for label, href, section in NAV_TOP:
         kids = _nav_children(section, prefix)
-        submenu_id = f"submenu-{section.strip('_').replace('_', '-')}"
+        submenu_id = f"submenu-{section}"
         sub = "".join(
             f'<li><a href="{url}">{html.escape(title)}</a></li>'
             for url, title in kids
         )
-        if href is None:
-            control = (
-                f'<button class="nav-group-toggle submenu-toggle" type="button" '
-                f'aria-expanded="false" aria-controls="{submenu_id}">'
-                f'{html.escape(label)}<span aria-hidden="true">▾</span></button>'
-            )
-            overview = ""
+        top_href = f"{prefix}{href}"
+        control = (
+            f'<a href="{top_href}">{html.escape(label)}</a>'
+            f'<button class="submenu-toggle" type="button" aria-expanded="false" '
+            f'aria-controls="{submenu_id}"><span class="sr-only">Rozwiń menu '
+            f'{html.escape(label)}</span><span aria-hidden="true">▾</span></button>'
+        )
+        overview = (
+            f'<li class="sub-overview"><a href="{top_href}">'
+            f'Zobacz cały dział {html.escape(label)}</a></li>'
+        )
+        if len(kids) > 18:
+            item_class = "has-sub nav-mega nav-mega-3"
+        elif len(kids) > 10:
+            item_class = "has-sub nav-mega nav-mega-2"
         else:
-            top_href = f"{prefix}{href}"
-            control = (
-                f'<a href="{top_href}">{html.escape(label)}</a>'
-                f'<button class="submenu-toggle" type="button" aria-expanded="false" '
-                f'aria-controls="{submenu_id}"><span class="sr-only">Rozwiń menu '
-                f'{html.escape(label)}</span><span aria-hidden="true">▾</span></button>'
-            )
-            overview = (
-                f'<li class="sub-overview"><a href="{top_href}">'
-                f'Zobacz cały dział {html.escape(label)}</a></li>'
-            )
-        item_class = "has-sub nav-group" if href is None else "has-sub"
+            item_class = "has-sub"
         items.append(
             f'<li class="{item_class}">{control}<ul id="{submenu_id}" class="sub">'
             f'{overview}{sub}</ul></li>'
         )
+    discover_links = "".join(
+        f'<li><a href="{prefix}{href}">{html.escape(title)}</a></li>'
+        for href, title in NAV_DISCOVER
+    )
+    discover = (
+        '<div class="nav-discover" aria-label="Odkrywaj">'
+        '<span class="nav-discover-label">Odkrywaj</span>'
+        f'<ul class="nav-discover-list">{discover_links}</ul></div>'
+    )
     search_icon = (
         '<a class="nav-search" href="' + prefix + 'szukaj.html" aria-label="Szukaj">'
         '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
@@ -541,8 +542,10 @@ def build_nav(prefix):
         '<a class="skip-link" href="#main-content">Przejdź do treści</a>'
         '<header class="site-header"><nav class="nav container" aria-label="Główna">'
         f'<a class="logo" href="{prefix}index.html"><span class="logo-mark">≈</span><span>FishPoint</span></a>'
-        '<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>'
-        f'<ul id="nav-menu" class="nav-menu">{"".join(items)}</ul>{search_icon}</nav></header>'
+        '<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" '
+        'aria-label="Otwórz menu">Menu</button>'
+        f'<div id="nav-menu" class="nav-menu"><ul class="nav-sections">{"".join(items)}</ul>'
+        f'{discover}</div>{search_icon}</nav></header>'
     )
 
 title_re = re.compile(r"<title>(.*?)</title>", re.S)
