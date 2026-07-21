@@ -526,8 +526,9 @@ def build_nav(prefix):
                 f'<li class="sub-overview"><a href="{top_href}">'
                 f'Zobacz cały dział {html.escape(label)}</a></li>'
             )
+        item_class = "has-sub nav-group" if href is None else "has-sub"
         items.append(
-            f'<li class="has-sub">{control}<ul id="{submenu_id}" class="sub">'
+            f'<li class="{item_class}">{control}<ul id="{submenu_id}" class="sub">'
             f'{overview}{sub}</ul></li>'
         )
     search_icon = (
