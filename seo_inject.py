@@ -724,6 +724,10 @@ toc_re = re.compile(re.escape(TOC_BEGIN) + r".*?" + re.escape(TOC_END), re.S)
 
 TLDR_BEGIN, TLDR_END = "<!--tldr:auto-->", "<!--/tldr:auto-->"
 tldr_re = re.compile(re.escape(TLDR_BEGIN) + r".*?" + re.escape(TLDR_END), re.S)
+ARTICLE_CARD_OPEN_RE = re.compile(
+    r'(<article\b(?=[^>]*\bclass=["\'][^"\']*\barticle-card\b)[^>]*>)',
+    re.I,
+)
 RELATED_BEGIN, RELATED_END = "<!--related:auto-->", "<!--/related:auto-->"
 related_re = re.compile(re.escape(RELATED_BEGIN) + r".*?" + re.escape(RELATED_END), re.S)
 NEWSLETTER_BEGIN, NEWSLETTER_END = "<!--newsletter:auto-->", "<!--/newsletter:auto-->"
@@ -1758,9 +1762,7 @@ def inject_content_advantage(src, rel):
         return src.replace(FISHPOINT_METHOD_END, FISHPOINT_METHOD_END + block, 1)
     if TLDR_END in src:
         return src.replace(TLDR_END, TLDR_END + block, 1)
-    if BYLINE_END in src:
-        return src.replace(BYLINE_END, BYLINE_END + block, 1)
-    return re.sub(r"(</h1>)", r"\1" + block, src, count=1)
+    return ARTICLE_CARD_OPEN_RE.sub(r"\1" + block, src, count=1)
 
 # Powiązania łączą hub sekcji z linkami modułów content-advantage oraz
 # uzupełniającymi, redakcyjnie dobranymi linkami dla pogłębionych klastrów.
@@ -2283,7 +2285,7 @@ def build(path):
         tldr = (f'{TLDR_BEGIN}<aside class="tldr" aria-label="W skrócie">'
                 f'<p class="tldr-label">W skrócie</p><p>{html.escape(desc_txt)}</p>'
                 f'</aside>{TLDR_END}')
-        src = re.sub(r'(<article class="article-card">)', r"\1" + tldr, src, count=1)
+        src = ARTICLE_CARD_OPEN_RE.sub(r"\1" + tldr, src, count=1)
         src = inject_fishpoint_method(src, rel)
         src = inject_fish_biology(src, rel)
         # Hub sekcji i ręcznie wybrane powiązania z istniejących kart redakcyjnych.

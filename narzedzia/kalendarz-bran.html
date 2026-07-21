@@ -8,7 +8,7 @@
   <meta name="description" content="Interaktywny kalendarz brań: heatmapa aktywności szczupaka, sandacza, okonia, suma, karpia, leszcza, płoci, lina, węgorza i pstrąga w każdym miesiącu roku." />
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-400-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-400-latin-ext.woff2" crossorigin>
-  <link rel="stylesheet" href="../css/style.css?v=9d63c15e" />
+  <link rel="stylesheet" href="../css/style.css?v=401f95db" />
   <!-- seo:meta begin (auto) -->
   <link rel="canonical" href="https://fish-point.pl/narzedzia/kalendarz-bran.html" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -448,7 +448,7 @@
     pick = monthIndex;
     document.querySelectorAll('#months .chip').forEach(chip => chip.classList.toggle('active', +chip.dataset.m === monthIndex));
     document.querySelectorAll('#heat .heat-cell').forEach(cell => cell.classList.toggle('pick', +cell.dataset.m === monthIndex));
-    document.querySelectorAll('#hhead th').forEach(header => header.style.color = (+header.dataset.m === monthIndex ? 'var(--amber)' : ''));
+    document.querySelectorAll('#hhead th').forEach(header => header.classList.toggle('heat-month-current', +header.dataset.m === monthIndex));
     const ranked = FISH.map(fish => ({ fish, level:fish.a[monthIndex], protectedMonth:fish.p.includes(monthIndex) }))
       .filter(item => item.level > 0).sort((first, second) => second.level - first.level);
     let html = '<h3>Brania w ' + MFULL[monthIndex] + '</h3>';

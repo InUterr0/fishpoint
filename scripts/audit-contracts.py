@@ -26,6 +26,11 @@ class PageParser(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.stack: list[str] = []
         self.headings: list[list[int | str]] = []
+        self.class_stack: list[set[str]] = []
+        self.content_advantage_count = 0
+        self.content_advantage_in_article = 0
+        self.content_advantage_in_hero = 0
+        self.tldr_in_article = 0
         self.main_text: list[str] = []
         self.json_ld: list[str] = []
         self.metadata: dict[str, str] = {}
@@ -48,6 +53,16 @@ class PageParser(HTMLParser):
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attr = dict(attrs)
+        classes = set((attr.get("class") or "").split())
+        inside_article = any("article-card" in item for item in self.class_stack)
+        inside_hero = any("subpage-hero" in item for item in self.class_stack)
+        self.class_stack.append(classes)
+        if "content-advantage" in classes:
+            self.content_advantage_count += 1
+            self.content_advantage_in_article += int(inside_article)
+            self.content_advantage_in_hero += int(inside_hero)
+        if "tldr" in classes:
+            self.tldr_in_article += int(inside_article)
         self.stack.append(tag)
         if attr.get("id"):
             self.ids.append(attr["id"])
@@ -112,6 +127,7 @@ class PageParser(HTMLParser):
         for index in range(len(self.stack) - 1, -1, -1):
             if self.stack[index] == tag:
                 self.stack = self.stack[:index]
+                self.class_stack = self.class_stack[:index]
                 break
 
     def handle_data(self, data: str) -> None:
@@ -286,6 +302,28 @@ def main() -> int:
                 f"{relative}: missing local target for {href}",
                 failures,
             )
+        if "<!--content-advantage:auto-->" in source:
+            check(
+                page.content_advantage_count == 1,
+                f"{relative}: expected exactly one content-advantage module",
+                failures,
+            )
+            check(
+                page.content_advantage_in_hero == 0,
+                f"{relative}: content-advantage module is inside subpage hero",
+                failures,
+            )
+            if relative not in {"index.html", "pierwsze-kroki/index.html"}:
+                check(
+                    page.content_advantage_in_article == 1,
+                    f"{relative}: content-advantage module is outside article card",
+                    failures,
+                )
+                check(
+                    page.tldr_in_article >= 1,
+                    f"{relative}: TLDR module is missing from article card",
+                    failures,
+                )
 
     # Każdy główny dział pokazuje wszystkie indeksowalne artykuły; strony-huby
     # pozostają dostępne przez osobne linki „Zobacz cały dział”.
