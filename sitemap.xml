@@ -32,6 +32,18 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/troc-losos.jpg</image:loc>
+      <image:title>Troć jeziorowa — medialnie opisywany okaz z Jeziora Tarnobrzeskiego</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
+      <image:title>Stawy — lokalne ograniczenie ilości zanęty w upalne lato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/aktualnosci/zawody-feederowe-poradnik.jpg</image:loc>
+      <image:title>Wędkarze na stanowiskach — Mistrzostwa Polski w wędkarstwie spławikowym</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/kanaly.jpg</image:loc>
       <image:title>Kanał i łodzie — zarządzanie publicznymi obwodami rybackimi</image:title>
     </image:image>
@@ -58,10 +70,6 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/jak-dobrac-przynete-do-pory-roku.jpg</image:loc>
       <image:title>Przynęty sztuczne w różnych kolorach — dobór gumy do drapieżnika</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
-      <image:title>Stawy Milickie z lotu ptaka — zasady połowu sprawdzaj dla konkretnej wody</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/kalendarz.jpg</image:loc>
@@ -114,10 +122,6 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/bledy-poczatkujacych.jpg</image:loc>
       <image:title>Wędkarz łowiący w nurcie rzeki</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/zawody-feederowe-poradnik.jpg</image:loc>
-      <image:title>Wędkarze na stanowiskach podczas zawodów method feeder</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/relacja-nocna-zasiadka.jpg</image:loc>
@@ -265,8 +269,20 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html</loc>
     <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/ograniczenie-zanet-pzw-zamosc-lato-2026.html</loc>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -361,6 +377,12 @@
   <url>
     <loc>https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html</loc>
     <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html</loc>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

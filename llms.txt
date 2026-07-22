@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-07-20.
+> Najnowsza merytoryczna zmiana: 2026-07-21.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -30,7 +30,9 @@
 - [Karp w upały](https://fish-point.pl/aktualnosci/karp-w-upaly-taktyka-na-lipiec.html): Jak łowić karpia w lipcowe upały? Poznaj pory doby, miejsca na ciepłej wodzie, łowienie z powierzchni i przy dnie, przynęty, zanętę oraz bezpieczny C&R.
 - [Kiedy sezon na ryby 2026?](https://fish-point.pl/aktualnosci/kiedy-sezon-na-ryby-2026.html): Kiedy sezon na ryby 2026: krajowa tabela okresów ochronnych, warianty odcinkowe i § 7 ust. 2 — osobno od planowania brań.
 - [Mikroguma dla początkujących](https://fish-point.pl/aktualnosci/mikroguma-dla-poczatkujacych.html): Mikroguma dla początkujących: jak dobrać pierwszy zestaw LRF, jakie przynęty i montaże wybrać oraz jak nauczyć się techniki i rozpoznawania brań krok po kroku.
+- [Mistrzostwa Polski w spławiku 2026: Jasiczak i Pomykała najlepsi na Warcie](https://fish-point.pl/aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html): Wyniki Spławikowych Mistrzostw Polski 2026 na Warcie w Świerkocinie: Dominik Jasiczak wygrał seniorów, a Wiktor Pomykała kategorię U-25.
 - [Karp latem: przynęta, nęcenie i dobrostan w upale](https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html): Jak dobrać przynętę i nęcenie na karpia latem do temperatury, pory, tlenu i presji. Praktyczne drzewo decyzji oraz protokół bezpiecznego wypuszczania.
+- [PZW Zamość ogranicza zanęty: 1 kg dziennie na czterech zbiornikach](https://fish-point.pl/aktualnosci/ograniczenie-zanet-pzw-zamosc-lato-2026.html): PZW Zamość: od 1 lipca 2026 r. limit 1 kg zanęty na dobę na Krynicach, Mirczu, Starej Wsi i Wereszynie; 5 l na turę zawodów.
 - [Okoń jesienią: mikroguma i drop shot | FishPoint](https://fish-point.pl/aktualnosci/okon-jesienia-mikroguma.html): Okoń jesienią na mikrogumę i drop shot: jak znaleźć kotły i ławice, dobrać jig, gumki i UL, prowadzić przynętę i rozgrzać branie. Praktyczny poradnik spinningowy.
 - [Arkadiusz Fit wygrał zawody Method Feeder w Opolu](https://fish-point.pl/aktualnosci/pierwsze-okregowe-method-feeder-opole-2026.html): Arkadiusz Fit zwyciężył w pierwszych okręgowych zawodach Method Feeder Okręgu PZW Opole, rozegranych 5 lipca 2026 r. na Poliwodzie.
 - [Nowości wędkarskie: selekcja rozwiązań | FishPoint](https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html): Selekcja rozwiązań z datowanych kart producentów: blanki, kołowrotki, sonar i sprzęt C&R. To nie ranking ani rekomendacja zakupu.
@@ -42,6 +44,7 @@
 - [Spinning na szczupaka jesienią](https://fish-point.pl/aktualnosci/spinning-na-szczupaka-jesienia.html): Spinning na szczupaka jesienią: gdzie szukać dużych ryb, jakie przynęty i tempo prowadzenia, dobór sprzętu, pogoda i bezpieczne wypuszczanie ikrzyc.
 - [Street fishing: jedna miejska sesja krok po kroku | FishPoint](https://fish-point.pl/aktualnosci/street-fishing-od-czego-zaczac.html): Street fishing bez ryzyka: plan jednej miejskiej sesji, legalny dostęp, mobilny zestaw, rozpoznanie konstrukcji i bezpieczne decyzje.
 - [Sum nocą](https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html): Sum nocą w lipcu i sierpniu: kiedy i gdzie szukać ryb latem, metody gruntowe, żywiec, spinning i klongowanie, mocny sprzęt oraz etyka nocnego łowienia.
+- [Troć jeziorowa 8,5 kg z Tarnobrzega: medialny rekord czeka na weryfikację](https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html): Doniesienia o troci jeziorowej 8,5 kg z Jeziora Tarnobrzeskiego. Sprawdzamy zgodne fakty, rozbieżne daty oraz status oficjalnego rekordu Polski.
 - [Wędkarstwo morskie dla początkujących](https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html): Wędkarstwo morskie na Bałtyku dla początkujących: łowienie z brzegu i z kutra, sprzęt odporny na sól, przynęty, gatunki, sezony, bezpieczeństwo oraz formalności.
 - [Okresy ochronne ryb 2026 i wymiary: pełny zakres aktu](https://fish-point.pl/aktualnosci/wymiary-i-okresy-ochronne-2026.html): Okresy ochronne ryb 2026 i wymiary z pełnego § 6–7 aktu: odcinki, § 7 ust. 2, znaczenie „—” i kontrola lokalnych zasad.
 - [Nowe wytyczne dla Wód Polskich a łowiska](https://fish-point.pl/aktualnosci/wytyczne-wody-polskie-obwody-rybackie-2026.html): MRiRW opublikowało wytyczne dla Wód Polskich dotyczące rybactwa śródlądowego. Wyjaśniamy ich wpływ na zarządzanie obwodami i zasady połowu.
