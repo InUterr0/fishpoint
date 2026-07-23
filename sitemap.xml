@@ -32,6 +32,18 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/sum.jpg</image:loc>
+      <image:title>Sum — głośny połów ze Starej Odry w Kotowicach</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
+      <image:title>Karp — rekord długości Tomasza Kosyla z 2026 roku</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kalendarz.jpg</image:loc>
+      <image:title>Wędkarze nad wodą — cyfryzacja dokumentów i zezwoleń PZW</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/troc-losos.jpg</image:loc>
       <image:title>Troć jeziorowa — medialnie opisywany okaz z Jeziora Tarnobrzeskiego</image:title>
     </image:image>
@@ -72,20 +84,8 @@
       <image:title>Przynęty sztuczne w różnych kolorach — dobór gumy do drapieżnika</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/kalendarz.jpg</image:loc>
-      <image:title>Wędkarze na rzece o wschodzie słońca — planowanie sezonu</image:title>
-    </image:image>
-    <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/cr.jpg</image:loc>
       <image:title>Wypuszczanie ryby do wody — zasada ochrony dużych okazów</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/sum.jpg</image:loc>
-      <image:title>Sum — największy drapieżnik polskich wód, rekordowy okaz z Zalewu Rybnickiego</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
-      <image:title>Na co bierze karp latem — przynęty i taktyka</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/sezon-na-szczupaka.jpg</image:loc>
@@ -247,6 +247,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://fish-point.pl/aktualnosci/karp-112-cm-rekord-dlugosci-2026.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/aktualnosci/karp-w-upaly-taktyka-na-lipiec.html</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -255,6 +261,12 @@
   <url>
     <loc>https://fish-point.pl/aktualnosci/kiedy-sezon-na-ryby-2026.html</loc>
     <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/komisja-cyfryzacji-pzw-2026.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -373,6 +385,12 @@
       <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
       <image:title>Wędkarz łowiący spinningiem z miejskiego nabrzeża</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/sum-125-cm-stara-odra-2026.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html</loc>

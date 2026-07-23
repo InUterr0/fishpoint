@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-07-21.
+> Najnowsza merytoryczna zmiana: 2026-07-23.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -27,8 +27,10 @@
 - [Jerki na szczupaka](https://fish-point.pl/aktualnosci/jerki-na-szczupaka-poradnik.html): Jerki na szczupaka od podstaw: typy przynęt, wędka do jerków, kołowrotek, przypon i technika prowadzenia. Praktyczny poradnik dla spinningistów.
 - [Kajak fishing dla początkujących: poradnik FishPoint](https://fish-point.pl/aktualnosci/kajak-fishing-dla-poczatkujacych.html): Kajak fishing dla początkujących: jaki kajak wędkarski wybrać, wyposażenie, bezpieczeństwo, techniki łowienia z kajaka i pierwsze wyprawy krok po kroku.
 - [Kalendarz wędkarski 2026](https://fish-point.pl/aktualnosci/kalendarz-wedkarski-2026.html): Kalendarz wędkarski 2026 miesiąc po miesiącu: gatunek, status ochrony i metoda jako plan wyprawy — zawsze z weryfikacją lokalnych zasad.
+- [Karp 112 cm: nowy rekord długości Tomasza Kosyla](https://fish-point.pl/aktualnosci/karp-112-cm-rekord-dlugosci-2026.html): Karp 112 cm Tomasza Kosyla jest wpisany w tabeli długościowych rekordów Polski Wiadomości Wędkarskich. Co potwierdzają źródła, a czego nie podają?
 - [Karp w upały](https://fish-point.pl/aktualnosci/karp-w-upaly-taktyka-na-lipiec.html): Jak łowić karpia w lipcowe upały? Poznaj pory doby, miejsca na ciepłej wodzie, łowienie z powierzchni i przy dnie, przynęty, zanętę oraz bezpieczny C&R.
 - [Kiedy sezon na ryby 2026?](https://fish-point.pl/aktualnosci/kiedy-sezon-na-ryby-2026.html): Kiedy sezon na ryby 2026: krajowa tabela okresów ochronnych, warianty odcinkowe i § 7 ust. 2 — osobno od planowania brań.
+- [PZW powołało Komisję ds. cyfryzacji: co już wiadomo](https://fish-point.pl/aktualnosci/komisja-cyfryzacji-pzw-2026.html): Komisja ds. cyfryzacji PZW, decyzje Okręgu Katowice i e-zezwolenia Rzeszowa: potwierdzone fakty oraz granice wniosków.
 - [Mikroguma dla początkujących](https://fish-point.pl/aktualnosci/mikroguma-dla-poczatkujacych.html): Mikroguma dla początkujących: jak dobrać pierwszy zestaw LRF, jakie przynęty i montaże wybrać oraz jak nauczyć się techniki i rozpoznawania brań krok po kroku.
 - [Mistrzostwa Polski w spławiku 2026: Jasiczak i Pomykała najlepsi na Warcie](https://fish-point.pl/aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html): Wyniki Spławikowych Mistrzostw Polski 2026 na Warcie w Świerkocinie: Dominik Jasiczak wygrał seniorów, a Wiktor Pomykała kategorię U-25.
 - [Karp latem: przynęta, nęcenie i dobrostan w upale](https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html): Jak dobrać przynętę i nęcenie na karpia latem do temperatury, pory, tlenu i presji. Praktyczne drzewo decyzji oraz protokół bezpiecznego wypuszczania.
@@ -43,6 +45,7 @@
 - [Sezon na szczupaka: legalny plan otwarcia](https://fish-point.pl/aktualnosci/sezon-na-szczupaka.html): Sezon na szczupaka bez zgadywania: legalność konkretnej wody, plan otwarcia, miejsca, przypony, C&R oraz warianty pogody.
 - [Spinning na szczupaka jesienią](https://fish-point.pl/aktualnosci/spinning-na-szczupaka-jesienia.html): Spinning na szczupaka jesienią: gdzie szukać dużych ryb, jakie przynęty i tempo prowadzenia, dobór sprzętu, pogoda i bezpieczne wypuszczanie ikrzyc.
 - [Street fishing: jedna miejska sesja krok po kroku | FishPoint](https://fish-point.pl/aktualnosci/street-fishing-od-czego-zaczac.html): Street fishing bez ryzyka: plan jednej miejskiej sesji, legalny dostęp, mobilny zestaw, rozpoznanie konstrukcji i bezpieczne decyzje.
+- [Sum 125 cm ze Starej Odry: głośny połów z Kotowic](https://fish-point.pl/aktualnosci/sum-125-cm-stara-odra-2026.html): Według lokalnego reportażu Jan Zając złowił 20 lipca 2026 r. w Kotowicach suma 125 cm i 19,5 kg. Zebraliśmy potwierdzone granice tej informacji.
 - [Sum nocą](https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html): Sum nocą w lipcu i sierpniu: kiedy i gdzie szukać ryb latem, metody gruntowe, żywiec, spinning i klongowanie, mocny sprzęt oraz etyka nocnego łowienia.
 - [Troć jeziorowa 8,5 kg z Tarnobrzega: medialny rekord czeka na weryfikację](https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html): Doniesienia o troci jeziorowej 8,5 kg z Jeziora Tarnobrzeskiego. Sprawdzamy zgodne fakty, rozbieżne daty oraz status oficjalnego rekordu Polski.
 - [Wędkarstwo morskie dla początkujących](https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html): Wędkarstwo morskie na Bałtyku dla początkujących: łowienie z brzegu i z kutra, sprzęt odporny na sól, przynęty, gatunki, sezony, bezpieczeństwo oraz formalności.
