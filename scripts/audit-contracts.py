@@ -239,7 +239,7 @@ def main() -> int:
     failures: list[str] = []
     sitemap = ET.fromstring(read("sitemap.xml"))
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
-    check(len(urls) == 180 and len(set(urls)) == 180, "sitemap must contain 180 unique URLs", failures)
+    check(len(urls) == 183 and len(set(urls)) == 183, "sitemap must contain 183 unique URLs", failures)
 
     parsed: dict[str, PageParser] = {}
     for url in urls:
