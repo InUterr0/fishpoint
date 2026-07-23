@@ -6,7 +6,7 @@ Idempotentny: blok SEO jest oznaczony znacznikami i przy ponownym uruchomieniu
 zostaje podmieniony, a nie zdublowany. Wystarczy zmienić BASE po kupnie domeny
 i uruchomić ponownie: python3 seo_inject.py
 """
-import os, re, html, json, datetime, subprocess, functools, hashlib, sys
+import os, re, html, json, datetime, subprocess, functools, hashlib, sys, math
 from pathlib import Path
 
 BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
@@ -23,12 +23,31 @@ SITE_NAME = "FishPoint"
 AUTHOR_NAME = "Maciej Baniewicz"
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
 TOOL_IMG = {
-    "narzedzia/okresy-ochronne.html": "/assets/img/tematy/wedki.jpg",
-    "narzedzia/stany-wod.html": "/assets/img/tematy/pogoda.jpg",
-    "narzedzia/prognoza-bran.html": "/assets/img/tematy/kalendarz.jpg",
-    "narzedzia/kalendarz-bran.html": "/assets/img/tematy/kalendarz.jpg",
+    "aktualnosci/gorne-wymiary-ochronne-2026.html": "/assets/img/tematy/kalendarz.jpg",
+    "aktualnosci/kalendarz-wedkarski-2026.html": "/assets/img/tematy/kalendarz.jpg",
+    "aktualnosci/kiedy-sezon-na-ryby-2026.html": "/assets/img/tematy/kalendarz.jpg",
+    "aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html": "/assets/img/tematy/splawik.jpg",
+    "aktualnosci/pierwsze-okregowe-method-feeder-opole-2026.html": "/assets/img/tematy/wedki.jpg",
+    "aktualnosci/przeglad-nowosci-sezonu.html": "/assets/img/aktualnosci/przeglad-nowosci-sezonu.jpg",
+    "aktualnosci/wymiary-i-okresy-ochronne-2026.html": "/assets/img/tematy/kalendarz.jpg",
+    "aktualnosci/zezwolenia-online-2026.html": "/assets/img/tematy/wedki.jpg",
+    "aktualnosci/wytyczne-wody-polskie-obwody-rybackie-2026.html": "/assets/img/tematy/jeziora.jpg",
+    "aktualnosci/zakaz-polowu-bobr-lipiec-2026.html": "/assets/img/tematy/muchowe.jpg",
+    "aktualnosci/zawody-wedkarskie-2026-kalendarz.html": "/assets/img/tematy/kalendarz.jpg",
+    "poradniki/echosondy.html": "/assets/img/tematy/wedki.jpg",
+    "poradniki/etyka-i-przepisy.html": "/assets/img/tematy/cr.jpg",
+    "poradniki/wedkarstwo-z-lodzi.html": "/assets/img/tematy/jeziora.jpg",
+    "poradniki/zanety-domowe.html": "/assets/img/tematy/akcesoria.jpg",
+    "techniki/trolling.html": "/assets/img/ryby/szczupak.jpg",
+    "narzedzia/czy-moge-zabrac-rybe.html": "/assets/img/tematy/kalendarz.jpg",
     "narzedzia/dobor-sprzetu.html": "/assets/img/tematy/wedki.jpg",
+    "narzedzia/kalendarz-bran.html": "/assets/img/tematy/kalendarz.jpg",
+    "narzedzia/kalendarz-ksiezycowy.html": "/assets/img/tematy/kalendarz.jpg",
+    "narzedzia/kalkulator-wagi-ryby.html": "/assets/img/ryby/karp.jpg",
+    "narzedzia/okresy-ochronne.html": "/assets/img/tematy/wedki.jpg",
+    "narzedzia/prognoza-bran.html": "/assets/img/tematy/kalendarz.jpg",
     "narzedzia/rozpoznaj-rybe.html": "/assets/img/ryby/okon.jpg",
+    "narzedzia/stany-wod.html": "/assets/img/tematy/pogoda.jpg",
     "narzedzia/index.html": "/assets/img/tematy/wedki.jpg",
 }
 LOGO = "/assets/img/logo.png"          # kwadratowe logo marki (dla schema.org)
@@ -355,6 +374,30 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 BEGIN = "  <!-- seo:meta begin (auto) -->"
 END = "  <!-- seo:meta end (auto) -->"
 
+
+def load_image_provenance():
+    """Ładuje wyłącznie lokalne obrazy z manifestów ich źródła i licencji."""
+    provenance = {}
+    for directory in ("ryby", "aktualnosci", "tematy"):
+        manifest_path = Path(ROOT, "assets", "img", directory, "_meta.json")
+        with manifest_path.open(encoding="utf-8") as manifest_file:
+            manifest = json.load(manifest_file)
+        for item in manifest.values():
+            required = ("file", "artist", "license", "page")
+            if not all(item.get(field) for field in required):
+                raise ValueError(f"{manifest_path}: niepełna proweniencja obrazu")
+            filename = item["file"]
+            image_path = (
+                "/" + filename.lstrip("/")
+                if filename.startswith("assets/")
+                else f"/assets/img/{directory}/{filename}"
+            )
+            provenance[image_path] = item
+    return provenance
+
+
+IMAGE_PROVENANCE = load_image_provenance()
+
 SECTIONS = {
     "ryby": "Atlas ryb",
     "poradniki": "Poradniki",
@@ -571,6 +614,11 @@ CONTENT_META_RE = re.compile(
 CONTENT_META_MARKER_RE = re.compile(r"<!--\s*content-meta:", re.I)
 robots_meta_re = re.compile(
     r'<meta\b(?=[^>]*\bname\s*=\s*["\']robots["\'])[^>]*>\s*', re.I)
+managed_meta_re = re.compile(
+    r'<meta\b(?=[^>]*(?:name|property)\s*=\s*["\']'
+    r'(?:author|theme-color|twitter:[^"\']+|og:[^"\']+|article:[^"\']+)["\'])[^>]*>\s*',
+    re.I,
+)
 youtube_nocookie_iframe_re = re.compile(
     r'''<iframe\b(?=[^>]*\bsrc\s*=\s*["']https?://(?:www\.)?youtube-nocookie\.com/embed/(?P<video_id>[A-Za-z0-9_-]{11})(?:\?[^"']*)?["'])(?=[^>]*\btitle\s*=\s*["'](?P<title>[^"']*)["'])[^>]*>\s*</iframe>''',
     re.I | re.S,
@@ -724,6 +772,16 @@ toc_re = re.compile(re.escape(TOC_BEGIN) + r".*?" + re.escape(TOC_END), re.S)
 
 TLDR_BEGIN, TLDR_END = "<!--tldr:auto-->", "<!--/tldr:auto-->"
 tldr_re = re.compile(re.escape(TLDR_BEGIN) + r".*?" + re.escape(TLDR_END), re.S)
+ARTICLE_VISUAL_BEGIN, ARTICLE_VISUAL_END = (
+    "<!--article-visual:auto-->", "<!--/article-visual:auto-->"
+)
+article_visual_re = re.compile(
+    re.escape(ARTICLE_VISUAL_BEGIN) + r".*?" + re.escape(ARTICLE_VISUAL_END), re.S
+)
+authored_article_figure_re = re.compile(
+    r'<(?:figure|div)\b(?=[^>]*\bclass=["\'][^"\']*\barticle-figure\b)[^>]*>',
+    re.I,
+)
 ARTICLE_CARD_OPEN_RE = re.compile(
     r'(<article\b(?=[^>]*\bclass=["\'][^"\']*\barticle-card\b)[^>]*>)',
     re.I,
@@ -1909,6 +1967,7 @@ def article_text(src):
     chunk = newsletter_re.sub(" ", chunk)
     chunk = giscus_re.sub(" ", chunk)
     chunk = affiliate_re.sub(" ", chunk)
+    chunk = article_visual_re.sub(" ", chunk)
     return re.sub(r"\s+", " ", _clean(chunk)).strip()
 
 
@@ -2144,6 +2203,106 @@ def resolve_img(src, page_dir):
     return "/" + rel
 
 
+def jpeg_dimensions(image_path):
+    """Odczytuje wymiary JPEG bez zależności zewnętrznej."""
+    full_path = os.path.join(ROOT, image_path.lstrip("/"))
+    try:
+        with open(full_path, "rb") as image:
+            if image.read(2) != b"\xff\xd8":
+                return None
+            while True:
+                marker_start = image.read(1)
+                while marker_start and marker_start != b"\xff":
+                    marker_start = image.read(1)
+                if not marker_start:
+                    return None
+                marker = image.read(1)
+                while marker == b"\xff":
+                    marker = image.read(1)
+                if not marker or marker == b"\x00":
+                    continue
+                code = marker[0]
+                if code in (0xD8, 0xD9) or 0xD0 <= code <= 0xD7:
+                    continue
+                length = image.read(2)
+                if len(length) != 2:
+                    return None
+                payload_size = int.from_bytes(length, "big") - 2
+                if payload_size < 5:
+                    return None
+                payload = image.read(payload_size)
+                if len(payload) != payload_size:
+                    return None
+                if code in (0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7,
+                            0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF):
+                    return (
+                        int.from_bytes(payload[3:5], "big"),
+                        int.from_bytes(payload[1:3], "big"),
+                    )
+    except OSError:
+        return None
+    return None
+
+
+def select_article_visual(src, rel):
+    """Zwraca manifestowy obraz dla nieilustrowanej karty albo None."""
+    parts = rel.split("/")
+    section = parts[0] if len(parts) > 1 else None
+    if (section not in {"aktualnosci", "poradniki", "narzedzia", "techniki"}
+            or parts[-1] == "index.html"
+            or not ARTICLE_CARD_OPEN_RE.search(src)
+            or authored_article_figure_re.search(src)):
+        return None
+    image_path = TOOL_IMG.get(rel)
+    og_marker = re.search(r"<!--\s*og-image:\s*([^\s>]+?)\s*-->", src)
+    if not image_path and section == "aktualnosci" and og_marker:
+        candidate = html.unescape(og_marker.group(1))
+        if candidate.startswith("/"):
+            image_path = candidate
+    if not image_path:
+        calendar = re.fullmatch(r"poradniki/kalendarz-bran-([a-z-]+)\.html", rel)
+        if calendar:
+            image_path = f"/assets/img/ryby/{calendar.group(1)}.jpg"
+        else:
+            image_path = TOOL_IMG.get(rel)
+    provenance = IMAGE_PROVENANCE.get(image_path)
+    dimensions = jpeg_dimensions(image_path) if provenance else None
+    if not provenance or not dimensions:
+        return None
+    return image_path, provenance, dimensions
+
+
+def inject_article_visual(src, rel, title_txt, modified):
+    """Wstawia pojedynczy, podpisany obraz otwierający kartę artykułu."""
+    selected = select_article_visual(src, rel)
+    if not selected:
+        return src, None
+    image_path, provenance, (width, height) = selected
+    section = rel.split("/", 1)[0]
+    section_label = SECTIONS[section]
+    read_minutes = max(1, math.ceil(len(article_text(src).split()) / 200))
+    alt = provenance.get("alt") or f"Ilustracja do artykułu: {short_title(title_txt)}"
+    credit = (
+        f'<a href="{html.escape(provenance["page"], quote=True)}" '
+        f'rel="license external noopener">{html.escape(provenance["artist"])} '
+        f'({html.escape(provenance["license"])})</a>'
+    )
+    visual = (
+        f'{ARTICLE_VISUAL_BEGIN}<figure class="article-lead-visual">'
+        f'<div class="article-lead-frame"><img class="article-image" '
+        f'src="{html.escape(image_path, quote=True)}" alt="{html.escape(alt, quote=True)}" '
+        f'width="{width}" height="{height}" loading="eager" fetchpriority="high" '
+        f'decoding="async" /><p class="article-lead-stamp"><span>{html.escape(section_label)}</span>'
+        f'<span>{read_minutes} min czytania</span></p></div>'
+        f'<figcaption class="article-lead-caption"><span>Ilustracja.</span> '
+        f'<span class="article-media-credit">Zdjęcie: {credit}</span></figcaption>'
+        f'<p class="article-signal-strip"><span>Dziennik wody</span>'
+        f'<span>{html.escape(section_label)}</span><span><time datetime="{modified}">'
+        f'{fmt_date_pl(modified)}</time></span></p></figure>{ARTICLE_VISUAL_END}'
+    )
+    return ARTICLE_CARD_OPEN_RE.sub(r"\1" + visual, src, count=1), image_path
+
+
 def _git(args):
     try:
         out = subprocess.run(["git", "-C", ROOT] + args,
@@ -2190,6 +2349,9 @@ def build(path):
     noindex = is_noindex(src)
     # Każda strona ma jeden robots meta, odtwarzany w bloku seo:auto poniżej.
     src = robots_meta_re.sub("", src)
+    # Starsze wpisy zawierały ręczne kopie metadanych społecznościowych poza
+    # blokiem seo:auto. Usuń je przed odtworzeniem jednego kanonicznego zestawu.
+    src = managed_meta_re.sub("", src)
     # Wspólna nawigacja na każdej stronie — podmień istniejący nagłówek na
     # kanoniczny (z rozwijanymi działami). Prefiks ścieżek wg głębokości strony.
     depth = os.path.relpath(path, ROOT).replace(os.sep, "/").count("/")
@@ -2211,6 +2373,7 @@ def build(path):
     src = content_advantage_re.sub("", src)
     src = affiliate_re.sub("", src)
     src = hub_freshness_re.sub("", src)
+    src = article_visual_re.sub("", src)
     src = ensure_youtube_facade_dimensions(replace_youtube_nocookie_embeds(src))
 
     tm = title_re.search(src)
@@ -2230,23 +2393,6 @@ def build(path):
     src = src.replace("wrzesień 2026", "sezon jesienny 2026")
     url = absolute_url(rel_url(path))
 
-    # Obraz LCP jest wyłącznie pierwszym lokalnym obrazem artykułu. Zewnętrzne
-    # miniatury (np. YouTube) pozostają lazy i nie trafiają do preloadu.
-    page_dir = os.path.dirname(path)
-    src, lcp_img_path = prioritize_local_lcp_image(src, page_dir)
-    # obrazek OG: pierwszy <img> w treści, inaczej domyślny
-    im = img_re.search(src)
-    img_path = resolve_img(im.group(1), page_dir) if im else DEFAULT_IMG
-    rel_now = os.path.relpath(path, ROOT).replace(os.sep, "/")
-    if rel_now in TOOL_IMG:
-        img_path = TOOL_IMG[rel_now]
-    # Jawny obraz OG per-strona: <!--og-image:/assets/img/...-->. Przydatne dla
-    # wpisów bez zdjęcia w treści (blog), by każdy miał własny podgląd na FB/X.
-    m_og = re.search(r"<!--\s*og-image:\s*([^\s>]+?)\s*-->", src)
-    if m_og:
-        img_path = m_og.group(1)
-    img_url = absolute_url(img_path)
-    page_images = collect_images(src, page_dir)
 
     parts = rel.split("/")
     section = parts[0] if len(parts) > 1 else None
@@ -2320,6 +2466,23 @@ def build(path):
     src = re.sub(r"(</article>)", build_affiliate_links(rel) + r"\1", src, count=1)
     # Wstrzyknięte bloki też mogą zawierać stare odnośniki do index.html.
     src = canonicalize_internal_hrefs(src)
+    src, visual_img_path = inject_article_visual(src, rel, title_txt, mtime)
+    # Wstrzyknięty lead jest pierwszym lokalnym obrazem: jego dane obsługują
+    # LCP, OpenGraph, schema.org oraz sitemapę obrazów.
+    page_dir = os.path.dirname(path)
+    src, lcp_img_path = prioritize_local_lcp_image(src, page_dir)
+    im = img_re.search(src)
+    img_path = resolve_img(im.group(1), page_dir) if im else DEFAULT_IMG
+    if visual_img_path:
+        img_path = visual_img_path
+    elif rel in TOOL_IMG:
+        img_path = TOOL_IMG[rel]
+    else:
+        m_og = re.search(r"<!--\s*og-image:\s*([^\s>]+?)\s*-->", src)
+        if m_og:
+            img_path = m_og.group(1)
+    img_url = absolute_url(img_path)
+    page_images = collect_images(src, page_dir)
     src = re.sub(r'<link\b(?=[^>]*\brel\s*=\s*["\']canonical["\'])[^>]*>\s*', "", src, flags=re.I)
     head = [
         BEGIN,

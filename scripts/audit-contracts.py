@@ -34,6 +34,10 @@ class PageParser(HTMLParser):
         self.main_text: list[str] = []
         self.json_ld: list[str] = []
         self.metadata: dict[str, str] = {}
+        self.metadata_counts: dict[str, int] = {}
+        self.article_visual_count = 0
+        self.article_images: list[dict[str, str | None]] = []
+        self.article_license_links = 0
         self.hrefs: list[str] = []
         self.contextual_hrefs: list[str] = []
         self.toc_hrefs: list[str] = []
@@ -56,6 +60,7 @@ class PageParser(HTMLParser):
         classes = set((attr.get("class") or "").split())
         inside_article = any("article-card" in item for item in self.class_stack)
         inside_hero = any("subpage-hero" in item for item in self.class_stack)
+        inside_article_visual = any("article-lead-visual" in item for item in self.class_stack)
         self.class_stack.append(classes)
         if "content-advantage" in classes:
             self.content_advantage_count += 1
@@ -63,6 +68,10 @@ class PageParser(HTMLParser):
             self.content_advantage_in_hero += int(inside_hero)
         if "tldr" in classes:
             self.tldr_in_article += int(inside_article)
+        if "article-lead-visual" in classes:
+            self.article_visual_count += 1
+        if tag == "img" and "article-image" in classes:
+            self.article_images.append(attr)
         self.stack.append(tag)
         if attr.get("id"):
             self.ids.append(attr["id"])
@@ -95,6 +104,7 @@ class PageParser(HTMLParser):
             content = attr.get("content")
             if key and content is not None:
                 self.metadata[key] = content
+                self.metadata_counts[key] = self.metadata_counts.get(key, 0) + 1
         if tag == "a" and attr.get("href") is not None:
             href = attr["href"]
             self.hrefs.append(href)
@@ -106,6 +116,8 @@ class PageParser(HTMLParser):
                 self._submenu_links[-1].append(href)
             if self._blog_card_links is not None:
                 self._blog_card_links.append(href)
+            if inside_article_visual and "license" in (attr.get("rel") or "").split():
+                self.article_license_links += 1
 
     def handle_endtag(self, tag: str) -> None:
         if tag == "article" and self._blog_card_links is not None:
@@ -241,6 +253,7 @@ def main() -> int:
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
     check(len(urls) == 183 and len(set(urls)) == 183, "sitemap must contain 183 unique URLs", failures)
 
+    visual_pages = 0
     parsed: dict[str, PageParser] = {}
     for url in urls:
         relative = local_path(url)
@@ -249,6 +262,46 @@ def main() -> int:
             continue
         page = parse(relative)
         parsed[url] = page
+        source = read(relative)
+        for key in (
+            "author", "robots", "og:title", "og:description", "og:url", "og:image",
+            "twitter:title", "twitter:description", "twitter:image",
+        ):
+            check(
+                page.metadata_counts.get(key) == 1,
+                f"{relative}: expected exactly one {key} meta tag",
+                failures,
+            )
+        if "<!--article-visual:auto-->" in source:
+            visual_pages += 1
+            check(
+                source.count("<!--article-visual:auto-->") == 1
+                and source.count("<!--/article-visual:auto-->") == 1,
+                f"{relative}: article visual markers are not idempotent",
+                failures,
+            )
+            check(page.article_visual_count == 1,
+                  f"{relative}: expected exactly one article lead visual", failures)
+            check(len(page.article_images) == 1,
+                  f"{relative}: expected exactly one article lead image", failures)
+            check(page.article_license_links == 1,
+                  f"{relative}: article lead image lacks one license source", failures)
+            if page.article_images:
+                image = page.article_images[0]
+                src = image.get("src") or ""
+                width = image.get("width") or ""
+                height = image.get("height") or ""
+                check(src.startswith("/") and (ROOT / src.lstrip("/")).is_file(),
+                      f"{relative}: article lead image is missing: {src}", failures)
+                check(width.isdigit() and height.isdigit() and int(width) >= 800 and int(height) > 0,
+                      f"{relative}: article lead image has invalid intrinsic dimensions", failures)
+                check(page.metadata.get("og:image") == f"https://fish-point.pl{src}",
+                      f"{relative}: article lead image and og:image differ", failures)
+            check(
+                not re.search(r'class=["\'][^"\']*\barticle-figure\b', source, re.I),
+                f"{relative}: automatic lead duplicates an authored article figure",
+                failures,
+            )
         title = compact("".join(page.title_text))
         check(
             bool(title) and title == page.metadata.get("og:title") == page.metadata.get("twitter:title"),
@@ -274,6 +327,8 @@ def main() -> int:
                 json.loads(raw_json)
             except json.JSONDecodeError as error:
                 failures.append(f"{relative}: invalid JSON-LD: {error}")
+
+    check(visual_pages >= 50, "fewer than 50 articles have licensed lead visuals", failures)
 
     js_version = hashlib.md5((ROOT / "js/main.js").read_bytes()).hexdigest()[:8]
     for html_path in sorted(ROOT.rglob("*.html")):
