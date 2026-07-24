@@ -12,6 +12,17 @@
 	redir @www https://fish-point.pl{uri} 301
 
 
+	# Nagłówki bezpieczeństwa są celowo kompatybilne z osadzonymi komentarzami
+	# Giscus. CSP działa najpierw w trybie raportowania, aby nie blokować
+	# istniejących materiałów, gdy lista źródeł będzie dalej zawężana.
+	header {
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), geolocation=(self), microphone=(), payment=(), usb=()"
+		Strict-Transport-Security "max-age=31536000"
+		Content-Security-Policy-Report-Only "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://giscus.app https://api.github.com; frame-src https://giscus.app; media-src 'self' https:"
+	}
+
 	# Canonical directory URLs: tylko istniejące pliki index.html trafiają do
 	# przekierowania, więc błędne ścieżki nadal kończą jako prawdziwe 404.
 	@root_index {
@@ -77,9 +88,26 @@
 	}
 
 	# Cache dla zasobów statycznych
+	# Dokumenty muszą być odświeżane po publikacji; kanał i manifest mogą
+	# pozostać krótko w cache, ale zawsze wolno je ponownie zweryfikować.
+	@html path / *.html */
+	header @html Cache-Control "public, max-age=0, must-revalidate"
+	@feeds path /feed.xml /sitemap.xml
+	header @feeds Cache-Control "public, max-age=900, must-revalidate"
+	@manifest path /site.webmanifest
+	header @manifest Cache-Control "public, max-age=86400, must-revalidate"
+
+	# Niefingerprintowane obrazy i zasoby zachowują miesięczny TTL.
 	@assets path /assets/* /css/* /js/*
 	header @assets Cache-Control "public, max-age=2592000"
-
+	# Wersjonowane JS i CSS mogą być cache'owane bez ponownego pobrania.
+	# Pozostałe, niefingerprintowane obrazy pozostają przy bezpieczniejszym
+	# miesięcznym TTL, aby ich podmiana pod tą samą ścieżką nie utkwiła na rok.
+	@fingerprinted_assets {
+		path /css/* /js/*
+		query v=*
+	}
+	header @fingerprinted_assets Cache-Control "public, max-age=31536000, immutable"
 	# Warianty obrazów zależą od nagłówka Accept — cache/CDN ma je rozróżniać.
 	# Matcher łapie też ścieżki po przepisaniu na .avif/.webp; +Vary dokłada
 	# nagłówek obok istniejącego Vary: Accept-Encoding (z encode).

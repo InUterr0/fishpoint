@@ -1,182 +1,292 @@
 {
- "sandacz": {
-  "file": "assets/img/ryby/sandacz.jpg",
-  "artist": "eLNuko",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=1806446"
- },
- "szczupak": {
-  "file": "assets/img/ryby/szczupak.jpg",
-  "artist": "Jik jik",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=14631780"
- },
- "okon": {
-  "file": "assets/img/ryby/okon.jpg",
-  "artist": "Dellex",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=20549886"
- },
- "sum": {
-  "file": "assets/img/ryby/sum.jpg",
-  "artist": "Dieter Florian (To contact the author, ask the uploader or take a look at tauchshop-florian.de.)",
-  "license": "CC BY-SA 3.0 de",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=8755863"
- },
- "bolen": {
-  "file": "assets/img/ryby/bolen.jpg",
-  "artist": "Jenny Glans",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=1958630"
- },
- "wegorz": {
-  "file": "assets/img/ryby/wegorz.jpg",
-  "artist": "GerardM",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=284678"
- },
- "karp": {
-  "file": "assets/img/ryby/karp.jpg",
-  "artist": "George Chernilevsky",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=77657476"
- },
- "lin": {
-  "file": "assets/img/ryby/lin.jpg",
-  "artist": "Mattia Nocciola / Natural History Museum of the University of Pisa",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Tinca_tinca_Natural_History_Museum_University_of_Pisa.jpg"
- },
- "karas": {
-  "file": "assets/img/ryby/karas.jpg",
-  "artist": "Viridiflavus",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=5694245"
- },
- "ploc": {
-  "file": "assets/img/ryby/ploc.jpg",
-  "artist": "Scardinius_erythropthalmus1_resize.jpg: Original uploader was Algirdas at lt.wikipedia\nderivative work: George Chernilevsky talk",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=8341939"
- },
- "leszcz": {
-  "file": "assets/img/ryby/leszcz.jpg",
-  "artist": "Микова Наталия",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=3567807"
- },
- "jaz": {
-  "file": "assets/img/ryby/jaz.jpg",
-  "artist": "Viridiflavus",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=6780782"
- },
- "klen": {
-  "file": "assets/img/ryby/klen.jpg",
-  "artist": "Karelj",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=14941862"
- },
- "amur": {
-  "file": "assets/img/ryby/amur.jpg",
-  "artist": "Dezidor",
-  "license": "CC BY 3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:2x_amur_b%C3%ADl%C3%BD.jpg"
- },
- "pstrag": {
-  "file": "assets/img/ryby/pstrag.jpg",
-  "artist": "Sam Stukel / USFWS",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Brown_Trout_%28Salmo_trutta%29_%2853678765394%29.jpg"
- },
- "lipien": {
-  "file": "assets/img/ryby/lipien.jpg",
-  "artist": "Zsoldos Márton",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=10796695"
- },
- "mietus": {
-  "file": "assets/img/ryby/mietus.jpg",
-  "artist": "Achim R. Schloeffel",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=247447"
- },
- "troc-losos": {
-  "file": "assets/img/ryby/troc-losos.jpg",
-  "artist": "User:Wolfgang Striewski",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=1148722"
- },
- "certa": {
-  "file": "assets/img/ryby/certa.jpg",
-  "artist": "No machine-readable author provided. Tokic assumed (based on copyright claims).",
-  "license": "CC BY-SA 2.5",
-  "page": "https://commons.wikimedia.org/wiki/File:Vimba_vimba.jpg"
- },
- "wzdrega": {
-  "file": "assets/img/ryby/wzdrega.jpg",
-  "artist": "Iidkk",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Common_rudd_wroclaw_zoo.jpg"
- },
- "jesiotr": {
-  "file": "assets/img/ryby/jesiotr.jpg",
-  "artist": "Duane Raver/U.S. Fish and Wildlife Service",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Acipenser_oxyrhynchus.jpg"
- },
- "swinka": {
-  "file": "assets/img/ryby/swinka.jpg",
-  "artist": "André Karwath aka Aka",
-  "license": "CC BY-SA 2.5",
-  "page": "https://commons.wikimedia.org/wiki/File:Chondrostoma_nasus_(aka).jpg"
- },
- "sielawa": {
-  "file": "assets/img/ryby/sielawa.jpg",
-  "artist": "Markus Kauppinen",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Coregonus_albula.jpg"
- },
- "sieja": {
-  "file": "assets/img/ryby/sieja.jpg",
-  "artist": "Apple2000",
-  "license": "CC BY 3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Coregonus_lavaretus_maraena_1.jpg"
- },
- "brzana": {
-  "file": "assets/img/ryby/brzana.jpg",
-  "artist": "Bernd Sauerwein",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Barbus_barbus_in_Losse_-_DE.jpg"
- },
- "ukleja": {
-  "file": "assets/img/ryby/ukleja.jpg",
-  "artist": "Piet Spaans",
-  "license": "CC BY-SA 2.5",
-  "page": "https://commons.wikimedia.org/wiki/File:AlburnusAlburnus1.JPG"
- },
- "dorsz": {
-  "file": "assets/img/ryby/dorsz.jpg",
-  "artist": "Aotearoa",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Gadus_morhua-Atlantic_cod.png"
- },
- "sledz": {
-  "file": "assets/img/ryby/sledz.jpg",
-  "artist": "encyclopedia, \"Pieni Tietosanakirja\"",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Clupea_harengus_(Pieni).jpg"
- },
- "belona": {
-  "file": "assets/img/ryby/belona.jpg",
-  "artist": "Krüger",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Belone_belone1.jpg"
- },
- "fladra": {
-  "file": "assets/img/ryby/fladra.jpg",
-  "artist": "Hans Hillewaert",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Platichthys_flesus_1.jpg"
- }
+  "sandacz": {
+    "file": "assets/img/ryby/sandacz.jpg",
+    "artist": "eLNuko",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=1806446"
+  },
+  "szczupak": {
+    "file": "assets/img/ryby/szczupak.jpg",
+    "artist": "Jik jik",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=14631780"
+  },
+  "okon": {
+    "file": "assets/img/ryby/okon.jpg",
+    "artist": "Dellex",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=20549886"
+  },
+  "sum": {
+    "file": "assets/img/ryby/sum.jpg",
+    "artist": "Dieter Florian (To contact the author, ask the uploader or take a look at tauchshop-florian.de.)",
+    "license": "CC BY-SA 3.0 de",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=8755863"
+  },
+  "bolen": {
+    "file": "assets/img/ryby/bolen.jpg",
+    "artist": "Jenny Glans",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=1958630"
+  },
+  "wegorz": {
+    "file": "assets/img/ryby/wegorz.jpg",
+    "artist": "GerardM",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=284678"
+  },
+  "karp": {
+    "file": "assets/img/ryby/karp.jpg",
+    "artist": "George Chernilevsky",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=77657476"
+  },
+  "lin": {
+    "file": "assets/img/ryby/lin.jpg",
+    "artist": "Mattia Nocciola / Natural History Museum of the University of Pisa",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Tinca_tinca_Natural_History_Museum_University_of_Pisa.jpg"
+  },
+  "karas": {
+    "file": "assets/img/ryby/karas.jpg",
+    "artist": "Viridiflavus",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=5694245"
+  },
+  "ploc": {
+    "file": "assets/img/ryby/ploc.jpg",
+    "artist": "Scardinius_erythropthalmus1_resize.jpg: Original uploader was Algirdas at lt.wikipedia\nderivative work: George Chernilevsky talk",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=8341939"
+  },
+  "leszcz": {
+    "file": "assets/img/ryby/leszcz.jpg",
+    "artist": "Микова Наталия",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=3567807"
+  },
+  "jaz": {
+    "file": "assets/img/ryby/jaz.jpg",
+    "artist": "Viridiflavus",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=6780782"
+  },
+  "klen": {
+    "file": "assets/img/ryby/klen.jpg",
+    "artist": "Karelj",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=14941862"
+  },
+  "amur": {
+    "file": "assets/img/ryby/amur.jpg",
+    "artist": "Dezidor",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:2x_amur_b%C3%ADl%C3%BD.jpg"
+  },
+  "pstrag": {
+    "file": "assets/img/ryby/pstrag.jpg",
+    "artist": "Sam Stukel / USFWS",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Brown_Trout_%28Salmo_trutta%29_%2853678765394%29.jpg"
+  },
+  "lipien": {
+    "file": "assets/img/ryby/lipien.jpg",
+    "artist": "Zsoldos Márton",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=10796695"
+  },
+  "mietus": {
+    "file": "assets/img/ryby/mietus.jpg",
+    "artist": "Achim R. Schloeffel",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=247447"
+  },
+  "troc-losos": {
+    "file": "assets/img/ryby/troc-losos.jpg",
+    "artist": "User:Wolfgang Striewski",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=1148722"
+  },
+  "certa": {
+    "file": "assets/img/ryby/certa.jpg",
+    "artist": "No machine-readable author provided. Tokic assumed (based on copyright claims).",
+    "license": "CC BY-SA 2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Vimba_vimba.jpg"
+  },
+  "wzdrega": {
+    "file": "assets/img/ryby/wzdrega.jpg",
+    "artist": "Iidkk",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Common_rudd_wroclaw_zoo.jpg"
+  },
+  "jesiotr": {
+    "file": "assets/img/ryby/jesiotr.jpg",
+    "artist": "Duane Raver/U.S. Fish and Wildlife Service",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Acipenser_oxyrhynchus.jpg"
+  },
+  "swinka": {
+    "file": "assets/img/ryby/swinka.jpg",
+    "artist": "André Karwath aka Aka",
+    "license": "CC BY-SA 2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Chondrostoma_nasus_(aka).jpg"
+  },
+  "sielawa": {
+    "file": "assets/img/ryby/sielawa.jpg",
+    "artist": "Markus Kauppinen",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Coregonus_albula.jpg"
+  },
+  "sieja": {
+    "file": "assets/img/ryby/sieja.jpg",
+    "artist": "Apple2000",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Coregonus_lavaretus_maraena_1.jpg"
+  },
+  "brzana": {
+    "file": "assets/img/ryby/brzana.jpg",
+    "artist": "Bernd Sauerwein",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Barbus_barbus_in_Losse_-_DE.jpg"
+  },
+  "ukleja": {
+    "file": "assets/img/ryby/ukleja.jpg",
+    "artist": "Piet Spaans",
+    "license": "CC BY-SA 2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:AlburnusAlburnus1.JPG"
+  },
+  "dorsz": {
+    "file": "assets/img/ryby/dorsz.jpg",
+    "artist": "Aotearoa",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Gadus_morhua-Atlantic_cod.png"
+  },
+  "sledz": {
+    "file": "assets/img/ryby/sledz.jpg",
+    "artist": "encyclopedia, \"Pieni Tietosanakirja\"",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Clupea_harengus_(Pieni).jpg"
+  },
+  "belona": {
+    "file": "assets/img/ryby/belona.jpg",
+    "artist": "Krüger",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Belone_belone1.jpg"
+  },
+  "fladra": {
+    "file": "assets/img/ryby/fladra.jpg",
+    "artist": "Hans Hillewaert",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Platichthys_flesus_1.jpg"
+  },
+  "kielb": {
+    "file": "assets/img/ryby/kielb.jpg",
+    "artist": "Michal Maňas / User:Snek01",
+    "license": "CC BY 2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Gobio_gobio.jpg",
+    "source_checked": "2026-07-24",
+    "variants": [
+      "assets/img/ryby/kielb.jpg.webp",
+      "assets/img/ryby/kielb.jpg.avif"
+    ]
+  },
+  "krap": {
+    "file": "assets/img/ryby/krap.jpg",
+    "artist": "Emőke Dénes",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hal_-_Blicca_bjoerkna_-_1.jpg",
+    "source_checked": "2026-07-24",
+    "variants": [
+      "assets/img/ryby/krap.jpg.webp",
+      "assets/img/ryby/krap.jpg.avif"
+    ]
+  },
+  "koza": {
+    "file": "assets/img/ryby/koza.jpg",
+    "artist": "J.C. Harf / Wiki-Harfus",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Steinbeisser_001.jpg",
+    "source_checked": "2026-07-24",
+    "variants": [
+      "assets/img/ryby/koza.jpg.webp",
+      "assets/img/ryby/koza.jpg.avif"
+    ]
+  },
+  "piskorz": {
+    "file": "assets/img/ryby/piskorz.jpg",
+    "artist": "Piet Spaans",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Misgurnus_fossilis.jpg",
+    "source_checked": "2026-07-24",
+    "variants": [
+      "assets/img/ryby/piskorz.jpg.webp",
+      "assets/img/ryby/piskorz.jpg.avif"
+    ]
+  },
+  "rozanka": {
+    "file": "assets/img/ryby/rozanka.jpg",
+    "artist": "George Chernilevsky",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Rhodeus_amarus_2008_G1.jpg",
+    "source_checked": "2026-07-24",
+    "variants": [
+      "assets/img/ryby/rozanka.jpg.webp",
+      "assets/img/ryby/rozanka.jpg.avif"
+    ]
+  },
+  "ciernik": {
+    "file": "assets/img/ryby/ciernik.jpg",
+    "artist": "Ron Offermans",
+    "license": "CC BY-SA 3.0 / GFDL 1.2+",
+    "page": "https://commons.wikimedia.org/wiki/File:Gasterosteus_aculeatus.jpg",
+    "source_checked": "2026-07-24",
+    "variants": [
+      "assets/img/ryby/ciernik.jpg.webp",
+      "assets/img/ryby/ciernik.jpg.avif"
+    ]
+  },
+  "slonecznica": {
+    "file": "assets/img/ryby/slonecznica.jpg",
+    "artist": "NasserHalaweh",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cyprinidae_Leucaspius_delineatus_2.jpg",
+    "source_checked": "2026-07-24",
+    "variants": [
+      "assets/img/ryby/slonecznica.jpg.webp",
+      "assets/img/ryby/slonecznica.jpg.avif"
+    ]
+  },
+  "strzebla-potokowa": {
+    "file": "assets/img/ryby/strzebla-potokowa.jpg",
+    "artist": "Clément Bardot",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vairon_(Phoxinus_phoxinus).jpg",
+    "source_checked": "2026-07-24",
+    "variants": [
+      "assets/img/ryby/strzebla-potokowa.jpg.webp",
+      "assets/img/ryby/strzebla-potokowa.jpg.avif"
+    ]
+  },
+  "glowacz-bialopletwy": {
+    "file": "assets/img/ryby/glowacz-bialopletwy.jpg",
+    "artist": "D",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cottus_gobio_-_Groppe_3.jpg",
+    "source_checked": "2026-07-24",
+    "variants": [
+      "assets/img/ryby/glowacz-bialopletwy.jpg.webp",
+      "assets/img/ryby/glowacz-bialopletwy.jpg.avif"
+    ]
+  },
+  "minog-rzeczny": {
+    "file": "assets/img/ryby/minog-rzeczny.jpg",
+    "artist": "M. Buschmann",
+    "license": "CC BY-SA 3.0 / GFDL 1.2+",
+    "page": "https://commons.wikimedia.org/wiki/File:Lampetra_fluviatilis.jpg",
+    "source_checked": "2026-07-24",
+    "variants": [
+      "assets/img/ryby/minog-rzeczny.jpg.webp",
+      "assets/img/ryby/minog-rzeczny.jpg.avif"
+    ]
+  }
 }

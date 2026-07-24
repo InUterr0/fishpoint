@@ -721,7 +721,7 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/troc-losos.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Troć jeziorowa 8,5 kg z Tarnobrzega: medialny rekord czeka na weryfikację</image:title>
+      <image:title>Ilustracja do artykułu: Troć jeziorowa 8,5 kg z Tarnobrzega bez rekordu</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/schemat-stanowisko.svg</image:loc>
@@ -987,6 +987,12 @@
       <image:loc>https://fish-point.pl/assets/img/humor/memy.jpg</image:loc>
       <image:title>Wędkarz fotografujący jezioro telefonem i wielka sylwetka ryby pod powierzchnią — ilustracja humorystyczna</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/korekty.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/</loc>
@@ -2685,6 +2691,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/ryby/ciernik.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/ciernik.jpg</image:loc>
+      <image:title>Cierniki (Gasterosteus aculeatus) w wodzie.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/ryby/dorsz.html</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -2726,6 +2742,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/schemat-warstwy-wody.svg</image:loc>
       <image:title>Schemat przekroju zbiornika z powierzchnią, tonią i dnem.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/glowacz-bialopletwy.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/glowacz-bialopletwy.jpg</image:loc>
+      <image:title>Głowacz białopłetwy (Cottus gobio) na kamienistym dnie.</image:title>
     </image:image>
   </url>
   <url>
@@ -2829,6 +2855,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/ryby/kielb.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/kielb.jpg</image:loc>
+      <image:title>Kiełb pospolity (Gobio gobio) sfotografowany z boku na siatce podbieraka.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/ryby/klen.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -2852,6 +2888,26 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/schemat-warstwy-wody.svg</image:loc>
       <image:title>Schemat przekroju zbiornika z powierzchnią, tonią i dnem.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/koza.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/koza.jpg</image:loc>
+      <image:title>Koza pospolita (Cobitis taenia) nad kamiennym podłożem.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/krap.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/krap.jpg</image:loc>
+      <image:title>Krąpie (Blicca bjoerkna) w akwarium.</image:title>
     </image:image>
   </url>
   <url>
@@ -2959,6 +3015,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/ryby/minog-rzeczny.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/minog-rzeczny.jpg</image:loc>
+      <image:title>Minóg rzeczny (Lampetra fluviatilis) z widoczną przyssawką gębową.</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/ryby/okon.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -2982,6 +3048,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/schemat-warstwy-wody.svg</image:loc>
       <image:title>Schemat przekroju zbiornika z powierzchnią, tonią i dnem.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/piskorz.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/piskorz.jpg</image:loc>
+      <image:title>Piskorz (Misgurnus fossilis) na siatce podbieraka.</image:title>
     </image:image>
   </url>
   <url>
@@ -3034,6 +3110,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/schemat-warstwy-wody.svg</image:loc>
       <image:title>Schemat przekroju zbiornika z powierzchnią, tonią i dnem.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/rozanka.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/rozanka.jpg</image:loc>
+      <image:title>Różanka (Rhodeus amarus) widziana z boku.</image:title>
     </image:image>
   </url>
   <url>
@@ -3126,6 +3212,26 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/schemat-warstwy-wody.svg</image:loc>
       <image:title>Schemat przekroju zbiornika z powierzchnią, tonią i dnem.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/slonecznica.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/slonecznica.jpg</image:loc>
+      <image:title>Słonecznica (Leucaspius delineatus) w toni wody.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/strzebla-potokowa.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/strzebla-potokowa.jpg</image:loc>
+      <image:title>Strzeble potokowe (Phoxinus phoxinus) w ławicy.</image:title>
     </image:image>
   </url>
   <url>

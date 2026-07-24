@@ -166,7 +166,8 @@ def parse(relative: str) -> PageParser:
 
 
 def normalize(value: str) -> str:
-    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", value)).strip().lower()
+    normalized = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", value)).strip().lower()
+    return re.sub(r"\s+([,.;:!?])", r"\1", normalized)
 
 def compact(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
@@ -251,13 +252,34 @@ def main() -> int:
     failures: list[str] = []
     sitemap = ET.fromstring(read("sitemap.xml"))
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
-    check(len(urls) == 183 and len(set(urls)) == 183, "sitemap must contain 183 unique URLs", failures)
+    check(len(urls) == 194 and len(set(urls)) == 194, "sitemap must contain 194 unique URLs", failures)
 
     visual_pages = 0
     regional_visuals = 0
     inline_visual_pages = 0
     inline_visuals = 0
+    faq_parity_pages = 0
     parsed: dict[str, PageParser] = {}
+    expected_about = {
+        "techniki/spinning.html": {("DefinedTerm", "Spinning")},
+        "techniki/feeder.html": {("DefinedTerm", "Feeder")},
+        "techniki/splawik.html": {("DefinedTerm", "Wędkarstwo spławikowe")},
+        "techniki/karpiowanie.html": {("DefinedTerm", "Wędkarstwo karpiowe")},
+        "techniki/muchowe.html": {("DefinedTerm", "Wędkarstwo muchowe")},
+        "techniki/podlodowe.html": {("DefinedTerm", "Wędkarstwo podlodowe")},
+        "techniki/trolling.html": {("DefinedTerm", "Trolling")},
+        "aktualnosci/zakaz-polowu-bobr-lipiec-2026.html": {
+            ("RiverBodyOfWater", "Bóbr"),
+        },
+        "aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html": {
+            ("DefinedTerm", "Wędkarstwo spławikowe"),
+            ("RiverBodyOfWater", "Warta"),
+            ("Place", "Świerkocin"),
+        },
+        "aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html": {
+            ("LakeBodyOfWater", "Jezioro Tarnobrzeskie"),
+        },
+    }
     for url in urls:
         relative = local_path(url)
         check((ROOT / relative).is_file(), f"missing sitemap target: {relative}", failures)
@@ -408,6 +430,40 @@ def main() -> int:
             f"{relative}: heading hierarchy skips a level",
             failures,
         )
+        h1 = compact(next((str(text) for level, text in page.headings if int(level) == 1), ""))
+        blog_postings = []
+        for raw_json in page.json_ld:
+            try:
+                document = json.loads(raw_json)
+            except json.JSONDecodeError:
+                continue
+            for node in walk(document):
+                if not isinstance(node, dict):
+                    continue
+                if node.get("@type") == "BlogPosting":
+                    blog_postings.append(node)
+                if node.get("@type") == "FAQPage":
+                    faq_parity_pages += 1
+                    visible = normalize(" ".join(page.main_text))
+                    for question in node.get("mainEntity", []):
+                        answer = normalize(str((question.get("acceptedAnswer") or {}).get("text", "")))
+                        check(not answer or answer in visible,
+                              f"{relative}: FAQ schema differs from visible answer", failures)
+        check(len(blog_postings) <= 1, f"{relative}: duplicate BlogPosting entity", failures)
+        for posting in blog_postings:
+            check(compact(str(posting.get("headline", ""))) == h1,
+                  f"{relative}: BlogPosting headline differs from visible H1", failures)
+            if relative in expected_about:
+                observed_about = {
+                    (str(node.get("@type")), str(node.get("name")))
+                    for node in walk(posting.get("about"))
+                    if isinstance(node, dict) and node.get("@type") and node.get("name")
+                }
+                check(
+                    expected_about[relative] <= observed_about,
+                    f"{relative}: missing evidence-backed method/place entities",
+                    failures,
+                )
         for raw_json in page.json_ld:
             try:
                 json.loads(raw_json)
@@ -579,7 +635,7 @@ def main() -> int:
             ))
         else:
             found = set(re.findall(
-                r"^URL: (https://fish-point\.pl/[^\s]*)$",
+                r"^Canonical URL: (https://fish-point\.pl/[^\s]*)$",
                 content,
                 re.M,
             ))
@@ -697,12 +753,25 @@ def main() -> int:
                 failures,
             )
 
+    feed = ET.fromstring(read("feed.xml"))
+    for item in feed.findall("./channel/item"):
+        link = item.findtext("link", "")
+        title = compact(item.findtext("title", ""))
+        relative = local_path(link)
+        if (ROOT / relative).is_file():
+            page = parse(relative)
+            h1 = compact(next((str(text) for level, text in page.headings if int(level) == 1), ""))
+            check(title == h1, f"{relative}: RSS title differs from visible H1", failures)
+
+    full_llms = read("llms-full.txt")
+    for marker in ("Canonical URL:", "Author:", "Published:", "Modified:", "Type:", "Sources:"):
+        check(marker in full_llms, f"llms-full.txt: missing document provenance {marker}", failures)
     if failures:
         print("Audit contracts failed:", file=sys.stderr)
         for failure in failures:
             print(f"- {failure}", file=sys.stderr)
         return 1
-    print(f"Audit contracts: ok ({len(urls)} sitemap pages; 3 FAQ parity checks)")
+    print(f"Audit contracts: ok ({len(urls)} sitemap pages; {faq_parity_pages} FAQ parity checks)")
     return 0
 
 

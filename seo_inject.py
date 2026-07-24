@@ -129,6 +129,47 @@ FISH_ENTITIES = {
     "sledz": {"name": "Śledź atlantycki", "sameAs": ["https://pl.wikipedia.org/wiki/Śledź_oceaniczny", "https://www.wikidata.org/wiki/Q2396858"]},
     "belona": {"name": "Belona", "sameAs": ["https://pl.wikipedia.org/wiki/Belona_(ryba)", "https://www.wikidata.org/wiki/Q643373"]},
     "fladra": {"name": "Flądra (stornia)", "sameAs": ["https://pl.wikipedia.org/wiki/Stornia", "https://www.wikidata.org/wiki/Q214034"]},
+    "kielb": {"name": "Kiełb pospolity", "sameAs": ["https://www.fishbase.se/summary/Gobio-gobio.html"]},
+    "krap": {"name": "Krąp", "sameAs": ["https://www.fishbase.se/summary/Blicca-bjoerkna.html"]},
+    "koza": {"name": "Koza pospolita", "sameAs": ["https://www.fishbase.se/summary/Cobitis-taenia.html"]},
+    "piskorz": {"name": "Piskorz", "sameAs": ["https://www.fishbase.se/summary/Misgurnus-fossilis.html"]},
+    "rozanka": {"name": "Różanka", "sameAs": ["https://www.fishbase.se/summary/Rhodeus-amarus.html"]},
+    "ciernik": {"name": "Ciernik", "sameAs": ["https://www.fishbase.se/summary/Gasterosteus-aculeatus.html"]},
+    "slonecznica": {"name": "Słonecznica", "sameAs": ["https://www.fishbase.se/summary/Leucaspius-delineatus.html"]},
+    "strzebla-potokowa": {"name": "Strzebla potokowa", "sameAs": ["https://www.fishbase.se/summary/Phoxinus-phoxinus.html"]},
+    "glowacz-bialopletwy": {"name": "Głowacz białopłetwy", "sameAs": ["https://www.fishbase.se/summary/Cottus-gobio.html"]},
+    "minog-rzeczny": {"name": "Minóg rzeczny", "sameAs": ["https://www.fishbase.se/summary/Lampetra-fluviatilis.html"]},
+}
+
+# Tematy metod i miejsc przypisujemy wyłącznie do stron, których widoczna treść
+# jednoznacznie je opisuje. Brak wpisu jest celowy: generator nie zgaduje encji
+# na podstawie pojedynczego słowa ani nazwy pliku.
+METHOD_ENTITIES = {
+    "techniki/spinning.html": "Spinning",
+    "techniki/feeder.html": "Feeder",
+    "techniki/splawik.html": "Wędkarstwo spławikowe",
+    "techniki/karpiowanie.html": "Wędkarstwo karpiowe",
+    "techniki/muchowe.html": "Wędkarstwo muchowe",
+    "techniki/podlodowe.html": "Wędkarstwo podlodowe",
+    "techniki/trolling.html": "Trolling",
+    "aktualnosci/pierwsze-okregowe-method-feeder-opole-2026.html": "Method feeder",
+    "aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html": "Wędkarstwo spławikowe",
+}
+PLACE_ENTITIES = {
+    "aktualnosci/zakaz-polowu-bobr-lipiec-2026.html": (
+        {"@type": "RiverBodyOfWater", "name": "Bóbr",
+         "sameAs": "https://www.wikidata.org/wiki/Q148307"},
+    ),
+    "aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html": (
+        {"@type": "RiverBodyOfWater", "name": "Warta",
+         "sameAs": "https://www.wikidata.org/wiki/Q201823"},
+        {"@type": "Place", "name": "Świerkocin",
+         "sameAs": "https://www.wikidata.org/wiki/Q3078474"},
+    ),
+    "aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html": (
+        {"@type": "LakeBodyOfWater", "name": "Jezioro Tarnobrzeskie",
+         "sameAs": "https://www.wikidata.org/wiki/Q6477976"},
+    ),
 }
 
 # Rejestr biologiczny atlasu. Tożsamość taksonomiczną oddzielamy od porad
@@ -195,6 +236,26 @@ FISH_BIOLOGICAL_REGISTRY = {
     "belona": {"latin": "Belone belone", "group": "morskie", "aliases": ("garfish",), "compare": "sledz",
                "caution": "Zielona barwa ości nie jest rozstrzygającą cechą rozpoznawczą ani oceną przydatności do spożycia."},
     "fladra": {"latin": "Platichthys flesus", "group": "morskie", "aliases": ("stornia", "flądra"), "compare": "dorsz"},
+    "kielb": {"latin": "Gobio gobio", "group": "spokojny żer",
+              "aliases": ("kiełb pospolity", "gudgeon"), "compare": "krap"},
+    "krap": {"latin": "Blicca bjoerkna", "group": "spokojny żer",
+             "aliases": ("krąpik", "silver bream"), "compare": "leszcz"},
+    "koza": {"latin": "Cobitis taenia", "group": "łososiowate i inne",
+             "aliases": ("koza pospolita", "spined loach"), "compare": "piskorz"},
+    "piskorz": {"latin": "Misgurnus fossilis", "group": "łososiowate i inne",
+                "aliases": ("piskorz europejski", "weather loach"), "compare": "koza"},
+    "rozanka": {"latin": "Rhodeus amarus", "group": "łososiowate i inne",
+                "aliases": ("różanka pospolita", "bitterling"), "compare": "slonecznica"},
+    "ciernik": {"latin": "Gasterosteus aculeatus", "group": "spokojny żer",
+                "aliases": ("ciernik pospolity", "three-spined stickleback"), "compare": "slonecznica"},
+    "slonecznica": {"latin": "Leucaspius delineatus", "group": "łososiowate i inne",
+                    "aliases": ("słonecznica pospolita", "sunbleak"), "compare": "ukleja"},
+    "strzebla-potokowa": {"latin": "Phoxinus phoxinus", "group": "łososiowate i inne",
+                          "aliases": ("strzebla", "common minnow"), "compare": "kielb"},
+    "glowacz-bialopletwy": {"latin": "Cottus gobio", "group": "łososiowate i inne",
+                            "aliases": ("głowacz", "European bullhead"), "compare": "pstrag"},
+    "minog-rzeczny": {"latin": "Lampetra fluviatilis", "group": "łososiowate i inne",
+                      "aliases": ("minog", "river lamprey"), "compare": "wegorz"},
 }
 
 # Tylko bezpośrednie karty gatunków potwierdzone w przeglądzie atlasu
@@ -324,7 +385,7 @@ def normalize_fish_legal_section(src, rel):
         return src
     slug = os.path.splitext(os.path.basename(rel))[0]
     record = FISH_BIOLOGICAL_REGISTRY.get(slug)
-    if not record:
+    if not record or slug not in FISH_LEGAL_SUMMARIES:
         return src
     section = build_fish_legal_section(slug, record["group"])
     return FISH_LEGAL_SECTION_RE.sub(section, src, count=1)
@@ -2050,6 +2111,123 @@ RELATED_LINKS = {
 SECTION_PAGES = {}
 
 
+FAQ_REPAIRS = {
+    "aktualnosci/kalendarz-wedkarski-2026.html": (
+        ("Czy kalendarz wędkarski gwarantuje brania?", "Nie. To plan przygotowania wyprawy; brania zależą od warunków, a legalność od przepisów i dokumentów konkretnej wody."),
+        ("Czy w miesiącu poza ochroną wolno zabrać rybę?", "Nie automatycznie. Trzeba jeszcze sprawdzić wymiar, limit i lokalne warunki zezwolenia."),
+        ("Gdzie sprawdzić ochronę odcinkową?", "W pełnym tekście § 7 rozporządzenia, a następnie w aktualnym zezwoleniu gospodarza."),
+    ),
+    "aktualnosci/zezwolenia-online-2026.html": (
+        ("Czy potwierdzenie płatności jest zezwoleniem?", "Nie zawsze. Pobierz dokument wydany przez gospodarza i stosuj wskazany przez niego sposób okazania go przy kontroli."),
+        ("Czy dziecko do 14 lat potrzebuje karty wędkarskiej?", "Nie, ale art. 7 ust. 3 wymaga połowu pod opieką pełnoletniej osoby posiadającej kartę wędkarską."),
+        ("Czy e-zezwolenie PZW działa na każdej wodzie?", "Nie. Zawsze sprawdź właściwy okręg, wykaz wód i aktualne warunki konkretnego zezwolenia."),
+    ),
+    "aktualnosci/wymiary-i-okresy-ochronne-2026.html": (
+        ("Co oznacza znak „—” przy okresie lub limicie?", "Oznacza brak wartości w danej rubryce tego zestawienia, nie automatyczną zgodę na połów lub zatrzymanie ryby."),
+        ("Czy tabela obejmuje wyjątki odcinkowe?", "Tak, streszcza je, ale przy certcie, miętusie, pstrągu, łososiu i troci trzeba odczytać pełny § 6–7 aktu."),
+        ("Czy lokalne zezwolenie może być ostrzejsze?", "Może ustanawiać warunki dostępu do konkretnej wody, np. limit lub górny wymiar; nie uchyla jednak przepisów krajowych."),
+    ),
+    "aktualnosci/kiedy-sezon-na-ryby-2026.html": (
+        ("Czy po końcu okresu ochronnego sezon jest automatycznie otwarty?", "Nie. Należy sprawdzić § 7 ust. 2, odcinek wody, aktualne zezwolenie, regulamin i komunikaty gospodarza."),
+        ("Dlaczego pstrąg ma dwie daty końca ochrony?", "§ 7 różnicuje wybrane odcinki Wisły, Sanu, Odry i Bystrzycy od pozostałych wód."),
+        ("Czy kalendarz brań mówi, że połów jest legalny?", "Nie. Prognoza aktywności ryb nie zastępuje warunków prawnych i lokalnych dokumentów."),
+    ),
+    "aktualnosci/gorne-wymiary-ochronne-2026.html": (
+        ("Czy istnieje jeden górny wymiar ochronny dla całego PZW?", "Nie. Górny wymiar wynika z dokumentu gospodarza konkretnej wody; nie wolno przenosić go między okręgami ani łowiskami."),
+        ("Czy krajowy wymiar wystarcza, aby zatrzymać rybę?", "Nie. Trzeba spełnić równocześnie przepisy krajowe oraz aktualne warunki zezwolenia, regulaminu i komunikatów gospodarza."),
+        ("Jak mierzyć rybę?", "Według § 6 ust. 2 rozporządzenia: od początku zamkniętego pyska do końca najdłuższego promienia płetwy ogonowej."),
+    ),
+}
+FAQ_REPAIR_BEGIN = "<!--faq-repair:auto-->"
+FAQ_REPAIR_END = "<!--/faq-repair:auto-->"
+faq_repair_re = re.compile(
+    re.escape(FAQ_REPAIR_BEGIN) + r".*?" + re.escape(FAQ_REPAIR_END), re.S
+)
+
+
+def visible_h1(src):
+    """Zwraca jedyny, widoczny H1; jest kanoniczną nazwą dokumentu."""
+    match = re.search(r"<h1\b[^>]*>(.*?)</h1>", src, re.S | re.I)
+    return _clean(match.group(1)) if match else ""
+
+
+def remove_legacy_jsonld(src, types):
+    """Usuwa ręczne encje przejęte przez blok seo:auto, bez kasowania innych schema."""
+    def replace(match):
+        try:
+            document = json.loads(match.group("json"))
+        except json.JSONDecodeError:
+            return match.group(0)
+        if isinstance(document, dict) and document.get("@type") in types:
+            return ""
+        return match.group(0)
+
+    return re.sub(
+        r'<script\b[^>]*\btype=["\']application/ld\+json["\'][^>]*>\s*'
+        r'(?P<json>.*?)\s*</script>\s*',
+        replace,
+        src,
+        flags=re.S | re.I,
+    )
+
+
+def inject_visible_faq(src, rel):
+    """Przywraca FAQ do HTML, zanim ta sama treść trafi do FAQPage."""
+    src = faq_repair_re.sub("", src)
+    pairs = FAQ_REPAIRS.get(rel)
+    if not pairs or extract_faq(src):
+        return src
+    items = "".join(
+        f'<section class="info-block"><h3>{html.escape(question)}</h3>'
+        f'<p>{html.escape(answer)}</p></section>'
+        for question, answer in pairs
+    )
+    block = (
+        f'{FAQ_REPAIR_BEGIN}<h2 id="faq">FAQ — najczęstsze pytania</h2>'
+        f'{items}{FAQ_REPAIR_END}'
+    )
+    article_start = re.search(r'<article class="article-card">', src)
+    if not article_start:
+        raise ValueError(f"{rel}: FAQ repair requires article-card")
+    source_box = re.search(
+        r'<(?:div|section)\b[^>]*\bclass=["\'][^"\']*\bsource-box\b[^"\']*["\'][^>]*>',
+        src[article_start.end():],
+        re.I,
+    )
+    if not source_box:
+        raise ValueError(f"{rel}: FAQ repair requires a source-box")
+    position = article_start.end() + source_box.start()
+    return src[:position] + block + src[position:]
+
+
+def llms_document_metadata(src, url, rel, published, modified, page_type):
+    """Zwraca wyłącznie obserwowalną proweniencję pojedynczego dokumentu."""
+    article = article_text(src)
+    external = []
+    for href, label in re.findall(r'<a\b[^>]*\bhref=["\'](https?://[^"\']+)["\'][^>]*>(.*?)</a>', src, re.S | re.I):
+        source = (html.unescape(href), _clean(label))
+        if source not in external:
+            external.append(source)
+    lines = [
+        f"Canonical URL: {url}",
+        f"Author: {AUTHOR_NAME}",
+        f"Published: {published}",
+        f"Modified: {modified}",
+        f"Type: {page_type}",
+        "Sources:",
+    ]
+    lines.extend(
+        f"- [{label or href}]({href})" for href, label in external[:12]
+    ) or lines.append("- No external source link is stated in the document.")
+    if re.search(r"źródła?\s+i\s+(?:granice|weryfikacja)|granice informacji", article, re.I):
+        lines.append("Evidence limitations: The document includes a visible sources-and-limitations note.")
+    if re.search(r"\bkorekt", article, re.I):
+        lines.append("Corrections: A correction policy or note is stated in the document.")
+    if rel in AFFILIATE_LINKS:
+        lines.append("Affiliation: The document contains an explicitly labelled affiliate section.")
+    return lines
+
+
 def short_title(title_txt):
     return title_txt.split(" — ")[0].split(" - ")[0]
 
@@ -2062,6 +2240,25 @@ def fish_about(fish):
             for item in fish.get("additional", ())
         ),
     ]
+    return entities[0] if len(entities) == 1 else entities
+
+def posting_about(rel, fish=None):
+    """Łączy tylko jawnie zmapowane encje gatunku, metody i miejsca."""
+    entities = []
+    if fish:
+        fish_entities = fish_about(fish)
+        entities.extend(fish_entities if isinstance(fish_entities, list) else [fish_entities])
+    method = METHOD_ENTITIES.get(rel)
+    if method:
+        entities.append({
+            "@type": "DefinedTerm",
+            "name": method,
+            "url": BASE + "/" + rel,
+            "inDefinedTermSet": BASE + "/techniki/",
+        })
+    entities.extend(PLACE_ENTITIES.get(rel, ()))
+    if not entities:
+        return None
     return entities[0] if len(entities) == 1 else entities
 
 
@@ -3103,12 +3300,17 @@ def build(path):
     if not tm or not dm:
         return None
     rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
+    src = remove_legacy_jsonld(src, {"BlogPosting"})
+    if rel in FAQ_REPAIRS:
+        src = remove_legacy_jsonld(src, {"FAQPage"})
+    src = inject_visible_faq(src, rel)
     title_raw = tm.group(1).strip()
     desc_raw = METADATA_DESCRIPTION_SOURCES.get(rel, dm.group(1).strip())
     title_txt = html.unescape(title_raw)
     desc_txt = html.unescape(desc_raw)
     title_attr = escape_metadata_attribute(title_raw)
     desc_attr = escape_metadata_attribute(desc_raw)
+    h1_txt = visible_h1(src) or short_title(title_txt)
 
     src = normalize_fish_legal_section(src, rel)
     # Ujednolic sezonowa etykiete w hero: publikacja w lipcu nie udaje wrzesniowej daty.
@@ -3291,7 +3493,7 @@ def build(path):
         if not is_section_index:
             crumbs.append({
                 "@type": "ListItem", "position": pos,
-                "name": title_txt.split(" — ")[0].split(" - ")[0],
+                "name": h1_txt,
                 "item": url,
             })
         head.append(jsonld({
@@ -3386,7 +3588,7 @@ def build(path):
                 head.append(jsonld({
                     "@context": "https://schema.org",
                     "@type": "Recipe",
-                    "name": title_txt.split(" — ")[0].split(" - ")[0],
+                    "name": h1_txt,
                     "description": desc_txt,
                     "url": url,
                     "mainEntityOfPage": url,
@@ -3408,7 +3610,7 @@ def build(path):
                 block = "\n".join(head) + "\n"
                 new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
                 return (new_src, url, mtime, is_home or is_section_index,
-                        title_txt, desc_txt, page_images, noindex, pubdate)
+                        h1_txt, desc_txt, page_images, noindex, pubdate)
             slug = os.path.splitext(parts[-1])[0]
             fish = FISH_ENTITIES.get(slug) if section in ("ryby", "rodzaje-ryb") or "rodzaje-ryb" in rel else None
             # ImageObject reprezentatywny: podpis z alt pierwszego obrazu, autor
@@ -3428,7 +3630,7 @@ def build(path):
             posting = {
                 "@context": "https://schema.org",
                 "@type": "BlogPosting",
-                "headline": title_txt.split(" — ")[0].split(" - ")[0],
+                "headline": h1_txt,
                 "description": desc_txt,
                 "url": url,
                 "mainEntityOfPage": url,
@@ -3449,7 +3651,7 @@ def build(path):
                 posting["timeRequired"] = f"PT{max(1, round(wc / 200))}M"
             if section:
                 posting["articleSection"] = SECTIONS.get(section, section.capitalize())
-            kw = [short_title(title_txt)]
+            kw = [h1_txt]
             if section:
                 kw.append(SECTIONS.get(section, section.capitalize()))
             kw.append("wędkarstwo")
@@ -3461,7 +3663,7 @@ def build(path):
                     head.append(jsonld({
                         "@context": "https://schema.org",
                         "@type": "HowTo",
-                        "name": short_title(title_txt),
+                        "name": h1_txt,
                         "description": desc_txt,
                         "inLanguage": "pl-PL",
                         "step": [
@@ -3469,9 +3671,10 @@ def build(path):
                             for i, s in enumerate(steps)
                         ],
                     }))
-            # Powiązanie z encją gatunku ryby (Wikipedia, Wikidata i FishBase).
-            if fish:
-                posting["about"] = fish_about(fish)
+            # Encje emitujemy tylko z jawnych rejestrów: gatunek, metoda lub miejsce.
+            about = posting_about(rel, fish)
+            if about:
+                posting["about"] = about
             head.append(jsonld(posting))
 
     head.append(END)
@@ -3480,7 +3683,7 @@ def build(path):
     # wstaw przed </head>
     new_src = re.sub(r"\n?</head>", "\n" + block + "</head>", src, count=1)
     return (new_src, url, mtime, is_home or is_section_index,
-            title_txt, desc_txt, page_images, noindex, pubdate)
+            h1_txt, desc_txt, page_images, noindex, pubdate)
 
 
 
@@ -3783,17 +3986,25 @@ def main():
         ),
     ]
     full_n = 0
-    for url, _mtime, _is_index, rp, title, _desc, _sec, _imgs, _pubdate in sorted(urls):
+    for url, modified, is_index, rp, title, _desc, sec, _imgs, published in sorted(urls):
         rel_path = rp.lstrip("/") or "index.html"
         if rel_path.endswith("/"):
             rel_path += "index.html"
         path = os.path.join(ROOT, rel_path)
         with open(path, encoding="utf-8") as f:
-            text = article_text(f.read())
-        full.append(f"## {short_title(title)}")
-        full.append(f"URL: {url}")
+            src = f.read()
+        page_type = (
+            "WebSite" if rp == "/" else
+            "CollectionPage" if is_index else
+            "Recipe" if sec == "kuchnia" else
+            "BlogPosting"
+        )
+        full.append(f"## {title}")
+        full.extend(llms_document_metadata(
+            src, url, rel_path, published, modified, page_type
+        ))
         full.append("")
-        full.append(text)
+        full.append(article_text(src))
         full.append("")
         full_n += 1
     with open(os.path.join(ROOT, "llms-full.txt"), "w", encoding="utf-8") as f:
@@ -3824,7 +4035,7 @@ def main():
         rss.append(f'    <lastBuildDate>{rfc822(max(u[1] for u in blog))}</lastBuildDate>')
     for url, _mtime, _is_index, _rp, title, desc, _sec, _imgs, pubdate in blog:
         rss += ['    <item>',
-                f'      <title>{xesc(short_title(title))}</title>',
+                f'      <title>{xesc(title)}</title>',
                 f'      <link>{url}</link>',
                 f'      <guid isPermaLink="true">{url}</guid>',
                 f'      <pubDate>{rfc822(pubdate)}</pubDate>',

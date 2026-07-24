@@ -1,4 +1,4 @@
-/* Urzędowe wykazy RZGW sprawdzone 2026-07-14; dane nie zastępują dokumentu źródłowego. */
+/* Urzędowe wykazy RZGW sprawdzone 2026-07-24; dane nie zastępują dokumentu źródłowego. */
 (function (window, document) {
   'use strict';
 
@@ -6,6 +6,9 @@
   const BYDGOSZCZ_URL = 'https://www.gov.pl/web/wody-polskie-bydgoszcz/lista-obwodow-rybackich-2026';
   const GDANSK_LABEL = 'RZGW Gdańsk — lista obwodów, 25.06.2026';
   const BYDGOSZCZ_LABEL = 'RZGW Bydgoszcz — lista obwodów rybackich i łowisk 2026';
+  const BIALYSTOK_URL = 'https://www.gov.pl/web/wody-polskie-bialystok/lista-obwodow-rybackich';
+  const BIALYSTOK_LABEL = 'RZGW Białystok — lista obwodów udostępnionych do amatorskiego połowu ryb w 2026 r., 29.12.2025';
+  const BIALYSTOK_TABLE_NOTE = 'Brak dodatkowych ograniczeń wskazanych w tabeli źródłowej.';
   const GD_RESTRICTION = 'Przy rozstrzygnięciu konkursu zezwolenia roczne obowiązują do zawarcia umowy użytkowania.';
   const RAPR = 'RAPR 2026.';
   const water = function (id, name, operator, municipality, restrictions, contest, sourceUrl, sourceLabel) {
@@ -63,7 +66,27 @@
     water('by-28', 'Obszar Rezerwatu Doliny Pięciu Jezior', 'RZGW Bydgoszcz', 'Połczyn-Zdrój', RAPR + ' Zakaz wędkowania ze środków pływających i nęcenia; tylko świt–zmierzch oraz wyznaczone miejsca.', false, BYDGOSZCZ_URL, BYDGOSZCZ_LABEL),
     water('by-29', 'Jezioro Piasecznik', 'RZGW Bydgoszcz', 'Czaplinek', RAPR, false, BYDGOSZCZ_URL, BYDGOSZCZ_LABEL),
     water('by-30', 'Jezioro Przytyk Duży', 'RZGW Bydgoszcz', 'Człopa', RAPR, false, BYDGOSZCZ_URL, BYDGOSZCZ_LABEL),
-    water('by-31', 'Jezioro Nowoworowskie', 'RZGW Bydgoszcz', 'Złocieniec', RAPR, false, BYDGOSZCZ_URL, BYDGOSZCZ_LABEL)
+    water('by-31', 'Jezioro Nowoworowskie', 'RZGW Bydgoszcz', 'Złocieniec', RAPR, false, BYDGOSZCZ_URL, BYDGOSZCZ_LABEL),
+    water('bi-01', 'rzeki Narew nr 5', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-02', 'rzeki Pisa nr 1', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-03', 'rzeki Pisa nr 2', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-04', 'jeziora Iławki w zlewni rzeki Pisa nr 5', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-05', 'jeziora Stoczek w zlewni rzeki Pisa nr 19', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-06', 'jeziora Łaźno w zlewni rzeki Ełk nr 1', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-07', 'jeziora Kiełki w zlewni rzeki Ełk nr 9', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-08', 'jeziora Krzywe w zlewni rzeki Ełk nr 21', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-09', 'jeziora Wityny w zlewni rzeki Ełk nr 28', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-10', 'jeziora Reszki w zlewni rzeki Jegrznia nr 5', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-11', 'jeziora Silec w zlewni rzeki Omet nr 3', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-12', 'jeziora Klimunt w zlewni rzeki Pisa nr 44', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-13', 'jeziora Wądołek Duży w zlewni rzeki Pisa nr 64', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-14', 'jeziora Klebarskie w zlewni rzeki Łyna nr 17', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-15', 'jeziora Limajno w zlewni rzeki Łyna nr 47', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-16', 'jeziora Luterskie w zlewni rzeki Łyna nr 48', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-17', 'jeziora Rydzówka na Kanale Mazurskim nr 1', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-18', 'jeziora Biała Piska w zlewni rzeki Pisa nr 57', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-19', 'jeziora Czarne w zlewni rzeki Węgorapa nr 12', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL),
+    water('bi-20', 'jeziora Kożuchy Młyn w zlewni rzeka Pisa nr 52', 'RZGW Białystok', '', BIALYSTOK_TABLE_NOTE, false, BIALYSTOK_URL, BIALYSTOK_LABEL)
   ];
 
   const filters = {
@@ -78,7 +101,7 @@
   if (!filters.operator || !filters.status || !filters.query || !cards.length || !count || !empty) return;
 
   const byId = records.reduce(function (index, record) { index[record.id] = record; return index; }, {});
-  function normalized(value) { return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+  function normalized(value) { return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/ł/g, 'l'); }
   function matches(record) {
     const query = normalized(filters.query.value.trim());
     return (filters.operator.value === 'all' || normalized(record.operator) === normalized(filters.operator.options[filters.operator.selectedIndex].text)) &&
@@ -95,8 +118,8 @@
       if (show) { visible += 1; visibleOperators[record.operator] = true; }
     });
     mapOperators.forEach(function (operator) {
-      const name = operator.dataset.mapOperator === 'rzgw-gdansk' ? 'RZGW Gdańsk' : 'RZGW Bydgoszcz';
-      operator.setAttribute('display', visibleOperators[name] ? 'inline' : 'none');
+      const option = filters.operator.querySelector('option[value="' + operator.dataset.mapOperator + '"]');
+      operator.setAttribute('display', option && visibleOperators[option.text] ? 'inline' : 'none');
     });
     empty.hidden = visible !== 0;
     count.textContent = 'Pokazano ' + visible + ' z ' + records.length + ' rekordów zweryfikowanych wód.';

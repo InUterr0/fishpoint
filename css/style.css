@@ -2422,3 +2422,29 @@ html.dark .article-inline-visual .article-inline-credit { color: #7fe6d5; }
   }
   .article-inline-visual .article-inline-frame { min-width: 0; }
 }
+
+/* Printable first-trip checklist */
+.trip-checklist { margin: 24px 0 30px; padding: clamp(18px, 4vw, 30px); border: 1px solid rgba(17,49,47,.16); border-radius: 18px; background: linear-gradient(145deg, rgba(42,167,161,.1), rgba(255,255,255,.75)); }
+.trip-checklist-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 18px; }
+.trip-checklist-heading .eyebrow { margin-bottom: 4px; }
+.trip-checklist-heading h3 { margin: 0 0 6px; }
+.trip-checklist-heading p { margin: 0; max-width: 62ch; }
+.trip-checklist-actions { display: flex; flex-wrap: wrap; gap: 8px; flex: 0 0 auto; }
+.trip-checklist-actions .chip { font: inherit; }
+.trip-checklist-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.trip-checklist fieldset { min-width: 0; margin: 0; padding: 14px 16px 12px; border: 1px solid rgba(17,49,47,.16); border-radius: 12px; background: rgba(255,255,255,.68); }
+.trip-checklist legend { padding: 0 5px; color: var(--green-2); font-weight: 800; }
+.trip-checklist label { display: flex; align-items: flex-start; gap: 10px; margin: 9px 0; cursor: pointer; line-height: 1.42; }
+.trip-checklist input[type="checkbox"] { flex: 0 0 auto; width: 1.15rem; height: 1.15rem; margin: .12rem 0 0; accent-color: var(--green-2); }
+.trip-checklist input[type="checkbox"]:focus-visible { outline: 3px solid var(--aqua); outline-offset: 2px; }
+.trip-checklist-note { margin: 18px 0 0; font-size: .94rem; }
+html.dark .trip-checklist { border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.05); }
+html.dark .trip-checklist fieldset { border-color: rgba(255,255,255,.2); background: rgba(0,0,0,.12); }
+@media (max-width: 640px) { .trip-checklist-heading { flex-direction: column; } .trip-checklist-grid { grid-template-columns: 1fr; } }
+@media print {
+  .site-header, .toc, .side-nav, .footer, .skip-link, .trip-checklist-actions { display: none !important; }
+  .trip-checklist { break-inside: avoid; box-shadow: none; border: 1px solid #000; background: #fff; color: #000; }
+  .trip-checklist fieldset { break-inside: avoid; border-color: #000; background: #fff; color: #000; }
+  .trip-checklist legend { color: #000; }
+  .trip-checklist input[type="checkbox"] { accent-color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
