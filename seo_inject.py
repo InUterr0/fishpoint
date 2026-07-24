@@ -49,6 +49,29 @@ TOOL_IMG = {
     "narzedzia/rozpoznaj-rybe.html": "/assets/img/ryby/okon.jpg",
     "narzedzia/stany-wod.html": "/assets/img/tematy/pogoda.jpg",
     "narzedzia/index.html": "/assets/img/tematy/wedki.jpg",
+    "pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html": "/assets/img/tematy/kalendarz.jpg",
+    "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html": "/assets/img/tematy/wedki.jpg",
+    "pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html": "/assets/img/tematy/wezly.jpg",
+    "sprzet/pierwsza-wedka-spinningowa.html": "/assets/img/tematy/wedki.jpg",
+    "zgodnie-z-zasadami.html": "/assets/img/tematy/cr.jpg",
+    "humor/dowcipy.html": "/assets/img/humor/dowcipy.jpg",
+    "humor/memy.html": "/assets/img/humor/memy.jpg",
+    "lowiska/dolnoslaskie.html": "/assets/img/tematy/jeziora.jpg",
+    "lowiska/kujawsko-pomorskie.html": "/assets/img/tematy/stawy.jpg",
+    "lowiska/lodzkie.html": "/assets/img/tematy/muchowe.jpg",
+    "lowiska/lubelskie.html": "/assets/img/tematy/pogoda.jpg",
+    "lowiska/lubuskie.html": "/assets/img/tematy/kalendarz.jpg",
+    "lowiska/malopolskie.html": "/assets/img/tematy/splawik.jpg",
+    "lowiska/mazowieckie.html": "/assets/img/tematy/wedki.jpg",
+    "lowiska/opolskie.html": "/assets/img/tematy/cr.jpg",
+    "lowiska/podkarpackie.html": "/assets/img/tematy/jeziora.jpg",
+    "lowiska/podlaskie.html": "/assets/img/tematy/stawy.jpg",
+    "lowiska/pomorskie.html": "/assets/img/tematy/muchowe.jpg",
+    "lowiska/slaskie.html": "/assets/img/tematy/pogoda.jpg",
+    "lowiska/swietokrzyskie.html": "/assets/img/tematy/kalendarz.jpg",
+    "lowiska/warminsko-mazurskie.html": "/assets/img/tematy/splawik.jpg",
+    "lowiska/wielkopolskie.html": "/assets/img/tematy/wedki.jpg",
+    "lowiska/zachodniopomorskie.html": "/assets/img/tematy/cr.jpg",
 }
 LOGO = "/assets/img/logo.png"          # kwadratowe logo marki (dla schema.org)
 
@@ -378,7 +401,7 @@ END = "  <!-- seo:meta end (auto) -->"
 def load_image_provenance():
     """Ładuje wyłącznie lokalne obrazy z manifestów ich źródła i licencji."""
     provenance = {}
-    for directory in ("ryby", "aktualnosci", "tematy"):
+    for directory in ("ryby", "aktualnosci", "tematy", "kuchnia", "humor"):
         manifest_path = Path(ROOT, "assets", "img", directory, "_meta.json")
         with manifest_path.open(encoding="utf-8") as manifest_file:
             manifest = json.load(manifest_file)
@@ -784,6 +807,11 @@ authored_article_figure_re = re.compile(
 )
 ARTICLE_CARD_OPEN_RE = re.compile(
     r'(<article\b(?=[^>]*\bclass=["\'][^"\']*\barticle-card\b)[^>]*>)',
+    re.I,
+)
+ARTICLE_VISUAL_OPEN_RE = re.compile(
+    r'(<article\b(?=[^>]*\bclass=["\'][^"\']*\barticle-card\b)[^>]*>|'
+    r'<section\b(?=[^>]*\bclass=["\'][^"\']*\barticle-section\b)[^>]*>)',
     re.I,
 )
 RELATED_BEGIN, RELATED_END = "<!--related:auto-->", "<!--/related:auto-->"
@@ -1220,6 +1248,19 @@ CONTENT_ADVANTAGES = {
         "source_prompt": "Przed wyjazdem porównaj własny plan z aktualnym zezwoleniem, regulaminem i komunikatami dla wybranego łowiska.",
         "links": (("/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html", "Pierwszy zestaw"), ("/pierwsze-kroki/pozwolenia-karta-wedkarska.html", "Dokumenty przed wyjazdem"), ("/pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html", "Odhaczanie ryby")),
     },
+    "pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html": {
+        "answer": "Przygotuj narzędzia przed dotknięciem ryby, obchodź się z nią mokrymi dłońmi i odhaczaj bez szarpania. Gdy haczyk jest głęboko albo sytuacja wymaga siły, przerwij i wybierz rozwiązanie ograniczające uraz.",
+        "table": ("Bezpieczna kolejność czynności", ("Krok", "Co zrobić", "Kiedy się zatrzymać"), (
+            ("Przygotowanie", "Przed braniem miej pod ręką podbierak, miarkę i narzędzie do odhaczania.", "Nie improwizuj z rybą poza wodą."),
+            ("Przynęta", "Załóż przynętę tak, aby grot haczyka pracował zgodnie z używanym zestawem.", "Gdy przynęta zasłania grot lub przeszkadza w zacięciu, popraw ją przed rzutem."),
+            ("Odhaczanie", "Utrzymaj rybę spokojnie i wyjmij haczyk ruchem odwrotnym do jego wejścia.", "Nie wyrywaj głęboko osadzonego haczyka na siłę."),
+        )),
+        "mistakes": ("Rozpoczynanie odhaczania bez przygotowanego narzędzia.", "Dotykanie ryby suchymi dłońmi lub kładzenie jej na nieprzygotowanym podłożu.", "Szarpanie haczyka, gdy nie widać jego położenia."),
+        "spot": ("Checklist przed odhaczeniem", ("Czy masz pod ręką narzędzie do odhaczania i miejsce, w którym ryba będzie bezpiecznie podparta?", "Czy potrafisz zobaczyć położenie haczyka bez rozwierania pyska na siłę?", "Czy możesz od razu zakończyć czynność i wypuścić rybę, gdy jest gotowa?")),
+        "method": "Kolejność ogranicza pośpiech i manipulację rybą; nie zastępuje oceny gatunku, warunków ani zasad łowiska.",
+        "source_prompt": "Przed wyjazdem sprawdź regulamin łowiska, zwłaszcza wymagania dotyczące haczyków, podbieraka i obchodzenia się z rybą.",
+        "links": (("/pierwsze-kroki/okresy-ochronne-wymiary.html", "Ochrona ryb i limity"), ("/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html", "Bezpieczny pierwszy wyjazd"), ("/sprzet/akcesoria.html", "Akcesoria do odhaczania")),
+    },
     "techniki/feeder-dla-poczatkujacych.html": {
         "answer": "Na pierwszy feeder wybierz prostą wodę, jeden zestaw i koszyk dopasowany do warunków. Najpierw ustal miejsce i metodę, dopiero potem kupuj elementy.",
         "table": ("Feeder na start", ("Decyzja", "Punkt wyjścia", "Co sprawdzić"), (
@@ -1281,6 +1322,19 @@ CONTENT_ADVANTAGES = {
         "method": "Kryteria pomagają zawęzić wybór, ale nie są testem ani rekomendacją konkretnego modelu.",
         "source_prompt": "Parametry, kompatybilność i gwarancję sprawdzaj w karcie producenta oraz u sprzedawcy.",
         "links": (("/sprzet/kolowrotki.html", "Kołowrotki"), ("/pierwsze-kroki/sprzet/wedki.html", "Wędki"), ("/techniki/spinning.html", "Spinning")),
+    },
+    "sprzet/pierwsza-wedka-spinningowa.html": {
+        "answer": "Pierwszą wędkę spinningową dobieraj do wody, przynęt i sposobu łowienia, a następnie sprawdź, czy z kołowrotkiem oraz linką tworzy wygodny zestaw. Opis producenta porównuj z własnym zastosowaniem, nie z samą nazwą modelu.",
+        "table": ("Wybór pierwszej wędki spinningowej", ("Pytanie", "Co sprawdzić", "Kolejny krok"), (
+            ("Gdzie będziesz łowić?", "Dostęp do brzegu, przestrzeń do rzutu i rodzaj wody.", "Zawęź wybór do warunków, które masz najczęściej."),
+            ("Jakich przynęt użyjesz?", "Zakres oznaczony na wędce oraz masę gotowego zestawu.", "Nie zakładaj, że jedno oznaczenie pasuje do każdej przynęty."),
+            ("Czy zestaw jest wygodny?", "Uchwyt, wyważenie z kołowrotkiem i łatwość bezpiecznego transportu.", "Weź wędkę do ręki i oceń komplet przed zakupem."),
+        )),
+        "mistakes": ("Wybór wyłącznie po marce albo wyglądzie.", "Dobieranie wędki bez planu na używane przynęty i wodę.", "Kupowanie samego wędziska bez sprawdzenia zgodności z kołowrotkiem i linką."),
+        "spot": ("Checklist przed zakupem", ("Czy wybrałeś miejsce i metodę, od których rzeczywiście zaczniesz?", "Czy porównałeś oznaczenia wędki z przynętami oraz gotowym zestawem?", "Czy sprawdziłeś wygodę chwytu i transportu?")),
+        "method": "To filtr decyzji, nie test ani rekomendacja konkretnego modelu; ostateczny dobór zależy od warunków i sprzętu używanego razem z wędką.",
+        "source_prompt": "Parametry oraz przeznaczenie porównaj z aktualną kartą producenta i sprawdź zasady połowu dla wybranej wody.",
+        "links": (("/sprzet/kolowrotki.html", "Dobór kołowrotka"), ("/sprzet/plecionki-zylki.html", "Żyłka i plecionka"), ("/techniki/spinning.html", "Podstawy spinningu")),
     },
 }
 
@@ -2248,9 +2302,11 @@ def select_article_visual(src, rel):
     """Zwraca manifestowy obraz dla nieilustrowanej karty albo None."""
     parts = rel.split("/")
     section = parts[0] if len(parts) > 1 else None
-    if (section not in {"aktualnosci", "poradniki", "narzedzia", "techniki"}
+    if (section not in {"aktualnosci", "poradniki", "narzedzia", "techniki",
+                        "sprzet", "pierwsze-kroki", "lowiska"}
+            and rel not in TOOL_IMG
             or parts[-1] == "index.html"
-            or not ARTICLE_CARD_OPEN_RE.search(src)
+            or not ARTICLE_VISUAL_OPEN_RE.search(src)
             or authored_article_figure_re.search(src)):
         return None
     image_path = TOOL_IMG.get(rel)
@@ -2274,18 +2330,24 @@ def select_article_visual(src, rel):
 
 def inject_article_visual(src, rel, title_txt, modified):
     """Wstawia pojedynczy, podpisany obraz otwierający kartę artykułu."""
+    src = article_visual_re.sub("", src)
     selected = select_article_visual(src, rel)
     if not selected:
         return src, None
     image_path, provenance, (width, height) = selected
-    section = rel.split("/", 1)[0]
-    section_label = SECTIONS[section]
+    section = rel.split("/", 1)[0] if "/" in rel else None
+    section_label = SECTIONS.get(section, SITE_NAME)
     read_minutes = max(1, math.ceil(len(article_text(src).split()) / 200))
     alt = provenance.get("alt") or f"Ilustracja do artykułu: {short_title(title_txt)}"
     credit = (
         f'<a href="{html.escape(provenance["page"], quote=True)}" '
         f'rel="license external noopener">{html.escape(provenance["artist"])} '
         f'({html.escape(provenance["license"])})</a>'
+    )
+    caption_note = (
+        "Zdjęcie jest ilustracyjne i nie przedstawia konkretnego łowiska w tym regionie. "
+        if section == "lowiska" else
+        "Ilustracja. "
     )
     visual = (
         f'{ARTICLE_VISUAL_BEGIN}<figure class="article-lead-visual">'
@@ -2294,13 +2356,13 @@ def inject_article_visual(src, rel, title_txt, modified):
         f'width="{width}" height="{height}" loading="eager" fetchpriority="high" '
         f'decoding="async" /><p class="article-lead-stamp"><span>{html.escape(section_label)}</span>'
         f'<span>{read_minutes} min czytania</span></p></div>'
-        f'<figcaption class="article-lead-caption"><span>Ilustracja.</span> '
+        f'<figcaption class="article-lead-caption"><span>{caption_note}</span>'
         f'<span class="article-media-credit">Zdjęcie: {credit}</span></figcaption>'
         f'<p class="article-signal-strip"><span>Dziennik wody</span>'
         f'<span>{html.escape(section_label)}</span><span><time datetime="{modified}">'
         f'{fmt_date_pl(modified)}</time></span></p></figure>{ARTICLE_VISUAL_END}'
     )
-    return ARTICLE_CARD_OPEN_RE.sub(r"\1" + visual, src, count=1), image_path
+    return ARTICLE_VISUAL_OPEN_RE.sub(r"\1" + visual, src, count=1), image_path
 
 
 def _git(args):

@@ -254,6 +254,7 @@ def main() -> int:
     check(len(urls) == 183 and len(set(urls)) == 183, "sitemap must contain 183 unique URLs", failures)
 
     visual_pages = 0
+    regional_visuals = 0
     parsed: dict[str, PageParser] = {}
     for url in urls:
         relative = local_path(url)
@@ -302,6 +303,13 @@ def main() -> int:
                 f"{relative}: automatic lead duplicates an authored article figure",
                 failures,
             )
+            if relative.startswith("lowiska/") and relative != "lowiska/index.html":
+                regional_visuals += 1
+                check(
+                    "nie przedstawia konkretnego łowiska w tym regionie" in source,
+                    f"{relative}: regional illustration lacks a non-location disclaimer",
+                    failures,
+                )
         title = compact("".join(page.title_text))
         check(
             bool(title) and title == page.metadata.get("og:title") == page.metadata.get("twitter:title"),
@@ -328,7 +336,8 @@ def main() -> int:
             except json.JSONDecodeError as error:
                 failures.append(f"{relative}: invalid JSON-LD: {error}")
 
-    check(visual_pages >= 50, "fewer than 50 articles have licensed lead visuals", failures)
+    check(visual_pages >= 73, "fewer than 73 articles have licensed lead visuals", failures)
+    check(regional_visuals == 16, "all 16 regional fishery pages need illustrative visuals", failures)
 
     js_version = hashlib.md5((ROOT / "js/main.js").read_bytes()).hexdigest()[:8]
     for html_path in sorted(ROOT.rglob("*.html")):

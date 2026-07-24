@@ -595,6 +595,10 @@
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/humor/dowcipy.jpg</image:loc>
+      <image:title>Wędkarz nad jeziorem i ryba zabierająca kanapkę z pudełka — ilustracja humorystyczna</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/humor/filmiki.html</loc>
@@ -663,6 +667,10 @@
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/humor/memy.jpg</image:loc>
+      <image:title>Wędkarz fotografujący jezioro telefonem i wielka sylwetka ryby pod powierzchnią — ilustracja humorystyczna</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/</loc>
@@ -757,96 +765,160 @@
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
+      <image:title>Jezioro Śniardwy</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/kujawsko-pomorskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
+      <image:title>Stawy Milickie z lotu ptaka</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/lodzkie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/muchowe.jpg</image:loc>
+      <image:title>Wędkarz muchowy podczas rzutu na rzece</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/lubelskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/pogoda.jpg</image:loc>
+      <image:title>Burzowe chmury nadciągające nad jezioro</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/lubuskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kalendarz.jpg</image:loc>
+      <image:title>Wędkarze na rzece o wschodzie słońca</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/malopolskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/splawik.jpg</image:loc>
+      <image:title>Wędkarz łowiący na spławik nad kanałem</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/mazowieckie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
+      <image:title>Wędki ustawione na brzegu morza</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/opolskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/cr.jpg</image:loc>
+      <image:title>Wypuszczanie pstrąga do wody</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/podkarpackie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
+      <image:title>Jezioro Śniardwy</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/podlaskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
+      <image:title>Stawy Milickie z lotu ptaka</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/pomorskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/muchowe.jpg</image:loc>
+      <image:title>Wędkarz muchowy podczas rzutu na rzece</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/slaskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/pogoda.jpg</image:loc>
+      <image:title>Burzowe chmury nadciągające nad jezioro</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/swietokrzyskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kalendarz.jpg</image:loc>
+      <image:title>Wędkarze na rzece o wschodzie słońca</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/warminsko-mazurskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/splawik.jpg</image:loc>
+      <image:title>Wędkarz łowiący na spławik nad kanałem</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/wielkopolskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
+      <image:title>Wędki ustawione na brzegu morza</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/zachodniopomorskie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/cr.jpg</image:loc>
+      <image:title>Wypuszczanie pstrąga do wody</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/</loc>
@@ -965,6 +1037,10 @@
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wezly.jpg</image:loc>
+      <image:title>Węzeł wędkarski na haczyku</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/</loc>
@@ -1027,6 +1103,10 @@
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
+      <image:title>Wędki ustawione na brzegu morza</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/pozwolenia-karta-wedkarska.html</loc>
@@ -1183,6 +1263,10 @@
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kalendarz.jpg</image:loc>
+      <image:title>Wędkarze na rzece o wschodzie słońca</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/</loc>
@@ -1883,6 +1967,10 @@
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
+      <image:title>Wędki ustawione na brzegu morza</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/plecionki-zylki.html</loc>
@@ -2065,5 +2153,9 @@
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/cr.jpg</image:loc>
+      <image:title>Wypuszczanie pstrąga do wody</image:title>
+    </image:image>
   </url>
 </urlset>
