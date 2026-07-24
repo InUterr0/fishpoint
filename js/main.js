@@ -374,7 +374,7 @@ document.querySelectorAll('.youtube-facade[data-video-id]').forEach((facade) => 
 })();
 
 // Tabele w artykułach: przewijalny, opisany obszar tylko tam, gdzie tabela jest szersza od ekranu.
-document.querySelectorAll('table.decision-table, table.starter-kit, .decision-table > table, .starter-kit > table').forEach((table) => {
+document.querySelectorAll('table.decision-table, table.starter-kit, .decision-table > table, .starter-kit > table, .field-note--record table').forEach((table) => {
   if (table.parentElement.classList.contains('article-table-scroll')) return;
 
   const wrapper = document.createElement('div');

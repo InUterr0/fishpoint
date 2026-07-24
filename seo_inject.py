@@ -7,6 +7,7 @@ zostaje podmieniony, a nie zdublowany. Wystarczy zmienić BASE po kupnie domeny
 i uruchomić ponownie: python3 seo_inject.py
 """
 import os, re, html, json, datetime, subprocess, functools, hashlib, sys, math
+from html.parser import HTMLParser
 from pathlib import Path
 
 BASE = "https://fish-point.pl"          # <-- PODMIEŃ po kupnie domeny i uruchom ponownie
@@ -833,6 +834,23 @@ affiliate_re = re.compile(
     re.escape(AFFILIATE_BEGIN) + r".*?" + re.escape(AFFILIATE_END),
     re.S,
 )
+
+FIELD_NOTES_BEGIN, FIELD_NOTES_END = (
+    "<!--field-notes:auto-->", "<!--/field-notes:auto-->"
+)
+field_notes_re = re.compile(
+    re.escape(FIELD_NOTES_BEGIN)
+    + r'<aside class="field-note field-note--(?:margin|sequence|record)">'
+    + r'<span class="field-note-label" aria-hidden="true">.*?</span>'
+    + r'(?P<content>.*?)</aside>'
+    + re.escape(FIELD_NOTES_END),
+    re.S,
+)
+
+
+def strip_field_notes(src):
+    """Usuwa wyłącznie automatyczną ramę, pozostawiając źródłowy element."""
+    return field_notes_re.sub(r"\g<content>", src)
 
 # „Metoda FishPoint” trafia wyłącznie na strony wyliczone poniżej. Pole
 # author_practice_confirmed jest celowe: bez niego tekst nie może sugerować
@@ -2365,6 +2383,235 @@ def inject_article_visual(src, rel, title_txt, modified):
     return ARTICLE_VISUAL_OPEN_RE.sub(r"\1" + visual, src, count=1), image_path
 
 
+class _ArticleDirectScanner(HTMLParser):
+    """Zachowujący offsety skaner bez normalizowania HTML artykułu."""
+
+    _VOID = frozenset({"area", "base", "br", "col", "embed", "hr", "img", "input",
+                       "link", "meta", "param", "source", "track", "wbr"})
+
+    def __init__(self, src):
+        super().__init__(convert_charrefs=False)
+        self.src = src
+        self.line_offsets = [0]
+        self.line_offsets.extend(
+            offset + 1 for offset, char in enumerate(src) if char == "\n"
+        )
+        self.stack = []
+        self.articles = []
+
+    def _offset(self):
+        line, column = self.getpos()
+        return self.line_offsets[line - 1] + column
+
+    @staticmethod
+    def _classes(attrs):
+        return set((dict(attrs).get("class") or "").lower().split())
+
+    def handle_starttag(self, tag, attrs):
+        tag = tag.lower()
+        start = self._offset()
+        parent_root = self.stack[-1].get("root") if self.stack else None
+        entry = {"tag": tag, "attrs": attrs, "start": start, "root": parent_root}
+        if tag == "article" and "article-card" in self._classes(attrs):
+            entry["root"] = entry
+            entry["depth"] = len(self.stack)
+            entry["children"] = []
+            self.articles.append(entry)
+        elif parent_root and len(self.stack) == parent_root["depth"] + 1:
+            entry["direct"] = True
+            entry["order"] = len(parent_root["children"])
+            parent_root["children"].append(entry)
+        if tag not in self._VOID:
+            self.stack.append(entry)
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+
+    def handle_endtag(self, tag):
+        tag = tag.lower()
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index]["tag"] == tag:
+                end = self.src.find(">", self._offset()) + 1
+                if end:
+                    self.stack[index]["end"] = end
+                del self.stack[index:]
+                return
+
+
+def _field_note_text(fragment):
+    """Tekst widoczny do kwalifikacji, nigdy do przepisywania."""
+    return html.unescape(re.sub(r"<!--.*?-->|<[^>]+>", "", fragment, flags=re.S)).strip()
+
+
+def _field_note_auto_ranges(src):
+    return [
+        match.span() for match in re.finditer(
+            r"<!--([a-z0-9-]+):auto-->.*?<!--/\1:auto-->", src, re.I | re.S
+        )
+    ]
+
+
+def _field_note_intersects(item, ranges):
+    return any(item["start"] < end and start < item["end"] for start, end in ranges)
+
+
+def _field_note_classes(item):
+    return " ".join(dict(item["attrs"]).get("class", "").lower().split())
+
+
+def _field_note_blocked(item):
+    """Nie wchodź w sąsiedztwo modułów, mediów, narzędzi ani końcowych modułów."""
+    classes = _field_note_classes(item)
+    blocked_classes = (
+        "tool", "source", "related", "faq", "content-advantage", "tldr", "toc",
+        "newsletter", "comments", "article-lead", "article-visual", "video",
+    )
+    return item["tag"] in {"figure", "form", "table"} or any(
+        token in classes for token in blocked_classes
+    )
+
+
+def _field_note_tail_heading(heading):
+    return bool(re.search(r"\bfaq\b|\bźródł\w*|\bzrodl\w*", heading))
+
+
+def _field_note_is_ordinary_paragraph(item, src, auto_ranges):
+    if item["tag"] != "p" or _field_note_intersects(item, auto_ranges):
+        return False
+    classes = _field_note_classes(item)
+    return not classes and bool(_field_note_text(src[item["start"]:item["end"]]))
+
+
+def _field_note_safe_record(item, src, auto_ranges):
+    if _field_note_intersects(item, auto_ranges):
+        return None
+    classes = _field_note_classes(item)
+    raw = src[item["start"]:item["end"]].lower()
+    if any(token in classes for token in ("tool", "content-advantage", "related", "faq")):
+        return None
+    if item["tag"] == "table":
+        if re.search(r"<(?:form|input|select|textarea|button)\b", raw):
+            return None
+        return "Kontrola"
+    if "source-list" in classes or "source-box" in classes:
+        return "Źródła"
+    return None
+
+
+def _field_note_adjacent_safe(children, item):
+    index = item["order"]
+    neighbors = children[max(0, index - 1):index] + children[index + 1:index + 2]
+    return not any(_field_note_blocked(neighbor) for neighbor in neighbors)
+
+
+def _field_note_spaced(candidate, selected, paragraphs):
+    """Dwa zwykłe akapity muszą pozostać między dwoma znakami rytmu."""
+    for prior in selected:
+        lo, hi = sorted((candidate["start"], prior["item"]["start"]))
+        if sum(lo < paragraph["start"] < hi for paragraph in paragraphs) < 2:
+            return False
+    return True
+
+
+def inject_field_notes(src, rel):
+    """Wstawia maksymalnie dwa dyskretne znaczniki wyłącznie w karcie artykułu."""
+    del rel  # Kontrakt jest czysto strukturalny, a nie oparty na slugach.
+    src = strip_field_notes(src)
+    scanner = _ArticleDirectScanner(src)
+    scanner.feed(src)
+    scanner.close()
+    auto_ranges = _field_note_auto_ranges(src)
+    replacements = []
+
+    for article in scanner.articles:
+        children = [item for item in article["children"] if "end" in item]
+        if not children:
+            continue
+        headings = {}
+        regions = []
+        current = None
+        for item in children:
+            if item["tag"] == "h2":
+                heading = _field_note_text(src[item["start"]:item["end"]]).lower()
+                current = {"heading": heading, "paragraphs": []}
+                regions.append(current)
+                headings[item["order"]] = heading
+            elif current and _field_note_is_ordinary_paragraph(item, src, auto_ranges):
+                current["paragraphs"].append(item)
+
+        ordinary = [
+            item for item in children
+            if _field_note_is_ordinary_paragraph(item, src, auto_ranges)
+        ]
+        selected = []
+
+        def select(item, kind, label):
+            if len(selected) >= 2 or not _field_note_adjacent_safe(children, item):
+                return
+            if not _field_note_spaced(item, selected, ordinary):
+                return
+            selected.append({"item": item, "kind": kind, "label": label})
+
+        # Kolejność ma pierwszeństwo: istniejąca lista nie potrzebuje nowego tekstu.
+        heading = ""
+        for item in children:
+            if item["tag"] == "h2":
+                heading = headings.get(item["order"], "")
+                continue
+            if (
+                item["tag"] in {"ol", "ul"}
+                and not _field_note_tail_heading(heading)
+                and not _field_note_intersects(item, auto_ranges)
+                and (item["tag"] == "ol" or re.search(
+                    r"\b(checklista|krok|instrukcja|przed wyjazdem|przed rzutem)\b",
+                    heading,
+                ))
+            ):
+                select(item, "sequence", "Kolejność" if item["tag"] == "ol" else "Kontrola")
+
+        for region in regions:
+            if _field_note_tail_heading(region["heading"]):
+                continue
+            paragraphs = region["paragraphs"]
+            visible_lengths = [
+                len(_field_note_text(src[item["start"]:item["end"]])) for item in paragraphs
+            ]
+            if len(paragraphs) < 3 or sum(visible_lengths) < 900:
+                continue
+            crossing = sum(visible_lengths) * .45
+            total = 0
+            for item, length in zip(paragraphs, visible_lengths):
+                total += length
+                if total >= crossing:
+                    select(item, "margin", "Zapis terenowy")
+                    break
+
+        # Dowód źródłowy zostaje opcjonalnym drugim znakiem, nigdy modułem końcowym.
+        heading = ""
+        for item in children:
+            if item["tag"] == "h2":
+                heading = headings.get(item["order"], "")
+                continue
+            label = _field_note_safe_record(item, src, auto_ranges)
+            if not label or _field_note_tail_heading(heading):
+                continue
+            select(item, "record", label)
+
+        for choice in selected:
+            item = choice["item"]
+            original = src[item["start"]:item["end"]]
+            replacements.append((
+                item["start"], item["end"],
+                f'{FIELD_NOTES_BEGIN}<aside class="field-note field-note--{choice["kind"]}">'
+                f'<span class="field-note-label" aria-hidden="true">{choice["label"]}</span>'
+                f'{original}</aside>{FIELD_NOTES_END}',
+            ))
+
+    for start, end, replacement in sorted(replacements, reverse=True):
+        src = src[:start] + replacement + src[end:]
+    return src
+
+
 def _git(args):
     try:
         out = subprocess.run(["git", "-C", ROOT] + args,
@@ -2436,6 +2683,7 @@ def build(path):
     src = affiliate_re.sub("", src)
     src = hub_freshness_re.sub("", src)
     src = article_visual_re.sub("", src)
+    src = strip_field_notes(src)
     src = ensure_youtube_facade_dimensions(replace_youtube_nocookie_embeds(src))
 
     tm = title_re.search(src)
@@ -2529,6 +2777,7 @@ def build(path):
     # Wstrzyknięte bloki też mogą zawierać stare odnośniki do index.html.
     src = canonicalize_internal_hrefs(src)
     src, visual_img_path = inject_article_visual(src, rel, title_txt, mtime)
+    src = inject_field_notes(src, rel)
     # Wstrzyknięty lead jest pierwszym lokalnym obrazem: jego dane obsługują
     # LCP, OpenGraph, schema.org oraz sitemapę obrazów.
     page_dir = os.path.dirname(path)
