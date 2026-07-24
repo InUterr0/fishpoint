@@ -70,35 +70,73 @@ def shot(name):
         print("[fb] screenshot err:", e); return ""
 
 def click_button(labels):
-    # Szuka WIDOCZNEGO, aktywnego przycisku o danym tekście w DOWOLNYM dialogu
-    # (FB miewa 2 nakładające się dialogi) i klika go realną sekwencją zdarzeń
-    # myszy — sam click_at_xy bywa ignorowany przez handlery Reacta FB.
-    # labels: lista etykiet wg priorytetu, np. ['Opublikuj','Dalej'].
+    # Szuka WIDOCZNEGO, aktywnego przycisku o danym tekście w dowolnym dialogu,
+    # a następnie klika jego środek przez browser-harness. Natywny klik jest
+    # konieczny, bo syntetyczne zdarzenia DOM bywają ignorowane przez Reacta FB.
     payload = js(r'''(() => {
       const want = __LABELS__;
       const all = Array.from(document.querySelectorAll('[role="button"], button'));
-      for (const label of want){
-        let best=null;
-        for (const e of all){
-          const txt=(e.innerText||e.textContent||'').trim();
-          const a=e.getAttribute('aria-label')||'';
-          if(txt!==label && a!==label) continue;
-          if(e.getAttribute('aria-disabled')==='true'||e.disabled) continue;
-          const r=e.getBoundingClientRect();
-          if(r.width<60||r.height<20||r.y<0||r.y>909) continue;
-          if(!e.closest('div[role="dialog"]')) continue;
-          if(!best||r.width>best.w) best={el:e,x:r.x+r.width/2,y:r.y+r.height/2,w:r.width};
+      for (const label of want) {
+        let best = null;
+        for (const e of all) {
+          const txt = (e.innerText || e.textContent || '').trim();
+          const aria = e.getAttribute('aria-label') || '';
+          if (txt !== label && aria !== label) continue;
+          if (e.getAttribute('aria-disabled') === 'true' || e.disabled) continue;
+          const r = e.getBoundingClientRect();
+          if (r.width < 60 || r.height < 20 || r.y < 0 || r.y > 909) continue;
+          if (!e.closest('div[role="dialog"]')) continue;
+          if (!best || r.width > best.width) {
+            best = { label, x: r.x + r.width / 2, y: r.y + r.height / 2, width: r.width };
+          }
         }
-        if(best){
-          const el=best.el,x=best.x,y=best.y;
-          for(const t of ['pointerover','pointerdown','mousedown','pointerup','mouseup','click'])
-            el.dispatchEvent(new MouseEvent(t,{bubbles:true,cancelable:true,view:window,clientX:x,clientY:y,button:0}));
-          return label;
-        }
+        if (best) return JSON.stringify(best);
       }
       return '';
     })()'''.replace('__LABELS__', __import__('json').dumps(labels)))
-    return (payload or '').strip().strip('"')
+    raw = (payload or '').strip().strip('"').replace('\\"', '"')
+    if not raw:
+        return ''
+    target = __import__('json').loads(raw)
+    click_at_xy(target['x'], target['y'])
+    return target['label']
+
+def click_target(labels=None, textbox=False, in_dialog=False):
+    payload = js(r'''(() => {
+      const labels = __LABELS__;
+      const textbox = __TEXTBOX__;
+      const inDialog = __IN_DIALOG__;
+      const all = Array.from(document.querySelectorAll(
+        '[role="button"], button, [role="textbox"][contenteditable="true"]'
+      ));
+      let best = null;
+      for (const e of all) {
+        const txt = (e.innerText || e.textContent || '').trim();
+        const aria = e.getAttribute('aria-label') || '';
+        const matches = textbox
+          ? e.getAttribute('role') === 'textbox'
+          : labels.some(label => txt === label || aria === label);
+        if (!matches) continue;
+        if (inDialog && !e.closest('div[role="dialog"]')) continue;
+        const r = e.getBoundingClientRect();
+        if (r.width < 40 || r.height < 20 || r.y < 0 || r.y > 909) continue;
+        const area = r.width * r.height;
+        if (!best || area > best.area) {
+          best = { x: r.x + r.width / 2, y: r.y + r.height / 2, area };
+        }
+      }
+      return best ? JSON.stringify({ x: best.x, y: best.y }) : '';
+    })()'''
+      .replace('__LABELS__', __import__('json').dumps(labels or []))
+      .replace('__TEXTBOX__', 'true' if textbox else 'false')
+      .replace('__IN_DIALOG__', 'true' if in_dialog else 'false'))
+    raw = (payload or '').strip().strip('"').replace('\\"', '"')
+    if not raw:
+        return False
+    point = __import__('json').loads(raw)
+    click_at_xy(point['x'], point['y'])
+    return True
+
 
 def composer_open():
     # Czy w dialogu wciąż jest widoczny przycisk Dalej/Opublikuj (kompozytor żyje)?
@@ -114,12 +152,29 @@ def post_one(idx, item):
     # Świeża karta FB (uaktywnia ją) — wszystko dzieje się na niej.
     new_tab('https://www.facebook.com/')
     wait_for_load(); time.sleep(9)
-    click_at_xy(910.0, 103.0)          # kompozytor „O czym myślisz…"
-    time.sleep(6)
-    click_at_xy(863.0, 390.0)          # pole tekstowe
+    if not click_target(['O czym myślisz, FishPoint?']):
+        raise RuntimeError('brak kompozytora strony FishPoint')
+    textbox_clicked = False
+    for _ in range(6):
+        time.sleep(2)
+        if click_target(textbox=True, in_dialog=True):
+            textbox_clicked = True
+            break
+    if not textbox_clicked:
+        raise RuntimeError('brak pola tekstowego kompozytora')
     time.sleep(1)
     type_text(item['text'])
-    time.sleep(12)                     # podglad linku (obraz OG)
+    # FB nie przechodzi dalej, dopóki asynchronicznie buduje podgląd linku.
+    # Sam przycisk potrafi już wyglądać na aktywny, więc czekamy na zniknięcie
+    # komunikatu zamiast klikać go w trakcie generowania.
+    time.sleep(8)
+    for _ in range(30):
+        building_preview = js(r'''(() =>
+          (document.body.innerText || '').includes('Tworzenie podglądu linku') ? '1' : '0'
+        )()''').strip().strip('"') == '1'
+        if not building_preview:
+            break
+        time.sleep(2)
     shot('wpisano-%d' % idx)
     # Klikaj „Dalej" aż pojawi się „Opublikuj", potem kliknij „Opublikuj” DOKŁADNIE
     # RAZ (powtarzanie grozi duplikatami na wolniejszym łączu) i zweryfikuj wynik.
