@@ -2351,3 +2351,74 @@ html.dark .field-note--record table tbody tr:nth-child(even) { background: rgba(
 @media (max-width: 420px) {
   .field-note--record table { min-width: 500px; }
 }
+
+/* Wstawki redakcyjne: lekkie figury prowadzą wzrok między akapitami bez naśladowania kart. */
+.article-inline-visual {
+  width: min(74%, 740px);
+  min-width: 0;
+  margin: 48px 0;
+}
+.article-inline-visual--left { margin-right: auto; }
+.article-inline-visual--right { margin-left: auto; }
+.article-inline-visual .article-inline-frame {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border: 1px solid rgba(14,94,84,.22);
+  border-top: 3px solid var(--aqua);
+  border-radius: 10px;
+}
+.article-inline-visual--right .article-inline-frame {
+  border-color: rgba(240,138,60,.24);
+  border-top-color: var(--orange);
+}
+.article-inline-visual .article-inline-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.article-inline-visual--diagram .article-inline-frame { background: #f5eedf; }
+.article-inline-visual--diagram .article-inline-image { object-fit: contain; }
+.article-inline-visual .article-inline-caption {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.article-inline-visual .article-inline-credit {
+  display: block;
+  margin-top: 3px;
+  color: var(--green);
+  font-size: .76rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+html.dark .article-inline-visual .article-inline-frame {
+  border-color: rgba(127,230,213,.36);
+  border-top-color: #7fe6d5;
+}
+html.dark .article-inline-visual--right .article-inline-frame {
+  border-color: rgba(255,178,94,.4);
+  border-top-color: #ffb25e;
+}
+html.dark .article-inline-visual--diagram .article-inline-frame { background: #203a39; }
+html.dark .article-inline-visual .article-inline-caption { color: #c5d6d0; }
+html.dark .article-inline-visual .article-inline-credit { color: #7fe6d5; }
+
+@media (max-width: 840px) {
+  .article-inline-visual {
+    display: block;
+    width: 100%;
+    max-width: none;
+    float: none;
+    margin: 32px 0;
+  }
+  .article-inline-visual--left,
+  .article-inline-visual--right {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .article-inline-visual .article-inline-frame { min-width: 0; }
+}

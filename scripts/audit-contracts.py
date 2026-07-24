@@ -255,6 +255,8 @@ def main() -> int:
 
     visual_pages = 0
     regional_visuals = 0
+    inline_visual_pages = 0
+    inline_visuals = 0
     parsed: dict[str, PageParser] = {}
     for url in urls:
         relative = local_path(url)
@@ -310,6 +312,82 @@ def main() -> int:
                     f"{relative}: regional illustration lacks a non-location disclaimer",
                     failures,
                 )
+        inline_blocks = re.findall(
+            r"<!--inline-visual:auto-->(.*?)<!--/inline-visual:auto-->",
+            source,
+            re.S,
+        )
+        if inline_blocks:
+            inline_visual_pages += 1
+            inline_visuals += len(inline_blocks)
+            check(
+                source.count("<!--inline-visual:auto-->") == len(inline_blocks)
+                and source.count("<!--/inline-visual:auto-->") == len(inline_blocks),
+                f"{relative}: inline visual markers are not balanced",
+                failures,
+            )
+            inline_sources: set[str] = set()
+            lead_sources = {str(image.get("src") or "") for image in page.article_images}
+            for block in inline_blocks:
+                check(
+                    block.count("article-inline-visual") >= 1
+                    and "article-inline-caption" in block
+                    and "article-inline-credit" in block,
+                    f"{relative}: inline visual lacks figure, caption, or credit",
+                    failures,
+                )
+                image_match = re.search(r"<img\b([^>]*)>", block, re.I | re.S)
+                check(image_match is not None, f"{relative}: inline visual lacks image", failures)
+                if image_match is None:
+                    continue
+                attrs = dict(re.findall(r'([:\w-]+)="([^"]*)"', image_match.group(1)))
+                image_src = attrs.get("src", "")
+                check(
+                    attrs.get("class") == "article-inline-image"
+                    and attrs.get("loading") == "lazy"
+                    and attrs.get("decoding") == "async",
+                    f"{relative}: inline image loading contract is invalid: {image_src}",
+                    failures,
+                )
+                check(
+                    attrs.get("width", "").isdigit()
+                    and attrs.get("height", "").isdigit()
+                    and int(attrs.get("width", "0")) > 0
+                    and int(attrs.get("height", "0")) > 0,
+                    f"{relative}: inline image dimensions are invalid: {image_src}",
+                    failures,
+                )
+                check(
+                    image_src.startswith("/") and (ROOT / image_src.lstrip("/")).is_file(),
+                    f"{relative}: inline image is missing: {image_src}",
+                    failures,
+                )
+                check(
+                    image_src not in inline_sources and image_src not in lead_sources,
+                    f"{relative}: inline image duplicates another page image: {image_src}",
+                    failures,
+                )
+                inline_sources.add(image_src)
+                if image_src.endswith(".svg"):
+                    check(
+                        "article-inline-visual--diagram" in block
+                        and "Schemat: FishPoint (materiał własny)" in block,
+                        f"{relative}: owned inline diagram lacks its credit: {image_src}",
+                        failures,
+                    )
+                else:
+                    check(
+                        "article-inline-visual--photo" in block
+                        and 'rel="license external noopener"' in block,
+                        f"{relative}: inline photo lacks linked provenance: {image_src}",
+                        failures,
+                    )
+                    if relative.startswith("lowiska/"):
+                        check(
+                            "nie przedstawia konkretnego łowiska w tym regionie" in block,
+                            f"{relative}: regional inline photo lacks disclaimer",
+                            failures,
+                        )
         title = compact("".join(page.title_text))
         check(
             bool(title) and title == page.metadata.get("og:title") == page.metadata.get("twitter:title"),
@@ -338,6 +416,8 @@ def main() -> int:
 
     check(visual_pages >= 73, "fewer than 73 articles have licensed lead visuals", failures)
     check(regional_visuals == 16, "all 16 regional fishery pages need illustrative visuals", failures)
+    check(inline_visual_pages >= 140, "fewer than 140 pages have inline visuals", failures)
+    check(inline_visuals >= 350, "fewer than 350 contextual inline visuals were generated", failures)
 
     js_version = hashlib.md5((ROOT / "js/main.js").read_bytes()).hexdigest()[:8]
     for html_path in sorted(ROOT.rglob("*.html")):

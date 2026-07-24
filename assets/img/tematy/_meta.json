@@ -1,114 +1,312 @@
 {
- "wedki": {
-  "artist": "4028mdk09",
-  "file": "wedki.jpg",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=8311821",
-  "alt": "Wędki ustawione na brzegu morza"
- },
- "kolowrotki": {
-  "artist": "George Chernilevsky",
-  "file": "kolowrotki.jpg",
-  "license": "CC BY 4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=179371169",
-  "alt": "Kołowrotek spinningowy"
- },
- "akcesoria": {
-  "artist": "R. Henrik Nilsson",
-  "file": "akcesoria.jpg",
-  "license": "CC BY 4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=176682447",
-  "alt": "Pudełko klasycznych haczyków wędkarskich"
- },
- "muchowe": {
-  "artist": "Neal Herbert",
-  "file": "muchowe.jpg",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=82220249",
-  "alt": "Wędkarz muchowy podczas rzutu na rzece"
- },
- "morskie": {
-  "artist": "Philip Halling",
-  "file": "morskie.jpg",
-  "license": "CC BY-SA 2.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=123502739",
-  "alt": "Wędki surfcastingowe na plaży"
- },
- "splawik": {
-  "artist": "Tim Green",
-  "file": "splawik.jpg",
-  "license": "CC BY 2.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=138576565",
-  "alt": "Wędkarz łowiący na spławik nad kanałem"
- },
- "podlodowe": {
-  "artist": "Karrock",
-  "file": "podlodowe.jpg",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=6314397",
-  "alt": "Wędkarz przy przerębli podczas łowienia podlodowego"
- },
- "pogoda": {
-  "artist": "Nicholas from Pennsylvania, United States",
-  "file": "pogoda.jpg",
-  "license": "CC BY 2.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=2759989",
-  "alt": "Burzowe chmury nadciągające nad jezioro"
- },
- "cr": {
-  "artist": "USFWS Mountain Prairie",
-  "file": "cr.jpg",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=162960879",
-  "alt": "Wypuszczanie pstrąga do wody"
- },
- "wezly": {
-  "artist": "Fishingknotsfast",
-  "file": "wezly.jpg",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=149051041",
-  "alt": "Węzeł wędkarski na haczyku"
- },
- "kalendarz": {
-  "artist": "Jacob W. Frank",
-  "file": "kalendarz.jpg",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=82471275",
-  "alt": "Wędkarze na rzece o wschodzie słońca"
- },
- "jeziora": {
-  "artist": "Nostrix",
-  "file": "jeziora.jpg",
-  "license": "CC BY 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=73210383",
-  "alt": "Jezioro Śniardwy"
- },
- "stawy": {
-  "artist": "Flyrecord",
-  "file": "stawy.jpg",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=49284313",
-  "alt": "Stawy Milickie z lotu ptaka"
- },
- "kanaly": {
-  "artist": "Nigel Cox",
-  "file": "kanaly.jpg",
-  "license": "CC BY-SA 2.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=13131114",
-  "alt": "Kanał z łodzią i wędkarzami w tle"
- },
- "zupa": {
-  "artist": "Marsilar",
-  "file": "zupa.jpg",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=173049011",
-  "alt": "Zupa rybna w drewnianej misie"
- },
- "smazony": {
-  "artist": "Benreis",
-  "file": "smazony.jpg",
-  "license": "CC BY 3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=42913683",
-  "alt": "Smażone filety rybne z warzywami"
- }
+  "wedki": {
+    "artist": "4028mdk09",
+    "file": "wedki.jpg",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=8311821",
+    "alt": "Wędki ustawione na brzegu morza"
+  },
+  "kolowrotki": {
+    "artist": "George Chernilevsky",
+    "file": "kolowrotki.jpg",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=179371169",
+    "alt": "Kołowrotek spinningowy"
+  },
+  "akcesoria": {
+    "artist": "R. Henrik Nilsson",
+    "file": "akcesoria.jpg",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=176682447",
+    "alt": "Pudełko klasycznych haczyków wędkarskich"
+  },
+  "muchowe": {
+    "artist": "Neal Herbert",
+    "file": "muchowe.jpg",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=82220249",
+    "alt": "Wędkarz muchowy podczas rzutu na rzece"
+  },
+  "morskie": {
+    "artist": "Philip Halling",
+    "file": "morskie.jpg",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=123502739",
+    "alt": "Wędki surfcastingowe na plaży"
+  },
+  "splawik": {
+    "artist": "Tim Green",
+    "file": "splawik.jpg",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=138576565",
+    "alt": "Wędkarz łowiący na spławik nad kanałem"
+  },
+  "podlodowe": {
+    "artist": "Karrock",
+    "file": "podlodowe.jpg",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=6314397",
+    "alt": "Wędkarz przy przerębli podczas łowienia podlodowego"
+  },
+  "pogoda": {
+    "artist": "Nicholas from Pennsylvania, United States",
+    "file": "pogoda.jpg",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=2759989",
+    "alt": "Burzowe chmury nadciągające nad jezioro"
+  },
+  "cr": {
+    "artist": "USFWS Mountain Prairie",
+    "file": "cr.jpg",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=162960879",
+    "alt": "Wypuszczanie pstrąga do wody"
+  },
+  "wezly": {
+    "artist": "Fishingknotsfast",
+    "file": "wezly.jpg",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=149051041",
+    "alt": "Węzeł wędkarski na haczyku"
+  },
+  "kalendarz": {
+    "artist": "Jacob W. Frank",
+    "file": "kalendarz.jpg",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=82471275",
+    "alt": "Wędkarze na rzece o wschodzie słońca"
+  },
+  "jeziora": {
+    "artist": "Nostrix",
+    "file": "jeziora.jpg",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=73210383",
+    "alt": "Jezioro Śniardwy"
+  },
+  "stawy": {
+    "artist": "Flyrecord",
+    "file": "stawy.jpg",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=49284313",
+    "alt": "Stawy Milickie z lotu ptaka"
+  },
+  "kanaly": {
+    "artist": "Nigel Cox",
+    "file": "kanaly.jpg",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=13131114",
+    "alt": "Kanał z łodzią i wędkarzami w tle"
+  },
+  "zupa": {
+    "artist": "Marsilar",
+    "file": "zupa.jpg",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=173049011",
+    "alt": "Zupa rybna w drewnianej misie"
+  },
+  "smazony": {
+    "artist": "Benreis",
+    "file": "smazony.jpg",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=42913683",
+    "alt": "Smażone filety rybne z warzywami"
+  },
+  "schemat-spinning": {
+    "artist": "FishPoint",
+    "file": "schemat-spinning.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/techniki/spinning.html",
+    "alt": "Schemat spinningu z przynętą i kierunkiem prowadzenia.",
+    "caption": "Pomaga zobaczyć relację między rzutem, nurtem i prowadzeniem przynęty.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-splawik": {
+    "artist": "FishPoint",
+    "file": "schemat-splawik.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/techniki/splawik.html",
+    "alt": "Schemat spławika, obciążenia i przynęty pod powierzchnią wody.",
+    "caption": "Pomaga zrozumieć, które części zestawu pracują nad i pod powierzchnią.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-feeder": {
+    "artist": "FishPoint",
+    "file": "schemat-feeder.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/techniki/feeder.html",
+    "alt": "Schemat koszyczka feederowego z zanętą i haczykiem przy dnie.",
+    "caption": "Pomaga rozpoznać, jak koszyczek, zanęta i przypon tworzą jeden punkt pracy.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-karpiowy": {
+    "artist": "FishPoint",
+    "file": "schemat-karpiowy.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/techniki/karpiowanie.html",
+    "alt": "Schemat włosa z kulką przynętową przy haku karpiowym.",
+    "caption": "Pomaga zobaczyć podstawowe połączenie włosa, przynęty i haka.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-warstwy-wody": {
+    "artist": "FishPoint",
+    "file": "schemat-warstwy-wody.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/wedkarstwo-z-brzegu.html",
+    "alt": "Schemat przekroju zbiornika z powierzchnią, tonią i dnem.",
+    "caption": "Pomaga uporządkować obserwację powierzchni, toni i dna.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-stanowisko": {
+    "artist": "FishPoint",
+    "file": "schemat-stanowisko.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/wedkarstwo-z-brzegu.html",
+    "alt": "Plan stanowiska wędkarskiego z dostępem do brzegu i kierunkiem rzutu.",
+    "caption": "Pomaga rozłożyć stanowisko tak, by zachować porządek przy brzegu.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-catch-release": {
+    "artist": "FishPoint",
+    "file": "schemat-catch-release.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/catch-and-release.html",
+    "alt": "Schemat ryby podtrzymywanej dwiema dłońmi nad wodą.",
+    "caption": "Pomaga zapamiętać spokojne podtrzymanie ryby nisko nad wodą.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-pakowanie": {
+    "artist": "FishPoint",
+    "file": "schemat-pakowanie.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/etyka-i-przepisy.html",
+    "alt": "Schemat pojemnika z rybą oddzieloną od wkładów chłodzących.",
+    "caption": "Pomaga uporządkować pakowanie produktu w chłodnym pojemniku.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-wezel": {
+    "artist": "FishPoint",
+    "file": "schemat-wezel.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/wezly-wedkarskie.html",
+    "alt": "Schemat żyłki poprowadzonej przez oczko haka i zaciśniętej pętli.",
+    "caption": "Pomaga prześledzić drogę żyłki przed dociągnięciem węzła.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-budowa-ryby": {
+    "artist": "FishPoint",
+    "file": "schemat-budowa-ryby.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/narzedzia/rozpoznaj-rybe.html",
+    "alt": "Uproszczona sylwetka ryby z oznaczoną płetwą, linią boczną i ogonem.",
+    "caption": "Pomaga nazwać kilka widocznych elementów sylwetki ryby.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-pomiar-ryby": {
+    "artist": "FishPoint",
+    "file": "schemat-pomiar-ryby.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/narzedzia/czy-moge-zabrac-rybe.html",
+    "alt": "Schemat ryby ułożonej przy zerze miarki z zaznaczonym pomiarem długości.",
+    "caption": "Pomaga ułożyć rybę równo przy początku miarki przed odczytem.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-przygotowanie-ryby": {
+    "artist": "FishPoint",
+    "file": "schemat-przygotowanie-ryby.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/etyka-i-przepisy.html",
+    "alt": "Schemat deski, noża i pojemnika w uporządkowanym stanowisku pracy.",
+    "caption": "Pomaga ułożyć stanowisko przygotowania ryby w przejrzystej kolejności.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-echosonda": {
+    "artist": "FishPoint",
+    "file": "schemat-echosonda.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/echosondy.html",
+    "alt": "Schemat łodzi z przetwornikiem echosondy i łukami sygnału nad dnem.",
+    "caption": "Pomaga zrozumieć prostą drogę sygnału od sondy do dna.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-lodz": {
+    "artist": "FishPoint",
+    "file": "schemat-lodz.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/wedkarstwo-z-lodzi.html",
+    "alt": "Plan łodzi z rozmieszczonymi miejscami i sprzętem.",
+    "caption": "Pomaga rozplanować miejsca i wyposażenie w łodzi w czytelnym układzie.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-sezon": {
+    "artist": "FishPoint",
+    "file": "schemat-sezon.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/kalendarz-bran.html",
+    "alt": "Koło czterech pór roku: wiosna, lato, jesień i zima.",
+    "caption": "Pomaga ułożyć plan wypraw w rytmie zmieniających się pór roku.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-dobor-sprzetu": {
+    "artist": "FishPoint",
+    "file": "schemat-dobor-sprzetu.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/narzedzia/dobor-sprzetu.html",
+    "alt": "Trzy połączone elementy: woda, przynęta i wędzisko.",
+    "caption": "Pomaga zestawić warunki łowiska z przynętą i wędziskiem.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-e-zezwolenie": {
+    "artist": "FishPoint",
+    "file": "schemat-e-zezwolenie.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/aktualnosci/zezwolenia-online-2026.html",
+    "alt": "Telefon łączący wybór łowiska, e-zezwolenie i potwierdzenie.",
+    "caption": "Pomaga prześledzić drogę od wyboru wody do zachowania potwierdzenia zezwolenia.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  },
+  "schemat-monitoring-wody": {
+    "artist": "FishPoint",
+    "file": "schemat-monitoring-wody.svg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/aktualnosci/zakaz-polowu-bobr-lipiec-2026.html",
+    "alt": "Schemat obserwacji rzeki, pobrania próbki i sprawdzenia komunikatu.",
+    "caption": "Pomaga odróżnić obserwację terenową, wynik próbki i oficjalny komunikat.",
+    "kind": "schemat",
+    "width": 1200,
+    "height": 675
+  }
 }

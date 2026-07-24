@@ -6,7 +6,7 @@ Idempotentny: blok SEO jest oznaczony znacznikami i przy ponownym uruchomieniu
 zostaje podmieniony, a nie zdublowany. Wystarczy zmienić BASE po kupnie domeny
 i uruchomić ponownie: python3 seo_inject.py
 """
-import os, re, html, json, datetime, subprocess, functools, hashlib, sys, math
+import os, re, html, json, datetime, subprocess, functools, hashlib, sys, math, unicodedata
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -398,6 +398,27 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 BEGIN = "  <!-- seo:meta begin (auto) -->"
 END = "  <!-- seo:meta end (auto) -->"
 
+INLINE_DIAGRAMS = {
+    "spinning": ("Schemat prowadzenia przynęty spinningowej", ("spinning", "wobler", "guma", "przyneta")),
+    "splawik": ("Schemat zestawu spławikowego", ("splawik", "splawikow")),
+    "feeder": ("Schemat zestawu feederowego", ("feeder", "koszyczek", "method feeder")),
+    "karpiowy": ("Schemat zestawu karpiowego", ("karpiow", "wlos", "kulka")),
+    "warstwy-wody": ("Schemat warstw wody", ("glebokosc", "ton wody", "warstwy wody")),
+    "stanowisko": ("Schemat organizacji stanowiska wędkarskiego", ("stanowisko", "brzeg", "miejsce lowienia")),
+    "catch-release": ("Schemat spokojnego wypuszczania ryby", ("catch and release", "wypuszcz", "odczep")),
+    "pakowanie": ("Schemat chłodnego pakowania ryby", ("chlodz", "transport ryby", "pakowanie ryby")),
+    "wezel": ("Schemat wiązania węzła wędkarskiego", ("wezel", "wiazanie", "zylka")),
+    "budowa-ryby": ("Podstawowe elementy budowy ryby", ("budowa ryby", "pletwa", "linia boczna")),
+    "pomiar-ryby": ("Schemat prawidłowego pomiaru ryby", ("pomiar", "wymiar ochronny", "centymetr", "rekord", "dlugosc")),
+    "przygotowanie-ryby": ("Schemat stanowiska przygotowania ryby", ("kuchnia", "filet", "deska", "przygotowanie ryby")),
+    "echosonda": ("Schemat działania echosondy", ("echosonda", "sonar", "przetwornik")),
+    "lodz": ("Schemat organizacji łowienia z łodzi", ("lodz", "lodka", "wioslo")),
+    "sezon": ("Schemat czterech pór roku", ("sezon", "wiosna", "jesien", "zima")),
+    "dobor-sprzetu": ("Schemat doboru podstawowego sprzętu", ("sprzet", "wedzisko", "kolowrotek", "dobor", "dobrac", "przynet")),
+    "e-zezwolenie": ("Schemat obsługi e-zezwolenia", ("e zezwolenie", "zezwolenie online", "cyfryzac", "baza danych")),
+    "monitoring-wody": ("Schemat monitoringu jakości wody", ("monitoring", "sniecie", "zanieczyszc", "probka wody", "glon")),
+}
+
 
 def load_image_provenance():
     """Ładuje wyłącznie lokalne obrazy z manifestów ich źródła i licencji."""
@@ -417,6 +438,18 @@ def load_image_provenance():
                 else f"/assets/img/{directory}/{filename}"
             )
             provenance[image_path] = item
+    for name, (alt, _terms) in INLINE_DIAGRAMS.items():
+        image_path = f"/assets/img/tematy/schemat-{name}.svg"
+        provenance.setdefault(image_path, {
+            "file": image_path.lstrip("/"),
+            "artist": SITE_NAME,
+            "license": "Materiał własny",
+            "page": BASE + image_path,
+            "alt": alt,
+            "kind": "schemat",
+            "width": 1200,
+            "height": 675,
+        })
     return provenance
 
 
@@ -815,6 +848,17 @@ ARTICLE_VISUAL_OPEN_RE = re.compile(
     r'<section\b(?=[^>]*\bclass=["\'][^"\']*\barticle-section\b)[^>]*>)',
     re.I,
 )
+INLINE_VISUAL_BEGIN, INLINE_VISUAL_END = (
+    "<!--inline-visual:auto-->", "<!--/inline-visual:auto-->"
+)
+inline_visual_re = re.compile(
+    re.escape(INLINE_VISUAL_BEGIN) + r".*?" + re.escape(INLINE_VISUAL_END), re.S
+)
+
+
+def strip_inline_visuals(src):
+    """Usuwa wyłącznie w pełni generatorowe ilustracje śródtekstowe."""
+    return inline_visual_re.sub("", src)
 RELATED_BEGIN, RELATED_END = "<!--related:auto-->", "<!--/related:auto-->"
 related_re = re.compile(re.escape(RELATED_BEGIN) + r".*?" + re.escape(RELATED_END), re.S)
 NEWSLETTER_BEGIN, NEWSLETTER_END = "<!--newsletter:auto-->", "<!--/newsletter:auto-->"
@@ -2040,6 +2084,7 @@ def article_text(src):
     chunk = giscus_re.sub(" ", chunk)
     chunk = affiliate_re.sub(" ", chunk)
     chunk = article_visual_re.sub(" ", chunk)
+    chunk = inline_visual_re.sub(" ", chunk)
     return re.sub(r"\s+", " ", _clean(chunk)).strip()
 
 
@@ -2410,17 +2455,22 @@ class _ArticleDirectScanner(HTMLParser):
     def handle_starttag(self, tag, attrs):
         tag = tag.lower()
         start = self._offset()
-        parent_root = self.stack[-1].get("root") if self.stack else None
-        entry = {"tag": tag, "attrs": attrs, "start": start, "root": parent_root}
+        parent = self.stack[-1] if self.stack else None
+        parent_root = parent.get("root") if parent else None
+        entry = {
+            "tag": tag, "attrs": attrs, "start": start, "root": parent_root,
+            "parent": parent, "children": [],
+        }
         if tag == "article" and "article-card" in self._classes(attrs):
             entry["root"] = entry
             entry["depth"] = len(self.stack)
-            entry["children"] = []
             self.articles.append(entry)
         elif parent_root and len(self.stack) == parent_root["depth"] + 1:
             entry["direct"] = True
             entry["order"] = len(parent_root["children"])
             parent_root["children"].append(entry)
+        elif parent:
+            parent["children"].append(entry)
         if tag not in self._VOID:
             self.stack.append(entry)
 
@@ -2436,6 +2486,367 @@ class _ArticleDirectScanner(HTMLParser):
                     self.stack[index]["end"] = end
                 del self.stack[index:]
                 return
+INLINE_SECTION_FALLBACKS = {
+    "aktualnosci": (
+        "/assets/img/tematy/schemat-sezon.svg",
+        "/assets/img/tematy/schemat-pomiar-ryby.svg",
+        "/assets/img/tematy/schemat-catch-release.svg",
+        "/assets/img/tematy/schemat-stanowisko.svg",
+    ),
+    "poradniki": (
+        "/assets/img/tematy/schemat-stanowisko.svg",
+        "/assets/img/tematy/schemat-warstwy-wody.svg",
+        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
+        "/assets/img/tematy/schemat-catch-release.svg",
+    ),
+    "ryby": (
+        "/assets/img/tematy/schemat-budowa-ryby.svg",
+        "/assets/img/tematy/schemat-pomiar-ryby.svg",
+        "/assets/img/tematy/schemat-warstwy-wody.svg",
+        "/assets/img/tematy/schemat-catch-release.svg",
+    ),
+    "techniki": (
+        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
+        "/assets/img/tematy/schemat-warstwy-wody.svg",
+        "/assets/img/tematy/schemat-stanowisko.svg",
+        "/assets/img/tematy/schemat-catch-release.svg",
+    ),
+    "pierwsze-kroki": (
+        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
+        "/assets/img/tematy/schemat-stanowisko.svg",
+        "/assets/img/tematy/schemat-warstwy-wody.svg",
+        "/assets/img/tematy/schemat-catch-release.svg",
+    ),
+    "sprzet": (
+        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
+        "/assets/img/tematy/wedki.jpg",
+        "/assets/img/tematy/kolowrotki.jpg",
+        "/assets/img/tematy/akcesoria.jpg",
+    ),
+    "lowiska": (
+        "/assets/img/tematy/schemat-warstwy-wody.svg",
+        "/assets/img/tematy/schemat-stanowisko.svg",
+        "/assets/img/tematy/jeziora.jpg",
+        "/assets/img/tematy/rzeki.jpg",
+        "/assets/img/tematy/stawy.jpg",
+        "/assets/img/tematy/kanaly.jpg",
+    ),
+    "kuchnia": (
+        "/assets/img/tematy/schemat-przygotowanie-ryby.svg",
+        "/assets/img/tematy/schemat-pakowanie.svg",
+        "/assets/img/kuchnia/przygotowanie.jpg",
+        "/assets/img/kuchnia/przepisy.jpg",
+        "/assets/img/tematy/smazony.jpg",
+        "/assets/img/tematy/zupa.jpg",
+    ),
+    "narzedzia": (
+        "/assets/img/tematy/schemat-pomiar-ryby.svg",
+        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
+        "/assets/img/tematy/schemat-sezon.svg",
+        "/assets/img/tematy/schemat-budowa-ryby.svg",
+    ),
+    "humor": (
+        "/assets/img/humor/dowcipy.jpg",
+        "/assets/img/humor/memy.jpg",
+    ),
+    "": (
+        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
+        "/assets/img/tematy/schemat-sezon.svg",
+        "/assets/img/tematy/schemat-catch-release.svg",
+        "/assets/img/tematy/wedki.jpg",
+    ),
+}
+INLINE_BLOCKED_TOKENS = frozenset((
+    "toc", "tldr", "faq", "source", "tool", "form", "table", "field-note",
+    "related", "comments", "newsletter", "article-lead", "article-visual",
+    "article-inline-visual", "content-advantage", "affiliate",
+))
+
+
+def inline_visual_count(words):
+    """Kontrakt rytmu: zero do czterech ilustracji zależnie od długości tekstu."""
+    if words < 450:
+        return 0
+    if words <= 850:
+        return 1
+    if words <= 1400:
+        return 2
+    if words <= 2200:
+        return 3
+    return 4
+
+
+def _inline_plain(value):
+    return "".join(
+        char for char in unicodedata.normalize("NFKD", value.lower())
+        if not unicodedata.combining(char)
+    )
+
+
+def _inline_classes(item):
+    return set((dict(item["attrs"]).get("class") or "").lower().split())
+
+
+def _inline_blocked_item(item, src):
+    classes = _inline_classes(item)
+    fragment = src[item["start"]:item.get("end", item["start"])]
+    return (
+        item["tag"] in {"figure", "form", "table", "aside"}
+        or bool(classes & INLINE_BLOCKED_TOKENS)
+        or any(token in " ".join(classes) for token in INLINE_BLOCKED_TOKENS)
+        or (item["tag"] == "section" and bool(re.search(r"<(?:figure|form|table)\b", fragment, re.I)))
+    )
+
+
+def _inline_in_blocked_ancestor(item, src):
+    while item:
+        if _inline_blocked_item(item, src):
+            return True
+        if item.get("root") is item:
+            return False
+        item = item.get("parent")
+    return False
+
+INLINE_BLOCKED_HEADING_RE = re.compile(
+    r"<h[23]\b[^>]*>.*?(?:faq|źródł|zródl|source|narzędzi|narzedzi|"
+    r"komentarz|powiązan).*?</h[23]>",
+    re.I | re.S,
+)
+
+
+def _inline_blocked_heading_context(item, src):
+    fragment = src[item["start"]:item.get("end", item["start"])]
+    if INLINE_BLOCKED_HEADING_RE.search(fragment):
+        return True
+    parent = item.get("parent")
+    if not parent:
+        return False
+    heading_tag = "h2" if parent.get("root") is parent else "h[23]"
+    headings = list(re.finditer(
+        rf"<{heading_tag}\b[^>]*>(.*?)</{heading_tag}>",
+        src[parent["start"]:item["start"]], re.I | re.S,
+    ))
+    return bool(headings and INLINE_BLOCKED_HEADING_RE.search(headings[-1].group(0)))
+
+
+def _inline_section(item):
+    return item["tag"] == "section" and "article-section" in _inline_classes(item)
+
+
+def _inline_candidate_items(article, src, auto_ranges):
+    """Pełne, zbalansowane granice po akapicie albo sekcji; żadnych pół-tagów."""
+    candidates = []
+
+    def adjacent_safe(item):
+        parent = item.get("parent")
+        siblings = parent.get("children", ()) if parent else ()
+        try:
+            index = siblings.index(item)
+        except ValueError:
+            return False
+        return not any(
+            _inline_blocked_item(neighbor, src)
+            for neighbor in siblings[max(0, index - 1):index] + siblings[index + 1:index + 2]
+        )
+
+    def visit(item):
+        if ("end" not in item or _inline_in_blocked_ancestor(item, src)
+                or _inline_blocked_heading_context(item, src)):
+            return
+        if any(item["start"] < end and start < item["end"] for start, end in auto_ranges):
+            return
+        parent = item.get("parent")
+        parent_is_content = parent is article or (parent and _inline_section(parent))
+        text = _field_note_text(src[item["start"]:item["end"]])
+        if item["tag"] == "p" and parent_is_content and len(text) >= 140 and adjacent_safe(item):
+            candidates.append({"start": item["end"], "item": item, "text": text})
+        if (item.get("direct") and item["tag"] == "section"
+                and len(text) >= 260 and adjacent_safe(item)):
+            candidates.append({"start": item["end"], "item": item, "text": text})
+        for child in item.get("children", ()):
+            visit(child)
+
+    for child in article["children"]:
+        visit(child)
+    return candidates
+
+
+def _inline_dimensions(image_path, provenance):
+    width, height = provenance.get("width"), provenance.get("height")
+    if width and height:
+        return int(width), int(height)
+    return jpeg_dimensions(image_path)
+
+
+def _inline_source_terms(image_path, provenance):
+    terms = set(re.findall(r"[a-z0-9]+", _inline_plain(
+        image_path + " " + provenance.get("alt", "")
+    )))
+    name = Path(image_path).stem.removeprefix("schemat-")
+    if name in INLINE_DIAGRAMS:
+        terms.update(INLINE_DIAGRAMS[name][1])
+    return terms
+
+
+def _inline_sources(rel, title_txt, body_text, used_paths):
+    """Buduje bezpieczną, kontekstową kolejkę: temat strony, potem pula działu."""
+    section = rel.split("/", 1)[0] if "/" in rel else ""
+    strong_context = _inline_plain(f"{rel} {title_txt}").replace("-", " ")
+    body_context = _inline_plain(body_text)
+    ranked = {}
+
+    def add(image_path, score, order):
+        if image_path in used_paths or image_path not in IMAGE_PROVENANCE:
+            return
+        provenance = IMAGE_PROVENANCE[image_path]
+        dimensions = _inline_dimensions(image_path, provenance)
+        if not dimensions:
+            return
+        current = ranked.get(image_path)
+        candidate = (score, order, image_path, provenance, dimensions)
+        if current is None or candidate[:2] > current[:2]:
+            ranked[image_path] = candidate
+
+    # Nazwany w tytule lub slugu gatunek, typ łowiska albo sprzęt daje najściślej
+    # dopasowane zdjęcie. Samo przypadkowe słowo w długim tekście nie wystarcza.
+    context_words = set(re.findall(r"[a-z0-9]+", strong_context))
+    for order, (image_path, provenance) in enumerate(IMAGE_PROVENANCE.items()):
+        if provenance.get("kind") == "schemat":
+            continue
+        stem_words = set(re.findall(r"[a-z0-9]+", _inline_plain(Path(image_path).stem)))
+        if stem_words and all(len(word) >= 3 for word in stem_words) and stem_words <= context_words:
+            add(image_path, 260, -order)
+
+    # Schemat jest premiowany mocno za tytuł/slug, słabiej za konkretny motyw,
+    # który rzeczywiście powraca w treści. Ogólne słowa nie losują obcych zdjęć.
+    for order, (name, (_alt, terms)) in enumerate(INLINE_DIAGRAMS.items()):
+        image_path = f"/assets/img/tematy/schemat-{name}.svg"
+        normalized_terms = tuple(_inline_plain(term) for term in terms)
+        strong_hits = sum(term in strong_context for term in normalized_terms)
+        body_hits = sum(body_context.count(term) for term in normalized_terms)
+        if strong_hits:
+            add(image_path, 240 + strong_hits, -order)
+        elif body_hits >= 2:
+            add(image_path, 120 + min(body_hits, 12), -order)
+
+    fallback = INLINE_SECTION_FALLBACKS.get(section, INLINE_SECTION_FALLBACKS[""])
+    for order, image_path in enumerate(fallback):
+        add(image_path, 200 - order, -order)
+
+    return sorted(ranked.values(), key=lambda item: (-item[0], -item[1], item[2]))
+
+
+def _inline_used_paths(src, page_dir):
+    return {
+        resolve_img(html.unescape(match.group(1)), page_dir)
+        for match in img_re.finditer(src)
+    }
+
+
+def _inline_spaced_boundaries(candidates, wanted, article_start, article_end, src):
+    """Wybiera granice równomiernie po widocznym tekście, z odstępem treści."""
+    if not candidates or not wanted:
+        return []
+    total = len(_field_note_text(src[article_start:article_end]))
+    indexed = []
+    for candidate in candidates:
+        progress = len(_field_note_text(src[article_start:candidate["start"]]))
+        indexed.append((progress, candidate))
+    selected = []
+    for slot in range(wanted):
+        target = total * (slot + 1) / (wanted + 1)
+        eligible = [
+            (abs(progress - target), progress, candidate)
+            for progress, candidate in indexed
+            if candidate not in selected
+            and all(abs(progress - chosen_progress) >= 500 for chosen_progress, _chosen in selected)
+        ]
+        if not eligible:
+            continue
+        _distance, progress, candidate = min(eligible, key=lambda item: (item[0], item[1]))
+        selected.append((progress, candidate))
+    return [candidate for _progress, candidate in sorted(selected)]
+
+
+def _inline_credit(image_path, provenance):
+    if provenance.get("kind") == "schemat":
+        return "Schemat: FishPoint (materiał własny)"
+    return (
+        f'Zdjęcie: <a href="{html.escape(provenance["page"], quote=True)}" '
+        f'rel="license external noopener">{html.escape(provenance["artist"])} '
+        f'({html.escape(provenance["license"])})</a>'
+    )
+
+
+def _inline_markup(image_path, provenance, dimensions, title_txt, section, index):
+    width, height = dimensions
+    is_diagram = provenance.get("kind") == "schemat"
+    alt = provenance.get("alt") or f"Ilustracja do artykułu: {short_title(title_txt)}"
+    caption = provenance.get("caption", "").strip()
+    if not caption:
+        if is_diagram:
+            name = Path(image_path).stem.removeprefix("schemat-")
+            caption = INLINE_DIAGRAMS.get(name, ("Schemat pomocniczy do artykułu", ()))[0] + "."
+        else:
+            caption = f"Zdjęcie ilustracyjne: {alt.rstrip('.')}."
+    if section == "lowiska" and not is_diagram:
+        caption = (
+            "Zdjęcie ilustracyjne; nie przedstawia konkretnego łowiska w tym regionie. "
+            + alt.rstrip(".") + "."
+        )
+    side = "left" if index % 2 == 0 else "right"
+    kind = "diagram" if is_diagram else "photo"
+    return (
+        f'{INLINE_VISUAL_BEGIN}<figure class="article-inline-visual article-inline-visual--{side} '
+        f'article-inline-visual--{kind}"><div class="article-inline-frame">'
+        f'<img class="article-inline-image" src="{html.escape(image_path, quote=True)}" '
+        f'alt="{html.escape(alt, quote=True)}" width="{width}" height="{height}" '
+        f'loading="lazy" decoding="async" /></div><figcaption class="article-inline-caption">'
+        f'<span>{html.escape(caption)}</span><span class="article-inline-credit">{_inline_credit(image_path, provenance)}'
+        f'</span></figcaption></figure>{INLINE_VISUAL_END}'
+    )
+
+
+def inject_inline_visuals(src, rel, title_txt, page_dir):
+    """Odtwarza śródtekstowe media po leadzie, wyłącznie w bezpiecznych granicach."""
+    src = strip_inline_visuals(src)
+    target = inline_visual_count(len(article_text(src).split()))
+    if not target:
+        return src
+    scanner = _ArticleDirectScanner(src)
+    scanner.feed(src)
+    scanner.close()
+    auto_ranges = _field_note_auto_ranges(src)
+    article_candidates = []
+    for article in scanner.articles:
+        if "end" in article:
+            article_candidates.append((
+                article,
+                _inline_candidate_items(article, src, auto_ranges),
+            ))
+    candidates = [item for _article, items in article_candidates for item in items]
+    sources = _inline_sources(
+        rel, title_txt, article_text(src), _inline_used_paths(src, page_dir)
+    )
+    chosen = min(target, len(candidates), len(sources))
+    if not chosen:
+        return src
+    if len(article_candidates) == 1:
+        article, items = article_candidates[0]
+        boundaries = _inline_spaced_boundaries(
+            items, chosen, article["start"], article["end"], src,
+        )
+    else:
+        boundaries = sorted(candidates, key=lambda item: item["start"])[:chosen]
+    # Zmiana od końca zachowuje pierwotne offsety wszystkich wcześniejszych granic.
+    section = rel.split("/", 1)[0] if "/" in rel else ""
+    replacements = list(zip(boundaries, sources[:len(boundaries)]))
+    for index, (candidate, source) in reversed(list(enumerate(replacements))):
+        _score, _fallback, image_path, provenance, dimensions = source
+        markup = _inline_markup(image_path, provenance, dimensions, title_txt, section, index)
+        src = src[:candidate["start"]] + markup + src[candidate["start"]:]
+    return src
+
 
 
 def _field_note_text(fragment):
@@ -2683,6 +3094,7 @@ def build(path):
     src = affiliate_re.sub("", src)
     src = hub_freshness_re.sub("", src)
     src = article_visual_re.sub("", src)
+    src = strip_inline_visuals(src)
     src = strip_field_notes(src)
     src = ensure_youtube_facade_dimensions(replace_youtube_nocookie_embeds(src))
 
@@ -2776,11 +3188,13 @@ def build(path):
     src = re.sub(r"(</article>)", build_affiliate_links(rel) + r"\1", src, count=1)
     # Wstrzyknięte bloki też mogą zawierać stare odnośniki do index.html.
     src = canonicalize_internal_hrefs(src)
+    page_dir = os.path.dirname(path)
     src, visual_img_path = inject_article_visual(src, rel, title_txt, mtime)
+    src = inject_inline_visuals(src, rel, title_txt, page_dir)
     src = inject_field_notes(src, rel)
     # Wstrzyknięty lead jest pierwszym lokalnym obrazem: jego dane obsługują
     # LCP, OpenGraph, schema.org oraz sitemapę obrazów.
-    page_dir = os.path.dirname(path)
+    # LCP pozostaje przy leadzie; ilustracje śródtekstowe są zawsze lazy.
     src, lcp_img_path = prioritize_local_lcp_image(src, page_dir)
     im = img_re.search(src)
     img_path = resolve_img(im.group(1), page_dir) if im else DEFAULT_IMG
@@ -3068,6 +3482,67 @@ def build(path):
     return (new_src, url, mtime, is_home or is_section_index,
             title_txt, desc_txt, page_images, noindex, pubdate)
 
+
+
+def run_inline_visual_fixtures():
+    """Małe testy pamięciowe kontraktu śródtekstowych wizualizacji; bez builda."""
+    thresholds = (
+        (449, 0), (450, 1), (850, 1), (851, 2), (1400, 2),
+        (1401, 3), (2200, 3), (2201, 4),
+    )
+    for words, expected in thresholds:
+        if inline_visual_count(words) != expected:
+            raise AssertionError(f"próg {words}: oczekiwano {expected}")
+
+    def paragraph(words, topic="spinning feeder"):
+        return "<p>" + " ".join([topic] * words) + ".</p>"
+
+    regular = (
+        '<article class="article-card"><figure class="article-lead-visual">'
+        '<img src="/assets/img/ryby/szczupak.jpg" alt="lead" /></figure>'
+        + "".join(paragraph(70) for _ in range(7)) + "</article>"
+    )
+    transformed = inject_inline_visuals(
+        regular, "techniki/test.html", "Spinning i feeder", ROOT
+    )
+    generated = inline_visual_re.findall(transformed)
+    if len(generated) != 2:
+        raise AssertionError("długi fixture nie otrzymał dwóch wizualizacji")
+    if '/assets/img/ryby/szczupak.jpg" alt="lead"' not in transformed:
+        raise AssertionError("fixture utracił lead")
+    inline_sources = re.findall(
+        r'class="article-inline-image" src="([^"]+)"', transformed
+    )
+    if len(inline_sources) != len(set(inline_sources)):
+        raise AssertionError("źródła śródtekstowe nie są różne")
+    if "/assets/img/ryby/szczupak.jpg" in inline_sources:
+        raise AssertionError("powielono obraz leadu")
+    if inject_inline_visuals(
+        transformed, "techniki/test.html", "Spinning i feeder", ROOT
+    ) != transformed:
+        raise AssertionError("druga transformacja nie jest identyczna")
+    if strip_inline_visuals(transformed) != regular:
+        raise AssertionError("strip markerów nie odtwarza fixture")
+
+    nested = (
+        '<article class="article-card"><section class="article-section">'
+        '<div>' + paragraph(260, "karp zestaw") + '</div></section>'
+        '<section class="article-section"><div>'
+        + paragraph(260, "karp zestaw") + "</div></section></article>"
+    )
+    nested_out = inject_inline_visuals(
+        nested, "techniki/nested.html", "Zestaw karpiowy", ROOT
+    )
+    if not inline_visual_re.search(nested_out) or not re.search(
+        r"</section><!--inline-visual:auto-->", nested_out
+    ):
+        raise AssertionError("nie obsłużono granicy zagnieżdżonej article-section")
+    scanner = _ArticleDirectScanner(nested_out)
+    scanner.feed(nested_out)
+    scanner.close()
+    if not scanner.articles or "end" not in scanner.articles[0]:
+        raise AssertionError("wstawienie naruszyło zbalansowanie artykułu")
+    print("Inline visual fixtures: ok")
 
 
 def validate_generated_artifacts():
@@ -3368,7 +3843,9 @@ def main():
 if __name__ == "__main__":
     if sys.argv[1:] == ["--validate"]:
         validate_generated_artifacts()
+    elif sys.argv[1:] == ["--test-inline-visuals"]:
+        run_inline_visual_fixtures()
     elif len(sys.argv) == 1:
         main()
     else:
-        raise SystemExit("użycie: seo_inject.py [--validate]")
+        raise SystemExit("użycie: seo_inject.py [--validate|--test-inline-visuals]")
