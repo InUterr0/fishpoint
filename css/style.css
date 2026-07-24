@@ -2378,7 +2378,7 @@ html.dark .field-note--record table tbody tr:nth-child(even) { background: rgba(
   max-width: 100%;
   object-fit: cover;
 }
-.article-inline-visual--diagram .article-inline-frame { background: #f5eedf; }
+.article-inline-visual--diagram .article-inline-frame { aspect-ratio: 16 / 9; background: #f5eedf; }
 .article-inline-visual--diagram .article-inline-image { object-fit: contain; }
 .article-inline-visual .article-inline-caption {
   margin: 10px 0 0;

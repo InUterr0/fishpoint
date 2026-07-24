@@ -256,8 +256,23 @@ def main() -> int:
 
     visual_pages = 0
     regional_visuals = 0
-    inline_visual_pages = 0
-    inline_visuals = 0
+    expected_inline_visuals = {
+        "pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html":
+            "/assets/img/tematy/schemat-catch-release.svg",
+        "techniki/spinning.html": "/assets/img/tematy/schemat-spinning.svg",
+        "techniki/karpiowanie.html": "/assets/img/tematy/schemat-karpiowy.svg",
+        "techniki/splawik.html": "/assets/img/tematy/schemat-splawik.svg",
+        "techniki/feeder-dla-poczatkujacych.html": "/assets/img/tematy/schemat-feeder.svg",
+        "poradniki/catch-and-release.html": "/assets/img/tematy/schemat-catch-release.svg",
+        "poradniki/echosondy.html": "/assets/img/tematy/schemat-echosonda.svg",
+        "poradniki/wezly-wedkarskie.html": "/assets/img/tematy/schemat-wezel.svg",
+        "kuchnia/przygotowanie-ryby.html": "/assets/img/tematy/schemat-pakowanie.svg",
+        "aktualnosci/zezwolenia-online-2026.html": "/assets/img/tematy/schemat-e-zezwolenie.svg",
+        "aktualnosci/zakaz-polowu-bobr-lipiec-2026.html":
+            "/assets/img/tematy/schemat-monitoring-wody.svg",
+        "narzedzia/czy-moge-zabrac-rybe.html": "/assets/img/tematy/schemat-pomiar-ryby.svg",
+    }
+    observed_inline_visuals: dict[str, str] = {}
     faq_parity_pages = 0
     parsed: dict[str, PageParser] = {}
     expected_about = {
@@ -340,8 +355,11 @@ def main() -> int:
             re.S,
         )
         if inline_blocks:
-            inline_visual_pages += 1
-            inline_visuals += len(inline_blocks)
+            check(
+                relative in expected_inline_visuals and len(inline_blocks) == 1,
+                f"{relative}: inline visual is not explicitly approved",
+                failures,
+            )
             check(
                 source.count("<!--inline-visual:auto-->") == len(inline_blocks)
                 and source.count("<!--/inline-visual:auto-->") == len(inline_blocks),
@@ -364,11 +382,23 @@ def main() -> int:
                     continue
                 attrs = dict(re.findall(r'([:\w-]+)="([^"]*)"', image_match.group(1)))
                 image_src = attrs.get("src", "")
+                if len(inline_blocks) == 1:
+                    observed_inline_visuals[relative] = image_src
+                    check(
+                        image_src == expected_inline_visuals.get(relative),
+                        f"{relative}: inline visual differs from approved asset: {image_src}",
+                        failures,
+                    )
                 check(
                     attrs.get("class") == "article-inline-image"
                     and attrs.get("loading") == "lazy"
                     and attrs.get("decoding") == "async",
                     f"{relative}: inline image loading contract is invalid: {image_src}",
+                    failures,
+                )
+                check(
+                    bool(compact(attrs.get("alt", ""))),
+                    f"{relative}: inline image lacks meaningful alt text: {image_src}",
                     failures,
                 )
                 check(
@@ -472,8 +502,11 @@ def main() -> int:
 
     check(visual_pages >= 73, "fewer than 73 articles have licensed lead visuals", failures)
     check(regional_visuals == 16, "all 16 regional fishery pages need illustrative visuals", failures)
-    check(inline_visual_pages >= 140, "fewer than 140 pages have inline visuals", failures)
-    check(inline_visuals >= 350, "fewer than 350 contextual inline visuals were generated", failures)
+    check(
+        observed_inline_visuals == expected_inline_visuals,
+        "generated inline visuals differ from the explicit contextual allowlist",
+        failures,
+    )
 
     js_version = hashlib.md5((ROOT / "js/main.js").read_bytes()).hexdigest()[:8]
     for html_path in sorted(ROOT.rglob("*.html")):

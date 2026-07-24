@@ -480,6 +480,48 @@ INLINE_DIAGRAMS = {
     "monitoring-wody": ("Schemat monitoringu jakości wody", ("monitoring", "sniecie", "zanieczyszc", "probka wody", "glon")),
 }
 
+# Ilustracja śródtekstowa musi wyjaśniać konkretny fragment konkretnej strony.
+# Brak wpisu oznacza świadomą decyzję „bez ilustracji” — nigdy losowy zamiennik
+# z działu. Frazy kotwiczą obraz przy właściwym akapicie, a nie w równym odstępie.
+INLINE_PAGE_VISUALS = {
+    "techniki/spinning.html": (
+        ("/assets/img/tematy/schemat-spinning.svg", ("techniki prowadzenia przynet", "zasada metody")),
+    ),
+    "techniki/splawik.html": (
+        ("/assets/img/tematy/schemat-splawik.svg", ("budowa zestawu splawikowego", "wywazenie zestawu")),
+    ),
+    "techniki/feeder-dla-poczatkujacych.html": (
+        ("/assets/img/tematy/schemat-feeder.svg", ("montaz krok po kroku", "prosty uklad przelotowy")),
+    ),
+    "techniki/karpiowanie.html": (
+        ("/assets/img/tematy/schemat-karpiowy.svg", ("hair rig", "zestawu wlosowego")),
+    ),
+    "poradniki/catch-and-release.html": (
+        ("/assets/img/tematy/schemat-catch-release.svg", ("mokre rece i kontakt z ryba", "reanimacja ryby")),
+    ),
+    "poradniki/wezly-wedkarskie.html": (
+        ("/assets/img/tematy/schemat-wezel.svg", ("clinch i clinch ulepszony", "przywiazywania haczyka")),
+    ),
+    "poradniki/echosondy.html": (
+        ("/assets/img/tematy/schemat-echosonda.svg", ("zasada dzialania", "impuls, echo")),
+    ),
+    "pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html": (
+        ("/assets/img/tematy/schemat-catch-release.svg", ("bezpieczne odhaczanie ryby", "odloz rybe")),
+    ),
+    "narzedzia/czy-moge-zabrac-rybe.html": (
+        ("/assets/img/tematy/schemat-pomiar-ryby.svg", ("jak prawidlowo zmierzyc rybe", "lista kontrolna przed zabraniem")),
+    ),
+    "aktualnosci/zezwolenia-online-2026.html": (
+        ("/assets/img/tematy/schemat-e-zezwolenie.svg", ("oficjalne systemy", "przed zaplata i przed wyjazdem")),
+    ),
+    "aktualnosci/zakaz-polowu-bobr-lipiec-2026.html": (
+        ("/assets/img/tematy/schemat-monitoring-wody.svg", ("obserwacja i pobor prob", "monitoring 20 lipca")),
+    ),
+    "kuchnia/przygotowanie-ryby.html": (
+        ("/assets/img/tematy/schemat-pakowanie.svg", ("transport: lod i torba termiczna", "przechowywanie i transport")),
+    ),
+}
+
 
 def load_image_provenance():
     """Ładuje wyłącznie lokalne obrazy z manifestów ich źródła i licencji."""
@@ -2683,76 +2725,6 @@ class _ArticleDirectScanner(HTMLParser):
                     self.stack[index]["end"] = end
                 del self.stack[index:]
                 return
-INLINE_SECTION_FALLBACKS = {
-    "aktualnosci": (
-        "/assets/img/tematy/schemat-sezon.svg",
-        "/assets/img/tematy/schemat-pomiar-ryby.svg",
-        "/assets/img/tematy/schemat-catch-release.svg",
-        "/assets/img/tematy/schemat-stanowisko.svg",
-    ),
-    "poradniki": (
-        "/assets/img/tematy/schemat-stanowisko.svg",
-        "/assets/img/tematy/schemat-warstwy-wody.svg",
-        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
-        "/assets/img/tematy/schemat-catch-release.svg",
-    ),
-    "ryby": (
-        "/assets/img/tematy/schemat-budowa-ryby.svg",
-        "/assets/img/tematy/schemat-pomiar-ryby.svg",
-        "/assets/img/tematy/schemat-warstwy-wody.svg",
-        "/assets/img/tematy/schemat-catch-release.svg",
-    ),
-    "techniki": (
-        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
-        "/assets/img/tematy/schemat-warstwy-wody.svg",
-        "/assets/img/tematy/schemat-stanowisko.svg",
-        "/assets/img/tematy/schemat-catch-release.svg",
-    ),
-    "pierwsze-kroki": (
-        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
-        "/assets/img/tematy/schemat-stanowisko.svg",
-        "/assets/img/tematy/schemat-warstwy-wody.svg",
-        "/assets/img/tematy/schemat-catch-release.svg",
-    ),
-    "sprzet": (
-        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
-        "/assets/img/tematy/wedki.jpg",
-        "/assets/img/tematy/kolowrotki.jpg",
-        "/assets/img/tematy/akcesoria.jpg",
-    ),
-    "lowiska": (
-        "/assets/img/tematy/schemat-warstwy-wody.svg",
-        "/assets/img/tematy/schemat-stanowisko.svg",
-        "/assets/img/tematy/jeziora.jpg",
-        "/assets/img/tematy/rzeki.jpg",
-        "/assets/img/tematy/stawy.jpg",
-        "/assets/img/tematy/kanaly.jpg",
-    ),
-    "kuchnia": (
-        "/assets/img/tematy/schemat-przygotowanie-ryby.svg",
-        "/assets/img/tematy/schemat-pakowanie.svg",
-        "/assets/img/kuchnia/przygotowanie.jpg",
-        "/assets/img/kuchnia/przepisy.jpg",
-        "/assets/img/tematy/smazony.jpg",
-        "/assets/img/tematy/zupa.jpg",
-    ),
-    "narzedzia": (
-        "/assets/img/tematy/schemat-pomiar-ryby.svg",
-        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
-        "/assets/img/tematy/schemat-sezon.svg",
-        "/assets/img/tematy/schemat-budowa-ryby.svg",
-    ),
-    "humor": (
-        "/assets/img/humor/dowcipy.jpg",
-        "/assets/img/humor/memy.jpg",
-    ),
-    "": (
-        "/assets/img/tematy/schemat-dobor-sprzetu.svg",
-        "/assets/img/tematy/schemat-sezon.svg",
-        "/assets/img/tematy/schemat-catch-release.svg",
-        "/assets/img/tematy/wedki.jpg",
-    ),
-}
 INLINE_BLOCKED_TOKENS = frozenset((
     "toc", "tldr", "faq", "source", "tool", "form", "table", "field-note",
     "related", "comments", "newsletter", "article-lead", "article-visual",
@@ -2875,62 +2847,19 @@ def _inline_dimensions(image_path, provenance):
     return jpeg_dimensions(image_path)
 
 
-def _inline_source_terms(image_path, provenance):
-    terms = set(re.findall(r"[a-z0-9]+", _inline_plain(
-        image_path + " " + provenance.get("alt", "")
-    )))
-    name = Path(image_path).stem.removeprefix("schemat-")
-    if name in INLINE_DIAGRAMS:
-        terms.update(INLINE_DIAGRAMS[name][1])
-    return terms
 
 
-def _inline_sources(rel, title_txt, body_text, used_paths):
-    """Buduje bezpieczną, kontekstową kolejkę: temat strony, potem pula działu."""
-    section = rel.split("/", 1)[0] if "/" in rel else ""
-    strong_context = _inline_plain(f"{rel} {title_txt}").replace("-", " ")
-    body_context = _inline_plain(body_text)
-    ranked = {}
-
-    def add(image_path, score, order):
+def _inline_sources(rel, used_paths):
+    """Zwraca wyłącznie ręcznie zatwierdzone media dla konkretnej strony."""
+    sources = []
+    for image_path, anchors in INLINE_PAGE_VISUALS.get(rel, ()):
         if image_path in used_paths or image_path not in IMAGE_PROVENANCE:
-            return
+            continue
         provenance = IMAGE_PROVENANCE[image_path]
         dimensions = _inline_dimensions(image_path, provenance)
-        if not dimensions:
-            return
-        current = ranked.get(image_path)
-        candidate = (score, order, image_path, provenance, dimensions)
-        if current is None or candidate[:2] > current[:2]:
-            ranked[image_path] = candidate
-
-    # Nazwany w tytule lub slugu gatunek, typ łowiska albo sprzęt daje najściślej
-    # dopasowane zdjęcie. Samo przypadkowe słowo w długim tekście nie wystarcza.
-    context_words = set(re.findall(r"[a-z0-9]+", strong_context))
-    for order, (image_path, provenance) in enumerate(IMAGE_PROVENANCE.items()):
-        if provenance.get("kind") == "schemat":
-            continue
-        stem_words = set(re.findall(r"[a-z0-9]+", _inline_plain(Path(image_path).stem)))
-        if stem_words and all(len(word) >= 3 for word in stem_words) and stem_words <= context_words:
-            add(image_path, 260, -order)
-
-    # Schemat jest premiowany mocno za tytuł/slug, słabiej za konkretny motyw,
-    # który rzeczywiście powraca w treści. Ogólne słowa nie losują obcych zdjęć.
-    for order, (name, (_alt, terms)) in enumerate(INLINE_DIAGRAMS.items()):
-        image_path = f"/assets/img/tematy/schemat-{name}.svg"
-        normalized_terms = tuple(_inline_plain(term) for term in terms)
-        strong_hits = sum(term in strong_context for term in normalized_terms)
-        body_hits = sum(body_context.count(term) for term in normalized_terms)
-        if strong_hits:
-            add(image_path, 240 + strong_hits, -order)
-        elif body_hits >= 2:
-            add(image_path, 120 + min(body_hits, 12), -order)
-
-    fallback = INLINE_SECTION_FALLBACKS.get(section, INLINE_SECTION_FALLBACKS[""])
-    for order, image_path in enumerate(fallback):
-        add(image_path, 200 - order, -order)
-
-    return sorted(ranked.values(), key=lambda item: (-item[0], -item[1], item[2]))
+        if dimensions:
+            sources.append((image_path, provenance, dimensions, anchors))
+    return sources
 
 
 def _inline_used_paths(src, page_dir):
@@ -2940,29 +2869,38 @@ def _inline_used_paths(src, page_dir):
     }
 
 
-def _inline_spaced_boundaries(candidates, wanted, article_start, article_end, src):
-    """Wybiera granice równomiernie po widocznym tekście, z odstępem treści."""
-    if not candidates or not wanted:
+def _inline_contextual_replacements(candidates, sources, wanted, article_start, src):
+    """Łączy obraz tylko z akapitem, którego nagłówek lub tekst pasuje do kotwic."""
+    if not candidates or not sources or not wanted:
         return []
-    total = len(_field_note_text(src[article_start:article_end]))
     indexed = []
     for candidate in candidates:
-        progress = len(_field_note_text(src[article_start:candidate["start"]]))
-        indexed.append((progress, candidate))
+        before = src[article_start:candidate["start"]]
+        headings = list(re.finditer(r"<h[23]\b[^>]*>(.*?)</h[23]>", before, re.I | re.S))
+        heading = _field_note_text(headings[-1].group(1)) if headings else ""
+        context = _inline_plain(f"{heading} {candidate['text']}")
+        progress = len(_field_note_text(before))
+        indexed.append((progress, candidate, context))
     selected = []
-    for slot in range(wanted):
-        target = total * (slot + 1) / (wanted + 1)
+    for source in sources:
+        anchors = tuple(_inline_plain(anchor) for anchor in source[3])
         eligible = [
-            (abs(progress - target), progress, candidate)
-            for progress, candidate in indexed
-            if candidate not in selected
-            and all(abs(progress - chosen_progress) >= 500 for chosen_progress, _chosen in selected)
+            (-sum(anchor in context for anchor in anchors), progress, candidate, source)
+            for progress, candidate, context in indexed
+            if any(anchor in context for anchor in anchors)
+            and all(candidate is not chosen[2] for chosen in selected)
+            and all(abs(progress - chosen[1]) >= 500 for chosen in selected)
         ]
-        if not eligible:
-            continue
-        _distance, progress, candidate = min(eligible, key=lambda item: (item[0], item[1]))
-        selected.append((progress, candidate))
-    return [candidate for _progress, candidate in sorted(selected)]
+        if eligible:
+            selected.append(min(eligible, key=lambda item: (item[0], item[1])))
+        if len(selected) >= wanted:
+            break
+    return [
+        (candidate, source)
+        for _negative_hits, _progress, candidate, source in sorted(
+            selected, key=lambda item: item[1]
+        )
+    ]
 
 
 def _inline_credit(image_path, provenance):
@@ -3005,7 +2943,7 @@ def _inline_markup(image_path, provenance, dimensions, title_txt, section, index
 
 
 def inject_inline_visuals(src, rel, title_txt, page_dir):
-    """Odtwarza śródtekstowe media po leadzie, wyłącznie w bezpiecznych granicach."""
+    """Odtwarza wyłącznie media przypisane do konkretnej strony i treści."""
     src = strip_inline_visuals(src)
     target = inline_visual_count(len(article_text(src).split()))
     if not target:
@@ -3022,24 +2960,22 @@ def inject_inline_visuals(src, rel, title_txt, page_dir):
                 _inline_candidate_items(article, src, auto_ranges),
             ))
     candidates = [item for _article, items in article_candidates for item in items]
-    sources = _inline_sources(
-        rel, title_txt, article_text(src), _inline_used_paths(src, page_dir)
-    )
+    sources = _inline_sources(rel, _inline_used_paths(src, page_dir))
     chosen = min(target, len(candidates), len(sources))
     if not chosen:
         return src
     if len(article_candidates) == 1:
         article, items = article_candidates[0]
-        boundaries = _inline_spaced_boundaries(
-            items, chosen, article["start"], article["end"], src,
+        replacements = _inline_contextual_replacements(
+            items, sources, chosen, article["start"], src,
         )
     else:
-        boundaries = sorted(candidates, key=lambda item: item["start"])[:chosen]
-    # Zmiana od końca zachowuje pierwotne offsety wszystkich wcześniejszych granic.
+        replacements = []
+    if not replacements:
+        return src
     section = rel.split("/", 1)[0] if "/" in rel else ""
-    replacements = list(zip(boundaries, sources[:len(boundaries)]))
     for index, (candidate, source) in reversed(list(enumerate(replacements))):
-        _score, _fallback, image_path, provenance, dimensions = source
+        image_path, provenance, dimensions, _anchors = source
         markup = _inline_markup(image_path, provenance, dimensions, title_txt, section, index)
         src = src[:candidate["start"]] + markup + src[candidate["start"]:]
     return src
@@ -3700,41 +3636,47 @@ def run_inline_visual_fixtures():
     def paragraph(words, topic="spinning feeder"):
         return "<p>" + " ".join([topic] * words) + ".</p>"
 
+    unlisted = (
+        '<article class="article-card">'
+        + "".join(paragraph(70) for _ in range(7)) + "</article>"
+    )
+    if inject_inline_visuals(
+        unlisted, "techniki/test.html", "Spinning i feeder", ROOT
+    ) != unlisted:
+        raise AssertionError("strona bez jawnego przypisania otrzymała losową ilustrację")
+
     regular = (
         '<article class="article-card"><figure class="article-lead-visual">'
         '<img src="/assets/img/ryby/szczupak.jpg" alt="lead" /></figure>'
+        '<h2>Zasada metody</h2>'
         + "".join(paragraph(70) for _ in range(7)) + "</article>"
     )
     transformed = inject_inline_visuals(
-        regular, "techniki/test.html", "Spinning i feeder", ROOT
+        regular, "techniki/spinning.html", "Spinning", ROOT
     )
     generated = inline_visual_re.findall(transformed)
-    if len(generated) != 2:
-        raise AssertionError("długi fixture nie otrzymał dwóch wizualizacji")
+    if len(generated) != 1:
+        raise AssertionError("jawnie przypisana strona nie otrzymała jednej ilustracji")
+    if "/assets/img/tematy/schemat-spinning.svg" not in transformed:
+        raise AssertionError("strona otrzymała ilustrację niezgodną z ręcznym przypisaniem")
     if '/assets/img/ryby/szczupak.jpg" alt="lead"' not in transformed:
         raise AssertionError("fixture utracił lead")
-    inline_sources = re.findall(
-        r'class="article-inline-image" src="([^"]+)"', transformed
-    )
-    if len(inline_sources) != len(set(inline_sources)):
-        raise AssertionError("źródła śródtekstowe nie są różne")
-    if "/assets/img/ryby/szczupak.jpg" in inline_sources:
-        raise AssertionError("powielono obraz leadu")
     if inject_inline_visuals(
-        transformed, "techniki/test.html", "Spinning i feeder", ROOT
+        transformed, "techniki/spinning.html", "Spinning", ROOT
     ) != transformed:
         raise AssertionError("druga transformacja nie jest identyczna")
     if strip_inline_visuals(transformed) != regular:
         raise AssertionError("strip markerów nie odtwarza fixture")
 
     nested = (
-        '<article class="article-card"><section class="article-section">'
-        '<div>' + paragraph(260, "karp zestaw") + '</div></section>'
+        '<article class="article-card"><h2>Hair rig — istota zestawu włosowego</h2>'
+        '<section class="article-section"><div>'
+        + paragraph(260, "karp zestaw") + '</div></section>'
         '<section class="article-section"><div>'
         + paragraph(260, "karp zestaw") + "</div></section></article>"
     )
     nested_out = inject_inline_visuals(
-        nested, "techniki/nested.html", "Zestaw karpiowy", ROOT
+        nested, "techniki/karpiowanie.html", "Zestaw karpiowy", ROOT
     )
     if not inline_visual_re.search(nested_out) or not re.search(
         r"</section><!--inline-visual:auto-->", nested_out
