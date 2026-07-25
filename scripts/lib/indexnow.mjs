@@ -1,13 +1,12 @@
 // Wspólny helper IndexNow (Bing/Yandex/Seznam — Google nie wspiera).
-// Używany przez skrypty promo (/x-posty) jako dodatkowy
-// „szturchaniec" dla świeżo promowanych artykułów.
+// Używany przez automatyzację wdrożenia i skrypty promo (/x-posty).
 //
-// UWAGA: IndexNow wymaga pliku-klucza dostępnego pod https://fish-point.pl/<KEY>.txt
-// (o treści równej kluczowi). Dopóki taki plik nie istnieje, ping zwróci 403/422,
-// ale NIGDY nie wywali runu. Ustaw własny klucz przez zmienną INDEXNOW_KEY albo
-// wpisz go niżej i dodaj plik <KEY>.txt do repo strony.
+// Klucz IndexNow nie jest sekretem: protokół wymaga publicznego pliku
+// https://fish-point.pl/<KEY>.txt. Zmienna środowiskowa pozwala go obrócić
+// bez zmiany kodu, o ile odpowiadający plik trafi na produkcję.
 const HOST = 'fish-point.pl';
-const KEY = process.env.INDEXNOW_KEY || '';
+const DEFAULT_KEY = 'a39db5495ae6e2738bab111816879bac94952af2c3003f3a11b16182cb7eb013';
+const KEY = process.env.INDEXNOW_KEY || DEFAULT_KEY;
 
 /**
  * Zgłasza listę URL-i do IndexNow. Nigdy nie rzuca — zwraca status HTTP albo

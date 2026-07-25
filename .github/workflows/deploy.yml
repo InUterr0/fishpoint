@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
 
       - name: Setup Node
         uses: actions/setup-node@v5
@@ -44,3 +46,8 @@ jobs:
         run: railway up --service fishpoint --ci
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
+      - name: Submit changed URLs to IndexNow
+        run: node scripts/submit-indexnow.mjs
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
