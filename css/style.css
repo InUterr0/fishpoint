@@ -1613,45 +1613,6 @@ html.dark .analytics-consent { border-color: rgba(255,255,255,.14); background: 
 html.dark .analytics-consent h2 { color: var(--white); }
 html.dark .analytics-consent-reject { border-color: rgba(255,255,255,.35) !important; color: var(--white); }
 /* === Strona główna: redakcyjny pulpit zamiast równych, anonimowych kafli === */
-.home-hero { min-height: min(680px, calc(100svh - 78px)); }
-.home-hero .hero-grid {
-  grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
-  padding: 64px 0 96px;
-}
-.home-hero .hero-content { max-width: 760px; }
-.home-hero .hero-card {
-  align-self: center;
-  transform: none;
-  border: 1px solid rgba(255,255,255,.65);
-  border-left: 6px solid var(--orange);
-  background:
-    linear-gradient(135deg, rgba(255,255,255,.96), rgba(250,246,236,.94));
-  box-shadow: 0 28px 70px rgba(4,18,22,.34);
-}
-
-.home-journey {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: -42px;
-  padding: 24px;
-  overflow: visible;
-  border: 1px solid rgba(17,49,47,.11);
-  border-left: 1px solid rgba(17,49,47,.11);
-  background: rgba(253,252,247,.97);
-  box-shadow: 0 24px 64px rgba(13,43,48,.14);
-  backdrop-filter: blur(12px);
-}
-.home-journey > .answer-first { grid-column: span 4; margin: 0; }
-.home-journey > .decision-table { grid-column: span 8; margin: 0; }
-.home-journey > h2 { grid-column: 1 / -1; margin: 8px 0 0; font-size: 1.35rem; }
-.home-journey > .beginner-mistakes { grid-column: 1 / -1; margin: 0; }
-.home-journey > .methodology { grid-column: span 6; margin: 0; }
-.home-journey > .source-list { grid-column: span 6; margin: 0; }
-.home-journey > .article-next-step { grid-column: 1 / -1; margin: 0; }
-
 .home-directory-heading + .equipment-grid {
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 16px;
@@ -1660,7 +1621,9 @@ html.dark .analytics-consent-reject { border-color: rgba(255,255,255,.35) !impor
 .home-directory-heading + .equipment-grid > .category-card:nth-child(1) { grid-column: span 4; }
 .home-directory-heading + .equipment-grid > .category-card:nth-child(2) { grid-column: span 2; }
 .home-directory-heading + .equipment-grid > .category-card:nth-child(6),
-.home-directory-heading + .equipment-grid > .category-card:nth-child(7) { grid-column: span 3; }
+.home-directory-heading + .equipment-grid > .category-card:nth-child(7),
+.home-directory-heading + .equipment-grid > .category-card:nth-child(8),
+.home-directory-heading + .equipment-grid > .category-card:nth-child(9) { grid-column: span 3; }
 .home-directory-heading + .equipment-grid .icon {
   display: grid;
   place-items: center;
@@ -1691,18 +1654,9 @@ html.dark .analytics-consent-reject { border-color: rgba(255,255,255,.35) !impor
 .home-news-heading + .blog-grid > .blog-card:nth-child(2) { grid-column: span 4; }
 .home-news-heading + .blog-grid > .blog-card:first-child .blog-card-img { height: 290px; }
 
-html.dark .home-journey {
-  border-color: rgba(255,255,255,.1);
-  background: rgba(13,40,46,.97);
-}
 
 @media (max-width: 840px) {
   .section { padding: 56px 0; }
-  .home-hero .hero-grid { grid-template-columns: 1fr; padding: 44px 0 76px; }
-  .home-journey { grid-template-columns: 1fr; margin-top: -24px; padding: 14px; }
-  .home-journey > :is(.answer-first, .decision-table, .methodology, .source-list, .article-next-step, h2, .beginner-mistakes) {
-    grid-column: 1;
-  }
   .home-directory-heading + .equipment-grid,
   .home-news-heading + .blog-grid { grid-template-columns: 1fr; }
   .home-directory-heading + .equipment-grid > .category-card,
@@ -1710,6 +1664,8 @@ html.dark .home-journey {
   .home-directory-heading + .equipment-grid > .category-card:nth-child(2),
   .home-directory-heading + .equipment-grid > .category-card:nth-child(6),
   .home-directory-heading + .equipment-grid > .category-card:nth-child(7),
+  .home-directory-heading + .equipment-grid > .category-card:nth-child(8),
+  .home-directory-heading + .equipment-grid > .category-card:nth-child(9),
   .home-news-heading + .blog-grid > .blog-card,
   .home-news-heading + .blog-grid > .blog-card:first-child,
   .home-news-heading + .blog-grid > .blog-card:nth-child(2) { grid-column: 1; }

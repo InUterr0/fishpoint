@@ -5,11 +5,11 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-07-24.
+> Najnowsza merytoryczna zmiana: 2026-07-28.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
-- [Jak zacząć wędkować? Sprzęt, ryby i techniki krok po kroku](https://fish-point.pl/): Nowoczesna strona wędkarska: sprzęt, przynęty, poradniki, łowiska i aktualności dla pasjonatów wędkarstwa.
+- [Aktualności](https://fish-point.pl/): Nowoczesna strona wędkarska: sprzęt, przynęty, poradniki, łowiska i aktualności dla pasjonatów wędkarstwa.
 
 ## Blog
 
@@ -39,16 +39,19 @@
 - [Arkadiusz Fit wygrał pierwsze okręgowe zawody Method Feeder w Opolu](https://fish-point.pl/aktualnosci/pierwsze-okregowe-method-feeder-opole-2026.html): Arkadiusz Fit zwyciężył w pierwszych okręgowych zawodach Method Feeder Okręgu PZW Opole, rozegranych 5 lipca 2026 r. na Poliwodzie.
 - [Przegląd nowości sezonu: selekcja rozwiązań, nie rekomendacje](https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html): Selekcja rozwiązań z datowanych kart producentów: blanki, kołowrotki, sonar i sprzęt C&R. To nie ranking ani rekomendacja zakupu.
 - [Jaka przynęta na spinning: drzewo doboru i bezpieczny zestaw](https://fish-point.pl/aktualnosci/przyneta-na-spinning.html): Dobierz przynętę spinningową według gatunku, głębokości, zaczepów i aktywności. Gumy, woblery, uzbrojenie oraz przypon bez zgadywania.
+- [Puchar Komendanta Policji w Rawiczu dla Pawła Błasiaka](https://fish-point.pl/aktualnosci/puchar-komendanta-rawicz-zawody-wedkarskie-2026.html): Zawody wędkarskie policjantów nad Balatonem w Miejskiej Górce: podium Pucharu Komendanta Policji w Rawiczu i niemal 4-kilogramowy szczupak.
 - [Rekord okonia 2026: czy jest potwierdzony?](https://fish-point.pl/aktualnosci/rekord-okonia-2026.html): Nie ma publicznego protokołu potwierdzającego rekord okonia 2026. Zobacz procedurę pomiaru, zgłoszenia i bezpiecznego C&R.
 - [Czy sum 292 cm jest potwierdzonym rekordem?](https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html): Brak publicznego protokołu potwierdzającego suma 292 cm. Zobacz zasady pomiaru, zgłoszenia i bezpiecznego C&R.
 - [Plan nocnej zasiadki karpiowej: bezpieczeństwo i taktyka](https://fish-point.pl/aktualnosci/relacja-nocna-zasiadka.html): Plan nocnej zasiadki karpiowej: rozpoznanie wody, bezpieczny harmonogram, dobrostan ryb, światło, łączność i checklista.
 - [Sezon na szczupaka: legalny plan otwarcia i decyzje nad wodą](https://fish-point.pl/aktualnosci/sezon-na-szczupaka.html): Sezon na szczupaka bez zgadywania: legalność konkretnej wody, plan otwarcia, miejsca, przypony, C&R oraz warianty pogody.
+- [Śnięcie ryb w starorzeczu Warty w Radolinie: co ustalił WIOŚ](https://fish-point.pl/aktualnosci/sniecie-ryb-starorzecze-warty-radolina-2026.html): WIOŚ Poznań opisał zgłoszenie śniętego narybku w starorzeczu Warty w Radolinie: terenowo 2,6 mg/l tlenu, a analiza laboratoryjna próbek trwa.
 - [Spinning na szczupaka jesienią](https://fish-point.pl/aktualnosci/spinning-na-szczupaka-jesienia.html): Spinning na szczupaka jesienią: gdzie szukać dużych ryb, jakie przynęty i tempo prowadzenia, dobór sprzętu, pogoda i bezpieczne wypuszczanie ikrzyc.
 - [Street fishing](https://fish-point.pl/aktualnosci/street-fishing-od-czego-zaczac.html): Street fishing bez ryzyka: plan jednej miejskiej sesji, legalny dostęp, mobilny zestaw, rozpoznanie konstrukcji i bezpieczne decyzje.
 - [Sum 125 cm ze Starej Odry: głośny połów z Kotowic](https://fish-point.pl/aktualnosci/sum-125-cm-stara-odra-2026.html): Według lokalnego reportażu Jan Zając złowił 20 lipca 2026 r. w Kotowicach suma 125 cm i 19,5 kg. Zebraliśmy potwierdzone granice tej informacji.
 - [Sum nocą](https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html): Sum nocą w lipcu i sierpniu: kiedy i gdzie szukać ryb latem, metody gruntowe, żywiec, spinning i klongowanie, mocny sprzęt oraz etyka nocnego łowienia.
 - [Troć jeziorowa 8,5 kg z Tarnobrzega bez rekordu](https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html): Doniesienia o troci jeziorowej 8,5 kg z Jeziora Tarnobrzeskiego. Sprawdzamy zgodne fakty, rozbieżne daty oraz status oficjalnego rekordu Polski.
 - [Wędkarstwo morskie dla początkujących](https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html): Wędkarstwo morskie na Bałtyku dla początkujących: łowienie z brzegu i z kutra, sprzęt odporny na sól, przynęty, gatunki, sezony, bezpieczeństwo oraz formalności.
+- [Wiślisko Krajskie: PZW kończy dzierżawę, zakaz połowu według komunikatu](https://fish-point.pl/aktualnosci/wislisko-krajskie-koniec-dzierzawy-pzw-2026.html): Komunikaty PZW i RZGW Kraków o Wiślisku Krajskim w Spytkowicach: zakończenie dzierżawy, zakaz połowu według PZW, przyducha, kotewka i rozbieżne stanowiska stron.
 - [Okresy ochronne ryb 2026 i wymiary: pełny zakres aktu](https://fish-point.pl/aktualnosci/wymiary-i-okresy-ochronne-2026.html): Okresy ochronne ryb 2026 i wymiary z pełnego § 6–7 aktu: odcinki, § 7 ust. 2, znaczenie „—” i kontrola lokalnych zasad.
 - [Nowe wytyczne dla Wód Polskich: co oznaczają dla łowisk?](https://fish-point.pl/aktualnosci/wytyczne-wody-polskie-obwody-rybackie-2026.html): MRiRW opublikowało wytyczne dla Wód Polskich dotyczące rybactwa śródlądowego. Wyjaśniamy ich wpływ na zarządzanie obwodami i zasady połowu.
 - [Bóbr pod Pilchowicami: monitoring i zakaz połowu](https://fish-point.pl/aktualnosci/zakaz-polowu-bobr-lipiec-2026.html): Bóbr w lipcu 2026: co potwierdziły pomiary WIOŚ, gdzie obowiązywał zakaz połowu i czego wędkarz nie powinien zakładać na podstawie samego monitoringu.

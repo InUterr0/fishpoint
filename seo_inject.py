@@ -576,7 +576,7 @@ SECTIONS = {
 # Każdy główny dział ma osobny link i pełne podmenu. Linki pomocnicze są
 # widoczne w drugim rzędzie na desktopie i w osobnej grupie w menu mobilnym.
 NAV_TOP = [
-    ("Zacznij", "pierwsze-kroki/", "pierwsze-kroki"),
+    ("Pierwsze kroki", "pierwsze-kroki/", "pierwsze-kroki"),
     ("Sprzęt", "sprzet/", "sprzet"),
     ("Techniki", "techniki/", "techniki"),
     ("Ryby", "ryby/", "ryby"),
@@ -1264,18 +1264,6 @@ def inject_fishpoint_method(src, rel):
 # konkretną decyzję. Wszystkie odnośniki są lokalne i przed renderem dodatkowo
 # sprawdzane względem katalogu projektu.
 CONTENT_ADVANTAGES = {
-    "index.html": {
-        "answer": "Na start wybierz prostą ścieżkę: poznaj formalności, skompletuj podstawowy zestaw i zaplanuj łatwy pierwszy wyjazd. Nie musisz podejmować wszystkich decyzji naraz.",
-        "table": ("Od czego zacząć", ("Etap", "Co ustalić", "Następny krok"), (
-            ("1. Zasady", "Kto zarządza wybraną wodą i jakie dokumenty obowiązują.", "Sprawdź formalności."),
-            ("2. Zestaw", "Jaką metodą chcesz zacząć i co jest do niej niezbędne.", "Wybierz podstawowy komplet."),
-            ("3. Wyjazd", "Gdzie bezpiecznie stanąć i co zabrać.", "Przejdź checklistę."),
-        )),
-        "mistakes": ("Kupowanie przypadkowych akcesoriów przed wyborem metody.", "Traktowanie jednego regulaminu jako zasad dla wszystkich wód.", "Odkładanie przygotowania pierwszego wyjazdu na ostatnią chwilę."),
-        "method": "To mapa tematów, nie lista obowiązkowych zakupów ani obietnica wyniku nad wodą.",
-        "source_prompt": "Przy zasadach połowu zawsze porównaj poradnik z aktualnym zezwoleniem i regulaminem gospodarza wody.",
-        "links": (("/pierwsze-kroki/index.html", "Przewodnik dla początkujących"), ("/pierwsze-kroki/pozwolenia-karta-wedkarska.html", "Dokumenty i zezwolenia"), ("/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html", "Pierwszy wyjazd")),
-    },
     "pierwsze-kroki/index.html": {
         "answer": "Najpierw sprawdź zasady dla wody, na którą chcesz jechać. Potem wybierz prosty zestaw i przygotuj pierwszy wyjazd z krótką listą rzeczy do zabrania.",
         "table": ("Plan początkującego", ("Kolejność", "Decyzja", "Po czym poznać, że możesz iść dalej"), (
@@ -1970,7 +1958,7 @@ def _advantage_links(items):
 
 def build_content_advantage(rel, config):
     """Buduje jawnie oznaczony, semantyczny blok odpowiedzi z konfiguracji strony."""
-    block_class = "info-block content-advantage home-journey" if rel == "index.html" else "info-block content-advantage"
+    block_class = "info-block content-advantage"
     table_title, headers, rows = config["table"]
     table_class = "starter-kit" if "pierwszy-zestaw" in rel else "decision-table"
     table_html = (
@@ -2002,15 +1990,6 @@ def build_content_advantage(rel, config):
         f'<p><strong>Następny krok:</strong> {links}</p></section>'
         if links else ""
     )
-    if rel == "index.html":
-        return (
-            f'{CONTENT_ADVANTAGE_BEGIN}<section class="{block_class}" '
-            f'aria-label="Praktyczny skrót">'
-            f'<section class="answer-first" aria-label="Najkrótsza odpowiedź">'
-            f'<h2>Plan pierwszego wyjazdu</h2>'
-            f'<p>{html.escape(config["answer"])}</p></section>'
-            f'{table_html}{next_step}</section>{CONTENT_ADVANTAGE_END}'
-        )
     return (
         f'{CONTENT_ADVANTAGE_BEGIN}<section class="{block_class}" '
         f'aria-label="Praktyczny skrót">'
@@ -2033,7 +2012,7 @@ def inject_content_advantage(src, rel):
     if not config:
         return src
     block = build_content_advantage(rel, config)
-    if rel in ("index.html", "pierwsze-kroki/index.html"):
+    if rel == "pierwsze-kroki/index.html":
         return re.sub(r'(<section class="section\b[^>]*>)', block + r"\1", src, count=1)
     if FISHPOINT_METHOD_END in src:
         return src.replace(FISHPOINT_METHOD_END, FISHPOINT_METHOD_END + block, 1)
