@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-07-28.
+> Najnowsza merytoryczna zmiana: 2026-08-01.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -33,6 +33,7 @@
 - [PZW powołało Komisję ds. cyfryzacji: co już wiadomo](https://fish-point.pl/aktualnosci/komisja-cyfryzacji-pzw-2026.html): Komisja ds. cyfryzacji PZW, decyzje Okręgu Katowice i e-zezwolenia Rzeszowa: potwierdzone fakty oraz granice wniosków.
 - [Mikroguma dla początkujących](https://fish-point.pl/aktualnosci/mikroguma-dla-poczatkujacych.html): Mikroguma dla początkujących: jak dobrać pierwszy zestaw LRF, jakie przynęty i montaże wybrać oraz jak nauczyć się techniki i rozpoznawania brań krok po kroku.
 - [Spławikowe MP 2026: Jasiczak i Pomykała](https://fish-point.pl/aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html): Wyniki Spławikowych Mistrzostw Polski 2026 na Warcie w Świerkocinie: Dominik Jasiczak wygrał seniorów, a Wiktor Pomykała kategorię U-25.
+- [73. MP w wędkarstwie rzutowym: Bieruń 2026](https://fish-point.pl/aktualnosci/mistrzostwa-polski-wedkarstwo-rzutowe-bierun-2026.html): 73. Indywidualne Mistrzostwa Polski w wędkarstwie rzutowym odbyły się 25–26 lipca 2026 r. w Bieruniu. Oficjalna relacja PZW podaje 47 startujących i dziewięć konkurencji.
 - [Na co bierze karp latem](https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html): Jak dobrać przynętę i nęcenie na karpia latem do temperatury, pory, tlenu i presji. Praktyczne drzewo decyzji oraz protokół bezpiecznego wypuszczania.
 - [PZW Zamość: 1 kg zanęty na czterech zbiornikach](https://fish-point.pl/aktualnosci/ograniczenie-zanet-pzw-zamosc-lato-2026.html): PZW Zamość: od 1 lipca 2026 r. limit 1 kg zanęty na dobę na Krynicach, Mirczu, Starej Wsi i Wereszynie; 5 l na turę zawodów.
 - [Okoń jesienią na mikrogumę i drop shot](https://fish-point.pl/aktualnosci/okon-jesienia-mikroguma.html): Okoń jesienią na mikrogumę i drop shot: jak znaleźć kotły i ławice, dobrać jig, gumki i UL, prowadzić przynętę i rozgrzać branie. Praktyczny poradnik spinningowy.
@@ -44,11 +45,13 @@
 - [Czy sum 292 cm jest potwierdzonym rekordem?](https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html): Brak publicznego protokołu potwierdzającego suma 292 cm. Zobacz zasady pomiaru, zgłoszenia i bezpiecznego C&R.
 - [Plan nocnej zasiadki karpiowej: bezpieczeństwo i taktyka](https://fish-point.pl/aktualnosci/relacja-nocna-zasiadka.html): Plan nocnej zasiadki karpiowej: rozpoznanie wody, bezpieczny harmonogram, dobrostan ryb, światło, łączność i checklista.
 - [Sezon na szczupaka: legalny plan otwarcia i decyzje nad wodą](https://fish-point.pl/aktualnosci/sezon-na-szczupaka.html): Sezon na szczupaka bez zgadywania: legalność konkretnej wody, plan otwarcia, miejsca, przypony, C&R oraz warianty pogody.
+- [Śnięte ryby w Jeziorce: co ustalił WIOŚ w Wólce Kozodawskiej](https://fish-point.pl/aktualnosci/sniecie-ryb-jeziorka-wolka-kozodawska-2026.html): WIOŚ opisał śnięte ryby w Jeziorce w Wólce Kozodawskiej, wyniki terenowe z 3 i 7 lipca oraz trwające badania laboratoryjne i kontrolę.
 - [Śnięcie ryb w starorzeczu Warty w Radolinie: co ustalił WIOŚ](https://fish-point.pl/aktualnosci/sniecie-ryb-starorzecze-warty-radolina-2026.html): WIOŚ Poznań opisał zgłoszenie śniętego narybku w starorzeczu Warty w Radolinie: terenowo 2,6 mg/l tlenu, a analiza laboratoryjna próbek trwa.
 - [Spinning na szczupaka jesienią](https://fish-point.pl/aktualnosci/spinning-na-szczupaka-jesienia.html): Spinning na szczupaka jesienią: gdzie szukać dużych ryb, jakie przynęty i tempo prowadzenia, dobór sprzętu, pogoda i bezpieczne wypuszczanie ikrzyc.
 - [Street fishing](https://fish-point.pl/aktualnosci/street-fishing-od-czego-zaczac.html): Street fishing bez ryzyka: plan jednej miejskiej sesji, legalny dostęp, mobilny zestaw, rozpoznanie konstrukcji i bezpieczne decyzje.
 - [Sum 125 cm ze Starej Odry: głośny połów z Kotowic](https://fish-point.pl/aktualnosci/sum-125-cm-stara-odra-2026.html): Według lokalnego reportażu Jan Zając złowił 20 lipca 2026 r. w Kotowicach suma 125 cm i 19,5 kg. Zebraliśmy potwierdzone granice tej informacji.
 - [Sum nocą](https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html): Sum nocą w lipcu i sierpniu: kiedy i gdzie szukać ryb latem, metody gruntowe, żywiec, spinning i klongowanie, mocny sprzęt oraz etyka nocnego łowienia.
+- [Świnna Poręba: wydłużone godziny połowu od 1 lipca 2026](https://fish-point.pl/aktualnosci/swinna-poreba-wydluzone-godziny-2026.html): Od 1 lipca 2026 r. na zbiorniku Świnna Poręba (Rejon II) obowiązuje połów wyłącznie z brzegu, na dwie wędki: od godziny przed wschodem do trzech godzin po zachodzie słońca.
 - [Troć jeziorowa 8,5 kg z Tarnobrzega bez rekordu](https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html): Doniesienia o troci jeziorowej 8,5 kg z Jeziora Tarnobrzeskiego. Sprawdzamy zgodne fakty, rozbieżne daty oraz status oficjalnego rekordu Polski.
 - [Wędkarstwo morskie dla początkujących](https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html): Wędkarstwo morskie na Bałtyku dla początkujących: łowienie z brzegu i z kutra, sprzęt odporny na sól, przynęty, gatunki, sezony, bezpieczeństwo oraz formalności.
 - [Wiślisko Krajskie: PZW kończy dzierżawę, zakaz połowu według komunikatu](https://fish-point.pl/aktualnosci/wislisko-krajskie-koniec-dzierzawy-pzw-2026.html): Komunikaty PZW i RZGW Kraków o Wiślisku Krajskim w Spytkowicach: zakończenie dzierżawy, zakaz połowu według PZW, przyducha, kotewka i rozbieżne stanowiska stron.

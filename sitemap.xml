@@ -32,6 +32,18 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
+      <image:title>Wędki ustawione na brzegu — ilustracja wędkarstwa rzutowego</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
+      <image:title>Jezioro — lokalne zasady wędkowania na zbiorniku Świnna Poręba</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/pogoda.jpg</image:loc>
+      <image:title>Burzowe chmury nad wodą — warunki sprzyjające deficytowi tlenu</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
       <image:title>Starorzecze — niski stan wody i ryzyko deficytu tlenowego</image:title>
     </image:image>
@@ -68,16 +80,8 @@
       <image:title>Kanał i łodzie — zarządzanie publicznymi obwodami rybackimi</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
-      <image:title>Jezioro — woda otwarta na pierwsze wyprawy z kajaka</image:title>
-    </image:image>
-    <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
       <image:title>Mikroguma dla początkujących — pierwszy zestaw, przynęty i technika</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
-      <image:title>Wędki ustawione na brzegu — dobór wędki spinningowej</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sandacz.jpg</image:loc>
@@ -331,6 +335,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/aktualnosci/mistrzostwa-polski-wedkarstwo-rzutowe-bierun-2026.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
+      <image:title>Wędki ustawione na brzegu morza</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -449,6 +463,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/aktualnosci/sniecie-ryb-jeziorka-wolka-kozodawska-2026.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/pogoda.jpg</image:loc>
+      <image:title>Burzowe chmury nadciągające nad jezioro</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/aktualnosci/sniecie-ryb-starorzecze-warty-radolina-2026.html</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -496,6 +520,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sum.jpg</image:loc>
       <image:title>Ilustracja do artykułu: Sum nocą</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/swinna-poreba-wydluzone-godziny-2026.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
+      <image:title>Jezioro Śniardwy</image:title>
     </image:image>
   </url>
   <url>
