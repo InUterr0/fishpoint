@@ -621,6 +621,27 @@ def main() -> int:
         "news index must contain every article exactly once",
         failures,
     )
+    home_news_targets = [
+        local_link_target(ROOT / "index.html", href)
+        for _category, hrefs in menu.news_cards
+        for href in hrefs
+    ]
+    latest_news_targets = [
+        local_link_target(ROOT / "aktualnosci/index.html", href)
+        for category, hrefs in news.news_cards
+        if category == "najnowsze"
+        for href in hrefs
+    ][:6]
+    check(
+        len(home_news_targets) == 6,
+        "homepage must contain exactly six latest news cards",
+        failures,
+    )
+    check(
+        home_news_targets == latest_news_targets,
+        "homepage news cards must match the six newest article cards in order",
+        failures,
+    )
 
     indexed_paths = {
         (ROOT / local_path(url)).resolve(): url

@@ -3752,7 +3752,62 @@ def llms_metadata_lines(canonical_url, newest_modified, scope):
     ]
 
 
+LATEST_NEWS_GRID_RE = re.compile(
+    r'<div class="section-heading" id="najnowsze">.*?</div>\s*'
+    r'<div class="blog-grid">(?P<cards>.*?)</div>',
+    re.S,
+)
+HOME_NEWS_GRID_RE = re.compile(
+    r'(?P<open><section id="aktualnosci"[^>]*>.*?<div class="blog-grid">)'
+    r'(?P<cards>.*?)'
+    r'(?P<close>\n\s*</div>\s*<p[^>]*><a class="btn btn-secondary" href="aktualnosci/">)',
+    re.S,
+)
+BLOG_CARD_RE = re.compile(r'<article class="blog-card">.*?</article>', re.S)
+
+
+def sync_home_news(limit=6):
+    """Synchronizuje karty strony głównej z początkiem sekcji „Najnowsze”."""
+    news_path = Path(ROOT) / "aktualnosci" / "index.html"
+    home_path = Path(ROOT) / "index.html"
+    news_src = news_path.read_text(encoding="utf-8")
+    home_src = home_path.read_text(encoding="utf-8")
+
+    latest_grid = LATEST_NEWS_GRID_RE.search(news_src)
+    if not latest_grid:
+        raise ValueError(f"{news_path}: brak sekcji najnowszych aktualności")
+    cards = BLOG_CARD_RE.findall(latest_grid.group("cards"))[:limit]
+    if len(cards) != limit:
+        raise ValueError(f"{news_path}: oczekiwano co najmniej {limit} kart aktualności")
+
+    home_cards = []
+    for card in cards:
+        card = card.replace("../assets/", "/assets/")
+        card = re.sub(
+            r'href="(?!https?://|/|#|aktualnosci/)([^"]+\.html(?:#[^"]*)?)"',
+            r'href="aktualnosci/\1"',
+            card,
+        )
+        home_cards.append("        " + card.strip().replace("\n", "\n        "))
+
+    payload = (
+        "\n        <!-- home-news:auto begin -->\n"
+        + "\n".join(home_cards)
+        + "\n        <!-- home-news:auto end -->"
+    )
+    updated, count = HOME_NEWS_GRID_RE.subn(
+        lambda match: match.group("open") + payload + match.group("close"),
+        home_src,
+        count=1,
+    )
+    if count != 1:
+        raise ValueError(f"{home_path}: brak siatki aktualności strony głównej")
+    if updated != home_src:
+        home_path.write_text(updated, encoding="utf-8")
+
+
 def main():
+    sync_home_news()
     pages = []
     for dirpath, _, files in os.walk(ROOT):
         if "/.git" in dirpath:

@@ -6,24 +6,28 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/kanaly.jpg</image:loc>
-      <image:title>Rzeka Bóbr i odcinki objęte monitoringiem jakości wody</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/zawody-feederowe-poradnik.jpg</image:loc>
-      <image:title>Wędkarze podczas zawodów Method Feeder</image:title>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
+      <image:title>Wędki ustawione na brzegu — ilustracja wędkarstwa rzutowego</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
-      <image:title>Jezioro objęte monitoringiem zakwitu złotej algi</image:title>
+      <image:title>Jezioro — lokalne zasady wędkowania na zbiorniku Świnna Poręba</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/cr.jpg</image:loc>
-      <image:title>Bezpieczne mierzenie ryby przed decyzją o wypuszczeniu</image:title>
+      <image:loc>https://fish-point.pl/assets/img/tematy/pogoda.jpg</image:loc>
+      <image:title>Burzowe chmury nad wodą — warunki sprzyjające deficytowi tlenu</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
-      <image:title>Karp przygotowany do bezpiecznego wypuszczenia</image:title>
+      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
+      <image:title>Starorzecze — niski stan wody i ryzyko deficytu tlenowego</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/aktualnosci/wislisko-krajskie-starorzecze-2026.jpg</image:loc>
+      <image:title>Ilustracja redakcyjna starorzecza z roślinnością wodną</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/aktualnosci/puchar-komendanta-rawicz-2026.jpg</image:loc>
+      <image:title>Zdjęcie z zawodów wędkarskich policjantów w Miejskiej Górce</image:title>
     </image:image>
   </url>
   <url>
