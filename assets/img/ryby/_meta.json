@@ -31,9 +31,10 @@
   },
   "wegorz": {
     "file": "assets/img/ryby/wegorz.jpg",
-    "artist": "GerardM",
-    "license": "CC BY-SA 3.0",
-    "page": "https://commons.wikimedia.org/w/index.php?curid=284678"
+    "artist": "David Perez",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Anguilla_anguilla_01_by-dpc.jpg",
+    "source_checked": "2026-08-01"
   },
   "karp": {
     "file": "assets/img/ryby/karp.jpg",
@@ -91,27 +92,31 @@
   },
   "lipien": {
     "file": "assets/img/ryby/lipien.jpg",
-    "artist": "Zsoldos Márton",
-    "license": "CC BY-SA 3.0",
-    "page": "https://commons.wikimedia.org/w/index.php?curid=10796695"
+    "artist": "Gilles San Martin",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Thymallus_thymallus2.jpg",
+    "source_checked": "2026-08-01"
   },
   "mietus": {
     "file": "assets/img/ryby/mietus.jpg",
-    "artist": "Achim R. Schloeffel",
-    "license": "CC BY-SA 3.0",
-    "page": "https://commons.wikimedia.org/w/index.php?curid=247447"
+    "artist": "USFWS Mountain-Prairie",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Burbot_(Lota_lota)_(52881169184).jpg",
+    "source_checked": "2026-08-01"
   },
   "troc-losos": {
     "file": "assets/img/ryby/troc-losos.jpg",
-    "artist": "User:Wolfgang Striewski",
+    "artist": "USFWS Mountain Prairie",
     "license": "Public domain",
-    "page": "https://commons.wikimedia.org/w/index.php?curid=1148722"
+    "page": "https://commons.wikimedia.org/wiki/File:Brown_Trout_(Salmo_trutta)_(53678765394).jpg",
+    "source_checked": "2026-08-01"
   },
   "certa": {
     "file": "assets/img/ryby/certa.jpg",
-    "artist": "No machine-readable author provided. Tokic assumed (based on copyright claims).",
-    "license": "CC BY-SA 2.5",
-    "page": "https://commons.wikimedia.org/wiki/File:Vimba_vimba.jpg"
+    "artist": "Emőke Dénes",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cypriniformes_-_Vimba_vimba_-_3.jpg",
+    "source_checked": "2026-08-01"
   },
   "wzdrega": {
     "file": "assets/img/ryby/wzdrega.jpg",
@@ -214,10 +219,10 @@
   },
   "piskorz": {
     "file": "assets/img/ryby/piskorz.jpg",
-    "artist": "Piet Spaans",
+    "artist": "George Chernilevsky",
     "license": "Public domain",
-    "page": "https://commons.wikimedia.org/wiki/File:Misgurnus_fossilis.jpg",
-    "source_checked": "2026-07-24",
+    "page": "https://commons.wikimedia.org/wiki/File:Misgurnus_fossilis_2009_G1.jpg",
+    "source_checked": "2026-08-01",
     "variants": [
       "assets/img/ryby/piskorz.jpg.webp",
       "assets/img/ryby/piskorz.jpg.avif"
@@ -236,10 +241,10 @@
   },
   "ciernik": {
     "file": "assets/img/ryby/ciernik.jpg",
-    "artist": "Ron Offermans",
-    "license": "CC BY-SA 3.0 / GFDL 1.2+",
-    "page": "https://commons.wikimedia.org/wiki/File:Gasterosteus_aculeatus.jpg",
-    "source_checked": "2026-07-24",
+    "artist": "Lorenz Seebauer",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Dreistachliger_Stichling_unterwasser.jpg",
+    "source_checked": "2026-08-01",
     "variants": [
       "assets/img/ryby/ciernik.jpg.webp",
       "assets/img/ryby/ciernik.jpg.avif"
@@ -280,10 +285,10 @@
   },
   "minog-rzeczny": {
     "file": "assets/img/ryby/minog-rzeczny.jpg",
-    "artist": "M. Buschmann",
-    "license": "CC BY-SA 3.0 / GFDL 1.2+",
-    "page": "https://commons.wikimedia.org/wiki/File:Lampetra_fluviatilis.jpg",
-    "source_checked": "2026-07-24",
+    "artist": "Tiit Hunt",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:J%C3%B5esilmud2.jpg",
+    "source_checked": "2026-08-01",
     "variants": [
       "assets/img/ryby/minog-rzeczny.jpg.webp",
       "assets/img/ryby/minog-rzeczny.jpg.avif"
