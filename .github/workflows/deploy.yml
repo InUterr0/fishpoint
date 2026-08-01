@@ -30,6 +30,11 @@ jobs:
         with:
           python-version: '3.12'
 
+      # Strony miesięczne muszą powstać przed wstrzyknięciem metadanych. Krok
+      # pilnuje też, żeby rejestr miesięczny nie rozjechał się z prawnym.
+      - name: Generate monthly protection pages
+        run: python3 build_miesiace.py
+
       - name: Generate SEO artifacts
         run: python3 seo_inject.py
 
