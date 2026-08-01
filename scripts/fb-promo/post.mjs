@@ -44,6 +44,7 @@ if (selected.length === 0) {
 const plan = selected.map((a, i) => ({
   n: i + 1,
   slug: a.slug,
+  title: a.title,
   url: a.url,
   text: `${a.title}\n\n${a.description}\n\n\u{1F449} ${a.url}\n\n#wędkarstwo #FishPoint`,
 }));
@@ -55,7 +56,7 @@ if (dryRun) {
 
 if (!existsSync(SHOTS)) mkdirSync(SHOTS, { recursive: true });
 
-// Współrzędne kompozytora strony (viewport harnessa 1920x909, bez chrome).
+// Współrzędne kompozytora strony (viewport CDP 1920x1200, bez chrome).
 const py = String.raw`
 import time
 items = __ITEMS__
@@ -84,13 +85,22 @@ def click_button(labels):
           if (txt !== label && aria !== label) continue;
           if (e.getAttribute('aria-disabled') === 'true' || e.disabled) continue;
           const r = e.getBoundingClientRect();
-          if (r.width < 60 || r.height < 20 || r.y < 0 || r.y > 909) continue;
+          if (r.width < 60 || r.height < 20 || r.y < 0 || r.y > 1200) continue;
           if (!e.closest('div[role="dialog"]')) continue;
           if (!best || r.width > best.width) {
-            best = { label, x: r.x + r.width / 2, y: r.y + r.height / 2, width: r.width };
+            best = { label, width: r.width, element: e };
           }
         }
-        if (best) return JSON.stringify(best);
+        if (best) {
+          best.element.scrollIntoView({ block: 'center', inline: 'nearest' });
+          const r = best.element.getBoundingClientRect();
+          return JSON.stringify({
+            label: best.label,
+            x: r.x + r.width / 2,
+            y: Math.min(r.y + r.height / 2, 1195),
+            width: r.width,
+          });
+        }
       }
       return '';
     })()'''.replace('__LABELS__', __import__('json').dumps(labels)))
@@ -119,7 +129,7 @@ def click_target(labels=None, textbox=False, in_dialog=False):
         if (!matches) continue;
         if (inDialog && !e.closest('div[role="dialog"]')) continue;
         const r = e.getBoundingClientRect();
-        if (r.width < 40 || r.height < 20 || r.y < 0 || r.y > 909) continue;
+        if (r.width < 40 || r.height < 20 || r.y < 0 || r.y > 1200) continue;
         const area = r.width * r.height;
         if (!best || area > best.area) {
           best = { x: r.x + r.width / 2, y: r.y + r.height / 2, area };
@@ -144,22 +154,50 @@ def composer_open():
       const all=Array.from(document.querySelectorAll('[role="button"]'));
       for(const e of all){const t=(e.innerText||e.textContent||'').trim();const a=e.getAttribute('aria-label')||'';
         if((/^(Dalej|Opublikuj)$/.test(t)||/^(Dalej|Opublikuj)$/.test(a))&&e.closest('div[role="dialog"]')){
-          const r=e.getBoundingClientRect(); if(r.width>60&&r.y>=0&&r.y<=909) return '1';}}
+          const r=e.getBoundingClientRect(); if(r.width>60&&r.y>=0&&r.y<=1200) return '1';}}
       return '0';
     })()''').strip().strip('"') == '1'
+
+
+def post_visible(title):
+    result = js(r'''(() => {
+      const title = __TITLE__;
+      const posts = document.querySelectorAll(
+        '[role="article"], [data-pagelet*="FeedUnit"]'
+      );
+      for (const post of posts) {
+        if (post.closest('div[role="dialog"]')) continue;
+        const text = post.innerText || post.textContent || '';
+        if (text.includes(title) && text.includes('Przed chwilą')) return '1';
+      }
+      return '0';
+    })()'''.replace('__TITLE__', __import__('json').dumps(title)))
+    return result.strip().strip('"') == '1'
 
 def post_one(idx, item):
     # Świeża karta FB (uaktywnia ją) — wszystko dzieje się na niej.
     new_tab('https://www.facebook.com/')
     wait_for_load(); time.sleep(9)
-    if not click_target(['O czym myślisz, FishPoint?']):
-        raise RuntimeError('brak kompozytora strony FishPoint')
+    # Większy viewport utrzymuje przyciski pod wielowierszowym opisem i
+    # podglądem linku w zasięgu natywnego kliknięcia.
+    cdp('Emulation.setDeviceMetricsOverride',
+        width=1920, height=1200, deviceScaleFactor=1, mobile=False)
+    time.sleep(2)
     textbox_clicked = False
-    for _ in range(6):
-        time.sleep(2)
-        if click_target(textbox=True, in_dialog=True):
-            textbox_clicked = True
+    composer_found = False
+    for _ in range(3):
+        if click_target(['O czym myślisz, FishPoint?']):
+            composer_found = True
+        for _ in range(6):
+            time.sleep(2)
+            if click_target(textbox=True, in_dialog=True):
+                textbox_clicked = True
+                break
+        if textbox_clicked:
             break
+        time.sleep(2)
+    if not composer_found:
+        raise RuntimeError('brak kompozytora strony FishPoint')
     if not textbox_clicked:
         raise RuntimeError('brak pola tekstowego kompozytora')
     time.sleep(1)
@@ -176,16 +214,23 @@ def post_one(idx, item):
             break
         time.sleep(2)
     shot('wpisano-%d' % idx)
-    # Klikaj „Dalej" aż pojawi się „Opublikuj", potem kliknij „Opublikuj” DOKŁADNIE
-    # RAZ (powtarzanie grozi duplikatami na wolniejszym łączu) i zweryfikuj wynik.
+    # Klikaj „Dalej" aż pojawi się „Opublikuj". Facebook może następnie
+    # otworzyć dodatkowy krok „Udostępnij w grupach”; pierwszy klik jeszcze
+    # wtedy nie publikuje posta na stronie, więc zatwierdzamy ten krok raz.
     published = False
     for step in range(12):
         clicked = click_button(['Opublikuj', 'Dalej'])
         if clicked == 'Opublikuj':
             print('[fb] %d klik: Opublikuj' % idx)
-            time.sleep(9)                       # FB kończy publikowanie
-            published = not composer_open()      # dialog zniknął => opublikowano
-            break                                # nigdy nie klikaj Opublikuj drugi raz
+            time.sleep(9)
+            share_groups = js(r'''(() =>
+              (document.body.innerText || '').includes('Udostępnij w grupach') ? '1' : '0'
+            )()''').strip().strip('"') == '1'
+            if share_groups and click_button(['Opublikuj']) == 'Opublikuj':
+                print('[fb] %d klik: Opublikuj (krok grup)' % idx)
+                time.sleep(9)
+            published = not composer_open() or post_visible(item['title'])
+            break
         elif clicked == 'Dalej':
             print('[fb] %d klik: Dalej' % idx)
             time.sleep(5)
