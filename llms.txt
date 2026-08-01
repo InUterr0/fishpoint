@@ -180,46 +180,46 @@
 ## Atlas ryb
 
 - [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas 30 gatunków ryb polskich wód: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary, porównania i źródła dla każdej karty.
-- [Amur](https://fish-point.pl/ryby/amur.html): Amur biały (Ctenopharyngodon idella) w atlasie FishPoint: rozpoznawanie, introdukcja z Azji Wschodniej, żerowanie roślinożercy, regulaminy łowisk, przynęty.
-- [Belona](https://fish-point.pl/ryby/belona.html): Belona (Belone belone) — morska ryba Bałtyku o wydłużonym dziobie i zielonych ościach. Rozpoznawanie, majowe podejścia za śledziem, spinning i spławik z plaży.
-- [Boleń](https://fish-point.pl/ryby/bolen.html): Boleń (Leuciscus aspius) w atlasie FishPoint: jedyny drapieżny karpiowaty polskich rzek. Rozpoznawanie, siedliska, tarło, żerowanie sezonowe, orientacyjne.
-- [Brzana](https://fish-point.pl/ryby/brzana.html): Brzana: rozpoznawanie, siedlisko, tarło, okres i wymiar ochronny, metody połowu, zestaw gruntowy, przynęty, pora brań i bezpieczne wypuszczanie.
-- [Certa](https://fish-point.pl/ryby/certa.html): Certa (Vimba vimba) — atlas ryb FishPoint: rozpoznawanie, wędrówki na tarło, łowienie na Wiśle i dużych rzekach feederem i spławikiem, przynęty, taktyka i kuchnia.
+- [Amur](https://fish-point.pl/ryby/amur.html): Amur (Ctenopharyngodon idella): brak krajowego wymiaru i okresu ochronnego, ale jako gatunek nierodzimy podlega § 8. Rozpoznawanie, stanowiska i metody.
+- [Belona](https://fish-point.pl/ryby/belona.html): Belona (Belone belone): przed połowem sprawdź zasady i limity GIRM. Rozpoznawanie, letnia wędrówka na Bałtyku, stanowiska z brzegu i metody połowu.
+- [Boleń](https://fish-point.pl/ryby/bolen.html): Boleń (Leuciscus aspius): wymiar ochronny 40 cm, brak krajowego okresu ochronnego. Rozpoznawanie, stanowiska w rzekach, żerowanie i metody spinningowe.
+- [Brzana](https://fish-point.pl/ryby/brzana.html): Brzana: wymiar ochronny 40 cm, okres ochronny 1 stycznia–30 czerwca. Rozpoznawanie, stanowiska w nurcie rzek, żerowanie i metody gruntowe.
+- [Certa](https://fish-point.pl/ryby/certa.html): Certa (Vimba vimba): wymiar ochronny 30 cm, okres ochronny zależny od odcinka Wisły i pozostałych wód. Rozpoznawanie, wędrówka tarłowa i metody połowu.
 - [Ciernik](https://fish-point.pl/ryby/ciernik.html): Ciernik (Gasterosteus aculeatus): rozpoznawanie, siedlisko, biologia, ochrona i znaczenie dla wędkarza. Źródła sprawdzone 24 lipca 2026.
-- [Dorsz](https://fish-point.pl/ryby/dorsz.html): Dorsz bałtycki (Gadus morhua) w atlasie FishPoint: rozpoznawanie, biologia i tarło, kryzys populacji wschodniej, połów morski z kutra i brzegu, pilkery i gumy.
-- [Flądra (stornia)](https://fish-point.pl/ryby/fladra.html): Flądra (stornia) w atlasie FishPoint: płaska ryba przydenna Bałtyku, łowienie z plaży i mola na zestaw gruntowy z piaskówką, sezon jesienny, ujścia rzek.
+- [Dorsz](https://fish-point.pl/ryby/dorsz.html): Dorsz (Gadus morhua): w rybołówstwie rekreacyjnym okres ochronny trwa cały rok, więc rybę trzeba wypuścić. Rozpoznawanie, biologia i zasady na Bałtyku.
+- [Flądra (stornia)](https://fish-point.pl/ryby/fladra.html): Flądra: przed połowem sprawdź aktualne zasady, limity i komunikaty GIRM. Rozpoznawanie storni, stanowiska na Bałtyku, żerowanie i metody gruntowe z brzegu.
 - [Głowacz białopłetwy](https://fish-point.pl/ryby/glowacz-bialopletwy.html): Głowacz białopłetwy (Cottus gobio): rozpoznawanie, siedlisko, biologia, ochrona i znaczenie dla wędkarza. Źródła sprawdzone 24 lipca 2026.
-- [Jaź](https://fish-point.pl/ryby/jaz.html): Jaź (Leuciscus idus) w atlasie FishPoint: rozpoznawanie i różnice względem klenia i płoci, środowisko, tarło, żerowanie, wymiary ochronne PZW, metody połowu.
-- [Jesiotr](https://fish-point.pl/ryby/jesiotr.html): Jesiotr ostronosy w Polsce: biologia ryby wędrownej, program restytucji do Bałtyku, ochrona gatunkowa i obowiązek wypuszczenia oraz łowiska komercyjne.
-- [Karaś](https://fish-point.pl/ryby/karas.html): Karaś pospolity i srebrzysty w polskich wodach: rozpoznawanie, biologia, gynogeneza, żerowanie, metody połowu na spławik i grunt, przepisy PZW oraz praktyczne.
-- [Atlas ryb: karp (Cyprinus carpio)](https://fish-point.pl/ryby/karp.html): Karp (Cyprinus carpio) w atlasie FishPoint: rozpoznawanie, środowisko, tarło, żerowanie wg pór roku, orientacyjne wymiary i limity PZW, metody gruntowe.
+- [Jaź](https://fish-point.pl/ryby/jaz.html): Jaź (Leuciscus idus): wymiar ochronny 25 cm, brak krajowego okresu ochronnego. Rozpoznawanie, stanowiska rzeczne, żerowanie i metody połowu.
+- [Jesiotr](https://fish-point.pl/ryby/jesiotr.html): Jesiotr ostronosy: okres ochronny trwa przez cały rok, więc nie jest celem połowu. Rozpoznawanie, restytucja gatunku i co zrobić po przypadkowym złowieniu.
+- [Karaś](https://fish-point.pl/ryby/karas.html): Karaś: brak krajowego wymiaru i okresu ochronnego. Jak odróżnić karasia pospolitego od srebrzystego, stanowiska, żerowanie i metody połowu.
+- [Atlas ryb: karp (Cyprinus carpio)](https://fish-point.pl/ryby/karp.html): Karp (Cyprinus carpio): brak krajowego wymiaru i okresu ochronnego — decyduje regulamin wody. Rozpoznawanie, stanowiska, żerowanie i metody gruntowe.
 - [Kiełb pospolity](https://fish-point.pl/ryby/kielb.html): Kiełb pospolity (Gobio gobio): rozpoznawanie, siedlisko, biologia, ochrona i znaczenie dla wędkarza. Źródła sprawdzone 24 lipca 2026.
-- [Kleń](https://fish-point.pl/ryby/klen.html): Kleń (Squalius cephalus) w atlasie FishPoint: identyfikacja i różnice względem jazia, środowisko rzeczne, tarło, całoroczne żerowanie, orientacyjne przepisy PZW.
+- [Kleń](https://fish-point.pl/ryby/klen.html): Kleń (Squalius cephalus): wymiar ochronny 25 cm, brak krajowego okresu ochronnego. Rozpoznawanie, stanowiska rzeczne, ostrożność ryby i metody połowu.
 - [Koza pospolita](https://fish-point.pl/ryby/koza.html): Koza pospolita (Cobitis taenia): rozpoznawanie, siedlisko, biologia, ochrona i znaczenie dla wędkarza. Źródła sprawdzone 24 lipca 2026.
 - [Krąp](https://fish-point.pl/ryby/krap.html): Krąp (Blicca bjoerkna): rozpoznawanie, siedlisko, biologia, ochrona i znaczenie dla wędkarza. Źródła sprawdzone 24 lipca 2026.
-- [Atlas ryb: leszcz (Abramis brama)](https://fish-point.pl/ryby/leszcz.html): Leszcz (Abramis brama) w atlasie FishPoint: rozpoznawanie i różnice względem krąpia, środowisko, tarło, żerowanie w ciągu roku, przepisy PZW, metody gruntowe.
-- [Lin](https://fish-point.pl/ryby/lin.html): Lin (Tinca tinca) w atlasie FishPoint: jak rozpoznać, gdzie występuje w Polsce, tarło, żerowanie o świcie i zmierzchu, orientacyjne wymiary i limity PZW, metody.
-- [Lipień](https://fish-point.pl/ryby/lipien.html): Lipień w atlasie FishPoint: charakterystyczna „chorągiew”, kraina lipienia w polskich rzekach, biologia i wiosenne tarło, metody muchowe, orientacyjne przepisy.
-- [Miętus](https://fish-point.pl/ryby/mietus.html): Miętus — jedyny słodkowodny dorszowaty — w atlasie FishPoint: rozpoznawanie po wąsiku, zimowe tarło pod lodem, nocne żerowanie, gruntówka po zmroku.
+- [Atlas ryb: leszcz (Abramis brama)](https://fish-point.pl/ryby/leszcz.html): Leszcz (Abramis brama): brak krajowego wymiaru i okresu ochronnego — decydują zasady lokalne. Rozpoznawanie, stanowiska, żerowanie i feeder na leszcza.
+- [Lin](https://fish-point.pl/ryby/lin.html): Lin (Tinca tinca): wymiar ochronny 25 cm, brak krajowego okresu ochronnego. Rozpoznawanie, płytkie stanowiska, tarło oraz metody spławikowe i method feeder.
+- [Lipień](https://fish-point.pl/ryby/lipien.html): Lipień: wymiar ochronny 30 cm, okres ochronny 1 marca–31 maja. Rozpoznawanie, stanowiska w rzekach górskich, żerowanie i metody muchowe.
+- [Miętus](https://fish-point.pl/ryby/mietus.html): Miętus: wymiar ochronny 25 albo 30 cm, okres ochronny od 1 grudnia do końca lutego. Rozpoznawanie, zimowe stanowiska, tarło i nocne metody połowu.
 - [Minóg rzeczny](https://fish-point.pl/ryby/minog-rzeczny.html): Minóg rzeczny (Lampetra fluviatilis): rozpoznawanie, siedlisko, biologia, ochrona i znaczenie dla wędkarza. Źródła sprawdzone 24 lipca 2026.
-- [Atlas ryb: okoń (Perca fluviatilis)](https://fish-point.pl/ryby/okon.html): Okoń (Perca fluviatilis) w atlasie FishPoint: najpospolitszy drapieżnik polskich wód. Rozpoznawanie, biologia i tarło, żerowanie w sezonach, orientacyjne zasady.
+- [Atlas ryb: okoń (Perca fluviatilis)](https://fish-point.pl/ryby/okon.html): Okoń (Perca fluviatilis): brak krajowego wymiaru i okresu ochronnego — decydują zasady lokalne. Rozpoznawanie, stanowiska, tarło i metody połowu okonia.
 - [Piskorz](https://fish-point.pl/ryby/piskorz.html): Piskorz (Misgurnus fossilis): rozpoznawanie, siedlisko, biologia, ochrona i znaczenie dla wędkarza. Źródła sprawdzone 24 lipca 2026.
-- [Płoć](https://fish-point.pl/ryby/ploc.html): Płoć Rutilus rutilus w atlasie FishPoint: jak odróżnić ją od wzdręgi i jazia, biologia i tarło, żerowanie w ciągu roku, przepisy PZW, zestawy spławikowe.
-- [Pstrąg potokowy](https://fish-point.pl/ryby/pstrag.html): Pstrąg potokowy w atlasie FishPoint: rozpoznawanie, środowisko górskich rzek, tarło, metody muchowe i spinningowe, orientacyjne wymiary i okresy ochronne PZW.
+- [Płoć](https://fish-point.pl/ryby/ploc.html): Płoć: brak krajowego wymiaru i okresu ochronnego — decydują zasady lokalne. Rozpoznawanie, stanowiska, żerowanie przez cały rok i metody spławikowe.
+- [Pstrąg potokowy](https://fish-point.pl/ryby/pstrag.html): Pstrąg potokowy: wymiar ochronny 25 albo 30 cm i okres ochronny zależny od odcinka wody. Rozpoznawanie, stanowiska w potokach, żerowanie i metody połowu.
 - [Różanka](https://fish-point.pl/ryby/rozanka.html): Różanka (Rhodeus amarus): rozpoznawanie, siedlisko, biologia, ochrona i znaczenie dla wędkarza. Źródła sprawdzone 24 lipca 2026.
-- [Sandacz](https://fish-point.pl/ryby/sandacz.html): Sandacz (Sander lucioperca) w atlasie FishPoint: rozpoznawanie, środowisko, tarło, żerowanie w sezonach, orientacyjne wymiary i okresy ochronne PZW, metody.
-- [Sieja](https://fish-point.pl/ryby/sieja.html): Sieja: rozpoznawanie, siedlisko, tarło, wymiar i okres ochronny, zasady połowu, metody, przynęty oraz bezpieczne wypuszczanie.
-- [Sielawa](https://fish-point.pl/ryby/sielawa.html): Sielawa (Coregonus albula): rozpoznawanie, biologia, jesienne tarło, występowanie w polskich jeziorach, metody połowu, przynęty, przepisy i wartość kulinarna.
-- [Śledź](https://fish-point.pl/ryby/sledz.html): Śledź bałtycki (Clupea harengus membras): rozpoznawanie, wiosenne ławice pod brzegiem, łowienie na choinkę z portów, sezonowość, kulinaria i przepisy morskie.
+- [Sandacz](https://fish-point.pl/ryby/sandacz.html): Sandacz (Sander lucioperca): wymiar ochronny 45 cm, okres ochronny 1 marca–31 maja. Rozpoznawanie, stanowiska, tarło, żerowanie i skuteczne metody połowu.
+- [Sieja](https://fish-point.pl/ryby/sieja.html): Sieja: wymiar ochronny 35 cm, okres ochronny 15 października–31 grudnia. Rozpoznawanie, stanowiska w jeziorach, tarło i metody połowu.
+- [Sielawa](https://fish-point.pl/ryby/sielawa.html): Sielawa (Coregonus albula): wymiar ochronny 18 cm, okres ochronny 15 października–31 grudnia. Rozpoznawanie, stanowiska w jeziorach i metody połowu.
+- [Śledź](https://fish-point.pl/ryby/sledz.html): Śledź: przed połowem sprawdź aktualne zasady, limity i komunikaty GIRM. Rozpoznawanie, wędrówki tarłowe, stanowiska z brzegu i metody połowu.
 - [Słonecznica](https://fish-point.pl/ryby/slonecznica.html): Słonecznica (Leucaspius delineatus): rozpoznawanie, siedlisko, biologia, ochrona i znaczenie dla wędkarza. Źródła sprawdzone 24 lipca 2026.
 - [Strzebla potokowa](https://fish-point.pl/ryby/strzebla-potokowa.html): Strzebla potokowa (Phoxinus phoxinus): rozpoznawanie, siedlisko, biologia, ochrona i znaczenie dla wędkarza. Źródła sprawdzone 24 lipca 2026.
-- [Sum](https://fish-point.pl/ryby/sum.html): Czy sum ma zęby? Tak — ma drobne, szczotkowate zęby. Poznaj suma europejskiego: rozpoznawanie, siedliska, tarło, sprzęt, metody połowu i przepisy PZW.
-- [Świnka](https://fish-point.pl/ryby/swinka.html): Świnka (Chondrostoma nasus) w atlasie FishPoint: stadna ryba czystych rzek o twardym dnie, dolny poprzeczny pysk, kraina brzany i lipienia, wiosenne tarło.
-- [Atlas ryb: szczupak (Esox lucius)](https://fish-point.pl/ryby/szczupak.html): Szczupak (Esox lucius) w atlasie FishPoint: rozpoznawanie, stanowiska w jeziorach i rzekach, tarło, żerowanie w sezonach, orientacyjny wymiar i okres ochronny.
-- [Troć i łosoś](https://fish-point.pl/ryby/troc-losos.html): Troć wędrowna i łosoś atlantycki w atlasie FishPoint: jak je odróżnić, rzeki pomorskie i Wisła, anadromiczne wędrówki i tarło, spinning rzeczny, zezwolenia.
-- [Ukleja](https://fish-point.pl/ryby/ukleja.html): Ukleja: rozpoznawanie, występowanie, tarło, zasady połowu, lekki zestaw spławikowy, przynęty, zanęcanie oraz bezpieczne obchodzenie się z rybą.
-- [Węgorz](https://fish-point.pl/ryby/wegorz.html): Węgorz europejski (Anguilla anguilla) w atlasie FishPoint: biologia, wędrówka na Morze Sargassowe oraz aktualne źródła i zasady połowu.
-- [Wzdręga](https://fish-point.pl/ryby/wzdrega.html): Wzdręga (Scardinius erythrophthalmus) w atlasie FishPoint: jak odróżnić ją od płoci, biologia i tarło, żerowanie latem, łowienie spławikowe przy powierzchni.
+- [Sum](https://fish-point.pl/ryby/sum.html): Sum europejski: wymiar ochronny 70 cm, okres ochronny 1 stycznia–31 maja. Czy ma zęby, gdzie stoi, kiedy żeruje i jak go łowić — atlas ryb FishPoint.
+- [Świnka](https://fish-point.pl/ryby/swinka.html): Świnka (Chondrostoma nasus): wymiar ochronny 25 cm, okres ochronny 1 stycznia–15 maja. Rozpoznawanie, stanowiska w rzekach i metody połowu.
+- [Atlas ryb: szczupak (Esox lucius)](https://fish-point.pl/ryby/szczupak.html): Szczupak (Esox lucius): wymiar ochronny 45 cm, okres ochronny 1 stycznia–30 kwietnia. Rozpoznawanie, stanowiska w jeziorach i rzekach, tarło i metody połowu.
+- [Troć i łosoś](https://fish-point.pl/ryby/troc-losos.html): Troć i łosoś: wymiar ochronny 35 cm, okres ochronny zależny od odcinka wody, a na morzu przepisy GIRM. Rozpoznawanie, wędrówki tarłowe i metody połowu.
+- [Ukleja](https://fish-point.pl/ryby/ukleja.html): Ukleja: brak krajowego wymiaru i okresu ochronnego. Rozpoznawanie, stanowiska tuż pod powierzchnią, żerowanie i lekkie metody spławikowe.
+- [Węgorz](https://fish-point.pl/ryby/wegorz.html): Węgorz (Anguilla anguilla): wymiar ochronny 50 cm, okres ochronny 1 grudnia–31 marca. Rozpoznawanie, wędrówki, nocne stanowiska i metody połowu.
+- [Wzdręga](https://fish-point.pl/ryby/wzdrega.html): Wzdręga (Scardinius erythrophthalmus): wymiar ochronny 15 cm, brak krajowego okresu. Jak odróżnić ją od płoci, stanowiska i metody spławikowe.
 
 ## Slownik.html
 
