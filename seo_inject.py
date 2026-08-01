@@ -391,6 +391,26 @@ def build_fish_legal_section(slug, group):
     )
 
 
+# Konkurenci w SERP „kalendarz brań <gatunek>" trzymają rok w tytule, a GSC
+# notuje zapytania z rokiem. Trzymamy go w jednej stałej: raz w roku zmienia
+# się tutaj, a nie w kilkunastu plikach.
+CALENDAR_TITLE_YEAR = "2026"
+CALENDAR_TITLE_RE = re.compile(
+    r"(<title>Kalendarz brań [^<]*?)(?:\s+20\d{2})?(\s*(?:—|\|)[^<]*</title>)"
+)
+
+
+def ensure_calendar_year(src, rel):
+    """Utrzymuje aktualny rok w tytułach kalendarza brań per gatunek."""
+    if not rel.startswith("poradniki/kalendarz-bran-"):
+        return src
+    return CALENDAR_TITLE_RE.sub(
+        lambda match: f"{match.group(1)} {CALENDAR_TITLE_YEAR}{match.group(2)}",
+        src,
+        count=1,
+    )
+
+
 def normalize_fish_legal_section(src, rel):
     """Zastępuje starszy opis PZW jedną kartą opartą na aktualnym akcie."""
     if not rel.startswith("ryby/"):
@@ -3222,11 +3242,13 @@ def build(path):
     src = strip_field_notes(src)
     src = ensure_youtube_facade_dimensions(replace_youtube_nocookie_embeds(src))
 
+    rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
+    src = ensure_calendar_year(src, rel)
+
     tm = title_re.search(src)
     dm = desc_re.search(src)
     if not tm or not dm:
         return None
-    rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
     src = remove_legacy_jsonld(src, {"BlogPosting"})
     if rel in FAQ_REPAIRS:
         src = remove_legacy_jsonld(src, {"FAQPage"})
@@ -3948,12 +3970,15 @@ def main():
         if rp == "/":
             home = (url, title, desc)
             continue
-        by_sec.setdefault(sec or "inne", []).append((url, title, desc, is_index))
+        # Strony w korzeniu nie mają działu — bez tego ich nazwa pliku trafiała
+        # do llms.txt jako nagłówek sekcji („## Zgodnie-z-zasadami.html").
+        key = sec if sec in SECTIONS else "informacje"
+        by_sec.setdefault(key, []).append((url, title, desc, is_index))
     if home:
         ll.append(f"- [{home[1]}]({home[0]}): {home[2]}")
         ll.append("")
     for sec in sorted(by_sec):
-        ll.append(f"## {SECTIONS.get(sec, sec.capitalize())}")
+        ll.append(f"## {SECTIONS.get(sec, 'Informacje o serwisie')}")
         ll.append("")
         for url, title, desc, is_index in by_sec[sec]:
             short = title.split(" — ")[0].split(" - ")[0]
