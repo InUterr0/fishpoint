@@ -50,7 +50,9 @@ Sources:
 - [Metoda feederowa](https://fish-point.pl/techniki/feeder.html)
 - [Okresy ochronne i wymiary](https://fish-point.pl/pierwsze-kroki/okresy-ochronne-wymiary.html)
 - [Atlas ryb: okoń](https://fish-point.pl/ryby/okon.html)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Górne wymiary ochronne 2026](https://fish-point.pl/aktualnosci/gorne-wymiary-ochronne-2026.html)
+- [Jak dobrać gumę na sandacza i szczupaka](https://fish-point.pl/aktualnosci/jak-dobrac-gume-na-drapieznika.html)
+- [Jak dobrać przynętę do warunków i pory roku](https://fish-point.pl/aktualnosci/jak-dobrac-przynete-do-pory-roku.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 Corrections: A correction policy or note is stated in the document.
@@ -92,6 +94,9 @@ Sources:
 - [FishBase: Sander lucioperca](https://www.fishbase.se/summary/Sander-lucioperca)
 - [Environment Agency](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/634689/Impact_of_catch_and_release_angling_practices_on_survival_of_salmon_-_summary.pdf)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Jak dobrać przynętę do warunków i pory roku](https://fish-point.pl/aktualnosci/jak-dobrac-przynete-do-pory-roku.html)
+- [Jak łowić karasia](https://fish-point.pl/aktualnosci/jak-lowic-karasia.html)
+- [Jak łowić leszcza](https://fish-point.pl/aktualnosci/jak-lowic-leszcza.html)
 - [Przynęty sztucznePorównaj gumy, woblery i błystki przed wyborem konkretnej przynęty.Sprawdź w BigRiver →](https://webep1.com/go/1a035dcfc3)
 - [Kopyta i ripperySprawdź klasyczne gumy do łowienia sandacza i szczupaka.Sprawdź w BigRiver →](https://webep1.com/go/885f8602c3)
 - [O autorze](https://fish-point.pl/o-autorze.html)
@@ -117,7 +122,9 @@ Sources:
 - [FishBase](https://fishbase.se/summary/Esox-lucius.html)
 - [KG PSP: bezpieczeństwo nad wodą](https://www.gov.pl/web/kgpsp/bezpieczenstwo-nad-woda)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Jak łowić karasia](https://fish-point.pl/aktualnosci/jak-lowic-karasia.html)
+- [Jak łowić leszcza](https://fish-point.pl/aktualnosci/jak-lowic-leszcza.html)
+- [Jak łowić lina](https://fish-point.pl/aktualnosci/jak-lowic-lina.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -137,6 +144,9 @@ Sources:
 - [ELI, Dz.U. 2023 poz. 1373](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [regulamin gospodarza PZW](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Jak łowić leszcza](https://fish-point.pl/aktualnosci/jak-lowic-leszcza.html)
+- [Jak łowić lina](https://fish-point.pl/aktualnosci/jak-lowic-lina.html)
+- [Jak łowić płoć](https://fish-point.pl/aktualnosci/jak-lowic-ploc.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -180,6 +190,9 @@ Sources:
 - [ELI, Dz.U. 2023 poz. 1373](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [regulamin gospodarza PZW](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Jak łowić płoć](https://fish-point.pl/aktualnosci/jak-lowic-ploc.html)
+- [Jak łowić sandacza jesienią: opad i kontakt z dnem](https://fish-point.pl/aktualnosci/jak-lowic-sandacza-jesienia.html)
+- [Jaką wędkę spinningową kupić? Poradnik FishPoint](https://fish-point.pl/aktualnosci/jaka-wedka-spinningowa-kupic.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -221,6 +234,9 @@ Sources:
 - [FishBase: Sander lucioperca](https://fishbase.se/summary/Sander-lucioperca.html)
 - [KG PSP: bezpieczeństwo nad wodą](https://www.gov.pl/web/kgpsp/bezpieczenstwo-nad-woda)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Jaką wędkę spinningową kupić? Poradnik FishPoint](https://fish-point.pl/aktualnosci/jaka-wedka-spinningowa-kupic.html)
+- [Jerki na szczupaka](https://fish-point.pl/aktualnosci/jerki-na-szczupaka-poradnik.html)
+- [Kajak fishing dla początkujących: poradnik FishPoint](https://fish-point.pl/aktualnosci/kajak-fishing-dla-poczatkujacych.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -242,10 +258,11 @@ Sources:
 - [ELI — rozporządzeniu MRiRW](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Shimano Nexave Spinning](https://fish.shimano.com/en-US/product/rods/muti-species/nexave_spinning_rod.html)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Jerki na szczupaka](https://fish-point.pl/aktualnosci/jerki-na-szczupaka-poradnik.html)
+- [Kajak fishing dla początkujących: poradnik FishPoint](https://fish-point.pl/aktualnosci/kajak-fishing-dla-poczatkujacych.html)
+- [Kalendarz wędkarski 2026](https://fish-point.pl/aktualnosci/kalendarz-wedkarski-2026.html)
 - [Wędki spinningowePorównaj długości i ciężary wyrzutu pod okonia, szczupaka i sandacza.Sprawdź w BigRiver →](https://webep1.com/go/89081d9c3)
 - [Kołowrotki spinningoweDobierz rozmiar i hamulec do planowanej wędki oraz przynęt.Sprawdź w BigRiver →](https://webep1.com/go/f536215bc3)
-- [Plecionki spinningoweSprawdź plecionki i średnice dopasowane do metody oraz łowiska.Sprawdź w BigRiver →](https://webep1.com/go/9c39f3a6c3)
-- [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 Affiliation: The document contains an explicitly labelled affiliate section.
@@ -265,6 +282,9 @@ Sources:
 - [Environment Agency](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/634689/Impact_of_catch_and_release_angling_practices_on_survival_of_salmon_-_summary.pdf)
 - [nidirect](https://www.nidirect.gov.uk/articles/catch-and-release-fishing-guidelines)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Kajak fishing dla początkujących: poradnik FishPoint](https://fish-point.pl/aktualnosci/kajak-fishing-dla-poczatkujacych.html)
+- [Kalendarz wędkarski 2026](https://fish-point.pl/aktualnosci/kalendarz-wedkarski-2026.html)
+- [Karp 112 cm: nowy rekord długości Tomasza Kosyla](https://fish-point.pl/aktualnosci/karp-112-cm-rekord-dlugosci-2026.html)
 - [Wędki spinningowePorównaj mocniejsze wędki pod ciężar jerków i sposób prowadzenia przynęty.Sprawdź w BigRiver →](https://webep1.com/go/89081d9c3)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
@@ -284,6 +304,9 @@ Sources:
 - [ustawa o rybactwie śródlądowym, art. 7](https://api.sejm.gov.pl/eli/acts/DU/2022/883/text.html)
 - [RCB — Bądź bezpieczny nad wodą](https://www.gov.pl/web/rcb/badz-bezpieczny-nad-woda2)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Kalendarz wędkarski 2026](https://fish-point.pl/aktualnosci/kalendarz-wedkarski-2026.html)
+- [Karp 112 cm: nowy rekord długości Tomasza Kosyla](https://fish-point.pl/aktualnosci/karp-112-cm-rekord-dlugosci-2026.html)
+- [Karp w upały](https://fish-point.pl/aktualnosci/karp-w-upaly-taktyka-na-lipiec.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -303,6 +326,9 @@ Sources:
 - [Wody Polskie — zakup zezwolenia przez WIR](https://wir.wody.gov.pl/uslugi/zakup-zezwolenia-na-amatorski-polow-ryb/)
 - [Polski Związek Wędkarski — strona organizacji](https://pzw.org.pl/)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Karp 112 cm: nowy rekord długości Tomasza Kosyla](https://fish-point.pl/aktualnosci/karp-112-cm-rekord-dlugosci-2026.html)
+- [Karp w upały](https://fish-point.pl/aktualnosci/karp-w-upaly-taktyka-na-lipiec.html)
+- [Kiedy sezon na ryby 2026?](https://fish-point.pl/aktualnosci/kiedy-sezon-na-ryby-2026.html)
 - No external source link is stated in the document.
 
 W skrócieTo narzędzie planowania, nie zezwolenie. Przed oddaniem ryby do siatki potwierdź gospodarza, aktualne zezwolenie oraz warunki konkretnej wody.Ten kalendarz wędkarski 2026 jest planem pytań przed wyjazdem: podpowiada, które gatunki bywają celem o danej porze oraz jakie ograniczenia trzeba najpierw sprawdzić. Nie jest prognozą brań, licencją ani kompletną listą zasad. Temperatura, poziom wody, tlen, presja i dostęp do stanowiska potrafią zmienić wynik wyprawy, a legalność dodatkowo zależy od gospodarza, zezwolenia oraz odcinka wody.Jak korzystać z kalendarza bez ryzykaNajpierw wybierz wodę i ustal jej gospodarza. Potem sprawdź w krajowym rozporządzeniu § 6–7 wymiar i okres ochronny gatunku. Następnie czytaj aktualne zezwolenie, regulamin i komunikaty gospodarza: mogą wprowadzać zakaz metody, limit, rejestr połowu, okresową przerwę, górny wymiar albo całkowite wypuszczanie ryb. Tylko kiedy wszystkie warunki są spełnione, plan techniki ma sens. Jeśli dokument nie jest jasny, kalendarz nie daje domyślnej zgody na połów ani zabranie ryby.W tabeli słowo „metoda” oznacza pomysł na bezpieczne planowanie sprzętu, nie ocenę legalności. Spinning może być skuteczny w miesiącu, w którym lokalny gospodarz ogranicza go na danym odcinku; feeder może wymagać rejestru lub ograniczenia nęcenia; łowienie pod lodem wymaga zarówno zgodności z regulaminem, jak i realnej oceny bezpieczeństwa lodu. Gatunek wskazany jako cel nie gwarantuje brania i nie oznacza, że wolno go zatrzymać.Kalendarz miesiąc po miesiącuPlan sezonu 2026: gatunek, status ochrony i metoda do zweryfikowaniaMiesiącMożliwy cel planuStatus do sprawdzeniaMetoda jako plan, nie gwarancjaStyczeńmiętus; płoć; okońszczupak i sum są w krajowym okresie ochronnymspławik w wolnej wodzie, ostrożne łowienie pod lodem tylko gdy warunki są bezpieczneLutymiętus; płoć; okońsprawdź koniec ochrony miętusa i lokalny regulamin lodulekki spławik albo mormyszka; plan zależy od pogody i dostępuMarzecpłoć, leszcz, kleńod 1 marca krajowa ochrona sandacza i lipienia; część wód ma dodatkowe zakazydelikatny feeder lub spławik, bez traktowania kalendarza jako prognozy brańKwiecieńpłoć, leszcz, karp na wodach z dopuszczonym połowemszczupak nadal chroniony do 30 kwietnia; sprawdź ograniczenia tarłowe gospodarzafeeder, spławik, selekcja spokojnych miejscMajszczupak od 1 maja tylko gdy zezwolenie nie zaostrza zasad; karp, leszczsandacz i sum pozostają w krajowym okresie ochronnym do 31 majaspinning po otwarciu tylko tam, gdzie regulamin go dopuszcza; feeder na ryby spokojnego żeruCzerwiecsandacz i sum od 1 czerwca po weryfikacji wody; leszcz, linbrzana i certa mają krajową ochronę do 30 czerwca w odpowiednich wodachspinning o świcie, feeder o zmierzchu; metoda musi odpowiadać zezwoleniuLipieckarp, leszcz, kleń, okoń; drapieżniki poza ochroną krajowąlokalne limity, górne wymiary i zakazy nocne nadal obowiązująfeeder, spławik, spinning; wybór jest planem zależnym od temperatury i tlenuSierpieńkarp, leszcz, kleń, okoń, szczupakprzed wyjazdem sprawdź czasowe zamknięcia i zawodymetoda zależy od presji i warunków; żadna tabelka nie obiecuje braniaWrzesieńokoń, szczupak, sandacz, leszczod 1 września zaczyna się ochrona pstrąga potokowego w odcinkach wskazanych w § 7spinning i feeder, ale najpierw odczytaj odcinek rzekiPaździernikokoń, szczupak, sandacz; późny leszczod 15 października ochrona siei i sielawy; raki mają własne terminyspinning i feeder z dostosowaniem do lokalnego regulaminuListopadokoń, szczupak, sandacz, płoćkontroluj ochronę certy zależną od odcinka Wisły i zasady łososiowo-trociowelekki spinning lub spławik; wybór miejsca wymaga sprawdzenia gospodarzaGrudzieńpłoć, okoń, miętus po końcu ochronyod 1 grudnia krajowa ochrona węgorza; szczupak i sum wchodzą w ochronę 1 styczniaplanuj tylko bezpieczne warunki; dokument wody jest ważniejszy od sezonowej podpowiedziTrzy rozdzielone pytania1. Czy ryba może brać?To pytanie biologiczne i praktyczne. Odpowiedź zależy od warunków dnia, nie od samej nazwy miesiąca. Kalendarz może pomóc przygotować dwie przynęty lub alternatywne stanowisko, ale nie jest obietnicą wyniku.2. Czy wolno ją łowić?To pytanie prawne. Rozporządzenie krajowe wskazuje okresy ochronne oraz odcinkowe wyjątki, między innymi dla certy, miętusa, pstrąga, łososia i troci. Zawsze odczytaj pełny przepis właściwy dla rzeki, nie skróconą tabelę.3. Czy wolno ją zabrać?To odrębny test: wymiar, limit, ewentualny górny wymiar, warunek zezwolenia, rejestr i komunikat gospodarza. Nawet poza okresem ochronnym ryba może wrócić do wody z powodu każdego z tych warunków.Daty odcinkowe i świętaNiektóre terminy w § 7 ust. 1 zależą od odcinka. Dla certy inaczej opisano Wisłę od zapory we Włocławku do ujścia, inaczej Wisłę powyżej zapory i pozostałe wody. Pstrąg potokowy ma odmienne zakończenie ochrony na określonych odcinkach Wisły, Sanu, Odry i Bystrzycy. Miętus ma wyjątek dla Odry od ujścia Warty do granicy z wodami morskimi. § 7 ust. 2 dodatkowo skraca okres ochronny o pierwszy albo ostatni dzień, gdy przypada on w dzień ustawowo wolny od pracy, z wyjątkiem jesiotra ostronosego. Nie zastępuj tej reguły własnym liczeniem: sprawdź konkretną datę w roku i pełne brzmienie przepisu.Praktyczna checklista na każdy miesiącKontrolaOtwieram aktualny akt prawny, a nie tylko grafikę z internetu.Sprawdzam nazwę, odcinek i gospodarza mojej wody.Pobieram aktualne zezwolenie oraz regulamin na ten sezon.Czytam komunikaty o zakazach, zawodach, zarybieniu i dostępie.Pakuję miarkę i dokumenty; gdy warunek jest niepewny, wypuszczam rybę.Narzędzie Okresy i wymiary ochronne pozwala szybko rozpocząć sprawdzenie gatunku. Strona Przepisy i dokumenty prowadzi do dokumentów i zasad. Nie ma jednak jednego kalendarza, który zastąpi warunki konkretnej wody.Przykładowe przygotowanie jednej wyprawyZałóżmy, że w maju planujesz spinning na szczupaka. Kalendarz przypomina, że krajowy okres ochronny szczupaka kończy się 30 kwietnia, lecz to dopiero pierwszy filtr. W dniu wyjazdu sprawdzasz, czy woda jest w wykazie Twojego zezwolenia, czy gospodarz nie wprowadził późniejszego otwarcia, zakazu spinningu, odcinka no-kill albo komunikatu o zawodach. Otwierasz tabelę wymiarów i limitów, zabierasz miarkę oraz dokument do kontroli. Dopiero wtedy wybierasz przynętę i stanowisko według pogody. Gdy jeden filtr nie jest spełniony, zmieniasz wodę albo cel wyprawy — nie „testujesz”, czy zakaz będzie egzekwowany.Ten sam sposób stosuj do białej ryby. Wpis „leszcz” w lipcu nie oznacza, że każdy brzeg, każdy koszyk i każda pora są dozwolone lub skuteczne. Gospodarz może oznaczyć strefę tarła, ograniczyć dostęp nocny, wymagać wpisu do rejestru albo wyłączyć fragment na zawody. Kalendarz jest użyteczny właśnie wtedy, gdy prowadzi do sprawdzenia tych szczegółów, zamiast tworzyć pozór kompletności.Dokumenty przechowuj razemW telefonie warto mieć adres do aktu, pobrany aktualny regulamin, zezwolenie oraz komunikat gospodarza. Nie polegaj wyłącznie na pamięci lub aplikacji bez wskazanego źródła i daty aktualizacji. Przy kontroli okaż dokument w formie wymaganej przez gospodarza; zakup online nie przesądza, że wystarczy sam e-mail albo zrzut ekranu. Szczegóły omawia poradnik Zezwolenia online 2026 oraz strona o karcie wędkarskiej i zezwoleniach.Dlaczego miesiąc nie jest przepisemDaty w kalendarzu porządkują plan sezonu, ale nie opisują temperatury konkretnej zatoki, remontu dojścia ani krótkiego komunikatu gospodarza. Używaj miesiąca do przygotowania sprzętu i alternatyw, a dokumentów do podjęcia decyzji o połowie. Dzięki temu nie mylisz wskazówki praktycznej z uprawnieniem.FAQ — najczęstsze pytaniaCzy kalendarz wędkarski gwarantuje brania?Nie. To plan przygotowania wyprawy; brania zależą od warunków, a legalność od przepisów i dokumentów konkretnej wody.Czy w miesiącu poza ochroną wolno zabrać rybę?Nie automatycznie. Trzeba jeszcze sprawdzić wymiar, limit i lokalne warunki zezwolenia.Gdzie sprawdzić ochronę odcinkową?W pełnym tekście § 7 rozporządzenia, a następnie w aktualnym zezwoleniu gospodarza.Źródła pierwotne i granice wnioskuStan sprawdzenia: 20 lipca 2026. Krajowe minimum i warunki połowu wynikają z aktu prawnego; zezwolenie, regulamin i komunikat gospodarza mogą dodać obowiązki dla jego wody, lecz nie zastępują ani nie uchylają ustawy lub rozporządzenia.Rozporządzenie MRiRW, Dz.U. 2023 poz. 1373 (ELI)Ustawa o rybactwie śródlądowym, Dz.U. 2022 poz. 883 (ELI Sejmu)Wody Polskie — zakup zezwolenia przez WIRPolski Związek Wędkarski — strona organizacjiSprawdź przed wyjazdemPrzepisy i dokumentyOkresy i wymiary ochronneCzy mogę zabrać rybę?Karta wędkarska i zezwolenia
@@ -321,6 +347,9 @@ Sources:
 - [artykule Komisji Rekordowych Połowów](https://wiadomosciwedkarskie.com.pl/szczegoly-artykulu/karp-112-cm-nowy-rekord-polski-w-kategorii-dlugosci-ryby-tomasz-kosyl_K4VQGrswNdWmBak78VkY)
 - [aktualnej tabeli „Oficjalne rekordy Polski”](https://wiadomosciwedkarskie.com.pl/rekordy-na-plan/oficjalne-rekordy-polski)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Karp w upały](https://fish-point.pl/aktualnosci/karp-w-upaly-taktyka-na-lipiec.html)
+- [Kiedy sezon na ryby 2026?](https://fish-point.pl/aktualnosci/kiedy-sezon-na-ryby-2026.html)
+- [PZW powołało Komisję ds. cyfryzacji: co już wiadomo](https://fish-point.pl/aktualnosci/komisja-cyfryzacji-pzw-2026.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -363,6 +392,9 @@ Sources:
 - [Wody Polskie — zakup zezwolenia przez WIR](https://wir.wody.gov.pl/uslugi/zakup-zezwolenia-na-amatorski-polow-ryb/)
 - [Polski Związek Wędkarski — strona organizacji](https://pzw.org.pl/)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [PZW powołało Komisję ds. cyfryzacji: co już wiadomo](https://fish-point.pl/aktualnosci/komisja-cyfryzacji-pzw-2026.html)
+- [Mikroguma dla początkujących](https://fish-point.pl/aktualnosci/mikroguma-dla-poczatkujacych.html)
+- [Spławikowe MP 2026: Jasiczak i Pomykała](https://fish-point.pl/aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html)
 - No external source link is stated in the document.
 
 W skrócieTo narzędzie planowania, nie zezwolenie. Przed oddaniem ryby do siatki potwierdź gospodarza, aktualne zezwolenie oraz warunki konkretnej wody.„Kiedy sezon na ryby?” ma dwie różne odpowiedzi. Pierwsza, prawna, mówi o okresie ochronnym i warunkach konkretnej wody. Druga, praktyczna, dotyczy planowania brań według pogody, temperatury, poziomu i przejrzystości wody. Nie wolno ich mieszać: to, że ryba może żerować, nie oznacza, że wolno ją łowić lub zabrać. Tabela poniżej podaje krajowe punkty z § 6–7 rozporządzenia na sezon 2026 oraz wskazuje, kiedy trzeba odczytać warunek odcinkowy.Krajowy kalendarz otwarć i ochronyOkresy ochronne, minimalne wymiary i warunki odcinkowe — § 6–7GatunekKrajowy okres ochronnyNajwcześniejszy dzień po ochronie*Wymiar z § 6Warunek odcinkowy / uwagaSzczupak1 stycznia–30 kwietnia1 maja45 cmbrak odcinkowego wariantu w § 6–7Sandacz1 marca–31 maja1 czerwca45 cmbrak odcinkowego wariantu w § 6–7Sum1 stycznia–31 maja1 czerwca70 cmbrak odcinkowego wariantu w § 6–7Boleńbrak okresu w § 7 ust. 1—40 cmsprawdź lokalne zasadyLipień1 marca–31 maja1 czerwca30 cmsprawdź lokalne zasadyBrzana1 stycznia–30 czerwca1 lipca40 cmsprawdź lokalne zasadyCertazależnie od odcinka Wisły / pozostałych wódzależnie od odcinka30 cmod zapory Włocławek do ujścia: 1.09–30.11; powyżej zapory i pozostałe: 1.01–30.06Miętus1 grudnia–koniec lutego1 marca25 cm, a 30 cm na wskazanym odcinku Odrywyjątek: Odra od ujścia Warty do granicy z wodami morskimiPstrąg potokowy1 września–31 stycznia albo 1 września–31 grudnia1 lutego albo 1 stycznia zależnie od odcinka25 cm albo 30 cmwariant 25 cm / do 31.01 dla wskazanych odcinków Wisły, Sanu, Odry i BystrzycyWęgorz1 grudnia–31 marca1 kwietnia50 cm; limit 2 szt./dobęsprawdź lokalne zasadySieja i sielawa15 października–31 grudnia1 stycznia35 cm / 18 cmsprawdź lokalne zasadyTroć jeziorowa1 września–31 stycznia1 lutego50 cmsprawdź lokalne zasady*To nie jest obietnica legalnego połowu ani zabrania ryby. Dzień wymaga weryfikacji § 7 ust. 2, zezwolenia, regulaminu i komunikatów gospodarza.§ 7 ust. 2: nie pomijaj dnia ustawowo wolnegoJeżeli pierwszy albo ostatni dzień okresu ochronnego dla danego gatunku ryb lub raków, z wyjątkiem jesiotra ostronosego, przypada w dzień ustawowo wolny od pracy, okres ochronny skraca się o ten dzień. To reguła krajowa z § 7 ust. 2. Nie oznacza, że każdy „długi weekend” otwiera sezon wcześniej. Najpierw odczytaj datę początku i końca ochrony danego gatunku, sprawdź kalendarz ustawowo wolnych dni, a dopiero potem zweryfikuj, czy lokalny dokument nie wprowadza ostrzejszej zasady. Gdy przepis odcinkowy ma zastosowanie, ustal odcinek przed liczeniem dat.Najważniejsze warunki odcinkowePstrąg potokowyNa wskazanych odcinkach Wisły i jej dopływów od źródeł do ujścia Sanu, na Sanie i dopływach, a także na wskazanym odcinku Odry oraz Bystrzycy z dopływami, rozporządzenie przewiduje wymiar 25 cm i ochronę od 1 września do 31 stycznia. W pozostałych wodach wymiar wynosi 30 cm, a ochrona trwa od 1 września do 31 grudnia. Nie zastępuj określenia granic słowem „rzeka górska”.Certa i miętusDla certy różnica zależy od położenia względem zapory we Włocławku: od zapory do ujścia Wisły obowiązuje 1 września–30 listopada, a powyżej zapory i w pozostałych wodach 1 stycznia–30 czerwca. Miętus ma ochronę 1 grudnia–końca lutego, z wyjątkiem Odry od ujścia Warty do granicy z wodami morskimi; na tym odcinku ma też wymiar 30 cm zamiast 25 cm.Łosoś i troćŁosoś oraz troć mają warianty dla Wisły i dopływów powyżej zapory we Włocławku, dla odcinka od zapory do ujścia i dla pozostałych wód. Poza datami aktu występują zakazy połowu w określone dni tygodnia. Z tego powodu w planowaniu tych gatunków skrótowa data „otwarcia” jest niewystarczająca: odczytaj pełny § 7 ust. 1 pkt 6 albo 15.Planowanie brań to nie legalnośćPlanowanie brań zaczyna się od pytania, czy warunki sprzyjają aktywności gatunku: temperatura, tlen, mętność, wiatr, ciśnienie, poziom i presja wędkarska. Możesz przygotować wariant feederowy na leszcza i lekki spinning na okonia, ale dopiero po sprawdzeniu prawa wybierasz odcinek i metodę. Kalendarz brań na FishPoint jest więc inspiracją sprzętową, nie decyzją prawną.Legalność wymaga osobnego testu. Ustawa i rozporządzenie obowiązują powszechnie. Zezwolenie gospodarza potwierdza uprawnienie do połowu na wskazanej wodzie oraz może dodać obowiązki, na przykład limit, rejestr, górny wymiar, ograniczenie metody lub czasowe zamknięcie. Regulamin i komunikat gospodarza należy odczytać w zakresie tej wody. Lokalne dokumenty nie mogą uchylić krajowego zakazu, a spełnienie krajowego minimum nie daje automatycznej zgody na zatrzymanie ryby.Decyzja przy wodzie w pięciu krokachKolejnośćRozpoznaj gatunek i dokładny odcinek wody.Sprawdź § 6–7, w tym wymiar, okres i odcinkowy wariant.Zastosuj § 7 ust. 2 tylko po sprawdzeniu daty oraz wyjątku dla jesiotra.Otwórz aktualne zezwolenie, regulamin i komunikaty gospodarza.Sprawdź limit, górny wymiar i dokument do kontroli; przy wątpliwości wypuść rybę.Do szybkiego przygotowania użyj narzędzia okresów ochronnych, a warunki dokumentowe sprawdź przez Przepisy i dokumenty oraz poradnik o zezwoleniach online.Przykłady, które pokazują różnicęMaj i sandacz: wyjazd może być świetnie zaplanowany pod temperaturę wody, ale od 1 marca do 31 maja obowiązuje krajowy okres ochronny sandacza. Dobór gumy, pora zmierzchu czy informacja o dobrych braniach nie zmieniają tego zakazu. Czerwiec i sandacz: po krajowym okresie ochronnym nadal sprawdzasz minimalny wymiar 45 cm, warunki zezwolenia, ewentualny górny wymiar oraz limit. Wrzesień i pstrąg: nie wystarczy wiedzieć, że zaczyna się ochrona — trzeba rozpoznać, czy jesteś na odcinku nazwanym w akcie, ponieważ data końca ochrony jest różna.Zima i miętus: okres ochronny rozpoczyna się 1 grudnia, lecz akt wyłącza konkretny odcinek Odry od ujścia Warty do granicy z wodami morskimi. To wyjątek opisany miejscem, a nie pozwolenie dla wszystkich rzek na zachodzie kraju. Jeżeli nie masz pewności co do granicy, nie zakładaj, że wyjątek działa. Takie podejście jest wolniejsze od korzystania z prostej grafiki, ale pozwala uniknąć błędnej decyzji.Dokumenty na kontrolęPrzed wyprawą ustal też, jaki dokument do kontroli wymaga gospodarz. Zezwolenie elektroniczne może być kupione online, ale sposób jego okazania określa wystawca. Karta wędkarska jest co do zasady wymagana przez art. 7 ustawy, z wyjątkami ustawowymi; jej posiadanie nie zastępuje zezwolenia na wodę. Szczegóły dotyczące wyjątków, gospodarzy i form dokumentów opisujemy na stronie Karta wędkarska i zezwolenia.Po otwarciu nadal mierz i sprawdzajOtwarcie krajowego okresu ochronnego usuwa tylko jeden warunek. Minimalny wymiar, limit dobowy, rejestr, górny wymiar i zasady gospodarza pozostają niezależne. Przygotuj miarkę przed pierwszym rzutem; nie odkładaj tej decyzji na moment po złowieniu ryby.FAQ — najczęstsze pytaniaCzy po końcu okresu ochronnego sezon jest automatycznie otwarty?Nie. Należy sprawdzić § 7 ust. 2, odcinek wody, aktualne zezwolenie, regulamin i komunikaty gospodarza.Dlaczego pstrąg ma dwie daty końca ochrony?§ 7 różnicuje wybrane odcinki Wisły, Sanu, Odry i Bystrzycy od pozostałych wód.Czy kalendarz brań mówi, że połów jest legalny?Nie. Prognoza aktywności ryb nie zastępuje warunków prawnych i lokalnych dokumentów.Źródła pierwotne i granice wnioskuStan sprawdzenia: 20 lipca 2026. Krajowe minimum i warunki połowu wynikają z aktu prawnego; zezwolenie, regulamin i komunikat gospodarza mogą dodać obowiązki dla jego wody, lecz nie zastępują ani nie uchylają ustawy lub rozporządzenia.Rozporządzenie MRiRW, Dz.U. 2023 poz. 1373 (ELI)Ustawa o rybactwie śródlądowym, Dz.U. 2022 poz. 883 (ELI Sejmu)Wody Polskie — zakup zezwolenia przez WIRPolski Związek Wędkarski — strona organizacjiSprawdź przed wyjazdemPrzepisy i dokumentyOkresy i wymiary ochronneCzy mogę zabrać rybę?Karta wędkarska i zezwolenia
@@ -379,6 +411,9 @@ Sources:
 - [materiału Okręgu PZW w Katowicach](https://pzw.pl/szczegoly-artykulu/posiedzenie-prezydium-i-zo-25062026_MT7WhAXxeS4Y96gIvepM?print=pdf)
 - [komunikacie Okręgu PZW w Rzeszowie](https://pzw.pl/szczegoly-artykulu/e-zezwolenie-2026-oplaty-elektroniczne-od-01012026-r_1Bij4WOuumRQs3MdM0N7)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Mikroguma dla początkujących](https://fish-point.pl/aktualnosci/mikroguma-dla-poczatkujacych.html)
+- [Spławikowe MP 2026: Jasiczak i Pomykała](https://fish-point.pl/aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html)
+- [73. MP w wędkarstwie rzutowym: Bieruń 2026](https://fish-point.pl/aktualnosci/mistrzostwa-polski-wedkarstwo-rzutowe-bierun-2026.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -397,6 +432,9 @@ Sources:
 - [FishBase: Esox lucius](https://www.fishbase.se/summary/Esox-lucius)
 - [Environment Agency](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/634689/Impact_of_catch_and_release_angling_practices_on_survival_of_salmon_-_summary.pdf)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Spławikowe MP 2026: Jasiczak i Pomykała](https://fish-point.pl/aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html)
+- [73. MP w wędkarstwie rzutowym: Bieruń 2026](https://fish-point.pl/aktualnosci/mistrzostwa-polski-wedkarstwo-rzutowe-bierun-2026.html)
+- [Karp latem: przynęta, nęcenie i dobrostan w upale](https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html)
 - [Gumy i ripperyPorównaj małe gumy według kształtu, rozmiaru i planowanego obciążenia.Sprawdź w BigRiver →](https://webep1.com/go/885f8602c3)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
@@ -417,6 +455,9 @@ Sources:
 - [oficjalnej publikacji Koła PZW Zwierzyn nr 1 z 8 lipca 2026 r.](https://zwierzyn.pzw.pl/szczegoly-artykulu/splawikowe-mistrzostwa-polski-seniorow-i-mlodziezy-u-25-wyniki_eEvTbzSDEPGMDhJcZLLp)
 - [relacją Województwa Lubuskiego z 9 lipca 2026 r.](https://lubuskie.pl/wiadomosci/26547/warta-wylonila-mistrzow-polski)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [73. MP w wędkarstwie rzutowym: Bieruń 2026](https://fish-point.pl/aktualnosci/mistrzostwa-polski-wedkarstwo-rzutowe-bierun-2026.html)
+- [Karp latem: przynęta, nęcenie i dobrostan w upale](https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html)
+- [PZW Zamość: 1 kg zanęty na czterech zbiornikach](https://fish-point.pl/aktualnosci/ograniczenie-zanet-pzw-zamosc-lato-2026.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -435,6 +476,9 @@ Sources:
 - [relacji Zarządu Głównego PZW](https://pzw.pl/szczegoly-artykulu/73-indywidualnych-mistrzostw-polski-w-wedkarstwie-rzutowym-za-nami_ew5VkL46BbOsv8lg5X00)
 - [relacji Okręgu PZW w Kielcach](https://w.pzw.pl/szczegoly-artykulu/13-medali-73-indywidualnych-mistrzostw-polski-dla-zawodnikow-okregu-kieleckiego-pzw_WS8QpX347uPCNFIP1WV6)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Karp latem: przynęta, nęcenie i dobrostan w upale](https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html)
+- [PZW Zamość: 1 kg zanęty na czterech zbiornikach](https://fish-point.pl/aktualnosci/ograniczenie-zanet-pzw-zamosc-lato-2026.html)
+- [Okoń jesienią: mikroguma i drop shot | FishPoint](https://fish-point.pl/aktualnosci/okon-jesienia-mikroguma.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -454,6 +498,9 @@ Sources:
 - [Angling Trust / Environment Agency, Fishing during hot weather](https://anglingtrust.net/2025/07/16/fishing-during-hot-weather/)
 - [NOAA, Catch and release best practices](https://www.fisheries.noaa.gov/national/resources-fishing/catch-and-release-fishing-best-practices)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [PZW Zamość: 1 kg zanęty na czterech zbiornikach](https://fish-point.pl/aktualnosci/ograniczenie-zanet-pzw-zamosc-lato-2026.html)
+- [Okoń jesienią: mikroguma i drop shot | FishPoint](https://fish-point.pl/aktualnosci/okon-jesienia-mikroguma.html)
+- [Arkadiusz Fit wygrał zawody Method Feeder w Opolu](https://fish-point.pl/aktualnosci/pierwsze-okregowe-method-feeder-opole-2026.html)
 - [Kulki i pelletyPorównaj średnice i smaki kulek oraz pelletów do wybranego sposobu nęcenia.Sprawdź w BigRiver →](https://webep1.com/go/6608d83bc3)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
@@ -474,6 +521,9 @@ Sources:
 - [Koło PZW Mircze, 3 lipca 2026 r.](https://pzw.org.pl/szczegoly-artykulu/uwaga-ograniczenie-zanet_leV67srqWy8riE7yMTVw?print=pdf)
 - [WIOŚ w Poznaniu z 12 lipca 2026 r.](https://poznan.wios.gov.pl/2026/07/12/zgloszenia-o-zanieczyszczeniach-wod-i-snietych-rybach-w-wielkopolsce-dzialania-wios-w-poznaniu/)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Okoń jesienią: mikroguma i drop shot | FishPoint](https://fish-point.pl/aktualnosci/okon-jesienia-mikroguma.html)
+- [Arkadiusz Fit wygrał zawody Method Feeder w Opolu](https://fish-point.pl/aktualnosci/pierwsze-okregowe-method-feeder-opole-2026.html)
+- [Nowości wędkarskie: selekcja rozwiązań | FishPoint](https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -489,6 +539,9 @@ Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
 - [źródło gatunkowe](https://fishbase.se/summary/Perca-fluviatilis.html)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Arkadiusz Fit wygrał zawody Method Feeder w Opolu](https://fish-point.pl/aktualnosci/pierwsze-okregowe-method-feeder-opole-2026.html)
+- [Nowości wędkarskie: selekcja rozwiązań | FishPoint](https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html)
+- [Jaka przynęta na spinning: drzewo doboru](https://fish-point.pl/aktualnosci/przyneta-na-spinning.html)
 - [Gumy i ripperyDobierz rozmiar i kolor gumy do przejrzystości wody oraz aktywności okoni.Sprawdź w BigRiver →](https://webep1.com/go/885f8602c3)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
@@ -513,7 +566,9 @@ Sources:
 - [załącznikiem PDF](https://opole.pzw.pl/brepo/panel_repo/2026/07/07/us9arc/wyniki-method-feeder-05-07-2026.pdf)
 - [komunikat Okręgu z 8 lipca 2026 r.](https://opole.pzw.pl/szczegoly-artykulu/komunikat-nr-1-drugie-zawody-okregowe-w-dyscyplinie-method-feeder_mwh7dkypPPRSDUWH14y2)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Nowości wędkarskie: selekcja rozwiązań | FishPoint](https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html)
+- [Jaka przynęta na spinning: drzewo doboru](https://fish-point.pl/aktualnosci/przyneta-na-spinning.html)
+- [Puchar Komendanta Policji w Rawiczu dla Pawła Błasiaka](https://fish-point.pl/aktualnosci/puchar-komendanta-rawicz-zawody-wedkarskie-2026.html)
 - No external source link is stated in the document.
 
 Spis treściOficjalny wynik i PDF38 zawodników na PoliwodzieNastępne zawodyFAQ Oficjalny wynik i plik PDF W niedzielę 5 lipca 2026 r. Okręg PZW w Opolu przeprowadził na łowisku sportowym Poliwoda pierwsze okręgowe zawody w dyscyplinie Method Feeder. W klasyfikacji indywidualnej wygrał Arkadiusz Fit z Koła PZW Opole Garnizonowe Zaodrze. Organizator podał wynik 34 225 punktów i pierwsze miejsce w sektorze A. Wyniki pierwszej trójki 1. Arkadiusz Fit (Koło PZW Opole Garnizonowe Zaodrze) — 1. sektor A, 34 225 pkt; 2. Piotr Ruszkiewicz (Koło PZW Jedlice) — 1. sektor B, 30 615 pkt; 3. Zbigniew Kowalczuk (Koło PZW Komprachcice) — 2. sektor B, 31 360 pkt. Pełna klasyfikacja jest w załączniku organizatora Okręg PZW w Opolu opublikował PDF z wynikami zawodów z 5 lipca 2026 r.. To właściwe źródło pełnej tabeli, dlatego FishPoint nie przepisuje selektywnie dalszych miejsc ani nie wyprowadza z nich dodatkowych klasyfikacji. W tekście pozostawiamy pierwszą trójkę podaną w komunikacie organizatora; kolejność, sektory i punktację należy odczytywać razem z tym załącznikiem. 38 zawodników na Poliwodzie Oficjalna relacja wynikowa Okręgu PZW w Opolu podaje udział 38 zawodników, w tym jednej kobiety, oraz zmienną pogodę, wiatr i przelotne opady. Z dokumentu wynika, że jest to relacja organizatora z rozegranej imprezy; nie jest niezależnym audytem wyniku. Nie podajemy masy złowionych ryb, ponieważ w komunikacie wynikowym opublikowano punkty i miejsca sektorowe, a nie zestawienie połowów w kilogramach. Data i miejsce są zgodne z oficjalnym komunikatem PZW: 5 lipca 2026 r., łowisko sportowe Poliwoda w Biestrzynniku. W tym samym systemie PZW ukazał się wynik z załącznikiem PDF. To potwierdza źródło pierwotne zdarzenia, ale nie zmienia charakteru danych: nazwiska, sektory i punkty są informacją organizatora. Jak czytać ten wynik Punkty są wynikiem zawodniczym, a nie masą ryb podaną w kilogramach. W komunikacie wynikowym PZW opublikowano również załącznik PDF z tabelą rezultatów. FishPoint nie dotarł do niezależnej relacji potwierdzającej podium; nazwiska i liczby podajemy więc jako oficjalne doniesienie organizatora. Następne zawody: tylko według komunikatu organizatora Okręg PZW w Opolu opublikował 8 lipca komunikat o drugich indywidualnych zawodach Method Feeder: mają odbyć się 9 sierpnia 2026 r. na zbiorniku Poliwoda w Biestrzynniku i bez podziału na kategorie. Organizator wskazał limit 40 zawodników oraz termin zgłoszeń do 30 lipca 2026 r. W komunikacie zapisano też pierwszeństwo dla osób, które nie wystartowały 5 lipca. Są to warunki ogłoszone przez organizatora na dzień publikacji komunikatu, a nie gwarancja, że lista startowa lub program nie zostaną później zmienione. Druga tura ma być rozegrana według „Zasad Organizacji Sportu Wędkarskiego – Część 13 Regulamin zawodów w wędkarstwie method feeder”, do których organizator podał link. Komunikat wymaga od startującego dwóch siatek o długości co najmniej 3,5 m oraz pojemnika na ryby gatunków nierodzimych. Ostateczne wymagania, godziny i dopuszczenie do startu trzeba sprawdzić bezpośrednio w komunikacie Okręgu PZW w Opolu; FishPoint nie interpretuje regulaminu ani nie zastępuje organizatora. Zakres informacji o formacie pierwszej turyWynikowa relacja z 7 lipca identyfikuje imprezę jako pierwsze okręgowe zawody w dyscyplinie Method Feeder i publikuje klasyfikację indywidualną z miejscami sektorowymi. Nie zawiera pełnego opisu przebiegu tury, tabeli wag ani oceny techniki zawodników. Dlatego nie uzupełniamy jej przypuszczeniami o zasadach łowienia. Link do PDF pozwala samodzielnie sprawdzić komplet opublikowanych rezultatów, a komunikat o drugiej turze jest osobnym dokumentem zapowiadającym kolejne zawody. FAQ — najczęstsze pytania Kto wygrał pierwsze okręgowe zawody Method Feeder w Opolu w 2026 roku? Według relacji wynikowej Okręgu PZW w Opolu zwyciężył Arkadiusz Fit z Koła PZW Opole Garnizonowe Zaodrze, uzyskując 34 225 punktów. Gdzie i kiedy rozegrano zawody? Zawody odbyły się 5 lipca 2026 r. na łowisku sportowym Poliwoda w Biestrzynniku, przy Ośrodku Zarybieniowym „Poliwoda”. Gdzie jest pełny wynik i co wiadomo o następnej turze? Organizator udostępnił PDF z pełną tabelą. Według komunikatu Okręgu PZW Opole z 8 lipca druga tura jest zapowiedziana na 9 sierpnia 2026 r. na Poliwodzie; przed zgłoszeniem sprawdź źródło organizatora, bo jego warunki mogą się zmienić. Nota redakcyjna i źródła Stan źródeł: 20 lipca 2026 r. Wynik, nazwiska, punktację i liczbę uczestników podajemy za oficjalnym komunikatem Okręgu PZW w Opolu z 7 lipca 2026 r. oraz jego załącznikiem PDF. Informację o następnej turze i jej warunkach zawiera komunikat Okręgu z 8 lipca 2026 r. Wszystkie dane wynikowe i zapowiedź następnej tury są komunikatami organizatora; nie znaleźliśmy niezależnego potwierdzenia pełnego podium. Przed startem sprawdź aktualny regulamin imprezy oraz zasady łowiska.
@@ -555,9 +610,11 @@ Sources:
 - [FishBase](https://fishbase.se/summary/Esox-lucius.html)
 - [KG PSP: bezpieczeństwo nad wodą](https://www.gov.pl/web/kgpsp/bezpieczenstwo-nad-woda)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Puchar Komendanta Policji w Rawiczu dla Pawła Błasiaka](https://fish-point.pl/aktualnosci/puchar-komendanta-rawicz-zawody-wedkarskie-2026.html)
+- [Rekord okonia 2026: czy jest potwierdzony?](https://fish-point.pl/aktualnosci/rekord-okonia-2026.html)
+- [Czy sum 292 cm jest potwierdzonym rekordem?](https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html)
 - [Przynęty sztucznePorównaj typy przynęt dopiero po określeniu gatunku, łowiska i sposobu prowadzenia.Sprawdź w BigRiver →](https://webep1.com/go/1a035dcfc3)
 - [WoblerySprawdź pracę i głębokość prowadzenia woblerów pod warunki opisane w poradniku.Sprawdź w BigRiver →](https://webep1.com/go/8877c7e5c3)
-- [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 Affiliation: The document contains an explicitly labelled affiliate section.
@@ -576,6 +633,9 @@ Sources:
 - [komunikatu Komendy Powiatowej Policji w Górze](https://gora.policja.gov.pl/dgr/aktualnosci/bieza/178984,Puchar-Komendanta-Powiatowego-Policji-w-Rawiczu-trafil-do-dzielnicowego-z-Gory-Z.html)
 - [Publikacja TVK Kłodzko](https://tvkklodzko.pl/news/6402-zawody-wedkarskie-zakonczone-puchar-komendanta-powiatowego-policji-w-rawiczu-dla-dzielnicowego-z-gory)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Rekord okonia 2026: czy jest potwierdzony?](https://fish-point.pl/aktualnosci/rekord-okonia-2026.html)
+- [Czy sum 292 cm jest potwierdzonym rekordem?](https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html)
+- [Nocna zasiadka karpiowa: bezpieczny plan | FishPoint](https://fish-point.pl/aktualnosci/relacja-nocna-zasiadka.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -621,7 +681,8 @@ Sources:
 - [IGFA — Scale Certification](https://igfa.org/scale-certification/)
 - [Ontario — Catch-and-release fish handling](https://www.ontario.ca/page/catch-and-release-fish-handling)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Nocna zasiadka karpiowa: bezpieczny plan | FishPoint](https://fish-point.pl/aktualnosci/relacja-nocna-zasiadka.html)
+- [Sezon na szczupaka: legalny plan otwarcia](https://fish-point.pl/aktualnosci/sezon-na-szczupaka.html)
 - No external source link is stated in the document.
 
 Czy sum 292 cm jest potwierdzonym rekordem? Nie Adres tej strony nie jest dowodem wyniku. Redakcja nie ma publicznego protokołu połowu, karty pomiarowej, zgłoszenia do rejestru ani decyzji weryfikatora, które potwierdzałyby suma o długości 292 cm, jego masę, miejsce, datę albo autora połowu. Dlatego twierdzenie, że „sum 292 cm” jest rekordem, jest niepotwierdzone. Nie podajemy ryby, osoby ani łowiska, bo byłoby to tworzenie faktu z samej nazwy URL. Zapis terenowyWędkarz może uczciwie opisać duży okaz jako własny, udokumentowany połów. „Rekord” ma jednak sens wyłącznie w granicach nazwanego rejestru i jego regulaminu: światowego, krajowego, klubowego albo regulaminu łowiska. Wynik efektowny na zdjęciu nie staje się automatycznie rekordem Polski ani świata. Różne rejestry mogą uznawać inne gatunki, metody, kategorie długościowe i wagowe lub tylko ryby wypuszczone. Bez wskazania rejestru i jego decyzji słowo „rekord” jest za mocne. Szczegóły zgłoszeniaRyba: sum europejski (Silurus glanis) — gatunek wymaga potwierdzenia w dokumentacji.Wynik: brak potwierdzonej długości i masy.Kto, kiedy i gdzie: brak zweryfikowanego protokołu; nie publikujemy danych z nieudokumentowanej relacji.Metoda: brak zweryfikowanej dokumentacji zestawu i przebiegu połowu. Uznanym, publicznie dostępnym punktem odniesienia dla roszczeń rekordowych są wymagania International Game Fish Association (IGFA). Nie jest to polski urząd ani automatyczny regulamin każdej wody; to wzorzec międzynarodowy pokazujący, jak odróżniać relację od możliwego do sprawdzenia zgłoszenia. Zanim ktoś ogłosi rekord, powinien znaleźć regulamin właściwego rejestru i ustalić, czy przyjmuje on zgłoszenia suma w danej kategorii. Pomiar długości i masa: co można sprawdzić Przy rekordzie długości najpierw trzeba rozróżnić „ile miała ryba” od „jak zmierzono rybę”. Miara ułożona pod wygiętym ciałem, zdjęcie z perspektywą albo taśma bez widocznego początku nie pozwalają niezależnie odczytać wyniku. Dla kategorii All-Tackle Length IGFA wymaga płaskiej powierzchni i oficjalnego urządzenia pomiarowego; ryba ma dotykać ogranicznika pyskiem, a wynik biegnie do środka tylnej krawędzi ogona. Wynik między pełnymi centymetrami zapisuje się w dół. Lokalny rejestr może opisywać to inaczej — obowiązuje jego zapis, nie skrót z internetu. Zapis terenowyPrzed łowieniem przygotuj mokrą, sztywną miarę z wyraźnym ogranicznikiem oraz aparat. Połóż rybę na zwilżonej macie albo mierze, bez przyciskania do suchego podłoża. Kadr musi pokazywać całą rybę, punkt zero, pysk i koniec ogona; drugi kadr z góry ułatwia ocenę, czy miara nie jest załamana. Zapisz jednostkę, sposób mierzenia i godzinę. Zdjęcie samej liczby na miarce nie zastępuje kadru całego układu. Masa wymaga jeszcze mocniejszego łańcucha dowodowego. W regulaminie IGFA ryba zgłaszana wagowo jest ważona na lądzie, a użyta waga ma mieć aktualne poświadczenie dokładności; ciężar worka, siatki czy zawiesia trzeba odjąć, a szacunków nie przyjmuje się. Te warunki nie muszą obowiązywać w każdym polskim rejestrze, ale dobrze pokazują, dlaczego odczyt z nieznanej wagi na filmie nie wystarcza. Sprawdź, czy regulamin wymaga świadka ważenia, certyfikatu wagi, konkretnej dokładności albo ryby zachowanej do identyfikacji. Minimalny, uczciwy zapis w terenieZanotuj datę, godzinę, akwen i zgodę gospodarza na połów; zrób ciąg zdjęć pomiaru; zapisz typ miary i wagi; zachowaj oryginalne pliki ze znacznikami czasu. Nie dopisuj masy, jeśli ryby nie ważono. Nie zaokrąglaj wyniku w górę i nie zastępuj nieudanego odczytu słowem „około”. Zdjęcia, świadkowie i regulamin rejestru Fotografia ma dokumentować, a nie tylko wyglądać efektownie. Przy zgłoszeniu długości warto wykonać pełny kadr ryby na mierze, zbliżenia pyska i ogona przy skali, zdjęcie wędkarza z rybą oraz fotografię użytego zestawu. Dokładnie taki zestaw kategorii zdjęć wymienia regulamin IGFA z marca 2026 r.. Oryginalne pliki są ważniejsze niż grafika po obróbce: zachowują metadane i kolejność ujęć. Filtr lub napis promocyjny może ilustrować relację, lecz nie powinien zastępować pliku dowodowego. Świadek nie „nadaje” rekordowi wartości, ale może potwierdzić obserwowany etap: pomiar, ważenie, gatunek, warunki wypuszczenia. Najlepszy jest świadek możliwie niezależny od zgłaszającego, z imieniem, kontaktem i krótkim opisem tego, co widział. IGFA wskazuje świadków jako szczególnie pożądanych i zaleca niezainteresowanego świadka ważenia, gdy to możliwe. Jeśli nikt nie widział pomiaru, nie wolno tworzyć świadka po fakcie; należy opisać ograniczenie dokumentacji. Następnie czyta się regulamin konkretnego rejestru od definicji do terminu zgłoszenia. Sprawdź kategorię, dopuszczalną metodę, identyfikację gatunku, wymogi wobec wagi, liczbę fotografii, dane świadka i zasady remisów. Rekord długościowy i wagowy to różne procedury. Rejestr może odrzucić połów legalny na danej wodzie, jeśli nie spełnia własnej procedury. Prawo i regulamin gospodarza wody sprawdza się osobno w zezwoleniu oraz w aktualnych zasadach ochrony ryb. Dokumentacja nie może szkodzić rybie Duży sum nie jest rekwizytem. Przy planowanym wypuszczeniu najpierw przygotuj miarę, aparat, szczypce i podbierak; dopiero potem podbieraj rybę. Oficjalne wytyczne Ontario dotyczące C&R zalecają ograniczyć czas poza wodą, moczyć ręce, używać miękkiej gumowanej lub bezwęzłowej siatki, nie dotykać skrzeli ani oczu oraz podpierać cięższą rybę poziomo. Dla dużego suma oznacza to przygotowany zespół, możliwie krótki pomiar na mokrej powierzchni, bezpieczne podparcie całego ciała i wypuszczenie dopiero, gdy ryba odzyska równowagę. Nie podnoś dużego suma pionowo za szczękę ani skrzela, nie ciągnij go po brzegu, nie przetrzymuj dla lepszego kadru i nie przekazuj kolejno wielu osobom. Jeśli hak tkwi głęboko, priorytetem jest ograniczenie urazu; wytyczne Ontario zalecają przecięcie linki zamiast forsownego wyjmowania haka. Zasada C&R nie zwalnia z lokalnego prawa: wymiar, okres ochronny, limit, regulamin łowiska oraz warunki zezwolenia mogą wymagać innego działania. Przed wyprawą przeczytaj praktyczny poradnik C&R i regulamin gospodarza. Najuczciwszy komunikat po dobrze udokumentowanym, ale jeszcze niezweryfikowanym połowie brzmi: „zgłoszenie w toku” albo „wynik oczekuje na weryfikację regulaminową”. Dopiero decyzja właściwego rejestru pozwala użyć sformułowania „uznany rekord” w jego kategorii. W przypadku tej strony takiej decyzji nie przedstawiono, więc nie potwierdzamy rekordu suma o długości 292 cm. FAQ — najczęstsze pytania Czy zdjęcie suma z miarką potwierdza rekord?Nie samo. Może dokumentować długość, jeśli widać całą rybę i sposób pomiaru, ale rekord wymaga zgodności z regulaminem konkretnego rejestru oraz jego weryfikacji. Czy muszę zważyć rybę, aby zgłosić rekord?To zależy od kategorii. Nie wpisuj szacowanej masy; sprawdź, czy rejestr wymaga ważenia, certyfikacji wagi i świadka. Jak zrobić pomiar bez pogorszenia dobrostanu ryby?Przygotuj mokrą miarę i aparat przed podbieraniem, ogranicz kontakt z powietrzem, podeprzyj rybę i wypuść ją, gdy samodzielnie odzyska równowagę. Nota redakcyjna i źródłaStan na 20 lipca 2026 r. Nie odnaleźliśmy pierwotnego protokołu potwierdzającego „rekord suma 292 cm”; strona jest instrukcją oceny i dokumentowania, nie relacją z konkretnego połowu. Zasady rekordowe: IGFA — World Record Requirements, IGFA Rules & Regulations, marzec 2026 oraz IGFA — Scale Certification (dostęp: 20.07.2026). Dobrostan: Ontario — Catch-and-release fish handling (dostęp: 20.07.2026). Wiążące pozostają regulamin konkretnego rejestru i zezwolenie gospodarza wody.
@@ -642,9 +703,9 @@ Sources:
 - [FAO](https://www.fao.org/fishery/docs/CDrom/aquaculture/a0844t/docrep/009/T1623E/T1623E03.htm)
 - [PZW](https://pzw.pl/)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
-- [Wędki karpiowePorównaj parametry wędki z dystansem i masą zestawów opisanych w relacji.Sprawdź w BigRiver →](https://webep1.com/go/b1df355ec3)
-- [Kulki i pelletySprawdź przynęty do punktowego, oszczędnego nęcenia na dłuższej zasiadce.Sprawdź w BigRiver →](https://webep1.com/go/6608d83bc3)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Sezon na szczupaka: legalny plan otwarcia](https://fish-point.pl/aktualnosci/sezon-na-szczupaka.html)
+- [Śnięte ryby w Jeziorce: co ustalił WIOŚ](https://fish-point.pl/aktualnosci/sniecie-ryb-jeziorka-wolka-kozodawska-2026.html)
+- [Śnięcie ryb w starorzeczu Warty w Radolinie](https://fish-point.pl/aktualnosci/sniecie-ryb-starorzecze-warty-radolina-2026.html)
 - No external source link is stated in the document.
 Affiliation: The document contains an explicitly labelled affiliate section.
 
@@ -666,7 +727,9 @@ Sources:
 - [FishBase](https://fishbase.se/summary/Esox-lucius.html)
 - [KG PSP: bezpieczeństwo nad wodą](https://www.gov.pl/web/kgpsp/bezpieczenstwo-nad-woda)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Śnięte ryby w Jeziorce: co ustalił WIOŚ](https://fish-point.pl/aktualnosci/sniecie-ryb-jeziorka-wolka-kozodawska-2026.html)
+- [Śnięcie ryb w starorzeczu Warty w Radolinie](https://fish-point.pl/aktualnosci/sniecie-ryb-starorzecze-warty-radolina-2026.html)
+- [Spinning na szczupaka jesienią](https://fish-point.pl/aktualnosci/spinning-na-szczupaka-jesienia.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -685,6 +748,9 @@ Sources:
 - [komunikat WIOŚ w Warszawie „Śnięte ryby w Jeziorce - informacja o ustaleniach i działaniach inspektorów”](https://www.gov.pl/web/wios-warszawa/metna-woda-i-sniete-ryby-w-jeziorce--ustalenia-i-dzialania-wios-w-warszawie)
 - [Apel Miasta i Gminy Piaseczno](https://piaseczno.eu/nie-wchodzmy-do-wody-apel/)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Śnięcie ryb w starorzeczu Warty w Radolinie](https://fish-point.pl/aktualnosci/sniecie-ryb-starorzecze-warty-radolina-2026.html)
+- [Spinning na szczupaka jesienią](https://fish-point.pl/aktualnosci/spinning-na-szczupaka-jesienia.html)
+- [Street fishing: jedna miejska sesja krok po kroku | FishPoint](https://fish-point.pl/aktualnosci/street-fishing-od-czego-zaczac.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -702,6 +768,9 @@ Sources:
 - [formularz zgłoszenia interwencji GIOŚ](https://www.gios.gov.pl/pl/zglos-interwencje-formularz)
 - [komunikat WIOŚ w Poznaniu „Śnięcie ryb w starorzeczu Warty w Radolinie”](https://poznan.wios.gov.pl/2026/07/23/sniecie-ryb-w-starorzeczu-warty-w-radolinie/)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Spinning na szczupaka jesienią](https://fish-point.pl/aktualnosci/spinning-na-szczupaka-jesienia.html)
+- [Street fishing: jedna miejska sesja krok po kroku | FishPoint](https://fish-point.pl/aktualnosci/street-fishing-od-czego-zaczac.html)
+- [Sum 125 cm ze Starej Odry: głośny połów z Kotowic](https://fish-point.pl/aktualnosci/sum-125-cm-stara-odra-2026.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -746,8 +815,8 @@ Sources:
 - [Atlas łowisk](https://fish-point.pl/lowiska/)
 - [Przepisy i dokumenty](https://fish-point.pl/zgodnie-z-zasadami.html)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
-- [Plecaki wędkarskieSprawdź plecaki ułatwiające mobilne łowienie i szybkie przemieszczanie się między miejscówkami.Sprawdź w BigRiver →](https://webep1.com/go/92f2af80c3)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Sum 125 cm ze Starej Odry: głośny połów z Kotowic](https://fish-point.pl/aktualnosci/sum-125-cm-stara-odra-2026.html)
+- [Sum nocą](https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 Affiliation: The document contains an explicitly labelled affiliate section.
@@ -766,6 +835,9 @@ Sources:
 - [TuOława](https://www.tuolawa.pl/artykul/45807,taaaki-sum-ze-starej-odry)
 - [TuOława, „Taaaki sum ze Starej Odry”](https://www.tuolawa.pl/artykul/45807,taaaki-sum-ze-starej-odry)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Sum nocą](https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html)
+- [Świnna Poręba: wydłużone godziny połowu od 1 lipca 2026](https://fish-point.pl/aktualnosci/swinna-poreba-wydluzone-godziny-2026.html)
+- [Troć jeziorowa 8,5 kg z Tarnobrzega bez rekordu](https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -782,6 +854,9 @@ Sources:
 - [Dieter Florian (To contact the author, ask the uploader or take a look at tauchshop-florian.de.) (CC BY-SA 3.0 de)](https://commons.wikimedia.org/w/index.php?curid=8755863)
 - [źródło gatunkowe](https://fishbase.se/summary/Silurus-glanis.html)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Świnna Poręba: wydłużone godziny połowu od 1 lipca 2026](https://fish-point.pl/aktualnosci/swinna-poreba-wydluzone-godziny-2026.html)
+- [Troć jeziorowa 8,5 kg z Tarnobrzega bez rekordu](https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html)
+- [Wędkarstwo morskie dla początkujących](https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -801,6 +876,9 @@ Sources:
 - [strona „Łowisko Świnna Poręba” RZGW w Krakowie](https://www.gov.pl/web/wody-polskie-krakow/lowisko-swinna-poreba)
 - [ogłoszenie na profilu Facebook Wody Polskie RZGW Kraków](https://www.facebook.com/RZGWKrakow/posts/1083065267993374/)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Troć jeziorowa 8,5 kg z Tarnobrzega bez rekordu](https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html)
+- [Wędkarstwo morskie dla początkujących](https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html)
+- [Wiślisko Krajskie: koniec dzierżawy PZW i spór o zakaz](https://fish-point.pl/aktualnosci/wislisko-krajskie-koniec-dzierzawy-pzw-2026.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -822,7 +900,9 @@ Sources:
 - [Fakt, 17.07.2026](https://sport.fakt.pl/olbrzymia-ryba-zlapana-na-podkarpaciu-nowy-rekord-polski-w-wedkarstwie/h3bb64q)
 - [oficjalnej tabeli rekordów Wiadomości Wędkarskich/PZW](https://wiadomosci-wedkarskie.pzw.pl/rekordy-na-plan/oficjalne-rekordy-polski)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Wędkarstwo morskie dla początkujących](https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html)
+- [Wiślisko Krajskie: koniec dzierżawy PZW i spór o zakaz](https://fish-point.pl/aktualnosci/wislisko-krajskie-koniec-dzierzawy-pzw-2026.html)
+- [Okresy ochronne ryb 2026 i wymiary: pełny zakres aktu](https://fish-point.pl/aktualnosci/wymiary-i-okresy-ochronne-2026.html)
 - No external source link is stated in the document.
 
 Szczegóły połowu Ryba: troć jeziorowa; w doniesieniach podano masę 8,5 kg.Wędkarz: Grzegorz Robak, wskazywany przez Sport.pl i Fakt jako związany z PZW Koło Budowlani.Kiedy: przekazy są sprzeczne. Sport.pl opisuje sobotę 11 lipca i wypowiedź o godz. 7:20, natomiast Fakt podaje wtorek 14 lipca oraz branie około godz. 6. Bez pierwotnej karty połowu nie rozstrzygamy daty ani godziny.Gdzie: Jezioro Tarnobrzeskie w Tarnobrzegu.Metoda: Sport.pl nie podaje metody. Fakt pisze o mocniejszym zestawie przygotowanym z myślą o sumie; nie jest to niezależny opis przynęty, techniki ani przebiegu połowu. W połowie lipca media opisały dużą troć jeziorową złowioną na Jeziorze Tarnobrzeskim. Sport.pl (15 lipca 2026) i Fakt (17 lipca 2026) zgodnie wskazują Grzegorza Robaka, PZW Koło Budowlani, Jezioro Tarnobrzeskie, gatunek oraz masę 8,5 kg. Taki zakres zgodności pozwala uczciwie opisać medialne doniesienie o połowie. Nie pozwala jednak ogłosić oficjalnego rekordu Polski. Powód jest konkretny. Publiczna tabela „Oficjalne rekordy Polski” Wiadomości Wędkarskich/PZW, sprawdzona 21 lipca 2026 r., przy troci jeziorowej nadal wymienia Piotra Matuszewskiego: 7,30 kg i 83,5 cm, rok 2006. Tabela jest punktem odniesienia dla obu kategorii, ale sama wiadomość prasowa nie zastępuje zgłoszenia ani decyzji konkursu. Do czasu aktualizacji rejestru wynik Robaka należy nazywać zgłoszonym w mediach wynikiem 8,5 kg, a nie rekordem oficjalnym. 85 cm z relacji Sport.pl — co to znaczy?Sport.pl przytacza wypowiedź Robaka o długości 85 cm i godz. 7:20. To wartość większa od 83,5 cm w tabeli długościowej, lecz pozostaje elementem relacji prasowej. Nie mamy publicznego protokołu pomiaru, informacji o użytej mierze ani decyzji weryfikatora, dlatego nie porównujemy jej jako zatwierdzonego rekordu. Dlaczego nie jest to jeszcze oficjalny rekord? Słowo „rekord” działa tylko razem z nazwą rejestru i jego procedurą. Rejestr rozstrzyga, czy zgłoszenie dotyczy właściwego gatunku, czy masa i długość zostały udokumentowane zgodnie z regulaminem oraz czy spełniono formalne terminy i wymagania. Nagłówek medialny może mieć znaczenie informacyjne, ale nie jest decyzją organizatora konkursu. W tym przypadku oficjalna tabela wciąż pokazuje wynik Matuszewskiego, więc to on pozostaje obecnym rekordem wskazanym przez ten rejestr. Warto też nie mieszać kategorii. Masa 8,5 kg i długość 85 cm są dwoma oddzielnymi parametrami, a publiczna tabela podaje dla troci jeziorowej osobno rekord wagowy 7,30 kg i długościowy 83,5 cm. Z samego faktu, że liczby w relacji są wyższe, nie wynika uznanie ich w którejkolwiek kategorii. Podobną ostrożność opisujemy w tekstach o rekordzie okonia i o sumie 292 cm. Co byłoby potrzebne do sprawdzenia wyniku?Najważniejsze są dokumenty i procedura właściwego rejestru: zgłoszenie, identyfikacja gatunku, zapis ważenia i pomiaru oraz ewentualna decyzja weryfikująca. Bez nich redakcja nie może ocenić, czy wynik spełnił wymagania konkursu. Nie zastępujemy tych dowodów fotografią, relacją w mediach społecznościowych ani wyliczeniem masy. Co z tego wynika dla wędkarzy? Duży okaz najlepiej dokumentować bez zwłoki i bez pogarszania dobrostanu ryby: przygotować mokrą miarę, aparat oraz wagę przed podbieraniem, notować okoliczności i zachować oryginalne pliki. Szacowanie masy z długości może być pomocne w rozmowie o biologii ryby, ale nie jest dowodem rekordu — narzędzie do orientacyjnego szacowania masy nie zastępuje ważenia. Zapis terenowyNie wyciągamy też z medialnej relacji wniosku o legalności lub nielegalności połowu. O tym decydują przepisy powszechne, regulamin gospodarza wody, zezwolenie i warunki obowiązujące w konkretnym dniu. Przed wyjazdem sprawdź okresy ochronne i wymiary, skorzystaj z narzędzia „Czy mogę zabrać rybę?”, a szczegóły gatunku poznaj w atlasie troci i łososia. Te strony są wskazówką do weryfikacji, nie zastępują aktualnego zezwolenia ani regulaminu łowiska. W tej sprawie najuczciwszy komunikat brzmi: media podały połów troci jeziorowej 8,5 kg na Jeziorze Tarnobrzeskim, lecz informacje o dacie i godzinie nie są spójne, a dostępna oficjalna tabela nie została jeszcze zmieniona. Jeśli organizator rejestru opublikuje weryfikację, wtedy będzie można odnieść się do konkretnej kategorii i decyzji — bez dopowiadania brakujących faktów. FAQ — najczęstsze pytania Czy troć 8,5 kg z Tarnobrzega jest oficjalnym rekordem Polski?Nie na podstawie dostępnej tabeli. 21 lipca 2026 r. tabela Wiadomości Wędkarskich/PZW nadal wskazuje Piotra Matuszewskiego z wynikiem 7,30 kg z 2006 r. Medialny opis nie jest decyzją rejestru. Jaka data połowu jest potwierdzona?Żadna z podanych dat nie została przez nas potwierdzona dokumentem pierwotnym. Sport.pl podaje 11 lipca i 7:20, a Fakt 14 lipca i około 6, dlatego opisujemy rozbieżność zamiast wybierać jedną wersję. Czy masa z kalkulatora może potwierdzić rekord?Nie. Kalkulator daje tylko przybliżenie, a rejestr może wymagać rzeczywistego ważenia i określonej dokumentacji. Zgłoszenie trzeba prowadzić według regulaminu właściwego organizatora. Nota redakcyjna i źródłaStan na 21 lipca 2026 r. Źródła relacji: Sport.pl, 15.07.2026 oraz Fakt, 17.07.2026; oba materiały są wtórnymi doniesieniami, a między nimi występuje rozbieżność co do daty i godziny. Status rejestru sprawdzono w oficjalnej tabeli rekordów Wiadomości Wędkarskich/PZW. Nie odnaleźliśmy publicznego zgłoszenia ani decyzji weryfikującej połów Robaka. Zasady połowu, ochrony i zabierania ryb zawsze należy potwierdzić w aktualnym regulaminie oraz zezwoleniu gospodarza wody.
@@ -839,6 +919,9 @@ Sources:
 - [rozporządzenie ELI](https://eli.gov.pl/api/acts/DU/2023/2816/text.html)
 - [GIRM — informacje o rybołówstwie rekreacyjnym](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Wędkarstwo morskie na Bałtyku](https://fish-point.pl/techniki/morskie.html)
+- [Wiślisko Krajskie: koniec dzierżawy PZW i spór o zakaz](https://fish-point.pl/aktualnosci/wislisko-krajskie-koniec-dzierzawy-pzw-2026.html)
+- [Okresy ochronne ryb 2026 i wymiary: pełny zakres aktu](https://fish-point.pl/aktualnosci/wymiary-i-okresy-ochronne-2026.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -856,6 +939,9 @@ Sources:
 - [komunikatu Okręgu PZW w Bielsku-Białej, opublikowanego 21 lipca 2026 r.](https://oswiecim.pzw.pl/szczegoly-artykulu/lowisko-krajskie-komunikat-zarzadu-okregu-pzw-bielsko-biala_UejfG94YGQtziLMT6642)
 - [komunikatu RZGW w Krakowie z 9 lipca 2026 r.](https://www.gov.pl/web/wody-polskie-krakow/dzialania-rzgw-w-krakowie-na-starorzeczu-krajskie-komunikat)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Okresy ochronne ryb 2026 i wymiary: pełny zakres aktu](https://fish-point.pl/aktualnosci/wymiary-i-okresy-ochronne-2026.html)
+- [Nowe wytyczne dla Wód Polskich a łowiska](https://fish-point.pl/aktualnosci/wytyczne-wody-polskie-obwody-rybackie-2026.html)
+- [Bóbr pod Pilchowicami: monitoring i zakaz połowu](https://fish-point.pl/aktualnosci/zakaz-polowu-bobr-lipiec-2026.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -897,6 +983,9 @@ Sources:
 - [oryginalny PDF wytycznych](https://www.gov.pl/attachment/1e7b71f4-6392-4acf-9d12-2b25171594dd)
 - [ZG PZW — omówienie z 19 czerwca 2026](https://pzw.pl/szczegoly-artykulu/nowe-wytyczne-w-sprawie-uzytkowania-obwodow-rybackich_ghZWRP0q1Q5qUKS8xhkt)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Bóbr pod Pilchowicami: monitoring i zakaz połowu](https://fish-point.pl/aktualnosci/zakaz-polowu-bobr-lipiec-2026.html)
+- [Pierwsze zawody feederowe](https://fish-point.pl/aktualnosci/zawody-feederowe-poradnik.html)
+- [Zawody wędkarskie 2026: oficjalny kalendarz i filtry](https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -915,6 +1004,9 @@ Sources:
 - [komunikatu WIOŚ we Wrocławiu z 20 lipca 2026 r.](https://www.wroclaw.wios.gov.pl/sytuacja-na-rzece-bobr-aktualizacja-na-dzien-20-lipca/)
 - [komunikat Dolnośląskiego Urzędu Wojewódzkiego z 11 lipca 2026 r.](https://www.gov.pl/web/dolnoslaski-uw/informacja-sluzb-dotyczaca-sytuacji-na-rzece-bobr--11072026-r)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Pierwsze zawody feederowe](https://fish-point.pl/aktualnosci/zawody-feederowe-poradnik.html)
+- [Zawody wędkarskie 2026: oficjalny kalendarz i filtry](https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html)
+- [Zezwolenia wędkarskie online 2026 | FishPoint](https://fish-point.pl/aktualnosci/zezwolenia-online-2026.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -936,9 +1028,9 @@ Sources:
 - [GKS PZW: terminarz 2026](https://gks.pzw.pl/sport/terminarz-imprez-sportowych-krajowych-i-miedzynarodowych-na-2026-rok)
 - [FIPSed Feeder Fishing Rules 2024](https://www.fips-ed.com/wp-content/uploads/2024/02/Reg_FIPSed_Feeder_2024_en_def.pdf)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
-- [Wędki feederowePorównaj długość i ciężar wyrzutu pod dystans oraz regulamin zawodów.Sprawdź w BigRiver →](https://webep1.com/go/b371c4e1c3)
-- [Kołowrotki feederoweDobierz pojemność szpuli i nawój do wędki oraz planowanej odległości łowienia.Sprawdź w BigRiver →](https://webep1.com/go/c4f3584fc3)
-- [Koszyki feederoweSprawdź koszyki po ustaleniu rodzaju dna, uciągu i dopuszczalnego zestawu.Sprawdź w BigRiver →](https://webep1.com/go/bbf47570c3)
+- [Zawody wędkarskie 2026: oficjalny kalendarz i filtry](https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html)
+- [Zezwolenia wędkarskie online 2026 | FishPoint](https://fish-point.pl/aktualnosci/zezwolenia-online-2026.html)
+- [Złota alga: komunikat z 17 lipca 2026 | FishPoint](https://fish-point.pl/aktualnosci/zlota-alga-lato-2026.html)
 - No external source link is stated in the document.
 Affiliation: The document contains an explicitly labelled affiliate section.
 
@@ -959,6 +1051,9 @@ Sources:
 - [GKS PZW: ZOSW](https://gks.pzw.pl/sport/zasady-organizacji-sportu-wedkarskiego)
 - [PZW: okręgi i koła](https://pzw.pl/)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Zezwolenia wędkarskie online 2026 | FishPoint](https://fish-point.pl/aktualnosci/zezwolenia-online-2026.html)
+- [Złota alga: komunikat z 17 lipca 2026 | FishPoint](https://fish-point.pl/aktualnosci/zlota-alga-lato-2026.html)
+- [Żyłka czy plecionka](https://fish-point.pl/aktualnosci/zylka-czy-plecionka.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -1002,6 +1097,9 @@ Sources:
 - [portal GIOŚ](https://badania.gios.gov.pl/odra/)
 - [GIOŚ](https://www.gios.gov.pl/pl/zglos-interwencje-formularz)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
+- [Żyłka czy plecionka](https://fish-point.pl/aktualnosci/zylka-czy-plecionka.html)
+- [Błędy początkującego wędkarza: diagnoza i korekta | FishPoint](https://fish-point.pl/aktualnosci/bledy-poczatkujacych.html)
+- [Górne wymiary ochronne 2026](https://fish-point.pl/aktualnosci/gorne-wymiary-ochronne-2026.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -1024,8 +1122,9 @@ Sources:
 - [FishBase: Esox lucius](https://www.fishbase.se/summary/Esox-lucius)
 - [Environment Agency](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/634689/Impact_of_catch_and_release_angling_practices_on_survival_of_salmon_-_summary.pdf)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)
-- [Żyłki, plecionki i fluorocarbonPorównaj rodzaje linek według metody, średnicy, rozciągliwości i warunków łowiska.Sprawdź w BigRiver →](https://webep1.com/go/e7918164c3)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Błędy początkującego wędkarza: diagnoza i korekta | FishPoint](https://fish-point.pl/aktualnosci/bledy-poczatkujacych.html)
+- [Górne wymiary ochronne 2026](https://fish-point.pl/aktualnosci/gorne-wymiary-ochronne-2026.html)
+- [Jak dobrać gumę na sandacza i szczupaka](https://fish-point.pl/aktualnosci/jak-dobrac-gume-na-drapieznika.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 Affiliation: The document contains an explicitly labelled affiliate section.
@@ -1075,6 +1174,8 @@ Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
 - [FishPoint (OpenAI gpt-image-2 via fal.ai) (Własny obraz generowany AI — FishPoint)](https://fish-point.pl/humor/dowcipy.html)
 - [Przegląd: Humor](https://fish-point.pl/humor/)
+- [Śmieszne filmiki wędkarskie](https://fish-point.pl/humor/filmiki.html)
+- [Memy wędkarskie](https://fish-point.pl/humor/memy.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -1113,6 +1214,8 @@ Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
 - [FishPoint (OpenAI gpt-image-2 via fal.ai) (Własny obraz generowany AI — FishPoint)](https://fish-point.pl/humor/memy.html)
 - [Przegląd: Humor](https://fish-point.pl/humor/)
+- [Dowcipy wędkarskie o rybach i wędkarzach | FishPoint](https://fish-point.pl/humor/dowcipy.html)
+- [Śmieszne filmiki wędkarskie](https://fish-point.pl/humor/filmiki.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -1170,7 +1273,7 @@ Sources:
 - [USDA FSIS: bezpieczne rozmrażanie](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/the-big-thaw-safe-defrosting-methods)
 - [ustawy o lasach w ELI](https://eli.gov.pl/eli/DU/2026/663/ogl)
 - [Przegląd: Kuchnia](https://fish-point.pl/kuchnia/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Karp wigilijny](https://fish-point.pl/kuchnia/karp-wigilijny.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -1193,7 +1296,8 @@ Sources:
 - [USDA FSIS: bezpieczne rozmrażanie](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/the-big-thaw-safe-defrosting-methods)
 - [Ustawa o ochronie zwierząt w ELI](https://eli.gov.pl/api/acts/DU/2023/1580/text.html)
 - [Przegląd: Kuchnia](https://fish-point.pl/kuchnia/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Przygotowanie ryby](https://fish-point.pl/kuchnia/przygotowanie-ryby.html)
+- [Smażony okoń i sandacz](https://fish-point.pl/kuchnia/smazony-okon-sandacz.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -1216,7 +1320,8 @@ Sources:
 - [USDA FSIS: bezpieczne rozmrażanie](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/the-big-thaw-safe-defrosting-methods)
 - [Przykładowy regulamin gospodarza](https://pzw.org.pl/szczegoly-artykulu/regulamin-polowu-2025r-na-stawach-kola_ax5VSGDfxY3EroHvD88c?print=pdf)
 - [Przegląd: Kuchnia](https://fish-point.pl/kuchnia/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Smażony okoń i sandacz](https://fish-point.pl/kuchnia/smazony-okon-sandacz.html)
+- [Jak wędzić ryby na gorąco i zimno | FishPoint](https://fish-point.pl/kuchnia/wedzenie-ryb.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -1239,7 +1344,8 @@ Sources:
 - [USDA FSIS: chłodzenie i przechowywanie](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/steps-keep-food-safe)
 - [USDA FSIS: bezpieczne rozmrażanie](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/the-big-thaw-safe-defrosting-methods)
 - [Przegląd: Kuchnia](https://fish-point.pl/kuchnia/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Jak wędzić ryby na gorąco i zimno | FishPoint](https://fish-point.pl/kuchnia/wedzenie-ryb.html)
+- [Zupa rybna: wywar, ucha i halászlé | FishPoint](https://fish-point.pl/kuchnia/zupa-rybna.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -1262,7 +1368,8 @@ Sources:
 - [USDA FSIS: chłodzenie i przechowywanie](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/steps-keep-food-safe)
 - [USDA FSIS: bezpieczne rozmrażanie](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/the-big-thaw-safe-defrosting-methods)
 - [Przegląd: Kuchnia](https://fish-point.pl/kuchnia/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Zupa rybna: wywar, ucha i halászlé | FishPoint](https://fish-point.pl/kuchnia/zupa-rybna.html)
+- [Grill i ognisko](https://fish-point.pl/kuchnia/grill-i-ognisko.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -1285,7 +1392,8 @@ Sources:
 - [USDA FSIS: chłodzenie i przechowywanie](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/steps-keep-food-safe)
 - [USDA FSIS: bezpieczne rozmrażanie](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/the-big-thaw-safe-defrosting-methods)
 - [Przegląd: Kuchnia](https://fish-point.pl/kuchnia/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Grill i ognisko](https://fish-point.pl/kuchnia/grill-i-ognisko.html)
+- [Karp wigilijny](https://fish-point.pl/kuchnia/karp-wigilijny.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -1420,7 +1528,8 @@ Sources:
 - [IMGW-PIB Hydro](https://hydro.imgw.pl/)
 - [PSP: burze i silny wiatr](https://www.gov.pl/web/kgpsp/burze-i-silny-wiatr)
 - [Przegląd: Łowiska](https://fish-point.pl/lowiska/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Łowiska małopolskie: plan weryfikacji wód | FishPoint](https://fish-point.pl/lowiska/malopolskie.html)
+- [Łowiska mazowieckie](https://fish-point.pl/lowiska/mazowieckie.html)
 - No external source link is stated in the document.
 
 W skrócieTa strona pomaga ułożyć wyprawę w województwie lubuskim. Nie jest wykazem legalnych stanowisk ani potwierdzeniem prawa do połowu. Karta niżej wskazuje dokument dla konkretnej wody; przed wyjazdem trzeba odczytać jego aktualną wersję, ustalić gospodarza i sprawdzić dostęp.Spis treściKarty źródłowePlan wyprawyDokumentyBezpieczeństwoPytaniaNajpierw dokument, potem wyjazd. Regionalna nazwa wody nie oznacza prawa do połowu. Sprawdź stany wód, pogodę i prognozę brań, okresy ochronne oraz aktualny komunikat gospodarza. Nie podajemy parkingów, współrzędnych ani miejsc wejścia bez urzędowego potwierdzenia.Karty konkretnych wód: tylko zakres potwierdzony dokumentemNiżej nie ma rankingu ani obietnicy połowu. Każda karta jest kierunkiem do dalszej kontroli, ponieważ wskazuje nazwę lub odcinek znaleziony w aktualnym dokumencie instytucji. „Administrator albo dokument” nie wolno czytać jako domniemania, że każda woda w regionie ma tego samego gospodarza. Gdy karta wprost nie nazywa uprawnionego, pozostawiamy tę lukę widoczną, zamiast ją wypełniać przypuszczeniem.Odra nr 10: od ujścia Kanału Ołobok (Nietkowickiego) do ujścia Nysy ŁużyckiejZakres źródła: Wykaz PZW Okręgu w Zielonej Górze 2026 opisuje ten odcinek wraz ze stale połączonymi starorzeczami, odnogami i dołami rzecznymi.Administrator albo dokument: PZW Okręg w Zielonej Górze wskazuje ten obwód w swoim wykazie wód; zakup i zasady wymagają kontroli w systemie zezwoleń.Dosłownie wskazane ograniczenie: „ZPS obowiązuje na odcinku Odry w granicach Krzesińskiego Parku Krajobrazowego”.Czego źródło nie potwierdza: nie potwierdza legalnego dojścia, lokalizacji parkingu, warunków nurtu ani zgody na wejście na każdy brzeg.Sprawdzone: 20 lipca 2026.Bóbr nr 6: od ujścia Brzeźnicy do progu w pobliżu oczyszczalni w Nowogrodzie BobrzańskimZakres źródła: Wykaz PZW Okręgu w Zielonej Górze 2026 wymienia odcinek Bobru oraz „Stary Bóbr” od zapory w Krzywańcu do progu w Prądocinku.Administrator albo dokument: PZW Okręg w Zielonej Górze: wykaz wód 2026 oraz powiązane zasady wędkowania.Dosłownie wskazane ograniczenie: „ZPS na odcinku Bobru w granicach powiatu krośnieńskiego” oraz „ZASADA NO KILL – ZŁÓW I WYPUŚĆ”.Czego źródło nie potwierdza: nie potwierdza stanowiska, brodzenia, dostępu do urządzeń hydrotechnicznych ani aktualnych wyjątków komunikatowych.Sprawdzone: 20 lipca 2026.Nysa Łużycka nr 3: od ujścia Żółtej Wody do ujścia do OdryZakres źródła: Wykaz PZW Okręgu w Zielonej Górze 2026 opisuje ten odcinek z odnogami i odgałęzieniami, w tym kanałami roboczymi hydroelektrowni.Administrator albo dokument: PZW Okręg w Zielonej Górze: wykaz wód 2026; zezwolenie należy sprawdzić w aktualnym systemie okręgu.Dosłownie wskazane ograniczenie: „ZPS na odcinku tej rzeki w granicach Parku Krajobrazowego Łuk Mużakowa”.Czego źródło nie potwierdza: nie potwierdza przekraczania granicy, wejścia na teren prywatny, dostępności brzegu ani parkingu.Sprawdzone: 20 lipca 2026.Plan wyprawy: wybierz typ wody, nie marketingową nazwęNajpierw określ warunki, których szukasz: nurt, zamknięta woda, wybrzeże albo zbiornik z ruchem jednostek. Dla rzeki zaplanuj drogę odejścia od brzegu przy wzroście stanu; dla jeziora sprawdź wiatr oraz możliwość bezpiecznego powrotu bez wypływania w otwarte partie; przy wodzie morskiej rozdziel warunki na brzegu od warunków na wodzie. Sam opis krajobrazu nie rozstrzyga o dostępie, ochronie przyrody, żegludze czy własności gruntu. W praktyce wybór zaczyna się od dokumentu, a nie od gatunku, metody ani zdjęcia z mapy.Zapis terenowyPorównując dwie wody, zapisz ich pełne nazwy z wykazu, numer obwodu lub odcinek, nazwę podmiotu wystawiającego zezwolenie i link do regulaminu. Następnie sprawdź, czy dokument obejmuje dokładnie ten wariant nazwy oraz datę wyprawy. Jeżeli wykaz odsyła do osobnego regulaminu, rejestru albo komunikatu, to te materiały są częścią decyzji. Brak wpisu, niejasny odcinek lub zmiana umowy nie jest powodem, aby uznać wodę za dostępną; to powód, aby uzyskać potwierdzenie od gospodarza.Nie przewidujemy obecności gatunków i nie dobieramy tu techniki połowu. Lokalny regulamin może ograniczać metodę, liczbę wędek, zanęcanie, używanie jednostki pływającej, porę albo dany fragment brzegu. Krajowe przepisy są punktem wyjścia, a nie substytutem zezwolenia. Do rozpoznania ryb służy atlas ryb; decyzję o zatrzymaniu ryby podejmuj wyłącznie po sprawdzeniu dokumentów obowiązujących na tej wodzie.Kontrola dokumentów przed spakowaniem sprzętuWykonaj tę sekwencję w dniu wyjazdu. Po pierwsze: wskaż gospodarza albo uprawnionego do rybactwa konkretnie dla nazwy i odcinka. Po drugie: otwórz jego zezwolenie i upewnij się, że obowiązuje w wybranym terminie oraz w tym obwodzie. Po trzecie: przeczytaj regulamin, rejestr połowów i komunikaty, w tym zakazy czasowe lub strefowe. Po czwarte: sprawdź dokument tożsamości i wymagane dokumenty wędkarskie; art. 7 ustawy i warunki zezwolenia są właściwszym punktem odniesienia niż relacja z internetu.Zapis terenowyWIR Wód Polskich prowadzi zakup zezwolenia przez właściwego uprawnionego. To ważne zwłaszcza tam, gdzie na jednej mapie są rzeki, starorzecza, kanały i jeziora o różnych statusach. Zezwolenie okresowe nie należy automatycznie do innej wody, nawet gdy nazwy są podobne. Jeśli źródło wskazuje RAPR, odczytaj również lokalne zaostrzenia; jeżeli nakazuje rejestr, przygotuj go przed rozpoczęciem połowu. Zachowaj potwierdzenie zakupu i link do dokumentu także offline.Sprawdź datę publikacji, ale także informację o obowiązywaniu. Wykaz może informować o postępowaniu konkursowym albo o tym, że roczne zezwolenie trwa tylko do zawarcia umowy. To nie jest drobny przypis: oznacza konieczność ponownej kontroli przed wyjazdem. Nie zakładaj, że dokument z poprzedniego sezonu, zrzut ekranu lub opłata w innym okręgu dają prawo do połowu. Gdy dokument i komunikat różnią się, poproś gospodarza o rozstrzygnięcie na piśmie.Dostęp, pogoda i bezpieczeństwoNie traktuj karty wody jako wskazówki do wejścia na brzeg. Nie potwierdza ona parkingu, dojścia przez działkę, pomostu, kąpieliska ani miejsca wodowania. Korzystaj wyłącznie z legalnie dostępnych miejsc wskazanych przez gospodarza, zarządcę terenu albo oznakowanie. Nie przechodź przez uprawy, teren prywatny, urządzenia hydrotechniczne, budowy, tarliska i strefy ochronne. Przy zaporach, śluzach, ujęciach oraz kanałach utrzymuj dystans wymagany oznakowaniem i zarządzeniami.Na rzece obserwuj rzeczywisty stan, szybkość nurtu, śliskie umocnienia i możliwość cofnięcia się; nie wchodź do wody, gdy nurt, temperatura lub widoczność przekraczają twoje umiejętności. Pas brodzeniowy nie daje wyporności. Przy ryzyku upadku wybierz właściwy PFD albo pozostań na brzegu. Nad jeziorem śledź wiatr, falę i prognozę burz; na wybrzeżu dodatkowo komunikaty morskie. PSP zaleca odejście od wody podczas burzy. Poinformuj bliską osobę o trasie i wróć przed pogorszeniem warunków.Przed wyjazdem sprawdź stacje i ostrzeżenia w IMGW Hydro oraz prognozę pogody dla dokładnej lokalizacji. Stan rzeki jest obserwacją, nie gwarancją bezpieczeństwa i nie mówi nic o otwartości dostępu. Po opadach, roztopach lub silnym wietrze odłóż wyjazd, jeśli nie potrafisz ocenić ryzyka. W terenie ponownie odczytaj znaki, a każdy komunikat gospodarza ma pierwszeństwo przed tym artykułem.Gdy dokument się zmienia albo nie odpowiada na pytanieŹródłowy wykaz ma służyć do zidentyfikowania wody, a nie do tworzenia własnej interpretacji. Po otwarciu dokumentu sprawdź jego datę, część dotyczącą ograniczeń oraz przypisy. Nazwa jeziora może oznaczać jedynie część obwodu; nazwa rzeki może obejmować odcinek między wskazanymi punktami, a nie całą rzekę. W razie różnicy nazw użyj numeru obwodu, położenia opisowego i dokumentu gospodarza. Nie zastępuj ich opisem z aplikacji, forum, mapy komercyjnej ani wspomnieniem z poprzedniego sezonu.Jeżeli nie umiesz odpowiedzieć na pięć pytań — kto jest gospodarzem, jakie zezwolenie obejmuje ten odcinek, czy obowiązuje regulamin lub rejestr, czy dostęp jest legalny i czy nie ma bieżącego komunikatu — odłóż wyprawę lub skontaktuj się z podmiotem wymienionym w aktualnym źródle. To samo dotyczy informacji o wodowaniu, miejscach biwakowania, kąpieliskach, ochronie przyrody i ograniczeniach żeglugi. Ich brak na stronie nie oznacza braku ograniczeń.Po przyjeździe sprawdź ponownie oznakowanie i warunki. Nie ignoruj zakazu tylko dlatego, że dokument zawiera ogólną listę wód; ograniczenie czasowe, strefowe lub pogodowe może dotyczyć dokładnie wybranego fragmentu. Jeśli sytuacja w terenie jest niejasna, nie rozpoczynaj połowu. Dokumentuj dla siebie datę kontroli i numer zezwolenia, ale nie publikuj niesprawdzonych wskazówek dojazdu jako faktu.Najczęstsze pytaniaCzy karta na tej stronie oznacza, że mogę tam łowić?Nie. Karta potwierdza jedynie literalny zakres dokumentu dla nazwy lub odcinka. Przed połowem trzeba ustalić aktualnego gospodarza, kupić właściwe zezwolenie, przeczytać regulamin i rejestr oraz sprawdzić legalny dostęp.Czy regionalny przewodnik potwierdza parking albo wejście do wody?Nie. Bez urzędowego lub gospodarskiego źródła nie publikujemy współrzędnych, parkingu ani dojścia. Zawsze weryfikuj teren, oznakowanie, strefy ochronne i komunikaty w dniu wyprawy.Źródła i data weryfikacjiSprawdzone: 20 lipca 2026. Linki poniżej prowadzą do źródeł pierwotnych lub urzędowych. Zakres każdego dokumentu opisano przy kartach; strony ogólne nie potwierdzają operatora konkretnej wody.PZW Okręg w Zielonej Górze: wykaz wód 2026 — dokument kart.PZW Okręg w Zielonej Górze: zasady wędkowania 2026 — wykaz albo zasady zezwoleń.Wody Polskie: zakup zezwolenia.Ustawa o rybactwie śródlądowym, art. 7.Rozporządzenie: wymiary i okresy ochronne.IMGW-PIB Hydro.PSP: burze i silny wiatr.Powiązane narzędziaWybór województwaWróć do przewodników regionalnych.Zasady i dokumentyKolejność kontroli przed połowem.Stany wódSprawdź warunki hydrologiczne.
@@ -1558,7 +1667,8 @@ Sources:
 - [IMGW-PIB Hydro](https://hydro.imgw.pl/)
 - [PSP: burze i silny wiatr](https://www.gov.pl/web/kgpsp/burze-i-silny-wiatr)
 - [Przegląd: Łowiska](https://fish-point.pl/lowiska/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Łowiska śląskie: plan weryfikacji wód | FishPoint](https://fish-point.pl/lowiska/slaskie.html)
+- [Łowiska świętokrzyskie](https://fish-point.pl/lowiska/swietokrzyskie.html)
 - No external source link is stated in the document.
 
 W skrócieTa strona pomaga ułożyć wyprawę w województwie pomorskim. Nie jest wykazem legalnych stanowisk ani potwierdzeniem prawa do połowu. Karta niżej wskazuje dokument dla konkretnej wody; przed wyjazdem trzeba odczytać jego aktualną wersję, ustalić gospodarza i sprawdzić dostęp.Spis treściKarty źródłowePlan wyprawyDokumentyBezpieczeństwoPytaniaNajpierw dokument, potem wyjazd. Regionalna nazwa wody nie oznacza prawa do połowu. Sprawdź stany wód, pogodę i prognozę brań, okresy ochronne oraz aktualny komunikat gospodarza. Nie podajemy parkingów, współrzędnych ani miejsc wejścia bez urzędowego potwierdzenia.Karty konkretnych wód: tylko zakres potwierdzony dokumentemNiżej nie ma rankingu ani obietnicy połowu. Każda karta jest kierunkiem do dalszej kontroli, ponieważ wskazuje nazwę lub odcinek znaleziony w aktualnym dokumencie instytucji. „Administrator albo dokument” nie wolno czytać jako domniemania, że każda woda w regionie ma tego samego gospodarza. Gdy karta wprost nie nazywa uprawnionego, pozostawiamy tę lukę widoczną, zamiast ją wypełniać przypuszczeniem.Obwód rzeki Łeba nr 4Zakres źródła: RZGW Gdańsk wskazuje w wykazie „rzekę Łeba” jako udostępnioną wodę tego obwodu.Administrator albo dokument: dokument: lista obwodów RZGW Gdańsk; na tej stronie wykazu nie wskazano imiennie aktualnego gospodarza.Dosłownie wskazane ograniczenie: „Przy rozstrzygnięciu konkursu zezwolenia roczne obowiązują do zawarcia umowy użytkowania”.Czego źródło nie potwierdza: nie potwierdza miejsca dojścia, dozwolonej metody, stanu ujścia ani tego, jakie zezwolenie jest dziś dostępne.Sprawdzone: 20 lipca 2026.Jezioro Otalżyno, obwód na rzece Gościcina nr 1Zakres źródła: Wykaz RZGW Gdańsk wymienia jezioro Otalżyno jako udostępnioną wodę w nazwanym obwodzie.Administrator albo dokument: dokument: lista obwodów RZGW Gdańsk; karta nie przypisuje samodzielnie operatora.Dosłownie wskazane ograniczenie: „Przy rozstrzygnięciu konkursu zezwolenia roczne obowiązują do zawarcia umowy użytkowania”.Czego źródło nie potwierdza: nie potwierdza gminy, punktu wejścia, łodzi, parkingu ani lokalnych zakazów niewymienionych w wykazie.Sprawdzone: 20 lipca 2026.Jezioro Damaszka, obwód w zlewni Motławy (Szpęgawy)Zakres źródła: RZGW Gdańsk wymienia jezioro Damaszka jako udostępnioną wodę obwodu jeziora Damaszka.Administrator albo dokument: dokument: lista obwodów RZGW Gdańsk; obecnego uprawnionego należy ustalić z bieżącej umowy lub zezwolenia.Dosłownie wskazane ograniczenie: „Przy rozstrzygnięciu konkursu zezwolenia roczne obowiązują do zawarcia umowy użytkowania”.Czego źródło nie potwierdza: nie potwierdza dostępu z brzegu, rejestru, ograniczeń jednostek pływających ani obecności gatunków.Sprawdzone: 20 lipca 2026.Plan wyprawy: wybierz typ wody, nie marketingową nazwęNajpierw określ warunki, których szukasz: nurt, zamknięta woda, wybrzeże albo zbiornik z ruchem jednostek. Dla rzeki zaplanuj drogę odejścia od brzegu przy wzroście stanu; dla jeziora sprawdź wiatr oraz możliwość bezpiecznego powrotu bez wypływania w otwarte partie; przy wodzie morskiej rozdziel warunki na brzegu od warunków na wodzie. Sam opis krajobrazu nie rozstrzyga o dostępie, ochronie przyrody, żegludze czy własności gruntu. W praktyce wybór zaczyna się od dokumentu, a nie od gatunku, metody ani zdjęcia z mapy.Zapis terenowyPorównując dwie wody, zapisz ich pełne nazwy z wykazu, numer obwodu lub odcinek, nazwę podmiotu wystawiającego zezwolenie i link do regulaminu. Następnie sprawdź, czy dokument obejmuje dokładnie ten wariant nazwy oraz datę wyprawy. Jeżeli wykaz odsyła do osobnego regulaminu, rejestru albo komunikatu, to te materiały są częścią decyzji. Brak wpisu, niejasny odcinek lub zmiana umowy nie jest powodem, aby uznać wodę za dostępną; to powód, aby uzyskać potwierdzenie od gospodarza.Nie przewidujemy obecności gatunków i nie dobieramy tu techniki połowu. Lokalny regulamin może ograniczać metodę, liczbę wędek, zanęcanie, używanie jednostki pływającej, porę albo dany fragment brzegu. Krajowe przepisy są punktem wyjścia, a nie substytutem zezwolenia. Do rozpoznania ryb służy atlas ryb; decyzję o zatrzymaniu ryby podejmuj wyłącznie po sprawdzeniu dokumentów obowiązujących na tej wodzie.Kontrola dokumentów przed spakowaniem sprzętuWykonaj tę sekwencję w dniu wyjazdu. Po pierwsze: wskaż gospodarza albo uprawnionego do rybactwa konkretnie dla nazwy i odcinka. Po drugie: otwórz jego zezwolenie i upewnij się, że obowiązuje w wybranym terminie oraz w tym obwodzie. Po trzecie: przeczytaj regulamin, rejestr połowów i komunikaty, w tym zakazy czasowe lub strefowe. Po czwarte: sprawdź dokument tożsamości i wymagane dokumenty wędkarskie; art. 7 ustawy i warunki zezwolenia są właściwszym punktem odniesienia niż relacja z internetu.Zapis terenowyWIR Wód Polskich prowadzi zakup zezwolenia przez właściwego uprawnionego. To ważne zwłaszcza tam, gdzie na jednej mapie są rzeki, starorzecza, kanały i jeziora o różnych statusach. Zezwolenie okresowe nie należy automatycznie do innej wody, nawet gdy nazwy są podobne. Jeśli źródło wskazuje RAPR, odczytaj również lokalne zaostrzenia; jeżeli nakazuje rejestr, przygotuj go przed rozpoczęciem połowu. Zachowaj potwierdzenie zakupu i link do dokumentu także offline.Sprawdź datę publikacji, ale także informację o obowiązywaniu. Wykaz może informować o postępowaniu konkursowym albo o tym, że roczne zezwolenie trwa tylko do zawarcia umowy. To nie jest drobny przypis: oznacza konieczność ponownej kontroli przed wyjazdem. Nie zakładaj, że dokument z poprzedniego sezonu, zrzut ekranu lub opłata w innym okręgu dają prawo do połowu. Gdy dokument i komunikat różnią się, poproś gospodarza o rozstrzygnięcie na piśmie.Dostęp, pogoda i bezpieczeństwoNie traktuj karty wody jako wskazówki do wejścia na brzeg. Nie potwierdza ona parkingu, dojścia przez działkę, pomostu, kąpieliska ani miejsca wodowania. Korzystaj wyłącznie z legalnie dostępnych miejsc wskazanych przez gospodarza, zarządcę terenu albo oznakowanie. Nie przechodź przez uprawy, teren prywatny, urządzenia hydrotechniczne, budowy, tarliska i strefy ochronne. Przy zaporach, śluzach, ujęciach oraz kanałach utrzymuj dystans wymagany oznakowaniem i zarządzeniami.Na rzece obserwuj rzeczywisty stan, szybkość nurtu, śliskie umocnienia i możliwość cofnięcia się; nie wchodź do wody, gdy nurt, temperatura lub widoczność przekraczają twoje umiejętności. Pas brodzeniowy nie daje wyporności. Przy ryzyku upadku wybierz właściwy PFD albo pozostań na brzegu. Nad jeziorem śledź wiatr, falę i prognozę burz; na wybrzeżu dodatkowo komunikaty morskie. PSP zaleca odejście od wody podczas burzy. Poinformuj bliską osobę o trasie i wróć przed pogorszeniem warunków.Przed wyjazdem sprawdź stacje i ostrzeżenia w IMGW Hydro oraz prognozę pogody dla dokładnej lokalizacji. Stan rzeki jest obserwacją, nie gwarancją bezpieczeństwa i nie mówi nic o otwartości dostępu. Po opadach, roztopach lub silnym wietrze odłóż wyjazd, jeśli nie potrafisz ocenić ryzyka. W terenie ponownie odczytaj znaki, a każdy komunikat gospodarza ma pierwszeństwo przed tym artykułem.Gdy dokument się zmienia albo nie odpowiada na pytanieŹródłowy wykaz ma służyć do zidentyfikowania wody, a nie do tworzenia własnej interpretacji. Po otwarciu dokumentu sprawdź jego datę, część dotyczącą ograniczeń oraz przypisy. Nazwa jeziora może oznaczać jedynie część obwodu; nazwa rzeki może obejmować odcinek między wskazanymi punktami, a nie całą rzekę. W razie różnicy nazw użyj numeru obwodu, położenia opisowego i dokumentu gospodarza. Nie zastępuj ich opisem z aplikacji, forum, mapy komercyjnej ani wspomnieniem z poprzedniego sezonu.Jeżeli nie umiesz odpowiedzieć na pięć pytań — kto jest gospodarzem, jakie zezwolenie obejmuje ten odcinek, czy obowiązuje regulamin lub rejestr, czy dostęp jest legalny i czy nie ma bieżącego komunikatu — odłóż wyprawę lub skontaktuj się z podmiotem wymienionym w aktualnym źródle. To samo dotyczy informacji o wodowaniu, miejscach biwakowania, kąpieliskach, ochronie przyrody i ograniczeniach żeglugi. Ich brak na stronie nie oznacza braku ograniczeń.Po przyjeździe sprawdź ponownie oznakowanie i warunki. Nie ignoruj zakazu tylko dlatego, że dokument zawiera ogólną listę wód; ograniczenie czasowe, strefowe lub pogodowe może dotyczyć dokładnie wybranego fragmentu. Jeśli sytuacja w terenie jest niejasna, nie rozpoczynaj połowu. Dokumentuj dla siebie datę kontroli i numer zezwolenia, ale nie publikuj niesprawdzonych wskazówek dojazdu jako faktu.Najczęstsze pytaniaCzy karta na tej stronie oznacza, że mogę tam łowić?Nie. Karta potwierdza jedynie literalny zakres dokumentu dla nazwy lub odcinka. Przed połowem trzeba ustalić aktualnego gospodarza, kupić właściwe zezwolenie, przeczytać regulamin i rejestr oraz sprawdzić legalny dostęp.Czy regionalny przewodnik potwierdza parking albo wejście do wody?Nie. Bez urzędowego lub gospodarskiego źródła nie publikujemy współrzędnych, parkingu ani dojścia. Zawsze weryfikuj teren, oznakowanie, strefy ochronne i komunikaty w dniu wyprawy.Źródła i data weryfikacjiSprawdzone: 20 lipca 2026. Linki poniżej prowadzą do źródeł pierwotnych lub urzędowych. Zakres każdego dokumentu opisano przy kartach; strony ogólne nie potwierdzają operatora konkretnej wody.RZGW Gdańsk: lista obwodów — dokument kart.RZGW Gdańsk: informacje regionalne — wykaz albo zasady zezwoleń.Wody Polskie: zakup zezwolenia.Ustawa o rybactwie śródlądowym, art. 7.Rozporządzenie: wymiary i okresy ochronne.IMGW-PIB Hydro.PSP: burze i silny wiatr.Powiązane narzędziaWybór województwaWróć do przewodników regionalnych.Zasady i dokumentyKolejność kontroli przed połowem.Stany wódSprawdź warunki hydrologiczne.
@@ -1650,7 +1760,8 @@ Sources:
 - [IMGW-PIB Hydro](https://hydro.imgw.pl/)
 - [PSP: burze i silny wiatr](https://www.gov.pl/web/kgpsp/burze-i-silny-wiatr)
 - [Przegląd: Łowiska](https://fish-point.pl/lowiska/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Łowiska zachodniopomorskie: źródłowa ścieżka wyprawy | FishPoint](https://fish-point.pl/lowiska/zachodniopomorskie.html)
+- [Łowiska dolnośląskie: plan weryfikacji wód | FishPoint](https://fish-point.pl/lowiska/dolnoslaskie.html)
 - No external source link is stated in the document.
 
 W skrócieTa strona pomaga ułożyć wyprawę w Wielkopolsce. Nie jest wykazem legalnych stanowisk ani potwierdzeniem prawa do połowu. Karta niżej wskazuje dokument dla konkretnej wody; przed wyjazdem trzeba odczytać jego aktualną wersję, ustalić gospodarza i sprawdzić dostęp.Spis treściKarty źródłowePlan wyprawyDokumentyBezpieczeństwoPytaniaNajpierw dokument, potem wyjazd. Regionalna nazwa wody nie oznacza prawa do połowu. Sprawdź stany wód, pogodę i prognozę brań, okresy ochronne oraz aktualny komunikat gospodarza. Nie podajemy parkingów, współrzędnych ani miejsc wejścia bez urzędowego potwierdzenia.Karty konkretnych wód: tylko zakres potwierdzony dokumentemNiżej nie ma rankingu ani obietnicy połowu. Każda karta jest kierunkiem do dalszej kontroli, ponieważ wskazuje nazwę lub odcinek znaleziony w aktualnym dokumencie instytucji. „Administrator albo dokument” nie wolno czytać jako domniemania, że każda woda w regionie ma tego samego gospodarza. Gdy karta wprost nie nazywa uprawnionego, pozostawiamy tę lukę widoczną, zamiast ją wypełniać przypuszczeniem.Jeziora Białe, Mileczki i Górne, gmina WieleńZakres źródła: RZGW Bydgoszcz wymienia te wody w obwodzie jeziora Białe na rzece Miała nr 1.Administrator albo dokument: dokument: wykaz RZGW Bydgoszcz 2026; wpis nie zastępuje bieżącego ustalenia uprawnionego.Dosłownie wskazane ograniczenie: „RAPR 2026; przy rozstrzygnięciu konkursu zezwolenia roczne obowiązują do zawarcia umowy użytkowania”.Czego źródło nie potwierdza: nie potwierdza dostępu z konkretnego brzegu, parkingu, łodzi ani ceny zezwolenia.Sprawdzone: 20 lipca 2026.Jeziora Bąd, Księże, Wielkie, Główki i Święte, gmina WieleńZakres źródła: Wykaz RZGW Bydgoszcz przypisuje ten zestaw do obwodu jeziora Wielkie na rzece Miała nr 2.Administrator albo dokument: dokument: wykaz RZGW Bydgoszcz 2026; nazwę gospodarza sprawdź w aktualnym zezwoleniu.Dosłownie wskazane ograniczenie: „RAPR 2026”.Czego źródło nie potwierdza: nie potwierdza, że wszystkie brzegi są dostępne, ani dodatkowych ograniczeń wydanych po publikacji wykazu.Sprawdzone: 20 lipca 2026.Jezioro Budzisławskie (Anastazewo), gmina KleczewZakres źródła: RZGW Bydgoszcz wymienia jezioro w obwodzie jeziora Budzisławskie w zlewni kanału Ostrowo–Gopło nr 1.Administrator albo dokument: dokument: wykaz RZGW Bydgoszcz 2026; status umowy i zezwolenia sprawdza się osobno.Dosłownie wskazane ograniczenie: „Zakaz stosowania zanęt od 15 czerwca do 31 sierpnia, poza tym okresem 1 kg na dobę”.Czego źródło nie potwierdza: nie potwierdza wejścia, jednostki pływającej, rejestru ani dozwolonych stanowisk.Sprawdzone: 20 lipca 2026.Plan wyprawy: wybierz typ wody, nie marketingową nazwęNajpierw określ warunki, których szukasz: nurt, zamknięta woda, wybrzeże albo zbiornik z ruchem jednostek. Dla rzeki zaplanuj drogę odejścia od brzegu przy wzroście stanu; dla jeziora sprawdź wiatr oraz możliwość bezpiecznego powrotu bez wypływania w otwarte partie; przy wodzie morskiej rozdziel warunki na brzegu od warunków na wodzie. Sam opis krajobrazu nie rozstrzyga o dostępie, ochronie przyrody, żegludze czy własności gruntu. W praktyce wybór zaczyna się od dokumentu, a nie od gatunku, metody ani zdjęcia z mapy.Zapis terenowyPorównując dwie wody, zapisz ich pełne nazwy z wykazu, numer obwodu lub odcinek, nazwę podmiotu wystawiającego zezwolenie i link do regulaminu. Następnie sprawdź, czy dokument obejmuje dokładnie ten wariant nazwy oraz datę wyprawy. Jeżeli wykaz odsyła do osobnego regulaminu, rejestru albo komunikatu, to te materiały są częścią decyzji. Brak wpisu, niejasny odcinek lub zmiana umowy nie jest powodem, aby uznać wodę za dostępną; to powód, aby uzyskać potwierdzenie od gospodarza.Nie przewidujemy obecności gatunków i nie dobieramy tu techniki połowu. Lokalny regulamin może ograniczać metodę, liczbę wędek, zanęcanie, używanie jednostki pływającej, porę albo dany fragment brzegu. Krajowe przepisy są punktem wyjścia, a nie substytutem zezwolenia. Do rozpoznania ryb służy atlas ryb; decyzję o zatrzymaniu ryby podejmuj wyłącznie po sprawdzeniu dokumentów obowiązujących na tej wodzie.Kontrola dokumentów przed spakowaniem sprzętuWykonaj tę sekwencję w dniu wyjazdu. Po pierwsze: wskaż gospodarza albo uprawnionego do rybactwa konkretnie dla nazwy i odcinka. Po drugie: otwórz jego zezwolenie i upewnij się, że obowiązuje w wybranym terminie oraz w tym obwodzie. Po trzecie: przeczytaj regulamin, rejestr połowów i komunikaty, w tym zakazy czasowe lub strefowe. Po czwarte: sprawdź dokument tożsamości i wymagane dokumenty wędkarskie; art. 7 ustawy i warunki zezwolenia są właściwszym punktem odniesienia niż relacja z internetu.Zapis terenowyWIR Wód Polskich prowadzi zakup zezwolenia przez właściwego uprawnionego. To ważne zwłaszcza tam, gdzie na jednej mapie są rzeki, starorzecza, kanały i jeziora o różnych statusach. Zezwolenie okresowe nie należy automatycznie do innej wody, nawet gdy nazwy są podobne. Jeśli źródło wskazuje RAPR, odczytaj również lokalne zaostrzenia; jeżeli nakazuje rejestr, przygotuj go przed rozpoczęciem połowu. Zachowaj potwierdzenie zakupu i link do dokumentu także offline.Sprawdź datę publikacji, ale także informację o obowiązywaniu. Wykaz może informować o postępowaniu konkursowym albo o tym, że roczne zezwolenie trwa tylko do zawarcia umowy. To nie jest drobny przypis: oznacza konieczność ponownej kontroli przed wyjazdem. Nie zakładaj, że dokument z poprzedniego sezonu, zrzut ekranu lub opłata w innym okręgu dają prawo do połowu. Gdy dokument i komunikat różnią się, poproś gospodarza o rozstrzygnięcie na piśmie.Dostęp, pogoda i bezpieczeństwoNie traktuj karty wody jako wskazówki do wejścia na brzeg. Nie potwierdza ona parkingu, dojścia przez działkę, pomostu, kąpieliska ani miejsca wodowania. Korzystaj wyłącznie z legalnie dostępnych miejsc wskazanych przez gospodarza, zarządcę terenu albo oznakowanie. Nie przechodź przez uprawy, teren prywatny, urządzenia hydrotechniczne, budowy, tarliska i strefy ochronne. Przy zaporach, śluzach, ujęciach oraz kanałach utrzymuj dystans wymagany oznakowaniem i zarządzeniami.Na rzece obserwuj rzeczywisty stan, szybkość nurtu, śliskie umocnienia i możliwość cofnięcia się; nie wchodź do wody, gdy nurt, temperatura lub widoczność przekraczają twoje umiejętności. Pas brodzeniowy nie daje wyporności. Przy ryzyku upadku wybierz właściwy PFD albo pozostań na brzegu. Nad jeziorem śledź wiatr, falę i prognozę burz; na wybrzeżu dodatkowo komunikaty morskie. PSP zaleca odejście od wody podczas burzy. Poinformuj bliską osobę o trasie i wróć przed pogorszeniem warunków.Przed wyjazdem sprawdź stacje i ostrzeżenia w IMGW Hydro oraz prognozę pogody dla dokładnej lokalizacji. Stan rzeki jest obserwacją, nie gwarancją bezpieczeństwa i nie mówi nic o otwartości dostępu. Po opadach, roztopach lub silnym wietrze odłóż wyjazd, jeśli nie potrafisz ocenić ryzyka. W terenie ponownie odczytaj znaki, a każdy komunikat gospodarza ma pierwszeństwo przed tym artykułem.Gdy dokument się zmienia albo nie odpowiada na pytanieŹródłowy wykaz ma służyć do zidentyfikowania wody, a nie do tworzenia własnej interpretacji. Po otwarciu dokumentu sprawdź jego datę, część dotyczącą ograniczeń oraz przypisy. Nazwa jeziora może oznaczać jedynie część obwodu; nazwa rzeki może obejmować odcinek między wskazanymi punktami, a nie całą rzekę. W razie różnicy nazw użyj numeru obwodu, położenia opisowego i dokumentu gospodarza. Nie zastępuj ich opisem z aplikacji, forum, mapy komercyjnej ani wspomnieniem z poprzedniego sezonu.Jeżeli nie umiesz odpowiedzieć na pięć pytań — kto jest gospodarzem, jakie zezwolenie obejmuje ten odcinek, czy obowiązuje regulamin lub rejestr, czy dostęp jest legalny i czy nie ma bieżącego komunikatu — odłóż wyprawę lub skontaktuj się z podmiotem wymienionym w aktualnym źródle. To samo dotyczy informacji o wodowaniu, miejscach biwakowania, kąpieliskach, ochronie przyrody i ograniczeniach żeglugi. Ich brak na stronie nie oznacza braku ograniczeń.Po przyjeździe sprawdź ponownie oznakowanie i warunki. Nie ignoruj zakazu tylko dlatego, że dokument zawiera ogólną listę wód; ograniczenie czasowe, strefowe lub pogodowe może dotyczyć dokładnie wybranego fragmentu. Jeśli sytuacja w terenie jest niejasna, nie rozpoczynaj połowu. Dokumentuj dla siebie datę kontroli i numer zezwolenia, ale nie publikuj niesprawdzonych wskazówek dojazdu jako faktu.Najczęstsze pytaniaCzy karta na tej stronie oznacza, że mogę tam łowić?Nie. Karta potwierdza jedynie literalny zakres dokumentu dla nazwy lub odcinka. Przed połowem trzeba ustalić aktualnego gospodarza, kupić właściwe zezwolenie, przeczytać regulamin i rejestr oraz sprawdzić legalny dostęp.Czy regionalny przewodnik potwierdza parking albo wejście do wody?Nie. Bez urzędowego lub gospodarskiego źródła nie publikujemy współrzędnych, parkingu ani dojścia. Zawsze weryfikuj teren, oznakowanie, strefy ochronne i komunikaty w dniu wyprawy.Źródła i data weryfikacjiSprawdzone: 20 lipca 2026. Linki poniżej prowadzą do źródeł pierwotnych lub urzędowych. Zakres każdego dokumentu opisano przy kartach; strony ogólne nie potwierdzają operatora konkretnej wody.RZGW Bydgoszcz: lista obwodów rybackich i łowisk 2026 — dokument kart.RZGW Poznań: informacje regionalne — wykaz albo zasady zezwoleń.Wody Polskie: zakup zezwolenia.Ustawa o rybactwie śródlądowym, art. 7.Rozporządzenie: wymiary i okresy ochronne.IMGW-PIB Hydro.PSP: burze i silny wiatr.Powiązane narzędziaWybór województwaWróć do przewodników regionalnych.Zasady i dokumentyKolejność kontroli przed połowem.Stany wódSprawdź warunki hydrologiczne.
@@ -1672,7 +1783,8 @@ Sources:
 - [IMGW-PIB Hydro](https://hydro.imgw.pl/)
 - [PSP: burze i silny wiatr](https://www.gov.pl/web/kgpsp/burze-i-silny-wiatr)
 - [Przegląd: Łowiska](https://fish-point.pl/lowiska/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Łowiska dolnośląskie: plan weryfikacji wód | FishPoint](https://fish-point.pl/lowiska/dolnoslaskie.html)
+- [Łowiska kujawsko-pomorskie – gdzie łowić | FishPoint](https://fish-point.pl/lowiska/kujawsko-pomorskie.html)
 - No external source link is stated in the document.
 
 W skrócieTa strona pomaga ułożyć wyprawę w województwie zachodniopomorskim. Nie jest wykazem legalnych stanowisk ani potwierdzeniem prawa do połowu. Karta niżej wskazuje dokument dla konkretnej wody; przed wyjazdem trzeba odczytać jego aktualną wersję, ustalić gospodarza i sprawdzić dostęp.Spis treściKarty źródłowePlan wyprawyDokumentyBezpieczeństwoPytaniaNajpierw dokument, potem wyjazd. Regionalna nazwa wody nie oznacza prawa do połowu. Sprawdź stany wód, pogodę i prognozę brań, okresy ochronne oraz aktualny komunikat gospodarza. Nie podajemy parkingów, współrzędnych ani miejsc wejścia bez urzędowego potwierdzenia.Karty konkretnych wód: tylko zakres potwierdzony dokumentemNiżej nie ma rankingu ani obietnicy połowu. Każda karta jest kierunkiem do dalszej kontroli, ponieważ wskazuje nazwę lub odcinek znaleziony w aktualnym dokumencie instytucji. „Administrator albo dokument” nie wolno czytać jako domniemania, że każda woda w regionie ma tego samego gospodarza. Gdy karta wprost nie nazywa uprawnionego, pozostawiamy tę lukę widoczną, zamiast ją wypełniać przypuszczeniem.Jezioro Bobkowo (Mazanowo Małe), gmina MirosławiecZakres źródła: RZGW Bydgoszcz wymienia Bobkowo (Mazanowo Małe) w obwodzie jeziora Bobkowo na cieku w zlewni Piławki nr 2.Administrator albo dokument: źródło instytucjonalne: wykaz RZGW Bydgoszcz 2026; karta nie wskazuje na tej stronie aktualnego gospodarza imiennie.Dosłownie wskazane ograniczenie: „RAPR 2026; zakaz stosowania zanęt i ograniczenie liczby jednostek pływających”.Czego źródło nie potwierdza: nie potwierdza miejsca wejścia, parkingu, ceny ani aktualnego zezwolenia po ewentualnej zmianie umowy.Sprawdzone: 20 lipca 2026.Jezioro Raduń Mały i Raduń Duży (Dybrzno), gmina WałczZakres źródła: Wykaz RZGW Bydgoszcz obejmuje oba jeziora w obwodzie jeziora Raduń na rzece Żydówka nr 2.Administrator albo dokument: dokument: RZGW Bydgoszcz, lista 2026; aktualny uprawniony wymaga sprawdzenia przed zakupem.Dosłownie wskazane ograniczenie: „Na Raduń Mały zakaz pływania jednostką pływającą”.Czego źródło nie potwierdza: nie potwierdza brzegu dostępnego publicznie, rodzaju zezwolenia ani dodatkowych komunikatów.Sprawdzone: 20 lipca 2026.Zalew Nadarzycki, gmina Borne SulinowoZakres źródła: Wykaz RZGW Bydgoszcz wskazuje Zalew Nadarzycki jako udostępnioną wodę obwodu zbiornika na Piławie nr 3.Administrator albo dokument: dokument: RZGW Bydgoszcz, lista 2026; wpis dokumentuje zakres wykazu, nie domniemany dostęp.Dosłownie wskazane ograniczenie: „RAPR 2026”.Czego źródło nie potwierdza: nie potwierdza operatora na dzień wyprawy, wodowania, stref na brzegu ani metody połowu.Sprawdzone: 20 lipca 2026.Plan wyprawy: wybierz typ wody, nie marketingową nazwęNajpierw określ warunki, których szukasz: nurt, zamknięta woda, wybrzeże albo zbiornik z ruchem jednostek. Dla rzeki zaplanuj drogę odejścia od brzegu przy wzroście stanu; dla jeziora sprawdź wiatr oraz możliwość bezpiecznego powrotu bez wypływania w otwarte partie; przy wodzie morskiej rozdziel warunki na brzegu od warunków na wodzie. Sam opis krajobrazu nie rozstrzyga o dostępie, ochronie przyrody, żegludze czy własności gruntu. W praktyce wybór zaczyna się od dokumentu, a nie od gatunku, metody ani zdjęcia z mapy.Zapis terenowyPorównując dwie wody, zapisz ich pełne nazwy z wykazu, numer obwodu lub odcinek, nazwę podmiotu wystawiającego zezwolenie i link do regulaminu. Następnie sprawdź, czy dokument obejmuje dokładnie ten wariant nazwy oraz datę wyprawy. Jeżeli wykaz odsyła do osobnego regulaminu, rejestru albo komunikatu, to te materiały są częścią decyzji. Brak wpisu, niejasny odcinek lub zmiana umowy nie jest powodem, aby uznać wodę za dostępną; to powód, aby uzyskać potwierdzenie od gospodarza.Nie przewidujemy obecności gatunków i nie dobieramy tu techniki połowu. Lokalny regulamin może ograniczać metodę, liczbę wędek, zanęcanie, używanie jednostki pływającej, porę albo dany fragment brzegu. Krajowe przepisy są punktem wyjścia, a nie substytutem zezwolenia. Do rozpoznania ryb służy atlas ryb; decyzję o zatrzymaniu ryby podejmuj wyłącznie po sprawdzeniu dokumentów obowiązujących na tej wodzie.Kontrola dokumentów przed spakowaniem sprzętuWykonaj tę sekwencję w dniu wyjazdu. Po pierwsze: wskaż gospodarza albo uprawnionego do rybactwa konkretnie dla nazwy i odcinka. Po drugie: otwórz jego zezwolenie i upewnij się, że obowiązuje w wybranym terminie oraz w tym obwodzie. Po trzecie: przeczytaj regulamin, rejestr połowów i komunikaty, w tym zakazy czasowe lub strefowe. Po czwarte: sprawdź dokument tożsamości i wymagane dokumenty wędkarskie; art. 7 ustawy i warunki zezwolenia są właściwszym punktem odniesienia niż relacja z internetu.Zapis terenowyWIR Wód Polskich prowadzi zakup zezwolenia przez właściwego uprawnionego. To ważne zwłaszcza tam, gdzie na jednej mapie są rzeki, starorzecza, kanały i jeziora o różnych statusach. Zezwolenie okresowe nie należy automatycznie do innej wody, nawet gdy nazwy są podobne. Jeśli źródło wskazuje RAPR, odczytaj również lokalne zaostrzenia; jeżeli nakazuje rejestr, przygotuj go przed rozpoczęciem połowu. Zachowaj potwierdzenie zakupu i link do dokumentu także offline.Sprawdź datę publikacji, ale także informację o obowiązywaniu. Wykaz może informować o postępowaniu konkursowym albo o tym, że roczne zezwolenie trwa tylko do zawarcia umowy. To nie jest drobny przypis: oznacza konieczność ponownej kontroli przed wyjazdem. Nie zakładaj, że dokument z poprzedniego sezonu, zrzut ekranu lub opłata w innym okręgu dają prawo do połowu. Gdy dokument i komunikat różnią się, poproś gospodarza o rozstrzygnięcie na piśmie.Dostęp, pogoda i bezpieczeństwoNie traktuj karty wody jako wskazówki do wejścia na brzeg. Nie potwierdza ona parkingu, dojścia przez działkę, pomostu, kąpieliska ani miejsca wodowania. Korzystaj wyłącznie z legalnie dostępnych miejsc wskazanych przez gospodarza, zarządcę terenu albo oznakowanie. Nie przechodź przez uprawy, teren prywatny, urządzenia hydrotechniczne, budowy, tarliska i strefy ochronne. Przy zaporach, śluzach, ujęciach oraz kanałach utrzymuj dystans wymagany oznakowaniem i zarządzeniami.Na rzece obserwuj rzeczywisty stan, szybkość nurtu, śliskie umocnienia i możliwość cofnięcia się; nie wchodź do wody, gdy nurt, temperatura lub widoczność przekraczają twoje umiejętności. Pas brodzeniowy nie daje wyporności. Przy ryzyku upadku wybierz właściwy PFD albo pozostań na brzegu. Nad jeziorem śledź wiatr, falę i prognozę burz; na wybrzeżu dodatkowo komunikaty morskie. PSP zaleca odejście od wody podczas burzy. Poinformuj bliską osobę o trasie i wróć przed pogorszeniem warunków.Przed wyjazdem sprawdź stacje i ostrzeżenia w IMGW Hydro oraz prognozę pogody dla dokładnej lokalizacji. Stan rzeki jest obserwacją, nie gwarancją bezpieczeństwa i nie mówi nic o otwartości dostępu. Po opadach, roztopach lub silnym wietrze odłóż wyjazd, jeśli nie potrafisz ocenić ryzyka. W terenie ponownie odczytaj znaki, a każdy komunikat gospodarza ma pierwszeństwo przed tym artykułem.Gdy dokument się zmienia albo nie odpowiada na pytanieŹródłowy wykaz ma służyć do zidentyfikowania wody, a nie do tworzenia własnej interpretacji. Po otwarciu dokumentu sprawdź jego datę, część dotyczącą ograniczeń oraz przypisy. Nazwa jeziora może oznaczać jedynie część obwodu; nazwa rzeki może obejmować odcinek między wskazanymi punktami, a nie całą rzekę. W razie różnicy nazw użyj numeru obwodu, położenia opisowego i dokumentu gospodarza. Nie zastępuj ich opisem z aplikacji, forum, mapy komercyjnej ani wspomnieniem z poprzedniego sezonu.Jeżeli nie umiesz odpowiedzieć na pięć pytań — kto jest gospodarzem, jakie zezwolenie obejmuje ten odcinek, czy obowiązuje regulamin lub rejestr, czy dostęp jest legalny i czy nie ma bieżącego komunikatu — odłóż wyprawę lub skontaktuj się z podmiotem wymienionym w aktualnym źródle. To samo dotyczy informacji o wodowaniu, miejscach biwakowania, kąpieliskach, ochronie przyrody i ograniczeniach żeglugi. Ich brak na stronie nie oznacza braku ograniczeń.Po przyjeździe sprawdź ponownie oznakowanie i warunki. Nie ignoruj zakazu tylko dlatego, że dokument zawiera ogólną listę wód; ograniczenie czasowe, strefowe lub pogodowe może dotyczyć dokładnie wybranego fragmentu. Jeśli sytuacja w terenie jest niejasna, nie rozpoczynaj połowu. Dokumentuj dla siebie datę kontroli i numer zezwolenia, ale nie publikuj niesprawdzonych wskazówek dojazdu jako faktu.Najczęstsze pytaniaCzy karta na tej stronie oznacza, że mogę tam łowić?Nie. Karta potwierdza jedynie literalny zakres dokumentu dla nazwy lub odcinka. Przed połowem trzeba ustalić aktualnego gospodarza, kupić właściwe zezwolenie, przeczytać regulamin i rejestr oraz sprawdzić legalny dostęp.Czy regionalny przewodnik potwierdza parking albo wejście do wody?Nie. Bez urzędowego lub gospodarskiego źródła nie publikujemy współrzędnych, parkingu ani dojścia. Zawsze weryfikuj teren, oznakowanie, strefy ochronne i komunikaty w dniu wyprawy.Źródła i data weryfikacjiSprawdzone: 20 lipca 2026. Linki poniżej prowadzą do źródeł pierwotnych lub urzędowych. Zakres każdego dokumentu opisano przy kartach; strony ogólne nie potwierdzają operatora konkretnej wody.RZGW Bydgoszcz: lista obwodów rybackich i łowisk 2026 — dokument kart.RZGW Szczecin: informacje regionalne — wykaz albo zasady zezwoleń.Wody Polskie: zakup zezwolenia.Ustawa o rybactwie śródlądowym, art. 7.Rozporządzenie: wymiary i okresy ochronne.IMGW-PIB Hydro.PSP: burze i silny wiatr.Powiązane narzędziaWybór województwaWróć do przewodników regionalnych.Zasady i dokumentyKolejność kontroli przed połowem.Stany wódSprawdź warunki hydrologiczne.
@@ -1709,7 +1821,9 @@ Sources:
 - [właściwego okręgu PZW](https://pzw.org.pl)
 - [Dz.U. 2023 poz. 1373](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Narzędzia](https://fish-point.pl/narzedzia/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Kreator doboru sprzętu wędkarskiego | FishPoint](https://fish-point.pl/narzedzia/dobor-sprzetu.html)
+- [Interaktywny kalendarz brań](https://fish-point.pl/narzedzia/kalendarz-bran.html)
+- [Kalendarz księżycowy brań ryb](https://fish-point.pl/narzedzia/kalendarz-ksiezycowy.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -1725,6 +1839,9 @@ Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
 - [4028mdk09 (CC BY-SA 3.0)](https://commons.wikimedia.org/w/index.php?curid=8311821)
 - [Przegląd: Narzędzia](https://fish-point.pl/narzedzia/)
+- [Interaktywny kalendarz brań](https://fish-point.pl/narzedzia/kalendarz-bran.html)
+- [Kalendarz księżycowy brań ryb](https://fish-point.pl/narzedzia/kalendarz-ksiezycowy.html)
+- [Kalkulator wagi ryby z długości](https://fish-point.pl/narzedzia/kalkulator-wagi-ryby.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -1744,6 +1861,9 @@ Sources:
 - [Open-Meteo Forecast API](https://open-meteo.com/en/docs)
 - [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - [Przegląd: Narzędzia](https://fish-point.pl/narzedzia/)
+- [Kalendarz księżycowy brań ryb](https://fish-point.pl/narzedzia/kalendarz-ksiezycowy.html)
+- [Kalkulator wagi ryby z długości](https://fish-point.pl/narzedzia/kalkulator-wagi-ryby.html)
+- [Okresy ochronne i wymiary ryb](https://fish-point.pl/narzedzia/okresy-ochronne.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -1764,6 +1884,9 @@ Sources:
 - [Quigley i in. (2023)](https://link.springer.com/article/10.1007/s42452-023-05379-8)
 - [IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Narzędzia](https://fish-point.pl/narzedzia/)
+- [Kalkulator wagi ryby z długości](https://fish-point.pl/narzedzia/kalkulator-wagi-ryby.html)
+- [Okresy ochronne i wymiary ryb](https://fish-point.pl/narzedzia/okresy-ochronne.html)
+- [Prognoza brań z pogody na dziś i weekend | FishPoint](https://fish-point.pl/narzedzia/prognoza-bran.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -1780,6 +1903,9 @@ Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
 - [George Chernilevsky (CC BY-SA 3.0)](https://commons.wikimedia.org/w/index.php?curid=77657476)
 - [Przegląd: Narzędzia](https://fish-point.pl/narzedzia/)
+- [Okresy ochronne i wymiary ryb](https://fish-point.pl/narzedzia/okresy-ochronne.html)
+- [Prognoza brań z pogody na dziś i weekend | FishPoint](https://fish-point.pl/narzedzia/prognoza-bran.html)
+- [Rozpoznaj rybę](https://fish-point.pl/narzedzia/rozpoznaj-rybe.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -1800,6 +1926,9 @@ Sources:
 - [rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z 12 lipca 2023 r., Dz.U. 2023 poz. 1373](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Ustawa o rybactwie śródlądowym w ELI Sejmu](https://api.sejm.gov.pl/eli/acts/DU/2022/883/text.html)
 - [Przegląd: Narzędzia](https://fish-point.pl/narzedzia/)
+- [Prognoza brań z pogody na dziś i weekend | FishPoint](https://fish-point.pl/narzedzia/prognoza-bran.html)
+- [Rozpoznaj rybę](https://fish-point.pl/narzedzia/rozpoznaj-rybe.html)
+- [Stany wód IMGW](https://fish-point.pl/narzedzia/stany-wod.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -1817,6 +1946,9 @@ Sources:
 - [Open-Meteo](https://open-meteo.com/)
 - [Open-Meteo Forecast API](https://open-meteo.com/)
 - [Przegląd: Narzędzia](https://fish-point.pl/narzedzia/)
+- [Rozpoznaj rybę](https://fish-point.pl/narzedzia/rozpoznaj-rybe.html)
+- [Stany wód IMGW](https://fish-point.pl/narzedzia/stany-wod.html)
+- [Czy mogę legalnie zabrać złowioną rybę? | FishPoint](https://fish-point.pl/narzedzia/czy-moge-zabrac-rybe.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -1857,6 +1989,9 @@ Sources:
 - [Nicholas from Pennsylvania, United States (CC BY 2.0)](https://commons.wikimedia.org/w/index.php?curid=2759989)
 - [IMGW-PIB — dane publiczne](https://danepubliczne.imgw.pl/)
 - [Przegląd: Narzędzia](https://fish-point.pl/narzedzia/)
+- [Czy mogę legalnie zabrać złowioną rybę? | FishPoint](https://fish-point.pl/narzedzia/czy-moge-zabrac-rybe.html)
+- [Kreator doboru sprzętu wędkarskiego | FishPoint](https://fish-point.pl/narzedzia/dobor-sprzetu.html)
+- [Interaktywny kalendarz brań](https://fish-point.pl/narzedzia/kalendarz-bran.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -1936,6 +2071,9 @@ Sources:
 - [ISAP: ustawa o rybactwie śródlądowym](https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19850660291)
 - [Geoportal GDOŚ](https://geoserwis.gdos.gov.pl/mapy/)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
+- [Kanały: prąd, śluzy i bezpieczny start | FishPoint](https://fish-point.pl/pierwsze-kroki/lowiska/kanaly.html)
+- [Rzeki: nurt, cofka i bezpieczne stanowisko | FishPoint](https://fish-point.pl/pierwsze-kroki/lowiska/rzeki.html)
+- [Stawy: regulamin, presja i dobry start | FishPoint](https://fish-point.pl/pierwsze-kroki/lowiska/stawy.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -1955,6 +2093,9 @@ Sources:
 - [ISAP: ustawa o rybactwie śródlądowym](https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19850660291)
 - [Geoportal GDOŚ](https://geoserwis.gdos.gov.pl/mapy/)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
+- [Rzeki: nurt, cofka i bezpieczne stanowisko | FishPoint](https://fish-point.pl/pierwsze-kroki/lowiska/rzeki.html)
+- [Stawy: regulamin, presja i dobry start | FishPoint](https://fish-point.pl/pierwsze-kroki/lowiska/stawy.html)
+- [Okresy ochronne i wymiary](https://fish-point.pl/pierwsze-kroki/okresy-ochronne-wymiary.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -1974,6 +2115,9 @@ Sources:
 - [ISAP: ustawa o rybactwie śródlądowym](https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19850660291)
 - [Geoportal GDOŚ](https://geoserwis.gdos.gov.pl/mapy/)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
+- [Stawy: regulamin, presja i dobry start | FishPoint](https://fish-point.pl/pierwsze-kroki/lowiska/stawy.html)
+- [Okresy ochronne i wymiary](https://fish-point.pl/pierwsze-kroki/okresy-ochronne-wymiary.html)
+- [Pierwszy zestaw wędkarski do 200–300 zł | FishPoint](https://fish-point.pl/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -1993,6 +2137,9 @@ Sources:
 - [ISAP: ustawa o rybactwie śródlądowym](https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19850660291)
 - [Geoportal GDOŚ](https://geoserwis.gdos.gov.pl/mapy/)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
+- [Okresy ochronne i wymiary](https://fish-point.pl/pierwsze-kroki/okresy-ochronne-wymiary.html)
+- [Pierwszy zestaw wędkarski do 200–300 zł | FishPoint](https://fish-point.pl/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html)
+- [Pozwolenia i karta wędkarska](https://fish-point.pl/pierwsze-kroki/pozwolenia-karta-wedkarska.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2095,6 +2242,9 @@ Sources:
 - [YouTube](https://www.youtube.com/watch?v=BAJY4gMltgk)
 - [FishBase: Cyprinus carpio](https://fishbase.se/summary/Cyprinus-carpio.html)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
+- [Leszcz: rozpoznanie, zestaw i plan sesji | FishPoint](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/leszcz.html)
+- [Okoń: rozpoznanie, zestaw i plan sesji | FishPoint](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/okon.html)
+- [Szczupak: siedlisko, przynęty i metody połowu | FishPoint](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2114,6 +2264,9 @@ Sources:
 - [IUCN Red List: Abramis brama](https://www.iucnredlist.org/species/135696/135068434)
 - [ISAP: ustawa o rybactwie śródlądowym](https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19850660291)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
+- [Okoń: rozpoznanie, zestaw i plan sesji | FishPoint](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/okon.html)
+- [Szczupak: siedlisko, przynęty i metody połowu | FishPoint](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html)
+- [Akcesoria dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/akcesoria.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2133,6 +2286,9 @@ Sources:
 - [IUCN Red List: Perca fluviatilis](https://www.iucnredlist.org/species/16580)
 - [ISAP: ustawa o rybactwie śródlądowym](https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19850660291)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
+- [Szczupak: siedlisko, przynęty i metody połowu | FishPoint](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html)
+- [Akcesoria dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/akcesoria.html)
+- [Kołowrotki dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/kolowrotki.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2151,6 +2307,9 @@ Sources:
 - [YouTube](https://www.youtube.com/watch?v=uo_gn61r5CM)
 - [FishBase: Esox lucius](https://fishbase.se/summary/Esox-lucius.html)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
+- [Akcesoria dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/akcesoria.html)
+- [Kołowrotki dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/kolowrotki.html)
+- [Przynęty dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/przynety.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2186,8 +2345,8 @@ Sources:
 - [Karta wędki Shimano](https://fish.shimano.com/en-US/product/rods/muti-species/fx_casting_c.html)
 - [karta kołowrotka Shimano](https://fish.shimano.com/en-US/product/reels/spinning/swspinning/a075f00002vnrerqaa.html)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
-- [Akcesoria wędkarskieUzupełnij pierwszy zestaw tylko o akcesoria potrzebne do wybranej metody.Sprawdź w BigRiver →](https://webep1.com/go/1bb1a3b3c3)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Kołowrotki dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/kolowrotki.html)
+- [Przynęty dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/przynety.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 Affiliation: The document contains an explicitly labelled affiliate section.
@@ -2211,8 +2370,8 @@ Sources:
 - [Karta wędki Shimano](https://fish.shimano.com/en-US/product/rods/muti-species/fx_casting_c.html)
 - [karta kołowrotka Shimano](https://fish.shimano.com/en-US/product/reels/spinning/swspinning/a075f00002vnrerqaa.html)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
-- [Kołowrotki spinningoweSprawdź modele pasujące wielkością i masą do pierwszej wędki spinningowej.Sprawdź w BigRiver →](https://webep1.com/go/f536215bc3)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Przynęty dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/przynety.html)
+- [Wędki dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/wedki.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 Corrections: A correction policy or note is stated in the document.
@@ -2286,7 +2445,9 @@ Sources:
 - [Karta wędki Shimano](https://fish.shimano.com/en-US/product/rods/muti-species/fx_casting_c.html)
 - [karta kołowrotka Shimano](https://fish.shimano.com/en-US/product/reels/spinning/swspinning/a075f00002vnrerqaa.html)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Żyłki, plecionki i przypony](https://fish-point.pl/pierwsze-kroki/sprzet/zylki-plecionki.html)
+- [Twój pierwszy wyjazd na ryby](https://fish-point.pl/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html)
+- [Jak nabić przynętę i bezpiecznie odhaczyć rybę](https://fish-point.pl/pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -2309,8 +2470,8 @@ Sources:
 - [Karta wędki Shimano](https://fish.shimano.com/en-US/product/rods/muti-species/fx_casting_c.html)
 - [karta kołowrotka Shimano](https://fish.shimano.com/en-US/product/reels/spinning/swspinning/a075f00002vnrerqaa.html)
 - [Przegląd: Pierwsze kroki](https://fish-point.pl/pierwsze-kroki/)
-- [Żyłki, plecionki i fluorocarbonPorównaj średnice i rodzaje linek po ustaleniu metody oraz wielkości ryb.Sprawdź w BigRiver →](https://webep1.com/go/e7918164c3)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Twój pierwszy wyjazd na ryby](https://fish-point.pl/pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html)
+- [Jak nabić przynętę i bezpiecznie odhaczyć rybę](https://fish-point.pl/pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 Affiliation: The document contains an explicitly labelled affiliate section.
@@ -2366,6 +2527,9 @@ Sources:
 - [YouTube](https://www.youtube.com/watch?v=upxV4emBOnQ)
 - [Przegląd badań catch-and-release w Frontiers in Marine Science](https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2025.1638216/full)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w czerwcu](https://fish-point.pl/poradniki/co-lowic-w-czerwcu.html)
+- [Jakie ryby można łowić w grudniu](https://fish-point.pl/poradniki/co-lowic-w-grudniu.html)
+- [Jakie ryby można łowić w kwietniu](https://fish-point.pl/poradniki/co-lowic-w-kwietniu.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2384,6 +2548,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w grudniu](https://fish-point.pl/poradniki/co-lowic-w-grudniu.html)
+- [Jakie ryby można łowić w kwietniu](https://fish-point.pl/poradniki/co-lowic-w-kwietniu.html)
+- [Jakie ryby można łowić w lipcu](https://fish-point.pl/poradniki/co-lowic-w-lipcu.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2401,6 +2568,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w kwietniu](https://fish-point.pl/poradniki/co-lowic-w-kwietniu.html)
+- [Jakie ryby można łowić w lipcu](https://fish-point.pl/poradniki/co-lowic-w-lipcu.html)
+- [Jakie ryby można łowić w listopadzie](https://fish-point.pl/poradniki/co-lowic-w-listopadzie.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2418,6 +2588,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w lipcu](https://fish-point.pl/poradniki/co-lowic-w-lipcu.html)
+- [Jakie ryby można łowić w listopadzie](https://fish-point.pl/poradniki/co-lowic-w-listopadzie.html)
+- [Jakie ryby można łowić w lutym](https://fish-point.pl/poradniki/co-lowic-w-lutym.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2435,6 +2608,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w listopadzie](https://fish-point.pl/poradniki/co-lowic-w-listopadzie.html)
+- [Jakie ryby można łowić w lutym](https://fish-point.pl/poradniki/co-lowic-w-lutym.html)
+- [Jakie ryby można łowić w maju](https://fish-point.pl/poradniki/co-lowic-w-maju.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2452,6 +2628,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w lutym](https://fish-point.pl/poradniki/co-lowic-w-lutym.html)
+- [Jakie ryby można łowić w maju](https://fish-point.pl/poradniki/co-lowic-w-maju.html)
+- [Jakie ryby można łowić w marcu](https://fish-point.pl/poradniki/co-lowic-w-marcu.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2469,6 +2648,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w maju](https://fish-point.pl/poradniki/co-lowic-w-maju.html)
+- [Jakie ryby można łowić w marcu](https://fish-point.pl/poradniki/co-lowic-w-marcu.html)
+- [Jakie ryby można łowić w październiku](https://fish-point.pl/poradniki/co-lowic-w-pazdzierniku.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2486,6 +2668,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w marcu](https://fish-point.pl/poradniki/co-lowic-w-marcu.html)
+- [Jakie ryby można łowić w październiku](https://fish-point.pl/poradniki/co-lowic-w-pazdzierniku.html)
+- [Jakie ryby można łowić w sierpniu](https://fish-point.pl/poradniki/co-lowic-w-sierpniu.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2503,6 +2688,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w październiku](https://fish-point.pl/poradniki/co-lowic-w-pazdzierniku.html)
+- [Jakie ryby można łowić w sierpniu](https://fish-point.pl/poradniki/co-lowic-w-sierpniu.html)
+- [Jakie ryby można łowić w styczniu](https://fish-point.pl/poradniki/co-lowic-w-styczniu.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2520,6 +2708,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w sierpniu](https://fish-point.pl/poradniki/co-lowic-w-sierpniu.html)
+- [Jakie ryby można łowić w styczniu](https://fish-point.pl/poradniki/co-lowic-w-styczniu.html)
+- [Jakie ryby można łowić w wrześniu](https://fish-point.pl/poradniki/co-lowic-w-wrzesniu.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2537,6 +2728,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w styczniu](https://fish-point.pl/poradniki/co-lowic-w-styczniu.html)
+- [Jakie ryby można łowić w wrześniu](https://fish-point.pl/poradniki/co-lowic-w-wrzesniu.html)
+- [Echosondy i elektronika wędkarska](https://fish-point.pl/poradniki/echosondy.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2554,6 +2748,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Jakie ryby można łowić w wrześniu](https://fish-point.pl/poradniki/co-lowic-w-wrzesniu.html)
+- [Echosondy i elektronika wędkarska](https://fish-point.pl/poradniki/echosondy.html)
+- [Etyka i przepisy wędkarskie](https://fish-point.pl/poradniki/etyka-i-przepisy.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2571,6 +2768,9 @@ Sources:
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Główny Inspektorat Rybołówstwa Morskiego](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Echosondy i elektronika wędkarska](https://fish-point.pl/poradniki/echosondy.html)
+- [Etyka i przepisy wędkarskie](https://fish-point.pl/poradniki/etyka-i-przepisy.html)
+- [Kalendarz brań Karpia 2026](https://fish-point.pl/poradniki/kalendarz-bran-karp.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2589,6 +2789,9 @@ Sources:
 - [YouTube](https://www.youtube.com/watch?v=1x-wcDhIVKw)
 - [dokumentacja wsparcia Garmin](https://support.garmin.com/en-US/?faq=k5DbKA3w589v1U71ylHZY8)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Etyka i przepisy wędkarskie](https://fish-point.pl/poradniki/etyka-i-przepisy.html)
+- [Kalendarz brań Karpia 2026](https://fish-point.pl/poradniki/kalendarz-bran-karp.html)
+- [Kalendarz brań klenia 2026](https://fish-point.pl/poradniki/kalendarz-bran-klen.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2608,6 +2811,9 @@ Sources:
 - [YouTube](https://www.youtube.com/watch?v=evBmvZ4ggPk)
 - [rozporządzenie w ELI](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Kalendarz brań Karpia 2026](https://fish-point.pl/poradniki/kalendarz-bran-karp.html)
+- [Kalendarz brań klenia 2026](https://fish-point.pl/poradniki/kalendarz-bran-klen.html)
+- [Kalendarz brań leszcza 2026](https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2628,6 +2834,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Kalendarz brań klenia 2026](https://fish-point.pl/poradniki/kalendarz-bran-klen.html)
+- [Kalendarz brań leszcza 2026](https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html)
+- [Kalendarz brań lina 2026](https://fish-point.pl/poradniki/kalendarz-bran-lin.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2647,6 +2856,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Kalendarz brań leszcza 2026](https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html)
+- [Kalendarz brań lina 2026](https://fish-point.pl/poradniki/kalendarz-bran-lin.html)
+- [Kalendarz brań okonia 2026](https://fish-point.pl/poradniki/kalendarz-bran-okon.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2666,6 +2878,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Kalendarz brań lina 2026](https://fish-point.pl/poradniki/kalendarz-bran-lin.html)
+- [Kalendarz brań okonia 2026](https://fish-point.pl/poradniki/kalendarz-bran-okon.html)
+- [Kalendarz brań Płoci 2026](https://fish-point.pl/poradniki/kalendarz-bran-ploc.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2685,6 +2900,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Kalendarz brań okonia 2026](https://fish-point.pl/poradniki/kalendarz-bran-okon.html)
+- [Kalendarz brań Płoci 2026](https://fish-point.pl/poradniki/kalendarz-bran-ploc.html)
+- [Kalendarz brań pstrąga potokowego 2026 | FishPoint](https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2704,6 +2922,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Kalendarz brań Płoci 2026](https://fish-point.pl/poradniki/kalendarz-bran-ploc.html)
+- [Kalendarz brań pstrąga potokowego 2026 | FishPoint](https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html)
+- [Kalendarz brań sandacza 2026](https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2724,6 +2945,9 @@ derivative work: George Chernilevsky talk (CC BY-SA 3.0)](https://commons.wikime
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Kalendarz brań pstrąga potokowego 2026 | FishPoint](https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html)
+- [Kalendarz brań sandacza 2026](https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html)
+- [Kalendarz brań Suma 2026](https://fish-point.pl/poradniki/kalendarz-bran-sum.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2743,6 +2967,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Kalendarz brań sandacza 2026](https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html)
+- [Kalendarz brań Suma 2026](https://fish-point.pl/poradniki/kalendarz-bran-sum.html)
+- [Kalendarz brań szczupaka 2026](https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2762,6 +2989,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Kalendarz brań Suma 2026](https://fish-point.pl/poradniki/kalendarz-bran-sum.html)
+- [Kalendarz brań szczupaka 2026](https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html)
+- [Kalendarz brań miesiąc po miesiącu](https://fish-point.pl/poradniki/kalendarz-bran.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2781,6 +3011,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Kalendarz brań szczupaka 2026](https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html)
+- [Kalendarz brań miesiąc po miesiącu](https://fish-point.pl/poradniki/kalendarz-bran.html)
+- [Łowienie nocne](https://fish-point.pl/poradniki/lowienie-nocne.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2800,6 +3033,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Kalendarz brań miesiąc po miesiącu](https://fish-point.pl/poradniki/kalendarz-bran.html)
+- [Łowienie nocne](https://fish-point.pl/poradniki/lowienie-nocne.html)
+- [Łowienie zimą na otwartej wodzie](https://fish-point.pl/poradniki/lowienie-zima.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 
@@ -2823,7 +3059,7 @@ Sources:
 - [ELI](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [rozporządzenia w ELI](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Łowienie nocne](https://fish-point.pl/poradniki/lowienie-nocne.html)
 - No external source link is stated in the document.
 
 Jak powstaje kalendarz i gdzie kończy się jego pewnośćMiesiąc jest tylko punktem startu. Nad wodą połącz cztery obserwacje: temperaturę wody w łowionej strefie, trend poziomu lub przepływu z komunikatów hydrologicznych, oznaki dostępności tlenu oraz aktualny wiatr, opad i zachmurzenie. Następnie porównaj je z własnym dziennikiem dla tej wody — miejscem, głębokością, przejrzystością i presją.Temperatura, stan wody i tlen są mierzalne; opis sezonowości wyprowadza z nich hipotezę planowania. Ciśnienie oraz faza Księżyca nie są tu przyczyną ani gwarancją brań: ewentualne zależności wymagają lokalnej obserwacji. Kalendarz nie zastępuje regulaminu gospodarza. Fot. Jacob W. Frank, domena publiczna, via Wikimedia Commons ▶Wpływ pogody na brania - ciśnienie,temperatura,wiatr,fazy ksieżyca itdŹródło wideo: „Wpływ pogody na brania - ciśnienie,temperatura,wiatr,fazy ksieżyca itd" — kanał RaFish - WĘDKARSTWO ŁOWIENIE RYB w serwisie YouTube. Materiał osadzony przez oficjalny odtwarzacz YouTube; prawa autorskie należą do jego twórcy. Jak czytać ten kalendarz Temperatura wody, nie data w kalendarzu Ryby są zwierzętami zmiennocieplnymi: tempo ich metabolizmu, a więc i zapotrzebowanie na pokarm, zależy bezpośrednio od temperatury wody, a nie od daty. Dlatego ten sam „kwiecień" w ciepłej, płytkiej starorzecznej zatoce i w głębokim, zimnym jeziorze rynnowym to dwa różne światy. Daty podane w poszczególnych miesiącach traktuj jako orientacyjne dla przeciętnego roku w centralnej Polsce; na Suwalszczyźnie sezon przesuwa się o 1–2 tygodnie później, na zachodzie i w dolinach dużych rzek — wcześniej. Najlepszym narzędziem weryfikacji jest zwykły termometr wędkarski: pomiar temperatury wody przy brzegu mówi o aktywności ryb więcej niż jakikolwiek kalendarz. Okresy ochronne i wymiary — zawsze sprawdzaj aktualny regulamin W polskich wodach obowiązują ustawowe okresy i wymiary ochronne (rozporządzenie do ustawy o rybactwie śródlądowym), a okręgi PZW i gospodarze łowisk specjalnych mogą je zaostrzać. Orientacyjnie: szczupak jest chroniony zwykle od 1 stycznia do 30 kwietnia, sandacz od 1 marca do 31 maja, sum od 1 stycznia do 31 maja (oraz wymiar ochronny 70 cm), węgorz od 1 grudnia do 31 marca, pstrąg potokowy w rzekach od września do końca stycznia (terminy różnią się w zależności od dorzecza), lin często od czerwca w wybranych okręgach. Te terminy bywały w ostatnich latach zmieniane i różnią się lokalnie, dlatego ten poradnik celowo nie podaje ich jako pewnik — przed każdą wyprawą sprawdź aktualny Regulamin Amatorskiego Połowu Ryb PZW oraz komunikaty swojego okręgu. Łowienie w okresie ochronnym to wykroczenie, a w niektórych przypadkach przestępstwo. Rzeka kontra jezioro Rzeka reaguje na pogodę szybko: ochłodzenie, przybór czy zmętnienie wody potrafią w dobę odmienić brania. Jezioro to system bezwładny — nagrzewa się i stygnie tygodniami, a w głębokich zbiornikach latem tworzy się termoklina (skok temperatury), poniżej której bywa zbyt mało tlenu, by ryby tam przebywały. W praktyce: wiosną szukaj ryb w rzekach i płytkich, szybko nagrzewających się jeziorach; latem w rzekach licz na nurt natleniający wodę, a w jeziorach łów nad termokliną; jesienią głębokie jeziora oddają ciepło najdłużej i tam sezon na drapieżniki trwa najpóźniej. Zimą odwrotnie — płytkie jeziora zamarzają pierwsze, rzeki pozostają dostępne dla spinningu najdłużej. Kalendarz brań: miesiąc po miesiącu Styczeń Woda ma 0–4 °C, metabolizm ryb pracuje na minimalnych obrotach, a pod lodem kluczowym czynnikiem staje się tlen — jego zawartość spada w miarę trwania pokrywy lodowej, zwłaszcza pod śniegiem ograniczającym fotosyntezę. Najpewniejszą rybą stycznia jest okoń łowiony spod lodu na mormyszkę i błystkę podlodową, w towarzystwie płoci, która zimuje w dużych stadach nad głębszymi stokami. Sandacz bierze krótko o zmierzchu, szczupak jest już zwykle pod ochroną, a sandacz ma krajowy okres ochronny od 1 marca, podobnie sum i węgorz, więc styczeń to praktycznie miesiąc ryby białej i okonia. Karp, leszcz i lin stoją w zimowiskach niemal nieaktywne; pstrąg potokowy w większości rzek jest po tarle i pod ochroną. Pamiętaj o bezpieczeństwie na lodzie: minimum 10 cm jednolitego, przezroczystego lodu, nigdy samotnie. Luty Statystycznie najtrudniejszy miesiąc roku. Woda wciąż przy 1–4 °C, a deficyt tlenowy pod długo zalegającym lodem osiąga maksimum — w płytkich, żyznych jeziorach zdarzają się przyduchy. Ryby białe (płoć, leszcz) skupiają się w głębszych partiach i biorą bardzo delikatnie: pojedynczy biały robak, ochotka, drobna mormyszka. Okoń pozostaje najwdzięczniejszym celem, choć i on wymaga aktywnego szukania — stada przemieszczają się za narybkiem. Pod koniec lutego, gdy do wody zaczyna wpadać woda roztopowa, pierwsze ożywienie pokazuje płoć w ujściach dopływów i na rzecznych spokojnych płaniach. Szczupak biologicznie zaczyna przygotowania do wczesnowiosennego tarła, ale jest chroniony. W rzekach krainy pstrąga sezon na pstrąga potokowego w wielu okręgach otwiera się dopiero z początkiem lutego lub później — sprawdź lokalne przepisy, bo terminy bywają różne. Marzec Miesiąc przełomu. Lód schodzi, woda roztopowa dotlenia zbiorniki, a temperatura rośnie do 4–8 °C. Szczupak odbywa tarło bardzo wcześnie, często jeszcze przy resztkach lodu, na zalanych trawach i płyciznach — i jest pod ochroną. Pierwszą wyraźnie żerującą rybą jest płoć, która masowo ciągnie ku tarliskom i intensywnie żeruje w ujściach rzeczek, kanałach i nagrzewających się zatokach: to klasyczny czas delikatnego spławika. Okoń żeruje przed kwietniowym tarłem coraz śmielej. W krainie pstrąga marzec to pełnia wczesnowiosennego spinningu — pstrąg potokowy po zimie odbudowuje kondycję i reaguje na małe woblery i obrotówki. Karp, lin i sum wciąż niemal nieaktywne; leszcz zaczyna pierwsze podchody pod stoki. Węgorz w większości wód nadal chroniony do końca marca. Kwiecień Woda osiąga 8–12 °C i rusza biologia. Okoń odbywa tarło (charakterystyczne wstęgi ikry na zatopionych gałęziach) — tuż przed nim i jakiś czas po nim żeruje wyraźnie. Płoć trze się pod koniec miesiąca przy ok. 10–12 °C, a przedtarłowe stada potrafią dawać brania seriami. Leszcz rozpoczyna wiosenne żerowanie na płytszych stokach i wpływa do dolnych odcinków dopływów — kwiecień i maj to szczyt feederowy. Szczupak kończy ochronę zwykle z końcem kwietnia (na wielu wodach łowienie rusza 1 maja), sandacz wciąż chroniony i właśnie przystępuje do tarła przy 12–15 °C, budując gniazda, których samiec pilnuje. Karp przy pierwszych dłuższych ociepleniach wychodzi na nagrzane płycizny i tam warto go nęcić. Pstrąg potokowy żeruje pewnie na wezbranych wodach. Sum jeszcze śpi w zimowych dołach. Maj Jeden z dwóch najlepszych miesięcy w roku. Woda 12–18 °C to zakres, w którym żeruje praktycznie wszystko. Otwiera się sezon szczupakowy: wychudzone po tarle ryby intensywnie odbudowują masę na płyciznach i przy odradzających się pasach roślinności — klasyka spinningu. Okoń poluje stadnie na narybek. Leszcz przed tarłem (przełom maja i czerwca, ok. 15–18 °C) żeruje masowo, podobnie krąp i płoć po tarle. Karp i lin coraz aktywniejsze na płyciznach, lin właśnie zaczyna swoje najlepsze tygodnie wśród pierwszych liści grążeli. Węgorz rusza na żer w ciepłe, parne noce — maj i czerwiec to jego szczyt. Sandacz przeważnie chroniony do końca maja (pilnuje gniazd), sum kończy zimowy zastój i przy ok. 18 °C zaczyna żerowanie przedtarłowe, ale na większości wód jest jeszcze pod ochroną. Pstrąg żeruje świetnie przy wieczornych wylotach owadów. Czerwiec Woda 16–22 °C. Rusza sezon sandaczowy (typowo od 1 czerwca) — ryby po tarle są głodne i przez pierwsze tygodnie biorą wyjątkowo pewnie na jiga przy dnie, o świcie i zmierzchu. Sum odbywa tarło przy ok. 20 °C i wkrótce po nim, zwykle od czerwca, wchodzi w intensywne nocne żerowanie — zaczyna się najlepszy okres sumowy, trwający do sierpnia. Lin jest w pełni sezonu (tarło przy 19–20 °C bywa rozciągnięte na czerwiec–lipiec, między podejściami intensywnie żeruje przy trzcinach o świcie). Karp żeruje już pełną parą; uwaga na jego tarło na płyciznach przy ok. 18–20 °C — trące się ryby nie biorą. Leszcz po tarle wraca na żerowiska nocą. Szczupak i okoń stabilnie aktywne, choć w upalne południa przenoszą się głębiej. Węgorz w ciemne, parne noce żeruje najlepiej w całym roku. W krainie pstrąga zaczynają się trudniejsze, niskie i przejrzyste wody — liczy się delikatna prezentacja. Lipiec Pełnia lata, woda 20–25 °C. Dla ryb karpiowatych ciepłolubnych to optimum: karp, lin, leszcz i płoć żerują intensywnie, ale głównie nocą, o świcie i zmierzchu — w dzień upał i ruch na wodzie wyganiają je z płycizn. Sum jest w szczycie sezonu: parne noce przed burzą to klasyka łowienia z gruntu i na wahadłówkę przy powierzchni. Węgorz nadal bierze dobrze nocami. Drapieżniki chłodnolubne mają trudniej: szczupak przy wodzie powyżej 22–24 °C ogranicza aktywność i schodzi pod termoklinę lub w cień roślinności, sandacz żeruje krótko, niemal wyłącznie nocą i o brzasku, okoń poluje rano. W głębokich jeziorach kluczowa staje się termoklina — poniżej niej często brakuje tlenu, więc ryby tłoczą się tuż nad skokiem temperatury. Przy długotrwałych upałach i niskim stanie wody rośnie ryzyko przyduchy; hol w ciepłej wodzie wyczerpuje ryby skrajnie, więc skracaj walkę i rozważ rezygnację z łowienia drapieżników przeznaczonych do wypuszczenia. Sierpień Pierwsza połowa to kontynuacja lipca: nocne karpie, liny, leszcze i sumy, krótkie poranne wyjścia okonia. Przełom następuje zwykle w drugiej połowie miesiąca, gdy noce stają się chłodne i woda zaczyna powoli stygnąć poniżej 20 °C — drapieżniki wyraźnie ożywają. Okoń formuje większe stada polujące na tegoroczny narybek (charakterystyczne „kotły" na powierzchni), szczupak wraca na płycizny przy pasach trzcin, sandacz wydłuża okna żerowania. Sum żeruje jeszcze mocno, ale jego sezon powoli mija — to ostatni miesiąc pewnych nocnych brań. Węgorz stopniowo słabnie wraz z chłodniejszymi nocami. Pstrąg potokowy przy opadającej temperaturze wody znów żeruje śmielej; pamiętaj jednak, że w wielu okręgach jego ochrona zaczyna się już od września — sierpień bywa ostatnim miesiącem sezonu pstrągowego na rzekach. Wrzesień Początek złotej jesieni drapieżnika. Woda stygnie do 14–18 °C, czyli wraca w optimum szczupaka i okonia, a ryby instynktownie budują rezerwy przed zimą. Szczupak żeruje coraz dłużej w ciągu dnia i reaguje na większe przynęty; okoń poluje stadnie i to często najlepszy miesiąc okoniowy w roku. Sandacz żeruje dobrze na zmierzchach, schodząc za narybkiem na pierwsze głębsze stoki. Ryba biała wciąż aktywna: leszcz i płoć intensywnie żerują na zanęcie, karp przy ciepłym wrześniu potrafi dawać najlepsze brania sezonu, bo żeruje także w dzień. Lin kończy sezon wraz z obumieraniem roślinności. Sum przy wodzie poniżej 15 °C zaczyna grupować się przy zimowiskach i bierze już rzadko. Pstrąg potokowy w rzekach przeważnie wchodzi pod jesienną ochronę przedtarłową — sprawdź regulamin swojego dorzecza. Październik Dla wielu spinningistów najlepszy miesiąc roku. Woda 8–14 °C: szczupak żeruje agresywnie przez cały dzień, podąża za stadami ryb białych wycofujących się z płycizn na stoki i odpowiada na duże gumy, woblery i martwą rybkę. Sandacz przesuwa się na głębokie krawędzie i doły — jig prowadzony wolno przy dnie pracuje od zmierzchu po noc. Okoń stadny na stokach 4–8 m. Ryby białe formują wielkie jesienne ławice: płoć i leszcz dają jeszcze dobre wyniki na delikatny feeder, choć brania stają się ostrożne. Karp żeruje krócej, w najcieplejszej porze dnia, i ceni zimowe, mniej obfite nęcenie. Węgorz praktycznie kończy żerowanie i część osobników rusza na wędrówkę; od grudnia będzie chroniony. Sum stoi już przy zimowiskach. Obumierająca roślinność i pierwsze silne wiatry mieszają wodę jezior (cyrkulacja jesienna), co wyrównuje temperaturę i tlen w całym słupie — ryby mogą stać na każdej głębokości, trzeba ich szukać. Listopad Woda 4–8 °C, metabolizm zwalnia, ale drapieżniki wciąż żerują — wolniej i głębiej. To klasyczny miesiąc dużego szczupaka: rzadkie, lecz często wybitne brania na duże, wolno prowadzone przynęty i martwą rybkę przy stokach zimowisk. Sandacz bierze w krótkich oknach o zmierzchu na głębokich dołach rzecznych i jeziorowych. Okoń schodzi głęboko, ale na drobnego jiga i drop shot łowi się go do samego zalodzenia. Ryba biała grupuje się w zimowiskach: głębokie doły, porty, starorzecza — wolno nęcona płoć potrafi dawać piękne wyniki dla cierpliwych. Karp przy wodzie poniżej 8 °C żeruje sporadycznie, pojedyncze brania zdarzają się w ciepłe popołudnia. Sum, węgorz i lin w letargu lub blisko niego. Pstrąg potokowy odbywa tarło późną jesienią (październik–grudzień, przy wodzie spadającej poniżej 8 °C) i pozostaje pod ochroną. Grudzień Woda 0–5 °C. Do zamknięcia sezonu (na wielu wodach szczupak wolny od ochrony do końca grudnia — zweryfikuj lokalnie) trwa polowanie na grudniowego szczupaka: bardzo wolna prezentacja, duża przynęta, głębokie stoki, godziny południowe, gdy woda jest najcieplejsza. Sandacz bierze coraz rzadziej, głównie tuż po zmroku. Okoń i płoć to filary grudnia — na pierwszym bezpiecznym lodzie biorą często najlepiej w całej zimie (tzw. pierwszy lód), bo tlen i światło są jeszcze w dobrym stanie. Węgorz od grudnia chroniony. Karp, leszcz, lin, sum — zimowiska, brania wyjątkowe. W rzekach pozostaje spinning na okonia i (tam, gdzie wolno) na sandacza w dołach zimowych; pamiętaj, że na niektórych wodach obowiązują zimowiska wyłączone z wędkowania — informacje znajdziesz w komunikatach okręgów PZW. Bloki przekrojowe: co spina cały rok Tlen — niewidzialny regulator brań Rozpuszczalność tlenu w wodzie spada wraz ze wzrostem temperatury: woda o 5 °C może zawierać go znacznie więcej niż woda o 25 °C, a jednocześnie ciepło podnosi zapotrzebowanie ryb na tlen. Stąd dwa krytyczne okresy: pełnia lata (ciepła woda + nocne zużycie tlenu przez glony) i końcówka zimy pod lodem (brak fotosyntezy, rozkład materii). W obu ryby przenoszą się tam, gdzie tlenu jest najwięcej — latem pod napowietrzane nurty, wyloty rzek, miejsca falowania i strefę tuż nad termokliną, zimą pod dopływy i przeręble. Jeśli brania zamarły mimo dobrej pogody, deficyt tlenowy jest jednym z pierwszych podejrzanych. Tarło — przed, w trakcie i po Cykl tarłowy to drugi po temperaturze motor kalendarza. U większości gatunków obserwuje się wzmożone żerowanie przed tarłem (budowa zapasów na rozwój gonad), niemal całkowity zastój w trakcie oraz — po krótkiej przerwie regeneracyjnej — intensywne żerowanie potarłowe, często najlepsze okno w roku (szczupak w maju, sandacz w czerwcu). Kolejność tarła w polskich wodach jest dość stała, bo wyznacza ją temperatura: szczupak (ok. 4–8 °C, marzec–kwiecień), okoń (ok. 8–10 °C), płoć (10–12 °C), sandacz (12–15 °C), leszcz (15–18 °C), karp i sum (18–20 °C), lin (19–20 °C i wyżej), a pstrąg potokowy odwrotnie — jesienią przy stygnącej wodzie. Z tej drabinki wynika praktycznie cały układ okresów ochronnych. Strategia na cały rok w jednym akapicie Zimą łów mało i wolno: okoń i płoć w głębokich zimowiskach, miniaturowe przynęty, południowe godziny. Wiosną podążaj za ciepłem: płytkie zatoki, ujścia dopływów, najpierw płoć i okoń, potem leszcz, na końcu karp i lin. Latem odwróć dobę: świt, zmierzch i noc dla karpia, suma, węgorza i sandacza, dzień zostaw na szukanie okonia i cienia. Jesienią podążaj za narybkiem na stoki — to czas drapieżników i dużych przynęt. Im zimniej, tym głębiej, wolniej i większą przynętą (drapieżniki) albo delikatniej i drobniej (ryba biała). Ta jedna zasada porządkuje 90% decyzji nad wodą. FAQ — najczęstsze pytania Czy kalendarz brań działa tak samo w całej Polsce? Nie. Różnice między ciepłym zachodem a Pojezierzem Suwalskim sięgają 2–3 tygodni w terminach tarła i szczytów żerowania, a mikroklimaty (zbiorniki zaporowe, wody podgrzane przez elektrownie, jak okolice zrzutów ciepłej wody) potrafią całkowicie wywrócić kalendarz — na wodach podgrzanych karp żeruje nawet zimą. Daty traktuj jako szkielet, a decyzje podejmuj po zmierzeniu temperatury wody. Skąd mam znać aktualne okresy ochronne? Z dwóch źródeł łącznie: aktualnego Regulaminu Amatorskiego Połowu Ryb PZW (publikowanego na stronie Zarządu Głównego) oraz komunikatów i zezwoleń swojego okręgu PZW lub gospodarza łowiska, które mogą zaostrzać przepisy ogólnopolskie. Terminy ochronne bywały w ostatnich latach modyfikowane, więc nie polegaj na zapamiętanych datach ani na starych tabelkach z internetu. Który miesiąc jest najlepszy na pierwsze wyprawy? Nie ma jednego najlepszego miesiąca. Na pierwszą wyprawę wybierz termin po sprawdzeniu legalności, temperatury wody, poziomu/przepływu i bezpieczeństwa; łatwiejszą praktykę zwykle daje gatunek legalny oraz woda o przewidywalnych warunkach. Miesiąc nie gwarantuje aktywności ryb. Czy w okresie ochronnym danego gatunku można łowić inne ryby? Tak, ale z głową i zgodnie z przepisami: nie wolno celowo łowić gatunku chronionego ani stosować metod jednoznacznie na niego nastawionych w miejscach jego koncentracji (np. żywiec na tarlisku szczupaka w kwietniu). Przypadkowo złowioną rybę w okresie ochronnym lub poniżej wymiaru należy niezwłocznie i ostrożnie wypuścić. Niektóre okręgi wprowadzają też całkowite zakazy spinningowania wczesną wiosną na wybranych wodach — to również trzeba sprawdzić przed wyjazdem. Źródła i metodaSezonowość gatunków sprawdzaj w FishBase, a bieżący poziom lub przepływ w IMGW-PIB Hydrologia; prognozę pogody w IMGW-PIB Meteo, a znaczenie tlenu w US EPA. Ochronę krajową weryfikuj w ELI i w regulaminie gospodarza. Źródła opisują biologię, warunki i prawo; tabela nie prognozuje wyniku wyprawy. Podstawa prawna okresów ochronnychSprawdzone: 20 lipca 2026. Krajowy okres ochronny sandacza to sandacz od 1 marca do 31 maja (§ 7 ust. 1 pkt 9 rozporządzenia w ELI). To zakres przepisów krajowych dla śródlądowych wód powierzchniowych; aktualne zezwolenie i regulamin gospodarza konkretnej wody mogą wprowadzać zasady ostrzejsze i mają pierwszeństwo przy wyprawie.
@@ -2841,6 +3077,9 @@ Sources:
 - [YouTube](https://www.youtube.com/watch?v=skT7dKZV7Hk)
 - [Rządowego Centrum Bezpieczeństwa](https://www.gov.pl/web/rcb/badz-bezpieczny-nad-woda2)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Łowienie zimą na otwartej wodzie](https://fish-point.pl/poradniki/lowienie-zima.html)
+- [Pogoda a brania ryb](https://fish-point.pl/poradniki/pogoda-a-brania.html)
+- [Wędkarstwo z brzegu: stanowisko, dystans i 3 zestawy | FishPoint](https://fish-point.pl/poradniki/wedkarstwo-z-brzegu.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2860,6 +3099,9 @@ Sources:
 - [YouTube](https://www.youtube.com/watch?v=4D0u5rDftEY)
 - [Rządowego Centrum Bezpieczeństwa](https://www.gov.pl/web/rcb/badz-bezpieczny-nad-woda2)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Pogoda a brania ryb](https://fish-point.pl/poradniki/pogoda-a-brania.html)
+- [Wędkarstwo z brzegu: stanowisko, dystans i 3 zestawy | FishPoint](https://fish-point.pl/poradniki/wedkarstwo-z-brzegu.html)
+- [Wędkarstwo z łodzi](https://fish-point.pl/poradniki/wedkarstwo-z-lodzi.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2882,7 +3124,9 @@ Sources:
 - [US EPA](https://www.epa.gov/caddis/dissolved-oxygen)
 - [badanie recenzowane Quigley i in. (2023)](https://link.springer.com/article/10.1007/s42452-023-05379-8)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Wędkarstwo z brzegu: stanowisko, dystans i 3 zestawy | FishPoint](https://fish-point.pl/poradniki/wedkarstwo-z-brzegu.html)
+- [Wędkarstwo z łodzi](https://fish-point.pl/poradniki/wedkarstwo-z-lodzi.html)
+- [Węzły wędkarskie: także węzeł karpiowy](https://fish-point.pl/poradniki/wezly-wedkarskie.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -2928,7 +3172,7 @@ Sources:
 - [ustawa o rejestracji jachtów, art. 3](https://eli.gov.pl/api/acts/DU/2024/79/text.html)
 - [Rządowego Centrum Bezpieczeństwa](https://www.gov.pl/web/rcb/badz-bezpieczny-nad-woda2)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Węzły wędkarskie: także węzeł karpiowy](https://fish-point.pl/poradniki/wezly-wedkarskie.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -2946,6 +3190,9 @@ Sources:
 - [Marfish - wędkarstwo i przygoda.](https://www.youtube.com/@MarfishMarek)
 - [YouTube](https://www.youtube.com/watch?v=Kpj-mGCBM9o)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Zanęty domowe](https://fish-point.pl/poradniki/zanety-domowe.html)
+- [Catch & release](https://fish-point.pl/poradniki/catch-and-release.html)
+- [Jakie ryby można łowić w czerwcu](https://fish-point.pl/poradniki/co-lowic-w-czerwcu.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2964,6 +3211,9 @@ Sources:
 - [Wędkarska Wiedza](https://www.youtube.com/@W%C4%99dkarskaWiedza)
 - [YouTube](https://www.youtube.com/watch?v=vKShNefbXWM)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
+- [Catch & release](https://fish-point.pl/poradniki/catch-and-release.html)
+- [Jakie ryby można łowić w czerwcu](https://fish-point.pl/poradniki/co-lowic-w-czerwcu.html)
+- [Jakie ryby można łowić w grudniu](https://fish-point.pl/poradniki/co-lowic-w-grudniu.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2999,7 +3249,9 @@ Sources:
 - [GBIF: Ctenopharyngodon idella](https://www.gbif.org/species/search?q=Ctenopharyngodon%20idella)
 - [IUCN Red List: Ctenopharyngodon idella](https://www.iucnredlist.org/species/61295/3102796)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Belona](https://fish-point.pl/ryby/belona.html)
+- [Boleń](https://fish-point.pl/ryby/bolen.html)
+- [Brzana](https://fish-point.pl/ryby/brzana.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3019,6 +3271,9 @@ Sources:
 - [GBIF: Belone belone](https://www.gbif.org/species/search?q=Belone%20belone)
 - [IUCN Red List: Belone belone](https://www.iucnredlist.org/species/198573/15536157)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Boleń](https://fish-point.pl/ryby/bolen.html)
+- [Brzana](https://fish-point.pl/ryby/brzana.html)
+- [Certa](https://fish-point.pl/ryby/certa.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3041,7 +3296,9 @@ Sources:
 - [GBIF: Leuciscus aspius](https://www.gbif.org/species/search?q=Leuciscus%20aspius)
 - [IUCN Red List: Leuciscus aspius](https://www.iucnredlist.org/species/2178/135082600)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Brzana](https://fish-point.pl/ryby/brzana.html)
+- [Certa](https://fish-point.pl/ryby/certa.html)
+- [Ciernik](https://fish-point.pl/ryby/ciernik.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3063,7 +3320,9 @@ Sources:
 - [IUCN Red List: Barbus barbus](https://www.iucnredlist.org/species/2561/58293571)
 - [FishBase: Chondrostoma nasus](https://www.fishbase.se/summary/Chondrostoma_nasus.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Certa](https://fish-point.pl/ryby/certa.html)
+- [Ciernik](https://fish-point.pl/ryby/ciernik.html)
+- [Dorsz](https://fish-point.pl/ryby/dorsz.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3084,6 +3343,9 @@ Sources:
 - [GBIF: Vimba vimba](https://www.gbif.org/species/search?q=Vimba%20vimba)
 - [IUCN Red List: Vimba vimba](https://www.iucnredlist.org/species/254508616/135094309)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Ciernik](https://fish-point.pl/ryby/ciernik.html)
+- [Dorsz](https://fish-point.pl/ryby/dorsz.html)
+- [Flądra](https://fish-point.pl/ryby/fladra.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3104,6 +3366,9 @@ Sources:
 - [rozporządzeniu dotyczącym amatorskiego połowu ryb](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Gasterosteus_aculeatus.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Dorsz](https://fish-point.pl/ryby/dorsz.html)
+- [Flądra](https://fish-point.pl/ryby/fladra.html)
+- [Głowacz białopłetwy](https://fish-point.pl/ryby/glowacz-bialopletwy.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3125,6 +3390,9 @@ Sources:
 - [GBIF: Gadus morhua](https://www.gbif.org/species/search?q=Gadus%20morhua)
 - [IUCN Red List: Gadus morhua](https://www.iucnredlist.org/species/8784/12931575)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Flądra](https://fish-point.pl/ryby/fladra.html)
+- [Głowacz białopłetwy](https://fish-point.pl/ryby/glowacz-bialopletwy.html)
+- [Jaź](https://fish-point.pl/ryby/jaz.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3145,6 +3413,9 @@ Sources:
 - [GBIF: Platichthys flesus](https://www.gbif.org/species/search?q=Platichthys%20flesus)
 - [IUCN Red List: Platichthys flesus](https://www.iucnredlist.org/species/170759990/135112220)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Głowacz białopłetwy](https://fish-point.pl/ryby/glowacz-bialopletwy.html)
+- [Jaź](https://fish-point.pl/ryby/jaz.html)
+- [Jesiotr](https://fish-point.pl/ryby/jesiotr.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3165,6 +3436,9 @@ Sources:
 - [rozporządzenie w sprawie ochrony gatunkowej zwierząt](https://eli.gov.pl/api/acts/DU/2022/2380/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Cottus_gobio_-_Groppe_3.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Jaź](https://fish-point.pl/ryby/jaz.html)
+- [Jesiotr](https://fish-point.pl/ryby/jesiotr.html)
+- [Karaś](https://fish-point.pl/ryby/karas.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3189,7 +3463,7 @@ Sources:
 - [IUCN Red List: Leuciscus idus](https://www.iucnredlist.org/species/11884/135089209)
 - [FishBase: Squalius cephalus](https://www.fishbase.se/summary/Squalius_cephalus.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Jesiotr](https://fish-point.pl/ryby/jesiotr.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3209,6 +3483,9 @@ Sources:
 - [FishBase: Acipenser oxyrinchus](https://www.fishbase.se/summary/Acipenser_oxyrinchus.html)
 - [GBIF: Acipenser oxyrinchus](https://www.gbif.org/species/search?q=Acipenser%20oxyrinchus)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Karaś](https://fish-point.pl/ryby/karas.html)
+- [Karp](https://fish-point.pl/ryby/karp.html)
+- [Kiełb](https://fish-point.pl/ryby/kielb.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3277,6 +3554,9 @@ Sources:
 - [rozporządzeniu dotyczącym amatorskiego połowu ryb](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Gobio_gobio.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Kleń](https://fish-point.pl/ryby/klen.html)
+- [Koza pospolita](https://fish-point.pl/ryby/koza.html)
+- [Krąp](https://fish-point.pl/ryby/krap.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3321,6 +3601,9 @@ Sources:
 - [rozporządzenie w sprawie ochrony gatunkowej zwierząt](https://eli.gov.pl/api/acts/DU/2022/2380/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Steinbeisser_001.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Krąp](https://fish-point.pl/ryby/krap.html)
+- [Leszcz](https://fish-point.pl/ryby/leszcz.html)
+- [Lin](https://fish-point.pl/ryby/lin.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3341,6 +3624,9 @@ Sources:
 - [rozporządzeniu dotyczącym amatorskiego połowu ryb](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Hal_-_Blicca_bjoerkna_-_1.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Leszcz](https://fish-point.pl/ryby/leszcz.html)
+- [Lin](https://fish-point.pl/ryby/lin.html)
+- [Lipień](https://fish-point.pl/ryby/lipien.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3389,7 +3675,7 @@ Sources:
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
 - [Spławik na lina](https://fish-point.pl/techniki/splawik.html)
 - [Kalendarz brań lina](https://fish-point.pl/poradniki/kalendarz-bran-lin.html)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Lipień](https://fish-point.pl/ryby/lipien.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3412,7 +3698,8 @@ Sources:
 - [GBIF: Thymallus thymallus](https://www.gbif.org/species/search?q=Thymallus%20thymallus)
 - [IUCN Red List: Thymallus thymallus](https://www.iucnredlist.org/species/266178365/135093349)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Miętus](https://fish-point.pl/ryby/mietus.html)
+- [Minóg rzeczny](https://fish-point.pl/ryby/minog-rzeczny.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3434,7 +3721,9 @@ Sources:
 - [GBIF: Lota lota](https://www.gbif.org/species/search?q=Lota%20lota)
 - [IUCN Red List: Lota lota](https://www.iucnredlist.org/species/135675/135110342)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Minóg rzeczny](https://fish-point.pl/ryby/minog-rzeczny.html)
+- [Okoń](https://fish-point.pl/ryby/okon.html)
+- [Piskorz](https://fish-point.pl/ryby/piskorz.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3454,6 +3743,9 @@ Sources:
 - [rozporządzenie w sprawie ochrony gatunkowej zwierząt](https://eli.gov.pl/api/acts/DU/2022/2380/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Lampetra_fluviatilis.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Okoń](https://fish-point.pl/ryby/okon.html)
+- [Piskorz](https://fish-point.pl/ryby/piskorz.html)
+- [Płoć](https://fish-point.pl/ryby/ploc.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3498,6 +3790,9 @@ Sources:
 - [rozporządzenie w sprawie ochrony gatunkowej zwierząt](https://eli.gov.pl/api/acts/DU/2022/2380/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Misgurnus_fossilis.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Płoć](https://fish-point.pl/ryby/ploc.html)
+- [Pstrąg potokowy](https://fish-point.pl/ryby/pstrag.html)
+- [Różanka](https://fish-point.pl/ryby/rozanka.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3546,7 +3841,7 @@ Sources:
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
 - [Wędkarstwo muchowe](https://fish-point.pl/techniki/muchowe.html)
 - [Kalendarz brań pstrąga](https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Różanka](https://fish-point.pl/ryby/rozanka.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3566,6 +3861,9 @@ Sources:
 - [rozporządzenie w sprawie ochrony gatunkowej zwierząt](https://eli.gov.pl/api/acts/DU/2022/2380/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Rhodeus_amarus_2008_G1.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Sandacz](https://fish-point.pl/ryby/sandacz.html)
+- [Sieja](https://fish-point.pl/ryby/sieja.html)
+- [Sielawa](https://fish-point.pl/ryby/sielawa.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3611,6 +3909,9 @@ Sources:
 - [IUCN Red List: Coregonus maraena](https://www.iucnredlist.org/species/135672/84475793)
 - [FishBase: Coregonus albula](https://www.fishbase.se/summary/Coregonus_albula.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Sielawa](https://fish-point.pl/ryby/sielawa.html)
+- [Śledź](https://fish-point.pl/ryby/sledz.html)
+- [Słonecznica](https://fish-point.pl/ryby/slonecznica.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3632,6 +3933,9 @@ Sources:
 - [IUCN Red List: Coregonus albula](https://www.iucnredlist.org/species/242158594/242163476)
 - [FishBase: Coregonus maraena](https://www.fishbase.se/summary/Coregonus_maraena.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Śledź](https://fish-point.pl/ryby/sledz.html)
+- [Słonecznica](https://fish-point.pl/ryby/slonecznica.html)
+- [Strzebla potokowa](https://fish-point.pl/ryby/strzebla-potokowa.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3653,6 +3957,9 @@ Sources:
 - [GBIF: Clupea harengus](https://www.gbif.org/species/search?q=Clupea%20harengus)
 - [IUCN Red List: Clupea harengus](https://www.iucnredlist.org/species/155123/4717767)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Słonecznica](https://fish-point.pl/ryby/slonecznica.html)
+- [Strzebla potokowa](https://fish-point.pl/ryby/strzebla-potokowa.html)
+- [Sum](https://fish-point.pl/ryby/sum.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3673,6 +3980,9 @@ Sources:
 - [rozporządzenie w sprawie ochrony gatunkowej zwierząt](https://eli.gov.pl/api/acts/DU/2022/2380/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Cyprinidae_Leucaspius_delineatus_2.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Strzebla potokowa](https://fish-point.pl/ryby/strzebla-potokowa.html)
+- [Sum](https://fish-point.pl/ryby/sum.html)
+- [Świnka](https://fish-point.pl/ryby/swinka.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3693,6 +4003,9 @@ Sources:
 - [rozporządzenie w sprawie ochrony gatunkowej zwierząt](https://eli.gov.pl/api/acts/DU/2022/2380/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Vairon_(Phoxinus_phoxinus).jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Sum](https://fish-point.pl/ryby/sum.html)
+- [Świnka](https://fish-point.pl/ryby/swinka.html)
+- [Szczupak](https://fish-point.pl/ryby/szczupak.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3739,7 +4052,9 @@ Sources:
 - [IUCN Red List: Chondrostoma nasus](https://www.iucnredlist.org/species/225435143/135083986)
 - [FishBase: Barbus barbus](https://www.fishbase.se/summary/Barbus_barbus.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Szczupak](https://fish-point.pl/ryby/szczupak.html)
+- [Troć i łosoś](https://fish-point.pl/ryby/troc-losos.html)
+- [Ukleja](https://fish-point.pl/ryby/ukleja.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3808,6 +4123,9 @@ Sources:
 - [GBIF: Alburnus alburnus](https://www.gbif.org/species/search?q=Alburnus%20alburnus)
 - [IUCN Red List: Alburnus alburnus](https://www.iucnredlist.org/species/789/135064432)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Węgorz](https://fish-point.pl/ryby/wegorz.html)
+- [Wzdręga](https://fish-point.pl/ryby/wzdrega.html)
+- [Amur](https://fish-point.pl/ryby/amur.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3854,7 +4172,9 @@ Sources:
 - [IUCN Red List: Scardinius erythrophthalmus](https://www.iucnredlist.org/species/19946/58302044)
 - [FishBase: Rutilus rutilus](https://www.fishbase.se/summary/Rutilus_rutilus.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
-- [O autorze](https://fish-point.pl/o-autorze.html)
+- [Amur](https://fish-point.pl/ryby/amur.html)
+- [Belona](https://fish-point.pl/ryby/belona.html)
+- [Boleń](https://fish-point.pl/ryby/bolen.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3900,6 +4220,9 @@ Sources:
 - [Fit Rybka](https://www.youtube.com/@fitrybka)
 - [YouTube](https://www.youtube.com/watch?v=A5m_xdtCe00)
 - [Przegląd: Sprzęt](https://fish-point.pl/sprzet/)
+- [Jak wybrać kołowrotek do wędki](https://fish-point.pl/sprzet/jak-wybrac-kolowrotek.html)
+- [Kołowrotki wędkarskie](https://fish-point.pl/sprzet/kolowrotki.html)
+- [Odzież i bezpieczeństwo](https://fish-point.pl/sprzet/odziez.html)
 - [Akcesoria wędkarskieUzupełnij zestaw o haki, agrafki, ciężarki i drobne wyposażenie.Sprawdź w BigRiver →](https://webep1.com/go/1bb1a3b3c3)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
@@ -3973,6 +4296,9 @@ Sources:
 - [U.S. Fish & Wildlife Service — How To Cross A River](https://www.fws.gov/story/how-cross-river)
 - [KG PSP — burze i silny wiatr](https://www.gov.pl/web/kgpsp/burze-i-silny-wiatr)
 - [Przegląd: Sprzęt](https://fish-point.pl/sprzet/)
+- [Pierwsza wędka spinningowa](https://fish-point.pl/sprzet/pierwsza-wedka-spinningowa.html)
+- [Żyłki i plecionki](https://fish-point.pl/sprzet/plecionki-zylki.html)
+- [Przynęty wędkarskie: rodzaje i dobór do metody | FishPoint](https://fish-point.pl/sprzet/przynety.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -4010,6 +4336,9 @@ Sources:
 - [Wedkarz.pro](https://www.youtube.com/@Wedkarzpro)
 - [YouTube](https://www.youtube.com/watch?v=EeAKL58UE9s)
 - [Przegląd: Sprzęt](https://fish-point.pl/sprzet/)
+- [Przynęty wędkarskie: rodzaje i dobór do metody | FishPoint](https://fish-point.pl/sprzet/przynety.html)
+- [Wędki wędkarskie](https://fish-point.pl/sprzet/wedki.html)
+- [Akcesoria wędkarskie: pełny dobór do zestawu | FishPoint](https://fish-point.pl/sprzet/akcesoria.html)
 - [Żyłki, plecionki i fluorocarbonPorównaj linki do spinningu i pozostałych metod.Sprawdź w BigRiver →](https://webep1.com/go/e7918164c3)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
@@ -4169,6 +4498,9 @@ Sources:
 - [GIRM](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [rozporządzenie ELI](https://eli.gov.pl/api/acts/DU/2023/2816/text.html)
 - [Przegląd: Techniki](https://fish-point.pl/techniki/)
+- [Wędkarstwo muchowe: przynęty, sprzęt i rzuty](https://fish-point.pl/techniki/muchowe.html)
+- [Wędkarstwo podlodowe](https://fish-point.pl/techniki/podlodowe.html)
+- [Spinning](https://fish-point.pl/techniki/spinning.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -4188,6 +4520,9 @@ Sources:
 - [YouTube](https://www.youtube.com/watch?v=EFZ6FnbRCew)
 - [rozporządzenie ELI](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Techniki](https://fish-point.pl/techniki/)
+- [Wędkarstwo podlodowe](https://fish-point.pl/techniki/podlodowe.html)
+- [Spinning](https://fish-point.pl/techniki/spinning.html)
+- [Metoda spławikowa](https://fish-point.pl/techniki/splawik.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -4207,6 +4542,9 @@ Sources:
 - [YouTube](https://www.youtube.com/watch?v=GkeYVnBekWc)
 - [rozporządzenie ELI](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Techniki](https://fish-point.pl/techniki/)
+- [Spinning](https://fish-point.pl/techniki/spinning.html)
+- [Metoda spławikowa](https://fish-point.pl/techniki/splawik.html)
+- [Trolling: sprzęt, prowadzenie przynęt i trasa | FishPoint](https://fish-point.pl/techniki/trolling.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -4250,6 +4588,9 @@ Sources:
 - [YouTube](https://www.youtube.com/watch?v=LmloWAuXZYw)
 - [rozporządzenie ELI](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Techniki](https://fish-point.pl/techniki/)
+- [Trolling: sprzęt, prowadzenie przynęt i trasa | FishPoint](https://fish-point.pl/techniki/trolling.html)
+- [Feeder dla początkujących: zestaw i plan łowienia | FishPoint](https://fish-point.pl/techniki/feeder-dla-poczatkujacych.html)
+- [Feeder](https://fish-point.pl/techniki/feeder.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -4270,6 +4611,9 @@ Sources:
 - [GIRM](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [rozporządzenie ELI](https://eli.gov.pl/api/acts/DU/2023/2816/text.html)
 - [Przegląd: Techniki](https://fish-point.pl/techniki/)
+- [Feeder dla początkujących: zestaw i plan łowienia | FishPoint](https://fish-point.pl/techniki/feeder-dla-poczatkujacych.html)
+- [Feeder](https://fish-point.pl/techniki/feeder.html)
+- [Karpiowanie od podstaw: zestaw, nęcenie i taktyka | FishPoint](https://fish-point.pl/techniki/karpiowanie.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.

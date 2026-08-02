@@ -2058,6 +2058,7 @@ RELATED_LINKS = {
     "ryby/karp.html": (
         ("/techniki/karpiowanie.html", "Karpiowanie od podstaw"),
         ("/poradniki/kalendarz-bran-karp.html", "Kalendarz brań karpia"),
+        ("/pierwsze-kroki/rodzaje-ryb/karp.html", "Karp dla początkujących"),
     ),
     "ryby/klen.html": (
         ("/techniki/spinning.html", "Spinning na klenia"),
@@ -2144,6 +2145,9 @@ RELATED_LINKS = {
         ("/pierwsze-kroki/pozwolenia-karta-wedkarska.html", "Pozwolenia i karta wędkarska"),
         ("/narzedzia/czy-moge-zabrac-rybe.html", "Czy mogę zabrać rybę"),
         ("/zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
+    ),
+    "aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html": (
+        ("/techniki/morskie.html", "Wędkarstwo morskie na Bałtyku"),
     ),
     "aktualnosci/rekord-okonia-2026.html": (
         ("/ryby/okon.html", "Atlas: okoń"),
@@ -2338,8 +2342,20 @@ def article_text(src):
     return re.sub(r"\s+", " ", _clean(chunk)).strip()
 
 
+RELATED_MAX = 4
+
+
 def build_related(section, rel, url):
-    """Hub sekcji oraz maksymalnie trzy redakcyjnie wybrane strony-spokes."""
+    """Hub sekcji oraz maksymalnie trzy strony-spokes.
+
+    Pierwszeństwo mają wybory redakcyjne. Puste sloty domyka pierścień:
+    strona linkuje do kolejnych stron tej samej sekcji, licząc cyklicznie od
+    swojej pozycji. Dzięki temu każdy materiał ma link przychodzący, a ruch
+    linkowy rozkłada się równo zamiast skupiać na kilku kartach.
+
+    Zwraca (pozycje, nagłówek). Nagłówek mówi prawdę o zawartości: „Powiązane
+    artykuły" tylko wtedy, gdy wszystkie spokes wskazano redakcyjnie.
+    """
     related = [(BASE + f"/{section}/", f"Przegląd: {SECTIONS[section]}")]
     config = CONTENT_ADVANTAGES.get(rel, {})
     links = RELATED_LINKS.get(rel, ()) + config.get("links", ())
@@ -2347,9 +2363,28 @@ def build_related(section, rel, url):
         target = BASE + href
         if target != url and target not in {item[0] for item in related}:
             related.append((target, title))
-        if len(related) == 4:
+        if len(related) == RELATED_MAX:
+            return related, "Powiązane artykuły"
+
+    siblings = SECTION_PAGES.get(section, ())
+    position = next((i for i, item in enumerate(siblings) if item[0] == url), None)
+    if position is None:
+        heading = "Powiązane artykuły" if len(related) > 1 else f"Więcej w dziale: {SECTIONS[section]}"
+        return related, heading
+
+    seen = {item[0] for item in related}
+    added = 0
+    for offset in range(1, len(siblings)):
+        target, title = siblings[(position + offset) % len(siblings)]
+        if target in seen:
+            continue
+        related.append((target, title))
+        seen.add(target)
+        added += 1
+        if len(related) == RELATED_MAX:
             break
-    return related
+    heading = f"Więcej w dziale: {SECTIONS[section]}" if added else "Powiązane artykuły"
+    return related, heading
 
 
 def extract_howto(src):
@@ -3307,14 +3342,15 @@ def build(path):
         src = ARTICLE_CARD_OPEN_RE.sub(r"\1" + tldr, src, count=1)
         src = inject_fishpoint_method(src, rel)
         src = inject_fish_biology(src, rel)
-        # Hub sekcji i ręcznie wybrane powiązania z istniejących kart redakcyjnych.
+        # Hub sekcji, powiązania redakcyjne, a na koniec pierścień sekcji.
         if section:
-            rel_items = build_related(section, rel, url)
+            rel_items, rel_heading = build_related(section, rel, url)
             if rel_items:
                 links = "".join(
                     f'<a href="{u}">{html.escape(t)}</a>' for u, t in rel_items)
-                related = (f'{RELATED_BEGIN}<section class="related" aria-label="Powiązane artykuły">'
-                           f'<h2>Powiązane artykuły</h2><div class="related-grid">{links}</div>'
+                label = html.escape(rel_heading)
+                related = (f'{RELATED_BEGIN}<section class="related" aria-label="{label}">'
+                           f'<h2>{label}</h2><div class="related-grid">{links}</div>'
                            f'</section>{RELATED_END}')
                 src = re.sub(r"(</article>)", related + r"\1", src, count=1)
         # Newsletter (MailerLite) — na wpisach blogowych, gdy ustawiono embed
