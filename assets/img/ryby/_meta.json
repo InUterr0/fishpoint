@@ -186,10 +186,10 @@
   },
   "kielb": {
     "file": "assets/img/ryby/kielb.jpg",
-    "artist": "Michal Maňas / User:Snek01",
-    "license": "CC BY 2.5",
-    "page": "https://commons.wikimedia.org/wiki/File:Gobio_gobio.jpg",
-    "source_checked": "2026-07-24",
+    "artist": "Pmau",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Gobio_gobio_img_33568.jpg",
+    "source_checked": "2026-08-02",
     "variants": [
       "assets/img/ryby/kielb.jpg.webp",
       "assets/img/ryby/kielb.jpg.avif"
@@ -208,10 +208,10 @@
   },
   "koza": {
     "file": "assets/img/ryby/koza.jpg",
-    "artist": "J.C. Harf / Wiki-Harfus",
-    "license": "CC BY-SA 3.0",
-    "page": "https://commons.wikimedia.org/wiki/File:Steinbeisser_001.jpg",
-    "source_checked": "2026-07-24",
+    "artist": "Lorenz Seebauer",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Steinbei%C3%9Fer.jpg",
+    "source_checked": "2026-08-02",
     "variants": [
       "assets/img/ryby/koza.jpg.webp",
       "assets/img/ryby/koza.jpg.avif"
