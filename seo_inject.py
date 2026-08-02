@@ -2130,13 +2130,48 @@ RELATED_LINKS = {
         ("/poradniki/kalendarz-bran-karp.html", "Kalendarz brań karpia"),
         ("/pierwsze-kroki/rodzaje-ryb/karp.html", "Karp dla początkujących"),
     ),
+    "ryby/wzdrega.html": (
+        ("/ryby/ploc.html", "Porównaj z płocią"),
+    ),
+    "ryby/jaz.html": (
+        ("/ryby/klen.html", "Porównaj z kleniem"),
+    ),
+    "ryby/krap.html": (
+        ("/ryby/leszcz.html", "Porównaj z leszczem"),
+    ),
+    "ryby/piskorz.html": (
+        ("/ryby/koza.html", "Porównaj z kozą pospolitą"),
+    ),
+    "ryby/koza.html": (
+        ("/ryby/piskorz.html", "Porównaj z piskorzem"),
+    ),
+    "ryby/brzana.html": (
+        ("/ryby/swinka.html", "Porównaj ze świnką"),
+    ),
+    "ryby/swinka.html": (
+        ("/ryby/brzana.html", "Porównaj z brzaną"),
+    ),
+    "ryby/sielawa.html": (
+        ("/ryby/sieja.html", "Porównaj z sieją"),
+    ),
+    "ryby/sieja.html": (
+        ("/ryby/sielawa.html", "Porównaj z sielawą"),
+    ),
+    "ryby/lipien.html": (
+        ("/ryby/pstrag.html", "Porównaj z pstrągiem potokowym"),
+    ),
+    "ryby/amur.html": (
+        ("/ryby/karp.html", "Porównaj z karpiem"),
+    ),
     "ryby/klen.html": (
         ("/techniki/spinning.html", "Spinning na klenia"),
         ("/poradniki/kalendarz-bran-klen.html", "Kalendarz brań klenia"),
+        ("/ryby/jaz.html", "Porównaj z jaziem"),
     ),
     "ryby/leszcz.html": (
         ("/techniki/feeder.html", "Feeder na leszcza"),
         ("/poradniki/kalendarz-bran-leszcz.html", "Kalendarz brań leszcza"),
+        ("/ryby/krap.html", "Porównaj z krąpiem"),
     ),
     "ryby/lin.html": (
         ("/techniki/splawik.html", "Spławik na lina"),
@@ -2149,10 +2184,12 @@ RELATED_LINKS = {
     "ryby/ploc.html": (
         ("/techniki/splawik.html", "Spławik na płoć"),
         ("/poradniki/kalendarz-bran-ploc.html", "Kalendarz brań płoci"),
+        ("/ryby/wzdrega.html", "Porównaj ze wzdręgą"),
     ),
     "ryby/pstrag.html": (
         ("/techniki/muchowe.html", "Wędkarstwo muchowe"),
         ("/poradniki/kalendarz-bran-pstrag.html", "Kalendarz brań pstrąga"),
+        ("/ryby/lipien.html", "Porównaj z lipieniem"),
     ),
     "ryby/sandacz.html": (
         ("/techniki/spinning.html", "Spinning na sandacza"),

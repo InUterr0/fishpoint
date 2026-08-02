@@ -3233,7 +3233,7 @@ Sources:
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
-Atlas rybAtlas ryb polskich wódKarty w dziale sprawdzone 24 lipca 2026Czterdzieści kart atlasu polskich wód — od drapieżników i ryb spokojnego żeru po gatunki chronione, których kart używa się do rozpoznawania i ochrony, nie do planowania połowu. Każda karta opisuje cechy, środowisko, biologię, źródła i zasady odpowiedzialnego kontaktu z rybą. Wymiary, limity i lokalne zakazy zawsze weryfikuj w aktualnym regulaminie swojej wody. Znajdź kartę gatunku Szukaj po nazwie lub aliasie Grupa atlasu Wszystkie Drapieżniki Ryby spokojnego żeru Łososiowate i inne Morskie Pokazano 40 z 40 kart atlasu. Wyszukiwanie i filtry wymagają JavaScriptu; poniżej pozostają dostępne wszystkie karty atlasu. Drapieżniki Ryby polujące na inne ryby — domena spinningu, żywca i martwej rybki. Wspólny mianownik: przypony odporne na zęby, mocniejszy sprzęt i czytanie wody pod kątem zasadzek oraz krawędzi. 🐊SzczupakNajpopularniejszy drapieżnik polskich wód. Myśliwy z zasadzki przy trzcinach i krawędziach; spinning, żywiec i obowiązkowy przypon stalowy. 🌙SandaczSzklistooki łowca zmierzchu i nocy. Jigowanie przy dnie, twarde stanowiska, delikatne brania i ceniona kulinarnie ryba. 🦓OkońPręgowany drapieżnik stadny, wdzięczny cel lekkiego spinningu. Mikrogumy, obrotówki i łowienie przez cały rok, także spod lodu. 🐋SumNajwiększa ryba polskich wód — wąsaty olbrzym dużych rzek i zbiorników. Mocny sprzęt, nocne żerowanie, kwok i gruntówka. 💨BoleńJeden z nielicznych karpiowatych o wyraźnie rybożernej diecie dorosłych: spektakularne „bicie” uklei przy powierzchni, dalekie rzuty i szybkie prowadzenie wąskich przynęt. 🪱WęgorzWęgorz europejski odbywa rozród w oceanie; jego globalna ocena IUCN opisuje stan gatunku, nie zasady połowu na konkretnej wodzie. Obserwacje nocne i wybór metody zawsze zależą od aktualnego regulaminu. Ryby spokojnego żeru Klasyka spławika, gruntu i feedera: gatunki żerujące głównie przy dnie i wśród roślin, łowione na przynęty roślinne i robaki, z nęceniem jako podstawą taktyki. 👑KarpKról wód stojących i bohater nowoczesnego karpiarstwa. Kulki proteinowe, method feeder, włosowe zestawy i etyka C&R. 🫒LinOliwkowy samotnik zarośniętych jezior o czerwonym oku. Świt i zmierzch przy szuwarach, delikatne brania i piękna walka. 🥞LeszczWysoki, spłaszczony bywalec głębszych blatów. Stada żerujące nocą, klasyczny cel feedera i metody odległościowej. 🧭Jak łowić leszczaPraktyczna ścieżka od wyboru miejsca przez feeder lub spławik do małych porcji zanęty i kontroli brań. 🧭Jak łowić płoćSpławik, lekki feeder, czytanie głębokości i spokojne prowadzenie zestawu z brzegu. 🔴PłoćNajpospolitsza ryba polskich wód i najlepsza nauczycielka spławika. Drobne przynęty, lekkie zestawy, łowienie cały rok. ✨UklejaMała, srebrzysta ryba ław przypowierzchniowych i fundament łańcucha pokarmowego. Lekki spławik, łowienie „na ślinę”, żywiec i ryba na start dla dzieci. 🥇KaraśPospolity i srebrzysty — jak je odróżnić, dlaczego srebrzysty jest inwazyjny i jak łowić oba na spławik przy roślinności. 🟠JaźZłocisty rzeczny wszystkożerca o czerwonych płetwach. Spławik w nurcie, drobny spinning i mucha — ryba wielu metod. 🌊CertaWędrowna ryba dużych rzek o srebrzystym ciele i ryjkowatym pysku. Wiosenne wędrówki na tarło, feeder i spławik w nurcie, białe robaki i rogal.🐟BrzanaReofilna ryba krainy brzany — walcowate ciało, wąsiki, silny prąd i kamieniste dno. Feeder i grunt na rzece; nie spożywaj ikry bez wiarygodnej identyfikacji i informacji o bezpieczeństwie.🟠WzdręgaKrewniaczka płoci z krwistoczerwonymi płetwami i górnym pyskiem. Ryba przypowierzchniowa zarośli i cichych zatok; lekki spławik. 🌳KleńCzujny mieszkaniec rzecznych rynien i podmytych brzegów. Chętnie bierze chrząszcze, czereśnie, woblerki i muchy. 🌿AmurGatunek wprowadzony do części wód; jego obecność i rozród należy potwierdzać lokalnie. W diecie dominuje roślinność, a obserwowane żerowanie i dobór metody nie są gwarancją wyniku. 🐟Kiełb pospolityDrobny rybny mieszkaniec piaszczysto-żwirowego dna z wąsikami przy pysku. Karta pomaga rozpoznać gatunek i bezpiecznie wypuścić przyłów. 🐟KrąpStadny krewniak leszcza o dużym oku i srebrzystych bokach. Sprawdź cechy, bo rozpoznanie od młodego leszcza nie powinno opierać się na jednej różnicy. 🛡️CiernikNiewielka ryba z trzema ruchomymi kolcami; samiec buduje gniazdo i pilnuje ikry. Praktyka: ostrożne wypuszczenie bez ściskania kolców. Łososiowate i inne Ryby zimnych, natlenionych wód — górskich potoków, krain pstrąga i lipienia oraz rzek pomorskich. Tu królują mucha i lekki spinning, a regulaminy łowisk bywają najbardziej restrykcyjne. 🏔️Pstrąg potokowyKropkowany drapieżnik bystrych potoków. Podchodzenie pod prąd, sucha mucha, nimfa i ultralekki spinning. 🚩LipieńRyba o wielkiej płetwie-chorągwi i zapachu tymianku. Wybredny smakosz drobnych much; populacje w regresie — wskazane C&R. ❄️MiętusJedyny słodkowodny dorszowaty. Żeruje nocą i zimą, trze się pod lodem — gruntówka, gdy inni chowają wędki. 🌊Troć i łosośSrebrzyści wędrowcy rzek pomorskich i Wisły. Jak je odróżnić, kiedy ciągną z morza i jakie zasady chronią tarlaki. 🐟SiejaSzlachetna ryba głębokich jezior północy. Tarło jesienno-zimowe, wrażliwa na tlen; miejscami pod szczególną ochroną. 🐷ŚwinkaStadna ryba czystych, bystrych rzek o twardym dnie. Dolnym, poprzecznym pyskiem skrobie glony z kamieni — łowienie spławikowe i feederowe z prądem.🐠SielawaDrobna, srebrzysta ryba łososiowata czystych, głębokich jezior północy. Ceniona kulinarnie; tarło zimowe, łowienie podlodowe i z łodzi.🦈JesiotrWędrowna, długowieczna ryba jesiotrowata objęta w Polsce restytucją i ochroną. W wodach otwartych chroniony — więcej o gatunku i łowiskach. 🪨Koza pospolitaChroniona, cętkowana ryba denna z wąsikami i kolcem pod okiem. Nie jest celem połowu; przyłów od razu wypuść. 〰️PiskorzChroniony mieszkaniec mułu i starorzeczy, wyróżniający się dziesięcioma wąsikami. Nie łów ani nie używaj jako przynęty. 🦪RóżankaChroniona drobna ryba, której rozród zależy od żywych małży. Obserwacja i szybkie wypuszczenie — bez ingerencji w stanowisko. ☀️SłonecznicaChroniona ryba powierzchniowych ławic. Wątpliwą rybę podobną do uklei zawsze wypuść; nie pozyskuj jej jako żywca. 🏞️Strzebla potokowaChroniona ryba chłodnych, natlenionych potoków. Nie jest celem połowu; szanuj żwirowe tarliska i nie przenoś ryb. 🪨Głowacz białopłetwyChroniony, szerokogłowy mieszkaniec kamienistego dna. Nie odwracaj kamieni i nie wyjmuj go do zdjęcia. 🌊Minóg rzecznyChroniony bezszczękowiec wędrowny, a nie ryba do połowu. Przy przypadkowym zaplątaniu uwolnij go w wodzie. Ryby morskie (Bałtyk) Gatunki polskiego wybrzeża, które złowisz z plaży, mola lub kutra. Połów morski rządzi się własnymi przepisami — nie obowiązuje tu regulamin PZW, lecz krajowe i unijne zasady rybołówstwa morskiego. Zajrzyj też do techniki: wędkarstwo morskie. 🐟DorszNajważniejsza ryba Bałtyku — połów z kutra i z brzegu na pilkery i gumy. Uwaga: rekreacyjny połów podlega zmiennym ograniczeniom UE i krajowym. 🐠ŚledźWiosenne ławice pod brzegiem i w portach — klasyczne łowienie na „choinkę". Ryba o ogromnym znaczeniu kulinarnym i gospodarczym. 🦴BelonaSmukła ryba z „dziobem” i zielonymi ośćmi; barwa ości nie jest samodzielnym kryterium oznaczenia ani oceny przydatności do spożycia. Późną wiosną można obserwować ją bliżej brzegu, lecz warunki i przepisy połowu sprawdzaj przed wyjazdem. 🥏Flądra (stornia)Płaska ryba dna — zestaw gruntowy z piaskówką z plaży, mola i kutra. Idealna na start przygody z Bałtykiem. Klucz rozpoznawania najczęściej mylonych gatunków Porównuj więcej niż jedną cechę i w razie wątpliwości nie opieraj decyzji o zabraniu ryby na tym skrócie. Każda para prowadzi do obu kart źródłowych. Płoć i wzdręgaU płoci płetwa grzbietowa zaczyna się nad nasadą płetw brzusznych, a u wzdręgi wyraźnie za nią; pomocniczo płoć ma czerwonopomarańczowe oko, a wzdręga żółtawe. Karp i amurKarp ma dwie pary wąsików przy wysuwalnym pysku; amur ma pysk bez wąsików i wydłużone, walcowate ciało. Kleń i jaźU klenia krawędź płetwy odbytowej jest zaokrąglona i wypukła, u jazia wcięta; kleń ma duże łuski, a jaź drobne i liczne. Brzana i świnkaBrzana ma cztery wyraźne wąsiki przy dolnym pysku, a świnka wąską, poprzeczną szparę gębową z twardą, rogową wargą. Sielawa i siejaSielawa ma pysk skierowany ku górze i żeruje głównie na planktonie w toni; sieja ma otwór gębowy dolny lub prawie końcowy oraz jest zwykle większa i masywniejsza. Pstrąg potokowy i lipieńLipień ma wysoką, długą i barwną płetwę grzbietową, a pstrąg niewielką; pstrąga rozpoznasz też po czerwonych kropkach z jasną obwódką. Źródła i weryfikacjaAtlas ma charakter przeglądowy i edukacyjny. Podane na kartach gatunków wymiary ochronne, okresy ochronne i limity dobowe są orientacyjne i odnoszą się do ogólnych zasad wędkowania w wodach PZW na dzień publikacji — okręgi i łowiska specjalne wprowadzają własne, często ostrzejsze regulacje. Przed każdą wyprawą zweryfikuj aktualne przepisy w swoim zezwoleniu, regulaminie okręgu oraz na pzw.org.pl. Treści nie gwarantują żadnych wyników połowu.
+Atlas rybAtlas ryb polskich wódKarty w dziale sprawdzone 24 lipca 2026Czterdzieści kart atlasu polskich wód — od drapieżników i ryb spokojnego żeru po gatunki chronione, których kart używa się do rozpoznawania i ochrony, nie do planowania połowu. Każda karta opisuje cechy, środowisko, biologię, źródła i zasady odpowiedzialnego kontaktu z rybą. Wymiary, limity i lokalne zakazy zawsze weryfikuj w aktualnym regulaminie swojej wody. Znajdź kartę gatunku Szukaj po nazwie lub aliasie Grupa atlasu Wszystkie Drapieżniki Ryby spokojnego żeru Łososiowate i inne Morskie Pokazano 40 z 40 kart atlasu. Wyszukiwanie i filtry wymagają JavaScriptu; poniżej pozostają dostępne wszystkie karty atlasu. Drapieżniki Ryby polujące na inne ryby — domena spinningu, żywca i martwej rybki. Wspólny mianownik: przypony odporne na zęby, mocniejszy sprzęt i czytanie wody pod kątem zasadzek oraz krawędzi. 🐊SzczupakNajpopularniejszy drapieżnik polskich wód. Myśliwy z zasadzki przy trzcinach i krawędziach; spinning, żywiec i obowiązkowy przypon stalowy. 🌙SandaczSzklistooki łowca zmierzchu i nocy. Jigowanie przy dnie, twarde stanowiska, delikatne brania i ceniona kulinarnie ryba. 🦓OkońPręgowany drapieżnik stadny, wdzięczny cel lekkiego spinningu. Mikrogumy, obrotówki i łowienie przez cały rok, także spod lodu. 🐋SumNajwiększa ryba polskich wód — wąsaty olbrzym dużych rzek i zbiorników. Mocny sprzęt, nocne żerowanie, kwok i gruntówka. 💨BoleńJeden z nielicznych karpiowatych o wyraźnie rybożernej diecie dorosłych: spektakularne „bicie” uklei przy powierzchni, dalekie rzuty i szybkie prowadzenie wąskich przynęt. 🪱WęgorzWęgorz europejski odbywa rozród w oceanie; jego globalna ocena IUCN opisuje stan gatunku, nie zasady połowu na konkretnej wodzie. Obserwacje nocne i wybór metody zawsze zależą od aktualnego regulaminu. Ryby spokojnego żeru Klasyka spławika, gruntu i feedera: gatunki żerujące głównie przy dnie i wśród roślin, łowione na przynęty roślinne i robaki, z nęceniem jako podstawą taktyki. 👑KarpKról wód stojących i bohater nowoczesnego karpiarstwa. Kulki proteinowe, method feeder, włosowe zestawy i etyka C&R. 🫒LinOliwkowy samotnik zarośniętych jezior o czerwonym oku. Świt i zmierzch przy szuwarach, delikatne brania i piękna walka. 🥞LeszczWysoki, spłaszczony bywalec głębszych blatów. Stada żerujące nocą, klasyczny cel feedera i metody odległościowej. 🧭Jak łowić leszczaPraktyczna ścieżka od wyboru miejsca przez feeder lub spławik do małych porcji zanęty i kontroli brań. 🧭Jak łowić płoćSpławik, lekki feeder, czytanie głębokości i spokojne prowadzenie zestawu z brzegu. 🔴PłoćNajpospolitsza ryba polskich wód i najlepsza nauczycielka spławika. Drobne przynęty, lekkie zestawy, łowienie cały rok. ✨UklejaMała, srebrzysta ryba ław przypowierzchniowych i fundament łańcucha pokarmowego. Lekki spławik, łowienie „na ślinę”, żywiec i ryba na start dla dzieci. 🥇KaraśPospolity i srebrzysty — jak je odróżnić, dlaczego srebrzysty jest inwazyjny i jak łowić oba na spławik przy roślinności. 🟠JaźZłocisty rzeczny wszystkożerca o czerwonych płetwach. Spławik w nurcie, drobny spinning i mucha — ryba wielu metod. 🌊CertaWędrowna ryba dużych rzek o srebrzystym ciele i ryjkowatym pysku. Wiosenne wędrówki na tarło, feeder i spławik w nurcie, białe robaki i rogal.🐟BrzanaReofilna ryba krainy brzany — walcowate ciało, wąsiki, silny prąd i kamieniste dno. Feeder i grunt na rzece; nie spożywaj ikry bez wiarygodnej identyfikacji i informacji o bezpieczeństwie.🟠WzdręgaKrewniaczka płoci z krwistoczerwonymi płetwami i górnym pyskiem. Ryba przypowierzchniowa zarośli i cichych zatok; lekki spławik. 🌳KleńCzujny mieszkaniec rzecznych rynien i podmytych brzegów. Chętnie bierze chrząszcze, czereśnie, woblerki i muchy. 🌿AmurGatunek wprowadzony do części wód; jego obecność i rozród należy potwierdzać lokalnie. W diecie dominuje roślinność, a obserwowane żerowanie i dobór metody nie są gwarancją wyniku. 🐟Kiełb pospolityDrobny rybny mieszkaniec piaszczysto-żwirowego dna z wąsikami przy pysku. Karta pomaga rozpoznać gatunek i bezpiecznie wypuścić przyłów. 🐟KrąpStadny krewniak leszcza o dużym oku i srebrzystych bokach. Sprawdź cechy, bo rozpoznanie od młodego leszcza nie powinno opierać się na jednej różnicy. 🛡️CiernikNiewielka ryba z trzema ruchomymi kolcami; samiec buduje gniazdo i pilnuje ikry. Praktyka: ostrożne wypuszczenie bez ściskania kolców. Łososiowate i inne Ryby zimnych, natlenionych wód — górskich potoków, krain pstrąga i lipienia oraz rzek pomorskich. Tu królują mucha i lekki spinning, a regulaminy łowisk bywają najbardziej restrykcyjne. 🏔️Pstrąg potokowyKropkowany drapieżnik bystrych potoków. Podchodzenie pod prąd, sucha mucha, nimfa i ultralekki spinning. 🚩LipieńRyba o wielkiej płetwie-chorągwi i zapachu tymianku. Wybredny smakosz drobnych much; populacje w regresie — wskazane C&R. ❄️MiętusJedyny słodkowodny dorszowaty. Żeruje nocą i zimą, trze się pod lodem — gruntówka, gdy inni chowają wędki. 🌊Troć i łosośSrebrzyści wędrowcy rzek pomorskich i Wisły. Jak je odróżnić, kiedy ciągną z morza i jakie zasady chronią tarlaki. 🐟SiejaSzlachetna ryba głębokich jezior północy. Tarło jesienno-zimowe, wrażliwa na tlen; miejscami pod szczególną ochroną. 🐷ŚwinkaStadna ryba czystych, bystrych rzek o twardym dnie. Dolnym, poprzecznym pyskiem skrobie glony z kamieni — łowienie spławikowe i feederowe z prądem.🐠SielawaDrobna, srebrzysta ryba łososiowata czystych, głębokich jezior północy. Ceniona kulinarnie; tarło zimowe, łowienie podlodowe i z łodzi.🦈JesiotrWędrowna, długowieczna ryba jesiotrowata objęta w Polsce restytucją i ochroną. W wodach otwartych chroniony — więcej o gatunku i łowiskach. 🪨Koza pospolitaChroniona, cętkowana ryba denna z wąsikami i kolcem pod okiem. Nie jest celem połowu; przyłów od razu wypuść. 〰️PiskorzChroniony mieszkaniec mułu i starorzeczy, wyróżniający się dziesięcioma wąsikami. Nie łów ani nie używaj jako przynęty. 🦪RóżankaChroniona drobna ryba, której rozród zależy od żywych małży. Obserwacja i szybkie wypuszczenie — bez ingerencji w stanowisko. ☀️SłonecznicaChroniona ryba powierzchniowych ławic. Wątpliwą rybę podobną do uklei zawsze wypuść; nie pozyskuj jej jako żywca. 🏞️Strzebla potokowaChroniona ryba chłodnych, natlenionych potoków. Nie jest celem połowu; szanuj żwirowe tarliska i nie przenoś ryb. 🪨Głowacz białopłetwyChroniony, szerokogłowy mieszkaniec kamienistego dna. Nie odwracaj kamieni i nie wyjmuj go do zdjęcia. 🌊Minóg rzecznyChroniony bezszczękowiec wędrowny, a nie ryba do połowu. Przy przypadkowym zaplątaniu uwolnij go w wodzie. Ryby morskie (Bałtyk) Gatunki polskiego wybrzeża, które złowisz z plaży, mola lub kutra. Połów morski rządzi się własnymi przepisami — nie obowiązuje tu regulamin PZW, lecz krajowe i unijne zasady rybołówstwa morskiego. Zajrzyj też do techniki: wędkarstwo morskie. 🐟DorszNajważniejsza ryba Bałtyku — połów z kutra i z brzegu na pilkery i gumy. Uwaga: rekreacyjny połów podlega zmiennym ograniczeniom UE i krajowym. 🐠ŚledźWiosenne ławice pod brzegiem i w portach — klasyczne łowienie na „choinkę". Ryba o ogromnym znaczeniu kulinarnym i gospodarczym. 🦴BelonaSmukła ryba z „dziobem” i zielonymi ośćmi; barwa ości nie jest samodzielnym kryterium oznaczenia ani oceny przydatności do spożycia. Późną wiosną można obserwować ją bliżej brzegu, lecz warunki i przepisy połowu sprawdzaj przed wyjazdem. 🥏Flądra (stornia)Płaska ryba dna — zestaw gruntowy z piaskówką z plaży, mola i kutra. Idealna na start przygody z Bałtykiem. Klucz rozpoznawania najczęściej mylonych gatunków Porównuj więcej niż jedną cechę i w razie wątpliwości nie opieraj decyzji o zabraniu ryby na tym skrócie. Każda para prowadzi do obu kart źródłowych. Płoć i wzdręgaU płoci płetwa grzbietowa zaczyna się nad nasadą płetw brzusznych, a u wzdręgi wyraźnie za nią; pomocniczo płoć ma czerwonopomarańczowe oko, a wzdręga żółtawe. Karp i amurKarp ma dwie pary wąsików przy wysuwalnym pysku; amur ma pysk bez wąsików i wydłużone, walcowate ciało. Kleń i jaźU klenia krawędź płetwy odbytowej jest zaokrąglona i wypukła, u jazia wcięta; kleń ma duże łuski, a jaź drobne i liczne. Brzana i świnkaBrzana ma cztery wyraźne wąsiki przy dolnym pysku, a świnka wąską, poprzeczną szparę gębową z twardą, rogową wargą. Sielawa i siejaSielawa ma pysk skierowany ku górze i żeruje głównie na planktonie w toni; sieja ma otwór gębowy dolny lub prawie końcowy oraz jest zwykle większa i masywniejsza. Leszcz i krąpU krąpia płetwy piersiowe i brzuszne mają czerwonawy odcień u nasady, u leszcza są jednolicie szare; krąp ma też większe łuski (44–48 wzdłuż linii bocznej wobec 51–60 u leszcza) i proporcjonalnie większe oko. Zdarzają się mieszańce o cechach pośrednich. Piskorz i koza pospolitaPiskorz ma ciało wężowate z ciemnymi podłużnymi pasami i dziesięć wąsików wokół pyska; koza jest smuklejsza, cętkowana i ma ruchomy kolec pod okiem. Oba gatunki są chronione — po przypadkowym złowieniu wracają do wody, a kolca kozy nie dotykaj. Pstrąg potokowy i lipieńLipień ma wysoką, długą i barwną płetwę grzbietową, a pstrąg niewielką; pstrąga rozpoznasz też po czerwonych kropkach z jasną obwódką. Źródła i weryfikacjaAtlas ma charakter przeglądowy i edukacyjny. Podane na kartach gatunków wymiary ochronne, okresy ochronne i limity dobowe są orientacyjne i odnoszą się do ogólnych zasad wędkowania w wodach PZW na dzień publikacji — okręgi i łowiska specjalne wprowadzają własne, często ostrzejsze regulacje. Przed każdą wyprawą zweryfikuj aktualne przepisy w swoim zezwoleniu, regulaminie okręgu oraz na pzw.org.pl. Treści nie gwarantują żadnych wyników połowu.
 
 ## Amur
 Canonical URL: https://fish-point.pl/ryby/amur.html
@@ -3251,9 +3251,9 @@ Sources:
 - [GBIF: Ctenopharyngodon idella](https://www.gbif.org/species/search?q=Ctenopharyngodon%20idella)
 - [IUCN Red List: Ctenopharyngodon idella](https://www.iucnredlist.org/species/61295/3102796)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Porównaj z karpiem](https://fish-point.pl/ryby/karp.html)
 - [Belona](https://fish-point.pl/ryby/belona.html)
 - [Boleń](https://fish-point.pl/ryby/bolen.html)
-- [Brzana](https://fish-point.pl/ryby/brzana.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3322,9 +3322,9 @@ Sources:
 - [IUCN Red List: Barbus barbus](https://www.iucnredlist.org/species/2561/58293571)
 - [FishBase: Chondrostoma nasus](https://www.fishbase.se/summary/Chondrostoma_nasus.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Porównaj ze świnką](https://fish-point.pl/ryby/swinka.html)
 - [Certa](https://fish-point.pl/ryby/certa.html)
 - [Ciernik](https://fish-point.pl/ryby/ciernik.html)
-- [Dorsz](https://fish-point.pl/ryby/dorsz.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3465,7 +3465,7 @@ Sources:
 - [IUCN Red List: Leuciscus idus](https://www.iucnredlist.org/species/11884/135089209)
 - [FishBase: Squalius cephalus](https://www.fishbase.se/summary/Squalius_cephalus.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
-- [Jesiotr](https://fish-point.pl/ryby/jesiotr.html)
+- [Porównaj z kleniem](https://fish-point.pl/ryby/klen.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3603,9 +3603,9 @@ Sources:
 - [rozporządzenie w sprawie ochrony gatunkowej zwierząt](https://eli.gov.pl/api/acts/DU/2022/2380/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Steinbeisser_001.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Porównaj z piskorzem](https://fish-point.pl/ryby/piskorz.html)
 - [Krąp](https://fish-point.pl/ryby/krap.html)
 - [Leszcz](https://fish-point.pl/ryby/leszcz.html)
-- [Lin](https://fish-point.pl/ryby/lin.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3626,7 +3626,7 @@ Sources:
 - [rozporządzeniu dotyczącym amatorskiego połowu ryb](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Hal_-_Blicca_bjoerkna_-_1.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
-- [Leszcz](https://fish-point.pl/ryby/leszcz.html)
+- [Porównaj z leszczem](https://fish-point.pl/ryby/leszcz.html)
 - [Lin](https://fish-point.pl/ryby/lin.html)
 - [Lipień](https://fish-point.pl/ryby/lipien.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
@@ -3700,8 +3700,8 @@ Sources:
 - [GBIF: Thymallus thymallus](https://www.gbif.org/species/search?q=Thymallus%20thymallus)
 - [IUCN Red List: Thymallus thymallus](https://www.iucnredlist.org/species/266178365/135093349)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Porównaj z pstrągiem potokowym](https://fish-point.pl/ryby/pstrag.html)
 - [Miętus](https://fish-point.pl/ryby/mietus.html)
-- [Minóg rzeczny](https://fish-point.pl/ryby/minog-rzeczny.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3792,9 +3792,9 @@ Sources:
 - [rozporządzenie w sprawie ochrony gatunkowej zwierząt](https://eli.gov.pl/api/acts/DU/2022/2380/text.html)
 - [strona pliku i warunki licencji](https://commons.wikimedia.org/wiki/File:Misgurnus_fossilis.jpg)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Porównaj z kozą pospolitą](https://fish-point.pl/ryby/koza.html)
 - [Płoć](https://fish-point.pl/ryby/ploc.html)
 - [Pstrąg potokowy](https://fish-point.pl/ryby/pstrag.html)
-- [Różanka](https://fish-point.pl/ryby/rozanka.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3843,7 +3843,7 @@ Sources:
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
 - [Wędkarstwo muchowe](https://fish-point.pl/techniki/muchowe.html)
 - [Kalendarz brań pstrąga](https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html)
-- [Różanka](https://fish-point.pl/ryby/rozanka.html)
+- [Porównaj z lipieniem](https://fish-point.pl/ryby/lipien.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3911,7 +3911,7 @@ Sources:
 - [IUCN Red List: Coregonus maraena](https://www.iucnredlist.org/species/135672/84475793)
 - [FishBase: Coregonus albula](https://www.fishbase.se/summary/Coregonus_albula.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
-- [Sielawa](https://fish-point.pl/ryby/sielawa.html)
+- [Porównaj z sielawą](https://fish-point.pl/ryby/sielawa.html)
 - [Śledź](https://fish-point.pl/ryby/sledz.html)
 - [Słonecznica](https://fish-point.pl/ryby/slonecznica.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
@@ -3935,9 +3935,9 @@ Sources:
 - [IUCN Red List: Coregonus albula](https://www.iucnredlist.org/species/242158594/242163476)
 - [FishBase: Coregonus maraena](https://www.fishbase.se/summary/Coregonus_maraena.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Porównaj z sieją](https://fish-point.pl/ryby/sieja.html)
 - [Śledź](https://fish-point.pl/ryby/sledz.html)
 - [Słonecznica](https://fish-point.pl/ryby/slonecznica.html)
-- [Strzebla potokowa](https://fish-point.pl/ryby/strzebla-potokowa.html)
 - [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -4054,9 +4054,9 @@ Sources:
 - [IUCN Red List: Chondrostoma nasus](https://www.iucnredlist.org/species/225435143/135083986)
 - [FishBase: Barbus barbus](https://www.fishbase.se/summary/Barbus_barbus.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Porównaj z brzaną](https://fish-point.pl/ryby/brzana.html)
 - [Szczupak](https://fish-point.pl/ryby/szczupak.html)
 - [Troć i łosoś](https://fish-point.pl/ryby/troc-losos.html)
-- [Ukleja](https://fish-point.pl/ryby/ukleja.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -4174,9 +4174,9 @@ Sources:
 - [IUCN Red List: Scardinius erythrophthalmus](https://www.iucnredlist.org/species/19946/58302044)
 - [FishBase: Rutilus rutilus](https://www.fishbase.se/summary/Rutilus_rutilus.html)
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
+- [Porównaj z płocią](https://fish-point.pl/ryby/ploc.html)
 - [Amur](https://fish-point.pl/ryby/amur.html)
 - [Belona](https://fish-point.pl/ryby/belona.html)
-- [Boleń](https://fish-point.pl/ryby/bolen.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
