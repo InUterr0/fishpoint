@@ -17,9 +17,34 @@ GISCUS_REPO = "kerlingruppen/fishpoint-comments"
 GISCUS_REPO_ID = "R_kgDOTTiC_g"
 GISCUS_CATEGORY = "Announcements"
 GISCUS_CATEGORY_ID = "DIC_kwDOTTiC_s4DA1zO"
-# Newsletter — wklej TU pełny kod osadzenia formularza MailerLite (HTML/script).
-# Puste = sekcja newslettera się nie pojawia. Po wklejeniu pojawi się na wpisach blogowych.
-NEWSLETTER_EMBED = ""
+# Newsletter — własny formularz wysyłający na endpoint MailerLite.
+# Puste = sekcja newslettera się nie pojawia. Świadomie NIE używamy gotowej
+# wklejki z panelu: ciągnęłaby ~15 kB własnego CSS, webfont Open Sans, dwa
+# skrypty z obcych domen i pixel śledzący na każdy z 50 wpisów. Tu zostaje
+# samo POST-owanie do ich API, a wygląd bierze się z .nl-form w style.css.
+# Odpowiedź ląduje w ukrytej ramce, żeby wysłanie nie wyrzucało z artykułu.
+NEWSLETTER_ACTION = ("https://assets.mailerlite.com/jsonp/2551268"
+                     "/forms/194705373347710070/subscribe")
+NEWSLETTER_EMBED = (
+    f'<form class="nl-form" action="{NEWSLETTER_ACTION}" method="post"'
+    ' target="nl-sink" data-newsletter>'
+    '<input type="email" name="fields[email]" required autocomplete="email"'
+    ' aria-label="Twój adres e-mail" placeholder="Twój adres e-mail" />'
+    '<input type="hidden" name="ml-submit" value="1" />'
+    '<input type="hidden" name="anticsrf" value="true" />'
+    '<button type="submit">Zapisz się</button>'
+    '</form>'
+    '<iframe name="nl-sink" title="Zapis do newslettera" hidden></iframe>'
+    '<p class="nl-msg nl-msg--ok" hidden>Dzięki! Sprawdź skrzynkę — mógł tam'
+    ' trafić e-mail z potwierdzeniem zapisu.</p>'
+    '<p class="nl-note">Newsletter obsługuje MailerLite. Wypiszesz się'
+    ' jednym kliknięciem w każdej wiadomości.</p>'
+    '<script>document.currentScript.previousElementSibling'
+    '.parentNode.querySelector("[data-newsletter]")'
+    '.addEventListener("submit",function(e){'
+    'var s=e.target.parentNode.querySelector(".nl-msg");'
+    'e.target.hidden=true;s.hidden=false;});</script>'
+)
 SITE_NAME = "FishPoint"
 AUTHOR_NAME = "Maciej Baniewicz"
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
