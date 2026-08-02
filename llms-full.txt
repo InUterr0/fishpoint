@@ -917,7 +917,7 @@ Modified: 2026-07-20
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
-- [Philip Halling (CC BY-SA 2.0)](https://commons.wikimedia.org/w/index.php?curid=123502739)
+- [Joe Mabel (CC BY-SA 4.0)](https://commons.wikimedia.org/wiki/File:Fishing_at_Beach_2,_Kalaloch_Beach,_Washington_01.jpg)
 - [rozporządzenie ELI](https://eli.gov.pl/api/acts/DU/2023/2816/text.html)
 - [GIRM — informacje o rybołówstwie rekreacyjnym](https://www.gov.pl/web/girm/informacje-ogolne-nt-rybolowstwa-rekreacyjnego)
 - [Przegląd: Blog](https://fish-point.pl/aktualnosci/)

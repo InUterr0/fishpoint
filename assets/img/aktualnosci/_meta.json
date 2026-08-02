@@ -1,56 +1,59 @@
 {
- "sezon-na-szczupaka": {
-  "artist": "Trevor Salmon",
-  "file": "sezon-na-szczupaka.jpg",
-  "license": "CC BY-SA 2.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=9143809"
- },
- "jak-dobrac-przynete-do-pory-roku": {
-  "artist": "User:Raboe001",
-  "file": "jak-dobrac-przynete-do-pory-roku.jpg",
-  "license": "CC BY-SA 2.5",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=455171"
- },
- "bledy-poczatkujacych": {
-  "artist": "Calum McRoberts",
-  "file": "bledy-poczatkujacych.jpg",
-  "license": "CC BY-SA 2.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=14104075"
- },
- "zylka-czy-plecionka": {
-  "artist": "JaredMcKenzie",
-  "file": "zylka-czy-plecionka.jpg",
-  "license": "CC0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=181803762"
- },
- "relacja-nocna-zasiadka": {
-  "artist": "Tony Webster from Minneapolis, Minnesota, United States",
-  "file": "relacja-nocna-zasiadka.jpg",
-  "license": "CC BY-SA 2.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=101626664"
- },
- "przeglad-nowosci-sezonu": {
-  "artist": "George Chernilevsky",
-  "file": "przeglad-nowosci-sezonu.jpg",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=3467908"
- },
- "zawody-feederowe-poradnik": {
-  "artist": "Colin Smith",
-  "file": "zawody-feederowe-poradnik.jpg",
-  "license": "CC BY-SA 2.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=13866016"
- },
- "puchar-komendanta-rawicz-2026": {
-  "artist": "Komenda Powiatowa Policji w Górze",
-  "file": "puchar-komendanta-rawicz-2026.jpg",
-  "license": "Ponowne wykorzystanie dozwolone z podaniem źródła DOLNOŚLĄSKA POLICJA",
-  "page": "https://gora.policja.gov.pl/dgr/aktualnosci/bieza/178984,Puchar-Komendanta-Powiatowego-Policji-w-Rawiczu-trafil-do-dzielnicowego-z-Gory-Z.html"
- },
- "wislisko-krajskie-starorzecze-2026": {
-  "artist": "OpenAI",
-  "file": "wislisko-krajskie-starorzecze-2026.jpg",
-  "license": "Wygenerowano dla FishPoint",
-  "page": "https://fish-point.pl/"
- }
+  "sezon-na-szczupaka": {
+    "artist": "SpinfisherCRO",
+    "file": "sezon-na-szczupaka.jpg",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Northern_pike_caught_on_a_lure_in_lake_Finzula,_Croatia.jpg",
+    "source_checked": "2026-08-02"
+  },
+  "jak-dobrac-przynete-do-pory-roku": {
+    "artist": "R. Henrik Nilsson",
+    "file": "jak-dobrac-przynete-do-pory-roku.jpg",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:4_hooked_fishing_bait_lures_viz_jig_spoonlure_plug_spinnerbait.jpg",
+    "source_checked": "2026-08-02"
+  },
+  "bledy-poczatkujacych": {
+    "artist": "Calum McRoberts",
+    "file": "bledy-poczatkujacych.jpg",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=14104075"
+  },
+  "zylka-czy-plecionka": {
+    "artist": "JaredMcKenzie",
+    "file": "zylka-czy-plecionka.jpg",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=181803762"
+  },
+  "relacja-nocna-zasiadka": {
+    "artist": "Tony Webster from Minneapolis, Minnesota, United States",
+    "file": "relacja-nocna-zasiadka.jpg",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=101626664"
+  },
+  "przeglad-nowosci-sezonu": {
+    "artist": "George Chernilevsky",
+    "file": "przeglad-nowosci-sezonu.jpg",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=3467908"
+  },
+  "zawody-feederowe-poradnik": {
+    "artist": "Joe Mabel",
+    "file": "zawody-feederowe-poradnik.jpg",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Danube_Delta_2024-09-26_-_022_-_angler.jpg",
+    "source_checked": "2026-08-02"
+  },
+  "puchar-komendanta-rawicz-2026": {
+    "artist": "Komenda Powiatowa Policji w Górze",
+    "file": "puchar-komendanta-rawicz-2026.jpg",
+    "license": "Ponowne wykorzystanie dozwolone z podaniem źródła DOLNOŚLĄSKA POLICJA",
+    "page": "https://gora.policja.gov.pl/dgr/aktualnosci/bieza/178984,Puchar-Komendanta-Powiatowego-Policji-w-Rawiczu-trafil-do-dzielnicowego-z-Gory-Z.html"
+  },
+  "wislisko-krajskie-starorzecze-2026": {
+    "artist": "OpenAI",
+    "file": "wislisko-krajskie-starorzecze-2026.jpg",
+    "license": "Wygenerowano dla FishPoint",
+    "page": "https://fish-point.pl/"
+  }
 }
