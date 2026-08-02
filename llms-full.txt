@@ -170,6 +170,7 @@ Sources:
 - [Leszcz w atlasie](https://fish-point.pl/ryby/leszcz.html)
 - [Feeder](https://fish-point.pl/techniki/feeder.html)
 - [Spławik](https://fish-point.pl/techniki/splawik.html)
+- [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 Corrections: A correction policy or note is stated in the document.
@@ -215,6 +216,7 @@ Sources:
 - [Płoć w atlasie](https://fish-point.pl/ryby/ploc.html)
 - [Metoda spławikowa](https://fish-point.pl/techniki/splawik.html)
 - [Zanęty](https://fish-point.pl/poradniki/zanety-domowe.html)
+- [O autorze](https://fish-point.pl/o-autorze.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 Corrections: A correction policy or note is stated in the document.
