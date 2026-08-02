@@ -590,6 +590,51 @@ def load_image_provenance():
 
 IMAGE_PROVENANCE = load_image_provenance()
 
+# Kanoniczne adresy licencji dla nazw używanych w manifestach obrazów.
+# Świadomie nie mapujemy „Materiału własnego" ani zgód indywidualnych —
+# nie zadeklarujemy licencji, której nie potrafimy wskazać dokumentem.
+LICENSE_URLS = {
+    "CC0": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "Public domain": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "CC BY 2.0": "https://creativecommons.org/licenses/by/2.0/",
+    "CC BY 2.5": "https://creativecommons.org/licenses/by/2.5/",
+    "CC BY 3.0": "https://creativecommons.org/licenses/by/3.0/",
+    "CC BY 4.0": "https://creativecommons.org/licenses/by/4.0/",
+    "CC BY-SA 2.0": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "CC BY-SA 2.5": "https://creativecommons.org/licenses/by-sa/2.5/",
+    "CC BY-SA 3.0": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "CC BY-SA 3.0 de": "https://creativecommons.org/licenses/by-sa/3.0/de/",
+    "CC BY-SA 4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
+}
+
+
+def image_license_fields(img_url):
+    """Pola licencyjne ImageObject dla obrazu o znanej proweniencji.
+
+    Google używa ich do oznaczenia licencji w Grafice. Zwraca pusty słownik,
+    gdy obraz jest obcy (np. miniatura YouTube) albo gdy licencji nie da się
+    wskazać adresem — lepiej nie deklarować nic niż zadeklarować nieprawdę.
+    """
+    if not img_url.startswith(BASE + "/"):
+        return {}
+    entry = IMAGE_PROVENANCE.get(img_url[len(BASE):])
+    if not entry:
+        return {}
+    license_url = LICENSE_URLS.get(entry["license"])
+    if not license_url:
+        return {}
+    # Atrybucje prac pochodnych z Commons bywają wieloliniowe — w JSON-LD
+    # muszą być jednym wierszem, inaczej wychodzi niepoprawny dokument.
+    artist = " ".join(entry["artist"].split())
+    return {
+        "license": license_url,
+        "acquireLicensePage": entry["page"],
+        "creditText": artist,
+        "creator": {"@type": "Person", "name": artist},
+        "copyrightNotice": f'{artist} ({entry["license"]})',
+    }
+
+
 SECTIONS = {
     "ryby": "Atlas ryb",
     "poradniki": "Poradniki",
@@ -3611,6 +3656,7 @@ def build(path):
             }
             if first_alt:
                 img_obj["caption"] = first_alt
+            img_obj.update(image_license_fields(img_url))
             if fish:
                 img_obj["about"] = fish_about(fish)
             posting = {
