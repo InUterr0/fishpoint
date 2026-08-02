@@ -817,6 +817,20 @@ def main() -> int:
             h1 = compact(next((str(text) for level, text in page.headings if int(level) == 1), ""))
             check(title == h1, f"{relative}: RSS title differs from visible H1", failures)
 
+    # Hub atlasu obiecuje w tytule i opisie konkretną liczbę gatunków. Liczba
+    # rozjechała się już raz (30 wobec 40 kart), a widać ją w wynikach
+    # wyszukiwania — niech pilnuje jej kontrakt, nie pamięć.
+    atlas_cards = len([p for p in (ROOT / "ryby").glob("*.html") if p.name != "index.html"])
+    atlas_html = read("ryby/index.html")
+    for claim in re.findall(r"Atlas (\d+) gatunków", atlas_html):
+        check(int(claim) == atlas_cards,
+              f"ryby/index.html: opis obiecuje {claim} gatunków, kart jest {atlas_cards}",
+              failures)
+    for claim in re.findall(r"<title>[^<]*?(\d+) gatunków", atlas_html):
+        check(int(claim) == atlas_cards,
+              f"ryby/index.html: tytuł obiecuje {claim} gatunków, kart jest {atlas_cards}",
+              failures)
+
     full_llms = read("llms-full.txt")
     for marker in ("Canonical URL:", "Author:", "Published:", "Modified:", "Type:", "Sources:"):
         check(marker in full_llms, f"llms-full.txt: missing document provenance {marker}", failures)
