@@ -3402,8 +3402,9 @@ def build(path):
             "logo": {"@type": "ImageObject", "url": BASE + LOGO, "width": 512, "height": 512},
             "image": img_url,
             "email": "kerlinbygg@gmail.com",
+            # schema.org nie definiuje „author" dla Organization — rolę autora
+            # niesie już „founder", a nadmiarowa właściwość wywala walidację.
             "founder": AUTHOR,
-            "author": AUTHOR,
             "sameAs": [
                 "https://www.facebook.com/profile.php?id=61591546555168",
             ],
