@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-08-01.
+> Najnowsza merytoryczna zmiana: 2026-08-02.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -15,6 +15,7 @@
 
 - [Blog FishPoint](https://fish-point.pl/aktualnosci/): Aktualności FishPoint: poradniki, relacje znad wody i trendy sprzętowe. Sprawdź teksty o sezonie, przynętach, zestawach oraz zawodach wędkarskich.
 - [Najczęstsze błędy początkujących](https://fish-point.pl/aktualnosci/bledy-poczatkujacych.html): Błędy początkującego wędkarza: tabela objaw–przyczyna–jedna korekta, checklista przed rzutem i bezpieczny plan diagnozy bez zmieniania wszystkiego naraz.
+- [Dlaczego w sierpniu słabo bierze i kiedy to się zmieni](https://fish-point.pl/aktualnosci/dlaczego-w-sierpniu-slabo-bierze.html): Sierpień to dla szczupaka, sandacza i okonia miesiąc średni, nie szczytowy. Wyjaśniamy, co robi ciepła woda, jak łowić mimo tego i od kiedy brania rosną.
 - [Górne wymiary ochronne 2026: jak czytać okno łowne na swojej wodzie](https://fish-point.pl/aktualnosci/gorne-wymiary-ochronne-2026.html): Górne wymiary ochronne 2026: trzy datowane przykłady lokalnych zasad, instrukcja czytania zezwolenia i checklista przed zabraniem ryby.
 - [Jak dobrać gumę na sandacza i szczupaka](https://fish-point.pl/aktualnosci/jak-dobrac-gume-na-drapieznika.html): Dobór gumy na szczupaka, sandacza i okonia: rozmiar, kolor, praca i uzbrojenie do gatunku, łowiska i pogody, test opadu oraz typowe błędy.
 - [Jak dobrać przynętę do warunków i pory roku](https://fish-point.pl/aktualnosci/jak-dobrac-przynete-do-pory-roku.html): Macierz doboru przynęty: temperatura wody, przejrzystość, głębokość i aktywność ryb decydują o typie, rozmiarze oraz tempie.
