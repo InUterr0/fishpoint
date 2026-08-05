@@ -252,7 +252,7 @@ def main() -> int:
     failures: list[str] = []
     sitemap = ET.fromstring(read("sitemap.xml"))
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
-    check(len(urls) == 213 and len(set(urls)) == 213, "sitemap must contain 213 unique URLs", failures)
+    check(len(urls) == 214 and len(set(urls)) == 214, "sitemap must contain 214 unique URLs", failures)
 
     visual_pages = 0
     regional_visuals = 0
@@ -820,7 +820,10 @@ def main() -> int:
     # Hub atlasu obiecuje w tytule i opisie konkretną liczbę gatunków. Liczba
     # rozjechała się już raz (30 wobec 40 kart), a widać ją w wynikach
     # wyszukiwania — niech pilnuje jej kontrakt, nie pamięć.
-    atlas_cards = len([p for p in (ROOT / "ryby").glob("*.html") if p.name != "index.html"])
+    # W katalogu ryby/ leżą też strony tematyczne (np. chronione.html), które
+    # nie są kartami gatunku i nie mogą zawyżać deklarowanej liczby.
+    atlas_non_cards = {"index.html", "chronione.html"}
+    atlas_cards = len([p for p in (ROOT / "ryby").glob("*.html") if p.name not in atlas_non_cards])
     atlas_html = read("ryby/index.html")
     for claim in re.findall(r"Atlas (\d+) gatunków", atlas_html):
         check(int(claim) == atlas_cards,

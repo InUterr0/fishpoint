@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-08-02.
+> Najnowsza merytoryczna zmiana: 2026-08-05.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -198,6 +198,7 @@
 - [Boleń](https://fish-point.pl/ryby/bolen.html): Boleń (Leuciscus aspius): wymiar ochronny 40 cm, brak krajowego okresu ochronnego. Rozpoznawanie, stanowiska w rzekach, żerowanie i metody spinningowe.
 - [Brzana](https://fish-point.pl/ryby/brzana.html): Brzana: wymiar ochronny 40 cm, okres ochronny 1 stycznia–30 czerwca. Rozpoznawanie, stanowiska w nurcie rzek, żerowanie i metody gruntowe.
 - [Certa](https://fish-point.pl/ryby/certa.html): Certa (Vimba vimba): wymiar ochronny 30 cm, okres ochronny zależny od odcinka Wisły i pozostałych wód. Rozpoznawanie, wędrówka tarłowa i metody połowu.
+- [Ryby chronione w Polsce](https://fish-point.pl/ryby/chronione.html): Ryby chronione w Polsce: osiem gatunków z atlasu FishPoint — piskorz, koza, różanka, strzebla, słonecznica, minóg, głowacz, jesiotr. Jak je rozpoznać i co zrobić po przypadkowym złowieniu.
 - [Ciernik](https://fish-point.pl/ryby/ciernik.html): Ciernik (Gasterosteus aculeatus): gatunek najmniejszej troski, bez wartości wędkarskiej. Rozpoznawanie, kolce grzbietowe, siedlisko i biologia gatunku.
 - [Dorsz](https://fish-point.pl/ryby/dorsz.html): Dorsz (Gadus morhua): w rybołówstwie rekreacyjnym okres ochronny trwa cały rok, więc rybę trzeba wypuścić. Rozpoznawanie, biologia i zasady na Bałtyku.
 - [Flądra (stornia)](https://fish-point.pl/ryby/fladra.html): Flądra: przed połowem sprawdź aktualne zasady, limity i komunikaty GIRM. Rozpoznawanie storni, stanowiska na Bałtyku, żerowanie i metody gruntowe z brzegu.
