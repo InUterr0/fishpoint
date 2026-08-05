@@ -38,6 +38,12 @@ jobs:
       - name: Generate SEO artifacts
         run: python3 seo_inject.py
 
+      # seo_inject regeneruje blok article-visual jako goły <img>, więc
+      # opakowanie w <picture> musi powstać po nim — inaczej produkcja traci
+      # warianty AVIF/WebP obecne w repo. Skrypt jest idempotentny.
+      - name: Wrap images in <picture> (AVIF/WebP)
+        run: python3 optimize_images.py
+
       - name: Validate generated artifacts
         run: python3 seo_inject.py --validate
 

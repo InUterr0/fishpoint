@@ -315,6 +315,7 @@ def build_page(month, nominative, locative, slug):
         '<p>© 2026 FishPoint.</p><p>Poradniki wędkarskie</p>'
         '<p class="footer-legal"><a href="../zgodnie-z-zasadami.html">Przepisy i dokumenty</a> · '
         '<a href="../slownik.html">Słownik</a> · '
+        '<a href="../korekty.html">Rejestr korekt</a> · '
         '<a href="https://fish-point.pl/o-autorze.html">O autorze</a></p>'
         '</div></footer><script defer src="../js/main.js"></script></body></html>'
     )
