@@ -1,4 +1,4 @@
-Contact: mailto:kerlinbygg@gmail.com
+Contact: mailto:maciejbaniewicz@gmail.com
 Preferred-Languages: pl, en
 # Zgłoszenia podatności bezpieczeństwa serwisu FishPoint.
 # Po ustaleniu domeny uzupełnij pola Canonical oraz Expires.

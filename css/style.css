@@ -447,6 +447,25 @@ html.dark .news-catalog > .section-heading { border-top-color: rgba(255,255,255,
 .article-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; align-items: start; }
 .article-card, .side-nav { background: var(--paper); border: 1px solid rgba(17,49,47,.08); border-radius: var(--radius); box-shadow: 0 12px 30px rgba(17,49,47,.07); }
 .article-card { padding: clamp(26px, 4vw, 46px); }
+/* Globalny reset `a { color: inherit; text-decoration: none }` sprawiał, że
+   odnośniki w treści były nieodróżnialne od zwykłego zdania. Czytelnik nie
+   widział, że tekst odsyła do komunikatu PZW, ustawy czy pliku z wynikami —
+   a to na źródłach opiera się wiarygodność tych materiałów. Celujemy wyłącznie
+   w treść: nawigacja, spis treści, kafelki i przyciski zostają bez zmian. */
+.article-card p a:not(.btn):not(.btn-secondary),
+.article-card .info-block li a:not(.btn),
+.source-box a:not(.btn) {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.article-card p a:not(.btn):not(.btn-secondary):hover,
+.article-card .info-block li a:not(.btn):hover,
+.source-box a:not(.btn):hover {
+  color: var(--green-2);
+  text-decoration-thickness: 2px;
+}
 .article-card h2 {
   margin: 44px 0 24px; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.1; letter-spacing: -.03em;
 }

@@ -3544,7 +3544,7 @@ def build(path):
             "url": BASE + "/",
             "logo": {"@type": "ImageObject", "url": BASE + LOGO, "width": 512, "height": 512},
             "image": img_url,
-            "email": "kerlinbygg@gmail.com",
+            "email": "maciejbaniewicz@gmail.com",
             # schema.org nie definiuje „author" dla Organization — rolę autora
             # niesie już „founder", a nadmiarowa właściwość wywala walidację.
             "founder": AUTHOR,
@@ -3610,7 +3610,7 @@ def build(path):
                     "url": url,
                     "image": BASE + "/assets/img/maciej-baniewicz-kwadrat.jpg",
                     "sameAs": ["https://www.facebook.com/profile.php?id=61591546555168"],
-                    "email": "kerlinbygg@gmail.com",
+                    "email": "maciejbaniewicz@gmail.com",
                     "jobTitle": "Autor i twórca serwisu FishPoint",
                     "knowsAbout": [
                         "wędkarstwo", "sprzęt wędkarski", "atlas ryb słodkowodnych",
