@@ -58,7 +58,13 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
+      # Railway CLI potrafi zwrócić kod 1, mimo że wdrożenie się powiodło —
+      # przerywa streamowanie logów budowania po ok. minucie („Failed to stream
+      # build logs"). Bez tego warunku gubiliśmy zgłoszenie do IndexNow przy
+      # poprawnie wdrożonej stronie. Krok Deploy celowo dalej raportuje błąd,
+      # żeby prawdziwa awaria pozostała widoczna.
       - name: Submit changed URLs to IndexNow
+        if: always()
         run: node scripts/submit-indexnow.mjs
         env:
           BEFORE_SHA: ${{ github.event.before }}
