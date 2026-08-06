@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-08-05.
+> Najnowsza merytoryczna zmiana: 2026-08-06.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -53,7 +53,7 @@
 - [Sum 125 cm ze Starej Odry: głośny połów z Kotowic](https://fish-point.pl/aktualnosci/sum-125-cm-stara-odra-2026.html): Według lokalnego reportażu Jan Zając złowił 20 lipca 2026 r. w Kotowicach suma 125 cm i 19,5 kg. Zebraliśmy potwierdzone granice tej informacji.
 - [Sum nocą](https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html): Sum nocą w lipcu i sierpniu: kiedy i gdzie szukać ryb latem, metody gruntowe, żywiec, spinning i klongowanie, mocny sprzęt oraz etyka nocnego łowienia.
 - [Świnna Poręba: wydłużone godziny połowu od 1 lipca 2026](https://fish-point.pl/aktualnosci/swinna-poreba-wydluzone-godziny-2026.html): Od 1 lipca 2026 r. na zbiorniku Świnna Poręba (Rejon II) łowi się wyłącznie z brzegu, na dwie wędki, od godziny przed wschodem do 3 godzin po zachodzie słońca.
-- [Troć jeziorowa 8,5 kg z Tarnobrzega bez rekordu](https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html): Doniesienia o troci jeziorowej 8,5 kg z Jeziora Tarnobrzeskiego. Sprawdzamy zgodne fakty, rozbieżne daty oraz status oficjalnego rekordu Polski.
+- [Troć jeziorowa 8,5 kg z Tarnobrzega bez rekordu](https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html): Redakcja Wiadomości Wędkarskich dla FishPoint: zgłoszenie troci 8,5 kg z Jeziora Tarnobrzeskiego jest w weryfikacji, a doniesienia o rekordzie Polski mijają się z prawdą.
 - [Wędkarstwo morskie dla początkujących](https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html): Wędkarstwo morskie na Bałtyku dla początkujących: łowienie z brzegu i z kutra, sprzęt odporny na sól, przynęty, gatunki, sezony i formalności.
 - [Wiślisko Krajskie: PZW kończy dzierżawę, zakaz połowu według komunikatu](https://fish-point.pl/aktualnosci/wislisko-krajskie-koniec-dzierzawy-pzw-2026.html): Komunikaty PZW i RZGW Kraków o Wiślisku Krajskim w Spytkowicach: koniec dzierżawy, zakaz połowu według PZW, przyducha i rozbieżne stanowiska stron.
 - [Okresy ochronne ryb 2026 i wymiary: pełny zakres aktu](https://fish-point.pl/aktualnosci/wymiary-i-okresy-ochronne-2026.html): Okresy ochronne ryb 2026 i wymiary z pełnego § 6–7 aktu: odcinki, § 7 ust. 2, znaczenie „—” i kontrola lokalnych zasad.
