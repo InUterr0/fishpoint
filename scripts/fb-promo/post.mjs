@@ -19,6 +19,13 @@ const countArg = process.argv.find(a => a.startsWith('--count='));
 const count = Math.min(Number(countArg?.split('=')[1] || 3), 6);
 // --all: wrzuć wszystkie nieopublikowane (do limitu 6), inaczej --count (domyślnie 3).
 const all = process.argv.includes('--all');
+// --slug=<slug>: wskaż konkretny wpis zamiast brać najświeższe. Przydatne, gdy
+// powodem posta jest aktualizacja starszego materiału, a nie jego publikacja.
+const slugArg = process.argv.find(a => a.startsWith('--slug='));
+const wantSlug = slugArg?.split('=')[1] || null;
+// --text=<treść>: własny tekst posta zamiast składanego z tytułu i opisu meta.
+const textArg = process.argv.find(a => a.startsWith('--text='));
+const customText = textArg ? textArg.slice('--text='.length) : null;
 
 function loadPublished() {
   try { return new Set(JSON.parse(readFileSync(STATE, 'utf8'))); }
@@ -33,7 +40,13 @@ const pool = latestArticles(root, 40).filter(a => {
   const file = a.url.split('/').filter(Boolean).pop();
   return existsSync(join(root, 'aktualnosci', file)) && !published.has(a.slug);
 });
-const selected = all ? pool.slice(0, 6) : pool.slice(0, count);
+const selected = wantSlug
+  ? pool.filter(x => x.slug === wantSlug).slice(0, 1)
+  : all ? pool.slice(0, 6) : pool.slice(0, count);
+if (wantSlug && selected.length === 0) {
+  console.log('[fb] Nie znaleziono nieopublikowanego wpisu o slugu: ' + wantSlug);
+  process.exit(1);
+}
 
 if (selected.length === 0) {
   console.log('[fb] Brak nowych, nieopublikowanych artykułów. Nic do wrzucenia.');
@@ -46,7 +59,7 @@ const plan = selected.map((a, i) => ({
   slug: a.slug,
   title: a.title,
   url: a.url,
-  text: `${a.title}\n\n${a.description}\n\n\u{1F449} ${a.url}\n\n#wędkarstwo #FishPoint`,
+  text: customText || `${a.title}\n\n${a.description}\n\n\u{1F449} ${a.url}\n\n#wędkarstwo #FishPoint`,
 }));
 
 if (dryRun) {
