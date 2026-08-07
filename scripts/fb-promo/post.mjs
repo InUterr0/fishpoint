@@ -54,13 +54,23 @@ if (selected.length === 0) {
 }
 
 // Tekst posta: zwięzły lead z tytułu + opis meta + link + hashtagi.
-const plan = selected.map((a, i) => ({
-  n: i + 1,
-  slug: a.slug,
-  title: a.title,
-  url: a.url,
-  text: customText || `${a.title}\n\n${a.description}\n\n\u{1F449} ${a.url}\n\n#wędkarstwo #FishPoint`,
-}));
+const plan = selected.map((a, i) => {
+  // Tytuł strony niesie sufiks marki („… | FishPoint"), zbędny w poście na
+  // profilu FishPoint — podpis i tak widnieje nad treścią.
+  const lead = a.title.replace(/\s*[|—-]\s*FishPoint\s*$/u, '').trim();
+  const text = customText || `${lead}\n\n${a.description}\n\n\u{1F449} ${a.url}\n\n#wędkarstwo #FishPoint`;
+  return {
+    n: i + 1,
+    slug: a.slug,
+    title: a.title,
+    url: a.url,
+    text,
+    // Publikację potwierdzamy po fragmencie FAKTYCZNEJ treści posta, a nie po
+    // tytule artykułu: przy własnym tekście (--text) tytuł w poście nie pada,
+    // więc weryfikacja po nim dawała fałszywe „nieopublikowano".
+    verify: text.split('\n')[0].slice(0, 60),
+  };
+});
 
 if (dryRun) {
   console.log(JSON.stringify(plan, null, 2));
@@ -123,6 +133,13 @@ def click_button(labels):
     target = __import__('json').loads(raw)
     click_at_xy(target['x'], target['y'])
     return target['label']
+
+
+def scheduling_dialog_open():
+    # Widoczne okno planowania oznacza, że klik minął przycisk publikacji.
+    return js(r'''(() =>
+      (document.body.innerText || '').includes('Zaplanuj na później') ? '1' : '0'
+    )()''').strip().strip('"') == '1'
 
 def click_target(labels=None, textbox=False, in_dialog=False):
     payload = js(r'''(() => {
@@ -236,13 +253,14 @@ def post_one(idx, item):
         if clicked == 'Opublikuj':
             print('[fb] %d klik: Opublikuj' % idx)
             time.sleep(9)
-            share_groups = js(r'''(() =>
-              (document.body.innerText || '').includes('Udostępnij w grupach') ? '1' : '0'
-            )()''').strip().strip('"') == '1'
-            if share_groups and click_button(['Opublikuj']) == 'Opublikuj':
-                print('[fb] %d klik: Opublikuj (krok grup)' % idx)
-                time.sleep(9)
-            published = not composer_open() or post_visible(item['title'])
+            # Jeśli klik minął CTA i otworzył planowanie, wycofaj się i spróbuj
+            # jeszcze raz zamiast zostawiać post zaplanowany albo porzucony.
+            if scheduling_dialog_open():
+                print('[fb] %d planowanie zamiast publikacji — wycofuję' % idx)
+                click_button(['Wstecz'])
+                time.sleep(4)
+                continue
+            published = not composer_open() or post_visible(item['verify'])
             break
         elif clicked == 'Dalej':
             print('[fb] %d klik: Dalej' % idx)
