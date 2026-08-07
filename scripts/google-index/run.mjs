@@ -29,7 +29,14 @@ const userIdx = arg('user', '0'); // Google multi-account index (/u/<n>/)
 const delayMs = Number(arg('delay-ms', 8000));
 const dryRun = process.argv.includes('--dry-run');
 
-const urls = latestArticles(process.cwd(), count).map(a => a.url);
+// --urls=<a,b,c>: zgłoś wskazane adresy zamiast najświeższych wpisów bloga.
+// Potrzebne dla stron spoza aktualnosci/ (atlas, kuchnia, poradniki), które
+// utknęły w GSC w stanie „zeskanowana, ale jeszcze nie zindeksowana".
+const urlsArg = arg('urls', '');
+const urls = urlsArg
+  ? urlsArg.split(',').map(u => u.trim()).filter(Boolean)
+      .map(u => (u.startsWith('http') ? u : `https://fish-point.pl${u.startsWith('/') ? '' : '/'}${u}`))
+  : latestArticles(process.cwd(), count).map(a => a.url);
 
 // GSC's deep inspect?id= link 404s; the working entry is the console home for
 // the property, then each URL is typed into the top "Inspect any URL" box.
