@@ -1813,6 +1813,11 @@ html.dark .btn-secondary:not(.hero .hero-content .btn-secondary) {
 .article-lead-stamp {
   position: absolute;
   z-index: 2;
+  /* Dwa znaczniki (dział i czas czytania) sklejały się w jeden ciąg
+     („BLOG4 MIN CZYTANIA”), bo w HTML nie ma między nimi spacji. */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
   top: 14px;
   left: 14px;
   max-width: calc(100% - 28px);

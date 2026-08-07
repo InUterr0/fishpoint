@@ -645,18 +645,25 @@ def image_license_fields(img_url):
     entry = IMAGE_PROVENANCE.get(img_url[len(BASE):])
     if not entry:
         return {}
-    license_url = LICENSE_URLS.get(entry["license"])
-    if not license_url:
-        return {}
     # Atrybucje prac pochodnych z Commons bywają wieloliniowe — w JSON-LD
     # muszą być jednym wierszem, inaczej wychodzi niepoprawny dokument.
     artist = " ".join(entry["artist"].split())
-    return {
-        "license": license_url,
-        "acquireLicensePage": entry["page"],
+    attribution = {
         "creditText": artist,
         "creator": {"@type": "Person", "name": artist},
         "copyrightNotice": f'{artist} ({entry["license"]})',
+    }
+    license_url = LICENSE_URLS.get(entry["license"])
+    if not license_url:
+        # Materiał własny, grafika generowana i zgody indywidualne nie mają
+        # adresu licencji, którym moglibyśmy się podeprzeć. Autorstwo znamy
+        # jednak na pewno, więc podajemy samą atrybucję — wcześniej pomijaliśmy
+        # ją razem z licencją i ImageObject wychodził bez żadnych danych.
+        return attribution
+    return {
+        "license": license_url,
+        "acquireLicensePage": entry["page"],
+        **attribution,
     }
 
 
@@ -2804,6 +2811,11 @@ def inject_article_visual(src, rel, title_txt, modified):
         if section == "lowiska" else
         "Ilustracja. "
     )
+    # Obraz wygenerowany nie jest zdjęciem — nazywanie go tak wprowadzałoby
+    # czytelnika w błąd, zwłaszcza w materiale o konkretnym zdarzeniu.
+    credit_label = (
+        "Grafika" if "ygenerowano" in str(provenance.get("license", "")) else "Zdjęcie"
+    )
     visual = (
         f'{ARTICLE_VISUAL_BEGIN}<figure class="article-lead-visual">'
         f'<div class="article-lead-frame"><img class="article-image" '
@@ -2812,7 +2824,7 @@ def inject_article_visual(src, rel, title_txt, modified):
         f'decoding="async" /><p class="article-lead-stamp"><span>{html.escape(section_label)}</span>'
         f'<span>{read_minutes} min czytania</span></p></div>'
         f'<figcaption class="article-lead-caption"><span>{caption_note}</span>'
-        f'<span class="article-media-credit">Zdjęcie: {credit}</span></figcaption>'
+        f'<span class="article-media-credit">{credit_label}: {credit}</span></figcaption>'
         f'<p class="article-signal-strip"><span>Dziennik wody</span>'
         f'<span>{html.escape(section_label)}</span><span><time datetime="{modified}">'
         f'{fmt_date_pl(modified)}</time></span></p></figure>{ARTICLE_VISUAL_END}'
@@ -3059,8 +3071,9 @@ def _inline_contextual_replacements(candidates, sources, wanted, article_start, 
 def _inline_credit(image_path, provenance):
     if provenance.get("kind") == "schemat":
         return "Schemat: FishPoint (materiał własny)"
+    label = "Grafika" if "ygenerowano" in str(provenance.get("license", "")) else "Zdjęcie"
     return (
-        f'Zdjęcie: <a href="{html.escape(provenance["page"], quote=True)}" '
+        f'{label}: <a href="{html.escape(provenance["page"], quote=True)}" '
         f'rel="license external noopener">{html.escape(provenance["artist"])} '
         f'({html.escape(provenance["license"])})</a>'
     )
