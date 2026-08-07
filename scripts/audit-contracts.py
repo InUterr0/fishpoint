@@ -252,7 +252,7 @@ def main() -> int:
     failures: list[str] = []
     sitemap = ET.fromstring(read("sitemap.xml"))
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
-    check(len(urls) == 214 and len(set(urls)) == 214, "sitemap must contain 214 unique URLs", failures)
+    check(len(urls) == 217 and len(set(urls)) == 217, "sitemap must contain 217 unique URLs", failures)
 
     visual_pages = 0
     regional_visuals = 0

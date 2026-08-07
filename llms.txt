@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-08-06.
+> Najnowsza merytoryczna zmiana: 2026-08-07.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -42,6 +42,7 @@
 - [Przegląd nowości sezonu: selekcja rozwiązań, nie rekomendacje](https://fish-point.pl/aktualnosci/przeglad-nowosci-sezonu.html): Selekcja rozwiązań z datowanych kart producentów: blanki, kołowrotki, sonar i sprzęt C&R. To nie ranking ani rekomendacja zakupu.
 - [Jaka przynęta na spinning: drzewo doboru i bezpieczny zestaw](https://fish-point.pl/aktualnosci/przyneta-na-spinning.html): Dobierz przynętę spinningową według gatunku, głębokości, zaczepów i aktywności. Gumy, woblery, uzbrojenie oraz przypon bez zgadywania.
 - [Puchar Komendanta Policji w Rawiczu dla Pawła Błasiaka](https://fish-point.pl/aktualnosci/puchar-komendanta-rawicz-zawody-wedkarskie-2026.html): Zawody wędkarskie policjantów nad Balatonem w Miejskiej Górce: podium Pucharu Komendanta Policji w Rawiczu i niemal 4-kilogramowy szczupak.
+- [Rdestnice zarastają łowiska: co wolno, a czego nie](https://fish-point.pl/aktualnosci/rdestnice-zarastanie-lowisk-2026.html): Rdestnice potrafią pokryć nawet 90% akwenu. Przyczyny, właściwy termin koszenia oraz to, dlaczego usuwanie roślin z wody wymaga pozwolenia wodnoprawnego.
 - [Rekord okonia 2026: czy jest potwierdzony?](https://fish-point.pl/aktualnosci/rekord-okonia-2026.html): Nie ma publicznego protokołu potwierdzającego rekord okonia 2026. Zobacz procedurę pomiaru, zgłoszenia i bezpiecznego C&R.
 - [Czy sum 292 cm jest potwierdzonym rekordem?](https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html): Brak publicznego protokołu potwierdzającego suma 292 cm. Zobacz zasady pomiaru, zgłoszenia i bezpiecznego C&R.
 - [Plan nocnej zasiadki karpiowej: bezpieczeństwo i taktyka](https://fish-point.pl/aktualnosci/relacja-nocna-zasiadka.html): Plan nocnej zasiadki karpiowej: rozpoznanie wody, bezpieczny harmonogram, dobrostan ryb, światło, łączność i checklista.
@@ -53,6 +54,7 @@
 - [Sum 125 cm ze Starej Odry: głośny połów z Kotowic](https://fish-point.pl/aktualnosci/sum-125-cm-stara-odra-2026.html): Według lokalnego reportażu Jan Zając złowił 20 lipca 2026 r. w Kotowicach suma 125 cm i 19,5 kg. Zebraliśmy potwierdzone granice tej informacji.
 - [Sum nocą](https://fish-point.pl/aktualnosci/sum-noca-szczyt-sezonu-lato.html): Sum nocą w lipcu i sierpniu: kiedy i gdzie szukać ryb latem, metody gruntowe, żywiec, spinning i klongowanie, mocny sprzęt oraz etyka nocnego łowienia.
 - [Świnna Poręba: wydłużone godziny połowu od 1 lipca 2026](https://fish-point.pl/aktualnosci/swinna-poreba-wydluzone-godziny-2026.html): Od 1 lipca 2026 r. na zbiorniku Świnna Poręba (Rejon II) łowi się wyłącznie z brzegu, na dwie wędki, od godziny przed wschodem do 3 godzin po zachodzie słońca.
+- [Szczupak 124 cm z Kisajna: okaz, nie rekord](https://fish-point.pl/aktualnosci/szczupak-124-cm-kisajno-2026.html): Łukasz Karliński złowił na jeziorze Kisajno szczupaka 124 cm i zgłosił go w akcji „Uwalniam okazy”. Wyjaśniamy, czym różni się ona od rekordu Polski.
 - [Troć jeziorowa 8,5 kg z Tarnobrzega bez rekordu](https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html): Redakcja Wiadomości Wędkarskich dla FishPoint: zgłoszenie troci 8,5 kg z Tarnobrzega jest w weryfikacji, a sprawa rekordu Polski pozostaje otwarta.
 - [Wędkarstwo morskie dla początkujących](https://fish-point.pl/aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html): Wędkarstwo morskie na Bałtyku dla początkujących: łowienie z brzegu i z kutra, sprzęt odporny na sól, przynęty, gatunki, sezony i formalności.
 - [Wiślisko Krajskie: PZW kończy dzierżawę, zakaz połowu według komunikatu](https://fish-point.pl/aktualnosci/wislisko-krajskie-koniec-dzierzawy-pzw-2026.html): Komunikaty PZW i RZGW Kraków o Wiślisku Krajskim w Spytkowicach: koniec dzierżawy, zakaz połowu według PZW, przyducha i rozbieżne stanowiska stron.
@@ -62,6 +64,7 @@
 - [Pierwsze zawody feederowe](https://fish-point.pl/aktualnosci/zawody-feederowe-poradnik.html): Poradnik startu w zawodach feederowych: dokumenty, regulamin sektora, losowanie, harmonogram, etyka i checklista debiutanta.
 - [Zawody wędkarskie 2026](https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html): Kalendarz zawodów wędkarskich 2026 jako katalog oficjalnych źródeł: filtr metod i regionów, tabela kontroli oraz potwierdzone przykłady.
 - [Zezwolenia online 2026: PZW, Wody Polskie i łowiska prywatne](https://fish-point.pl/aktualnosci/zezwolenia-online-2026.html): Zezwolenia online 2026: drzewo PZW, Wody Polskie i prywatnych łowisk, dokument do kontroli oraz wyjątki karty z art. 7.
+- [Złota alga w Kanale Gliwickim: stężenie skoczyło do 31 mln komórek](https://fish-point.pl/aktualnosci/zlota-alga-kanal-gliwicki-sierpien-2026.html): Komunikat z 5 sierpnia 2026 r.: stężenie złotej algi w VI sekcji Kanału Gliwickiego wzrosło do blisko 31 mln komórek na litr. Co to znaczy dla wędkarzy.
 - [Złota alga: komunikat z 17 lipca i granice monitoringu](https://fish-point.pl/aktualnosci/zlota-alga-lato-2026.html): Oficjalny komunikat z 17 lipca 2026 r.: brak wykrycia złotej algi w trzech badanych akwenach, zakwit w Jeziorze Farskim i protokół zgłoszenia.
 - [Żyłka czy plecionka](https://fish-point.pl/aktualnosci/zylka-czy-plecionka.html): Żyłka czy plecionka? Porównujemy rozciągliwość, średnicę, czułość, odporność na przetarcia, zachowanie w mrozie i wybór linki do różnych metod łowienia.
 

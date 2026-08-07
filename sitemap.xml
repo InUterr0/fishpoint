@@ -6,6 +6,18 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kanaly.jpg</image:loc>
+      <image:title>Kanał żeglugowy — ilustracja do materiału o złotej aldze</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
+      <image:title>Zarastający zbiornik wodny — ilustracja do materiału o rdestnicach</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
+      <image:title>Szczupak — ilustracja do materiału o okazowym połowie</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
       <image:title>Wędki ustawione na brzegu — ilustracja wędkarstwa rzutowego</image:title>
     </image:image>
@@ -16,18 +28,6 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/pogoda.jpg</image:loc>
       <image:title>Burzowe chmury nad wodą — warunki sprzyjające deficytowi tlenu</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
-      <image:title>Starorzecze — niski stan wody i ryzyko deficytu tlenowego</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/wislisko-krajskie-starorzecze-2026.jpg</image:loc>
-      <image:title>Ilustracja redakcyjna starorzecza z roślinnością wodną</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/puchar-komendanta-rawicz-2026.jpg</image:loc>
-      <image:title>Zdjęcie z zawodów wędkarskich policjantów w Miejskiej Górce</image:title>
     </image:image>
   </url>
   <url>
@@ -36,6 +36,18 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kanaly.jpg</image:loc>
+      <image:title>Kanał żeglugowy — ilustracja do materiału o złotej aldze</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
+      <image:title>Zarastający zbiornik wodny — ilustracja do materiału o rdestnicach</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
+      <image:title>Szczupak — ilustracja do materiału o okazowym połowie</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
       <image:title>Wędki ustawione na brzegu — ilustracja wędkarstwa rzutowego</image:title>
     </image:image>
@@ -46,10 +58,6 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/pogoda.jpg</image:loc>
       <image:title>Burzowe chmury nad wodą — warunki sprzyjające deficytowi tlenu</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
-      <image:title>Starorzecze — niski stan wody i ryzyko deficytu tlenowego</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/wislisko-krajskie-starorzecze-2026.jpg</image:loc>
@@ -80,20 +88,12 @@
       <image:title>Wędkarz gruntowy na stanowisku nad wąskim, zarośniętym ciekiem, obok siatka na ryby</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/kanaly.jpg</image:loc>
-      <image:title>Kanał i łodzie — zarządzanie publicznymi obwodami rybackimi</image:title>
-    </image:image>
-    <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
       <image:title>Mikroguma dla początkujących — pierwszy zestaw, przynęty i technika</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sandacz.jpg</image:loc>
       <image:title>Jak łowić sandacza jesienią — spinning, jig i najlepsze brania roku</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Spinning na szczupaka jesienią — złota jesień drapieżnika</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/aktualnosci/jak-dobrac-przynete-do-pory-roku.jpg</image:loc>
@@ -429,6 +429,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/aktualnosci/rdestnice-zarastanie-lowisk-2026.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
+      <image:title>Stawy Milickie z lotu ptaka</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/aktualnosci/rekord-okonia-2026.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -547,6 +557,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/aktualnosci/szczupak-124-cm-kisajno-2026.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Szczupak 124 cm z Kisajna: okaz, nie rekord</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/aktualnosci/troc-jeziorowa-85-kg-tarnobrzeg-2026.html</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -646,6 +666,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/schemat-e-zezwolenie.svg</image:loc>
       <image:title>Telefon łączący wybór łowiska, e-zezwolenie i potwierdzenie.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/zlota-alga-kanal-gliwicki-sierpien-2026.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/aktualnosci/wislisko-krajskie-starorzecze-2026.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Złota alga w Kanale Gliwickim: skok do 31 mln komórek</image:title>
     </image:image>
   </url>
   <url>
