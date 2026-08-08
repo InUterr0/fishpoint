@@ -797,6 +797,12 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/kontakt.html</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fish-point.pl/korekty.html</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -1409,6 +1415,12 @@
       <image:loc>https://fish-point.pl/assets/img/tematy/kalendarz.jpg</image:loc>
       <image:title>Wędkarze na rzece o wschodzie słońca</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/polityka-prywatnosci.html</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/</loc>

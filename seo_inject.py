@@ -692,8 +692,14 @@ NAV_TOP = [
     ("Łowiska", "lowiska/", "lowiska"),
     ("Poradniki", "poradniki/", "poradniki"),
 ]
-# Najważniejsze wejścia są pierwsze, a pozostałe strony klastra dołączamy
-# poniżej. Dzięki temu menu nie ukrywa żadnej strony działu.
+# Limit pozycji w podmenu. Wcześniej menu powielało na każdej podstronie pełną
+# listę działu (atlas ryb = 43 wpisy), przez co powtarzalna nawigacja ważyła
+# więcej niż sama treść krótszych stron.
+NAV_MAX_CHILDREN = 8
+
+# Najważniejsze wejścia działu. Podmenu pokazuje tylko je — pełną listę stron
+# udostępnia strona-indeks działu ("Zobacz cały dział"), do której prowadzi
+# pierwsza pozycja każdego podmenu.
 NAV_FEATURED = {
     "pierwsze-kroki": (
         "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html",
@@ -736,6 +742,30 @@ NAV_DISCOVER = [
     ("zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
 ]
 nav_re = re.compile(r'(?:<a class="skip-link" href="#main-content">Przejdź do treści</a>)?<header class="site-header">.*?</header>', re.S)
+
+# Linki formalne w stopce. Polityka prywatności i kontakt muszą być osiągalne
+# z każdej strony — wymagają tego zarówno RODO, jak i zasady sieci reklamowych.
+FOOTER_LEGAL = [
+    ("zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
+    ("polityka-prywatnosci.html", "Polityka prywatności"),
+    ("kontakt.html", "Kontakt"),
+    ("slownik.html", "Słownik"),
+    ("korekty.html", "Rejestr korekt"),
+    ("o-autorze.html", "O autorze"),
+]
+footer_legal_re = re.compile(r'<p class="footer-legal">.*?</p>', re.S)
+
+
+def build_footer_legal(prefix):
+    links = [
+        f'<a href="{prefix}{href}">{html.escape(title)}</a>'
+        for href, title in FOOTER_LEGAL
+    ]
+    links.append(
+        '<a href="https://www.facebook.com/profile.php?id=61591546555168"'
+        ' target="_blank" rel="noopener me">Facebook</a>'
+    )
+    return '<p class="footer-legal">' + " · ".join(links) + "</p>"
 
 # Cache-busting lokalnych zasobów: wersja z hasha zawartości — po każdej zmianie
 # link zmienia się, więc przeglądarki pobierają nowy plik (koniec ze starym cache).
@@ -793,16 +823,24 @@ def canonicalize_internal_hrefs(src):
     return index_href_re.sub(repl, src)
 
 
+def nav_label(title):
+    """Krótka etykieta do menu: bez nazwy serwisu i bez podtytułu po dwukropku."""
+    label = re.sub(r"\s*\|\s*" + re.escape(SITE_NAME) + r"\s*$", "", title).strip()
+    head = label.split(":", 1)[0].strip()
+    return head if len(head) >= 4 else label
+
+
 def _nav_children(section, prefix):
     available = {}
     for url, title in SECTION_PAGES.get(section, []):
         rel = url[len(BASE) + 1:] if url.startswith(BASE + "/") else url
         if rel and not rel.endswith("/"):  # pomiń stronę-indeks sekcji
-            available[rel] = title
+            available[rel] = nav_label(title)
     featured = NAV_FEATURED.get(section, ())
     selected = [rel for rel in featured if rel in available]
-    selected.extend(rel for rel in available if rel not in selected)
-    return [(prefix + rel, available[rel]) for rel in selected]
+    if len(selected) < NAV_MAX_CHILDREN:  # dział bez pełnej listy wyróżnionych
+        selected.extend(rel for rel in available if rel not in selected)
+    return [(prefix + rel, available[rel]) for rel in selected[:NAV_MAX_CHILDREN]]
 
 
 def build_nav(prefix):
@@ -3375,6 +3413,9 @@ def build(path):
     # kanoniczny (z rozwijanymi działami). Prefiks ścieżek wg głębokości strony.
     depth = os.path.relpath(path, ROOT).replace(os.sep, "/").count("/")
     src = nav_re.sub(lambda m: build_nav("../" * depth), src, count=1)
+    # Ten sam zestaw odnośników formalnych w stopce każdej strony.
+    src = footer_legal_re.sub(
+        lambda m: build_footer_legal("../" * depth), src, count=1)
     src = re.sub(r'<main(?![^>]*\bid=)([^>]*)>', r'<main id="main-content"\1>', src, count=1)
     src = canonicalize_internal_hrefs(src)
     src = normalize_versioned_asset(src, "css/style.css", CSS_VER, css_ver_re)

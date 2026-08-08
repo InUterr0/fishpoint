@@ -273,7 +273,12 @@ document.querySelectorAll('.youtube-facade[data-video-id]').forEach((facade) => 
   title.id = 'analytics-consent-title';
   title.textContent = 'Pomóż nam rozwijać FishPoint';
   const copy = document.createElement('p');
-  copy.textContent = 'Za Twoją zgodą używamy Google Analytics do statystycznego pomiaru odwiedzin. Możesz zmienić decyzję w każdej chwili.';
+  copy.textContent = 'Za Twoją zgodą używamy Google Analytics do statystycznego pomiaru odwiedzin. Możesz zmienić decyzję w każdej chwili. ';
+  // Zgoda musi być świadoma: z komunikatu prowadzi odnośnik do pełnej polityki.
+  const policyLink = document.createElement('a');
+  policyLink.href = '/polityka-prywatnosci.html';
+  policyLink.textContent = 'Polityka prywatności';
+  copy.append(policyLink, document.createTextNode('.'));
   const actions = document.createElement('div');
   actions.className = 'analytics-consent-actions';
   const reject = document.createElement('button');
