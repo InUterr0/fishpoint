@@ -323,6 +323,11 @@ def build_page(month, nominative, locative, slug):
     head = (
         '<!doctype html>\n<html lang="pl">\n<head>\n'
         '  <!--content-meta: published={published}; modified={modified}-->\n'
+        # Dwanaście stron miesięcznych powstaje z jednej tabeli okresów ochronnych
+        # i jest w ~74% wzajemnie podobnych. Google indeksował z nich tylko jedną
+        # („wykryta, obecnie niezindeksowana”), więc nie zgłaszamy ich do indeksu —
+        # dla czytelnika pozostają dostępne i linkowane z huba działu.
+        '  <meta name="robots" content="noindex, follow" />\n'
         '  <meta charset="utf-8" />\n'
         '  <meta name="viewport" content="width=device-width, initial-scale=1" />\n'
         f'  <title>{html.escape(title)}</title>\n'

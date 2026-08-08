@@ -1359,126 +1359,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-czerwcu.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/akcesoria.jpg</image:loc>
-      <image:title>Pudełko klasycznych haczyków wędkarskich</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-grudniu.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/pogoda.jpg</image:loc>
-      <image:title>Burzowe chmury nadciągające nad jezioro</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-kwietniu.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/splawik.jpg</image:loc>
-      <image:title>Wędkarz łowiący na spławik nad kanałem</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-lipcu.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/cr.jpg</image:loc>
-      <image:title>Wypuszczanie pstrąga do wody</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-listopadzie.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/wezly.jpg</image:loc>
-      <image:title>Węzeł wędkarski na haczyku</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-lutym.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/kolowrotki.jpg</image:loc>
-      <image:title>Kołowrotek spinningowy</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-maju.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
-      <image:title>Jezioro Śniardwy</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-marcu.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
-      <image:title>Stawy Milickie z lotu ptaka</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-pazdzierniku.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/kalendarz.jpg</image:loc>
-      <image:title>Wędkarze na rzece o wschodzie słońca</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-sierpniu.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
-      <image:title>Wędki ustawione na brzegu morza</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-styczniu.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/pogoda.jpg</image:loc>
-      <image:title>Burzowe chmury nadciągające nad jezioro</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/poradniki/co-lowic-w-wrzesniu.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/muchowe.jpg</image:loc>
-      <image:title>Wędkarz muchowy podczas rzutu na rzece</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://fish-point.pl/poradniki/echosondy.html</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -1785,12 +1665,6 @@
       <image:loc>https://fish-point.pl/assets/img/ryby/certa.jpg</image:loc>
       <image:title>Certa (Vimba vimba) — wędrowna ryba karpiowata polskich rzek</image:title>
     </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/ryby/chronione.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/ciernik.html</loc>
