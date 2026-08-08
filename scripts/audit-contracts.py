@@ -252,7 +252,7 @@ def main() -> int:
     failures: list[str] = []
     sitemap = ET.fromstring(read("sitemap.xml"))
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
-    check(len(urls) == 217 and len(set(urls)) == 217, "sitemap must contain 217 unique URLs", failures)
+    check(len(urls) == 219 and len(set(urls)) == 219, "sitemap must contain 219 unique URLs", failures)
 
     visual_pages = 0
     regional_visuals = 0
@@ -558,8 +558,9 @@ def main() -> int:
                     failures,
                 )
 
-    # Każdy główny dział pokazuje wszystkie indeksowalne artykuły; strony-huby
-    # pozostają dostępne przez osobne linki „Zobacz cały dział”.
+    # Menu prowadzi do wybranych wejść działu i do strony-huba; pełną listę
+    # artykułów udostępnia hub. Powielanie całego działu w menu każdej podstrony
+    # rozdymało powtarzalną nawigację ponad objętość samej treści.
     menu = parse("index.html")
     nav_sections = ("pierwsze-kroki", "sprzet", "techniki", "ryby", "lowiska", "poradniki")
     check(len(menu.submenu_links) == len(nav_sections),
@@ -569,14 +570,25 @@ def main() -> int:
             local_link_target(ROOT / "index.html", href)
             for href in links
         }
+        check(bool(actual_targets), f"navigation has no entries for {section}", failures)
+        check((ROOT / section / "index.html").resolve() in actual_targets,
+              f"navigation omits section hub for {section}", failures)
+
+    # Każdy artykuł działu musi być osiągalny ze strony-huba tego działu.
+    for section in nav_sections:
+        hub = parse(f"{section}/index.html")
+        hub_targets = {
+            local_link_target(ROOT / section / "index.html", href)
+            for href in hub.hrefs
+        }
         expected_targets = {
             (ROOT / local_path(url)).resolve()
             for url in urls
             if Path(local_path(url)).parts[0] == section
             and not urlparse(url).path.endswith("/")
         }
-        missing = expected_targets - actual_targets
-        check(not missing, f"navigation omits {len(missing)} pages from {section}", failures)
+        missing = expected_targets - hub_targets
+        check(not missing, f"section hub {section} omits {len(missing)} pages", failures)
     hub_paths = {
         "pierwsze-kroki/index.html", "sprzet/index.html", "techniki/index.html",
         "ryby/index.html", "poradniki/index.html", "narzedzia/index.html",
