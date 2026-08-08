@@ -72,13 +72,6 @@
 
 - [Forum wędkarskie FishPoint](https://fish-point.pl/forum/): Forum wędkarskie FishPoint: zadawaj pytania i dziel się poradami, pochwal się połowem, proponuj tematy. Rozmawiaj z innymi wędkarzami — logowanie przez GitHub.
 
-## Humor
-
-- [Humor wędkarski](https://fish-point.pl/humor/): Humor wędkarski w jednym miejscu: dowcipy o wędkarzach i rybach, memy tekstowe z wędkarskimi prawdami życiowymi oraz śmieszne filmiki — wpadki i fishing fails.
-- [Dowcipy wędkarskie](https://fish-point.pl/humor/dowcipy.html): Najlepsze dowcipy wędkarskie: kawały o wędkarzu i żonie, krótkie one-linery, absurdy o gadających rybach i o słynnej „wędkarskiej prawdzie”. 30 autorskich.
-- [Śmieszne filmiki wędkarskie](https://fish-point.pl/humor/filmiki.html): Najzabawniejsze filmiki wędkarskie: polskie wpadki znad wody, kawały i światowe fishing fails. Kompilacje z YouTube na dobry humor między braniami.
-- [Memy wędkarskie (tekstowe)](https://fish-point.pl/humor/memy.html): Memy wędkarskie w formie tekstowej: wędkarskie prawdy życiowe, wędkarz kontra reszta świata i sceny znad wody. Autorskie, darmowe, do dzielenia się.
-
 ## Informacje o serwisie
 
 - [Napisz do FishPoint](https://fish-point.pl/kontakt.html): Kontakt z redakcją FishPoint: adres e-mail, zakres spraw, czas odpowiedzi oraz zasady zgłaszania błędów merytorycznych, propozycji tematów i praw do zdjęć.
@@ -86,7 +79,6 @@
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html): Maciej Baniewicz — wędkarz i autor serwisu FishPoint. Poznaj osobę, która stoi za poradnikami, atlasem ryb i opisami sprzętu na fish-point.pl.
 - [Polityka prywatności](https://fish-point.pl/polityka-prywatnosci.html): Polityka prywatności FishPoint: kto jest administratorem danych, jakie pliki cookie i narzędzia działają w serwisie, na jakiej podstawie prawnej oraz jak wycofać zgodę i skorzystać z praw RODO.
 - [Słownik pojęć wędkarskich](https://fish-point.pl/slownik.html): Słownik pojęć wędkarskich FishPoint od A do Z: ponad 60 haseł z zakresu spinningu, feedera, karpiarstwa i metody spławikowej — od agrafki i akcji wędki.
-- [Sprzęt wędkarski na kolejną wyprawę](https://fish-point.pl/zakupy.html): Zebrane w jednym miejscu kategorie sprzętu wędkarskiego: gotowe zestawy, wędki, przynęty, akcesoria oraz torby i plecaki. Kupując z linku afiliacyjnego.
 - [Zgodnie z zasadami](https://fish-point.pl/zgodnie-z-zasadami.html): Jak sprawdzić legalność połowu: § 6–7, zezwolenie, regulamin i komunikat gospodarza. Drzewo dla wód śródlądowych, morskich, chronionych i prywatnych.
 
 ## Kuchnia

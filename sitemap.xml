@@ -709,94 +709,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fish-point.pl/humor/</loc>
-    <lastmod>2026-07-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/humor/dowcipy.html</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/humor/dowcipy.jpg</image:loc>
-      <image:title>Wędkarz nad jeziorem i ryba zabierająca kanapkę z pudełka — ilustracja humorystyczna</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/humor/filmiki.html</loc>
-    <lastmod>2026-07-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/4liVHg8DeHs/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Wędkarskie wpadki — kompilacja</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/YosZG0uEN9Q/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Wędkarskie Wpadki #1</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/38F7ewNoVMo/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Śmieszne wędkarstwo — wycięte sceny (RaFish)</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/tv1V-cHuofU/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Śmieszne wędkarstwo — 12 wędek i harce</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/Y3YRpPpPeTc/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Śmieszne wpadki i upadki — kompilacja</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/4mto-Y-Haro/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Wędkarstwo na wesoło — kawał na rybach</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/REEfkgy97uc/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Fishing bloopers (FishingWithAce)</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/Rhs5OpNTBOs/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Funny Fishing Fails Compilation</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/5z9yC7NxPXo/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Funny Fishing FAILS 2021</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/9Aq0c49O9Z0/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Try Not To Laugh — Go Fishing And Fails</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/bIOW4UnypgU/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Funny Fishing Fails Compilation 2020</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/U39TjSOr_RI/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Fishing Fails of 2020</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/C_q58kjk360/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: 52 Fishing Fails — Bloopers &amp; Humor</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ytimg.com/vi/T4W5hnvQb-s/hqdefault.jpg</image:loc>
-      <image:title>Miniatura filmu: Best Fishing Fails and Bloopers</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/humor/memy.html</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/humor/memy.jpg</image:loc>
-      <image:title>Wędkarz fotografujący jezioro telefonem i wielka sylwetka ryby pod powierzchnią — ilustracja humorystyczna</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://fish-point.pl/kontakt.html</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -2549,12 +2461,6 @@
       <image:loc>https://i.ytimg.com/vi/6VByB7NcntI/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Jak łowić na trolling kilka porad/ poradnik/ wędkarstwo spinningowe</image:title>
     </image:image>
-  </url>
-  <url>
-    <loc>https://fish-point.pl/zakupy.html</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/zgodnie-z-zasadami.html</loc>

@@ -1079,6 +1079,14 @@ toc_re = re.compile(re.escape(TOC_BEGIN) + r".*?" + re.escape(TOC_END), re.S)
 
 TLDR_BEGIN, TLDR_END = "<!--tldr:auto-->", "<!--/tldr:auto-->"
 tldr_re = re.compile(re.escape(TLDR_BEGIN) + r".*?" + re.escape(TLDR_END), re.S)
+# Redakcyjne streszczenie strony: <!--tldr: własny tekst-->. Bez markera blok
+# „W skrócie" nie powstaje — lepiej go nie mieć niż powielać opis meta.
+EDITORIAL_TLDR_RE = re.compile(r"<!--\s*tldr:\s*(?!auto\b)(.+?)-->", re.S)
+
+
+def editorial_tldr(src):
+    match = EDITORIAL_TLDR_RE.search(src)
+    return re.sub(r"\s+", " ", match.group(1)).strip() if match else ""
 ARTICLE_VISUAL_BEGIN, ARTICLE_VISUAL_END = (
     "<!--article-visual:auto-->", "<!--/article-visual:auto-->"
 )
@@ -3496,11 +3504,15 @@ def build(path):
         )
         src, n = re.subn(r"(</h1>)", r"\1" + byline, src, count=1)
         src, _toc_n = add_toc_and_anchors(src)
-        # „W skrócie" (TL;DR) — z opisu meta; łatwe do wyciągnięcia przez AI/Google
-        tldr = (f'{TLDR_BEGIN}<aside class="tldr" aria-label="W skrócie">'
-                f'<p class="tldr-label">W skrócie</p><p>{html.escape(desc_txt)}</p>'
-                f'</aside>{TLDR_END}')
-        src = ARTICLE_CARD_OPEN_RE.sub(r"\1" + tldr, src, count=1)
+        # „W skrócie" (TL;DR) — wyłącznie redakcyjny, z markera <!--tldr: ...-->.
+        # Wcześniej blok powielał dosłownie meta description na 197 stronach, więc
+        # nie streszczał niczego; powtarzalny wypełniacz zastąpił własny tekst.
+        tldr_txt = editorial_tldr(src)
+        if tldr_txt:
+            tldr = (f'{TLDR_BEGIN}<aside class="tldr" aria-label="W skrócie">'
+                    f'<p class="tldr-label">W skrócie</p><p>{html.escape(tldr_txt)}</p>'
+                    f'</aside>{TLDR_END}')
+            src = ARTICLE_CARD_OPEN_RE.sub(r"\1" + tldr, src, count=1)
         src = inject_fishpoint_method(src, rel)
         src = inject_fish_biology(src, rel)
         # Hub sekcji, powiązania redakcyjne, a na koniec pierścień sekcji.
