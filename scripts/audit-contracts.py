@@ -788,7 +788,6 @@ def main() -> int:
         for relative in (
             "narzedzia/czy-moge-zabrac-rybe.html",
             "pierwsze-kroki/index.html",
-            "poradniki/index.html",
         )
     }
     modified_dates.update({
@@ -798,11 +797,20 @@ def main() -> int:
         "narzedzia/kalendarz-ksiezycowy.html": "2026-07-20",
         "ryby/leszcz.html": "2026-07-20",
         "ryby/ploc.html": "2026-07-20",
-        "ryby/szczupak.html": "2026-07-20",
         "ryby/wegorz.html": "2026-07-20",
         "aktualnosci/przyneta-na-spinning.html": "2026-07-20",
-        "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html": "2026-07-20",
-        "pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html": "2026-07-20",
+    })
+    # 2026-08-08: strony rozbudowane o nową treść albo o redakcyjne „W skrócie”.
+    # Daty podniesione świadomie — treść faktycznie się zmieniła, a nieaktualny
+    # lastmod opóźniał recrawl.
+    modified_dates.update({
+        relative: "2026-08-08"
+        for relative in (
+            "poradniki/index.html",
+            "ryby/szczupak.html",
+            "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html",
+            "pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html",
+        )
     })
     index_pages = {"lowiska/index.html", "pierwsze-kroki/index.html", "poradniki/index.html"}
     for relative, expected_modified in modified_dates.items():

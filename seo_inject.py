@@ -745,6 +745,14 @@ nav_re = re.compile(r'(?:<a class="skip-link" href="#main-content">Przejdź do t
 
 # Linki formalne w stopce. Polityka prywatności i kontakt muszą być osiągalne
 # z każdej strony — wymagają tego zarówno RODO, jak i zasady sieci reklamowych.
+# Strony formalne nie są wpisami blogowymi — schema musi odpowiadać charakterowi
+# treści, inaczej obiecuje artykuł tam, gdzie jest dokument albo dane kontaktowe.
+FORMAL_PAGE_TYPES = {
+    "polityka-prywatnosci.html": "WebPage",
+    "kontakt.html": "ContactPage",
+    "korekty.html": "WebPage",
+}
+
 FOOTER_LEGAL = [
     ("zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
     ("polityka-prywatnosci.html", "Polityka prywatności"),
@@ -3789,7 +3797,7 @@ def build(path):
                 img_obj["about"] = fish_about(fish)
             posting = {
                 "@context": "https://schema.org",
-                "@type": "BlogPosting",
+                "@type": FORMAL_PAGE_TYPES.get(rel, "BlogPosting"),
                 "headline": h1_txt,
                 "description": desc_txt,
                 "url": url,
