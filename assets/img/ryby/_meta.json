@@ -302,17 +302,17 @@
     "alt": "Szczupak złowiony zimą z brzegu, trzymany oburącz przed wypuszczeniem",
     "caption": "Zimowy szczupak z brzegu — jasne cętki układają się w rzędy na oliwkowym boku.",
     "width": 1200,
-    "height": 900
+    "height": 645
   },
   "szczupak-las": {
     "artist": "Archiwum prywatne",
     "file": "szczupak-las.jpg",
     "license": "Publikacja za zgodą autora",
     "page": "https://fish-point.pl/ryby/szczupak.html",
-    "alt": "Duży szczupak trzymany oburącz na tle bezlistnego lasu",
+    "alt": "Duży szczupak trzymany oburącz nad brzegiem",
     "caption": "Największe szczupaki notuje się zwykle wczesną wiosną i późną jesienią.",
     "width": 1200,
-    "height": 900
+    "height": 645
   },
   "szczupak-ponton": {
     "artist": "Archiwum prywatne",
@@ -352,7 +352,7 @@
     "alt": "Karp lustrzeń złowiony latem, trzymany poziomo nad brzegiem",
     "caption": "Lustrzeń — duże, nieregularne łuski zamiast pełnego oszupinowania.",
     "width": 1200,
-    "height": 900
+    "height": 645
   },
   "karp-lustrzen-jesien": {
     "artist": "Archiwum prywatne",
@@ -372,7 +372,7 @@
     "alt": "Karp lustrzeń złowiony o poranku nad jeziorem",
     "caption": "Ranek i wieczór to na wielu zbiornikach najlepsze okna na karpia.",
     "width": 1200,
-    "height": 900
+    "height": 645
   },
   "karp-podbierak-miarka": {
     "artist": "Archiwum prywatne",
@@ -412,7 +412,7 @@
     "alt": "Leszcz złowiony nocą, trzymany oburącz w świetle latarki",
     "caption": "Nocą leszcz podchodzi płycej i żeruje spokojniej niż w dzień.",
     "width": 1200,
-    "height": 900
+    "height": 645
   },
   "ploc-w-dloni": {
     "artist": "Archiwum prywatne",
@@ -432,7 +432,7 @@
     "alt": "Karaś złowiony o zmierzchu nad jeziorem, trzymany oburącz",
     "caption": "Wysokie ciało, zaokrąglona płetwa grzbietowa i brak wąsików — to karaś, nie karp.",
     "width": 1200,
-    "height": 900
+    "height": 645
   },
   "karas-kukurydza": {
     "artist": "Archiwum prywatne",
