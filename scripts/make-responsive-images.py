@@ -13,6 +13,8 @@ from __future__ import annotations
 
 import os
 import re
+import shutil
+import struct
 import subprocess
 import sys
 from pathlib import Path
@@ -22,13 +24,36 @@ WIDTHS = (640, 960)
 # Poniżej tej szerokości wariant mobilny nie ma sensu — obraz i tak jest mały.
 MIN_SOURCE_WIDTH = 960
 
+# ImageMagick 7 udostępnia `magick`, ImageMagick 6 (m.in. w obrazach Ubuntu
+# używanych przez GitHub Actions) tylko `convert`. Obsługujemy obie wersje.
+MAGICK = shutil.which("magick")
+CONVERT = [MAGICK] if MAGICK else ([shutil.which("convert")]
+                                   if shutil.which("convert") else None)
+AVIFENC = shutil.which("avifenc")
+
 
 def image_width(path: Path) -> int | None:
-    out = subprocess.run(["magick", "identify", "-format", "%w", str(path)],
-                         capture_output=True, text=True)
+    """Szerokość JPEG czytana z nagłówka — bez zależności zewnętrznych."""
     try:
-        return int(out.stdout.strip().split()[0])
-    except (ValueError, IndexError):
+        with open(path, "rb") as handle:
+            if handle.read(2) != b"\xff\xd8":
+                return None
+            while True:
+                byte = handle.read(1)
+                while byte and byte != b"\xff":
+                    byte = handle.read(1)
+                while byte == b"\xff":
+                    byte = handle.read(1)
+                if not byte:
+                    return None
+                marker = byte[0]
+                length = struct.unpack(">H", handle.read(2))[0]
+                if marker in (0xC0, 0xC1, 0xC2, 0xC3):
+                    handle.read(1)
+                    _height, width = struct.unpack(">HH", handle.read(4))
+                    return width
+                handle.seek(length - 2, 1)
+    except Exception:
         return None
 
 
@@ -62,15 +87,21 @@ def build_variant(src: Path, width: int) -> list[str]:
     stem, suffix = os.path.splitext(str(src))
     base = Path(f"{stem}-{width}{suffix}")
     if not base.exists():
-        if not run(["magick", "-limit", "memory", "256MiB", str(src),
-                    "-resize", f"{width}x>", "-strip", "-quality", "82", str(base)]):
+        if not run(CONVERT + ["-limit", "memory", "256MiB", str(src),
+                              "-resize", f"{width}x>", "-strip",
+                              "-quality", "82", str(base)]):
             return made
         made.append(base.name)
-    for fmt, cmd in (
-        (".webp", ["magick", "-limit", "memory", "256MiB", str(base),
-                   "-quality", "80", f"{base}.webp"]),
-        (".avif", ["avifenc", "-q", "55", "--speed", "6", str(base), f"{base}.avif"]),
-    ):
+    targets = [(".webp", CONVERT + ["-limit", "memory", "256MiB", str(base),
+                                    "-quality", "80", f"{base}.webp"])]
+    if AVIFENC:
+        targets.append((".avif", [AVIFENC, "-q", "55", "--speed", "6",
+                                  str(base), f"{base}.avif"]))
+    else:
+        targets.append((".avif", CONVERT + ["-limit", "memory", "256MiB",
+                                            str(base), "-quality", "55",
+                                            f"{base}.avif"]))
+    for fmt, cmd in targets:
         target = Path(f"{base}{fmt}")
         if not target.exists():
             if run(cmd):
@@ -79,6 +110,14 @@ def build_variant(src: Path, width: int) -> list[str]:
 
 
 def main() -> int:
+    if CONVERT is None:
+        # Warianty są wersjonowane w repozytorium, więc brak ImageMagick nie
+        # może wywrócić wdrożenia. Braki dla nowo dodanych obrazów wyłapie
+        # kontrakt „duże obrazy bez wariantów mobilnych" w audit-contracts.py.
+        print("ImageMagick niedostępny — pomijam generowanie wariantów.",
+              file=sys.stderr)
+        return 0
+
     only = sys.argv[1:] or None
     images = sorted(used_images())
     if only:
