@@ -267,7 +267,34 @@ def main() -> int:
     expected_inline_visuals = {
         "pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html":
             ("/assets/img/tematy/schemat-catch-release.svg",),
-        "techniki/spinning.html": ("/assets/img/tematy/schemat-spinning.svg",),
+        "techniki/spinning.html": (
+            "/assets/img/tematy/schemat-spinning.svg",
+            "/assets/img/ryby/szczupak-wobler.jpg",
+            "/assets/img/ryby/szczupak-streamer.jpg",
+        ),
+        "techniki/podlodowe.html": ("/assets/img/tematy/mormyszki-podlodowe.jpg",),
+        "techniki/feeder.html": ("/assets/img/tematy/leszcze-podbierak.jpg",),
+        "ryby/okon.html": ("/assets/img/ryby/okon-trawa.jpg",),
+        "ryby/jesiotr.html": ("/assets/img/ryby/jesiotr-brzeg.jpg",),
+        "ryby/lin.html": (
+            "/assets/img/ryby/lin-dlon.jpg",
+            "/assets/img/ryby/liny-trzy.jpg",
+            "/assets/img/ryby/lin-dzien.jpg",
+        ),
+        "sprzet/przynety.html": (
+            "/assets/img/tematy/gumy-kopyta.jpg",
+            "/assets/img/tematy/guma-glowka-dlon.jpg",
+            "/assets/img/tematy/blystki-wahadlowe.jpg",
+        ),
+        "pierwsze-kroki/sprzet/przynety.html": ("/assets/img/tematy/pudelko-przynet.jpg",),
+        "sprzet/jak-wybrac-kolowrotek.html": ("/assets/img/tematy/kolowrotek-ninja.jpg",),
+        "sprzet/plecionki-zylki.html": ("/assets/img/tematy/wedka-plecionka.jpg",),
+        "poradniki/zanety-domowe.html": ("/assets/img/tematy/zaneta-kukurydza.jpg",),
+        "pierwsze-kroki/lowiska/jeziora.html": ("/assets/img/tematy/jezioro-swit.jpg",),
+        "poradniki/pogoda-a-brania.html": ("/assets/img/tematy/jezioro-deszcz.jpg",),
+        "poradniki/lowienie-zima.html": ("/assets/img/tematy/rozlewisko-zima.jpg",),
+        "poradniki/wedkarstwo-z-brzegu.html": ("/assets/img/tematy/jezioro-poranek.jpg",),
+        "poradniki/lowienie-nocne.html": ("/assets/img/ryby/liny-noc.jpg",),
         "techniki/karpiowanie.html": (
             "/assets/img/tematy/schemat-karpiowy.svg",
             "/assets/img/ryby/karp-jezioro.jpg",
@@ -282,7 +309,10 @@ def main() -> int:
             "/assets/img/ryby/karp-mata-podbierak.jpg",
             "/assets/img/ryby/karp-podbierak-miarka.jpg",
         ),
-        "ryby/karas.html": ("/assets/img/ryby/karas-kukurydza.jpg",),
+        "ryby/karas.html": (
+            "/assets/img/ryby/karas-kukurydza.jpg",
+            "/assets/img/ryby/karas-duzy.jpg",
+        ),
         "poradniki/wedkarstwo-z-lodzi.html": ("/assets/img/ryby/szczupak-ponton-lato.jpg",),
         "sprzet/kolowrotki.html": ("/assets/img/tematy/kolowrotek-golden-rn2000-szpula.jpg",),
         "sprzet/wedki.html": (

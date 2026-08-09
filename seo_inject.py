@@ -547,6 +547,8 @@ INLINE_DIAGRAMS = {
 INLINE_PAGE_VISUALS = {
     "techniki/spinning.html": (
         ("/assets/img/tematy/schemat-spinning.svg", ("techniki prowadzenia przynet", "zasada metody")),
+        ("/assets/img/ryby/szczupak-wobler.jpg", ("czytanie wody", "gdzie stoi drapieznik")),
+        ("/assets/img/ryby/szczupak-streamer.jpg", ("gatunki — jak je łowic spinningiem", "szczupak")),
     ),
     "techniki/splawik.html": (
         ("/assets/img/tematy/schemat-splawik.svg", ("budowa zestawu splawikowego", "wywazenie zestawu")),
@@ -596,6 +598,56 @@ INLINE_PAGE_VISUALS = {
     ),
     "ryby/karas.html": (
         ("/assets/img/ryby/karas-kukurydza.jpg", ("metody i przynety",)),
+        ("/assets/img/ryby/karas-duzy.jpg", ("wyglad i rozpoznawanie",)),
+    ),
+    "ryby/okon.html": (
+        ("/assets/img/ryby/okon-trawa.jpg", ("przepisy krajowe", "wymiar")),
+    ),
+    "ryby/lin.html": (
+        ("/assets/img/ryby/lin-dlon.jpg", ("wyglad i rozpoznawanie",)),
+        ("/assets/img/ryby/liny-trzy.jpg", ("srodowisko i wystepowanie",)),
+        ("/assets/img/ryby/lin-dzien.jpg", ("metody i przynety",)),
+    ),
+    "ryby/jesiotr.html": (
+        ("/assets/img/ryby/jesiotr-brzeg.jpg", ("wyglad i rozpoznawanie",)),
+    ),
+    "techniki/podlodowe.html": (
+        ("/assets/img/tematy/mormyszki-podlodowe.jpg", ("mormyszki",)),
+    ),
+    "techniki/feeder.html": (
+        ("/assets/img/tematy/leszcze-podbierak.jpg", ("feeder na jeziorze", "punkt necenia")),
+    ),
+    "sprzet/przynety.html": (
+        ("/assets/img/tematy/gumy-kopyta.jpg", ("rodzaje gum",)),
+        ("/assets/img/tematy/guma-glowka-dlon.jpg", ("dobor ciezaru głowki",)),
+        ("/assets/img/tematy/blystki-wahadlowe.jpg", ("obrotowki i wahadłowki",)),
+    ),
+    "pierwsze-kroki/sprzet/przynety.html": (
+        ("/assets/img/tematy/pudelko-przynet.jpg", ("plan pierwszych zakupow", "przechowywanie")),
+    ),
+    "sprzet/jak-wybrac-kolowrotek.html": (
+        ("/assets/img/tematy/kolowrotek-ninja.jpg", ("kontrola przed zakupem", "parametry")),
+    ),
+    "sprzet/plecionki-zylki.html": (
+        ("/assets/img/tematy/wedka-plecionka.jpg", ("plecionka",)),
+    ),
+    "poradniki/zanety-domowe.html": (
+        ("/assets/img/tematy/zaneta-kukurydza.jpg", ("ziarna", "kukurydza")),
+    ),
+    "pierwsze-kroki/lowiska/jeziora.html": (
+        ("/assets/img/tematy/jezioro-swit.jpg", ("stanowisko, wiatr i brzeg", "stanowisko")),
+    ),
+    "poradniki/pogoda-a-brania.html": (
+        ("/assets/img/tematy/jezioro-deszcz.jpg", ("fronty atmosferyczne", "zachmurzenie")),
+    ),
+    "poradniki/lowienie-zima.html": (
+        ("/assets/img/tematy/rozlewisko-zima.jpg", ("gdzie szukac ryb zima", "zimowiska")),
+    ),
+    "poradniki/wedkarstwo-z-brzegu.html": (
+        ("/assets/img/tematy/jezioro-poranek.jpg", ("wybierz legalne i bezpieczne stanowisko", "czytaj brzeg")),
+    ),
+    "poradniki/lowienie-nocne.html": (
+        ("/assets/img/ryby/liny-noc.jpg", ("organizacja stanowiska nocnego", "sygnalizacja bran noca")),
     ),
     "poradniki/wedkarstwo-z-lodzi.html": (
         ("/assets/img/ryby/szczupak-ponton-lato.jpg", ("ponton wedkarski",)),

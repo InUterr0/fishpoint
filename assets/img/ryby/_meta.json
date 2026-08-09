@@ -443,5 +443,145 @@
     "caption": "Kukurydza z puszki i garść drobnej zanęty to najprostszy zestaw na karasia.",
     "width": 1200,
     "height": 898
+  },
+  "okon-dlon": {
+    "artist": "Archiwum prywatne",
+    "file": "okon-dlon.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/okon.html",
+    "alt": "Okoń trzymany w dłoni, widoczne ciemne pręgi na boku i pomarańczowe płetwy",
+    "caption": "Ciemne pręgi na zielonkawym boku i pomarańczowe płetwy parzyste — okoń w dłoni tuż przed wypuszczeniem.",
+    "width": 1200,
+    "height": 899
+  },
+  "okon-trawa": {
+    "artist": "Archiwum prywatne",
+    "file": "okon-trawa.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/okon.html",
+    "alt": "Okoń leżący w trawie obok rozwiniętej miarki",
+    "caption": "Długość mierzy się od czubka pyska do końca płetwy ogonowej, na płasko i bez naciągania ryby.",
+    "width": 1200,
+    "height": 900
+  },
+  "lin-dzien": {
+    "artist": "Archiwum prywatne",
+    "file": "lin-dzien.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/lin.html",
+    "alt": "Lin trzymany oburącz nad brzegiem, widoczne grube ciało i zaokrąglone płetwy",
+    "caption": "Krępe ciało, zaokrąglone płetwy i drobna łuska głęboko osadzona w skórze — sylwetka lina.",
+    "width": 1200,
+    "height": 900
+  },
+  "lin-dlon": {
+    "artist": "Archiwum prywatne",
+    "file": "lin-dlon.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/lin.html",
+    "alt": "Głowa lina z bliska: pomarańczowa tęczówka i krótki wąsik w kąciku pyska",
+    "caption": "Pomarańczowa tęczówka i para krótkich wąsików w kącikach pyska to najpewniejsze cechy lina.",
+    "width": 1200,
+    "height": 900
+  },
+  "liny-trzy": {
+    "artist": "Archiwum prywatne",
+    "file": "liny-trzy.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/lin.html",
+    "alt": "Trzy liny ułożone obok siebie na pomoście",
+    "caption": "Ubarwienie lina zmienia się razem z wodą — od oliwkowego po niemal złote.",
+    "width": 1200,
+    "height": 900
+  },
+  "liny-noc": {
+    "artist": "Archiwum prywatne",
+    "file": "liny-noc.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/poradniki/lowienie-nocne.html",
+    "alt": "Trzy liny złowione nocą, oświetlone światłem latarki",
+    "caption": "Lin żeruje najchętniej o zmierzchu i po zmroku, blisko roślinności i miękkiego dna.",
+    "width": 1200,
+    "height": 900
+  },
+  "karas-duzy": {
+    "artist": "Archiwum prywatne",
+    "file": "karas-duzy.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/karas.html",
+    "alt": "Duży karaś trzymany oburącz nad brzegiem jeziora",
+    "caption": "Wysokie, bocznie spłaszczone ciało i mocno wysklepiony grzbiet to typowa sylwetka karasia.",
+    "width": 1200,
+    "height": 900
+  },
+  "karp-pospolity": {
+    "artist": "Archiwum prywatne",
+    "file": "karp-pospolity.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/karp.html",
+    "alt": "Karp w pełni ołuszczony trzymany oburącz nad brzegiem",
+    "caption": "Karp pospolity — równe rzędy łusek na całym ciele, inaczej niż u lustrzenia z pojedynczymi dużymi łuskami.",
+    "width": 1200,
+    "height": 900
+  },
+  "jesiotr-zloty": {
+    "artist": "Archiwum prywatne",
+    "file": "jesiotr-zloty.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/jesiotr.html",
+    "alt": "Jesiotr trzymany na wyciągniętych rękach nad brzegiem, widoczny wysunięty ryjek i rzędy tarcz kostnych",
+    "caption": "Wysunięty ryjek, wąsiki pod spodem i rzędy tarcz kostnych zamiast łusek — sylwetka jesiotra.",
+    "width": 1200,
+    "height": 900
+  },
+  "jesiotr-brzeg": {
+    "artist": "Archiwum prywatne",
+    "file": "jesiotr-brzeg.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/jesiotr.html",
+    "alt": "Jesiotr trzymany poziomo oburącz, widoczna niesymetryczna płetwa ogonowa",
+    "caption": "Ogon jesiotra jest niesymetryczny: górny płat wyraźnie dłuższy od dolnego, jak u rekina.",
+    "width": 1200,
+    "height": 904
+  },
+  "szczupak-wobler": {
+    "artist": "Archiwum prywatne",
+    "file": "szczupak-wobler.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/techniki/spinning.html",
+    "alt": "Szczupak leżący na drewnianym pomoście obok woblera, na którego został złowiony",
+    "caption": "Wobler prowadzony wzdłuż pomostu — szczupak zaatakował tuż przy krawędzi cienia.",
+    "width": 1200,
+    "height": 900
+  },
+  "szczupak-streamer": {
+    "artist": "Archiwum prywatne",
+    "file": "szczupak-streamer.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/techniki/spinning.html",
+    "alt": "Szczupak z dużą przynętą w pysku, leżący na pomoście",
+    "caption": "Duża, jaskrawa przynęta w pysku szczupaka — rozmiar przynęty selekcjonuje wielkość ryby.",
+    "width": 1200,
+    "height": 900
+  },
+  "szczupak-wieczor": {
+    "artist": "Archiwum prywatne",
+    "file": "szczupak-wieczor.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/techniki/spinning.html",
+    "alt": "Wędkarz prezentuje dużego szczupaka nad brzegiem w wieczornym świetle",
+    "caption": "Ostatnia godzina przed zmierzchem bywa najlepszym oknem na dużego szczupaka.",
+    "width": 1200,
+    "height": 900
+  },
+  "szczupak-trzciny": {
+    "artist": "Archiwum prywatne",
+    "file": "szczupak-trzciny.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html",
+    "alt": "Szczupak trzymany oburącz nad brzegiem porośniętym trzciną",
+    "caption": "Szczupak z krawędzi trzcinowiska — właśnie tam najczęściej czeka w zasadzce.",
+    "width": 1200,
+    "height": 900
   }
 }

@@ -389,5 +389,155 @@
     "caption": "Podbierak z gęstą, miękką siatką mniej uszkadza śluz i płetwy ryby.",
     "width": 1200,
     "height": 900
+  },
+  "gumy-kopyta": {
+    "artist": "FishPoint",
+    "file": "gumy-kopyta.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/przynety.html",
+    "alt": "Zestaw gum spinningowych: kopyta i twistery w kilku rozmiarach i kolorach",
+    "caption": "Kopyta pracują drgającą płetwą, twistery — falującym ogonem; oba typy w jednym pudełku pokrywają większość sytuacji.",
+    "width": 1200,
+    "height": 675
+  },
+  "pudelko-przynet": {
+    "artist": "FishPoint",
+    "file": "pudelko-przynet.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/pierwsze-kroki/sprzet/przynety.html",
+    "alt": "Otwarte pudełko z gumami, woblerami i błystkami ułożonymi w przegródkach",
+    "caption": "Jedno pudełko z kilkoma sprawdzonymi wzorami waży mniej i łowi lepiej niż pełna torba przypadkowych przynęt.",
+    "width": 1200,
+    "height": 900
+  },
+  "guma-glowka-dlon": {
+    "artist": "FishPoint",
+    "file": "guma-glowka-dlon.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/przynety.html",
+    "alt": "Guma osadzona na główce jigowej trzymana na dłoni obok dużego twistera",
+    "caption": "Ciężar główki dobiera się do głębokości i nurtu — im szybciej opada, tym mniej czasu przynęta pracuje w toni.",
+    "width": 1200,
+    "height": 900
+  },
+  "blystki-wahadlowe": {
+    "artist": "FishPoint",
+    "file": "blystki-wahadlowe.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/przynety.html",
+    "alt": "Pięć błystek wahadłowych ułożonych obok siebie na drewnianym blacie",
+    "caption": "Wahadłówka pracuje samym kształtem blaszki — im grubsza, tym głębiej i wolniej można ją prowadzić.",
+    "width": 1200,
+    "height": 900
+  },
+  "mormyszki-podlodowe": {
+    "artist": "FishPoint",
+    "file": "mormyszki-podlodowe.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/techniki/podlodowe.html",
+    "alt": "Pudełko mormyszek i zestaw małych przynęt podlodowych rozłożone na warsztacie",
+    "caption": "Mormyszki różnią się masą i kształtem — cięższe schodzą szybciej, lżejsze dają wolniejszą, drażniącą pracę.",
+    "width": 1200,
+    "height": 900
+  },
+  "kolowrotek-ninja": {
+    "artist": "FishPoint",
+    "file": "kolowrotek-ninja.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/jak-wybrac-kolowrotek.html",
+    "alt": "Kołowrotek spinningowy trzymany w dłoni, widoczna szpula i kabłąk",
+    "caption": "Przed zakupem sprawdza się luz korby, pracę kabłąka i płynność hamulca — te trzy rzeczy widać od razu.",
+    "width": 1200,
+    "height": 900
+  },
+  "wedka-plecionka": {
+    "artist": "FishPoint",
+    "file": "wedka-plecionka.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/plecionki-zylki.html",
+    "alt": "Wędka spinningowa z kołowrotkiem i opakowanie plecionki leżące obok",
+    "caption": "Plecionka nie rozciąga się jak żyłka — zacięcie działa natychmiast nawet na dużym dystansie.",
+    "width": 1200,
+    "height": 900
+  },
+  "zaneta-kukurydza": {
+    "artist": "FishPoint",
+    "file": "zaneta-kukurydza.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/zanety-domowe.html",
+    "alt": "Wiaderko z zanętą: kukurydza, konopie i białe robaki wymieszane z bazą",
+    "caption": "Ziarna dają zanęcie trwałość — ryba dłużej szuka pokarmu w miejscu, zamiast najeść się drobną frakcją.",
+    "width": 1200,
+    "height": 900
+  },
+  "jezioro-swit": {
+    "artist": "FishPoint",
+    "file": "jezioro-swit.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/pierwsze-kroki/lowiska/jeziora.html",
+    "alt": "Wędka oparta o brzeg jeziora o świcie, gładka tafla wody i zalesione zbocze",
+    "caption": "Bezwietrzny świt nad jeziorem ułatwia obserwację — widać każde poruszenie ryby przy powierzchni.",
+    "width": 1200,
+    "height": 900
+  },
+  "jezioro-deszcz": {
+    "artist": "FishPoint",
+    "file": "jezioro-deszcz.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/pogoda-a-brania.html",
+    "alt": "Jezioro w deszczowy, pochmurny dzień, ciemna tafla wody i niskie chmury",
+    "caption": "Pochmurny, stabilny dzień bez gwałtownej zmiany pogody bywa spokojniejszy dla ryb niż nagły skok warunków.",
+    "width": 1200,
+    "height": 900
+  },
+  "rozlewisko-zima": {
+    "artist": "FishPoint",
+    "file": "rozlewisko-zima.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/lowienie-zima.html",
+    "alt": "Płytkie rozlewisko z suchymi trzcinami w bezśnieżny, zimowy dzień",
+    "caption": "Zimą ryba trzyma się spokojnej, głębszej wody — płytkie rozlewiska wychładzają się najszybciej.",
+    "width": 1200,
+    "height": 900
+  },
+  "jezioro-poranek": {
+    "artist": "FishPoint",
+    "file": "jezioro-poranek.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/poradniki/wedkarstwo-z-brzegu.html",
+    "alt": "Wędka oparta o pniak na brzegu jeziora, przejrzysta woda i pas roślinności",
+    "caption": "Stanowisko z brzegu wybiera się tak, by mieć miejsce na hol i bezpieczne dojście do wody.",
+    "width": 1200,
+    "height": 900
+  },
+  "leszcze-podbierak": {
+    "artist": "Archiwum prywatne",
+    "file": "leszcze-podbierak.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/techniki/feeder.html",
+    "alt": "Dwie ryby karpiowate w siatce podbieraka po nocnym łowieniu",
+    "caption": "Efekt wieczornej sesji na jeziorze — ryby czekają w podbieraku, zanim wrócą do wody.",
+    "width": 1200,
+    "height": 900
+  },
+  "przyneta-streamer": {
+    "artist": "FishPoint",
+    "file": "przyneta-streamer.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/przynety.html",
+    "alt": "Duża przynęta ze sztucznym włosiem i wyrazistym okiem, trzymana w dłoni",
+    "caption": "Duże, puszyste przynęty pracują wolno i selekcjonują większe drapieżniki.",
+    "width": 1200,
+    "height": 900
+  },
+  "rozlewisko-spinning": {
+    "artist": "FishPoint",
+    "file": "rozlewisko-spinning.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/pierwsze-kroki/lowiska/rzeki.html",
+    "alt": "Wędka spinningowa nad płytkim rozlewiskiem rzecznym późną jesienią",
+    "caption": "Rozlewiska i starorzecza to spokojna woda obok nurtu — dobre miejsce na pierwsze rzuty.",
+    "width": 1200,
+    "height": 900
   }
 }

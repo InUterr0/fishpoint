@@ -1117,6 +1117,10 @@
       <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
       <image:title>Jezioro Śniardwy</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jezioro-swit.jpg</image:loc>
+      <image:title>Wędka oparta o brzeg jeziora o świcie, gładka tafla wody i zalesione zbocze</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/kanaly.html</loc>
@@ -1130,12 +1134,12 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/rzeki.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/bledy-poczatkujacych.jpg</image:loc>
-      <image:title>Wędkarz łowiący w nurcie rzeki</image:title>
+      <image:loc>https://fish-point.pl/assets/img/tematy/rozlewisko-spinning.jpg</image:loc>
+      <image:title>Wędka spinningowa nad płytkim rozlewiskiem rzecznym późną jesienią</image:title>
     </image:image>
   </url>
   <url>
@@ -1186,12 +1190,12 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/karp.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
-      <image:title>Karp (Cyprinus carpio) — król wód stojących</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karp-pospolity.jpg</image:loc>
+      <image:title>Karp w pełni ołuszczony trzymany oburącz nad brzegiem</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/BAJY4gMltgk/hqdefault.jpg</image:loc>
@@ -1220,12 +1224,12 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Szczupak pospolity (Esox lucius) — drapieżnik zasadzkowy polskich wód</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-trzciny.jpg</image:loc>
+      <image:title>Szczupak trzymany oburącz nad brzegiem porośniętym trzciną</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/uo_gn61r5CM/hqdefault.jpg</image:loc>
@@ -1278,6 +1282,10 @@
     <image:image>
       <image:loc>https://i.ytimg.com/vi/89_P0i_Ye5U/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Przynęty spinningowe  #16 Poradnik Wędkarski wędkarstwo lucio</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/pudelko-przynet.jpg</image:loc>
+      <image:title>Otwarte pudełko z gumami, woblerami i błystkami ułożonymi w przegródkach</image:title>
     </image:image>
   </url>
   <url>
@@ -1517,6 +1525,10 @@
       <image:loc>https://i.ytimg.com/vi/skT7dKZV7Hk/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: ŁOWIENIE NA GRUNT czyli WĘDKARSKA ZASIADKA z METODĄ</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/liny-noc.jpg</image:loc>
+      <image:title>Trzy liny złowione nocą, oświetlone światłem latarki</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/lowienie-zima.html</loc>
@@ -1530,6 +1542,10 @@
     <image:image>
       <image:loc>https://i.ytimg.com/vi/4D0u5rDftEY/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Zimowe Łowienie na feeder z chlebem tostowym – Poradnik</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/rozlewisko-zima.jpg</image:loc>
+      <image:title>Płytkie rozlewisko z suchymi trzcinami w bezśnieżny, zimowy dzień</image:title>
     </image:image>
   </url>
   <url>
@@ -1545,6 +1561,10 @@
       <image:loc>https://i.ytimg.com/vi/lrP-XUoUE8U/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Wpływ pogody na brania - ciśnienie,temperatura,wiatr,fazy ksieżyca itd</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jezioro-deszcz.jpg</image:loc>
+      <image:title>Jezioro w deszczowy, pochmurny dzień, ciemna tafla wody i niskie chmury</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/wedkarstwo-z-brzegu.html</loc>
@@ -1554,6 +1574,10 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
       <image:title>Brzeg jeziora i miejsce do obserwacji wody</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jezioro-poranek.jpg</image:loc>
+      <image:title>Wędka oparta o pniak na brzegu jeziora, przejrzysta woda i pas roślinności</image:title>
     </image:image>
   </url>
   <url>
@@ -1604,6 +1628,10 @@
     <image:image>
       <image:loc>https://i.ytimg.com/vi/vKShNefbXWM/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: JAK ZROBIĆ ZANĘTĘ NA RYBY...? domowe składniki 100%</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/zaneta-kukurydza.jpg</image:loc>
+      <image:title>Wiaderko z zanętą: kukurydza, konopie i białe robaki wymieszane z bazą</image:title>
     </image:image>
   </url>
   <url>
@@ -1726,12 +1754,16 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/jesiotr.html</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/jesiotr.jpg</image:loc>
-      <image:title>Jesiotr ostronosy (Acipenser oxyrinchus) — wędrowna ryba jesiotrowata objęta restytucją</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/jesiotr-zloty.jpg</image:loc>
+      <image:title>Jesiotr trzymany na wyciągniętych rękach nad brzegiem, widoczny wysunięty ryjek i rzędy tarcz kostnych</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/jesiotr-brzeg.jpg</image:loc>
+      <image:title>Jesiotr trzymany poziomo oburącz, widoczna niesymetryczna płetwa ogonowa</image:title>
     </image:image>
   </url>
   <url>
@@ -1746,6 +1778,10 @@
     <image:image>
       <image:loc>https://i.ytimg.com/vi/mbsin7YwpNQ/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: JAK ZŁOWIĆ 🎣🎣 KARASIA ❓❓</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karas-duzy.jpg</image:loc>
+      <image:title>Duży karaś trzymany oburącz nad brzegiem jeziora</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karas-kukurydza.jpg</image:loc>
@@ -1849,6 +1885,18 @@
       <image:loc>https://i.ytimg.com/vi/sraacLovcAY/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: WIOSENNE LINY - Jak złowić lina na spławik i metode?</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/lin-dlon.jpg</image:loc>
+      <image:title>Głowa lina z bliska: pomarańczowa tęczówka i krótki wąsik w kąciku pyska</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/liny-trzy.jpg</image:loc>
+      <image:title>Trzy liny ułożone obok siebie na pomoście</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/lin-dzien.jpg</image:loc>
+      <image:title>Lin trzymany oburącz nad brzegiem, widoczne grube ciało i zaokrąglone płetwy</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/lipien.html</loc>
@@ -1890,16 +1938,20 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/okon.html</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
-      <image:title>Okoń pospolity (Perca fluviatilis) — pręgowany drapieżnik stadny</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/okon-dlon.jpg</image:loc>
+      <image:title>Okoń trzymany w dłoni, widoczne ciemne pręgi na boku i pomarańczowe płetwy</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/QG59NR4msvQ/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Drop Shot - metoda na leniwe okonie i sandacze</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/okon-trawa.jpg</image:loc>
+      <image:title>Okoń leżący w trawie obok rozwiniętej miarki</image:title>
     </image:image>
   </url>
   <url>
@@ -2151,6 +2203,10 @@
       <image:loc>https://fish-point.pl/assets/img/tematy/kolowrotek-fladen-cardinal.jpg</image:loc>
       <image:title>Mały kołowrotek Fladen Cardinal na otwartej dłoni</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kolowrotek-ninja.jpg</image:loc>
+      <image:title>Kołowrotek spinningowy trzymany w dłoni, widoczna szpula i kabłąk</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/kolowrotki.html</loc>
@@ -2203,19 +2259,35 @@
       <image:loc>https://i.ytimg.com/vi/EeAKL58UE9s/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Dylemat Wędkarza: Żyłka czy Plecionka? Porównanie</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedka-plecionka.jpg</image:loc>
+      <image:title>Wędka spinningowa z kołowrotkiem i opakowanie plecionki leżące obok</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/przynety.html</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/jak-dobrac-przynete-do-pory-roku.jpg</image:loc>
-      <image:title>Cztery typy przynęt sztucznych obok siebie: jig z gumą, błystka wahadłowa, wobler i błystka obrotowa</image:title>
+      <image:loc>https://fish-point.pl/assets/img/tematy/przyneta-streamer.jpg</image:loc>
+      <image:title>Duża przynęta ze sztucznym włosiem i wyrazistym okiem, trzymana w dłoni</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/89_P0i_Ye5U/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Przynęty spinningowe  #16 Poradnik Wędkarski wędkarstwo lucio</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/gumy-kopyta.jpg</image:loc>
+      <image:title>Zestaw gum spinningowych: kopyta i twistery w kilku rozmiarach i kolorach</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/guma-glowka-dlon.jpg</image:loc>
+      <image:title>Guma osadzona na główce jigowej trzymana na dłoni obok dużego twistera</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/blystki-wahadlowe.jpg</image:loc>
+      <image:title>Pięć błystek wahadłowych ułożonych obok siebie na drewnianym blacie</image:title>
     </image:image>
   </url>
   <url>
@@ -2272,6 +2344,10 @@
     <image:image>
       <image:loc>https://i.ytimg.com/vi/w6nKVaP6Dic/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Kompletny przewodnik dla początkujących METHOD FEEDER — Naucz się WSZYSTKICH podstaw !</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/leszcze-podbierak.jpg</image:loc>
+      <image:title>Dwie ryby karpiowate w siatce podbieraka po nocnym łowieniu</image:title>
     </image:image>
   </url>
   <url>
@@ -2337,15 +2413,19 @@
       <image:loc>https://i.ytimg.com/vi/GkeYVnBekWc/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: CO na PIERWSZY LÓD czyli JAK i NA CO ŁOWIĆ ? WĘDKARSTWO PODLODOWE</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/mormyszki-podlodowe.jpg</image:loc>
+      <image:title>Pudełko mormyszek i zestaw małych przynęt podlodowych rozłożone na warsztacie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/spinning.html</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/sezon-na-szczupaka.jpg</image:loc>
-      <image:title>Wędkarz trzymający dużego szczupaka złowionego na wobler nad brzegiem wody</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-wieczor.jpg</image:loc>
+      <image:title>Wędkarz prezentuje dużego szczupaka nad brzegiem w wieczornym świetle</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/7S5nVFbeT5I/hqdefault.jpg</image:loc>
@@ -2354,6 +2434,14 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/schemat-spinning.svg</image:loc>
       <image:title>Schemat spinningu z przynętą i kierunkiem prowadzenia.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-wobler.jpg</image:loc>
+      <image:title>Szczupak leżący na drewnianym pomoście obok woblera, na którego został złowiony</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-streamer.jpg</image:loc>
+      <image:title>Szczupak z dużą przynętą w pysku, leżący na pomoście</image:title>
     </image:image>
   </url>
   <url>
