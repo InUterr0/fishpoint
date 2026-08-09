@@ -38,6 +38,14 @@ jobs:
       - name: Generate SEO artifacts
         run: python3 seo_inject.py
 
+      # Warianty 640/960 px muszą istnieć na dysku, zanim optimize_images
+      # złoży srcset — bez nich telefon dostaje obraz w pełnej rozdzielczości.
+      # Skrypt jest idempotentny i pomija warianty już obecne w repo.
+      - name: Generate responsive image variants
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick libavif-bin
+          python3 scripts/make-responsive-images.py
+
       # seo_inject regeneruje blok article-visual jako goły <img>, więc
       # opakowanie w <picture> musi powstać po nim — inaczej produkcja traci
       # warianty AVIF/WebP obecne w repo. Skrypt jest idempotentny.

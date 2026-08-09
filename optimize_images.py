@@ -11,7 +11,7 @@ bez zmian, więc nie wprowadzamy CLS.
 Idempotentny: najpierw rozpakowuje wcześniej dodane <picture class="opt">,
 potem pakuje na nowo. Uruchamiaj po seo_inject.py: python3 optimize_images.py
 """
-import os, re
+import os, re, struct
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -27,6 +27,32 @@ def resolve(src, page_dir):
     if src.startswith("/"):
         return os.path.join(ROOT, src.lstrip("/"))
     return os.path.normpath(os.path.join(page_dir, src))
+
+
+def intrinsic_width(disk):
+    """Rzeczywista szerokość pliku w pikselach albo None, gdy nieczytelna."""
+    try:
+        with open(disk, "rb") as handle:
+            data = handle.read(2)
+            if data != b"\xff\xd8":
+                return None
+            while True:
+                byte = handle.read(1)
+                while byte and byte != b"\xff":
+                    byte = handle.read(1)
+                while byte == b"\xff":
+                    byte = handle.read(1)
+                if not byte:
+                    return None
+                marker = byte[0]
+                length = struct.unpack(">H", handle.read(2))[0]
+                if marker in (0xC0, 0xC1, 0xC2, 0xC3):
+                    handle.read(1)
+                    _height, width = struct.unpack(">HH", handle.read(4))
+                    return width
+                handle.seek(length - 2, 1)
+    except Exception:
+        return None
 
 
 def responsive_srcset(src, disk, fmt, declared_width):
@@ -79,7 +105,11 @@ def process(path):
                 for fmt in ("", ".avif", ".webp")
             )
             if mobile_variants:
-                declared_width = width.group(1)
+                # Deskryptor `w` opisuje rzeczywistą szerokość pliku, nie
+                # rozmiar wyświetlania z atrybutu width. Przy obrazach
+                # osadzonych mniejszymi (np. width="400" dla pliku 1600 px)
+                # zadeklarowana wartość wprowadzała przeglądarkę w błąd.
+                declared_width = str(intrinsic_width(disk) or width.group(1))
                 sizes = '(max-width: 700px) 100vw, 1200px'
                 return (
                     '<picture class="opt">'

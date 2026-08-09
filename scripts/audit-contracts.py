@@ -8,8 +8,10 @@ import ast
 import struct
 
 import json
+import os
 import re
 import sys
+from collections import Counter
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
@@ -762,7 +764,12 @@ def main() -> int:
         html = fish_page.read_text(encoding="utf-8", errors="replace")
         check("iucnredlist.org/search" not in html, f"{fish_page.relative_to(ROOT)} emits an IUCN search URL", failures)
         for href in re.findall(r'href=["\']([^"\']*iucnredlist\.org[^"\']*)', html, re.I):
-            check("/species/" in href, f"{fish_page.relative_to(ROOT)} has a non-species IUCN URL", failures)
+            # Sam identyfikator gatunku nie wystarczy — IUCN zwraca wtedy 404.
+            # Poprawny adres ma postać /species/<gatunek>/<ocena>.
+            check(re.search(r"/species/\d+/\d+", href) is not None,
+                  f"{fish_page.relative_to(ROOT)}: adres IUCN bez identyfikatora "
+                  f"oceny (404): {href}",
+                  failures)
 
     for family in ("tematy", "kuchnia", "aktualnosci"):
         metadata = json.loads(read(f"assets/img/{family}/_meta.json"))
@@ -783,49 +790,28 @@ def main() -> int:
     check("2GekupS_N9s/hqdefault.jpg" not in read("humor/filmiki.html"), "known 404 video thumbnail remains", failures)
     check("(klasyczna." not in read("kuchnia/smazony-okon-sandacz.html"), "truncated recipe description remains", failures)
 
-    modified_dates = {
-        relative: "2026-07-17"
-        for relative in (
-            "narzedzia/czy-moge-zabrac-rybe.html",
-            "pierwsze-kroki/index.html",
-        )
-    }
-    modified_dates.update({
-        "aktualnosci/jak-lowic-lina.html": "2026-07-20",
-        "lowiska/index.html": "2026-07-20",
-        "lowiska/pomorskie.html": "2026-07-20",
-        "narzedzia/kalendarz-ksiezycowy.html": "2026-07-20",
-        "ryby/leszcz.html": "2026-07-20",
-        "ryby/ploc.html": "2026-07-20",
-        "ryby/wegorz.html": "2026-07-20",
-        "aktualnosci/przyneta-na-spinning.html": "2026-07-20",
-    })
-    # 2026-08-08: strony rozbudowane o nową treść albo o redakcyjne „W skrócie”.
-    # Daty podniesione świadomie — treść faktycznie się zmieniła, a nieaktualny
-    # lastmod opóźniał recrawl.
-    modified_dates.update({
-        relative: "2026-08-08"
-        for relative in (
-            "poradniki/index.html",
-            "ryby/szczupak.html",
-            "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html",
-            "pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html",
-        )
-    })
-    index_pages = {"lowiska/index.html", "pierwsze-kroki/index.html", "poradniki/index.html"}
-    for relative, expected_modified in modified_dates.items():
-        html = read(relative)
-        check(
-            re.search(rf"content-meta:[^\n]*modified={expected_modified}", html) is not None,
-            f"{relative}: stale content-meta modified date",
-            failures,
-        )
-        if relative not in index_pages:
-            check(
-                f'article:modified_time" content="{expected_modified}' in html,
-                f"{relative}: stale generated modified time",
-                failures,
-            )
+    # Data widoczna dla wyszukiwarki musi zgadzać się z trwałym content-meta.
+    # Wcześniej stała tu ręcznie utrzymywana lista 14 stron z oczekiwanymi
+    # datami; utrwalała błąd (np. jak-lowic-lina.html miało zaklepane
+    # 2026-07-20, choć tekst zmieniono 2026-08-05). Kontrakt jest teraz
+    # wyprowadzany z treści i obejmuje wszystkie strony.
+    for page in sorted(ROOT.glob("**/*.html")):
+        if any(part.startswith(".") for part in page.relative_to(ROOT).parts):
+            continue
+        html = page.read_text(encoding="utf-8")
+        meta = re.search(r"content-meta:[^\n>]*modified=(\d{4}-\d{2}-\d{2})", html)
+        if not meta:
+            continue
+        relative = page.relative_to(ROOT).as_posix()
+        published = re.search(r"content-meta:\s*published=(\d{4}-\d{2}-\d{2})", html)
+        check(published is not None and published.group(1) <= meta.group(1),
+              f"{relative}: modified jest wcześniejsze niż published", failures)
+        emitted = re.search(r'article:modified_time" content="(\d{4}-\d{2}-\d{2})', html)
+        if emitted:
+            check(emitted.group(1) == meta.group(1),
+                  f"{relative}: article:modified_time ({emitted.group(1)}) "
+                  f"rozjeżdża się z content-meta ({meta.group(1)})",
+                  failures)
 
     feed = ET.fromstring(read("feed.xml"))
     for item in feed.findall("./channel/item"):
@@ -857,6 +843,74 @@ def main() -> int:
     full_llms = read("llms-full.txt")
     for marker in ("Canonical URL:", "Author:", "Published:", "Modified:", "Type:", "Sources:"):
         check(marker in full_llms, f"llms-full.txt: missing document provenance {marker}", failures)
+
+    # Duże obrazy muszą mieć warianty mobilne i uczciwe deskryptory szerokości.
+    # Audyt z 9 sierpnia 2026: warianty istniały dla jednego obrazu, więc telefon
+    # pobierał grafiki 1600 px przy widoku 390 px (81% ruchu to mobile).
+    missing_variants, lying_descriptors = [], []
+    for page in sorted(ROOT.glob("**/*.html")):
+        if any(part.startswith(".") for part in page.relative_to(ROOT).parts):
+            continue
+        html = page.read_text(encoding="utf-8")
+        for src in re.findall(r'<img\b[^>]+class="article-image"[^>]*src="([^"]+)"', html):
+            if src.startswith(("http", "data:")):
+                continue
+            disk = Path(os.path.normpath(page.parent / src))
+            if not disk.is_file():
+                continue
+            width = image_width(disk)
+            if not width or width < 960:
+                continue
+            stem, suffix = os.path.splitext(str(disk))
+            if not all(Path(f"{stem}-{w}{suffix}{fmt}").is_file()
+                       for w in (640, 960) for fmt in ("", ".avif", ".webp")):
+                missing_variants.append(f"{page.relative_to(ROOT).as_posix()} → {src}")
+        for descriptor_src, declared in re.findall(
+                r'srcset="[^"]*?([^ ",]+\.jpg(?:\.avif|\.webp)?) (\d+)w"', html):
+            base = descriptor_src.split("/")[-1].replace(".avif", "").replace(".webp", "")
+            if re.search(r"-(640|960)\.jpg$", base):
+                continue
+            disk = next((p for p in ROOT.glob(f"assets/img/**/{base}")), None)
+            if disk and (actual := image_width(disk)) and abs(actual - int(declared)) > 1:
+                lying_descriptors.append(f"{base}: deklaruje {declared}w, ma {actual}px")
+    check(not missing_variants,
+          f"duże obrazy bez wariantów mobilnych: {missing_variants[:5]}", failures)
+    check(not lying_descriptors,
+          f"deskryptor srcset nie zgadza się z plikiem: {lying_descriptors[:5]}", failures)
+
+    # Data aktualizacji musi śledzić treść, a nie moment przebudowy.
+    # Audyt z 9 sierpnia 2026: 104 z 201 stron deklarowały lastmod 2026-07-20,
+    # mimo realnych zmian redakcyjnych z 5–8 sierpnia, bo content-meta było
+    # zapisywane raz i nigdy nie odświeżane.
+    sys.path.insert(0, str(ROOT))
+    import seo_inject
+
+    stale, missing_fp = [], []
+    for page in sorted(ROOT.glob("**/*.html")):
+        if any(part.startswith(".") for part in page.relative_to(ROOT).parts):
+            continue
+        src = page.read_text(encoding="utf-8")
+        match = seo_inject.CONTENT_META_RE.search(src)
+        if not match:
+            continue
+        rel = page.relative_to(ROOT).as_posix()
+        if match.group(3) is None:
+            missing_fp.append(rel)
+        elif match.group(3) != seo_inject.editorial_fingerprint(src):
+            stale.append(rel)
+    check(not missing_fp,
+          f"content-meta bez odcisku treści (fp=): {missing_fp[:5]}", failures)
+    check(not stale,
+          f"data aktualizacji rozjechała się z treścią: {stale[:5]}", failures)
+
+    # Zabezpieczenie przed powrotem masowej daty: żadna pojedyncza data nie
+    # może obejmować więcej niż 40% stron w sitemapie.
+    lastmods = [e.text for e in sitemap.iter(f"{{{SITEMAP_NS['s']}}}lastmod") if e.text]
+    if lastmods:
+        top_date, top_count = Counter(d[:10] for d in lastmods).most_common(1)[0]
+        check(top_count <= len(lastmods) * 0.4,
+              f"masowa data w sitemapie: {top_date} na {top_count} z {len(lastmods)} stron",
+              failures)
     if failures:
         print("Audit contracts failed:", file=sys.stderr)
         for failure in failures:

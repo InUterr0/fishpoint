@@ -924,9 +924,70 @@ METADATA_DESCRIPTION_SOURCES = {
 # Trwałe metadane redakcyjne są źródłem dat publikacji i aktualizacji. Nie
 # należą do bloku seo:auto, aby ponowne uruchomienie generatora ich nie usuwało.
 CONTENT_META_RE = re.compile(
-    r"<!--content-meta:\s*published=(\d{4}-\d{2}-\d{2});\s*modified=(\d{4}-\d{2}-\d{2})-->",
+    r"<!--content-meta:\s*published=(\d{4}-\d{2}-\d{2});\s*modified=(\d{4}-\d{2}-\d{2})"
+    r"(?:;\s*fp=([0-9a-f]{12}))?-->",
 )
 CONTENT_META_MARKER_RE = re.compile(r"<!--\s*content-meta:", re.I)
+
+# Odcisk redakcyjnej treści strony. Wszystko, co generator sam wstrzykuje
+# (bloki :auto, zarządzane metatagi, wersja arkusza), jest z niego wycięte —
+# dzięki temu sama przebudowa nie podbija daty aktualizacji, a prawdziwa
+# edycja tekstu tak.
+AUTO_BLOCK_RE = re.compile(r"<!--([a-z-]+):auto-->.*?<!--/\1:auto-->", re.S)
+# Blok metadanych w <head> używa innego formatu markera niż bloki w <body>.
+SEO_BLOCK_RE = re.compile(
+    r"<!--\s*seo:meta begin \(auto\)\s*-->.*?<!--\s*seo:meta end \(auto\)\s*-->", re.S)
+CSS_VERSION_RE = re.compile(r"(\.css|\.js)\?v=[0-9a-f]+")
+
+
+def editorial_fingerprint(src):
+    """12 znaków sha256 z treści redakcyjnej, odporne na przebudowę.
+
+    Poza odciskiem zostaje też wspólny chrome strony (nagłówek, menu, stopka).
+    Przebudowa nawigacji dotyka wszystkich plików naraz, ale nie jest zmianą
+    treści konkretnego artykułu i nie może podbijać jego daty aktualizacji.
+    """
+    body = src
+    body = CONTENT_META_RE.sub("", body)
+    body = AUTO_BLOCK_RE.sub("", body)
+    body = SEO_BLOCK_RE.sub("", body)
+    for tag in ("header", "nav", "footer"):
+        body = re.sub(rf"<{tag}\b[^>]*>.*?</{tag}>", "", body, flags=re.S | re.I)
+    body = managed_meta_re.sub("", body)
+    body = robots_meta_re.sub("", body)
+    body = CSS_VERSION_RE.sub(r"\1", body)
+    # optimize_images.py opakowuje obrazy w <picture> już po tym kroku.
+    # Warianty AVIF/WebP są artefaktem budowania, nie zmianą redakcyjną.
+    body = re.sub(r"</?picture\b[^>]*>", "", body)
+    body = re.sub(r"<source\b[^>]*>", "", body)
+    body = re.sub(r'\sdata-responsive-fallback="[^"]*"', "", body)
+    body = re.sub(r'\s(?:srcset|sizes)="[^"]*"', "", body)
+    body = re.sub(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>.*?</script>',
+                  "", body, flags=re.S)
+    body = re.sub(r'<link\b[^>]+rel=["\']canonical["\'][^>]*>', "", body)
+    body = re.sub(r"<meta\b[^>]+name=[\"']description[\"'][^>]*>", "", body)
+    body = re.sub(r"\s+", " ", body).strip()
+    return hashlib.sha256(body.encode("utf-8")).hexdigest()[:12]
+
+
+def write_content_meta(src, published, modified, fingerprint):
+    """Podmienia komentarz content-meta na nowy, zachowując pozycję."""
+    comment = (f"<!--content-meta: published={published}; "
+               f"modified={modified}; fp={fingerprint}-->")
+    new_src, count = CONTENT_META_RE.subn(comment, src, count=1)
+    if count != 1:
+        raise ValueError("nie udało się zapisać content-meta")
+    return new_src
+
+
+def content_change_date(path):
+    """Data ostatniej realnej zmiany pliku: z gita, a dla niezacommitowanych
+    zmian dzisiejsza. Nie używa mtime, bo przebudowa go nadpisuje."""
+    rel = os.path.relpath(path, ROOT)
+    if _git(["status", "--porcelain", "--", rel]):
+        return datetime.date.today().isoformat()
+    return _git(["log", "-1", "--format=%as", "--", rel]) or \
+        datetime.date.today().isoformat()
 robots_meta_re = re.compile(
     r'<meta\b(?=[^>]*\bname\s*=\s*["\']robots["\'])[^>]*>\s*', re.I)
 managed_meta_re = re.compile(
@@ -1015,7 +1076,7 @@ def parse_content_meta(src, path):
     matches = CONTENT_META_RE.findall(src)
     if len(matches) != 1:
         raise ValueError(f"{path}: oczekiwano dokładnie jednego content-meta")
-    published, modified = matches[0]
+    published, modified, _fingerprint = matches[0]
     try:
         published_date = datetime.date.fromisoformat(published)
         modified_date = datetime.date.fromisoformat(modified)
@@ -1027,11 +1088,28 @@ def parse_content_meta(src, path):
 
 
 def ensure_content_meta(src, path):
-    """Dodaje komentarz tylko do starszych stron bez content-meta."""
+    """Utrzymuje trwałe daty redakcyjne strony.
+
+    Data aktualizacji przestaje być zamrożona przy pierwszym wstrzyknięciu:
+    przy każdej przebudowie porównujemy odcisk treści redakcyjnej z zapisanym
+    i podbijamy `modified` wyłącznie wtedy, gdy tekst faktycznie się zmienił.
+    Sama przebudowa (nowe bloki :auto, nowa wersja CSS) odcisku nie rusza.
+    """
     if CONTENT_META_MARKER_RE.search(src):
-        return src, *parse_content_meta(src, path)
+        published, modified = parse_content_meta(src, path)
+        stored = CONTENT_META_RE.search(src).group(3)
+        current = editorial_fingerprint(src)
+        if stored is None:
+            # Migracja starej strony: zapisz odcisk, nie ruszając daty.
+            src = write_content_meta(src, published, modified, current)
+        elif stored != current:
+            changed = content_change_date(path)
+            modified = max(changed, published)
+            src = write_content_meta(src, published, modified, current)
+        return src, published, modified
     published, modified = git_dates(path)
-    comment = f"  <!--content-meta: published={published}; modified={modified}-->\n"
+    comment = (f"  <!--content-meta: published={published}; modified={modified}; "
+               f"fp={editorial_fingerprint(src)}-->\n")
     src, count = re.subn(r"(<head\b[^>]*>\s*)", r"\1" + comment, src, count=1)
     if count != 1:
         raise ValueError(f"{path}: brak znacznika <head> dla content-meta")
@@ -4069,6 +4147,18 @@ def main():
             if fn.endswith(".html") and fn != "404.html":
                 pages.append(os.path.join(dirpath, fn))
     pages.sort()
+
+    # Pre-pass: odśwież daty i odciski treści na dysku, zanim cokolwiek zacznie
+    # z nich liczyć. Hub bierze swoją świeżość z max daty dzieci, więc gdyby
+    # dziecko dostawało nową datę dopiero w swoim przebiegu, hub zbudowany
+    # wcześniej zapisałby wartość nieaktualną i kontrakt świeżości by pękł.
+    for p in pages:
+        with open(p, encoding="utf-8") as f:
+            before = f.read()
+        after, _published, _modified = ensure_content_meta(before, p)
+        if after != before:
+            with open(p, "w", encoding="utf-8") as f:
+                f.write(after)
 
     # Pre-scan: mapa sekcja -> [(url, tytuł)] dla bloku „Powiązane artykuły".
     SECTION_PAGES.clear()

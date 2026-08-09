@@ -238,9 +238,11 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-search {
   display: grid;
   place-items: center;
-  flex: 0 0 42px;
-  width: 42px;
-  height: 42px;
+  /* 44 px to minimalny cel dotykowy (WCAG 2.5.5). Na desktopie niżej
+     zmniejszamy go do 38 px, bo tam celuje się myszą. */
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
   border: 1px solid rgba(255,255,255,.18);
   border-radius: 14px;
   color: var(--white);
@@ -535,7 +537,7 @@ html.dark .news-catalog > .section-heading { border-top-color: rgba(255,255,255,
 /* === Ciemny motyw (przełącznik przy menu) === */
 .theme-toggle {
   margin-left: 6px;
-  width: 42px; height: 42px;
+  width: 44px; height: 44px;
   border: 1px solid rgba(255,255,255,.18);
   border-radius: 999px;
   background: rgba(255,255,255,.1);
@@ -1269,9 +1271,9 @@ html, body { overflow-x: clip; }
     justify-content: center;
   }
   .theme-toggle {
-    flex: 0 0 40px;
-    width: 40px;
-    height: 40px;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
     margin-left: 0;
   }
   .nav-menu .sub a,
