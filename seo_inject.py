@@ -940,6 +940,47 @@ SEO_BLOCK_RE = re.compile(
 CSS_VERSION_RE = re.compile(r"(\.css|\.js)\?v=[0-9a-f]+")
 
 
+# Strony o stanie prawnym, których tytuł, opis i H1 niosą rok obowiązywania.
+# Google Trends (sierpień 2026): samo „okresy ochronne" ma indeks 0, a całe
+# „Zyskujące popularność" to warianty z rokiem — „okresy ochronne ryb 2024",
+# „karta wędkarska 2026". Rok jest odświeżany przy każdej przebudowie, żeby
+# strona nie zestarzała się w styczniu.
+LEGAL_YEAR_PAGES = {
+    "pierwsze-kroki/okresy-ochronne-wymiary.html",
+    "narzedzia/okresy-ochronne.html",
+    "pierwsze-kroki/pozwolenia-karta-wedkarska.html",
+}
+# Rok publikatora aktu (Dz.U. 2023 poz. 1373) nie jest rokiem obowiązywania.
+LEGAL_CITATION_YEAR_RE = re.compile(r"(?:Dz\.\s?U\.|poz\.)\s*\d{4}")
+
+
+def refresh_legal_year(src, path):
+    """Podnosi rok w tytule, opisie i H1 stron o stanie prawnym."""
+    rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
+    if rel not in LEGAL_YEAR_PAGES:
+        return src
+    year = str(datetime.date.today().year)
+
+    def bump(match):
+        text = match.group(0)
+        # Rok publikatora maskujemy, żeby podmiana go nie dotknęła, i wracamy
+        # z nim po odświeżeniu roku obowiązywania.
+        shelf = []
+
+        def stash(citation):
+            shelf.append(citation.group(0))
+            return f"\x00{len(shelf) - 1}\x00"
+
+        text = LEGAL_CITATION_YEAR_RE.sub(stash, text)
+        text = re.sub(r"\b20\d{2}\b", year, text)
+        return re.sub(r"\x00(\d+)\x00", lambda m: shelf[int(m.group(1))], text)
+
+    src = re.sub(r"<title>.*?</title>", bump, src, flags=re.S)
+    src = re.sub(r'<meta\s+name="description"\s+content="[^"]*"', bump, src)
+    src = re.sub(r"<h1\b[^>]*>.*?</h1>", bump, src, flags=re.S)
+    return src
+
+
 def editorial_fingerprint(src):
     """12 znaków sha256 z treści redakcyjnej, odporne na przebudowę.
 
@@ -3487,6 +3528,7 @@ def jsonld(obj):
 def build(path):
     with open(path, encoding="utf-8") as f:
         src = f.read()
+    src = refresh_legal_year(src, path)
     src, pubdate, mtime = ensure_content_meta(src, path)
     # Nie powielaj identycznego podpisu, jeśli redakcyjna edycja dodała go
     # obok automatycznego bloku byline.
@@ -4155,7 +4197,8 @@ def main():
     for p in pages:
         with open(p, encoding="utf-8") as f:
             before = f.read()
-        after, _published, _modified = ensure_content_meta(before, p)
+        after, _published, _modified = ensure_content_meta(
+            refresh_legal_year(before, p), p)
         if after != before:
             with open(p, "w", encoding="utf-8") as f:
                 f.write(after)

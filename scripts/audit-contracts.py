@@ -7,6 +7,7 @@ import hashlib
 import ast
 import struct
 
+import datetime
 import json
 import os
 import re
@@ -20,6 +21,11 @@ from urllib.parse import unquote, urlparse
 ROOT = Path(__file__).resolve().parents[1]
 SITEMAP_NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 INTERNAL_HOSTS = {"fish-point.pl", "www.fish-point.pl"}
+
+# Kontrakty dat, roku obowiązywania i wariantów obrazów sprawdzają dokładnie
+# te reguły, które stosuje generator — dlatego korzystają z jego definicji.
+sys.path.insert(0, str(ROOT))
+import seo_inject  # noqa: E402
 
 
 
@@ -844,6 +850,30 @@ def main() -> int:
     for marker in ("Canonical URL:", "Author:", "Published:", "Modified:", "Type:", "Sources:"):
         check(marker in full_llms, f"llms-full.txt: missing document provenance {marker}", failures)
 
+    # Strony o stanie prawnym niosą rok obowiązywania w tytule, opisie i H1,
+    # bo tak brzmią realne zapytania („okresy ochronne ryb 2024", „karta
+    # wędkarska 2026" — Google Trends, sierpień 2026). Rok musi być bieżący;
+    # seo_inject podnosi go przy każdej przebudowie, a ten kontrakt pilnuje,
+    # żeby strona nie została z zeszłorocznym.
+    current_year = str(datetime.date.today().year)
+    for relative in sorted(seo_inject.LEGAL_YEAR_PAGES):
+        html = read(relative)
+        for label, pattern in (
+            ("tytuł", r"<title>(.*?)</title>"),
+            ("opis", r'<meta\s+name="description"\s+content="([^"]*)"'),
+            ("H1", r"<h1\b[^>]*>(.*?)</h1>"),
+        ):
+            found = re.search(pattern, html, re.S)
+            check(found is not None, f"{relative}: brak elementu {label}", failures)
+            if not found:
+                continue
+            text = seo_inject.LEGAL_CITATION_YEAR_RE.sub("", found.group(1))
+            years = set(re.findall(r"\b20\d{2}\b", text))
+            check(years == {current_year},
+                  f"{relative}: {label} niesie rok {sorted(years) or 'brak'}, "
+                  f"oczekiwano {current_year}",
+                  failures)
+
     # Duże obrazy muszą mieć warianty mobilne i uczciwe deskryptory szerokości.
     # Audyt z 9 sierpnia 2026: warianty istniały dla jednego obrazu, więc telefon
     # pobierał grafiki 1600 px przy widoku 390 px (81% ruchu to mobile).
@@ -882,9 +912,6 @@ def main() -> int:
     # Audyt z 9 sierpnia 2026: 104 z 201 stron deklarowały lastmod 2026-07-20,
     # mimo realnych zmian redakcyjnych z 5–8 sierpnia, bo content-meta było
     # zapisywane raz i nigdy nie odświeżane.
-    sys.path.insert(0, str(ROOT))
-    import seo_inject
-
     stale, missing_fp = [], []
     for page in sorted(ROOT.glob("**/*.html")):
         if any(part.startswith(".") for part in page.relative_to(ROOT).parts):
