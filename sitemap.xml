@@ -1416,8 +1416,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/leszcz.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań leszcza 2026</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/leszcz-noc.jpg</image:loc>
+      <image:title>Leszcz złowiony nocą, trzymany oburącz w świetle latarki</image:title>
     </image:image>
   </url>
   <url>
@@ -1486,8 +1486,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań szczupaka 2026</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-las.jpg</image:loc>
+      <image:title>Duży szczupak trzymany oburącz nad brzegiem</image:title>
     </image:image>
   </url>
   <url>
@@ -1804,7 +1804,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/koza.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1904,7 +1904,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/piskorz.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2016,7 +2016,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/sum.html</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2090,7 +2090,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/wegorz.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>

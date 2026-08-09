@@ -2687,7 +2687,6 @@ Modified: 2026-08-01
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
-- [Микова Наталия (Public domain)](https://commons.wikimedia.org/w/index.php?curid=3567807)
 - [FishBase — biologii gatunku](https://fishbase.se/summary/Abramis-brama.html)
 - [IMGW-PIB — bieżącej hydrologii](https://hydro.imgw.pl/)
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
@@ -2842,7 +2841,6 @@ Modified: 2026-08-01
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
-- [Jik jik (CC BY-SA 3.0)](https://commons.wikimedia.org/w/index.php?curid=14631780)
 - [FishBase — biologii gatunku](https://fishbase.se/summary/Esox-lucius.html)
 - [IMGW-PIB — bieżącej hydrologii](https://hydro.imgw.pl/)
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
@@ -3406,7 +3404,7 @@ Fot. Karelj, domena publiczna, via Wikimedia Commons ▶Jak łowić klenie - mie
 Canonical URL: https://fish-point.pl/ryby/koza.html
 Author: Maciej Baniewicz
 Published: 2026-07-24
-Modified: 2026-08-05
+Modified: 2026-08-09
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -3418,7 +3416,7 @@ Sources:
 - [Przegląd: Atlas ryb](https://fish-point.pl/ryby/)
 - [Porównaj z piskorzem](https://fish-point.pl/ryby/piskorz.html)
 - [Krąp](https://fish-point.pl/ryby/krap.html)
-- [Leszcz](https://fish-point.pl/ryby/leszcz.html)
+- [Leszcz czy krąp? Rozpoznanie, wymiar i feeder na leszcza | FishPoint](https://fish-point.pl/ryby/leszcz.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -3595,7 +3593,7 @@ Najkrótsza odpowiedźOpis okonia służy rozpoznaniu gatunku i obserwacji miejs
 Canonical URL: https://fish-point.pl/ryby/piskorz.html
 Author: Maciej Baniewicz
 Published: 2026-07-24
-Modified: 2026-08-05
+Modified: 2026-08-09
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -3831,7 +3829,7 @@ Fot. Clément Bardot, licencja CC BY-SA 4.0, via Wikimedia Commons. Oryginalny p
 Canonical URL: https://fish-point.pl/ryby/sum.html
 Author: Maciej Baniewicz
 Published: 2026-06-11
-Modified: 2026-08-01
+Modified: 2026-08-09
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -3951,7 +3949,7 @@ Fot. Piet Spaans, licencja CC BY-SA 2.5, via Wikimedia Commons Biologia i rozpoz
 Canonical URL: https://fish-point.pl/ryby/wegorz.html
 Author: Maciej Baniewicz
 Published: 2026-06-11
-Modified: 2026-08-05
+Modified: 2026-08-09
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)

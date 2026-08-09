@@ -91,6 +91,10 @@ TOOL_IMG = {
     "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html": "/assets/img/tematy/wedki.jpg",
     "pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html": "/assets/img/tematy/wezly.jpg",
     "sprzet/pierwsza-wedka-spinningowa.html": "/assets/img/tematy/wedka-spinningowa-zestaw.jpg",
+    # Kalendarze brań domyślnie biorą obraz gatunku z Wikimedia; te dwa mają
+    # własne zdjęcie z połowu, więc wskazujemy je wprost.
+    "poradniki/kalendarz-bran-szczupak.html": "/assets/img/ryby/szczupak-las.jpg",
+    "poradniki/kalendarz-bran-leszcz.html": "/assets/img/ryby/leszcz-noc.jpg",
     "zgodnie-z-zasadami.html": "/assets/img/tematy/cr.jpg",
     "humor/dowcipy.html": "/assets/img/humor/dowcipy.jpg",
     "humor/memy.html": "/assets/img/humor/memy.jpg",
