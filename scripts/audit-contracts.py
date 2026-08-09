@@ -266,21 +266,42 @@ def main() -> int:
     regional_visuals = 0
     expected_inline_visuals = {
         "pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html":
-            "/assets/img/tematy/schemat-catch-release.svg",
-        "techniki/spinning.html": "/assets/img/tematy/schemat-spinning.svg",
-        "techniki/karpiowanie.html": "/assets/img/tematy/schemat-karpiowy.svg",
-        "techniki/splawik.html": "/assets/img/tematy/schemat-splawik.svg",
-        "techniki/feeder-dla-poczatkujacych.html": "/assets/img/tematy/schemat-feeder.svg",
-        "poradniki/catch-and-release.html": "/assets/img/tematy/schemat-catch-release.svg",
-        "poradniki/echosondy.html": "/assets/img/tematy/schemat-echosonda.svg",
-        "poradniki/wezly-wedkarskie.html": "/assets/img/tematy/schemat-wezel.svg",
-        "kuchnia/przygotowanie-ryby.html": "/assets/img/tematy/schemat-pakowanie.svg",
-        "aktualnosci/zezwolenia-online-2026.html": "/assets/img/tematy/schemat-e-zezwolenie.svg",
+            ("/assets/img/tematy/schemat-catch-release.svg",),
+        "techniki/spinning.html": ("/assets/img/tematy/schemat-spinning.svg",),
+        "techniki/karpiowanie.html": (
+            "/assets/img/tematy/schemat-karpiowy.svg",
+            "/assets/img/ryby/karp-jezioro.jpg",
+        ),
+        "ryby/szczupak.html": (
+            "/assets/img/ryby/szczupak-guma.jpg",
+            "/assets/img/ryby/szczupak-ponton.jpg",
+            "/assets/img/ryby/szczupak-las.jpg",
+        ),
+        "ryby/karp.html": (
+            "/assets/img/ryby/karp-lustrzen-jesien.jpg",
+            "/assets/img/ryby/karp-mata-podbierak.jpg",
+            "/assets/img/ryby/karp-podbierak-miarka.jpg",
+        ),
+        "ryby/karas.html": ("/assets/img/ryby/karas-kukurydza.jpg",),
+        "poradniki/wedkarstwo-z-lodzi.html": ("/assets/img/ryby/szczupak-ponton-lato.jpg",),
+        "sprzet/kolowrotki.html": ("/assets/img/tematy/kolowrotek-golden-rn2000-szpula.jpg",),
+        "sprzet/wedki.html": (
+            "/assets/img/tematy/wedka-kolowrotek-abu-garcia.jpg",
+            "/assets/img/tematy/wedka-spinningowa-abu-garcia.jpg",
+        ),
+        "sprzet/akcesoria.html": ("/assets/img/tematy/podbierak.jpg",),
+        "techniki/splawik.html": ("/assets/img/tematy/schemat-splawik.svg",),
+        "techniki/feeder-dla-poczatkujacych.html": ("/assets/img/tematy/schemat-feeder.svg",),
+        "poradniki/catch-and-release.html": ("/assets/img/tematy/schemat-catch-release.svg",),
+        "poradniki/echosondy.html": ("/assets/img/tematy/schemat-echosonda.svg",),
+        "poradniki/wezly-wedkarskie.html": ("/assets/img/tematy/schemat-wezel.svg",),
+        "kuchnia/przygotowanie-ryby.html": ("/assets/img/tematy/schemat-pakowanie.svg",),
+        "aktualnosci/zezwolenia-online-2026.html": ("/assets/img/tematy/schemat-e-zezwolenie.svg",),
         "aktualnosci/zakaz-polowu-bobr-lipiec-2026.html":
-            "/assets/img/tematy/schemat-monitoring-wody.svg",
-        "narzedzia/czy-moge-zabrac-rybe.html": "/assets/img/tematy/schemat-pomiar-ryby.svg",
+            ("/assets/img/tematy/schemat-monitoring-wody.svg",),
+        "narzedzia/czy-moge-zabrac-rybe.html": ("/assets/img/tematy/schemat-pomiar-ryby.svg",),
     }
-    observed_inline_visuals: dict[str, str] = {}
+    observed_inline_visuals: dict[str, list[str]] = {}
     faq_parity_pages = 0
     parsed: dict[str, PageParser] = {}
     expected_about = {
@@ -332,7 +353,16 @@ def main() -> int:
                   f"{relative}: expected exactly one article lead visual", failures)
             check(len(page.article_images) == 1,
                   f"{relative}: expected exactly one article lead image", failures)
-            check(page.article_license_links == 1,
+            lead_block = re.search(
+                r"<!--article-visual:auto-->(.*?)<!--/article-visual:auto-->",
+                source,
+                re.S,
+            )
+            lead_owned = any(
+                f"({name})" in (lead_block.group(1) if lead_block else "")
+                for name in seo_inject.UNSOURCED_LICENSES
+            )
+            check(page.article_license_links == (0 if lead_owned else 1),
                   f"{relative}: article lead image lacks one license source", failures)
             if page.article_images:
                 image = page.article_images[0]
@@ -364,7 +394,7 @@ def main() -> int:
         )
         if inline_blocks:
             check(
-                relative in expected_inline_visuals and len(inline_blocks) == 1,
+                len(inline_blocks) == len(expected_inline_visuals.get(relative, ())),
                 f"{relative}: inline visual is not explicitly approved",
                 failures,
             )
@@ -390,13 +420,12 @@ def main() -> int:
                     continue
                 attrs = dict(re.findall(r'([:\w-]+)="([^"]*)"', image_match.group(1)))
                 image_src = attrs.get("src", "")
-                if len(inline_blocks) == 1:
-                    observed_inline_visuals[relative] = image_src
-                    check(
-                        image_src == expected_inline_visuals.get(relative),
-                        f"{relative}: inline visual differs from approved asset: {image_src}",
-                        failures,
-                    )
+                observed_inline_visuals.setdefault(relative, []).append(image_src)
+                check(
+                    image_src in expected_inline_visuals.get(relative, ()),
+                    f"{relative}: inline visual differs from approved asset: {image_src}",
+                    failures,
+                )
                 check(
                     attrs.get("class") == "article-inline-image"
                     and attrs.get("loading") == "lazy"
@@ -436,9 +465,14 @@ def main() -> int:
                         failures,
                     )
                 else:
+                    # Zdjęcia bez zewnętrznego źródła (własne, udostępnione przez
+                    # czytelnika) podają autora i podstawę publikacji bez linku.
+                    owned = any(
+                        f"({name})" in block for name in seo_inject.UNSOURCED_LICENSES
+                    )
                     check(
                         "article-inline-visual--photo" in block
-                        and 'rel="license external noopener"' in block,
+                        and (owned or 'rel="license external noopener"' in block),
                         f"{relative}: inline photo lacks linked provenance: {image_src}",
                         failures,
                     )
@@ -511,7 +545,8 @@ def main() -> int:
     check(visual_pages >= 73, "fewer than 73 articles have licensed lead visuals", failures)
     check(regional_visuals == 16, "all 16 regional fishery pages need illustrative visuals", failures)
     check(
-        observed_inline_visuals == expected_inline_visuals,
+        {key: sorted(value) for key, value in observed_inline_visuals.items()}
+        == {key: sorted(value) for key, value in expected_inline_visuals.items()},
         "generated inline visuals differ from the explicit contextual allowlist",
         failures,
     )

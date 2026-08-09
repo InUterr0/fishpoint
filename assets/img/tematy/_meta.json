@@ -309,5 +309,85 @@
     "kind": "schemat",
     "width": 1200,
     "height": 675
+  },
+  "kolowrotek-golden-rn2000": {
+    "artist": "FishPoint",
+    "file": "kolowrotek-golden-rn2000.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/kolowrotki.html",
+    "alt": "Budżetowy kołowrotek Golden RN2000 trzymany w dłoni",
+    "caption": "Kołowrotek Golden RN2000 — budżetowa „dwutysiączka” o pojemności szpuli 0,32/155 m.",
+    "width": 1200,
+    "height": 900
+  },
+  "kolowrotek-golden-rn2000-szpula": {
+    "artist": "FishPoint",
+    "file": "kolowrotek-golden-rn2000-szpula.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/kolowrotki.html",
+    "alt": "Szpula kołowrotka Golden RN2000 z nawiniętą żyłką i oznaczeniem pojemności",
+    "caption": "Oznaczenie na szpuli mówi, ile metrów żyłki danej średnicy się na nią zmieści.",
+    "width": 1200,
+    "height": 900
+  },
+  "kolowrotek-fladen-cardinal": {
+    "artist": "FishPoint",
+    "file": "kolowrotek-fladen-cardinal.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/jak-wybrac-kolowrotek.html",
+    "alt": "Mały kołowrotek Fladen Cardinal na otwartej dłoni",
+    "caption": "Rozmiar kołowrotka dobiera się do wędki i ciężaru przynęt, nie do ceny.",
+    "width": 1200,
+    "height": 900
+  },
+  "wedka-spinningowa-zestaw": {
+    "artist": "FishPoint",
+    "file": "wedka-spinningowa-zestaw.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/pierwsza-wedka-spinningowa.html",
+    "alt": "Rączka wędki spinningowej i kołowrotek z nawiniętą plecionką",
+    "caption": "Pierwszy zestaw spinningowy: dwuczęściowa wędka i kołowrotek z plecionką.",
+    "width": 1200,
+    "height": 900
+  },
+  "wedka-kolowrotek-abu-garcia": {
+    "artist": "FishPoint",
+    "file": "wedka-kolowrotek-abu-garcia.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/wedki.html",
+    "alt": "Wędka z zamontowanym kołowrotkiem Abu Garcia i przewleczoną żyłką",
+    "caption": "Kołowrotek osadzony w gnieździe wędki — żyłka biegnie przelotkami do szczytówki.",
+    "width": 900,
+    "height": 1200
+  },
+  "wedka-spinningowa-abu-garcia": {
+    "artist": "FishPoint",
+    "file": "wedka-spinningowa-abu-garcia.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/wedki.html",
+    "alt": "Rączka wędki spinningowej z kołowrotkiem Abu Garcia i widocznymi przelotkami",
+    "caption": "Uchwyt i gniazdo kołowrotka decydują o wyważeniu zestawu w dłoni.",
+    "width": 900,
+    "height": 1200
+  },
+  "zylka-jaxon-satori-feeder": {
+    "artist": "FishPoint",
+    "file": "zylka-jaxon-satori-feeder.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/plecionki-zylki.html",
+    "alt": "Szpula żyłki Jaxon Satori Feeder o długości 150 m trzymana w dłoni",
+    "caption": "Etykieta podaje długość, średnicę i deklarowaną wytrzymałość — to trzy liczby do porównania.",
+    "width": 1200,
+    "height": 900
+  },
+  "podbierak": {
+    "artist": "FishPoint",
+    "file": "podbierak.jpg",
+    "license": "Materiał własny",
+    "page": "https://fish-point.pl/sprzet/akcesoria.html",
+    "alt": "Rozłożony podbierak z gęstą siatką i teleskopowym trzonkiem",
+    "caption": "Podbierak z gęstą, miękką siatką mniej uszkadza śluz i płetwy ryby.",
+    "width": 1200,
+    "height": 900
   }
 }

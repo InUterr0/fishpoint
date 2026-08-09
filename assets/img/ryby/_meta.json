@@ -293,5 +293,155 @@
       "assets/img/ryby/minog-rzeczny.jpg.webp",
       "assets/img/ryby/minog-rzeczny.jpg.avif"
     ]
+  },
+  "szczupak-zima": {
+    "artist": "Archiwum prywatne",
+    "file": "szczupak-zima.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/szczupak.html",
+    "alt": "Szczupak złowiony zimą z brzegu, trzymany oburącz przed wypuszczeniem",
+    "caption": "Zimowy szczupak z brzegu — jasne cętki układają się w rzędy na oliwkowym boku.",
+    "width": 1200,
+    "height": 900
+  },
+  "szczupak-las": {
+    "artist": "Archiwum prywatne",
+    "file": "szczupak-las.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/szczupak.html",
+    "alt": "Duży szczupak trzymany oburącz na tle bezlistnego lasu",
+    "caption": "Największe szczupaki notuje się zwykle wczesną wiosną i późną jesienią.",
+    "width": 1200,
+    "height": 900
+  },
+  "szczupak-ponton": {
+    "artist": "Archiwum prywatne",
+    "file": "szczupak-ponton.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/szczupak.html",
+    "alt": "Szczupak złowiony z pontonu na jeziorze późną jesienią",
+    "caption": "Z pontonu obłowisz krawędzie i wypłycenia niedostępne z brzegu.",
+    "width": 1197,
+    "height": 898
+  },
+  "szczupak-ponton-lato": {
+    "artist": "Archiwum prywatne",
+    "file": "szczupak-ponton-lato.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/poradniki/wedkarstwo-z-lodzi.html",
+    "alt": "Wędkarz z dużym szczupakiem w pontonie na rzece",
+    "caption": "Z łodzi łatwiej podać przynętę pod przeciwległy brzeg i w trudno dostępne zatoczki.",
+    "width": 1197,
+    "height": 898
+  },
+  "szczupak-guma": {
+    "artist": "Archiwum prywatne",
+    "file": "szczupak-guma.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/szczupak.html",
+    "alt": "Szczupak złowiony na jaskrawą przynętę gumową, widoczną przy pysku ryby",
+    "caption": "Jaskrawa guma bywa skuteczna w mętnej wodzie i przy słabym świetle.",
+    "width": 1200,
+    "height": 540
+  },
+  "karp-lustrzen": {
+    "artist": "Archiwum prywatne",
+    "file": "karp-lustrzen.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/karp.html",
+    "alt": "Karp lustrzeń złowiony latem, trzymany poziomo nad brzegiem",
+    "caption": "Lustrzeń — duże, nieregularne łuski zamiast pełnego oszupinowania.",
+    "width": 1200,
+    "height": 900
+  },
+  "karp-lustrzen-jesien": {
+    "artist": "Archiwum prywatne",
+    "file": "karp-lustrzen-jesien.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/karp.html",
+    "alt": "Wędkarz w kombinezonie z karpiem lustrzeniem na tle jesiennych liści",
+    "caption": "Jesienią karp żeruje krócej, ale chętniej pobiera pokarm wysokoenergetyczny.",
+    "width": 1197,
+    "height": 898
+  },
+  "karp-jezioro": {
+    "artist": "Archiwum prywatne",
+    "file": "karp-jezioro.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/techniki/karpiowanie.html",
+    "alt": "Karp lustrzeń złowiony o poranku nad jeziorem",
+    "caption": "Ranek i wieczór to na wielu zbiornikach najlepsze okna na karpia.",
+    "width": 1200,
+    "height": 900
+  },
+  "karp-podbierak-miarka": {
+    "artist": "Archiwum prywatne",
+    "file": "karp-podbierak-miarka.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/karp.html",
+    "alt": "Karp w podbieraku z rozłożoną miarką wzdłuż ciała ryby",
+    "caption": "Pomiar w mokrym podbieraku skraca czas kontaktu ryby z powietrzem.",
+    "width": 900,
+    "height": 1203
+  },
+  "karp-mata-podbierak": {
+    "artist": "Archiwum prywatne",
+    "file": "karp-mata-podbierak.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/karp.html",
+    "alt": "Karp na macie karpiowej obok podbieraka i kołowrotka",
+    "caption": "Mata karpiowa i przestronny podbierak to minimum przy większych rybach.",
+    "width": 1200,
+    "height": 900
+  },
+  "lin-wieczor": {
+    "artist": "Archiwum prywatne",
+    "file": "lin-wieczor.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/lin.html",
+    "alt": "Lin złowiony o zmierzchu, widoczne drobne łuski i pomarańczowe oko",
+    "caption": "Lin o zmierzchu — grube ciało pokryte śluzem i pomarańczowa tęczówka.",
+    "width": 1200,
+    "height": 900
+  },
+  "leszcz-noc": {
+    "artist": "Archiwum prywatne",
+    "file": "leszcz-noc.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/leszcz.html",
+    "alt": "Leszcz złowiony nocą, trzymany oburącz w świetle latarki",
+    "caption": "Nocą leszcz podchodzi płycej i żeruje spokojniej niż w dzień.",
+    "width": 1200,
+    "height": 900
+  },
+  "ploc-w-dloni": {
+    "artist": "Archiwum prywatne",
+    "file": "ploc-w-dloni.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/ploc.html",
+    "alt": "Płoć trzymana w dłoni, widoczne czerwone płetwy i pomarańczowa tęczówka",
+    "caption": "Czerwone płetwy parzyste i pomarańczowa tęczówka odróżniają płoć od wzdręgi.",
+    "width": 1200,
+    "height": 900
+  },
+  "karas-wieczor": {
+    "artist": "Archiwum prywatne",
+    "file": "karas-wieczor.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/karas.html",
+    "alt": "Karaś złowiony o zmierzchu nad jeziorem, trzymany oburącz",
+    "caption": "Wysokie ciało, zaokrąglona płetwa grzbietowa i brak wąsików — to karaś, nie karp.",
+    "width": 1200,
+    "height": 900
+  },
+  "karas-kukurydza": {
+    "artist": "Archiwum prywatne",
+    "file": "karas-kukurydza.jpg",
+    "license": "Publikacja za zgodą autora",
+    "page": "https://fish-point.pl/ryby/karas.html",
+    "alt": "Karaś leżący na trawie obok puszki kukurydzy i kubka zanęty",
+    "caption": "Kukurydza z puszki i garść drobnej zanęty to najprostszy zestaw na karasia.",
+    "width": 1200,
+    "height": 898
   }
 }

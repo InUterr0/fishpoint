@@ -1569,6 +1569,10 @@
       <image:loc>https://i.ytimg.com/vi/WmIOqkgqpYs/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: ŁOWIENIE RYB na SPINNING z PONTONU Wędkarstwo 2023</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-ponton-lato.jpg</image:loc>
+      <image:title>Wędkarz z dużym szczupakiem w pontonie na rzece</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/wezly-wedkarskie.html</loc>
@@ -1732,30 +1736,46 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/karas.html</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/karas.jpg</image:loc>
-      <image:title>Karaś pospolity (Carassius carassius) — wytrzymała ryba stawów i starorzeczy</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karas-wieczor.jpg</image:loc>
+      <image:title>Karaś złowiony o zmierzchu nad jeziorem, trzymany oburącz</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/mbsin7YwpNQ/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: JAK ZŁOWIĆ 🎣🎣 KARASIA ❓❓</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karas-kukurydza.jpg</image:loc>
+      <image:title>Karaś leżący na trawie obok puszki kukurydzy i kubka zanęty</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/karp.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
-      <image:title>Karp (Cyprinus carpio) — król wód stojących</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karp-lustrzen.jpg</image:loc>
+      <image:title>Karp lustrzeń złowiony latem, trzymany poziomo nad brzegiem</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/BAJY4gMltgk/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Karpie na metodę 🎣 | Adam Niemiec prezentuje podstawy method feeder.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karp-lustrzen-jesien.jpg</image:loc>
+      <image:title>Wędkarz w kombinezonie z karpiem lustrzeniem na tle jesiennych liści</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karp-mata-podbierak.jpg</image:loc>
+      <image:title>Karp na macie karpiowej obok podbieraka i kołowrotka</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karp-podbierak-miarka.jpg</image:loc>
+      <image:title>Karp w podbieraku z rozłożoną miarką wzdłuż ciała ryby</image:title>
     </image:image>
   </url>
   <url>
@@ -1804,12 +1824,12 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/leszcz.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/leszcz.jpg</image:loc>
-      <image:title>Leszcz (Abramis brama) — wysokociała ryba stadna</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/leszcz-noc.jpg</image:loc>
+      <image:title>Leszcz złowiony nocą, trzymany oburącz w świetle latarki</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/6tQee_Og3to/hqdefault.jpg</image:loc>
@@ -1818,12 +1838,12 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/lin.html</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/lin.jpg</image:loc>
-      <image:title>Lin (Tinca tinca) — oliwkowa ryba zarośniętych jezior</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/lin-wieczor.jpg</image:loc>
+      <image:title>Lin złowiony o zmierzchu, widoczne drobne łuski i pomarańczowe oko</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/sraacLovcAY/hqdefault.jpg</image:loc>
@@ -1894,12 +1914,12 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/ploc.html</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/ploc.jpg</image:loc>
-      <image:title>Płoć (Rutilus rutilus) — najpospolitsza ryba polskich wód</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/ploc-w-dloni.jpg</image:loc>
+      <image:title>Płoć trzymana w dłoni, widoczne czerwone płetwy i pomarańczowa tęczówka</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/rDnwp9DDLXw/hqdefault.jpg</image:loc>
@@ -2020,16 +2040,28 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/szczupak.html</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Szczupak pospolity (Esox lucius) — drapieżnik zasadzkowy polskich wód</image:title>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-zima.jpg</image:loc>
+      <image:title>Szczupak złowiony zimą z brzegu, trzymany oburącz przed wypuszczeniem</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/uo_gn61r5CM/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: JAK ZŁOWIĆ SZCZUPAKA? Sprzęt, technika, miejsca.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-guma.jpg</image:loc>
+      <image:title>Szczupak złowiony na jaskrawą przynętę gumową, widoczną przy pysku ryby</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-ponton.jpg</image:loc>
+      <image:title>Szczupak złowiony z pontonu na jeziorze późną jesienią</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-las.jpg</image:loc>
+      <image:title>Duży szczupak trzymany oburącz na tle bezlistnego lasu</image:title>
     </image:image>
   </url>
   <url>
@@ -2105,29 +2137,37 @@
       <image:loc>https://i.ytimg.com/vi/A5m_xdtCe00/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: niezbędnik wędkarza🙂</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/podbierak.jpg</image:loc>
+      <image:title>Rozłożony podbierak z gęstą siatką i teleskopowym trzonkiem</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/jak-wybrac-kolowrotek.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/kolowrotki.jpg</image:loc>
-      <image:title>Kołowrotek wędkarski na tle sprzętu</image:title>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kolowrotek-fladen-cardinal.jpg</image:loc>
+      <image:title>Mały kołowrotek Fladen Cardinal na otwartej dłoni</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/kolowrotki.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/kolowrotki.jpg</image:loc>
-      <image:title>Kołowrotek spinningowy</image:title>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kolowrotek-golden-rn2000.jpg</image:loc>
+      <image:title>Budżetowy kołowrotek Golden RN2000 trzymany w dłoni</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/xMYQHwNbtnA/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Kołowrotki wędkarskie - jaki rozmiar wybrać? Kiedy? I do czego?</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/kolowrotek-golden-rn2000-szpula.jpg</image:loc>
+      <image:title>Szpula kołowrotka Golden RN2000 z nawiniętą żyłką i oznaczeniem pojemności</image:title>
     </image:image>
   </url>
   <url>
@@ -2146,18 +2186,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
-      <image:title>Wędki ustawione na brzegu morza</image:title>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedka-spinningowa-zestaw.jpg</image:loc>
+      <image:title>Rączka wędki spinningowej i kołowrotek z nawiniętą plecionką</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/plecionki-zylki.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://fish-point.pl/assets/img/aktualnosci/zylka-czy-plecionka.jpg</image:loc>
-      <image:title>Kołowrotek z nawiniętą plecionką</image:title>
+      <image:loc>https://fish-point.pl/assets/img/tematy/zylka-jaxon-satori-feeder.jpg</image:loc>
+      <image:title>Szpula żyłki Jaxon Satori Feeder o długości 150 m trzymana w dłoni</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ytimg.com/vi/EeAKL58UE9s/hqdefault.jpg</image:loc>
@@ -2190,6 +2230,14 @@
     <image:image>
       <image:loc>https://i.ytimg.com/vi/EWwuqKx3LP8/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: JAK ZACZĄĆ Z WĘDKARSTWEM (Poradnik - co kupić na początek)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedka-kolowrotek-abu-garcia.jpg</image:loc>
+      <image:title>Wędka z zamontowanym kołowrotkiem Abu Garcia i przewleczoną żyłką</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/wedka-spinningowa-abu-garcia.jpg</image:loc>
+      <image:title>Rączka wędki spinningowej z kołowrotkiem Abu Garcia i widocznymi przelotkami</image:title>
     </image:image>
   </url>
   <url>
@@ -2238,6 +2286,10 @@
     <image:image>
       <image:loc>https://i.ytimg.com/vi/YtPYYXWL_XA/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Metoda włosowa: jak zmieniła wędkarstwo karpiowe na zawsze / Rzucam to cz.8</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karp-jezioro.jpg</image:loc>
+      <image:title>Karp lustrzeń złowiony o poranku nad jeziorem</image:title>
     </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/schemat-karpiowy.svg</image:loc>

@@ -90,7 +90,7 @@ TOOL_IMG = {
     "pierwsze-kroki/twoj-pierwszy-wyjazd-na-ryby.html": "/assets/img/tematy/kalendarz.jpg",
     "pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html": "/assets/img/tematy/wedki.jpg",
     "pierwsze-kroki/jak-nabic-przynete-i-odhaczyc-rybe.html": "/assets/img/tematy/wezly.jpg",
-    "sprzet/pierwsza-wedka-spinningowa.html": "/assets/img/tematy/wedki.jpg",
+    "sprzet/pierwsza-wedka-spinningowa.html": "/assets/img/tematy/wedka-spinningowa-zestaw.jpg",
     "zgodnie-z-zasadami.html": "/assets/img/tematy/cr.jpg",
     "humor/dowcipy.html": "/assets/img/humor/dowcipy.jpg",
     "humor/memy.html": "/assets/img/humor/memy.jpg",
@@ -552,6 +552,7 @@ INLINE_PAGE_VISUALS = {
     ),
     "techniki/karpiowanie.html": (
         ("/assets/img/tematy/schemat-karpiowy.svg", ("hair rig", "zestawu wlosowego")),
+        ("/assets/img/ryby/karp-jezioro.jpg", ("wybor miejsca",)),
     ),
     "poradniki/catch-and-release.html": (
         ("/assets/img/tematy/schemat-catch-release.svg", ("mokre rece i kontakt z ryba", "reanimacja ryby")),
@@ -576,6 +577,34 @@ INLINE_PAGE_VISUALS = {
     ),
     "kuchnia/przygotowanie-ryby.html": (
         ("/assets/img/tematy/schemat-pakowanie.svg", ("transport: lod i torba termiczna", "przechowywanie i transport")),
+    ),
+    # Zdjęcia z połowów i własnego sprzętu zamiast grafik ilustracyjnych —
+    # proweniencja każdego pliku siedzi w assets/img/*/_meta.json.
+    "ryby/szczupak.html": (
+        ("/assets/img/ryby/szczupak-guma.jpg", ("metody i przynety",)),
+        ("/assets/img/ryby/szczupak-ponton.jpg", ("taktyka łowienia",)),
+        ("/assets/img/ryby/szczupak-las.jpg", ("rekordy polski",)),
+    ),
+    "ryby/karp.html": (
+        ("/assets/img/ryby/karp-lustrzen-jesien.jpg", ("zerowanie według por roku",)),
+        ("/assets/img/ryby/karp-mata-podbierak.jpg", ("metody i przynety",)),
+        ("/assets/img/ryby/karp-podbierak-miarka.jpg", ("wartosc kulinarna",)),
+    ),
+    "ryby/karas.html": (
+        ("/assets/img/ryby/karas-kukurydza.jpg", ("metody i przynety",)),
+    ),
+    "poradniki/wedkarstwo-z-lodzi.html": (
+        ("/assets/img/ryby/szczupak-ponton-lato.jpg", ("ponton wedkarski",)),
+    ),
+    "sprzet/kolowrotki.html": (
+        ("/assets/img/tematy/kolowrotek-golden-rn2000-szpula.jpg", ("szpula i nawoj",)),
+    ),
+    "sprzet/wedki.html": (
+        ("/assets/img/tematy/wedka-kolowrotek-abu-garcia.jpg", ("przelotki, uchwyt kołowrotka",)),
+        ("/assets/img/tematy/wedka-spinningowa-abu-garcia.jpg", ("spinning",)),
+    ),
+    "sprzet/akcesoria.html": (
+        ("/assets/img/tematy/podbierak.jpg", ("podbierak i siatka",)),
     ),
 }
 
@@ -2974,11 +3003,7 @@ def inject_article_visual(src, rel, title_txt, modified):
     section_label = SECTIONS.get(section, SITE_NAME)
     read_minutes = max(1, math.ceil(len(article_text(src).split()) / 200))
     alt = provenance.get("alt") or f"Ilustracja do artykułu: {short_title(title_txt)}"
-    credit = (
-        f'<a href="{html.escape(provenance["page"], quote=True)}" '
-        f'rel="license external noopener">{html.escape(provenance["artist"])} '
-        f'({html.escape(provenance["license"])})</a>'
-    )
+    credit = _credit_body(provenance)
     caption_note = (
         "Zdjęcie jest ilustracyjne i nie przedstawia konkretnego łowiska w tym regionie. "
         if section == "lowiska" else
@@ -3241,15 +3266,27 @@ def _inline_contextual_replacements(candidates, sources, wanted, article_start, 
     ]
 
 
+# Zdjęcia własne i udostępnione przez czytelników nie mają zewnętrznego
+# źródła — link „do licencji" prowadziłby wtedy z powrotem na tę samą stronę.
+UNSOURCED_LICENSES = frozenset(("Materiał własny", "Publikacja za zgodą autora"))
+
+
+def _credit_body(provenance):
+    artist = html.escape(provenance["artist"])
+    license_name = html.escape(provenance["license"])
+    if provenance.get("license") in UNSOURCED_LICENSES:
+        return f"{artist} ({license_name})"
+    return (
+        f'<a href="{html.escape(provenance["page"], quote=True)}" '
+        f'rel="license external noopener">{artist} ({license_name})</a>'
+    )
+
+
 def _inline_credit(image_path, provenance):
     if provenance.get("kind") == "schemat":
         return "Schemat: FishPoint (materiał własny)"
     label = "Grafika" if "ygenerowano" in str(provenance.get("license", "")) else "Zdjęcie"
-    return (
-        f'{label}: <a href="{html.escape(provenance["page"], quote=True)}" '
-        f'rel="license external noopener">{html.escape(provenance["artist"])} '
-        f'({html.escape(provenance["license"])})</a>'
-    )
+    return f"{label}: {_credit_body(provenance)}"
 
 
 def _inline_markup(image_path, provenance, dimensions, title_txt, section, index):
