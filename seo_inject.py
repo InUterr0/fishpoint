@@ -2910,6 +2910,23 @@ def extract_recipe(src):
     return None
 
 
+def extract_recipe_meta(src):
+    """Czasy i wydajność przepisu z widocznego akapitu <p class="recipe-meta">.
+    Atrybuty data-* trzymają wartości ISO 8601 (PT20M), żeby dane strukturalne
+    nie rozjechały się z tym, co czyta człowiek na stronie."""
+    m = re.search(r'<p class="recipe-meta"([^>]*)>', src)
+    if not m:
+        return {}
+    attrs = m.group(1)
+    out = {}
+    for key, field in (("prep", "prepTime"), ("cook", "cookTime"),
+                       ("total", "totalTime"), ("yield", "recipeYield")):
+        v = re.search(r'data-%s="([^"]+)"' % key, attrs)
+        if v:
+            out[field] = v.group(1)
+    return out
+
+
 def extract_listitems(src, url):
     """Dla strony-indeksu sekcji zwraca [(nazwa, absolutny_url)] z kart
     linkujących do podstron tej sekcji. Nazwa = tekst <h3> w karcie."""
@@ -3999,6 +4016,7 @@ def build(path):
             recipe = extract_recipe(src) if section == "kuchnia" else None
             if recipe:
                 ingredients, steps = recipe
+                recipe_meta = extract_recipe_meta(src)
                 head.append(jsonld({
                     "@context": "https://schema.org",
                     "@type": "Recipe",
@@ -4012,6 +4030,7 @@ def build(path):
                     "dateModified": mtime,
                     "recipeCategory": "Danie główne",
                     "recipeCuisine": "Polska",
+                    **recipe_meta,
                     "keywords": "ryby, wędkarstwo, przepis rybny",
                     "author": AUTHOR,
                     "recipeIngredient": ingredients,

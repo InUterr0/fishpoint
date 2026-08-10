@@ -487,6 +487,11 @@ html.dark .news-catalog > .section-heading { border-top-color: rgba(255,255,255,
 .info-block h3 { margin: 0 0 10px; font-size: 1.3rem; color: var(--green-2); letter-spacing: -.015em; }
 .info-block p { margin: 0; color: #3d4c48; line-height: 1.75; }
 .info-block p + p { margin-top: 10px; }
+.info-block .recipe-meta {
+  margin: 0 0 12px; padding-bottom: 10px;
+  border-bottom: 1px dashed rgba(17,49,47,.18);
+  font-size: .95rem; font-weight: 600; color: var(--green-2);
+}
 .info-block em { color: var(--green); font-style: italic; }
 .info-block strong { color: var(--ink); }
 .source-box {
