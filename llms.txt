@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-08-09.
+> Najnowsza merytoryczna zmiana: 2026-08-10.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -140,7 +140,7 @@
 - [Karp: rozpoznanie i pierwszy plan](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/karp.html): Kompletny poradnik łowienia karpia: biologia, miejscówki, sezonowość żerowania, method feeder i klasyczny grunt, przynęty, nęcenie, wymiar ochronny PZW, błędy.
 - [Leszcz: rozpoznanie i pierwszy plan](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/leszcz.html): Jak rozpoznać leszcza, gdzie go szukać, jak przygotować prosty zestaw oraz sprawdzić legalność połowu przed sesją.
 - [Okoń: rozpoznanie i pierwszy plan](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/okon.html): Jak rozpoznać okonia, znaleźć jego siedlisko, złożyć prosty zestaw spinningowy i sprawdzić zasady połowu.
-- [Szczupak: rozpoznanie i pierwszy plan](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html): Poradnik łowienia szczupaka: biologia drapieżnika, stanowiska zasadzkowe, sezonowość, spinning i żywiec, przynęty (woblery, gumy, błystki), wymiar ochronny 50.
+- [Szczupak: rozpoznanie i pierwszy plan](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html): Poradnik łowienia szczupaka: biologia drapieżnika, stanowiska zasadzkowe, sezonowość, spinning i żywiec, przynęty oraz wymiar ochronny — 45 cm w przepisach krajowych, 50 cm na wodach PZW.
 - [Sprzęt dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/): Sprzęt dla początkującego wędkarza bez ściemy: jak dobrać wędkę, kołowrotek i żyłkę do pierwszych wypraw, na czym nie warto przepłacać i jakich błędów uniknąć.
 - [Akcesoria dla początkujących: minimum na start](https://fish-point.pl/pierwsze-kroki/sprzet/akcesoria.html): Akcesoria dla początkujących: minimum na pierwsze wyprawy — podbierak, wypychacz, miarka, nożyczki, pudełko i obsługa ryby. Co kupić teraz, a co później.
 - [Kołowrotki dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/kolowrotki.html): Przewodnik po kołowrotkach: rozmiary 1000-6000, przełożenie, hamulec przedni i tylny, łożyska, free spin, nawijanie linki, przegląd marek Shimano, Daiwa, Okuma.

@@ -451,6 +451,39 @@ def normalize_fish_legal_section(src, rel):
     section = build_fish_legal_section(slug, record["group"])
     return FISH_LEGAL_SECTION_RE.sub(section, src, count=1)
 
+
+CALENDAR_LEGAL_BEGIN = "<!--calendar-legal:auto-->"
+CALENDAR_LEGAL_END = "<!--/calendar-legal:auto-->"
+calendar_legal_re = re.compile(
+    re.escape(CALENDAR_LEGAL_BEGIN) + r".*?" + re.escape(CALENDAR_LEGAL_END), re.S
+)
+CALENDAR_FAQ_RE = re.compile(r'<h2 id="faq[^"]*"', re.I)
+
+
+def inject_calendar_legal_section(src, rel):
+    """Kalendarz brań podaje terminy i wymiary — musi wskazać akt, z którego je bierze.
+
+    Bez tego czytelnik dostaje twardą liczbę („wymiar 45 cm", „ochronny do 31 maja")
+    bez możliwości sprawdzenia jej u źródła, a atlas tej samej ryby taki link ma.
+    """
+    src = calendar_legal_re.sub("", src)
+    prefix = "poradniki/kalendarz-bran-"
+    if not rel.startswith(prefix) or not rel.endswith(".html"):
+        return src
+    slug = rel[len(prefix):-len(".html")]
+    record = FISH_BIOLOGICAL_REGISTRY.get(slug)
+    if not record or slug not in FISH_LEGAL_SUMMARIES:
+        return src
+    match = CALENDAR_FAQ_RE.search(src)
+    if not match:
+        return src
+    block = (
+        CALENDAR_LEGAL_BEGIN
+        + build_fish_legal_section(slug, record["group"])
+        + CALENDAR_LEGAL_END
+    )
+    return src[:match.start()] + block + src[match.start():]
+
 # Porównania obejmują wyłącznie cechy diagnostyczne opisane w FishBase.
 # Nie zastępują oznaczenia przez ichtiologa ani oględzin całego okazu.
 FISH_IDENTIFICATION_COMPARISONS = (
@@ -3687,6 +3720,7 @@ def build(path):
     h1_txt = visible_h1(src) or short_title(title_txt)
 
     src = normalize_fish_legal_section(src, rel)
+    src = inject_calendar_legal_section(src, rel)
     # Ujednolic sezonowa etykiete w hero: publikacja w lipcu nie udaje wrzesniowej daty.
     src = src.replace("wrzesień 2026", "sezon jesienny 2026")
     url = absolute_url(rel_url(path))

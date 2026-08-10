@@ -823,6 +823,26 @@ def main() -> int:
     check("sandacz od 1 marca do 31 maja" in calendar, "sandacz period is not 1 March–31 May", failures)
     check("sandacz od 1 stycznia" not in calendar, "obsolete sandacz start date remains", failures)
 
+    # Kalendarz brań podaje wymiary i terminy ochronne — czytelnik musi móc
+    # sprawdzić je w akcie, tak samo jak na karcie gatunku w atlasie.
+    species_calendars = sorted((ROOT / "poradniki").glob("kalendarz-bran-*.html"))
+    check(len(species_calendars) >= 10, "species catch calendars are missing", failures)
+    for calendar_page in species_calendars:
+        relative = calendar_page.relative_to(ROOT).as_posix()
+        source = calendar_page.read_text(encoding="utf-8", errors="replace")
+        block = re.search(
+            r"<!--calendar-legal:auto-->(.*?)<!--/calendar-legal:auto-->", source, re.S
+        )
+        check(bool(block), f"{relative}: legal card is missing", failures)
+        if block:
+            check(
+                source.count("<!--calendar-legal:auto-->") == 1
+                and "fish-legal-current" in block.group(1)
+                and "eli.gov.pl/api/acts/DU/2023/1373" in block.group(1),
+                f"{relative}: legal card does not cite the current act",
+                failures,
+            )
+
     marine = read("aktualnosci/wedkarstwo-morskie-dla-poczatkujacych.html").lower()
     check("rejs za dorszem" not in marine, "protected cod is still recommended as a trip target", failures)
     check("1 stycznia do 31 grudnia" in marine or "cały rok" in marine, "year-round cod protection is missing", failures)
