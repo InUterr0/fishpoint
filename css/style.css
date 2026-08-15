@@ -334,7 +334,7 @@ html.dark .eyebrow { color: var(--amber); }
 
 .blog-grid { grid-template-columns: repeat(3, 1fr); }
 .blog-card { padding: 28px; }
-.blog-card a { display: inline-block; margin-top: 18px; color: var(--green); font-weight: 800; }
+.blog-card a { display: inline-flex; align-items: center; min-height: 44px; margin-top: 10px; color: var(--green); font-weight: 800; }
 .news-catalog > .section-heading {
   max-width: none;
   padding-top: 34px;
@@ -906,6 +906,22 @@ html.dark .tool-search { background: rgba(255,255,255,.06); border-color: rgba(2
   transition: transform .12s ease, background .15s ease, color .15s ease, border-color .15s ease;
 }
 .chip:hover { transform: translateY(-1px); }
+/* Filtry i litery alfabetu obsługuje się kciukiem — 44 px to minimalny cel
+   dotykowy, poniżej którego rośnie liczba nietrafionych kliknięć. */
+.chip { min-height: 44px; }
+#fish-alphabet { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+#fish-alphabet button {
+  min-width: 44px; min-height: 44px; padding: 0 12px;
+  border-radius: 12px; cursor: pointer;
+  font: inherit; font-weight: 800; font-size: .95rem;
+  border: 1px solid rgba(17,49,47,.16); background: var(--white); color: var(--ink);
+}
+#fish-alphabet button[aria-pressed="true"] {
+  background: linear-gradient(135deg, #7fe6d5, var(--aqua));
+  border-color: transparent; color: var(--green-2);
+}
+html.dark #fish-alphabet button { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.14); color: var(--paper); }
+html.dark #fish-alphabet button[aria-pressed="true"] { color: var(--green-2); }
 .chip[aria-pressed="true"], .chip.active {
   background: linear-gradient(135deg, #7fe6d5, var(--aqua));
   color: #071e22; border-color: transparent;
@@ -1997,7 +2013,8 @@ html.dark :is(#aktualnosci > .blog-grid, #najnowsze + .blog-grid) > .blog-card:f
 @media (max-width: 840px) {
   .article-lead-visual { margin: 0 0 24px; padding: 8px; }
   .article-lead-frame { aspect-ratio: 16 / 10; }
-  .article-lead-stamp { top: 10px; left: 10px; font-size: .64rem; }
+  /* .64rem to na telefonie ok. 10 px — poniżej progu czytelności. */
+  .article-lead-stamp { top: 10px; left: 10px; font-size: .72rem; }
   .article-lead-caption { display: grid; gap: 5px; margin: 10px 2px 0; }
   .article-media-credit { margin-left: 0; white-space: normal; }
   .article-signal-strip { grid-template-columns: 1fr; }

@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-08-10.
+> Najnowsza merytoryczna zmiana: 2026-08-15.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -77,7 +77,7 @@
 - [Napisz do FishPoint](https://fish-point.pl/kontakt.html): Kontakt z redakcją FishPoint: adres e-mail, zakres spraw, czas odpowiedzi oraz zasady zgłaszania błędów merytorycznych, propozycji tematów i praw do zdjęć.
 - [Rejestr korekt](https://fish-point.pl/korekty.html): Jawny rejestr potwierdzonych korekt materiałów FishPoint: co i kiedy poprawiliśmy, na jakiej podstawie oraz których stron dotyczyła zmiana.
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html): Maciej Baniewicz — wędkarz i autor serwisu FishPoint. Poznaj osobę, która stoi za poradnikami, atlasem ryb i opisami sprzętu na fish-point.pl.
-- [Polityka prywatności](https://fish-point.pl/polityka-prywatnosci.html): Polityka prywatności FishPoint: kto jest administratorem danych, jakie pliki cookie i narzędzia działają w serwisie, na jakiej podstawie prawnej oraz jak wycofać zgodę i skorzystać z praw RODO.
+- [Polityka prywatności](https://fish-point.pl/polityka-prywatnosci.html): Polityka prywatności FishPoint: administrator danych, pliki cookie i narzędzia, podstawa prawna przetwarzania oraz jak wycofać zgodę i korzystać z praw RODO.
 - [Słownik pojęć wędkarskich](https://fish-point.pl/slownik.html): Słownik pojęć wędkarskich FishPoint od A do Z: ponad 60 haseł z zakresu spinningu, feedera, karpiarstwa i metody spławikowej — od agrafki i akcji wędki.
 - [Zgodnie z zasadami](https://fish-point.pl/zgodnie-z-zasadami.html): Jak sprawdzić legalność połowu: § 6–7, zezwolenie, regulamin i komunikat gospodarza. Drzewo dla wód śródlądowych, morskich, chronionych i prywatnych.
 
@@ -140,7 +140,7 @@
 - [Karp: rozpoznanie i pierwszy plan](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/karp.html): Kompletny poradnik łowienia karpia: biologia, miejscówki, sezonowość żerowania, method feeder i klasyczny grunt, przynęty, nęcenie, wymiar ochronny PZW, błędy.
 - [Leszcz: rozpoznanie i pierwszy plan](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/leszcz.html): Jak rozpoznać leszcza, gdzie go szukać, jak przygotować prosty zestaw oraz sprawdzić legalność połowu przed sesją.
 - [Okoń: rozpoznanie i pierwszy plan](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/okon.html): Jak rozpoznać okonia, znaleźć jego siedlisko, złożyć prosty zestaw spinningowy i sprawdzić zasady połowu.
-- [Szczupak: rozpoznanie i pierwszy plan](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html): Poradnik łowienia szczupaka: biologia drapieżnika, stanowiska zasadzkowe, sezonowość, spinning i żywiec, przynęty oraz wymiar ochronny — 45 cm w przepisach krajowych, 50 cm na wodach PZW.
+- [Szczupak: rozpoznanie i pierwszy plan](https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/szczupak.html): Poradnik łowienia szczupaka: stanowiska zasadzkowe, sezonowość, spinning i żywiec oraz wymiar 45 cm z przepisów krajowych. Okręgi PZW bywają ostrzejsze.
 - [Sprzęt dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/): Sprzęt dla początkującego wędkarza bez ściemy: jak dobrać wędkę, kołowrotek i żyłkę do pierwszych wypraw, na czym nie warto przepłacać i jakich błędów uniknąć.
 - [Akcesoria dla początkujących: minimum na start](https://fish-point.pl/pierwsze-kroki/sprzet/akcesoria.html): Akcesoria dla początkujących: minimum na pierwsze wyprawy — podbierak, wypychacz, miarka, nożyczki, pudełko i obsługa ryby. Co kupić teraz, a co później.
 - [Kołowrotki dla początkujących](https://fish-point.pl/pierwsze-kroki/sprzet/kolowrotki.html): Przewodnik po kołowrotkach: rozmiary 1000-6000, przełożenie, hamulec przedni i tylny, łożyska, free spin, nawijanie linki, przegląd marek Shimano, Daiwa, Okuma.
@@ -193,9 +193,9 @@
 - [Atlas ryb: karp (Cyprinus carpio)](https://fish-point.pl/ryby/karp.html): Karp (Cyprinus carpio): brak krajowego wymiaru i okresu ochronnego — decyduje regulamin wody. Rozpoznawanie, stanowiska, żerowanie i metody gruntowe.
 - [Kiełb pospolity](https://fish-point.pl/ryby/kielb.html): Kiełb pospolity (Gobio gobio): w ocenie IUCN gatunek najmniejszej troski. Jak go rozpoznać, gdzie żyje, czym się żywi i jak postąpić po przypadkowym złowieniu.
 - [Kleń](https://fish-point.pl/ryby/klen.html): Kleń (Squalius cephalus): wymiar ochronny 25 cm, brak krajowego okresu ochronnego. Rozpoznawanie, stanowiska rzeczne, ostrożność ryby i metody połowu.
-- [Koza pospolita](https://fish-point.pl/ryby/koza.html): Koza pospolita (Cobitis taenia) jest objęta ochroną siedliskową UE — nie planuj jej połowu. Jak odróżnić ją od piskorza, gdzie bytuje i jak postąpić, gdy trafi na haczyk.
+- [Koza pospolita](https://fish-point.pl/ryby/koza.html): Koza pospolita (Cobitis taenia) jest objęta ochroną siedliskową UE — nie planuj jej połowu. Jak odróżnić ją od piskorza i jak postąpić, gdy trafi na haczyk.
 - [Krąp](https://fish-point.pl/ryby/krap.html): Krąp (Blicca bjoerkna): drobna ryba spokojnego żeru w ocenie IUCN najmniejszej troski. Rozpoznawanie, siedlisko, pokarm i zasady konkretnego łowiska.
-- [Atlas ryb: leszcz (Abramis brama)](https://fish-point.pl/ryby/leszcz.html): Leszcza od krąpia odróżnisz po liczbie promieni w płetwie odbytowej i wielkości oka. Brak krajowego wymiaru i okresu — decydują zasady lokalne. Stanowiska, zanęta i feeder.
+- [Atlas ryb: leszcz (Abramis brama)](https://fish-point.pl/ryby/leszcz.html): Leszcza od krąpia odróżnisz po promieniach płetwy odbytowej i wielkości oka. Brak wymiaru i okresu krajowego — decydują zasady lokalne. Stanowiska, zanęta i feeder.
 - [Lin](https://fish-point.pl/ryby/lin.html): Lin (Tinca tinca): wymiar ochronny 25 cm, brak krajowego okresu ochronnego. Rozpoznawanie, płytkie stanowiska, tarło oraz metody spławikowe i method feeder.
 - [Lipień](https://fish-point.pl/ryby/lipien.html): Lipień: wymiar ochronny 30 cm, okres ochronny 1 marca–31 maja. Rozpoznawanie, stanowiska w rzekach górskich, żerowanie i metody muchowe.
 - [Miętus](https://fish-point.pl/ryby/mietus.html): Miętus: wymiar ochronny 25 albo 30 cm, okres ochronny od 1 grudnia do końca lutego. Rozpoznawanie, zimowe stanowiska, tarło i nocne metody połowu.
@@ -216,7 +216,7 @@
 - [Atlas ryb: szczupak (Esox lucius)](https://fish-point.pl/ryby/szczupak.html): Szczupak (Esox lucius): wymiar ochronny 45 cm, okres ochronny 1 stycznia–30 kwietnia. Gdzie czeka w zasadzce, na jakie przynęty reaguje i jak bezpiecznie go odhaczyć.
 - [Troć i łosoś](https://fish-point.pl/ryby/troc-losos.html): Troć i łosoś: wymiar ochronny 35 cm, okres ochronny zależny od odcinka wody, a na morzu przepisy GIRM. Rozpoznawanie, wędrówki tarłowe i metody połowu.
 - [Ukleja](https://fish-point.pl/ryby/ukleja.html): Ukleja: brak krajowego wymiaru i okresu ochronnego. Rozpoznawanie, stanowiska tuż pod powierzchnią, żerowanie i lekkie metody spławikowe.
-- [Węgorz](https://fish-point.pl/ryby/wegorz.html): Węgorz (Anguilla anguilla): wymiar ochronny 50 cm, okres ochronny 1 grudnia–31 marca. Gdzie stoi po zmroku, na co bierze i dlaczego jego wędrówka zaczyna się w Morzu Sargassowym.
+- [Węgorz](https://fish-point.pl/ryby/wegorz.html): Węgorz (Anguilla anguilla): wymiar 50 cm, okres 1 grudnia–31 marca, limit 2 sztuki. Gdzie stoi po zmroku, na co bierze i skąd wędrówka do Morza Sargassowego.
 - [Wzdręga](https://fish-point.pl/ryby/wzdrega.html): Wzdręga (Scardinius erythrophthalmus): wymiar ochronny 15 cm, brak krajowego okresu. Jak odróżnić ją od płoci, stanowiska i metody spławikowe.
 
 ## Sprzęt

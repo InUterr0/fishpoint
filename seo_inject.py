@@ -353,7 +353,7 @@ FISH_LEGAL_SUMMARIES = {
     "klen": "Wody śródlądowe: wymiar 25 cm; § 7 nie ustanawia krajowego okresu ochronnego.",
     "amur": "Wody śródlądowe: § 6–7 nie ustanawia krajowego wymiaru ani okresu. Amur jest gatunkiem nierodzimym; § 8 nakazuje złowiony okaz niezwłocznie uśmiercić i zakazuje wpuszczenia go do jakiejkolwiek wody.",
     "karas": "Karaś pospolity: § 6–7 nie ustanawia krajowego wymiaru ani okresu. Karaś srebrzysty jest gatunkiem nierodzimym; § 8 nakazuje złowiony okaz niezwłocznie uśmiercić i zakazuje wpuszczenia go do jakiejkolwiek wody.",
-    "troc-losos": "Troć i łosoś: wymiar 35 cm; okres i dodatkowe dni zakazu zależą od odcinka. Na morzu obowiązują odrębne przepisy GIRM.",
+    "troc-losos": "Troć wędrowna i łosoś: wymiar 35 cm; okres i dodatkowe dni zakazu zależą od odcinka. Troć jeziorowa ma odrębne wartości: wymiar 50 cm i okres 1 IX – 31 I (§ 6 ust. 1 pkt 21, § 7 ust. 1 pkt 16). Na morzu obowiązują odrębne przepisy GIRM.",
     "sielawa": "Wody śródlądowe: wymiar 18 cm; okres ochronny 15 października–31 grudnia.",
     "sieja": "Wody śródlądowe: wymiar 35 cm; okres ochronny 15 października–31 grudnia.",
     "brzana": "Wody śródlądowe: wymiar 40 cm; okres ochronny 1 stycznia–30 czerwca.",
@@ -2867,7 +2867,7 @@ def _clean(s):
     return html.unescape(tag_re.sub("", s)).strip()
 
 
-def _list_after(src, heading_pat):
+def _list_after(src, heading_pat, with_ids=False):
     """Zwraca teksty <li> z pierwszej NIEPUSTEJ listy następującej po nagłówku
     pasującym do heading_pat (do najbliższego kolejnego <h2>/<h3>).
     Iteruje po wszystkich pasujących nagłówkach — pomija te, pod którymi
@@ -2876,11 +2876,17 @@ def _list_after(src, heading_pat):
         rest = src[hm.end():]
         nxt = re.search(r"<h[23][\s>]", rest)
         chunk = rest[: nxt.start()] if nxt else rest
-        items = [_clean(li) for li in re.findall(r"<li>(.*?)</li>", chunk, re.S)]
-        items = [i for i in items if i]
+        raw = re.findall(r"<li([^>]*)>(.*?)</li>", chunk, re.S)
+        items = [(_clean(body), _attr_id(attrs)) for attrs, body in raw]
+        items = [i for i in items if i[0]]
         if items:
-            return items
+            return items if with_ids else [t for t, _ in items]
     return []
+
+
+def _attr_id(attrs):
+    m = re.search(r'id="([^"]+)"', attrs)
+    return m.group(1) if m else ""
 
 
 def extract_faq(src):
@@ -2901,10 +2907,31 @@ def extract_faq(src):
     return pairs
 
 
+def step_name(text):
+    """Krótka nazwa kroku dla HowToStep — pierwsza komenda z opisu, bez zdania
+    wyjaśniającego. Google oczekuje `name` obok `text`; nazwa musi pochodzić
+    z widocznej treści, więc tniemy ją na naturalnej granicy."""
+    ABBR = {"ok", "np", "tj", "ust", "szt", "min", "godz", "ew", "itd", "m"}
+    head = re.split(r"\s[—–]\s", text, maxsplit=1)[0]
+    for m in re.finditer(r"(?<=[a-ząćęłńóśźż0-9])[.;:]\s", head):
+        word = re.search(r"([\w]+)[.;:]\s$", head[: m.end()])
+        if word and word.group(1).lower() in ABBR:
+            continue
+        head = head[: m.start()]
+        break
+    head = head.strip().rstrip(",")
+    if len(head) > 70:
+        head = head[:70].rsplit(" ", 1)[0]
+    # Nazwa ucięta na spójniku („…opłucz, osusz i”) czyta się jak urwane zdanie.
+    head = re.sub(r"[\s,]+(i|oraz|lub|a|albo|ale|że|by|aby|w|na|do|z|ze|po|od)$", "", head.rstrip(","), flags=re.I)
+    return head.rstrip(",") + ("…" if len(head) < len(text.rstrip(".")) else "")
+
+
 def extract_recipe(src):
-    """Zwraca (skladniki, kroki) jeśli strona wygląda na przepis, inaczej None."""
+    """Zwraca (skladniki, kroki) jeśli strona wygląda na przepis, inaczej None.
+    Kroki to pary (tekst, id kotwicy) — id zasila `url` w HowToStep."""
     ingredients = _list_after(src, r"<h[23][^>]*>\s*Składnik")
-    steps = _list_after(src, r"<h[23][^>]*>[^<]*(?:krok po kroku|Przygotowanie)")
+    steps = _list_after(src, r"<h[23][^>]*>[^<]*(?:krok po kroku|Przygotowanie)", with_ids=True)
     if ingredients and steps:
         return ingredients, steps
     return None
@@ -4035,8 +4062,10 @@ def build(path):
                     "author": AUTHOR,
                     "recipeIngredient": ingredients,
                     "recipeInstructions": [
-                        {"@type": "HowToStep", "position": i + 1, "text": s}
-                        for i, s in enumerate(steps)
+                        dict({"@type": "HowToStep", "position": i + 1,
+                              "name": step_name(s), "text": s},
+                             **({"url": url + "#" + sid} if sid else {}))
+                        for i, (s, sid) in enumerate(steps)
                     ],
                 }))
                 head.append(END)
