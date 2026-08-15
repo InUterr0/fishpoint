@@ -487,6 +487,15 @@ html.dark .news-catalog > .section-heading { border-top-color: rgba(255,255,255,
 .info-block h3 { margin: 0 0 10px; font-size: 1.3rem; color: var(--green-2); letter-spacing: -.015em; }
 .info-block p { margin: 0; color: #3d4c48; line-height: 1.75; }
 .info-block p + p { margin-top: 10px; }
+/* Odpowiedź na „czy dziś bierze” — pierwsza rzecz nad tabelą 12 miesięcy. */
+.month-now {
+  margin: 0 0 16px; padding: 14px 18px;
+  border-left: 5px solid var(--aqua); border-radius: 12px;
+  background: #eaf3ef; color: #26403b; line-height: 1.65;
+}
+.month-now strong { color: var(--green-2); }
+html.dark .month-now { background: rgba(42,167,161,.12); color: var(--paper); }
+html.dark .month-now strong { color: var(--green); }
 .info-block .recipe-meta {
   margin: 0 0 12px; padding-bottom: 10px;
   border-bottom: 1px dashed rgba(17,49,47,.18);

@@ -420,24 +420,68 @@ def build_fish_legal_section(slug, group):
     )
 
 
-# Konkurenci w SERP „kalendarz brań <gatunek>" trzymają rok w tytule, a GSC
-# notuje zapytania z rokiem. Trzymamy go w jednej stałej: raz w roku zmienia
-# się tutaj, a nie w kilkunastu plikach.
-CALENDAR_TITLE_YEAR = "2026"
-CALENDAR_TITLE_RE = re.compile(
-    r"(<title>Kalendarz brań [^<]*?)(?:\s+20\d{2})?(\s*(?:—|\|)[^<]*</title>)"
-)
+# Konkurenci w SERP „kalendarz brań <gatunek>" trzymają w tytule bieżący
+# miesiąc, a zapytanie jest sezonowe — GSC notuje warianty z rokiem. Miesiąc
+# bierzemy z daty budowania, więc tytuł nie może się zestarzeć w plikach.
+# Wymaga comiesięcznego wdrożenia (harmonogram w .github/workflows/deploy.yml).
+CALENDAR_MONTHS_PL = ("styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec",
+                      "lipiec", "sierpień", "wrzesień", "październik",
+                      "listopad", "grudzień")
+CALENDAR_TITLE_RE = re.compile(r"<title>Kalendarz brań ([^<]*)</title>", re.I)
+CALENDAR_MONTH_BEGIN = "<!--month-now:auto-->"
+CALENDAR_MONTH_END = "<!--/month-now:auto-->"
+calendar_month_re = re.compile(
+    re.escape(CALENDAR_MONTH_BEGIN) + r".*?" + re.escape(CALENDAR_MONTH_END), re.S)
 
 
-def ensure_calendar_year(src, rel):
-    """Utrzymuje aktualny rok w tytułach kalendarza brań per gatunek."""
+def calendar_species(title_tail):
+    """Z ogona tytułu wyciąga samą nazwę gatunku w dopełniaczu.
+    Odporne na wielokrotne przebudowy: tnie zarówno starą formę
+    („okonia 2026 — kiedy bierze okoń"), jak i nową („okonia — sierpień 2026")."""
+    tail = re.split(r"\s+20\d{2}\b|\s+[—–:|]\s*", title_tail, maxsplit=1)[0]
+    return tail.strip().lower()
+
+
+def calendar_month_row(src, month_index):
+    """Zwraca (aktywność, opis) z wiersza tabeli miesięcznej dla danego miesiąca."""
+    month = CALENDAR_MONTHS_PL[month_index - 1]
+    pat = (r'<th scope="row">' + month.capitalize() +
+           r"</th>\s*<td>(.*?)</td>\s*<td>(.*?)</td>")
+    m = re.search(pat, src, re.S | re.I)
+    if not m:
+        return None
+    return _clean(m.group(1)), _clean(m.group(2))
+
+
+def ensure_calendar_month(src, rel, today=None):
+    """Utrzymuje bieżący miesiąc w tytule kalendarza brań i dopisuje widoczny
+    akapit o tym miesiącu. Tytuł bez pokrycia w treści byłby obietnicą bez
+    pokrycia, więc jedno bez drugiego się nie pojawia."""
     if not rel.startswith("poradniki/kalendarz-bran-"):
         return src
-    return CALENDAR_TITLE_RE.sub(
-        lambda match: f"{match.group(1)} {CALENDAR_TITLE_YEAR}{match.group(2)}",
-        src,
-        count=1,
-    )
+    tm = CALENDAR_TITLE_RE.search(src)
+    if not tm:
+        return src
+    day = today or datetime.date.today()
+    month = CALENDAR_MONTHS_PL[day.month - 1]
+    species = calendar_species(tm.group(1))
+    row = calendar_month_row(src, day.month)
+    if not species or not row:
+        return src
+    activity, hint = row
+    src = CALENDAR_TITLE_RE.sub(
+        f"<title>Kalendarz brań {species} — {month} {day.year} | FishPoint</title>",
+        src, count=1)
+    # „Szczyt" jest w tabeli rzeczownikiem, reszta przymiotnikiem — bez tego
+    # rozróżnienia wychodzi „aktywność szczyt".
+    label = ("szczyt aktywności" if activity.lower().startswith("szczyt")
+             else "aktywność " + activity.lower())
+    block = (f'{CALENDAR_MONTH_BEGIN}<p class="month-now">'
+             f"<strong>{month.capitalize()} {day.year}:</strong> {label}. "
+             f"{hint}</p>{CALENDAR_MONTH_END}")
+    if calendar_month_re.search(src):
+        return calendar_month_re.sub(lambda _: block, src, count=1)
+    return src.replace('<div class="tool-table-wrap">', block + '\n<div class="tool-table-wrap">', 1)
 
 
 def normalize_fish_legal_section(src, rel):
@@ -1125,6 +1169,8 @@ def editorial_fingerprint(src):
                   "", body, flags=re.S)
     body = re.sub(r'<link\b[^>]+rel=["\']canonical["\'][^>]*>', "", body)
     body = re.sub(r"<meta\b[^>]+name=[\"']description[\"'][^>]*>", "", body)
+    # Miesiąc w tytule kalendarza brań zmienia build, nie redakcja.
+    body = re.sub(r"(<title>Kalendarz brań [^<]*?)\s+—\s+\w+\s+20\d{2}\s*\|", r"\1 |", body)
     body = re.sub(r"\s+", " ", body).strip()
     return hashlib.sha256(body.encode("utf-8")).hexdigest()[:12]
 
@@ -3745,7 +3791,7 @@ def build(path):
     src = ensure_youtube_facade_dimensions(replace_youtube_nocookie_embeds(src))
 
     rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
-    src = ensure_calendar_year(src, rel)
+    src = ensure_calendar_month(src, rel)
 
     tm = title_re.search(src)
     dm = desc_re.search(src)
