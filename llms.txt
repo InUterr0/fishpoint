@@ -213,7 +213,7 @@
 - [Strzebla potokowa](https://fish-point.pl/ryby/strzebla-potokowa.html): Strzebla potokowa podlega ochronie i nie jest legalnym celem połowu ani przynętą. Jak ją rozpoznać, gdzie żyje i co zrobić po przypadkowym złowieniu.
 - [Sum](https://fish-point.pl/ryby/sum.html): Sum europejski: wymiar ochronny 70 cm, okres ochronny 1 stycznia–31 maja. Czy ma zęby, gdzie stoi za dnia, kiedy wychodzi żerować i jak go holować.
 - [Świnka](https://fish-point.pl/ryby/swinka.html): Świnka (Chondrostoma nasus): wymiar ochronny 25 cm, okres ochronny 1 stycznia–15 maja. Rozpoznawanie, stanowiska w rzekach i metody połowu.
-- [Atlas ryb: szczupak (Esox lucius)](https://fish-point.pl/ryby/szczupak.html): Szczupak (Esox lucius): wymiar ochronny 45 cm, okres ochronny 1 stycznia–30 kwietnia. Gdzie czeka w zasadzce, na jakie przynęty reaguje i jak bezpiecznie go odhaczyć.
+- [Atlas ryb: szczupak (Esox lucius)](https://fish-point.pl/ryby/szczupak.html): Szczupak (Esox lucius): wymiar 45 cm, okres ochronny 1 stycznia–30 kwietnia. Gdzie czeka w zasadzce, na co reaguje i jak bezpiecznie go odhaczyć.
 - [Troć i łosoś](https://fish-point.pl/ryby/troc-losos.html): Troć i łosoś: wymiar ochronny 35 cm, okres ochronny zależny od odcinka wody, a na morzu przepisy GIRM. Rozpoznawanie, wędrówki tarłowe i metody połowu.
 - [Ukleja](https://fish-point.pl/ryby/ukleja.html): Ukleja: brak krajowego wymiaru i okresu ochronnego. Rozpoznawanie, stanowiska tuż pod powierzchnią, żerowanie i lekkie metody spławikowe.
 - [Węgorz](https://fish-point.pl/ryby/wegorz.html): Węgorz (Anguilla anguilla): wymiar 50 cm, okres 1 grudnia–31 marca, limit 2 sztuki. Gdzie stoi po zmroku, na co bierze i skąd wędrówka do Morza Sargassowego.
