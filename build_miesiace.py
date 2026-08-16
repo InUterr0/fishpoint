@@ -277,8 +277,9 @@ def build_page(month, nominative, locative, slug):
     )
     parts.append(
         '<section class="info-block"><h3>Skąd pochodzą te okresy ochronne?</h3>'
-        '<p>Z rozporządzenia Ministra Rolnictwa i Rozwoju Wsi w sprawie połowu ryb oraz '
-        'warunków chowu, hodowli i połowu innych organizmów żyjących w wodzie '
+        '<p>Z rozporządzenia Ministra Rolnictwa i Rozwoju Wsi z dnia 12 lipca 2023 r. '
+        'w sprawie szczegółowych warunków ochrony i połowu ryb w powierzchniowych '
+        'wodach śródlądowych '
         '(Dz.U. 2023 poz. 1373, § 6–8). Wartości lokalne mogą być ostrzejsze i wynikają '
         'z zezwolenia oraz regulaminu gospodarza wody.</p></section>'
     )

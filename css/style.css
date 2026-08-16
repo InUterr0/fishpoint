@@ -907,6 +907,23 @@ html.dark .tool-card { background: rgba(13,40,46,.92); border-color: rgba(255,25
 html.dark .tool-search { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); color: var(--ink); }
 .tool-search::placeholder { color: var(--muted); }
 
+/* Listy rozwijane filtrów były renderowane w domyślnym stylu przeglądarki:
+   19 px wysokości na telefonie, czyli poniżej minimalnego celu dotykowego
+   i wizualnie niespójnie z .tool-search obok. */
+select:not([multiple]):not([size]) {
+  min-height: 44px;
+  padding: 11px 40px 11px 16px; font: inherit;
+  border: 1px solid rgba(17,49,47,.16); border-radius: 14px;
+  background: var(--white); color: var(--ink);
+  -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='%23557' d='M1 1.5 6 6.5l5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; background-size: 12px 8px;
+  max-width: 100%;
+}
+html.dark select:not([multiple]):not([size]) {
+  background-color: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); color: var(--ink);
+}
+
 .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
   padding: 9px 16px; border-radius: 999px; cursor: pointer;

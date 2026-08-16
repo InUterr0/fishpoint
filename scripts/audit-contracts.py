@@ -1015,6 +1015,23 @@ def main() -> int:
     check(not stale,
           f"data aktualizacji rozjechała się z treścią: {stale[:5]}", failures)
 
+    # Dz.U. 2023 poz. 1373 to samodzielne rozporządzenie MRiRW z 12 lipca 2023 r.
+    # „w sprawie szczegółowych warunków ochrony i połowu ryb w powierzchniowych
+    # wodach śródlądowych”. Uchyliło ono akt „w sprawie połowu ryb oraz warunków
+    # chowu, hodowli i połowu innych organizmów żyjących w wodzie”, więc ten tytuł
+    # nie może wracać jako nazwa obowiązującej podstawy prawnej.
+    repealed_title = "połowu ryb oraz warunków chowu, hodowli i połowu innych organizmów"
+    wrong_basis = [
+        page.relative_to(ROOT).as_posix()
+        for page in sorted(ROOT.glob("**/*.html"))
+        # Rejestr korekt musi zacytować wcześniejsze, błędne brzmienie.
+        if page.relative_to(ROOT).as_posix() != "korekty.html"
+        and not any(part.startswith(".") for part in page.relative_to(ROOT).parts)
+        and repealed_title in compact(page.read_text(encoding="utf-8"))
+    ]
+    check(not wrong_basis,
+          f"tytuł uchylonego rozporządzenia jako podstawa prawna: {wrong_basis[:5]}", failures)
+
     # Zabezpieczenie przed powrotem masowej daty: żadna pojedyncza data nie
     # może obejmować więcej niż 40% stron w sitemapie.
     lastmods = [e.text for e in sitemap.iter(f"{{{SITEMAP_NS['s']}}}lastmod") if e.text]
