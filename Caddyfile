@@ -12,6 +12,16 @@
 	redir @www https://fish-point.pl{uri} 301
 
 
+	# Strony wycofane jako treść o niskiej wartości (humor, generowane maszynowo
+	# poradniki miesięczne, strona afiliacyjna). Kierujemy do właściwego działu
+	# zamiast do 404 — adresy krążą w linkach i zakładkach.
+	@retired_humor path /humor /humor/ /humor/*
+	redir @retired_humor / 301
+	@retired_zakupy path /zakupy.html
+	redir @retired_zakupy /sprzet/ 301
+	@retired_miesiace path_regexp retired_miesiace ^/poradniki/co-lowic-w-[a-z]+\.html$
+	redir @retired_miesiace /narzedzia/kalendarz-bran.html 301
+
 	# Nagłówki bezpieczeństwa są celowo kompatybilne z osadzonymi komentarzami
 	# Giscus. CSP działa najpierw w trybie raportowania, aby nie blokować
 	# istniejących materiałów, gdy lista źródeł będzie dalej zawężana.
@@ -20,7 +30,7 @@
 		Referrer-Policy "strict-origin-when-cross-origin"
 		Permissions-Policy "camera=(), geolocation=(self), microphone=(), payment=(), usb=()"
 		Strict-Transport-Security "max-age=31536000"
-		Content-Security-Policy-Report-Only "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://assets.mailerlite.com; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://giscus.app https://api.github.com; frame-src 'self' https://giscus.app; media-src 'self' https:"
+		Content-Security-Policy-Report-Only "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://assets.mailerlite.com; script-src 'self' 'unsafe-inline' https://giscus.app https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://www.googletagservices.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://giscus.app https://api.github.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; frame-src 'self' https://giscus.app https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; media-src 'self' https:"
 	}
 
 	# Canonical directory URLs: tylko istniejące pliki index.html trafiają do

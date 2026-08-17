@@ -47,6 +47,13 @@ NEWSLETTER_EMBED = (
 )
 SITE_NAME = "FishPoint"
 AUTHOR_NAME = "Maciej Baniewicz"
+# Kod wydawcy AdSense musi być obecny na stronie, żeby Google mogło dokończyć
+# sprawdzanie witryny — bez niego weryfikacja utyka na „witryna nie jest gotowa".
+ADSENSE_CLIENT = "ca-pub-6075349779081571"
+ADSENSE_TAG = (
+    '  <script async src="https://pagead2.googlesyndication.com/pagead/js/'
+    f'adsbygoogle.js?client={ADSENSE_CLIENT}" crossorigin="anonymous"></script>'
+)
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
 TOOL_IMG = {
     "aktualnosci/gorne-wymiary-ochronne-2026.html": "/assets/img/tematy/kalendarz.jpg",
@@ -60,18 +67,6 @@ TOOL_IMG = {
     "aktualnosci/wytyczne-wody-polskie-obwody-rybackie-2026.html": "/assets/img/tematy/jeziora.jpg",
     "aktualnosci/zakaz-polowu-bobr-lipiec-2026.html": "/assets/img/tematy/muchowe.jpg",
     "aktualnosci/zawody-wedkarskie-2026-kalendarz.html": "/assets/img/tematy/kalendarz.jpg",
-    "poradniki/co-lowic-w-styczniu.html": "/assets/img/tematy/pogoda.jpg",
-    "poradniki/co-lowic-w-lutym.html": "/assets/img/tematy/kolowrotki.jpg",
-    "poradniki/co-lowic-w-marcu.html": "/assets/img/tematy/stawy.jpg",
-    "poradniki/co-lowic-w-kwietniu.html": "/assets/img/tematy/splawik.jpg",
-    "poradniki/co-lowic-w-maju.html": "/assets/img/tematy/jeziora.jpg",
-    "poradniki/co-lowic-w-czerwcu.html": "/assets/img/tematy/akcesoria.jpg",
-    "poradniki/co-lowic-w-lipcu.html": "/assets/img/tematy/cr.jpg",
-    "poradniki/co-lowic-w-sierpniu.html": "/assets/img/tematy/wedki.jpg",
-    "poradniki/co-lowic-w-wrzesniu.html": "/assets/img/tematy/muchowe.jpg",
-    "poradniki/co-lowic-w-pazdzierniku.html": "/assets/img/tematy/kalendarz.jpg",
-    "poradniki/co-lowic-w-listopadzie.html": "/assets/img/tematy/wezly.jpg",
-    "poradniki/co-lowic-w-grudniu.html": "/assets/img/tematy/pogoda.jpg",
     "poradniki/echosondy.html": "/assets/img/tematy/wedki.jpg",
     "poradniki/etyka-i-przepisy.html": "/assets/img/tematy/cr.jpg",
     "poradniki/wedkarstwo-z-lodzi.html": "/assets/img/tematy/jeziora.jpg",
@@ -96,8 +91,6 @@ TOOL_IMG = {
     "poradniki/kalendarz-bran-szczupak.html": "/assets/img/ryby/szczupak-las.jpg",
     "poradniki/kalendarz-bran-leszcz.html": "/assets/img/ryby/leszcz-noc.jpg",
     "zgodnie-z-zasadami.html": "/assets/img/tematy/cr.jpg",
-    "humor/dowcipy.html": "/assets/img/humor/dowcipy.jpg",
-    "humor/memy.html": "/assets/img/humor/memy.jpg",
     "lowiska/dolnoslaskie.html": "/assets/img/tematy/jeziora.jpg",
     "lowiska/kujawsko-pomorskie.html": "/assets/img/tematy/stawy.jpg",
     "lowiska/lodzkie.html": "/assets/img/tematy/muchowe.jpg",
@@ -745,7 +738,7 @@ INLINE_PAGE_VISUALS = {
 def load_image_provenance():
     """Ładuje wyłącznie lokalne obrazy z manifestów ich źródła i licencji."""
     provenance = {}
-    for directory in ("ryby", "aktualnosci", "tematy", "kuchnia", "humor"):
+    for directory in ("ryby", "aktualnosci", "tematy", "kuchnia"):
         manifest_path = Path(ROOT, "assets", "img", directory, "_meta.json")
         with manifest_path.open(encoding="utf-8") as manifest_file:
             manifest = json.load(manifest_file)
@@ -840,7 +833,6 @@ SECTIONS = {
     "narzedzia": "Narzędzia",
     "lowiska": "Łowiska",
     "forum": "Forum",
-    "humor": "Humor",
 }
 
 # --- Wspólna nawigacja: główne działy oraz stale widoczny pasek „Odkrywaj”. ---
@@ -899,8 +891,6 @@ NAV_DISCOVER = [
     ("narzedzia/", "Narzędzia"),
     ("kuchnia/", "Kuchnia"),
     ("forum/", "Forum"),
-    ("humor/", "Humor"),
-    ("zakupy.html", "Zakupy"),
     ("zgodnie-z-zasadami.html", "Przepisy i dokumenty"),
 ]
 nav_re = re.compile(r'(?:<a class="skip-link" href="#main-content">Przejdź do treści</a>)?<header class="site-header">.*?</header>', re.S)
@@ -2236,113 +2226,6 @@ AFFILIATE_LINKS = {
             "Porównaj średnice i rodzaje linek po ustaleniu metody oraz wielkości ryb.",
         ),
     ),
-    "zakupy.html": (
-        (
-            "https://webep1.com/go/3f03d6c5c3",
-            "Gotowy zestaw feederowy",
-            "Porównaj gotowe zestawy feederowe, gdy chcesz zacząć bez kompletowania każdego elementu osobno.",
-        ),
-        (
-            "https://webep1.com/go/371f5146c3",
-            "Gotowy zestaw method feeder",
-            "Sprawdź gotowe zestawy method feeder do łowienia z koszykiem i zanętą.",
-        ),
-        (
-            "https://webep1.com/go/3b181da2c3",
-            "Gotowy zestaw spinningowy",
-            "Zobacz gotowe zestawy spinningowe na pierwsze wyprawy za drapieżnikami.",
-        ),
-        (
-            "https://webep1.com/go/59f24cf1c3",
-            "Kołowrotki karpiowe",
-            "Porównaj kołowrotki karpiowe dopasowane do cięższych zestawów i dużych dystansów.",
-        ),
-        (
-            "https://webep1.com/go/b1df355ec3",
-            "Wędki karpiowe",
-            "Wybierz wędki karpiowe pod długość rzutu, ciężar zestawu i sposób łowienia.",
-        ),
-        (
-            "https://webep1.com/go/6608d83bc3",
-            "Kulki i pellety",
-            "Sprawdź kulki proteinowe i pellety do budowania zanęty oraz przynęty.",
-        ),
-        (
-            "https://webep1.com/go/663edc47c3",
-            "Dodatki zanętowe i dipy",
-            "Dobierz dodatki zanętowe i dipy do mieszanki, przynęty oraz warunków łowiska.",
-        ),
-        (
-            "https://webep1.com/go/8877c7e5c3",
-            "Woblery",
-            "Porównaj woblery na drapieżniki według pracy, głębokości i sposobu prowadzenia.",
-        ),
-        (
-            "https://webep1.com/go/d8ad8b8dc3",
-            "Błystki",
-            "Zobacz błystki do aktywnego szukania okoni, szczupaków i innych drapieżników.",
-        ),
-        (
-            "https://webep1.com/go/c70fbfc0c3",
-            "Twistery",
-            "Wybierz twistery do jigowania i prowadzenia przy dnie.",
-        ),
-        (
-            "https://webep1.com/go/74ac1044c3",
-            "Jaskółki",
-            "Sprawdź smukłe jaskółki do łowienia ostrożnych drapieżników.",
-        ),
-        (
-            "https://webep1.com/go/4ea3bd70c3",
-            "Żyłki",
-            "Porównaj żyłki pod średnicę, rozciągliwość i planowaną metodę.",
-        ),
-        (
-            "https://webep1.com/go/4d1297a8c3",
-            "Fluorocarbon i mono",
-            "Dobierz fluorocarbon lub przypon mono do przejrzystości wody i rodzaju zestawu.",
-        ),
-        (
-            "https://webep1.com/go/405fc98ac3",
-            "Haczyki, kotwiczki i główki jigowe",
-            "Uzupełnij zestaw o haki, kotwiczki i główki jigowe do wybranej techniki.",
-        ),
-        (
-            "https://webep1.com/go/d3253924c3",
-            "Agrafki i krętliki",
-            "Sprawdź agrafki, krętliki i kółka łącznikowe do szybkiej zmiany zestawu.",
-        ),
-        (
-            "https://webep1.com/go/c8227fd2c3",
-            "Podbieraki i osęki",
-            "Wybierz podbierak lub osękę, które ułatwią bezpieczne podebranie ryby.",
-        ),
-        (
-            "https://webep1.com/go/6ff7647bc3",
-            "Wagi, miarki i chwytaki",
-            "Zobacz narzędzia do ważenia, mierzenia i bezpiecznego przytrzymania ryby.",
-        ),
-        (
-            "https://webep1.com/go/9ce264e7c3",
-            "Pudełka i skrzynki",
-            "Uporządkuj przynęty i drobne akcesoria w pudełkach oraz skrzynkach.",
-        ),
-        (
-            "https://webep1.com/go/86ac9324c3",
-            "Krzesełka i fotele wędkarskie",
-            "Wybierz wygodne siedzisko na dłuższe zasiadki i wyprawy nad wodę.",
-        ),
-        (
-            "https://webep1.com/go/fe23f399c3",
-            "Torby wędkarskie",
-            "Sprawdź torby do przenoszenia przynęt, akcesoriów i podstawowego wyposażenia.",
-        ),
-        (
-            "https://webep1.com/go/92f2af80c3",
-            "Plecaki wędkarskie",
-            "Porównaj plecaki na mobilne wyprawy, gdy cały sprzęt musi być pod ręką.",
-        ),
-    ),
 }
 def build_affiliate_links(rel):
     """Buduje jawny blok linków afiliacyjnych tylko dla skonfigurowanej strony."""
@@ -2357,22 +2240,13 @@ def build_affiliate_links(rel):
         f'<span class="affiliate-card-cta">Sprawdź w BigRiver →</span></a>'
         for url, label, description in items
     )
-    if rel == "zakupy.html":
-        eyebrow = "Zakupy ze wsparciem"
-        heading = "Sprzęt na kolejną wyprawę"
-        intro = (
-            "Zebraliśmy w jednym miejscu kategorie sprzętu, które pomagają skompletować "
-            "zestaw na różne metody łowienia. To linki afiliacyjne — kupując z linku, "
-            "wspierasz naszą stronę, a cena dla Ciebie się nie zmienia."
-        )
-    else:
-        eyebrow = "Sprzęt do poradnika"
-        heading = "Porównaj pasujące kategorie sprzętu"
-        intro = (
-            "Poniższe kategorie odpowiadają sprzętowi omawianemu w tym poradniku. "
-            "To linki afiliacyjne — FishPoint może otrzymać prowizję, "
-            "ale cena dla Ciebie się nie zmienia."
-        )
+    eyebrow = "Sprzęt do poradnika"
+    heading = "Porównaj pasujące kategorie sprzętu"
+    intro = (
+        "Poniższe kategorie odpowiadają sprzętowi omawianemu w tym poradniku. "
+        "To linki afiliacyjne — FishPoint może otrzymać prowizję, "
+        "ale cena dla Ciebie się nie zmienia."
+    )
     return (
         f'{AFFILIATE_BEGIN}<section id="afiliacja" class="affiliate-section" '
         f'aria-label="Polecane kategorie sprzętu">'
@@ -3916,6 +3790,7 @@ def build(path):
     src = re.sub(r'<link\b(?=[^>]*\brel\s*=\s*["\']canonical["\'])[^>]*>\s*', "", src, flags=re.I)
     head = [
         BEGIN,
+        ADSENSE_TAG,
         f'  <link rel="canonical" href="{url}" />',
         ('  <meta name="robots" content="noindex, follow" />'
          if noindex else

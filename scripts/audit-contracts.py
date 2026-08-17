@@ -666,7 +666,7 @@ def main() -> int:
         "pierwsze-kroki/index.html", "sprzet/index.html", "techniki/index.html",
         "ryby/index.html", "poradniki/index.html", "narzedzia/index.html",
         "lowiska/index.html", "forum/index.html", "aktualnosci/index.html",
-        "kuchnia/index.html", "humor/index.html", "zakupy.html",
+        "kuchnia/index.html",
         "zgodnie-z-zasadami.html",
     }
     menu_targets = {
@@ -878,7 +878,6 @@ def main() -> int:
                   f"{source_page}: TOOL_IMG asset is narrower than 1200 px: {image_path}",
                   failures)
 
-    check("2GekupS_N9s/hqdefault.jpg" not in read("humor/filmiki.html"), "known 404 video thumbnail remains", failures)
     check("(klasyczna." not in read("kuchnia/smazony-okon-sandacz.html"), "truncated recipe description remains", failures)
 
     # Data widoczna dla wyszukiwarki musi zgadzać się z trwałym content-meta.

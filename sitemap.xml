@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://fish-point.pl/</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -156,7 +156,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/dlaczego-w-sierpniu-slabo-bierze.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1034,7 +1034,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/okresy-ochronne.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1084,7 +1084,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1164,7 +1164,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/pierwszy-zestaw-wedkarski-budzet.html</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1338,13 +1338,13 @@
   </url>
   <url>
     <loc>https://fish-point.pl/polityka-prywatnosci.html</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
