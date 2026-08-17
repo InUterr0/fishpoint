@@ -958,6 +958,51 @@ def main() -> int:
                   f"oczekiwano {current_year}",
                   failures)
 
+    # Macierz gatunek × miesiąc oznacza miesiące bez wiersza w karcie gatunkowej
+    # jako okres ochronny. To wniosek z nieobecności, więc musi zgadzać się
+    # z rejestrem prawnym — inaczej tabela powiedziałaby „łów", gdy trwa ochrona.
+    months_pl = [m.capitalize() for m in seo_inject.CALENDAR_MONTHS_PL]
+    month_number = {name: i for i, name in enumerate(months_pl, start=1)}
+    # Rejestr zapisuje okres raz jako „okres ochronny", raz jako samo „okres"
+    # (pstrąg, gdzie koniec zależy od odcinka) — wzorzec musi objąć obie formy.
+    protection_re = re.compile(
+        r"okres(?: ochronny)? (\d{1,2}) (\w+)[–-](\d{1,2}) (\w+)", re.I)
+    genitive = {
+        "stycznia": 1, "lutego": 2, "marca": 3, "kwietnia": 4, "maja": 5,
+        "czerwca": 6, "lipca": 7, "sierpnia": 8, "września": 9,
+        "października": 10, "listopada": 11, "grudnia": 12,
+    }
+    for slug, _name in seo_inject.CALENDAR_MATRIX_SPECIES:
+        relative = f"poradniki/kalendarz-bran-{slug}.html"
+        if not (ROOT / relative).is_file():
+            continue
+        table = re.search(r'<table class="tool-table">.*?</table>',
+                          read(relative), re.S)
+        check(table is not None, f"{relative}: brak tabeli miesięcznej", failures)
+        if not table:
+            continue
+        listed = {
+            m.strip() for m in
+            re.findall(r'<th scope="row">([^<]+)</th>', table.group(0))}
+        silent = {month_number[m] for m in months_pl if m not in listed}
+        summary = seo_inject.FISH_LEGAL_SUMMARIES.get(slug, "")
+        found = protection_re.search(summary)
+        if not found:
+            # Bez krajowego okresu ochronnego karta musi opisywać wszystkie
+            # dwanaście miesięcy — inaczej macierz wymyśli ochronę, której nie ma.
+            check(not silent,
+                  f"{relative}: brak miesięcy {sorted(silent)}, a rejestr prawny "
+                  "nie podaje krajowego okresu ochronnego",
+                  failures)
+            continue
+        start, end = genitive[found.group(2).lower()], genitive[found.group(4).lower()]
+        legal = (set(range(start, end + 1)) if start <= end
+                 else set(range(start, 13)) | set(range(1, end + 1)))
+        check(silent <= legal,
+              f"{relative}: miesiące {sorted(silent - legal)} nie mają wiersza, "
+              f"choć rejestr prawny nie obejmuje ich ochroną ({summary[:60]})",
+              failures)
+
     # Duże obrazy muszą mieć warianty mobilne i uczciwe deskryptory szerokości.
     # Audyt z 9 sierpnia 2026: warianty istniały dla jednego obrazu, więc telefon
     # pobierał grafiki 1600 px przy widoku 390 px (81% ruchu to mobile).

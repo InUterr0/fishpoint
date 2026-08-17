@@ -446,10 +446,190 @@ def calendar_month_row(src, month_index):
     return _clean(m.group(1)), _clean(m.group(2))
 
 
+def calendar_hub_month(src, month_index):
+    """Pierwsze zdanie opisu danego miesiąca ze strony zbiorczej kalendarza."""
+    month = CALENDAR_MONTHS_PL[month_index - 1].capitalize()
+    m = re.search(r"<h3>" + month + r"</h3>\s*<p>(.*?)</p>", src, re.S)
+    if not m:
+        return None
+    text = _clean(m.group(1))
+    end = text.find(". ")
+    return text if end < 0 else text[:end + 1]
+
+
+def ensure_calendar_hub_month(src, today=None):
+    """Strona zbiorcza celuje we frazę „kalendarz brań ryb" — najczęściej
+    wyszukiwaną w tym temacie. Bieżący miesiąc w tytule ma pokrycie w akapicie
+    prowadzącym do właściwej sekcji, tak samo jak na kartach gatunkowych."""
+    day = today or datetime.date.today()
+    month = CALENDAR_MONTHS_PL[day.month - 1]
+    lead = calendar_hub_month(src, day.month)
+    if not lead:
+        return src
+    src = re.sub(r"<title>[^<]*</title>",
+                 f"<title>Kalendarz brań ryb — {month} {day.year}, miesiąc po miesiącu"
+                 " | FishPoint</title>", src, count=1)
+    block = (f'{CALENDAR_MONTH_BEGIN}<p class="month-now">'
+             f'<strong>{month.capitalize()} {day.year}:</strong> {lead}</p>'
+             f'{CALENDAR_MONTH_END}')
+    if calendar_month_re.search(src):
+        src = calendar_month_re.sub(lambda _: block, src, count=1)
+    else:
+        anchor = '<h2 id="kalendarz-bran-miesiac-po-miesiacu">'
+        if anchor in src:
+            j = src.index("</h2>", src.index(anchor)) + len("</h2>")
+            src = src[:j] + "\n" + block + src[j:]
+
+    matrix = build_calendar_matrix(day)
+    if matrix:
+        if calendar_matrix_re.search(src):
+            src = calendar_matrix_re.sub(lambda _: matrix, src, count=1)
+        else:
+            src = src.replace(CALENDAR_MONTH_END, CALENDAR_MONTH_END + "\n" + matrix, 1)
+    return ensure_calendar_opinion(src)
+
+
+CALENDAR_OPINION_BEGIN = "<!--calendar-opinion:auto-->"
+CALENDAR_OPINION_END = "<!--/calendar-opinion:auto-->"
+calendar_opinion_re = re.compile(
+    re.escape(CALENDAR_OPINION_BEGIN) + r".*?" + re.escape(CALENDAR_OPINION_END), re.S)
+
+
+def ensure_calendar_opinion(src):
+    """Zamyka kalendarz notą o charakterze oceny.
+
+    Oceny aktywności są redakcyjnym podsumowaniem sezonowości gatunku, a nie
+    prognozą na konkretny dzień. Nota stoi na końcu, żeby czytelnik wiedział,
+    co właśnie przeczytał — i żeby strona nie obiecywała przewidywania brań,
+    którego nigdzie indziej nie obiecujemy.
+    """
+    note = (
+        f'{CALENDAR_OPINION_BEGIN}<section class="info-block calendar-opinion" '
+        'aria-label="Charakter ocen w kalendarzu"><h2 id="charakter-ocen">'
+        'Czym są oceny w tym kalendarzu</h2>'
+        '<p>Oceny aktywności (●●●● – ●) to <strong>subiektywne podsumowanie '
+        'redakcji FishPoint</strong>: sezonowości gatunku, temperatury wody, '
+        'terminów tarła i praktyki wędkarskiej. Nie są prognozą brań na konkretny '
+        'dzień ani obietnicą połowu — takiej prognozy nie da się uczciwie postawić, '
+        'o czym piszemy też przy <a href="../narzedzia/kalendarz-ksiezycowy.html">'
+        'kalendarzu księżycowym</a>. Realny wynik rozstrzyga stan konkretnej wody: '
+        'temperatura, poziom, natlenienie, przejrzystość i pogoda z ostatnich dni.</p>'
+        '<p>Inaczej niż oceny, <strong>okresy ochronne i wymiary nie są opinią</strong> '
+        '— pochodzą z rozporządzenia i podajemy je za źródłem. Jeśli uważasz, że '
+        'któraś ocena rozmija się z Twoim doświadczeniem, napisz — poprawki '
+        'odnotowujemy w <a href="../korekty.html">rejestrze korekt</a>.</p>'
+        f'</section>{CALENDAR_OPINION_END}')
+    if calendar_opinion_re.search(src):
+        return calendar_opinion_re.sub(lambda _: note, src, count=1)
+    # Na samym końcu treści artykułu, za wszystkimi sekcjami merytorycznymi.
+    for tail in ("<!--related:auto-->", "<!--newsletter:auto-->", "</article>"):
+        if tail in src:
+            return src.replace(tail, note + "\n" + tail, 1)
+    return src
+
+
+CALENDAR_MATRIX_BEGIN = "<!--calendar-matrix:auto-->"
+CALENDAR_MATRIX_END = "<!--/calendar-matrix:auto-->"
+calendar_matrix_re = re.compile(
+    re.escape(CALENDAR_MATRIX_BEGIN) + r".*?" + re.escape(CALENDAR_MATRIX_END), re.S)
+
+# Nazwy mianownikowe do nagłówków wierszy — tytuły kart niosą dopełniacz
+# („kalendarz brań okonia"), który w tabeli czytałby się źle.
+CALENDAR_MATRIX_SPECIES = (
+    ("szczupak", "Szczupak"), ("sandacz", "Sandacz"), ("okon", "Okoń"),
+    ("sum", "Sum"), ("karp", "Karp"), ("leszcz", "Leszcz"),
+    ("ploc", "Płoć"), ("lin", "Lin"), ("klen", "Kleń"),
+    ("pstrag", "Pstrąg potokowy"),
+)
+CALENDAR_MONTHS_ROMAN = ("I", "II", "III", "IV", "V", "VI",
+                         "VII", "VIII", "IX", "X", "XI", "XII")
+# Ocena jest wyprowadzana wprost z kart gatunkowych, więc tabela nigdy nie mówi
+# czegoś, czego nie napisaliśmy w rozwinięciu.
+CALENDAR_MATRIX_MARKS = (
+    ("szczyt", "●●●●", "szczyt aktywności"),
+    ("wysoka", "●●●", "wysoka aktywność"),
+    ("średnia", "●●", "średnia aktywność"),
+    ("niska", "●", "niska aktywność"),
+)
+
+
+def calendar_activity_mark(value):
+    """Zamienia opis aktywności z karty gatunkowej na znacznik i etykietę."""
+    low = value.lower()
+    # „Niska / Średnia" opisuje przejście. Kolejność w CALENDAR_MATRIX_MARKS idzie
+    # od najwyższej wartości, więc pierwsze trafienie jest tym wyższym — a to ono
+    # decyduje, czy warto jechać.
+    for key, mark, label in CALENDAR_MATRIX_MARKS:
+        if key in low:
+            return mark, label
+    return None
+
+
+def build_calendar_matrix(today=None):
+    """Składa przekrój wszystkich kart gatunkowych w jedną tabelę roku.
+
+    Konkurencja pokazuje aktywność albo okresy ochronne — nigdy obok siebie.
+    Zestawienie ich w jednej siatce jest tym, po co warto wejść na tę stronę,
+    a każda ocena pochodzi z karty gatunkowej, nie z osobnego założenia.
+    """
+    now = (today or datetime.date.today()).month
+    rows = []
+    for slug, name in CALENDAR_MATRIX_SPECIES:
+        path = os.path.join(ROOT, "poradniki", f"kalendarz-bran-{slug}.html")
+        if not os.path.isfile(path):
+            continue
+        with open(path, encoding="utf-8") as handle:
+            page = handle.read()
+        table = re.search(r'<table class="tool-table">.*?</table>', page, re.S)
+        if not table:
+            continue
+        found = {
+            _clean(m): _clean(v) for m, v in
+            re.findall(r'<th scope="row">([^<]+)</th>\s*<td>(.*?)</td>',
+                       table.group(0), re.S)}
+        cells = []
+        for index, month in enumerate(CALENDAR_MONTHS_PL, start=1):
+            value = found.get(month.capitalize())
+            mark = calendar_activity_mark(value) if value else None
+            emphasis = ' class="matrix-now"' if index == now else ""
+            if mark:
+                cells.append(f'<td{emphasis}><abbr title="{mark[1]}">{mark[0]}</abbr></td>')
+            else:
+                # Brak wiersza w karcie oznacza miesiąc objęty ochroną gatunkową.
+                cells.append(f'<td{emphasis}><abbr title="okres ochronny — '
+                             'połów zabroniony">ochr.</abbr></td>')
+        rows.append(
+            f'<tr><th scope="row"><a href="kalendarz-bran-{slug}.html">{name}</a></th>'
+            + "".join(cells) + "</tr>")
+    if not rows:
+        return ""
+    head = "".join(
+        '<th scope="col"%s>%s</th>' % (' class="matrix-now"' if i == now else "", r)
+        for i, r in enumerate(CALENDAR_MONTHS_ROMAN, start=1))
+    month_name = CALENDAR_MONTHS_PL[now - 1]
+    return (
+        f'{CALENDAR_MATRIX_BEGIN}<section class="info-block" '
+        'aria-label="Rok w jednej tabeli">'
+        f'<h2 id="rok-w-tabeli">Cały rok w jednej tabeli — {month_name} wyróżniony</h2>'
+        '<p>Dziesięć gatunków, dwanaście miesięcy i okresy ochronne w jednej siatce. '
+        'Kliknij gatunek, żeby przejść do rozwinięcia z miejscami i przynętami.</p>'
+        '<div class="tool-table-wrap"><table class="tool-table calendar-matrix">'
+        '<caption>Aktywność gatunków miesiąc po miesiącu według redakcji FishPoint</caption>'
+        f'<thead><tr><th scope="col">Gatunek</th>{head}</tr></thead>'
+        f'<tbody>{"".join(rows)}</tbody></table></div>'
+        '<p class="matrix-legend"><strong>Jak czytać:</strong> ●●●● szczyt · ●●● wysoka · '
+        '●● średnia · ● niska · <em>ochr.</em> okres ochronny, w którym połów jest '
+        'zabroniony. Okresy podajemy za rozporządzeniem krajowym — na konkretnej wodzie '
+        'gospodarz może je zaostrzyć.</p>'
+        f'</section>{CALENDAR_MATRIX_END}')
+
+
 def ensure_calendar_month(src, rel, today=None):
     """Utrzymuje bieżący miesiąc w tytule kalendarza brań i dopisuje widoczny
     akapit o tym miesiącu. Tytuł bez pokrycia w treści byłby obietnicą bez
     pokrycia, więc jedno bez drugiego się nie pojawia."""
+    if rel == "poradniki/kalendarz-bran.html":
+        return ensure_calendar_hub_month(src, today)
     if not rel.startswith("poradniki/kalendarz-bran-"):
         return src
     tm = CALENDAR_TITLE_RE.search(src)
@@ -473,8 +653,11 @@ def ensure_calendar_month(src, rel, today=None):
              f"<strong>{month.capitalize()} {day.year}:</strong> {label}. "
              f"{hint}</p>{CALENDAR_MONTH_END}")
     if calendar_month_re.search(src):
-        return calendar_month_re.sub(lambda _: block, src, count=1)
-    return src.replace('<div class="tool-table-wrap">', block + '\n<div class="tool-table-wrap">', 1)
+        src = calendar_month_re.sub(lambda _: block, src, count=1)
+    else:
+        src = src.replace('<div class="tool-table-wrap">',
+                          block + '\n<div class="tool-table-wrap">', 1)
+    return ensure_calendar_opinion(src)
 
 
 def normalize_fish_legal_section(src, rel):

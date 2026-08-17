@@ -2478,3 +2478,17 @@ html.dark .trip-checklist fieldset { border-color: rgba(255,255,255,.2); backgro
   .trip-checklist legend { color: #000; }
   .trip-checklist input[type="checkbox"] { accent-color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+/* Macierz gatunek × miesiąc na stronie zbiorczej kalendarza brań.
+   Dwanaście wąskich kolumn mieści się na telefonie tylko wtedy, gdy ocena jest
+   znacznikiem, a nie słowem — stąd wyśrodkowanie i mniejszy krok. */
+table.calendar-matrix { min-width: 720px; font-size: .9rem; }
+table.calendar-matrix td { text-align: center; padding: 10px 6px; letter-spacing: .05em; }
+table.calendar-matrix thead th { text-align: center; padding: 10px 6px; }
+table.calendar-matrix thead th:first-child,
+table.calendar-matrix tbody th { text-align: left; white-space: nowrap; }
+table.calendar-matrix abbr { text-decoration: none; border: 0; }
+table.calendar-matrix .matrix-now { background: rgba(42,167,161,.14); font-weight: 700; }
+html.dark table.calendar-matrix .matrix-now { background: rgba(42,167,161,.22); }
+.matrix-legend { font-size: .92rem; opacity: .85; margin-top: 10px; }
+.calendar-opinion { border-left: 3px solid var(--amber, #d98324); }
