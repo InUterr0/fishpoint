@@ -539,7 +539,8 @@ CALENDAR_MATRIX_SPECIES = (
     ("szczupak", "Szczupak"), ("sandacz", "Sandacz"), ("okon", "Okoń"),
     ("sum", "Sum"), ("karp", "Karp"), ("leszcz", "Leszcz"),
     ("ploc", "Płoć"), ("lin", "Lin"), ("klen", "Kleń"),
-    ("pstrag", "Pstrąg potokowy"),
+    ("pstrag", "Pstrąg potokowy"), ("wegorz", "Węgorz"), ("bolen", "Boleń"),
+    ("amur", "Amur"), ("karas", "Karaś"),
 )
 CALENDAR_MONTHS_ROMAN = ("I", "II", "III", "IV", "V", "VI",
                          "VII", "VIII", "IX", "X", "XI", "XII")
@@ -611,8 +612,9 @@ def build_calendar_matrix(today=None):
         f'{CALENDAR_MATRIX_BEGIN}<section class="info-block" '
         'aria-label="Rok w jednej tabeli">'
         f'<h2 id="rok-w-tabeli">Cały rok w jednej tabeli — {month_name} wyróżniony</h2>'
-        '<p>Dziesięć gatunków, dwanaście miesięcy i okresy ochronne w jednej siatce. '
-        'Kliknij gatunek, żeby przejść do rozwinięcia z miejscami i przynętami.</p>'
+        f'<p>{len(rows)} gatunków, dwanaście miesięcy i okresy ochronne w jednej '
+        'siatce. Kliknij gatunek, żeby przejść do rozwinięcia z miejscami '
+        'i przynętami.</p>'
         '<div class="tool-table-wrap"><table class="tool-table calendar-matrix">'
         '<caption>Aktywność gatunków miesiąc po miesiącu według redakcji FishPoint</caption>'
         f'<thead><tr><th scope="col">Gatunek</th>{head}</tr></thead>'

@@ -1399,6 +1399,36 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-amur.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/amur.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Kalendarz brań amura</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-bolen.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/bolen.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Kalendarz brań bolenia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-karas.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/karas.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Kalendarz brań karasia</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-karp.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -1496,6 +1526,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-las.jpg</image:loc>
       <image:title>Duży szczupak trzymany oburącz nad brzegiem</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-wegorz.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/wegorz.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Kalendarz brań węgorza</image:title>
     </image:image>
   </url>
   <url>
