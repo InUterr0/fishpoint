@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-08-17.
+> Najnowsza merytoryczna zmiana: 2026-08-18.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -181,7 +181,7 @@
 
 ## Atlas ryb
 
-- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas 40 gatunków ryb polskich wód — słodkowodnych i bałtyckich: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary i źródła dla każdej karty.
+- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas 42 gatunków ryb polskich wód — słodkowodnych i bałtyckich: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary i źródła dla każdej karty.
 - [Amur](https://fish-point.pl/ryby/amur.html): Amur (Ctenopharyngodon idella): brak krajowego wymiaru i okresu ochronnego, ale jako gatunek nierodzimy podlega § 8. Rozpoznawanie, stanowiska i metody.
 - [Belona](https://fish-point.pl/ryby/belona.html): Belona (Belone belone): przed połowem sprawdź zasady i limity GIRM. Rozpoznawanie, letnia wędrówka na Bałtyku, stanowiska z brzegu i metody połowu.
 - [Boleń](https://fish-point.pl/ryby/bolen.html): Boleń (Leuciscus aspius): wymiar ochronny 40 cm, brak krajowego okresu ochronnego. Rozpoznawanie, stanowiska w rzekach, żerowanie i metody spinningowe.
@@ -192,6 +192,7 @@
 - [Flądra (stornia)](https://fish-point.pl/ryby/fladra.html): Flądra: przed połowem sprawdź aktualne zasady, limity i komunikaty GIRM. Rozpoznawanie storni, stanowiska na Bałtyku, żerowanie i metody gruntowe z brzegu.
 - [Głowacz białopłetwy](https://fish-point.pl/ryby/glowacz-bialopletwy.html): Głowacz białopłetwy (Cottus gobio) jest ważny dla sieci Natura 2000 — nie wolno go celowo łowić. Rozpoznawanie, siedlisko w czystych ciekach i przyłów.
 - [Jaź](https://fish-point.pl/ryby/jaz.html): Jaź (Leuciscus idus): wymiar ochronny 25 cm, brak krajowego okresu ochronnego. Rozpoznawanie, stanowiska rzeczne, żerowanie i metody połowu.
+- [Jelec](https://fish-point.pl/ryby/jelec.html): Jelec: wymiar ochronny 15 cm, brak krajowego okresu ochronnego. Po czym poznasz go wśród klenia i jazia, gdzie stoi w rzece i na co bierze.
 - [Jesiotr](https://fish-point.pl/ryby/jesiotr.html): Jesiotr ostronosy: okres ochronny trwa przez cały rok, więc nie jest celem połowu. Rozpoznawanie, restytucja gatunku i co zrobić po przypadkowym złowieniu.
 - [Karaś](https://fish-point.pl/ryby/karas.html): Karaś: brak krajowego wymiaru i okresu ochronnego. Jak odróżnić karasia pospolitego od srebrzystego, stanowiska, żerowanie i metody połowu.
 - [Atlas ryb: karp (Cyprinus carpio)](https://fish-point.pl/ryby/karp.html): Karp (Cyprinus carpio): brak krajowego wymiaru i okresu ochronnego — decyduje regulamin wody. Rozpoznawanie, stanowiska, żerowanie i metody gruntowe.
@@ -205,6 +206,7 @@
 - [Miętus](https://fish-point.pl/ryby/mietus.html): Miętus: wymiar ochronny 25 albo 30 cm, okres ochronny od 1 grudnia do końca lutego. Rozpoznawanie, zimowe stanowiska, tarło i nocne metody połowu.
 - [Minóg rzeczny](https://fish-point.pl/ryby/minog-rzeczny.html): Minóg rzeczny (Lampetra fluviatilis) jest chroniony — nie wolno go celowo łowić. Rozpoznawanie, wędrówki, żwirowe tarliska i postępowanie po przyłowie.
 - [Atlas ryb: okoń (Perca fluviatilis)](https://fish-point.pl/ryby/okon.html): Okoń (Perca fluviatilis): brak krajowego wymiaru i okresu ochronnego — decydują zasady lokalne. Rozpoznawanie, stanowiska, tarło i metody połowu okonia.
+- [Piekielnica](https://fish-point.pl/ryby/piekielnica.html): Piekielnica jest objęta ochroną częściową i nie jest legalnym celem połowu ani przynętą. Po czym poznasz ją wśród uklei, gdzie żyje i co zrobić po przyłowie.
 - [Piskorz](https://fish-point.pl/ryby/piskorz.html): Piskorza nie wolno celowo łowić ani używać jako przynęty — to gatunek chroniony. Jak odróżnić go od kozy, gdzie żyje i jak bezpiecznie postąpić po przyłowie.
 - [Płoć](https://fish-point.pl/ryby/ploc.html): Płoć: brak krajowego wymiaru i okresu ochronnego — decydują zasady lokalne. Rozpoznawanie, stanowiska, żerowanie przez cały rok i metody spławikowe.
 - [Pstrąg potokowy](https://fish-point.pl/ryby/pstrag.html): Pstrąg potokowy: wymiar ochronny 25 albo 30 cm i okres ochronny zależny od odcinka wody. Rozpoznawanie, stanowiska w potokach, żerowanie i metody połowu.

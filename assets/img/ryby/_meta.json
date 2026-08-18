@@ -583,5 +583,27 @@
     "caption": "Szczupak z krawędzi trzcinowiska — właśnie tam najczęściej czeka w zasadzce.",
     "width": 1200,
     "height": 900
+  },
+  "piekielnica": {
+    "file": "assets/img/ryby/piekielnica.jpg",
+    "artist": "Gilles San Martin",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Alburnoides_bipunctatus_(cropped).jpg",
+    "source_checked": "2026-08-18",
+    "variants": [
+      "assets/img/ryby/piekielnica.jpg.webp",
+      "assets/img/ryby/piekielnica.jpg.avif"
+    ]
+  },
+  "jelec": {
+    "file": "assets/img/ryby/jelec.jpg",
+    "artist": "Drevoveren at Slovenian Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Mladica_kleni%C4%8Da_(Leuciscus_leuciscus).jpg",
+    "source_checked": "2026-08-18",
+    "variants": [
+      "assets/img/ryby/jelec.jpg.webp",
+      "assets/img/ryby/jelec.jpg.avif"
+    ]
   }
 }

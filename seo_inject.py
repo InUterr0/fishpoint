@@ -173,6 +173,8 @@ FISH_ENTITIES = {
     "strzebla-potokowa": {"name": "Strzebla potokowa", "sameAs": ["https://www.fishbase.se/summary/Phoxinus-phoxinus.html"]},
     "glowacz-bialopletwy": {"name": "Głowacz białopłetwy", "sameAs": ["https://www.fishbase.se/summary/Cottus-gobio.html"]},
     "minog-rzeczny": {"name": "Minóg rzeczny", "sameAs": ["https://www.fishbase.se/summary/Lampetra-fluviatilis.html"]},
+    "piekielnica": {"name": "Piekielnica", "sameAs": ["https://www.fishbase.se/summary/Alburnoides-bipunctatus.html"]},
+    "jelec": {"name": "Jelec", "sameAs": ["https://www.fishbase.se/summary/Leuciscus-leuciscus.html"]},
 }
 
 # Tematy metod i miejsc przypisujemy wyłącznie do stron, których widoczna treść
@@ -290,6 +292,12 @@ FISH_BIOLOGICAL_REGISTRY = {
                             "aliases": ("głowacz", "European bullhead"), "compare": "pstrag"},
     "minog-rzeczny": {"latin": "Lampetra fluviatilis", "group": "łososiowate i inne",
                       "aliases": ("minog", "river lamprey"), "compare": "wegorz"},
+    # Piekielnica bywa mylona z ukleją i młodym jaziem, a od obu różni ją
+    # ciemna kreska z podwójnym rzędem kropek wzdłuż linii bocznej.
+    "piekielnica": {"latin": "Alburnoides bipunctatus", "group": "łososiowate i inne",
+                    "aliases": ("piekielnica pospolita", "spirlin"), "compare": "ukleja"},
+    "jelec": {"latin": "Leuciscus leuciscus", "group": "spokojny żer",
+              "aliases": ("jelec pospolity", "common dace"), "compare": "jaz"},
 }
 
 # Tylko bezpośrednie karty gatunków potwierdzone w przeglądzie atlasu
@@ -334,6 +342,7 @@ FISH_LEGAL_SUMMARIES = {
     "okon": "Wody śródlądowe: § 6–7 nie ustanawia krajowego wymiaru ani okresu; sprawdź zasady lokalne.",
     "sum": "Wody śródlądowe: wymiar 70 cm; okres ochronny 1 stycznia–31 maja.",
     "bolen": "Wody śródlądowe: wymiar 40 cm; § 7 nie ustanawia krajowego okresu ochronnego.",
+    "jelec": "Wody śródlądowe: wymiar 15 cm; § 7 nie ustanawia krajowego okresu ochronnego.",
     "wegorz": "Wody śródlądowe: wymiar 50 cm; okres ochronny 1 grudnia–31 marca.",
     "karp": "Wody śródlądowe: § 6–7 nie ustanawia krajowego wymiaru ani okresu; sprawdź zasady lokalne.",
     "lin": "Wody śródlądowe: wymiar 25 cm; § 7 nie ustanawia krajowego okresu ochronnego.",

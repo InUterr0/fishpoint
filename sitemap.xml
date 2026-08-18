@@ -1034,7 +1034,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/okresy-ochronne.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1676,7 +1676,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1790,6 +1790,16 @@
     <image:image>
       <image:loc>https://i.ytimg.com/vi/gXlYeYNnGJ8/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Szybki poradnik w praktyce. Jazie na spinning #wędkarstwo #2025</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/jelec.html</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/jelec.jpg</image:loc>
+      <image:title>Jelec (Leuciscus leuciscus) trzymany nad wodą.</image:title>
     </image:image>
   </url>
   <url>
@@ -1992,6 +2002,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/okon-trawa.jpg</image:loc>
       <image:title>Okoń leżący w trawie obok rozwiniętej miarki</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/piekielnica.html</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/piekielnica.jpg</image:loc>
+      <image:title>Piekielnica (Alburnoides bipunctatus) trzymana w dłoni.</image:title>
     </image:image>
   </url>
   <url>
