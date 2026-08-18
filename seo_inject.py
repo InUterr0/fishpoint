@@ -54,6 +54,10 @@ ADSENSE_TAG = (
     '  <script async src="https://pagead2.googlesyndication.com/pagead/js/'
     f'adsbygoogle.js?client={ADSENSE_CLIENT}" crossorigin="anonymous"></script>'
 )
+# Zasady AdSense zabraniają reklam na ekranach bez treści wydawcy. Wyszukiwarka
+# przed wpisaniem zapytania jest pustym ekranem nawigacyjnym (34 słowa), więc
+# kod reklamowy jej nie obejmuje. 404 nie przechodzi przez wstrzykiwanie w ogóle.
+ADSENSE_EXCLUDED = frozenset({"szukaj.html"})
 DEFAULT_IMG = "/assets/img/tematy/wedki.jpg"
 TOOL_IMG = {
     "aktualnosci/gorne-wymiary-ochronne-2026.html": "/assets/img/tematy/kalendarz.jpg",
@@ -3982,9 +3986,10 @@ def build(path):
     img_url = absolute_url(img_path)
     page_images = collect_images(src, page_dir)
     src = re.sub(r'<link\b(?=[^>]*\brel\s*=\s*["\']canonical["\'])[^>]*>\s*', "", src, flags=re.I)
-    head = [
-        BEGIN,
-        ADSENSE_TAG,
+    head = [BEGIN]
+    if rel not in ADSENSE_EXCLUDED:
+        head.append(ADSENSE_TAG)
+    head += [
         f'  <link rel="canonical" href="{url}" />',
         ('  <meta name="robots" content="noindex, follow" />'
          if noindex else

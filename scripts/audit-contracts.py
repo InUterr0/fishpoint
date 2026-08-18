@@ -958,6 +958,20 @@ def main() -> int:
                   f"oczekiwano {current_year}",
                   failures)
 
+    # Zasady AdSense zabraniają reklam na ekranach bez treści wydawcy. Kod
+    # reklamowy ma być wszędzie poza wyjątkami — i nigdzie w wyjątkach.
+    for page in sorted(ROOT.glob("**/*.html")):
+        if any(part.startswith(".") for part in page.relative_to(ROOT).parts):
+            continue
+        relative = str(page.relative_to(ROOT))
+        has_ads = "adsbygoogle.js" in page.read_text(encoding="utf-8")
+        if relative == "404.html" or relative in seo_inject.ADSENSE_EXCLUDED:
+            check(not has_ads,
+                  f"{relative}: strona bez treści wydawcy nie może nieść kodu reklam",
+                  failures)
+        else:
+            check(has_ads, f"{relative}: brak kodu wydawcy AdSense", failures)
+
     # Macierz gatunek × miesiąc oznacza miesiące bez wiersza w karcie gatunkowej
     # jako okres ochronny. To wniosek z nieobecności, więc musi zgadzać się
     # z rejestrem prawnym — inaczej tabela powiedziałaby „łów", gdy trwa ochrona.
