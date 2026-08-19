@@ -49,7 +49,7 @@ SITE_NAME = "FishPoint"
 AUTHOR_NAME = "Maciej Baniewicz"
 # Kod wydawcy AdSense musi być obecny na stronie, żeby Google mogło dokończyć
 # sprawdzanie witryny — bez niego weryfikacja utyka na „witryna nie jest gotowa".
-ADSENSE_CLIENT = "ca-pub-6075349779081571"
+ADSENSE_CLIENT = "ca-pub-6073418262895656"
 ADSENSE_TAG = (
     '  <script async src="https://pagead2.googlesyndication.com/pagead/js/'
     f'adsbygoogle.js?client={ADSENSE_CLIENT}" crossorigin="anonymous"></script>'

@@ -958,6 +958,14 @@ def main() -> int:
                   f"oczekiwano {current_year}",
                   failures)
 
+    # ads.txt i kod wydawcy muszą wskazywać to samo konto. Przy przenosinach
+    # między kontami łatwo podmienić jedno i zapomnieć o drugim, a rozjazd
+    # oznacza nieprzechodzącą weryfikację albo reklamy bez autoryzacji sprzedaży.
+    publisher = seo_inject.ADSENSE_CLIENT.removeprefix("ca-")
+    check(publisher in read("ads.txt"),
+          f"ads.txt nie wskazuje wydawcy {publisher} z kodu AdSense",
+          failures)
+
     # Zasady AdSense zabraniają reklam na ekranach bez treści wydawcy. Kod
     # reklamowy ma być wszędzie poza wyjątkami — i nigdzie w wyjątkach.
     for page in sorted(ROOT.glob("**/*.html")):
