@@ -1106,6 +1106,26 @@ def main() -> int:
         check(top_count <= len(lastmods) * 0.4,
               f"masowa data w sitemapie: {top_date} na {top_count} z {len(lastmods)} stron",
               failures)
+    # Lead strony głównej podaje twarde liczby („42 gatunków", „9 narzędzi”).
+    # Liczby bez pilnowania cicho rozjadą się z serwisem przy pierwszej nowej
+    # karcie atlasu albo nowym narzędziu, a czytelnik zobaczy nieprawdę.
+    home_lead = compact(read("index.html"))
+    species = len([p for p in (ROOT / "ryby").glob("*.html")
+                   if p.name not in {"index.html", "chronione.html"}])
+    tools = len([p for p in (ROOT / "narzedzia").glob("*.html") if p.name != "index.html"])
+    check(f"<strong>{species} gatunków</strong>" in home_lead,
+          f"lead strony głównej musi podawać {species} gatunków atlasu", failures)
+    check(f"<strong>{tools} narzędzi</strong>" in home_lead,
+          f"lead strony głównej musi podawać {tools} narzędzi", failures)
+
+    # Kalendarz odpowiada w skali miesiąca; link do prognozy jest jedynym
+    # przejściem do odpowiedzi „a jak jest dziś”. Musi być na każdej karcie.
+    calendars = sorted((ROOT / "poradniki").glob("kalendarz-bran*.html"))
+    missing_forecast = [p.name for p in calendars
+                        if "narzedzia/prognoza-bran.html" not in p.read_text(encoding="utf-8")]
+    check(not missing_forecast,
+          f"kalendarze bez linku do prognozy brań: {missing_forecast}", failures)
+
     if failures:
         print("Audit contracts failed:", file=sys.stderr)
         for failure in failures:

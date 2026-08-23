@@ -1713,6 +1713,18 @@ html.dark .analytics-consent-reject { border-color: rgba(255,255,255,.35) !impor
   border-color: rgba(255,255,255,.16);
 }
 
+/* Bez tego H1 strony głównej jest wizualnie mniejszy od stojącego pod nim H2
+   „Świeżo z bloga" — nazwa serwisu przegrywała z nagłówkiem listy wpisów. */
+.home-news-heading h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+  line-height: 1.06;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+.home-news-heading .home-lead { margin: 0 0 34px; font-size: 1.05rem; line-height: 1.62; }
+.home-news-heading h2 { font-size: clamp(1.5rem, 2.4vw, 2.1rem); }
+
 .home-news-heading + .blog-grid {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 16px;
@@ -1934,6 +1946,17 @@ html.dark .btn-secondary:not(.hero .hero-content .btn-secondary) {
 .article-signal-strip > :nth-child(1) { border-top: 3px solid var(--aqua); }
 .article-signal-strip > :nth-child(2) { border-top: 3px solid var(--sand); }
 .article-signal-strip > :nth-child(3) { border-top: 3px solid var(--orange); }
+
+/* Pierwszy akapit karty to nazwa działu, nie zdanie zapowiedzi. Bez tej reguły
+   czyta się jak urwany fragment tekstu nad tytułem — dotąd etykietę dostawała
+   wyłącznie karta wyróżniona, a pozostałe 58 renderowało ją jako zwykły akapit. */
+.blog-grid > .blog-card > p:first-of-type {
+  color: var(--green);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
 
 /* Pierwsza karta jest wejściem do dziennika; pozostałe zachowują rytm katalogu. */
 :is(#aktualnosci > .blog-grid, #najnowsze + .blog-grid) .blog-card-img {

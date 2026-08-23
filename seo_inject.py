@@ -439,6 +439,14 @@ CALENDAR_MONTH_END = "<!--/month-now:auto-->"
 calendar_month_re = re.compile(
     re.escape(CALENDAR_MONTH_BEGIN) + r".*?" + re.escape(CALENDAR_MONTH_END), re.S)
 
+# Kalendarz odpowiada w skali miesiąca, a czytelnik pyta o dziś. Prognoza z pogody
+# jest jedyną stroną serwisu, która na to odpowiada — i dotąd nie linkowała jej
+# żadna z piętnastu kart kalendarza.
+CALENDAR_TODAY_LINK = (
+    'Warunki na najbliższe dni sprawdzisz w '
+    '<a href="../narzedzia/prognoza-bran.html">prognozie brań z pogody</a>.'
+)
+
 
 def calendar_species(title_tail):
     """Z ogona tytułu wyciąga samą nazwę gatunku w dopełniaczu.
@@ -483,8 +491,8 @@ def ensure_calendar_hub_month(src, today=None):
                  f"<title>Kalendarz brań ryb — {month} {day.year}, miesiąc po miesiącu"
                  " | FishPoint</title>", src, count=1)
     block = (f'{CALENDAR_MONTH_BEGIN}<p class="month-now">'
-             f'<strong>{month.capitalize()} {day.year}:</strong> {lead}</p>'
-             f'{CALENDAR_MONTH_END}')
+             f'<strong>{month.capitalize()} {day.year}:</strong> {lead} '
+             f'{CALENDAR_TODAY_LINK}</p>{CALENDAR_MONTH_END}')
     if calendar_month_re.search(src):
         src = calendar_month_re.sub(lambda _: block, src, count=1)
     else:
@@ -666,7 +674,7 @@ def ensure_calendar_month(src, rel, today=None):
              else "aktywność " + activity.lower())
     block = (f'{CALENDAR_MONTH_BEGIN}<p class="month-now">'
              f"<strong>{month.capitalize()} {day.year}:</strong> {label}. "
-             f"{hint}</p>{CALENDAR_MONTH_END}")
+             f"{hint} {CALENDAR_TODAY_LINK}</p>{CALENDAR_MONTH_END}")
     if calendar_month_re.search(src):
         src = calendar_month_re.sub(lambda _: block, src, count=1)
     else:
