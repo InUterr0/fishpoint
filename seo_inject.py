@@ -683,6 +683,215 @@ def ensure_calendar_month(src, rel, today=None):
     return ensure_calendar_opinion(src)
 
 
+
+# ---------------------------------------------------------------------------
+# Tabela okresów i wymiarów ochronnych — renderowana w buildzie.
+#
+# Zbiór był dotąd wyłącznie literałem w inline JS narzędzia, więc statyczny
+# HTML niósł pustą tabelę: dwa wiersze zamiast dwudziestu dziewięciu. Google
+# wykonuje JS, ale GPTBot, ClaudeBot i PerplexityBot już nie — a llms-full.txt
+# powstaje z HTML-a, więc najmocniejszy zasób serwisu nie istniał dla silników
+# odpowiedzi. Dane mieszkają teraz tutaj i stąd idą w dwa miejsca: gotowe
+# wiersze <tr> oraz blok JSON, z którego narzędzie bierze je do filtrowania.
+# Jedno źródło, więc HTML i skrypt nie mogą się rozjechać.
+# ---------------------------------------------------------------------------
+
+PROTECTION_PAGE = "narzedzia/okresy-ochronne.html"
+
+PROTECTION_SPECIES = [
+    {"slug": "szczupak", "name": "Szczupak", "cat": "drapieznik", "size": 45, "period": "1 I – 30 IV", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [1, 2, 3, 4]}},
+    {"slug": "sandacz", "name": "Sandacz", "cat": "drapieznik", "size": 45, "period": "1 III – 31 V", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [3, 4, 5]}},
+    {"slug": "sum", "name": "Sum", "cat": "drapieznik", "size": 70, "period": "1 I – 31 V", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [1, 2, 3, 4, 5]}},
+    {"slug": "okon", "name": "Okoń", "cat": "drapieznik", "size": 0, "period": "brak w § 6–7", "limit": "sprawdź wodę", "note": "Brak wartości krajowej w tej tabeli nie wyłącza zasad lokalnych", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "bolen", "name": "Boleń", "cat": "drapieznik", "size": 40, "period": "brak w § 7", "limit": "sprawdź wodę", "note": "§ 6; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "wegorz", "name": "Węgorz", "cat": "drapieznik", "size": 50, "period": "1 XII – 31 III", "limit": "2 szt.", "note": "§ 2 ust. 3 oraz § 6–7", "basis": "Dz.U. 2023 poz. 1373, § 2 ust. 3 oraz § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [12, 1, 2, 3]}},
+    {"slug": "karp", "name": "Karp", "cat": "spokojny", "size": 0, "period": "brak w § 6–7", "limit": "sprawdź wodę", "note": "Brak wartości krajowej w tej tabeli nie wyłącza zasad lokalnych", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "lin", "name": "Lin", "cat": "spokojny", "size": 25, "period": "brak w § 7", "limit": "sprawdź wodę", "note": "§ 6; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "leszcz", "name": "Leszcz", "cat": "spokojny", "size": 0, "period": "brak w § 6–7", "limit": "sprawdź wodę", "note": "Brak wartości krajowej w tej tabeli nie wyłącza zasad lokalnych", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "ploc", "name": "Płoć", "cat": "spokojny", "size": 0, "period": "brak w § 6–7", "limit": "sprawdź wodę", "note": "Brak wartości krajowej w tej tabeli nie wyłącza zasad lokalnych", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "karas", "name": "Karaś", "cat": "spokojny", "size": 0, "period": "brak w § 6–7", "limit": "sprawdź wodę", "note": "Brak wartości krajowej w tej tabeli nie wyłącza zasad lokalnych", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "jaz", "name": "Jaź", "cat": "spokojny", "size": 25, "period": "brak w § 7", "limit": "sprawdź wodę", "note": "§ 6; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "klen", "name": "Kleń", "cat": "spokojny", "size": 25, "period": "brak w § 7", "limit": "sprawdź wodę", "note": "§ 6; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "amur", "name": "Amur biały", "cat": "spokojny", "size": 0, "period": "brak w § 6–7", "limit": "sprawdź wodę", "note": "Brak wartości krajowej w tej tabeli nie wyłącza zasad lokalnych", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "pstrag", "name": "Pstrąg potokowy", "cat": "lososiowate", "size": 25, "sizeLabel": "25 albo 30 cm", "period": "sprawdź odcinek", "limit": "sprawdź wodę", "note": "§ 6 ust. 1 pkt 12: 25 cm w dorzeczu Wisły do ujścia Sanu i we wskazanym odcinku Odry, 30 cm w pozostałych wodach; okres 1 IX – 31 I albo 1 IX – 31 XII", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "local"}},
+    {"slug": "lipien", "name": "Lipień", "cat": "lososiowate", "size": 30, "period": "1 III – 31 V", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [3, 4, 5]}},
+    {"slug": "mietus", "name": "Miętus", "cat": "lososiowate", "size": 25, "sizeLabel": "25 albo 30 cm", "period": "1 XII – koniec II", "limit": "sprawdź wodę", "note": "§ 6 ust. 1 pkt 11: 30 cm w Odrze od ujścia Warty do granicy z wodami morskimi, 25 cm w pozostałych wodach; okres nie obejmuje tego odcinka Odry", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [12, 1, 2]}},
+    {"slug": "troc-losos", "name": "Troć wędrowna / łosoś", "cat": "lososiowate", "size": 35, "period": "sprawdź odcinek", "limit": "sprawdź wodę", "note": "§ 6–7 różnicuje okres według wody; troć jeziorowa ma odrębny wymiar 50 cm", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "local"}},
+    {"slug": "troc-losos", "name": "Troć jeziorowa", "cat": "lososiowate", "size": 50, "period": "1 IX – 31 I", "limit": "sprawdź wodę", "note": "§ 6 ust. 1 pkt 21 oraz § 7 ust. 1 pkt 16 — wartości odrębne od troci wędrownej", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [9, 10, 11, 12, 1]}},
+    {"slug": "sieja", "name": "Sieja", "cat": "lososiowate", "size": 35, "period": "15 X – 31 XII", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [10, 11, 12]}},
+    {"slug": "sielawa", "name": "Sielawa", "cat": "lososiowate", "size": 18, "period": "15 X – 31 XII", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [10, 11, 12]}},
+    {"slug": None, "name": "Głowacica", "cat": "lososiowate", "size": 70, "period": "1 III – 31 V", "limit": "sprawdź wodę", "note": "§ 6–7; gatunek rzadki, zwykle dodatkowe zasady w zezwoleniu", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [3, 4, 5]}},
+    {"slug": "brzana", "name": "Brzana", "cat": "spokojny", "size": 40, "period": "1 I – 30 VI", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [1, 2, 3, 4, 5, 6]}},
+    {"slug": "certa", "name": "Certa", "cat": "spokojny", "size": 30, "period": "sprawdź odcinek", "limit": "sprawdź wodę", "note": "§ 7 ust. 1 pkt 2: 1 IX – 30 XI w Wiśle poniżej zapory we Włocławku, 1 I – 30 VI w pozostałych wodach", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "local"}},
+    {"slug": "swinka", "name": "Świnka", "cat": "spokojny", "size": 25, "period": "1 I – 15 V", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [1, 2, 3, 4, 5]}},
+    {"slug": "wzdrega", "name": "Wzdręga", "cat": "spokojny", "size": 15, "period": "brak w § 7", "limit": "sprawdź wodę", "note": "§ 6; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "jelec", "name": "Jelec", "cat": "spokojny", "size": 15, "period": "brak w § 7", "limit": "sprawdź wodę", "note": "§ 6; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": None, "name": "Rozpiór", "cat": "spokojny", "size": 25, "period": "brak w § 7", "limit": "sprawdź wodę", "note": "§ 6; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
+    {"slug": "jesiotr", "name": "Jesiotr ostronosy", "cat": "inne", "size": 0, "sizeLabel": "nie dotyczy", "period": "1 I – 31 XII", "limit": "zakaz zabierania", "note": "§ 7 ust. 1 pkt 4 — ochrona całoroczna; § 7 ust. 2 (skrócenie okresu o dzień wolny) jej nie dotyczy", "basis": "Dz.U. 2023 poz. 1373, § 7; od 27 VII 2023", "protection": {"kind": "national", "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}},
+]
+
+PROTECTION_CAT_LABEL = {
+    "drapieznik": "Drapieżnik",
+    "spokojny": "Spokojnego żeru",
+    "lososiowate": "Łososiowate",
+    "inne": "Pozostałe",
+}
+
+PROTECTION_ROWS_BEGIN = "<!--protection-rows:auto-->"
+PROTECTION_ROWS_END = "<!--/protection-rows:auto-->"
+protection_rows_re = re.compile(
+    re.escape(PROTECTION_ROWS_BEGIN) + r".*?" + re.escape(PROTECTION_ROWS_END), re.S)
+
+PROTECTION_MONTH_BEGIN = "<!--protection-month:auto-->"
+PROTECTION_MONTH_END = "<!--/protection-month:auto-->"
+protection_month_re = re.compile(
+    re.escape(PROTECTION_MONTH_BEGIN) + r".*?" + re.escape(PROTECTION_MONTH_END), re.S)
+
+PROTECTION_DATA_BEGIN = "<!--protection-data:auto-->"
+PROTECTION_DATA_END = "<!--/protection-data:auto-->"
+protection_data_re = re.compile(
+    re.escape(PROTECTION_DATA_BEGIN) + r".*?" + re.escape(PROTECTION_DATA_END), re.S)
+
+
+def protection_sort_key(value):
+    """Odpowiednik funkcji strip() w narzędziu: bez znaków diakrytycznych, małymi.
+
+    Kolejność wierszy w HTML musi być ta sama, którą narzędzie ustawia przy
+    domyślnym sortowaniu po nazwie — inaczej tabela przeskakuje po starcie JS.
+    """
+    folded = unicodedata.normalize("NFD", str(value))
+    return "".join(ch for ch in folded if not unicodedata.combining(ch)).lower()
+
+
+def protection_size_cell(entry):
+    if entry.get("sizeLabel"):
+        return "<strong>" + html.escape(entry["sizeLabel"]) + "</strong>"
+    if entry["size"] > 0:
+        return f"<strong>{entry['size']} cm</strong>"
+    return '<span class="pill pill-none">brak</span>'
+
+
+def protection_period_cell(period):
+    kind = "pill-none" if protection_sort_key(period).startswith("brak") else "pill-warn"
+    return f'<span class="pill {kind}">{html.escape(period)}</span>'
+
+
+def build_protection_rows():
+    """Wiersze tabeli w kolejności domyślnego sortowania narzędzia."""
+    out = []
+    for d in sorted(PROTECTION_SPECIES, key=lambda x: protection_sort_key(x["name"])):
+        name = html.escape(d["name"])
+        heading = (f'<a href="../ryby/{d["slug"]}.html"><strong>{name}</strong></a>'
+                   if d["slug"] else f"<strong>{name}</strong>")
+        out.append(
+            "<tr>"
+            f'<th scope="row">{heading}<br>'
+            '<span class="fh-latin" style="font-size:.78rem;color:var(--muted)">'
+            f'{html.escape(PROTECTION_CAT_LABEL[d["cat"]])}</span></th>'
+            f'<td class="tt-num">{protection_size_cell(d)}</td>'
+            f'<td>{protection_period_cell(d["period"])}</td>'
+            f'<td class="tt-num">{html.escape(d["limit"])}</td>'
+            '<td style="color:var(--muted);font-size:.9rem">'
+            f'{html.escape(d["note"])}</td>'
+            '<td style="color:var(--muted);font-size:.78rem">'
+            f'{html.escape(d["basis"])}</td>'
+            "</tr>")
+    return "".join(out)
+
+
+def protection_month_group(title, entries, empty_text):
+    if entries:
+        items = "".join(
+            f'<li>{html.escape(d["name"])} — {html.escape(d["period"])}</li>'
+            for d in entries)
+    else:
+        items = f"<li>{html.escape(empty_text)}</li>"
+    return f"<section><h3>{html.escape(title)}</h3><ul>{items}</ul></section>"
+
+
+def build_protection_month(day):
+    """Grupy gatunków dla bieżącego miesiąca — ten sam podział co w narzędziu.
+
+    Blok jest datowany, więc pilnuje go ten sam comiesięczny cron wdrożenia,
+    który utrzymuje miesiąc w kalendarzach brań. Po starcie JS przelicza go na
+    faktyczną datę czytelnika, więc rozjazd dotyczy wyłącznie botów bez JS i
+    znika przy pierwszym wdrożeniu w nowym miesiącu.
+    """
+    national = [d for d in PROTECTION_SPECIES
+                if d["protection"]["kind"] == "national"
+                and day.month in d["protection"].get("months", [])]
+    without = [d for d in PROTECTION_SPECIES if d["protection"]["kind"] == "none"]
+    local = [d for d in PROTECTION_SPECIES if d["protection"]["kind"] == "local"]
+    groups = (
+        protection_month_group(
+            "Krajowy okres ochronny w tym miesiącu", national,
+            "W tym miesiącu tabela nie wskazuje krajowego okresu ochronnego"
+            " dla wymienionych gatunków.")
+        + protection_month_group(
+            "Brak krajowego okresu w tabeli", without, "Brak wierszy w tej grupie.")
+        + protection_month_group(
+            "Zależne od odcinka lub wody", local,
+            "Brak wierszy zależnych od odcinka w tym zestawieniu."))
+    month = CALENDAR_MONTHS_PL[day.month - 1]
+    if national:
+        verdict = f"Krajową ochroną objęto {len(national)} gat. "
+    else:
+        verdict = "Tabela nie wskazuje krajowej ochrony dla wymienionych gatunków. "
+    summary = (f"Miesiąc: {month} {day.year}. {verdict}"
+               "Pozostałe grupy nie oznaczają zgody na połów ani zabranie ryby.")
+    return summary, groups
+
+
+def inject_protection_table(src, rel, today=None):
+    """Wstawia wiersze tabeli, blok miesiąca i dane JSON dla narzędzia."""
+    if rel != PROTECTION_PAGE:
+        return src
+    day = today or datetime.date.today()
+
+    rows = (PROTECTION_ROWS_BEGIN + build_protection_rows() + PROTECTION_ROWS_END)
+    if protection_rows_re.search(src):
+        src = protection_rows_re.sub(lambda _: rows, src, count=1)
+    else:
+        src = src.replace('<tbody id="rows"></tbody>',
+                          f'<tbody id="rows">{rows}</tbody>', 1)
+
+    # Licznik też był pusty do czasu startu JS, a to jedyne miejsce, które mówi
+    # czytelnikowi, ile gatunków obejmuje zestawienie.
+    total = len(PROTECTION_SPECIES)
+    src = re.sub(r'<p class="tool-count" id="count">.*?</p>',
+                 f'<p class="tool-count" id="count">Wyświetlono {total}'
+                 f' z {total} gatunków.</p>', src, count=1, flags=re.S)
+
+    summary, groups = build_protection_month(day)
+    month_block = (
+        PROTECTION_MONTH_BEGIN
+        + '<p id="month-protection-summary" class="tool-count" role="status"'
+          f' aria-live="polite">{html.escape(summary)}</p>'
+        + '<div id="month-protection" class="result-kit" aria-live="polite">'
+        + groups + "</div>"
+        + PROTECTION_MONTH_END)
+    if protection_month_re.search(src):
+        src = protection_month_re.sub(lambda _: month_block, src, count=1)
+    else:
+        old = re.compile(
+            r'<p id="month-protection-summary".*?</p>\s*'
+            r'<div id="month-protection".*?</div>', re.S)
+        src = old.sub(lambda _: month_block, src, count=1)
+
+    payload = json.dumps(PROTECTION_SPECIES, ensure_ascii=False, separators=(",", ":"))
+    # </script> w danych rozerwałoby tag; w tym zbiorze go nie ma, ale zapis
+    # ma być odporny na przyszłe wpisy.
+    payload = payload.replace("</", "<\\/")
+    data_block = (PROTECTION_DATA_BEGIN
+                  + '<script id="protection-data" type="application/json">'
+                  + payload + "</script>" + PROTECTION_DATA_END)
+    if protection_data_re.search(src):
+        src = protection_data_re.sub(lambda _: data_block, src, count=1)
+    else:
+        src = src.replace("</main>", data_block + "\n</main>", 1)
+    return src
+
+
 def normalize_fish_legal_section(src, rel):
     """Zastępuje starszy opis PZW jedną kartą opartą na aktualnym akcie."""
     if not rel.startswith("ryby/"):
@@ -3872,6 +4081,7 @@ def build(path):
 
     rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
     src = ensure_calendar_month(src, rel)
+    src = inject_protection_table(src, rel)
 
     tm = title_re.search(src)
     dm = desc_re.search(src)

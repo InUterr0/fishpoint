@@ -1126,6 +1126,34 @@ def main() -> int:
     check(not missing_forecast,
           f"kalendarze bez linku do prognozy brań: {missing_forecast}", failures)
 
+    # Tabela okresów ochronnych musi stać w statycznym HTML, a nie powstawać
+    # dopiero w przeglądarce. Boty AI nie wykonują JS, a llms-full.txt powstaje
+    # z HTML-a — pusty <tbody> znaczył, że najmocniejszy zasób serwisu nie
+    # istnieje dla silników odpowiedzi. Kontrakt trzyma też HTML i JSON razem:
+    # jeśli się rozjadą, narzędzie pokaże co innego niż tabela pod nim.
+    protection = read("narzedzia/okresy-ochronne.html")
+    tbody = re.search(r'<tbody id="rows">(.*?)</tbody>', protection, re.S)
+    payload = re.search(r'id="protection-data"[^>]*>(.*?)</script>', protection, re.S)
+    check(bool(tbody) and bool(payload),
+          "strona okresów ochronnych musi mieć <tbody id=\"rows\"> i blok protection-data",
+          failures)
+    if tbody and payload:
+        rendered = len(re.findall(r"<tr>", tbody.group(1)))
+        records = len(json.loads(payload.group(1).replace("<\\/", "</")))
+        check(rendered == records and rendered >= 29,
+              f"wiersze tabeli ochronnej ({rendered}) muszą odpowiadać danym ({records})",
+              failures)
+        # Wartość kontrolna z aktu: bez niej „wyrenderowane wiersze” mogłyby
+        # być pustymi <tr> i kontrakt liczbowy dalej by przechodził.
+        check("45 cm" in tbody.group(1) and "1 I – 30 IV" in tbody.group(1),
+              "wiersz szczupaka musi nieść wymiar 45 cm i okres 1 I – 30 IV", failures)
+
+    full = read("llms-full.txt")
+    start = full.find("## Okresy ochronne ryb i wymiary w 2026 roku")
+    section = full[start:full.find("\n## ", start + 10)] if start >= 0 else ""
+    check("Szczupak" in section and "45 cm" in section,
+          "llms-full.txt musi nieść dane gatunków z tabeli okresów ochronnych", failures)
+
     if failures:
         print("Audit contracts failed:", file=sys.stderr)
         for failure in failures:
