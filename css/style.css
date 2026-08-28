@@ -1466,6 +1466,7 @@ html, body { overflow-x: clip; }
   text-align: left;
 }
 :is(table.decision-table, table.starter-kit, .decision-table > table, .starter-kit > table) :is(th, td) {
+  overflow-wrap: break-word;
   padding: 13px 16px;
   text-align: left;
   vertical-align: top;
