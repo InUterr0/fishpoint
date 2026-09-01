@@ -141,6 +141,14 @@ def scheduling_dialog_open():
       (document.body.innerText || '').includes('Zaplanuj na później') ? '1' : '0'
     )()''').strip().strip('"') == '1'
 
+def settings_screen_open():
+    # Drugi krok kompozytora ma własny nagłówek. Bez tego sprawdzenia skrypt
+    # klikał „Dalej" jeszcze w trakcie animacji przejścia i gubił „Opublikuj".
+    return js(r'''(() =>
+      (document.body.innerText || '').includes('Ustawienia posta') ? '1' : '0'
+    )()''').strip().strip('"') == '1'
+
+
 def click_target(labels=None, textbox=False, in_dialog=False):
     payload = js(r'''(() => {
       const labels = __LABELS__;
@@ -264,7 +272,14 @@ def post_one(idx, item):
             break
         elif clicked == 'Dalej':
             print('[fb] %d klik: Dalej' % idx)
-            time.sleep(5)
+            # Przejście na „Ustawienia posta" potrafi trwać kilkanaście sekund.
+            # Czekamy na nie aktywnie: sztywna pauza kończyła się ponownym
+            # kliknięciem znikającego „Dalej" i pętla nigdy nie widziała CTA.
+            for _ in range(15):
+                time.sleep(2)
+                if settings_screen_open():
+                    print('[fb] %d ekran: Ustawienia posta' % idx)
+                    break
         else:
             time.sleep(2)
     p = shot('opublikowano-%d' % idx)
