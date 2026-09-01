@@ -111,6 +111,7 @@ TOOL_IMG = {
     "lowiska/warminsko-mazurskie.html": "/assets/img/tematy/splawik.jpg",
     "lowiska/wielkopolskie.html": "/assets/img/tematy/wedki.jpg",
     "lowiska/zachodniopomorskie.html": "/assets/img/tematy/cr.jpg",
+    "lowiska/planowanie-wyprawy.html": "/assets/img/tematy/jezioro-poranek.jpg",
 }
 LOGO = "/assets/img/logo.png"          # kwadratowe logo marki (dla schema.org)
 
@@ -448,6 +449,18 @@ CALENDAR_TODAY_LINK = (
 )
 
 
+# Tytuł kalendarza łączy dopełniacz („kalendarz brań okonia") z mianownikiem
+# w drugiej części („kiedy bierze okoń"). Mapa trzyma obie formy razem, żeby
+# nie odmieniać nazw w locie.
+CALENDAR_NOMINATIVE = {
+    "szczupaka": "szczupak", "sandacza": "sandacz", "okonia": "okoń",
+    "suma": "sum", "karpia": "karp", "leszcza": "leszcz",
+    "płoci": "płoć", "lina": "lin", "klenia": "kleń",
+    "pstrąga potokowego": "pstrąg potokowy", "węgorza": "węgorz",
+    "bolenia": "boleń", "amura": "amur", "karasia": "karaś",
+}
+
+
 def calendar_species(title_tail):
     """Z ogona tytułu wyciąga samą nazwę gatunku w dopełniaczu.
     Odporne na wielokrotne przebudowy: tnie zarówno starą formę
@@ -488,7 +501,7 @@ def ensure_calendar_hub_month(src, today=None):
     if not lead:
         return src
     src = re.sub(r"<title>[^<]*</title>",
-                 f"<title>Kalendarz brań ryb — {month} {day.year}, miesiąc po miesiącu"
+                 f"<title>Kalendarz brań ryb {day.year} — miesiąc po miesiącu"
                  " | FishPoint</title>", src, count=1)
     block = (f'{CALENDAR_MONTH_BEGIN}<p class="month-now">'
              f'<strong>{month.capitalize()} {day.year}:</strong> {lead} '
@@ -661,13 +674,22 @@ def ensure_calendar_month(src, rel, today=None):
     day = today or datetime.date.today()
     month = CALENDAR_MONTHS_PL[day.month - 1]
     species = calendar_species(tm.group(1))
-    row = calendar_month_row(src, day.month)
-    if not species or not row:
+    if not species:
         return src
-    activity, hint = row
+    # Tytuł trzyma rok, nie miesiąc. Strona nie jest przebudowywana co miesiąc,
+    # a tytuł z minionym miesiącem Google i tak zastępuje własnym. Bieżący
+    # miesiąc pokazujemy w treści, w bloku month-now, gdzie może się zestarzeć
+    # bez wprowadzania czytelnika w błąd już w wynikach wyszukiwania.
+    # Tytuł ustawiamy niezależnie od wiersza miesiąca: w okresie ochronnym
+    # gatunek nie ma wiersza aktywności, a tytuł i tak musi być aktualny.
     src = CALENDAR_TITLE_RE.sub(
-        f"<title>Kalendarz brań {species} — {month} {day.year} | FishPoint</title>",
+        f"<title>Kalendarz brań {species} {day.year} — kiedy bierze"
+        f" {CALENDAR_NOMINATIVE.get(species, species)} | FishPoint</title>",
         src, count=1)
+    row = calendar_month_row(src, day.month)
+    if not row:
+        return ensure_calendar_opinion(src)
+    activity, hint = row
     # „Szczyt" jest w tabeli rzeczownikiem, reszta przymiotnikiem — bez tego
     # rozróżnienia wychodzi „aktywność szczyt".
     label = ("szczyt aktywności" if activity.lower().startswith("szczyt")
@@ -1106,9 +1128,6 @@ INLINE_PAGE_VISUALS = {
         ("/assets/img/tematy/gumy-kopyta.jpg", ("rodzaje gum",)),
         ("/assets/img/tematy/guma-glowka-dlon.jpg", ("dobor ciezaru głowki",)),
         ("/assets/img/tematy/blystki-wahadlowe.jpg", ("obrotowki i wahadłowki",)),
-    ),
-    "pierwsze-kroki/sprzet/przynety.html": (
-        ("/assets/img/tematy/pudelko-przynet.jpg", ("plan pierwszych zakupow", "przechowywanie")),
     ),
     "sprzet/jak-wybrac-kolowrotek.html": (
         ("/assets/img/tematy/kolowrotek-ninja.jpg", ("kontrola przed zakupem", "parametry")),
@@ -4101,8 +4120,6 @@ def build(path):
 
     src = normalize_fish_legal_section(src, rel)
     src = inject_calendar_legal_section(src, rel)
-    # Ujednolic sezonowa etykiete w hero: publikacja w lipcu nie udaje wrzesniowej daty.
-    src = src.replace("wrzesień 2026", "sezon jesienny 2026")
     url = absolute_url(rel_url(path))
 
 
@@ -4112,6 +4129,11 @@ def build(path):
     is_section_index = not is_home and rel.endswith("/index.html")
     collection_dir = os.path.dirname(rel)
     collection_modified = collection_child_modified(collection_dir) if is_section_index else None
+    # Hub deklaruje świeżość najnowszej karty w dziale — tak liczy ją JSON-LD
+    # i widoczny podpis. Sitemap musi podać tę samą datę, inaczej lastmod
+    # przeczyłby dacie na stronie i robot dostawałby sprzeczne sygnały.
+    if collection_modified:
+        mtime = collection_modified
     if collection_modified:
         freshness = (
             f'{HUB_FRESHNESS_BEGIN}<p class="article-meta hub-freshness">'

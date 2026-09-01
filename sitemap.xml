@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -146,7 +146,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/bledy-poczatkujacych.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -722,7 +722,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/kuchnia/</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -808,13 +808,13 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/dolnoslaskie.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -824,7 +824,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/kujawsko-pomorskie.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -834,7 +834,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/lodzkie.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -844,7 +844,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/lubelskie.html</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -854,7 +854,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/lubuskie.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -864,7 +864,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/malopolskie.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -874,7 +874,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/mazowieckie.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -884,7 +884,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/opolskie.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -893,8 +893,18 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/lowiska/planowanie-wyprawy.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jezioro-poranek.jpg</image:loc>
+      <image:title>Wędka oparta o pniak na brzegu jeziora, przejrzysta woda i pas roślinności</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/lowiska/podkarpackie.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -904,7 +914,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/podlaskie.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -914,7 +924,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/pomorskie.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -924,7 +934,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/slaskie.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -934,7 +944,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/swietokrzyskie.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -944,7 +954,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/warminsko-mazurskie.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -954,7 +964,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/wielkopolskie.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -964,7 +974,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/lowiska/zachodniopomorskie.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -974,7 +984,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/narzedzia/</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1104,13 +1114,13 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/jeziora.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1124,7 +1134,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/kanaly.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1134,7 +1144,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/rzeki.html</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1144,7 +1154,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/lowiska/stawy.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1184,7 +1194,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/rodzaje-ryb/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1238,13 +1248,13 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/akcesoria.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1272,7 +1282,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/przynety.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1282,10 +1292,6 @@
     <image:image>
       <image:loc>https://i.ytimg.com/vi/89_P0i_Ye5U/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: Przynęty spinningowe  #16 Poradnik Wędkarski wędkarstwo lucio</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/pudelko-przynet.jpg</image:loc>
-      <image:title>Otwarte pudełko z gumami, woblerami i błystkami ułożonymi w przegródkach</image:title>
     </image:image>
   </url>
   <url>
@@ -1304,7 +1310,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/pierwsze-kroki/sprzet/wprowadzenie.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1344,7 +1350,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1400,57 +1406,57 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-amur.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/amur.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań amura</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań amura 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-bolen.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/bolen.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań bolenia</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań bolenia 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-karas.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karas.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań karasia</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań karasia 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-karp.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań karpia</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań karpia 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-klen.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/klen.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań klenia</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań klenia 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1460,67 +1466,67 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-lin.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/lin.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań lina</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań lina 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-okon.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań okonia</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań okonia 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-ploc.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/ploc.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań płoci</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań płoci 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/pstrag.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań pstrąga potokowego</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań pstrąga potokowego 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sandacz.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań sandacza</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań sandacza 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-sum.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/sum.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań suma</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań suma 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1530,17 +1536,17 @@
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-wegorz.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/wegorz.jpg</image:loc>
-      <image:title>Ilustracja do artykułu: Kalendarz brań węgorza</image:title>
+      <image:title>Ilustracja do artykułu: Kalendarz brań węgorza 2026</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1676,7 +1682,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1740,7 +1746,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/ciernik.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1770,7 +1776,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/glowacz-bialopletwy.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1866,7 +1872,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/kielb.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1890,7 +1896,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/koza.html</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1900,7 +1906,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/krap.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1978,7 +1984,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/minog-rzeczny.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2016,7 +2022,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/piskorz.html</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2040,7 +2046,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/pstrag.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2054,7 +2060,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/rozanka.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2108,7 +2114,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/slonecznica.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2118,7 +2124,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/strzebla-potokowa.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2202,7 +2208,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/wegorz.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2232,7 +2238,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/sprzet/</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2374,7 +2380,7 @@
   </url>
   <url>
     <loc>https://fish-point.pl/techniki/</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

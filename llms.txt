@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-08-28.
+> Najnowsza merytoryczna zmiana: 2026-09-01.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -102,6 +102,7 @@
 - [Małopolska: plan weryfikacji wód i dokumentów](https://fish-point.pl/lowiska/malopolskie.html): Małopolska: urzędowa ścieżka sprawdzenia odcinków Wisły i Raby, zezwoleń, rejestru, ograniczeń i hydrologii.
 - [Łowiska w województwie mazowieckim](https://fish-point.pl/lowiska/mazowieckie.html): Przewodnik startowy po potwierdzonych wodach Okręgu Mazowieckiego PZW: dokumenty, zezwolenie, rejestr, strefy i bieżące komunikaty. Nie stanowi zgody na dostęp.
 - [Opolskie: plan weryfikacji wód i dokumentów](https://fish-point.pl/lowiska/opolskie.html): Łowiska w opolskiem: urzędowa ścieżka sprawdzenia Turawy, Nysy i Otmuchowa — kto gospodaruje wodą, jakie zezwolenia, ograniczenia i dane hydrologiczne.
+- [Jak zaplanować wyprawę ze źródłem: od nazwy wody do dokumentu](https://fish-point.pl/lowiska/planowanie-wyprawy.html): Jak dojść od nazwy wody do dokumentu, który rozstrzyga o połowie: gospodarz, wykaz wód, zezwolenie, regulamin i komunikaty — krok po kroku.
 - [Łowiska w województwie podkarpackim](https://fish-point.pl/lowiska/podkarpackie.html): Łowiska podkarpackie z wykazu PZW Krosno: dokumenty, zezwolenie, rejestr, ograniczenia i komunikaty przed wyjazdem.
 - [Podlaskie: źródłowe planowanie wyprawy](https://fish-point.pl/lowiska/podlaskie.html): Łowiska podlaskie: rzeki, jeziora i obszary chronione oraz dokumenty administratora, które trzeba sprawdzić przed wyjazdem.
 - [Łowiska pomorskie: źródłowa ścieżka planowania wyprawy](https://fish-point.pl/lowiska/pomorskie.html): Pomorskie: źródłowe karty wód, dokumenty, zezwolenie, dostęp i bezpieczeństwo. Sprawdzone 20 lipca 2026.
@@ -152,13 +153,13 @@
 
 ## Poradniki
 
-- [Poradniki wędkarskie](https://fish-point.pl/poradniki/): Przegląd poradników wędkarskich FishPoint: kalendarz brań, wpływ pogody na żerowanie, węzły, domowe zanęty, catch & release, echosondy, łowienie nocne i zimowe.
+- [Poradniki wędkarskie](https://fish-point.pl/poradniki/): Przegląd poradników wędkarskich FishPoint: kalendarz brań, wpływ pogody na żerowanie, węzły, domowe zanęty, catch &
 - [Catch & release](https://fish-point.pl/poradniki/catch-and-release.html): Poradnik FishPoint o catch & release: szybki hol i kwas mlekowy, gumowany podbierak, mata karpiowa, mokre ręce, odhaczanie i haki bezzadziorowe, zasada.
 - [Echosondy i elektronika](https://fish-point.pl/poradniki/echosondy.html): Poradnik FishPoint o echosondach: zasada działania sonaru i częstotliwości 50/83/200 kHz, CHIRP, czytanie łuków w 2D, DownScan i SideScan, GPS i mapy.
 - [Etyka i przepisy wędkarskie](https://fish-point.pl/poradniki/etyka-i-przepisy.html): Poradnik FishPoint o etyce i przepisach wędkarskich: karta wędkarska i egzamin, struktura PZW, składki i zezwolenia, regulamin amatorskiego połowu ryb.
-- [Kalendarz brań amura](https://fish-point.pl/poradniki/kalendarz-bran-amur.html): Kiedy bierze amur? Kalendarz brań amura miesiąc po miesiącu: sezon maj–wrzesień, żerowanie przy powierzchni, kukurydza i zielone przynęty oraz obowiązek wynikający z § 8 dla gatunku nierodzimego.
-- [Kalendarz brań bolenia](https://fish-point.pl/poradniki/kalendarz-bran-bolen.html): Kiedy bierze boleń? Kalendarz brań bolenia miesiąc po miesiącu: sezon maj–październik, bicie na bystrzach, dalekie rzuty i szybkie prowadzenie, wymiar ochronny 40 cm.
-- [Kalendarz brań karasia](https://fish-point.pl/poradniki/kalendarz-bran-karas.html): Kiedy bierze karaś? Kalendarz brań karasia miesiąc po miesiącu: sezon maj–wrzesień, ciepłe płycizny i torfianki, delikatny spławik — oraz różnica prawna między karasiem pospolitym a srebrzystym.
+- [Kalendarz brań amura](https://fish-point.pl/poradniki/kalendarz-bran-amur.html): Kiedy bierze amur? Kalendarz brań amura miesiąc po miesiącu: sezon maj–wrzesień, żerowanie przy powierzchni, kukurydza i zielone przynęty oraz obowiązek.
+- [Kalendarz brań bolenia](https://fish-point.pl/poradniki/kalendarz-bran-bolen.html): Kiedy bierze boleń? Kalendarz brań bolenia miesiąc po miesiącu: sezon maj–październik, bicie na bystrzach, dalekie rzuty i szybkie prowadzenie, wymiar.
+- [Kalendarz brań karasia](https://fish-point.pl/poradniki/kalendarz-bran-karas.html): Kiedy bierze karaś? Kalendarz brań karasia miesiąc po miesiącu: sezon maj–wrzesień, ciepłe płycizny i torfianki, delikatny spławik —
 - [Kalendarz brań karpia](https://fish-point.pl/poradniki/kalendarz-bran-karp.html): Kiedy bierze karp? Kalendarz brań karpia miesiąc po miesiącu: sezon od wiosny do jesieni, szczyt latem, wpływ temperatury wody, pogody i zanęcania.
 - [Kalendarz brań klenia](https://fish-point.pl/poradniki/kalendarz-bran-klen.html): Kiedy bierze kleń? Kalendarz brań klenia miesiąc po miesiącu: aktywność niemal całoroczna, szczyt latem, żerowanie przy powierzchni i pod nawisami, przynęty.
 - [Kalendarz brań leszcza](https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html): Kiedy bierze leszcz? Kalendarz brań leszcza miesiąc po miesiącu — szczyt wiosną i latem, brania nocne, znaczenie zanęty, pory dnia, pogoda i wędrujące stada.
@@ -169,8 +170,8 @@
 - [Kalendarz brań sandacza](https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html): Kiedy bierze sandacz? Kalendarz brań miesiąc po miesiącu: szczyt po tarle i jesienią, brania nocne i o zmierzchu, głębokość, gumy i jigi.
 - [Kalendarz brań suma](https://fish-point.pl/poradniki/kalendarz-bran-sum.html): Kiedy bierze sum? Kalendarz brań suma miesiąc po miesiącu: sezon maj–wrzesień, szczyt latem, najlepsze pory dnia, wpływ temperatury wody i burz.
 - [Kalendarz brań szczupaka](https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html): Kiedy bierze szczupak? Kalendarz brań szczupaka miesiąc po miesiącu: szczyt jesienny, wiosna po otwarciu, trudne upały, pora dnia, pogoda i okres ochronny.
-- [Kalendarz brań węgorza](https://fish-point.pl/poradniki/kalendarz-bran-wegorz.html): Kiedy bierze węgorz? Kalendarz brań węgorza miesiąc po miesiącu: sezon maj–wrzesień, brania po zmroku, ciepłe noce po deszczu, rosówka i okres ochronny 1 grudnia–31 marca.
-- [Kalendarz brań ryb](https://fish-point.pl/poradniki/kalendarz-bran.html): Kalendarz brań ryb na 2026 rok, miesiąc po miesiącu: kiedy żeruje szczupak, sandacz, okoń, sum, karp, leszcz, płoć i lin — i dlaczego decyduje temperatura wody, nie data.
+- [Kalendarz brań węgorza](https://fish-point.pl/poradniki/kalendarz-bran-wegorz.html): Kiedy bierze węgorz? Kalendarz brań węgorza miesiąc po miesiącu: sezon maj–wrzesień, brania po zmroku, ciepłe noce po deszczu, rosówka i okres ochronny 1.
+- [Kalendarz brań ryb](https://fish-point.pl/poradniki/kalendarz-bran.html): Kalendarz brań ryb na 2026 rok, miesiąc po miesiącu: kiedy żeruje szczupak, sandacz, okoń, sum, karp, leszcz, płoć i lin —
 - [Łowienie nocne](https://fish-point.pl/poradniki/lowienie-nocne.html): Poradnik FishPoint o łowieniu nocnym: bezpieczeństwo nad wodą po zmroku, czołówka z czerwonym światłem, sygnalizacja brań (świetliki, sygnalizatory, swingery).
 - [Łowienie zimą na otwartej wodzie](https://fish-point.pl/poradniki/lowienie-zima.html): Poradnik FishPoint o zimowym łowieniu na otwartej wodzie: metabolizm ryb zimą, gdzie szukać zimowisk, spowolniony spinning (jig wleczony, drop shot), przynęty.
 - [Pogoda a brania ryb](https://fish-point.pl/poradniki/pogoda-a-brania.html): Poradnik FishPoint o wpływie pogody na brania: ciśnienie atmosferyczne i fronty, wiatr i nawiew pokarmu, temperatura wody i ektotermia ryb, światło.
@@ -200,7 +201,7 @@
 - [Kleń](https://fish-point.pl/ryby/klen.html): Kleń (Squalius cephalus): wymiar ochronny 25 cm, brak krajowego okresu ochronnego. Rozpoznawanie, stanowiska rzeczne, ostrożność ryby i metody połowu.
 - [Koza pospolita](https://fish-point.pl/ryby/koza.html): Koza pospolita (Cobitis taenia) jest objęta ochroną siedliskową UE — nie planuj jej połowu. Jak odróżnić ją od piskorza i jak postąpić, gdy trafi na haczyk.
 - [Krąp](https://fish-point.pl/ryby/krap.html): Krąp (Blicca bjoerkna): drobna ryba spokojnego żeru w ocenie IUCN najmniejszej troski. Rozpoznawanie, siedlisko, pokarm i zasady konkretnego łowiska.
-- [Atlas ryb: leszcz (Abramis brama)](https://fish-point.pl/ryby/leszcz.html): Leszcza od krąpia odróżnisz po promieniach płetwy odbytowej i wielkości oka. Brak wymiaru i okresu krajowego — decydują zasady lokalne. Stanowiska, zanęta i feeder.
+- [Atlas ryb: leszcz (Abramis brama)](https://fish-point.pl/ryby/leszcz.html): Leszcza od krąpia odróżnisz po promieniach płetwy odbytowej i wielkości oka. Brak wymiaru i okresu krajowego — decydują zasady lokalne.
 - [Lin](https://fish-point.pl/ryby/lin.html): Lin (Tinca tinca): wymiar ochronny 25 cm, brak krajowego okresu ochronnego. Rozpoznawanie, płytkie stanowiska, tarło oraz metody spławikowe i method feeder.
 - [Lipień](https://fish-point.pl/ryby/lipien.html): Lipień: wymiar ochronny 30 cm, okres ochronny 1 marca–31 maja. Rozpoznawanie, stanowiska w rzekach górskich, żerowanie i metody muchowe.
 - [Miętus](https://fish-point.pl/ryby/mietus.html): Miętus: wymiar ochronny 25 albo 30 cm, okres ochronny od 1 grudnia do końca lutego. Rozpoznawanie, zimowe stanowiska, tarło i nocne metody połowu.

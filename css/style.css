@@ -1626,11 +1626,10 @@ html.dark table.heat tbody th a {
 }
 
 /* Zgoda na analitykę: stałe, czytelne elementy bez ładowania zewnętrznego kodu przed wyborem. */
+.footer-privacy { margin: 18px 0 0; text-align: center; }
+
 .analytics-settings {
-  position: fixed;
-  right: max(16px, env(safe-area-inset-right));
-  bottom: max(16px, env(safe-area-inset-bottom));
-  z-index: 20;
+  position: static;
   min-height: 44px;
   padding: 10px 15px;
   border: 1px solid rgba(255,255,255,.3);
@@ -1643,7 +1642,7 @@ html.dark table.heat tbody th a {
   font-weight: 700;
   transition: transform .18s ease, background-color .18s ease;
 }
-.analytics-settings:hover { background: #0e665b; transform: translateY(-1px); }
+.analytics-settings:hover { background: #0e665b; }
 .analytics-consent {
   position: fixed;
   right: 16px;
@@ -1755,7 +1754,6 @@ html.dark .analytics-consent-reject { border-color: rgba(255,255,255,.35) !impor
 }
 
 @media (max-width: 540px) {
-  .analytics-settings { right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); }
   .analytics-consent { right: 12px; bottom: 68px; left: 12px; width: calc(100% - 24px); padding: 18px 16px; }
   .analytics-consent-actions button { flex: 1 1 100%; width: 100%; }
 }

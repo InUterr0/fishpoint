@@ -291,7 +291,18 @@ document.querySelectorAll('.youtube-facade[data-video-id]').forEach((facade) => 
   accept.textContent = 'Akceptuję';
   actions.append(reject, accept);
   notice.append(title, copy, actions);
-  document.body.append(settings, notice);
+  // Przycisk mieszka w stopce, a nie jako element pływający nad treścią:
+  // przy 390 px zasłaniał karty artykułów, a na desktopie prawą kolumnę.
+  const footer = document.querySelector('footer.footer');
+  if (footer) {
+    const slot = document.createElement('p');
+    slot.className = 'footer-privacy';
+    slot.append(settings);
+    footer.append(slot);
+  } else {
+    document.body.append(settings);
+  }
+  document.body.append(notice);
 
   const openNotice = () => {
     notice.hidden = false;

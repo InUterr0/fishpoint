@@ -10,6 +10,7 @@ import struct
 import datetime
 import json
 import os
+import collections
 import re
 import sys
 from collections import Counter
@@ -260,7 +261,7 @@ def main() -> int:
     failures: list[str] = []
     sitemap = ET.fromstring(read("sitemap.xml"))
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
-    check(len(urls) == 207 and len(set(urls)) == 207, "sitemap must contain 207 unique URLs", failures)
+    check(len(urls) == 208 and len(set(urls)) == 208, "sitemap must contain 208 unique URLs", failures)
 
     visual_pages = 0
     regional_visuals = 0
@@ -286,7 +287,6 @@ def main() -> int:
             "/assets/img/tematy/guma-glowka-dlon.jpg",
             "/assets/img/tematy/blystki-wahadlowe.jpg",
         ),
-        "pierwsze-kroki/sprzet/przynety.html": ("/assets/img/tematy/pudelko-przynet.jpg",),
         "sprzet/jak-wybrac-kolowrotek.html": ("/assets/img/tematy/kolowrotek-ninja.jpg",),
         "sprzet/plecionki-zylki.html": ("/assets/img/tematy/wedka-plecionka.jpg",),
         "poradniki/zanety-domowe.html": ("/assets/img/tematy/zaneta-kukurydza.jpg",),
@@ -573,7 +573,7 @@ def main() -> int:
                 failures.append(f"{relative}: invalid JSON-LD: {error}")
 
     check(visual_pages >= 73, "fewer than 73 articles have licensed lead visuals", failures)
-    check(regional_visuals == 16, "all 16 regional fishery pages need illustrative visuals", failures)
+    check(regional_visuals == 17, "all 17 regional fishery pages need illustrative visuals", failures)
     check(
         {key: sorted(value) for key, value in observed_inline_visuals.items()}
         == {key: sorted(value) for key, value in expected_inline_visuals.items()},
@@ -1153,6 +1153,49 @@ def main() -> int:
     section = full[start:full.find("\n## ", start + 10)] if start >= 0 else ""
     check("Szczupak" in section and "45 cm" in section,
           "llms-full.txt musi nieść dane gatunków z tabeli okresów ochronnych", failures)
+
+    # Tytuł kalendarza brań nie może nieść nazwy miesiąca. Strona nie jest
+    # przebudowywana co miesiąc, więc miesiąc w tytule zestarzałby się w SERP-ie
+    # zanim ktokolwiek zauważy — Google i tak zastępował go wtedy własnym.
+    months = [m.lower() for m in seo_inject.CALENDAR_MONTHS_PL]
+    for path in sorted((ROOT / "poradniki").glob("kalendarz-bran*.html")):
+        relative = path.relative_to(ROOT).as_posix()
+        page_title = re.search(r"<title>(.*?)</title>", read(relative), re.S)
+        title_text = (page_title.group(1) if page_title else "").lower()
+        check(not any(month in title_text for month in months),
+              f"{relative}: tytuł kalendarza nie może zawierać nazwy miesiąca", failures)
+
+    # Żadna strona nie może być w większości złożona ze zdań powtórzonych na
+    # innych stronach. To sygnał treści szablonowej — powód odrzucenia witryny
+    # w programach reklamowych i degradacji w wyszukiwarce.
+    sentences_by_page = {}
+    for url in urls:
+        relative = local_path(url)
+        if not (ROOT / relative).is_file():
+            continue
+        body = re.search(r"<main.*?</main>", read(relative), re.S)
+        if not body:
+            continue
+        text = re.sub(r"\s+", " ",
+                      re.sub(r"<[^>]+>", " ",
+                             re.sub(r"<script.*?</script>", "", body.group(0), flags=re.S)))
+        sentences_by_page[relative] = [
+            part.strip() for part in re.split(r"(?<=[.!?]) ", text)
+            if len(part.split()) >= 8
+        ]
+    sentence_pages = collections.Counter()
+    for sentences in sentences_by_page.values():
+        for sentence in set(sentences):
+            sentence_pages[sentence] += 1
+    boilerplate = []
+    for relative, sentences in sentences_by_page.items():
+        total = sum(len(s.split()) for s in sentences)
+        shared = sum(len(s.split()) for s in sentences if sentence_pages[s] >= 3)
+        if total and shared * 100 // total >= 40:
+            boilerplate.append(f"{relative} ({shared * 100 // total}%)")
+    check(not boilerplate,
+          "strony w większości złożone z powtórzonego tekstu: " + ", ".join(sorted(boilerplate)),
+          failures)
 
     if failures:
         print("Audit contracts failed:", file=sys.stderr)

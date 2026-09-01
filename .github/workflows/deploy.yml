@@ -6,9 +6,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Kalendarze brań mają w tytule bieżący miesiąc (seo_inject.ensure_calendar_month).
-  # Bez wdrożenia pierwszego dnia miesiąca tytuł zostałby w poprzednim miesiącu,
-  # co szkodzi bardziej niż jego brak. 04:10 UTC = po północy czasu polskiego.
+  # Kalendarze brań pokazują bieżący miesiąc w treści (blok month-now).
+  # Tytuł trzyma sam rok, więc pominięty przebieg nie zestarzeje wyniku w SERP-ie
+  # — odświeża tylko akapit o miesiącu. 04:10 UTC = po północy czasu polskiego.
   schedule:
     - cron: '10 4 1 * *'
 
