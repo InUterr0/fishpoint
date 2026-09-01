@@ -2,9 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://fish-point.pl/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/pstrag.jpg</image:loc>
+      <image:title>Pstrąg potokowy — ilustracja do materiału o okresach ochronnych</image:title>
+    </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/kanaly.jpg</image:loc>
       <image:title>Kanał żeglugowy — ilustracja do materiału o złotej aldze</image:title>
@@ -25,16 +29,16 @@
       <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
       <image:title>Jezioro — lokalne zasady wędkowania na zbiorniku Świnna Poręba</image:title>
     </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/pogoda.jpg</image:loc>
-      <image:title>Burzowe chmury nad wodą — warunki sprzyjające deficytowi tlenu</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/pstrag.jpg</image:loc>
+      <image:title>Pstrąg potokowy — ilustracja do materiału o okresach ochronnych</image:title>
+    </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/kanaly.jpg</image:loc>
       <image:title>Kanał żeglugowy — ilustracja do materiału o złotej aldze</image:title>
@@ -386,6 +390,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/okon.jpg</image:loc>
       <image:title>Okoń złowiony jesienią na mikrogumę</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/okresy-ochronne-od-1-wrzesnia-2026.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/pstrag.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Od 1 września pod ochroną: pstrąg, troć jeziorowa i certa</image:title>
     </image:image>
   </url>
   <url>
@@ -1743,6 +1757,12 @@
       <image:loc>https://fish-point.pl/assets/img/ryby/certa.jpg</image:loc>
       <image:title>Certa (Vimba vimba) — wędrowna ryba karpiowata polskich rzek</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/chronione.html</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fish-point.pl/ryby/ciernik.html</loc>
