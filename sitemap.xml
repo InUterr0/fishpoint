@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://fish-point.pl/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -2108,6 +2108,16 @@
     <image:image>
       <image:loc>https://i.ytimg.com/vi/rDnwp9DDLXw/hqdefault.jpg</image:loc>
       <image:title>Miniatura filmu: ŁOWIENIE NA SPŁAWIK JEST PROSTE ! JAK ZŁOWIĆ PŁOĆ WIOSNĄ NA BATA piękne GRUBE PŁOCIE #PŁOĆ #SPŁAWIK</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/ryby/pstrag-teczowy.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/pstrag-teczowy.jpg</image:loc>
+      <image:title>Pstrąg tęczowy (Oncorhynchus mykiss) — różowa smuga wzdłuż boku i gęste czarne cętki</image:title>
     </image:image>
   </url>
   <url>

@@ -188,7 +188,7 @@
 
 ## Atlas ryb
 
-- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas 42 gatunki ryb polskich wód — słodkowodnych i bałtyckich: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary i źródła dla każdej karty.
+- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas 43 gatunki ryb polskich wód — słodkowodnych i bałtyckich: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary i źródła dla każdej karty.
 - [Amur](https://fish-point.pl/ryby/amur.html): Amur (Ctenopharyngodon idella): brak krajowego wymiaru i okresu ochronnego, ale jako gatunek nierodzimy podlega § 8. Rozpoznawanie, stanowiska i metody.
 - [Belona](https://fish-point.pl/ryby/belona.html): Belona (Belone belone): przed połowem sprawdź zasady i limity GIRM. Rozpoznawanie, letnia wędrówka na Bałtyku, stanowiska z brzegu i metody połowu.
 - [Boleń](https://fish-point.pl/ryby/bolen.html): Boleń (Leuciscus aspius): wymiar ochronny 40 cm, brak krajowego okresu ochronnego. Rozpoznawanie, stanowiska w rzekach, żerowanie i metody spinningowe.
@@ -217,6 +217,7 @@
 - [Piekielnica](https://fish-point.pl/ryby/piekielnica.html): Piekielnica jest objęta ochroną częściową i nie jest legalnym celem połowu ani przynętą. Po czym poznasz ją wśród uklei, gdzie żyje i co zrobić po przyłowie.
 - [Piskorz](https://fish-point.pl/ryby/piskorz.html): Piskorza nie wolno celowo łowić ani używać jako przynęty — to gatunek chroniony. Jak odróżnić go od kozy, gdzie żyje i jak bezpiecznie postąpić po przyłowie.
 - [Płoć](https://fish-point.pl/ryby/ploc.html): Płoć: brak krajowego wymiaru i okresu ochronnego — decydują zasady lokalne. Rozpoznawanie, stanowiska, żerowanie przez cały rok i metody spławikowe.
+- [Pstrąg tęczowy](https://fish-point.pl/ryby/pstrag-teczowy.html): Pstrąg tęczowy: gatunek obcy, najczęściej zarybiany w łowiskach komercyjnych. Jak odróżnić go od potokowego, jakie zasady obowiązują i na co bierze.
 - [Pstrąg potokowy](https://fish-point.pl/ryby/pstrag.html): Pstrąg potokowy: wymiar ochronny 25 albo 30 cm i okres ochronny zależny od odcinka wody. Rozpoznawanie, stanowiska w potokach, żerowanie i metody połowu.
 - [Różanka](https://fish-point.pl/ryby/rozanka.html): Różanka (Rhodeus amarus) jest gatunkiem chronionym — nie wolno jej celowo łowić. Rozpoznawanie, rozród w skójkowatych, siedlisko i postępowanie po przyłowie.
 - [Sandacz](https://fish-point.pl/ryby/sandacz.html): Sandacz (Sander lucioperca): wymiar ochronny 45 cm, okres ochronny 1 marca–31 maja. Rozpoznawanie, stanowiska, tarło, żerowanie i skuteczne metody połowu.

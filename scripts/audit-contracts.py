@@ -261,7 +261,7 @@ def main() -> int:
     failures: list[str] = []
     sitemap = ET.fromstring(read("sitemap.xml"))
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
-    check(len(urls) == 215 and len(set(urls)) == 215, "sitemap must contain 215 unique URLs", failures)
+    check(len(urls) == 216 and len(set(urls)) == 216, "sitemap must contain 216 unique URLs", failures)
 
     visual_pages = 0
     regional_visuals = 0
@@ -1113,8 +1113,18 @@ def main() -> int:
     species = len([p for p in (ROOT / "ryby").glob("*.html")
                    if p.name not in {"index.html", "chronione.html"}])
     tools = len([p for p in (ROOT / "narzedzia").glob("*.html") if p.name != "index.html"])
-    check(f"<strong>{species} gatunków</strong>" in home_lead,
-          f"lead strony głównej musi podawać {species} gatunków atlasu", failures)
+    # Polska liczba mnoga zależy od ostatniej cyfry: 2, 3 i 4 biorą mianownik
+    # („43 gatunki”), reszta dopełniacz („42 gatunków”); nastki zawsze dopełniacz.
+    # Kontrakt wymuszał wcześniej samo „gatunków”, więc każda liczba kończąca się
+    # na 2–4 wymuszałaby na stronie błąd gramatyczny.
+    def plural_species(count):
+        last, teens = count % 10, count % 100
+        if last in (2, 3, 4) and teens not in (12, 13, 14):
+            return "gatunki"
+        return "gatunków"
+    expected = f"<strong>{species} {plural_species(species)}</strong>"
+    check(expected in home_lead,
+          f"lead strony głównej musi podawać {expected}", failures)
     check(f"<strong>{tools} narzędzi</strong>" in home_lead,
           f"lead strony głównej musi podawać {tools} narzędzi", failures)
 
