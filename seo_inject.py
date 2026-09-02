@@ -501,7 +501,7 @@ def ensure_calendar_hub_month(src, today=None):
     if not lead:
         return src
     src = re.sub(r"<title>[^<]*</title>",
-                 f"<title>Kalendarz brań ryb {day.year} — miesiąc po miesiącu"
+                 f"<title>Kalendarz brań ryb — {month} {day.year}"
                  " | FishPoint</title>", src, count=1)
     block = (f'{CALENDAR_MONTH_BEGIN}<p class="month-now">'
              f'<strong>{month.capitalize()} {day.year}:</strong> {lead} '
@@ -676,15 +676,17 @@ def ensure_calendar_month(src, rel, today=None):
     species = calendar_species(tm.group(1))
     if not species:
         return src
-    # Tytuł trzyma rok, nie miesiąc. Strona nie jest przebudowywana co miesiąc,
-    # a tytuł z minionym miesiącem Google i tak zastępuje własnym. Bieżący
-    # miesiąc pokazujemy w treści, w bloku month-now, gdzie może się zestarzeć
-    # bez wprowadzania czytelnika w błąd już w wynikach wyszukiwania.
+    # Tytuł niesie bieżący miesiąc, tak jak u obu rywali stojących nad nami
+    # w top 10 na „kalendarz brań <gatunek>". Miesiąc bierze się z daty
+    # budowania, a harmonogram w .github/workflows/deploy.yml przebudowuje
+    # serwis pierwszego dnia każdego miesiąca, więc tytuł nie zestarzeje się
+    # w plikach. Forma „<gatunek> — <miesiąc> <rok>" jest tą, którą rozbiera
+    # calendar_species(), więc kolejne przebudowy nie nawarstwiają ogona.
     # Tytuł ustawiamy niezależnie od wiersza miesiąca: w okresie ochronnym
     # gatunek nie ma wiersza aktywności, a tytuł i tak musi być aktualny.
     src = CALENDAR_TITLE_RE.sub(
-        f"<title>Kalendarz brań {species} {day.year} — kiedy bierze"
-        f" {CALENDAR_NOMINATIVE.get(species, species)} | FishPoint</title>",
+        f"<title>Kalendarz brań {species} — {month} {day.year}"
+        " | FishPoint</title>",
         src, count=1)
     row = calendar_month_row(src, day.month)
     if not row:

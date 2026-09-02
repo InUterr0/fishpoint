@@ -2607,7 +2607,7 @@ Administrator danych Administratorem danych osobowych przetwarzanych w związku 
 Canonical URL: https://fish-point.pl/poradniki/
 Author: Maciej Baniewicz
 Published: 2026-06-11
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: CollectionPage
 Sources:
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
@@ -2631,7 +2631,7 @@ Sources:
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
 - [Echosondy i elektronika wędkarska](https://fish-point.pl/poradniki/echosondy.html)
 - [Etyka i przepisy wędkarskie](https://fish-point.pl/poradniki/etyka-i-przepisy.html)
-- [Kalendarz brań amura 2026](https://fish-point.pl/poradniki/kalendarz-bran-amur.html)
+- [Kalendarz brań amura](https://fish-point.pl/poradniki/kalendarz-bran-amur.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2652,8 +2652,8 @@ Sources:
 - [dokumentacja wsparcia Garmin](https://support.garmin.com/en-US/?faq=k5DbKA3w589v1U71ylHZY8)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
 - [Etyka i przepisy wędkarskie](https://fish-point.pl/poradniki/etyka-i-przepisy.html)
-- [Kalendarz brań amura 2026](https://fish-point.pl/poradniki/kalendarz-bran-amur.html)
-- [Kalendarz brań bolenia 2026](https://fish-point.pl/poradniki/kalendarz-bran-bolen.html)
+- [Kalendarz brań amura](https://fish-point.pl/poradniki/kalendarz-bran-amur.html)
+- [Kalendarz brań bolenia](https://fish-point.pl/poradniki/kalendarz-bran-bolen.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2673,9 +2673,9 @@ Sources:
 - [YouTube](https://www.youtube.com/watch?v=evBmvZ4ggPk)
 - [rozporządzenie w ELI](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań amura 2026](https://fish-point.pl/poradniki/kalendarz-bran-amur.html)
-- [Kalendarz brań bolenia 2026](https://fish-point.pl/poradniki/kalendarz-bran-bolen.html)
-- [Kalendarz brań karasia 2026](https://fish-point.pl/poradniki/kalendarz-bran-karas.html)
+- [Kalendarz brań amura](https://fish-point.pl/poradniki/kalendarz-bran-amur.html)
+- [Kalendarz brań bolenia](https://fish-point.pl/poradniki/kalendarz-bran-bolen.html)
+- [Kalendarz brań karasia](https://fish-point.pl/poradniki/kalendarz-bran-karas.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
@@ -2686,16 +2686,16 @@ Metoda FishPointWskazówki praktyczne: Przed wyprawą przygotuj dokumenty i spra
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-amur.html
 Author: Maciej Baniewicz
 Published: 2026-08-17
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
 - [Dezidor (CC BY 3.0)](https://commons.wikimedia.org/wiki/File:2x_amur_b%C3%ADl%C3%BD.jpg)
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań bolenia 2026](https://fish-point.pl/poradniki/kalendarz-bran-bolen.html)
-- [Kalendarz brań karasia 2026](https://fish-point.pl/poradniki/kalendarz-bran-karas.html)
-- [Kalendarz brań karpia 2026](https://fish-point.pl/poradniki/kalendarz-bran-karp.html)
+- [Kalendarz brań bolenia](https://fish-point.pl/poradniki/kalendarz-bran-bolen.html)
+- [Kalendarz brań karasia](https://fish-point.pl/poradniki/kalendarz-bran-karas.html)
+- [Kalendarz brań karpia](https://fish-point.pl/poradniki/kalendarz-bran-karp.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2706,16 +2706,16 @@ Kalendarz to hipoteza planowania, nie prognoza wynikuOceny miesięcy opisują ty
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-bolen.html
 Author: Maciej Baniewicz
 Published: 2026-08-17
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
 - [Jenny Glans (CC BY-SA 3.0)](https://commons.wikimedia.org/w/index.php?curid=1958630)
 - [Dz.U. 2023 poz. 1373, § 6–7](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań karasia 2026](https://fish-point.pl/poradniki/kalendarz-bran-karas.html)
-- [Kalendarz brań karpia 2026](https://fish-point.pl/poradniki/kalendarz-bran-karp.html)
-- [Kalendarz brań klenia 2026](https://fish-point.pl/poradniki/kalendarz-bran-klen.html)
+- [Kalendarz brań karasia](https://fish-point.pl/poradniki/kalendarz-bran-karas.html)
+- [Kalendarz brań karpia](https://fish-point.pl/poradniki/kalendarz-bran-karp.html)
+- [Kalendarz brań klenia](https://fish-point.pl/poradniki/kalendarz-bran-klen.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2726,16 +2726,16 @@ Kalendarz to hipoteza planowania, nie prognoza wynikuOceny miesięcy opisują ty
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-karas.html
 Author: Maciej Baniewicz
 Published: 2026-08-17
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
 - [Viridiflavus (CC BY-SA 3.0)](https://commons.wikimedia.org/w/index.php?curid=5694245)
 - [Dz.U. 2023 poz. 1373, § 6–8](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań karpia 2026](https://fish-point.pl/poradniki/kalendarz-bran-karp.html)
-- [Kalendarz brań klenia 2026](https://fish-point.pl/poradniki/kalendarz-bran-klen.html)
-- [Kalendarz brań leszcza 2026](https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html)
+- [Kalendarz brań karpia](https://fish-point.pl/poradniki/kalendarz-bran-karp.html)
+- [Kalendarz brań klenia](https://fish-point.pl/poradniki/kalendarz-bran-klen.html)
+- [Kalendarz brań leszcza](https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2746,7 +2746,7 @@ Kalendarz to hipoteza planowania, nie prognoza wynikuOceny miesięcy opisują ty
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-karp.html
 Author: Maciej Baniewicz
 Published: 2026-07-05
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -2757,9 +2757,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań klenia 2026](https://fish-point.pl/poradniki/kalendarz-bran-klen.html)
-- [Kalendarz brań leszcza 2026](https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html)
-- [Kalendarz brań lina 2026](https://fish-point.pl/poradniki/kalendarz-bran-lin.html)
+- [Kalendarz brań klenia](https://fish-point.pl/poradniki/kalendarz-bran-klen.html)
+- [Kalendarz brań leszcza](https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html)
+- [Kalendarz brań lina](https://fish-point.pl/poradniki/kalendarz-bran-lin.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2770,7 +2770,7 @@ Kalendarz to hipoteza planowania, nie prognoza wynikuOceny miesięcy opisują ty
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-klen.html
 Author: Maciej Baniewicz
 Published: 2026-07-05
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -2781,9 +2781,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań leszcza 2026](https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html)
-- [Kalendarz brań lina 2026](https://fish-point.pl/poradniki/kalendarz-bran-lin.html)
-- [Kalendarz brań okonia 2026](https://fish-point.pl/poradniki/kalendarz-bran-okon.html)
+- [Kalendarz brań leszcza](https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html)
+- [Kalendarz brań lina](https://fish-point.pl/poradniki/kalendarz-bran-lin.html)
+- [Kalendarz brań okonia](https://fish-point.pl/poradniki/kalendarz-bran-okon.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2794,7 +2794,7 @@ Kalendarz to hipoteza planowania, nie prognoza wynikuOceny miesięcy opisują ty
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-leszcz.html
 Author: Maciej Baniewicz
 Published: 2026-07-05
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -2804,9 +2804,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań lina 2026](https://fish-point.pl/poradniki/kalendarz-bran-lin.html)
-- [Kalendarz brań okonia 2026](https://fish-point.pl/poradniki/kalendarz-bran-okon.html)
-- [Kalendarz brań płoci 2026](https://fish-point.pl/poradniki/kalendarz-bran-ploc.html)
+- [Kalendarz brań lina](https://fish-point.pl/poradniki/kalendarz-bran-lin.html)
+- [Kalendarz brań okonia](https://fish-point.pl/poradniki/kalendarz-bran-okon.html)
+- [Kalendarz brań płoci](https://fish-point.pl/poradniki/kalendarz-bran-ploc.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2817,7 +2817,7 @@ Kalendarz to hipoteza planowania, nie prognoza wynikuOceny miesięcy opisują ty
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-lin.html
 Author: Maciej Baniewicz
 Published: 2026-07-05
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -2828,9 +2828,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań okonia 2026](https://fish-point.pl/poradniki/kalendarz-bran-okon.html)
-- [Kalendarz brań płoci 2026](https://fish-point.pl/poradniki/kalendarz-bran-ploc.html)
-- [Kalendarz brań pstrąga potokowego 2026](https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html)
+- [Kalendarz brań okonia](https://fish-point.pl/poradniki/kalendarz-bran-okon.html)
+- [Kalendarz brań płoci](https://fish-point.pl/poradniki/kalendarz-bran-ploc.html)
+- [Kalendarz brań pstrąga potokowego](https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2841,7 +2841,7 @@ Kalendarz to hipoteza planowania, nie prognoza wynikuOceny miesięcy opisują ty
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-okon.html
 Author: Maciej Baniewicz
 Published: 2026-07-05
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -2852,9 +2852,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań płoci 2026](https://fish-point.pl/poradniki/kalendarz-bran-ploc.html)
-- [Kalendarz brań pstrąga potokowego 2026](https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html)
-- [Kalendarz brań sandacza 2026](https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html)
+- [Kalendarz brań płoci](https://fish-point.pl/poradniki/kalendarz-bran-ploc.html)
+- [Kalendarz brań pstrąga potokowego](https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html)
+- [Kalendarz brań sandacza](https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2865,7 +2865,7 @@ Sezon jesienny 2026Metoda FishPointWskazówki praktyczne: Kalendarz wykorzystaj 
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-ploc.html
 Author: Maciej Baniewicz
 Published: 2026-07-05
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -2877,9 +2877,9 @@ derivative work: George Chernilevsky talk (CC BY-SA 3.0)](https://commons.wikime
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań pstrąga potokowego 2026](https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html)
-- [Kalendarz brań sandacza 2026](https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html)
-- [Kalendarz brań suma 2026](https://fish-point.pl/poradniki/kalendarz-bran-sum.html)
+- [Kalendarz brań pstrąga potokowego](https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html)
+- [Kalendarz brań sandacza](https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html)
+- [Kalendarz brań suma](https://fish-point.pl/poradniki/kalendarz-bran-sum.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2890,7 +2890,7 @@ Kalendarz to hipoteza planowania, nie prognoza wynikuOceny miesięcy opisują ty
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-pstrag.html
 Author: Maciej Baniewicz
 Published: 2026-07-05
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -2901,9 +2901,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań sandacza 2026](https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html)
-- [Kalendarz brań suma 2026](https://fish-point.pl/poradniki/kalendarz-bran-sum.html)
-- [Kalendarz brań szczupaka 2026](https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html)
+- [Kalendarz brań sandacza](https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html)
+- [Kalendarz brań suma](https://fish-point.pl/poradniki/kalendarz-bran-sum.html)
+- [Kalendarz brań szczupaka](https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2914,7 +2914,7 @@ Kalendarz to hipoteza planowania, nie prognoza wynikuOceny miesięcy opisują ty
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-sandacz.html
 Author: Maciej Baniewicz
 Published: 2026-07-05
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -2925,9 +2925,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań suma 2026](https://fish-point.pl/poradniki/kalendarz-bran-sum.html)
-- [Kalendarz brań szczupaka 2026](https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html)
-- [Kalendarz brań węgorza 2026](https://fish-point.pl/poradniki/kalendarz-bran-wegorz.html)
+- [Kalendarz brań suma](https://fish-point.pl/poradniki/kalendarz-bran-sum.html)
+- [Kalendarz brań szczupaka](https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html)
+- [Kalendarz brań węgorza](https://fish-point.pl/poradniki/kalendarz-bran-wegorz.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2938,7 +2938,7 @@ Sezon jesienny 2026Metoda FishPointWskazówki praktyczne: Kalendarz wykorzystaj 
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-sum.html
 Author: Maciej Baniewicz
 Published: 2026-07-05
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -2949,9 +2949,9 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań szczupaka 2026](https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html)
-- [Kalendarz brań węgorza 2026](https://fish-point.pl/poradniki/kalendarz-bran-wegorz.html)
-- [Kalendarz brań ryb 2026](https://fish-point.pl/poradniki/kalendarz-bran.html)
+- [Kalendarz brań szczupaka](https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html)
+- [Kalendarz brań węgorza](https://fish-point.pl/poradniki/kalendarz-bran-wegorz.html)
+- [Kalendarz brań ryb](https://fish-point.pl/poradniki/kalendarz-bran.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
 Corrections: A correction policy or note is stated in the document.
@@ -2962,7 +2962,7 @@ Kalendarz to hipoteza planowania, nie prognoza wynikuOceny miesięcy opisują ty
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-szczupak.html
 Author: Maciej Baniewicz
 Published: 2026-07-05
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
@@ -2972,8 +2972,8 @@ Sources:
 - [US EPA — tlenie rozpuszczonym](https://www.epa.gov/caddis/dissolved-oxygen)
 - [prognozę IMGW-PIB](https://meteo.imgw.pl/)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań węgorza 2026](https://fish-point.pl/poradniki/kalendarz-bran-wegorz.html)
-- [Kalendarz brań ryb 2026](https://fish-point.pl/poradniki/kalendarz-bran.html)
+- [Kalendarz brań węgorza](https://fish-point.pl/poradniki/kalendarz-bran-wegorz.html)
+- [Kalendarz brań ryb](https://fish-point.pl/poradniki/kalendarz-bran.html)
 - [Łowienie nocne](https://fish-point.pl/poradniki/lowienie-nocne.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
 - No external source link is stated in the document.
@@ -2985,14 +2985,14 @@ Sezon jesienny 2026Metoda FishPointWskazówki praktyczne: Kalendarz wykorzystaj 
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran-wegorz.html
 Author: Maciej Baniewicz
 Published: 2026-08-17
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
 - [David Perez (CC BY 3.0)](https://commons.wikimedia.org/wiki/File:Anguilla_anguilla_01_by-dpc.jpg)
 - [Dz.U. 2023 poz. 1373, § 6–7](https://eli.gov.pl/api/acts/DU/2023/1373/text.html)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Kalendarz brań ryb 2026](https://fish-point.pl/poradniki/kalendarz-bran.html)
+- [Kalendarz brań ryb](https://fish-point.pl/poradniki/kalendarz-bran.html)
 - [Łowienie nocne](https://fish-point.pl/poradniki/lowienie-nocne.html)
 - [Łowienie zimą na otwartej wodzie](https://fish-point.pl/poradniki/lowienie-zima.html)
 - [Facebook](https://www.facebook.com/profile.php?id=61591546555168)
@@ -3005,7 +3005,7 @@ Kalendarz to hipoteza planowania, nie prognoza wynikuOceny miesięcy opisują ty
 Canonical URL: https://fish-point.pl/poradniki/kalendarz-bran.html
 Author: Maciej Baniewicz
 Published: 2026-06-11
-Modified: 2026-09-01
+Modified: 2026-09-02
 Type: BlogPosting
 Sources:
 - [Maciej Baniewicz](https://fish-point.pl/o-autorze.html)
