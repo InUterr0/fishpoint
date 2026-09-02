@@ -458,6 +458,7 @@ CALENDAR_NOMINATIVE = {
     "płoci": "płoć", "lina": "lin", "klenia": "kleń",
     "pstrąga potokowego": "pstrąg potokowy", "węgorza": "węgorz",
     "bolenia": "boleń", "amura": "amur", "karasia": "karaś",
+    "brzany": "brzana", "jazia": "jaź", "uklei": "ukleja", "certy": "certa",
 }
 
 
@@ -574,7 +575,8 @@ CALENDAR_MATRIX_SPECIES = (
     ("sum", "Sum"), ("karp", "Karp"), ("leszcz", "Leszcz"),
     ("ploc", "Płoć"), ("lin", "Lin"), ("klen", "Kleń"),
     ("pstrag", "Pstrąg potokowy"), ("wegorz", "Węgorz"), ("bolen", "Boleń"),
-    ("amur", "Amur"), ("karas", "Karaś"),
+    ("amur", "Amur"), ("karas", "Karaś"), ("brzana", "Brzana"),
+    ("jaz", "Jaź"), ("ukleja", "Ukleja"), ("certa", "Certa"),
 )
 CALENDAR_MONTHS_ROMAN = ("I", "II", "III", "IV", "V", "VI",
                          "VII", "VIII", "IX", "X", "XI", "XII")
@@ -2802,6 +2804,7 @@ RELATED_LINKS = {
         ("/ryby/ploc.html", "Porównaj z płocią"),
     ),
     "ryby/jaz.html": (
+        ("/poradniki/kalendarz-bran-jaz.html", "Kalendarz brań jazia"),
         ("/ryby/klen.html", "Porównaj z kleniem"),
     ),
     "ryby/krap.html": (
@@ -2814,6 +2817,7 @@ RELATED_LINKS = {
         ("/ryby/piskorz.html", "Porównaj z piskorzem"),
     ),
     "ryby/brzana.html": (
+        ("/poradniki/kalendarz-bran-brzana.html", "Kalendarz brań brzany"),
         ("/ryby/swinka.html", "Porównaj ze świnką"),
     ),
     "ryby/swinka.html": (
@@ -2830,6 +2834,14 @@ RELATED_LINKS = {
     ),
     "ryby/amur.html": (
         ("/ryby/karp.html", "Porównaj z karpiem"),
+    ),
+    "ryby/ukleja.html": (
+        ("/poradniki/kalendarz-bran-ukleja.html", "Kalendarz brań uklei"),
+        ("/ryby/bolen.html", "Porównaj z boleniem"),
+    ),
+    "ryby/certa.html": (
+        ("/poradniki/kalendarz-bran-certa.html", "Kalendarz brań certy"),
+        ("/ryby/swinka.html", "Porównaj ze świnką"),
     ),
     "ryby/klen.html": (
         ("/techniki/spinning.html", "Spinning na klenia"),

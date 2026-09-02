@@ -1439,6 +1439,36 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-brzana.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/brzana.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Kalendarz brań brzany</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-certa.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/certa.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Kalendarz brań certy</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-jaz.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/jaz.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Kalendarz brań jazia</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/poradniki/kalendarz-bran-karas.html</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -1546,6 +1576,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/szczupak-las.jpg</image:loc>
       <image:title>Duży szczupak trzymany oburącz nad brzegiem</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/poradniki/kalendarz-bran-ukleja.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/ukleja.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Kalendarz brań uklei</image:title>
     </image:image>
   </url>
   <url>

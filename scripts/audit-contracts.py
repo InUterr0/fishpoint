@@ -261,7 +261,7 @@ def main() -> int:
     failures: list[str] = []
     sitemap = ET.fromstring(read("sitemap.xml"))
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
-    check(len(urls) == 210 and len(set(urls)) == 210, "sitemap must contain 210 unique URLs", failures)
+    check(len(urls) == 214 and len(set(urls)) == 214, "sitemap must contain 214 unique URLs", failures)
 
     visual_pages = 0
     regional_visuals = 0
@@ -1154,16 +1154,25 @@ def main() -> int:
     check("Szczupak" in section and "45 cm" in section,
           "llms-full.txt musi nieść dane gatunków z tabeli okresów ochronnych", failures)
 
-    # Tytuł kalendarza brań nie może nieść nazwy miesiąca. Strona nie jest
-    # przebudowywana co miesiąc, więc miesiąc w tytule zestarzałby się w SERP-ie
-    # zanim ktokolwiek zauważy — Google i tak zastępował go wtedy własnym.
+    # Tytuł kalendarza brań musi nieść nazwę BIEŻĄCEGO miesiąca — tak robią oba
+    # serwisy stojące nad nami w top 10 na „kalendarz brań <gatunek>". Wcześniej
+    # kontrakt zabraniał miesiąca, bo strona nie była przebudowywana co miesiąc;
+    # harmonogram '10 4 1 * *' w .github/workflows/deploy.yml to zmienił.
+    # Odwrócony kontrakt jest mocniejszy: łapie zarówno brak miesiąca, jak i tytuł
+    # z miesiącem minionym, czyli dokładnie ten przypadek, którego baliśmy się
+    # wcześniej — przeoczoną przebudowę.
     months = [m.lower() for m in seo_inject.CALENDAR_MONTHS_PL]
+    current = months[datetime.date.today().month - 1]
+    stale = [m for m in months if m != current]
     for path in sorted((ROOT / "poradniki").glob("kalendarz-bran*.html")):
         relative = path.relative_to(ROOT).as_posix()
         page_title = re.search(r"<title>(.*?)</title>", read(relative), re.S)
         title_text = (page_title.group(1) if page_title else "").lower()
-        check(not any(month in title_text for month in months),
-              f"{relative}: tytuł kalendarza nie może zawierać nazwy miesiąca", failures)
+        check(current in title_text,
+              f"{relative}: tytuł kalendarza musi zawierać bieżący miesiąc"
+              f" ({current})", failures)
+        check(not any(month in title_text for month in stale),
+              f"{relative}: tytuł kalendarza niesie miniony miesiąc", failures)
 
     # Żadna strona nie może być w większości złożona ze zdań powtórzonych na
     # innych stronach. To sygnał treści szablonowej — powód odrzucenia witryny
