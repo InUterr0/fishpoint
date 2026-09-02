@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-09-01.
+> Najnowsza merytoryczna zmiana: 2026-09-02.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -183,7 +183,7 @@
 
 ## Atlas ryb
 
-- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas 42 gatunków ryb polskich wód — słodkowodnych i bałtyckich: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary i źródła dla każdej karty.
+- [Atlas ryb polskich wód](https://fish-point.pl/ryby/): Atlas 42 gatunki ryb polskich wód — słodkowodnych i bałtyckich: zdjęcia, cechy rozpoznawcze, biologia, okresy ochronne, wymiary i źródła dla każdej karty.
 - [Amur](https://fish-point.pl/ryby/amur.html): Amur (Ctenopharyngodon idella): brak krajowego wymiaru i okresu ochronnego, ale jako gatunek nierodzimy podlega § 8. Rozpoznawanie, stanowiska i metody.
 - [Belona](https://fish-point.pl/ryby/belona.html): Belona (Belone belone): przed połowem sprawdź zasady i limity GIRM. Rozpoznawanie, letnia wędrówka na Bałtyku, stanowiska z brzegu i metody połowu.
 - [Boleń](https://fish-point.pl/ryby/bolen.html): Boleń (Leuciscus aspius): wymiar ochronny 40 cm, brak krajowego okresu ochronnego. Rozpoznawanie, stanowiska w rzekach, żerowanie i metody spinningowe.
