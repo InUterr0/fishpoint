@@ -155,6 +155,7 @@
 ## Poradniki
 
 - [Poradniki wędkarskie](https://fish-point.pl/poradniki/): Przegląd poradników wędkarskich FishPoint: kalendarz brań, wpływ pogody na żerowanie, węzły, domowe zanęty, catch &
+- [Brania w ten weekend](https://fish-point.pl/poradniki/brania-w-ten-weekend.html): Co bierze w ten weekend? Gatunki o najwyższej sezonowej aktywności, faza Księżyca i gatunki pod ochroną — zestawienie odświeżane co tydzień.
 - [Catch & release](https://fish-point.pl/poradniki/catch-and-release.html): Poradnik FishPoint o catch & release: szybki hol i kwas mlekowy, gumowany podbierak, mata karpiowa, mokre ręce, odhaczanie i haki bezzadziorowe, zasada.
 - [Echosondy i elektronika](https://fish-point.pl/poradniki/echosondy.html): Poradnik FishPoint o echosondach: zasada działania sonaru i częstotliwości 50/83/200 kHz, CHIRP, czytanie łuków w 2D, DownScan i SideScan, GPS i mapy.
 - [Etyka i przepisy wędkarskie](https://fish-point.pl/poradniki/etyka-i-przepisy.html): Poradnik FishPoint o etyce i przepisach wędkarskich: karta wędkarska i egzamin, struktura PZW, składki i zezwolenia, regulamin amatorskiego połowu ryb.

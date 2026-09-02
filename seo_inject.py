@@ -662,6 +662,161 @@ def build_calendar_matrix(today=None):
         f'</section>{CALENDAR_MATRIX_END}')
 
 
+# ---------------------------------------------------------------------------
+# Prognoza weekendowa — stały adres odświeżany w buildzie.
+#
+# Newsletter obiecuje „najlepsze brania weekendu", a serwis nie miał strony,
+# która by tę obietnicę realizowała. Blok poniżej składa ją z danych, które
+# już mamy: aktywności gatunków z kart kalendarza na bieżący miesiąc oraz
+# przybliżonej fazy Księżyca. Nie dokłada żadnej nowej obietnicy — pogodę,
+# czyli jedyny czynnik naprawdę dzienny, oddaje narzędziu prognozy.
+# Odświeżanie zapewnia cotygodniowy przebieg w .github/workflows/deploy.yml.
+# ---------------------------------------------------------------------------
+WEEKEND_BEGIN, WEEKEND_END = "<!--weekend:auto-->", "<!--/weekend:auto-->"
+weekend_re = re.compile(
+    re.escape(WEEKEND_BEGIN) + r".*?" + re.escape(WEEKEND_END), re.S)
+WEEKEND_PAGE = "poradniki/brania-w-ten-weekend.html"
+
+# Te same stałe, co w narzędziu kalendarza księżycowego — inaczej dwie strony
+# serwisu podawałyby dla tego samego dnia różne fazy.
+MOON_SYNODIC = 29.530588853
+MOON_KNOWN_NEW = datetime.datetime(2000, 1, 6, 18, 14, tzinfo=datetime.timezone.utc)
+MOON_PHASES = (
+    (0.033, "nów"), (0.216, "przybywający sierp"), (0.284, "pierwsza kwadra"),
+    (0.466, "przybywający garb"), (0.534, "pełnia"), (0.716, "ubywający garb"),
+    (0.784, "ostatnia kwadra"), (0.966, "ubywający sierp"), (1.01, "nów"),
+)
+WEEKDAYS_PL = ("poniedziałek", "wtorek", "środa", "czwartek", "piątek",
+               "sobota", "niedziela")
+MONTHS_GEN_PL = ("stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
+                 "lipca", "sierpnia", "września", "października", "listopada",
+                 "grudnia")
+
+
+def moon_phase(day):
+    """Przybliżona faza i oświetlenie dla podanej daty (południe UTC).
+
+    Metoda jest celowo ta sama, co w narzędziu kalendarza księżycowego:
+    znany nów plus średnia długość miesiąca synodycznego. To przybliżenie,
+    nie wyliczenie astronomiczne — i tak je opisujemy.
+    """
+    moment = datetime.datetime(day.year, day.month, day.day, 12,
+                               tzinfo=datetime.timezone.utc)
+    age = ((moment - MOON_KNOWN_NEW).total_seconds() / 86400.0) % MOON_SYNODIC
+    fraction = age / MOON_SYNODIC
+    illumination = round((1 - math.cos(2 * math.pi * fraction)) / 2 * 100)
+    name = next(n for limit, n in MOON_PHASES if fraction <= limit)
+    return name, illumination
+
+
+def weekend_dates(today):
+    """Sobota i niedziela najbliższego weekendu.
+
+    W sobotę i niedzielę pokazujemy weekend trwający, a nie następny —
+    czytelnik, który wchodzi w sobotę rano, pyta o dziś.
+    """
+    weekday = today.weekday()          # poniedziałek = 0
+    if weekday <= 4:
+        saturday = today + datetime.timedelta(days=5 - weekday)
+    elif weekday == 5:
+        saturday = today
+    else:
+        saturday = today - datetime.timedelta(days=1)
+    return saturday, saturday + datetime.timedelta(days=1)
+
+
+def weekend_species(month_index):
+    """Aktywność gatunków w danym miesiącu, prosto z kart kalendarza.
+
+    Źródłem jest ta sama tabela, co dla matrycy rocznej, więc strona nie może
+    powiedzieć niczego, czego nie napisaliśmy w rozwinięciu gatunku. Brak
+    wiersza oznacza miesiąc objęty ochroną — taki gatunek trafia na osobną
+    listę, bo informacja „nie wolno" jest ważniejsza niż ocena aktywności.
+    """
+    order = {"szczyt": 0, "wysoka": 1, "średnia": 2, "niska": 3}
+    active, protected = [], []
+    for slug, name in CALENDAR_MATRIX_SPECIES:
+        path = os.path.join(ROOT, "poradniki", f"kalendarz-bran-{slug}.html")
+        if not os.path.isfile(path):
+            continue
+        with open(path, encoding="utf-8") as handle:
+            page = handle.read()
+        table = re.search(r'<table class="tool-table">.*?</table>', page, re.S)
+        if not table:
+            continue
+        found = {
+            _clean(m): (_clean(a), _clean(g)) for m, a, g in re.findall(
+                r'<th scope="row">([^<]+)</th>\s*<td>(.*?)</td>\s*<td>(.*?)</td>',
+                table.group(0), re.S)}
+        row = found.get(CALENDAR_MONTHS_PL[month_index - 1].capitalize())
+        if not row:
+            protected.append((slug, name))
+            continue
+        activity, hint = row
+        key = next((k for k in order if k in activity.lower()), None)
+        if key is None:
+            protected.append((slug, name))
+            continue
+        active.append((order[key], activity, slug, name, hint))
+    active.sort(key=lambda item: (item[0], item[3]))
+    return active, protected
+
+
+def build_weekend_block(today=None):
+    day = today or datetime.date.today()
+    saturday, sunday = weekend_dates(day)
+    phase, illumination = moon_phase(saturday)
+    active, protected = weekend_species(saturday.month)
+    if not active:
+        return ""
+    month = CALENDAR_MONTHS_PL[saturday.month - 1]
+    # Weekend potrafi przeciąć granicę miesiąca — wtedy obie daty muszą nieść
+    # własną nazwę miesiąca, inaczej „31 i 1 listopada" wprowadza w błąd.
+    span = (f"{saturday.day} i {sunday.day} {MONTHS_GEN_PL[sunday.month - 1]}"
+            f" {sunday.year}" if saturday.month == sunday.month else
+            f"{saturday.day} {MONTHS_GEN_PL[saturday.month - 1]}"
+            f" i {sunday.day} {MONTHS_GEN_PL[sunday.month - 1]} {sunday.year}")
+    top = [row for row in active if row[0] <= 1][:6] or active[:4]
+    cards = "".join(
+        f'<tr><th scope="row"><a href="kalendarz-bran-{slug}.html">{name}</a></th>'
+        f'<td>{html.escape(activity.lower())}</td><td>{hint}</td></tr>'
+        for _, activity, slug, name, hint in top)
+    guard = ""
+    if protected:
+        names = ", ".join(name for _, name in protected)
+        guard = ('<p class="month-now"><strong>Pod ochroną w tym miesiącu:</strong> '
+                 f'{html.escape(names)}. Połów tych gatunków jest teraz zabroniony — '
+                 'terminy sprawdzisz w <a href="../narzedzia/okresy-ochronne.html">'
+                 'zestawieniu okresów ochronnych</a>.</p>')
+    return (
+        f'{WEEKEND_BEGIN}'
+        '<section class="info-block" aria-label="Prognoza na weekend">'
+        f'<h2 id="weekend">Weekend {span}</h2>'
+        f'<p class="month-now"><strong>{month.capitalize()} {saturday.year}:</strong> '
+        f'Księżyc w sobotę — {phase}, około {illumination}% oświetlenia. '
+        'Pogodę na konkretne godziny sprawdź w '
+        '<a href="../narzedzia/prognoza-bran.html">prognozie brań z pogody</a>, '
+        'bo to ona, a nie kalendarz, zmienia się z dnia na dzień.</p>'
+        '<div class="tool-table-wrap"><table class="tool-table">'
+        '<caption>Gatunki o najwyższej sezonowej aktywności w tym miesiącu</caption>'
+        '<thead><tr><th scope="col">Gatunek</th><th scope="col">Aktywność</th>'
+        '<th scope="col">Gdzie i na co</th></tr></thead>'
+        f'<tbody>{cards}</tbody></table></div>'
+        f'{guard}'
+        f'</section>{WEEKEND_END}')
+
+
+def ensure_weekend_page(src, rel, today=None):
+    if rel != WEEKEND_PAGE:
+        return src
+    block = build_weekend_block(today)
+    if not block:
+        return src
+    if weekend_re.search(src):
+        return weekend_re.sub(lambda _: block, src, count=1)
+    return src.replace("</article>", block + "\n</article>", 1)
+
+
 def ensure_calendar_month(src, rel, today=None):
     """Utrzymuje bieżący miesiąc w tytule kalendarza brań i dopisuje widoczny
     akapit o tym miesiącu. Tytuł bez pokrycia w treści byłby obietnicą bez
@@ -4128,6 +4283,7 @@ def build(path):
 
     rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
     src = ensure_calendar_month(src, rel)
+    src = ensure_weekend_page(src, rel)
     src = inject_protection_table(src, rel)
 
     tm = title_re.search(src)

@@ -6,11 +6,17 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Kalendarze brań pokazują bieżący miesiąc w treści (blok month-now).
-  # Tytuł trzyma sam rok, więc pominięty przebieg nie zestarzeje wyniku w SERP-ie
-  # — odświeża tylko akapit o miesiącu. 04:10 UTC = po północy czasu polskiego.
+  # Dwa przebiegi odświeżające treść zależną od daty:
+  #   1. pierwszego dnia miesiąca — kalendarze brań niosą bieżący miesiąc
+  #      w tytule i w bloku month-now (kontrakt w scripts/audit-contracts.py
+  #      pilnuje, żeby tytuł nie został z miesiącem minionym);
+  #   2. w każdy czwartek — strona „Brania w ten weekend" przelicza daty
+  #      najbliższej soboty i niedzieli oraz fazę Księżyca, a czwartek jest
+  #      dniem, w którym wysyłamy ją w newsletterze.
+  # 04:10 UTC = po północy czasu polskiego.
   schedule:
     - cron: '10 4 1 * *'
+    - cron: '10 4 * * 4'
 
 concurrency:
   group: deploy-production
