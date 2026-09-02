@@ -3205,7 +3205,7 @@ Sources:
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
 - [Wędkarstwo z brzegu: stanowisko, dystans i 3 zestawy | FishPoint](https://fish-point.pl/poradniki/wedkarstwo-z-brzegu.html)
 - [Wędkarstwo z łodzi](https://fish-point.pl/poradniki/wedkarstwo-z-lodzi.html)
-- [Węzły wędkarskie: także węzeł karpiowy](https://fish-point.pl/poradniki/wezly-wedkarskie.html)
+- [Węzły wędkarskie: clinch, palomar, FG i węzeł karpiowy | FishPoint](https://fish-point.pl/poradniki/wezly-wedkarskie.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 
@@ -3251,7 +3251,7 @@ Sources:
 - [ustawa o rejestracji jachtów, art. 3](https://eli.gov.pl/api/acts/DU/2024/79/text.html)
 - [Rządowego Centrum Bezpieczeństwa](https://www.gov.pl/web/rcb/badz-bezpieczny-nad-woda2)
 - [Przegląd: Poradniki](https://fish-point.pl/poradniki/)
-- [Węzły wędkarskie: także węzeł karpiowy](https://fish-point.pl/poradniki/wezly-wedkarskie.html)
+- [Węzły wędkarskie: clinch, palomar, FG i węzeł karpiowy | FishPoint](https://fish-point.pl/poradniki/wezly-wedkarskie.html)
 - No external source link is stated in the document.
 Evidence limitations: The document includes a visible sources-and-limitations note.
 

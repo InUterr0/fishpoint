@@ -1050,6 +1050,30 @@ def main() -> int:
                   f"choć trwa wtedy krajowy okres ochronny ({summary[:60]})",
                   failures)
 
+    # Strona „Brania w ten weekend" jest w całości generowana. Gdyby generator
+    # przestał znajdować dane (zmiana struktury tabel w kartach kalendarza),
+    # zwróciłby pusty ciąg i strona wyszłaby bez sekcji — cicho, bez błędu.
+    # Kontrakt pilnuje, że blok istnieje i niesie daty najbliższego weekendu.
+    weekend_page = seo_inject.WEEKEND_PAGE
+    if (ROOT / weekend_page).is_file():
+        weekend_html = read(weekend_page)
+        block = re.search(
+            re.escape(seo_inject.WEEKEND_BEGIN) + r"(.*?)"
+            + re.escape(seo_inject.WEEKEND_END), weekend_html, re.S)
+        check(block is not None and len(block.group(1)) > 400,
+              f"{weekend_page}: brak wygenerowanej sekcji weekendu", failures)
+        if block:
+            saturday, sunday = seo_inject.weekend_dates(datetime.date.today())
+            stamp = (f"{saturday.day} i {sunday.day} "
+                     f"{seo_inject.MONTHS_GEN_PL[sunday.month - 1]} {sunday.year}"
+                     if saturday.month == sunday.month else
+                     f"{saturday.day} {seo_inject.MONTHS_GEN_PL[saturday.month - 1]}"
+                     f" i {sunday.day} {seo_inject.MONTHS_GEN_PL[sunday.month - 1]}"
+                     f" {sunday.year}")
+            check(stamp in block.group(1),
+                  f"{weekend_page}: sekcja nie podaje najbliższego weekendu ({stamp})",
+                  failures)
+
     # Duże obrazy muszą mieć warianty mobilne i uczciwe deskryptory szerokości.
     # Audyt z 9 sierpnia 2026: warianty istniały dla jednego obrazu, więc telefon
     # pobierał grafiki 1600 px przy widoku 390 px (81% ruchu to mobile).
