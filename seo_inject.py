@@ -1836,6 +1836,20 @@ RELATED_BEGIN, RELATED_END = "<!--related:auto-->", "<!--/related:auto-->"
 related_re = re.compile(re.escape(RELATED_BEGIN) + r".*?" + re.escape(RELATED_END), re.S)
 NEWSLETTER_BEGIN, NEWSLETTER_END = "<!--newsletter:auto-->", "<!--/newsletter:auto-->"
 newsletter_re = re.compile(re.escape(NEWSLETTER_BEGIN) + r".*?" + re.escape(NEWSLETTER_END), re.S)
+# Zapis na newsletter stał dotąd wyłącznie na wpisach blogowych, a ruch
+# z wyszukiwarki wchodzi na kalendarze brań, atlas i narzędzia — czyli tam,
+# gdzie formularza nie było. Działy dokumentowe (polityka, korekty, kontakt)
+# zostają bez zapisu: to strony obsługowe, nie miejsca na budowanie listy.
+NEWSLETTER_SECTIONS = frozenset((
+    "aktualnosci", "poradniki", "ryby", "narzedzia",
+    "techniki", "sprzet", "pierwsze-kroki", "kuchnia", "lowiska",
+))
+# Komentarze wymagają konta GitHub, więc nie stawiamy ich wszędzie — tylko
+# tam, gdzie czytelnik ma realnie co sprostować: oceny w kalendarzach,
+# opisy gatunków i poradniki. Atlas i przepisy żyją z poprawek czytelników.
+COMMENTS_SECTIONS = frozenset((
+    "aktualnosci", "poradniki", "ryby", "techniki", "lowiska",
+))
 GISCUS_BEGIN, GISCUS_END = "<!--giscus:auto-->", "<!--/giscus:auto-->"
 giscus_re = re.compile(re.escape(GISCUS_BEGIN) + r".*?" + re.escape(GISCUS_END), re.S)
 CONTENT_ADVANTAGE_BEGIN, CONTENT_ADVANTAGE_END = (
@@ -4183,16 +4197,8 @@ def build(path):
                            f'<h2>{label}</h2><div class="related-grid">{links}</div>'
                            f'</section>{RELATED_END}')
                 src = re.sub(r"(</article>)", related + r"\1", src, count=1)
-        # Newsletter (MailerLite) — na wpisach blogowych, gdy ustawiono embed
-        if section == "aktualnosci" and NEWSLETTER_EMBED:
-            nl = (f'{NEWSLETTER_BEGIN}<section class="newsletter" aria-label="Newsletter">'
-                  f'<h2>Bierze? Bądź pierwszy nad wodą</h2>'
-                  f'<p>Zapisz się na newsletter FishPoint — najlepsze brania weekendu, nowe poradniki '
-                  f'i sezonowe wskazówki prosto na e-mail. Bez spamu, wypiszesz się jednym kliknięciem.</p>'
-                  f'{NEWSLETTER_EMBED}</section>{NEWSLETTER_END}')
-            src = re.sub(r"(</article>)", nl + r"\1", src, count=1)
-        # Komentarze giscus — na wpisach blogowych (aktualnosci)
-        if section == "aktualnosci" and GISCUS_REPO:
+        # Komentarze giscus — na kartach treści, poza stronami zbiorczymi działu
+        if section in COMMENTS_SECTIONS and not is_section_index and GISCUS_REPO:
             giscus = (f'{GISCUS_BEGIN}<section class="comments" aria-label="Komentarze"><h2>Komentarze</h2>'
                       f'<script src="https://giscus.app/client.js" data-repo="{GISCUS_REPO}" '
                       f'data-repo-id="{GISCUS_REPO_ID}" data-category="{GISCUS_CATEGORY}" '
@@ -4201,6 +4207,19 @@ def build(path):
                       f'data-theme="light" data-lang="pl" data-loading="lazy" crossorigin="anonymous" async>'
                       f'</script></section>{GISCUS_END}')
             src = re.sub(r"(</article>)", giscus + r"\1", src, count=1)
+    # Newsletter (MailerLite) — na wszystkich działach redakcyjnych, także na
+    # stronach zbiorczych. Stoi poza gałęzią og_type=="article", bo huby są
+    # typu "website", a bywają punktem wejścia z wyszukiwarki (samo /ryby/
+    # zbiera ponad tysiąc wyświetleń miesięcznie).
+    if section in NEWSLETTER_SECTIONS and NEWSLETTER_EMBED:
+        nl = (f'{NEWSLETTER_BEGIN}<section class="newsletter" aria-label="Newsletter">'
+              f'<h2>Bierze? Bądź pierwszy nad wodą</h2>'
+              f'<p>Zapisz się na newsletter FishPoint — najlepsze brania weekendu, nowe poradniki '
+              f'i sezonowe wskazówki prosto na e-mail. Bez spamu, wypiszesz się jednym kliknięciem.</p>'
+              f'{NEWSLETTER_EMBED}</section>{NEWSLETTER_END}')
+        # Huby nie mają <article>; wtedy zapis ląduje na końcu <main>.
+        anchor = "</article>" if "</article>" in src else "</main>"
+        src = re.sub(re.escape(anchor), nl + anchor, src, count=1)
     src = inject_content_advantage(src, rel)
     src = re.sub(r"(</article>)", build_affiliate_links(rel) + r"\1", src, count=1)
     # Wstrzyknięte bloki też mogą zawierać stare odnośniki do index.html.
