@@ -1024,6 +1024,31 @@ def main() -> int:
               f"{relative}: miesiące {sorted(silent - legal)} nie mają wiersza, "
               f"choć rejestr prawny nie obejmuje ich ochroną ({summary[:60]})",
               failures)
+        # Kierunek odwrotny: miesiąc objęty krajową ochroną nie może nieść oceny
+        # aktywności, bo matryca rysuje wtedy kropki zamiast „ochr.", a czytelnik
+        # dostaje sugestię, że wolno łowić. Tak było na karcie suma: styczeń–maj
+        # opisane jako „Niska/Średnia/Wysoka", a FAQ wskazywało maj jako dobry
+        # miesiąc — przy krajowej ochronie 1 I – 31 V.
+        # Sprawdzamy tylko zapisy bezwarunkowe („Wody śródlądowe: … okres …”).
+        # Gatunki o ochronie zależnej od odcinka (pstrąg potokowy, certa) mają
+        # w rejestrze dwa warianty naraz i jednej daty nie da się dla nich
+        # rozstrzygnąć bez wskazania wody.
+        national = summary.startswith("Wody śródlądowe:") and "odcin" not in summary
+        if national:
+            table_rows = {
+                compact(re.sub("<[^>]+>", "", m)): compact(re.sub("<[^>]+>", "", a))
+                for m, a in re.findall(
+                    r'<th scope="row">([^<]+)</th>\s*<td>(.*?)</td>',
+                    table.group(0), re.S)}
+            claimed = sorted(
+                number for month, number in month_number.items()
+                if number in legal
+                and seo_inject.calendar_activity_mark(
+                    table_rows.get(month.capitalize(), "")))
+            check(not claimed,
+                  f"{relative}: miesiące {claimed} niosą ocenę aktywności, "
+                  f"choć trwa wtedy krajowy okres ochronny ({summary[:60]})",
+                  failures)
 
     # Duże obrazy muszą mieć warianty mobilne i uczciwe deskryptory szerokości.
     # Audyt z 9 sierpnia 2026: warianty istniały dla jednego obrazu, więc telefon
