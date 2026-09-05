@@ -106,6 +106,10 @@
 	header @feeds Cache-Control "public, max-age=900, must-revalidate"
 	@manifest path /site.webmanifest
 	header @manifest Cache-Control "public, max-age=86400, must-revalidate"
+	# Service worker musi być rewalidowany przy każdym wejściu — to on decyduje
+	# o zawartości cache klienta, więc jego własne utknięcie zamroziłoby serwis.
+	@serviceworker path /sw.js
+	header @serviceworker Cache-Control "public, max-age=0, must-revalidate"
 
 	# Niefingerprintowane obrazy i zasoby zachowują miesięczny TTL.
 	@assets path /assets/* /css/* /js/*

@@ -1550,6 +1550,35 @@ CSS_VER = asset_content_hash("css/style.css")
 JS_VER = asset_content_hash("js/main.js")
 
 
+SW_PLACEHOLDER = "__CACHE_VERSION__"
+SW_VERSION_RE = re.compile(r"const CACHE_VERSION = '([^']*)';")
+
+
+def stamp_service_worker():
+    """Nazywa cache hashem wydania, żeby aktywacja usunęła poprzednie zasoby.
+
+    Bez tego przeglądarka trzymałaby stary CSS i stary main.js pod tą samą
+    nazwą cache aż do odinstalowania workera — a treść prawna serwisu zmienia
+    się w trakcie sezonu i nie wolno jej zamrozić po stronie klienta.
+    """
+    path = os.path.join(ROOT, "sw.js")
+    try:
+        with open(path, encoding="utf-8") as handle:
+            source = handle.read()
+    except OSError:
+        return None
+    neutral = SW_VERSION_RE.sub(
+        f"const CACHE_VERSION = '{SW_PLACEHOLDER}';", source, count=1)
+    version = hashlib.md5(
+        (CSS_VER + JS_VER + neutral).encode("utf-8")).hexdigest()[:8]
+    stamped = SW_VERSION_RE.sub(
+        f"const CACHE_VERSION = '{version}';", neutral, count=1)
+    if stamped != source:
+        with open(path, "w", encoding="utf-8") as handle:
+            handle.write(stamped)
+    return version
+
+
 def versioned_asset_re(asset):
     return re.compile(
         rf'(?P<attribute>\b(?:href|src)=["\'])'
@@ -5161,6 +5190,7 @@ def main():
     print(f"sitemap.xml: {len(urls)} URL-i, {total_imgs} obrazów")
     print("robots.txt: ok")
     print(f"llms.txt: {sum(len(v) for v in by_sec.values())} wpisów")
+    print(f"sw.js: cache fishpoint-{stamp_service_worker()}")
 
 if __name__ == "__main__":
     if sys.argv[1:] == ["--validate"]:

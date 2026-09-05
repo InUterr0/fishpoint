@@ -833,6 +833,27 @@ def main() -> int:
     # błędem składni, tylko cichym nadpisaniem: wcześniejszy wpis znika bez
     # śladu, a strona traci przypisany materiał własny. Czytamy źródło, bo po
     # zaimportowaniu duplikat jest już nie do wykrycia.
+    # Service worker steruje tym, co czytelnik dostaje offline. Dwie rzeczy
+    # nie mogą się w nim odwrócić: dokumenty muszą iść network-first (treść
+    # prawna zmienia się w sezonie i nie wolno podać starszej z cache), a żądania
+    # do obcych originów muszą przechodzić nietknięte (reklamy, komentarze,
+    # newsletter). Trzecia: cache musi być nazwany hashem wydania, inaczej stary
+    # CSS zostaje u klienta na zawsze.
+    worker = (ROOT / "sw.js").read_text(encoding="utf-8")
+    check("if (url.origin !== self.location.origin) return;" in worker,
+          "sw.js: brak przepuszczenia obcych originów", failures)
+    navigate = re.search(
+        r"if \(request\.mode === 'navigate'\) \{(.*?)\n    return;", worker, re.S)
+    check(bool(navigate) and navigate.group(1).lstrip().startswith("event.respondWith(\n      fetch(request)"),
+          "sw.js: nawigacje nie idą network-first", failures)
+    check(bool(re.search(r"const CACHE_VERSION = '[0-9a-f]{8}';", worker)),
+          "sw.js: CACHE_VERSION nie jest ostemplowany hashem wydania", failures)
+    check("caches.delete(name)" in worker,
+          "sw.js: activate nie usuwa cache poprzedniego wydania", failures)
+    check("navigator.serviceWorker.register('/sw.js')"
+          in (ROOT / "js" / "main.js").read_text(encoding="utf-8"),
+          "js/main.js: service worker nie jest rejestrowany", failures)
+
     registry_source = (ROOT / "seo_inject.py").read_text(encoding="utf-8")
     for registry in ("INLINE_PAGE_VISUALS", "IMAGE_PROVENANCE"):
         block = re.search(

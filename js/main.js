@@ -461,3 +461,17 @@ document.querySelectorAll('[data-card-filter]').forEach((form) => {
   form.addEventListener('submit', (event) => event.preventDefault());
   update();
 });
+
+// Rejestracja service workera. Powód jest terenowy: nad wodą zasięg bywa
+// szczątkowy, a strony sprawdzane na miejscu — okresy ochronne, wymiary,
+// karta gatunku — muszą otworzyć się także bez sieci. Rejestrujemy po
+// załadowaniu, żeby nie konkurować o pasmo z treścią pierwszego wejścia.
+// isSecureContext jest właściwym testem: obejmuje https oraz localhost
+// i 127.0.0.1, dzięki czemu workera da się sprawdzić przed wdrożeniem.
+if ('serviceWorker' in navigator && window.isSecureContext) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {
+      /* Brak SW to utrata trybu offline, nie awaria strony — nie hałasujemy. */
+    });
+  });
+}
