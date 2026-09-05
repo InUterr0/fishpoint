@@ -1251,7 +1251,17 @@ INLINE_PAGE_VISUALS = {
         ("/assets/img/tematy/schemat-monitoring-wody.svg", ("obserwacja i pobor prob", "monitoring 20 lipca")),
     ),
     "kuchnia/przygotowanie-ryby.html": (
+        ("/assets/img/tematy/schemat-przygotowanie-ryby.svg", ("patroszenie krok po kroku", "kolejnosc czynnosci")),
         ("/assets/img/tematy/schemat-pakowanie.svg", ("transport: lod i torba termiczna", "przechowywanie i transport")),
+    ),
+    "narzedzia/dobor-sprzetu.html": (
+        ("/assets/img/tematy/schemat-dobor-sprzetu.svg", ("dlaczego pytamy o wode i poziom", "na czym opieramy rekomendacje kreatora")),
+    ),
+    "narzedzia/kalendarz-bran.html": (
+        ("/assets/img/tematy/schemat-sezon.svg", ("co napedza kalendarz bran", "temperatura wody")),
+    ),
+    "narzedzia/rozpoznaj-rybe.html": (
+        ("/assets/img/tematy/schemat-budowa-ryby.svg", ("nazwy czesci ciała, ktorych uzywa klucz", "linia boczna")),
     ),
     # Zdjęcia z połowów i własnego sprzętu zamiast grafik ilustracyjnych —
     # proweniencja każdego pliku siedzi w assets/img/*/_meta.json.
@@ -1304,18 +1314,21 @@ INLINE_PAGE_VISUALS = {
         ("/assets/img/tematy/jezioro-swit.jpg", ("stanowisko, wiatr i brzeg", "stanowisko")),
     ),
     "poradniki/pogoda-a-brania.html": (
+        ("/assets/img/tematy/schemat-warstwy-wody.svg", ("optima termiczne gatunkow", "tlen — cichy wspolnik temperatury")),
         ("/assets/img/tematy/jezioro-deszcz.jpg", ("fronty atmosferyczne", "zachmurzenie")),
     ),
     "poradniki/lowienie-zima.html": (
         ("/assets/img/tematy/rozlewisko-zima.jpg", ("gdzie szukac ryb zima", "zimowiska")),
     ),
     "poradniki/wedkarstwo-z-brzegu.html": (
+        ("/assets/img/tematy/schemat-stanowisko.svg", ("wybierz legalne i bezpieczne stanowisko", "ocena stanowiska")),
         ("/assets/img/tematy/jezioro-poranek.jpg", ("wybierz legalne i bezpieczne stanowisko", "czytaj brzeg")),
     ),
     "poradniki/lowienie-nocne.html": (
         ("/assets/img/ryby/liny-noc.jpg", ("organizacja stanowiska nocnego", "sygnalizacja bran noca")),
     ),
     "poradniki/wedkarstwo-z-lodzi.html": (
+        ("/assets/img/tematy/schemat-lodz.svg", ("kotwiczenie — stanac tam, gdzie trzeba", "dryf — łowienie w ruchu")),
         ("/assets/img/ryby/szczupak-ponton-lato.jpg", ("ponton wedkarski",)),
     ),
     "sprzet/kolowrotki.html": (

@@ -295,9 +295,15 @@ def main() -> int:
         "sprzet/plecionki-zylki.html": ("/assets/img/tematy/wedka-plecionka.jpg",),
         "poradniki/zanety-domowe.html": ("/assets/img/tematy/zaneta-kukurydza.jpg",),
         "pierwsze-kroki/lowiska/jeziora.html": ("/assets/img/tematy/jezioro-swit.jpg",),
-        "poradniki/pogoda-a-brania.html": ("/assets/img/tematy/jezioro-deszcz.jpg",),
+        "poradniki/pogoda-a-brania.html": (
+            "/assets/img/tematy/jezioro-deszcz.jpg",
+            "/assets/img/tematy/schemat-warstwy-wody.svg",
+        ),
         "poradniki/lowienie-zima.html": ("/assets/img/tematy/rozlewisko-zima.jpg",),
-        "poradniki/wedkarstwo-z-brzegu.html": ("/assets/img/tematy/jezioro-poranek.jpg",),
+        "poradniki/wedkarstwo-z-brzegu.html": (
+            "/assets/img/tematy/schemat-stanowisko.svg",
+            "/assets/img/tematy/jezioro-poranek.jpg",
+        ),
         "poradniki/lowienie-nocne.html": ("/assets/img/ryby/liny-noc.jpg",),
         "techniki/karpiowanie.html": (
             "/assets/img/tematy/schemat-karpiowy.svg",
@@ -317,7 +323,10 @@ def main() -> int:
             "/assets/img/ryby/karas-kukurydza.jpg",
             "/assets/img/ryby/karas-duzy.jpg",
         ),
-        "poradniki/wedkarstwo-z-lodzi.html": ("/assets/img/ryby/szczupak-ponton-lato.jpg",),
+        "poradniki/wedkarstwo-z-lodzi.html": (
+            "/assets/img/ryby/szczupak-ponton-lato.jpg",
+            "/assets/img/tematy/schemat-lodz.svg",
+        ),
         "sprzet/kolowrotki.html": ("/assets/img/tematy/kolowrotek-golden-rn2000-szpula.jpg",),
         "sprzet/wedki.html": (
             "/assets/img/tematy/wedka-kolowrotek-abu-garcia.jpg",
@@ -329,11 +338,17 @@ def main() -> int:
         "poradniki/catch-and-release.html": ("/assets/img/tematy/schemat-catch-release.svg",),
         "poradniki/echosondy.html": ("/assets/img/tematy/schemat-echosonda.svg",),
         "poradniki/wezly-wedkarskie.html": ("/assets/img/tematy/schemat-wezel.svg",),
-        "kuchnia/przygotowanie-ryby.html": ("/assets/img/tematy/schemat-pakowanie.svg",),
+        "kuchnia/przygotowanie-ryby.html": (
+            "/assets/img/tematy/schemat-przygotowanie-ryby.svg",
+            "/assets/img/tematy/schemat-pakowanie.svg",
+        ),
+        "narzedzia/dobor-sprzetu.html": ("/assets/img/tematy/schemat-dobor-sprzetu.svg",),
+        "narzedzia/kalendarz-bran.html": ("/assets/img/tematy/schemat-sezon.svg",),
         "aktualnosci/zezwolenia-online-2026.html": ("/assets/img/tematy/schemat-e-zezwolenie.svg",),
         "aktualnosci/zakaz-polowu-bobr-lipiec-2026.html":
             ("/assets/img/tematy/schemat-monitoring-wody.svg",),
         "narzedzia/czy-moge-zabrac-rybe.html": ("/assets/img/tematy/schemat-pomiar-ryby.svg",),
+        "narzedzia/rozpoznaj-rybe.html": ("/assets/img/tematy/schemat-budowa-ryby.svg",),
     }
     observed_inline_visuals: dict[str, list[str]] = {}
     faq_parity_pages = 0
@@ -814,6 +829,22 @@ def main() -> int:
     # ze słowem „FAQ", a strony regionalne mają „Najczęstsze pytania"), więc
     # schemat jest pisany ręcznie i może rozjechać się z widoczną treścią.
     # Kontrakt obejmuje wszystkie strony województw, nie wybrane trzy.
+    # Rejestry ilustracji to zwykłe literały dict — powtórzony klucz nie jest
+    # błędem składni, tylko cichym nadpisaniem: wcześniejszy wpis znika bez
+    # śladu, a strona traci przypisany materiał własny. Czytamy źródło, bo po
+    # zaimportowaniu duplikat jest już nie do wykrycia.
+    registry_source = (ROOT / "seo_inject.py").read_text(encoding="utf-8")
+    for registry in ("INLINE_PAGE_VISUALS", "IMAGE_PROVENANCE"):
+        block = re.search(
+            rf"^{registry} = \{{(.*?)^\}}$", registry_source, re.S | re.M)
+        if not block:
+            continue
+        entries = re.findall(r'^    "([^"]+)":', block.group(1), re.M)
+        duplicates = sorted({k for k in entries if entries.count(k) > 1})
+        check(not duplicates,
+              f"{registry}: powtórzone klucze cicho nadpisują wpisy: {duplicates}",
+              failures)
+
     regional_faq_pages = sorted(
         f"lowiska/{path.name}" for path in (ROOT / "lowiska").glob("*.html")
         if path.name not in {"index.html", "planowanie-wyprawy.html"}
