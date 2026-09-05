@@ -17,7 +17,7 @@
  *
  * CACHE_VERSION stempluje generator (seo_inject.py) hashem treści css/js/sw.
  */
-const CACHE_VERSION = 'aa181954';
+const CACHE_VERSION = '19b1b35f';
 const CACHE_NAME = `fishpoint-${CACHE_VERSION}`;
 
 // Powłoka: strona główna jako zapas nawigacyjny plus zasoby, bez których

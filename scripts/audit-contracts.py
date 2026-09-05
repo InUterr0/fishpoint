@@ -833,6 +833,33 @@ def main() -> int:
     # błędem składni, tylko cichym nadpisaniem: wcześniejszy wpis znika bez
     # śladu, a strona traci przypisany materiał własny. Czytamy źródło, bo po
     # zaimportowaniu duplikat jest już nie do wykrycia.
+    # Podmenu pokazuje wycinek działu, a resztę dociąga przycisk „Pokaż
+    # wszystkie” z nav-sections.json. Katalog musi obejmować każdą sekcję menu
+    # i być nie krótszy niż to, co przycisk obiecuje w swojej etykiecie —
+    # inaczej czytelnik kliknie i nic się nie dołoży.
+    catalog = json.loads((ROOT / "nav-sections.json").read_text(encoding="utf-8"))
+    home = read("index.html")
+    buttons = re.findall(
+        r'<button class="submenu-more"[^>]*data-section="([^"]+)" data-total="(\d+)">'
+        r'Pokaż wszystkie \((\d+)\)</button>', home)
+    check(bool(buttons), "brak przycisku „Pokaż wszystkie” w nawigacji", failures)
+    for section, total, shown in buttons:
+        entries = catalog.get(section)
+        check(entries is not None,
+              f"nav-sections.json: brak sekcji {section}", failures)
+        check(total == shown,
+              f"nav-sections.json: przycisk {section} pokazuje inną liczbę niż data-total", failures)
+        check(entries is not None and len(entries) == int(total),
+              f"nav-sections.json: sekcja {section} ma {len(entries or [])} pozycji, "
+              f"a przycisk obiecuje {total}", failures)
+        for entry in entries or []:
+            target = ROOT / entry["href"].lstrip("/")
+            check(target.exists(),
+                  f"nav-sections.json: {section} wskazuje nieistniejącą stronę {entry['href']}",
+                  failures)
+    check("navigator.serviceWorker" in (ROOT / "js" / "main.js").read_text(encoding="utf-8"),
+          "js/main.js: brak obsługi menu", failures)
+
     # Service worker steruje tym, co czytelnik dostaje offline. Dwie rzeczy
     # nie mogą się w nim odwrócić: dokumenty muszą iść network-first (treść
     # prawna zmienia się w sezonie i nie wolno podać starszej z cache), a żądania

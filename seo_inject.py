@@ -1455,10 +1455,12 @@ NAV_TOP = [
     ("Łowiska", "lowiska/", "lowiska"),
     ("Poradniki", "poradniki/", "poradniki"),
 ]
-# Limit pozycji w podmenu. Wcześniej menu powielało na każdej podstronie pełną
-# listę działu (atlas ryb = 43 wpisy), przez co powtarzalna nawigacja ważyła
-# więcej niż sama treść krótszych stron.
-NAV_MAX_CHILDREN = 8
+# Limit pozycji wpisywanych do HTML każdej podstrony. Pełna lista działu
+# (atlas ryb to 44 wpisy) powielona w nawigacji 218 razy ważyłaby więcej niż
+# treść krótszych stron, dlatego statycznie idzie tylko początek listy.
+# Resztę dociąga na żądanie przycisk „Pokaż wszystkie” z nav-sections.json —
+# czytelnik dostaje pełny dział, a dokument nie puchnie od powtórzeń.
+NAV_MAX_CHILDREN = 12
 
 # Najważniejsze wejścia działu. Podmenu pokazuje tylko je — pełną listę stron
 # udostępnia strona-indeks działu ("Zobacz cały dział"), do której prowadzi
@@ -1622,9 +1624,15 @@ def canonicalize_internal_hrefs(src):
 
 
 def nav_label(title):
-    """Krótka etykieta do menu: bez nazwy serwisu i bez podtytułu po dwukropku."""
+    """Krótka etykieta do menu: bez nazwy serwisu i bez podtytułu.
+
+    Podtytuł zaczyna się po dwukropku, po pytajniku albo po myślniku
+    oddzielonym spacjami. „Leszcz czy krąp? Rozpoznanie, wymiar i feeder na
+    leszcza” to w menu trzy linijki; „Leszcz czy krąp?” mówi to samo.
+    """
     label = re.sub(r"\s*\|\s*" + re.escape(SITE_NAME) + r"\s*$", "", title).strip()
-    head = label.split(":", 1)[0].strip()
+    cut = re.match(r"(.+?\?)\s+\S", label)
+    head = cut.group(1) if cut else re.split(r":| [—–] ", label, maxsplit=1)[0].strip()
     return head if len(head) >= 4 else label
 
 
@@ -1638,13 +1646,38 @@ def _nav_children(section, prefix):
     selected = [rel for rel in featured if rel in available]
     if len(selected) < NAV_MAX_CHILDREN:  # dział bez pełnej listy wyróżnionych
         selected.extend(rel for rel in available if rel not in selected)
-    return [(prefix + rel, available[rel]) for rel in selected[:NAV_MAX_CHILDREN]]
+    visible = [(prefix + rel, available[rel]) for rel in selected[:NAV_MAX_CHILDREN]]
+    return visible, len(selected)
+
+
+def nav_section_catalog():
+    """Pełne listy działów dla przycisku „Pokaż wszystkie” — adresy od korzenia,
+    żeby jeden plik obsłużył podstrony z każdego poziomu zagnieżdżenia."""
+    return {
+        section: [
+            {"href": url, "label": title}
+            for url, title in _nav_children_all(section)
+        ]
+        for _label, _href, section in NAV_TOP
+    }
+
+
+def _nav_children_all(section):
+    available = {}
+    for url, title in SECTION_PAGES.get(section, []):
+        rel = url[len(BASE) + 1:] if url.startswith(BASE + "/") else url
+        if rel and not rel.endswith("/"):
+            available[rel] = nav_label(title)
+    featured = NAV_FEATURED.get(section, ())
+    selected = [rel for rel in featured if rel in available]
+    selected.extend(rel for rel in available if rel not in selected)
+    return [("/" + rel, available[rel]) for rel in selected]
 
 
 def build_nav(prefix):
     items = []
     for label, href, section in NAV_TOP:
-        kids = _nav_children(section, prefix)
+        kids, total = _nav_children(section, prefix)
         submenu_id = f"submenu-{section}"
         sub = "".join(
             f'<li><a href="{url}">{html.escape(title)}</a></li>'
@@ -1667,9 +1700,17 @@ def build_nav(prefix):
             item_class = "has-sub nav-mega nav-mega-2"
         else:
             item_class = "has-sub"
+        # Przycisk pojawia się tylko tam, gdzie dział ma więcej stron, niż
+        # mieści statyczna lista; resztę dociąga nav-sections.json.
+        more = (
+            f'<li class="sub-more"><button class="submenu-more" type="button" '
+            f'aria-expanded="false" aria-controls="{submenu_id}" '
+            f'data-section="{section}" data-total="{total}">'
+            f'Pokaż wszystkie ({total})</button></li>'
+        ) if total > len(kids) else ""
         items.append(
             f'<li class="{item_class}">{control}<ul id="{submenu_id}" class="sub">'
-            f'{overview}{sub}</ul></li>'
+            f'{overview}{sub}{more}</ul></li>'
         )
     discover_links = "".join(
         f'<li><a href="{prefix}{href}">{html.escape(title)}</a></li>'
@@ -5190,6 +5231,15 @@ def main():
     print(f"sitemap.xml: {len(urls)} URL-i, {total_imgs} obrazów")
     print("robots.txt: ok")
     print(f"llms.txt: {sum(len(v) for v in by_sec.values())} wpisów")
+
+    # Pełne listy działów dla przycisku „Pokaż wszystkie”. Trzymamy je poza
+    # HTML-em, żeby 44 pozycje atlasu nie powtarzały się w każdej podstronie.
+    catalog = nav_section_catalog()
+    with open(os.path.join(ROOT, "nav-sections.json"), "w", encoding="utf-8") as f:
+        json.dump(catalog, f, ensure_ascii=False, separators=(",", ":"))
+        f.write("\n")
+    print("nav-sections.json: " + ", ".join(
+        f"{section} {len(entries)}" for section, entries in catalog.items()))
     print(f"sw.js: cache fishpoint-{stamp_service_worker()}")
 
 if __name__ == "__main__":

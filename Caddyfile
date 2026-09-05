@@ -104,6 +104,10 @@
 	header @html Cache-Control "public, max-age=0, must-revalidate"
 	@feeds path /feed.xml /sitemap.xml
 	header @feeds Cache-Control "public, max-age=900, must-revalidate"
+	# Katalog działów dla przycisku „Pokaż wszystkie” zmienia się z każdym
+	# wydaniem razem z listą stron, więc musi być rewalidowany jak kanały.
+	@navcatalog path /nav-sections.json
+	header @navcatalog Cache-Control "public, max-age=900, must-revalidate"
 	@manifest path /site.webmanifest
 	header @manifest Cache-Control "public, max-age=86400, must-revalidate"
 	# Service worker musi być rewalidowany przy każdym wejściu — to on decyduje

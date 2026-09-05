@@ -1226,6 +1226,31 @@ html.dark .newsletter{background:rgba(255,255,255,.04);border-color:rgba(255,255
 .nav-menu .nav-mega:focus-within > .sub,
 .nav-menu .nav-mega.sub-open > .sub { display: grid; }
 .nav-menu .nav-mega > .sub > .sub-overview { grid-column: 1 / -1; }
+/* „Pokaż wszystkie” domyka podmenu z listą uciętą do NAV_MAX_CHILDREN.
+   Przycisk wygląda jak pozycja listy, ale odróżnia go bursztyn i kreska
+   oddzielająca — czytelnik ma widzieć, że to sterowanie, nie kolejny gatunek. */
+.nav-menu .sub-more { margin-top: 4px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,.14); }
+.nav-menu .nav-mega > .sub > .sub-more { grid-column: 1 / -1; }
+.nav-menu .submenu-more {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 11px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: var(--amber);
+  font: inherit;
+  font-size: .79rem;
+  font-weight: 850;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+}
+.nav-menu .submenu-more:hover,
+.nav-menu .submenu-more:focus-visible { background: rgba(255,255,255,.12); }
+.nav-menu .submenu-more[disabled] { opacity: .6; cursor: progress; }
 .nav-sections > li:first-child.nav-mega > .sub { left: 0; transform: none; }
 .nav-sections > li:nth-last-child(-n + 2).nav-mega > .sub { left: auto; right: 0; transform: none; }
 .nav-sections > li:last-child.has-sub:not(.nav-mega) > .sub { left: auto; right: 0; }
@@ -1272,6 +1297,8 @@ html.dark .newsletter{background:rgba(255,255,255,.04);border-color:rgba(255,255
   .nav-menu .has-sub.sub-open:hover > .sub,
   .nav-menu .has-sub.sub-open:focus-within > .sub { display: grid; }
   .nav-menu .sub a { padding: 10px 12px; font-size: .92rem; line-height: 1.35; }
+  /* Przycisk musi mieć ten sam ciężar dotykowy co pozycje listy. */
+  .nav-menu .submenu-more { min-height: 44px; padding: 10px 12px; font-size: .92rem; line-height: 1.35; }
   .nav-menu .has-sub::after { display: none; }
 }
 

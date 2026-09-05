@@ -30,8 +30,70 @@ if (toggle && menu) {
     document.body.classList.toggle('nav-open', isOpen);
   });
 
-  menu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeMenu);
+  // Delegacja, nie pętla po istniejących linkach: pozycje dokładane przez
+  // „Pokaż wszystkie” pojawiają się później i też muszą zamykać menu.
+  menu.addEventListener('click', (event) => {
+    if (event.target.closest('a')) closeMenu();
+  });
+
+  // Podmenu ma w HTML tylko początek działu — atlas ryb liczy 44 pozycje i
+  // powielanie ich w nawigacji każdej z 218 podstron ważyłoby więcej niż treść
+  // krótszych stron. Resztę dociągamy raz, na żądanie czytelnika.
+  let sectionCatalog = null;
+  const loadCatalog = () => {
+    if (!sectionCatalog) sectionCatalog = fetch('/nav-sections.json').then((r) => r.json());
+    return sectionCatalog;
+  };
+
+  menu.querySelectorAll('.submenu-more').forEach((button) => {
+    const list = button.closest('.sub');
+    const item = button.closest('.has-sub');
+    const holder = button.closest('.sub-more');
+    const total = Number(button.dataset.total) || 0;
+    const label = button.textContent;
+
+    button.addEventListener('click', () => {
+      if (button.getAttribute('aria-expanded') === 'true') {
+        list.querySelectorAll('.sub-extra').forEach((extra) => extra.remove());
+        button.setAttribute('aria-expanded', 'false');
+        button.textContent = label;
+        item.classList.remove('nav-mega-3');
+        item.classList.toggle('nav-mega-2', total > 10);
+        return;
+      }
+      button.disabled = true;
+      loadCatalog()
+        .then((catalog) => {
+          const entries = catalog[button.dataset.section] || [];
+          const known = new Set(
+            [...list.querySelectorAll('a')].map((a) => new URL(a.href, location.href).pathname)
+          );
+          entries.forEach((entry) => {
+            if (known.has(entry.href)) return;
+            const li = document.createElement('li');
+            li.className = 'sub-extra';
+            const a = document.createElement('a');
+            a.href = entry.href;
+            a.textContent = entry.label;
+            li.appendChild(a);
+            list.insertBefore(li, holder);
+          });
+          button.setAttribute('aria-expanded', 'true');
+          button.textContent = 'Pokaż mniej';
+          // Długa lista potrzebuje trzeciej kolumny, żeby nie uciekała poza ekran.
+          if (total > 18) {
+            item.classList.remove('nav-mega-2');
+            item.classList.add('nav-mega', 'nav-mega-3');
+          }
+        })
+        .catch(() => {
+          // Bez katalogu zostaje „Zobacz cały dział” — nie blokujemy nawigacji.
+          sectionCatalog = null;
+        })
+        .finally(() => {
+          button.disabled = false;
+        });
+    });
   });
 
   submenuButtons.forEach((button) => {
