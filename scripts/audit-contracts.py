@@ -153,7 +153,11 @@ class PageParser(HTMLParser):
 
     def handle_data(self, data: str) -> None:
         if self._json_ld is not None:
+            # Treść JSON-LD nie jest widoczna dla czytelnika. Gdyby wpadała do
+            # main_text, porównanie schematu z widoczną kopią zawsze wychodziłoby
+            # zgodne — schemat cytowałby sam siebie.
             self._json_ld += data
+            return
         if "main" in self.stack or "title" in self.stack:
             self.main_text.append(data)
         if self._in_document_title:
@@ -806,8 +810,16 @@ def main() -> int:
         check(collection_dates == [expected],
               f"{relative}: CollectionPage dateModified is not max child date", failures)
 
-    # The three legal FAQ corrections must be identical in schema and visible copy.
-    for relative in ("lowiska/slaskie.html", "lowiska/pomorskie.html", "lowiska/zachodniopomorskie.html"):
+    # FAQPage w dziale Łowiska nie jest generowany (extract_faq szuka nagłówka
+    # ze słowem „FAQ", a strony regionalne mają „Najczęstsze pytania"), więc
+    # schemat jest pisany ręcznie i może rozjechać się z widoczną treścią.
+    # Kontrakt obejmuje wszystkie strony województw, nie wybrane trzy.
+    regional_faq_pages = sorted(
+        f"lowiska/{path.name}" for path in (ROOT / "lowiska").glob("*.html")
+        if path.name not in {"index.html", "planowanie-wyprawy.html"}
+    )
+    check(len(regional_faq_pages) == 16, "regional voivodeship pages are missing", failures)
+    for relative in regional_faq_pages:
         page = parse(relative)
         visible = normalize(" ".join(page.main_text))
         for raw_json in page.json_ld:
