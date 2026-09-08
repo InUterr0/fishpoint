@@ -1221,6 +1221,36 @@ def main() -> int:
     check(not stale,
           f"data aktualizacji rozjechała się z treścią: {stale[:5]}", failures)
 
+    # Standard redakcyjny musi docierać tam, gdzie ludzie faktycznie wchodzą.
+    # Audyt z 8 września 2026: strona główna i „O autorze”, na których opisana
+    # jest metoda, zebrały razem 5 kliknięć z 550 w 90 dni — 95% czytelników
+    # wchodzi z wyszukiwarki wprost w artykuł. Podpis niesie tę informację na
+    # każdą kartę treści, więc jego brak jest regresją, nie kosmetyką.
+    missing_signature, broken_signature = [], []
+    for page in sorted(ROOT.glob("**/*.html")):
+        rel = page.relative_to(ROOT).as_posix()
+        if any(part.startswith(".") for part in page.relative_to(ROOT).parts):
+            continue
+        html_src = page.read_text(encoding="utf-8")
+        # Podpis dokleja się do karty treści; strony bez <article> (wyszukiwarka,
+        # zestawienia) mają byline, ale nie mają do czego go dopiąć.
+        is_article = seo_inject.BYLINE_BEGIN in html_src and "</article>" in html_src
+        has_signature = seo_inject.EDITORIAL_SIGNATURE_BEGIN in html_src
+        if rel in seo_inject.EDITORIAL_SIGNATURE_SKIP:
+            continue
+        if is_article and not has_signature:
+            missing_signature.append(rel)
+        elif has_signature:
+            block = seo_inject.editorial_signature_re.search(html_src)
+            if not block or "/o-autorze.html" not in block.group(0) \
+                    or "/korekty.html" not in block.group(0):
+                broken_signature.append(rel)
+    check(not missing_signature,
+          f"artykuł bez podpisu redakcyjnego: {missing_signature[:5]}", failures)
+    check(not broken_signature,
+          f"podpis redakcyjny bez odesłania do autora i korekt: {broken_signature[:5]}",
+          failures)
+
     # Odcisk treści musi pomijać boczne listy linków, a obejmować ramki
     # redakcyjne. Audyt z 8 września 2026: commit d189df37 dopisał cztery
     # pozycje do <aside class="side-nav"> i przez to podbił datę aktualizacji

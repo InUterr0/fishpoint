@@ -2086,6 +2086,18 @@ inline_visual_re = re.compile(
 def strip_inline_visuals(src):
     """Usuwa wyłącznie w pełni generatorowe ilustracje śródtekstowe."""
     return inline_visual_re.sub("", src)
+EDITORIAL_SIGNATURE_BEGIN, EDITORIAL_SIGNATURE_END = (
+    "<!--editorial-signature:auto-->",
+    "<!--/editorial-signature:auto-->",
+)
+editorial_signature_re = re.compile(
+    re.escape(EDITORIAL_SIGNATURE_BEGIN) + r".*?" + re.escape(EDITORIAL_SIGNATURE_END),
+    re.S,
+)
+# Strony, które same są opisem metody albo rejestrem — podpis byłby odesłaniem
+# do miejsca, w którym czytelnik już jest.
+EDITORIAL_SIGNATURE_SKIP = {"o-autorze.html", "korekty.html", "polityka-prywatnosci.html"}
+
 RELATED_BEGIN, RELATED_END = "<!--related:auto-->", "<!--/related:auto-->"
 related_re = re.compile(re.escape(RELATED_BEGIN) + r".*?" + re.escape(RELATED_END), re.S)
 NEWSLETTER_BEGIN, NEWSLETTER_END = "<!--newsletter:auto-->", "<!--/newsletter:auto-->"
@@ -2380,6 +2392,35 @@ def build_fishpoint_method(rel, config):
         f'<p><strong>Ograniczenia:</strong> {html.escape(config["limits"])}</p>'
         f'</section>{FISHPOINT_METHOD_END}'
     )
+
+
+def inject_editorial_signature(src, rel):
+    """Dopina do artykułu stały podpis redakcyjny.
+
+    Standard redakcyjny serwisu — autorstwo, odsyłanie przepisów do dokumentu
+    źródłowego i jawny rejestr korekt — jest opisany na stronie głównej i w
+    „O autorze”. Obie zbierają razem promil ruchu: czytelnik wchodzi z
+    wyszukiwarki wprost w artykuł i nigdy tam nie trafia. Ten blok przenosi
+    jedno zdanie tej informacji na każdą kartę treści.
+    """
+    if rel in EDITORIAL_SIGNATURE_SKIP or "</article>" not in src:
+        return src
+    if EDITORIAL_SIGNATURE_BEGIN in src:
+        src = editorial_signature_re.sub("", src)
+    block = (
+        f'{EDITORIAL_SIGNATURE_BEGIN}'
+        f'<aside class="editorial-signature" aria-label="Standard redakcyjny">'
+        f'<p>Materiał napisał <a href="{BASE}/o-autorze.html" rel="author">{AUTHOR_NAME}</a>. '
+        f'Przepisy i twarde liczby podajemy z odesłaniem do dokumentu źródłowego, '
+        f'a potwierdzone błędy prostujemy jawnie w '
+        f'<a href="{BASE}/korekty.html">rejestrze korekt</a>.</p>'
+        f'</aside>{EDITORIAL_SIGNATURE_END}'
+    )
+    # Podpis zamyka lekturę tekstu, więc stoi przed blokami nawigacyjnymi.
+    for anchor in (RELATED_BEGIN, GISCUS_BEGIN, NEWSLETTER_BEGIN, "</article>"):
+        if anchor in src:
+            return src.replace(anchor, block + anchor, 1)
+    return src
 
 
 def inject_fishpoint_method(src, rel):
@@ -4499,6 +4540,11 @@ def build(path):
     src, visual_img_path = inject_article_visual(src, rel, title_txt, mtime)
     src = inject_inline_visuals(src, rel, title_txt, page_dir)
     src = inject_field_notes(src, rel)
+    # Dopiero po field-notes: ten krok wybiera „dowód źródłowy” m.in. po tym,
+    # czy element domyka treść, więc podpis wstawiony wcześniej zabierał notę
+    # źródeł z końca artykułu i wciągał ją do bloku automatycznego.
+    if og_type == "article":
+        src = inject_editorial_signature(src, rel)
     # Wstrzyknięty lead jest pierwszym lokalnym obrazem: jego dane obsługują
     # LCP, OpenGraph, schema.org oraz sitemapę obrazów.
     # LCP pozostaje przy leadzie; ilustracje śródtekstowe są zawsze lazy.

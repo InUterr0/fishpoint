@@ -514,6 +514,11 @@ html.dark .month-now strong { color: var(--green); }
 }
 .info-block em { color: var(--green); font-style: italic; }
 .info-block strong { color: var(--ink); }
+/* Stały podpis redakcyjny na końcu artykułu. Celowo nie jest kartą — ma
+   zamykać lekturę cichym zdaniem, a nie konkurować z notą źródeł nad nim. */
+.editorial-signature { margin-top: 28px; padding-top: 15px; border-top: 1px solid rgba(17,49,47,.12); }
+.editorial-signature p { margin: 0; font-size: .92rem; color: var(--muted); }
+
 .source-box {
   margin-top: 30px; padding: 24px 26px; border-radius: 18px;
   background: linear-gradient(135deg, #eaf3ef, #e2efe6);
@@ -606,6 +611,8 @@ html.dark .info-block { background: rgba(255,255,255,.04); border-color: rgba(25
 html.dark .info-block p { color: #c5d6d0; }
 html.dark .info-block h3 { color: var(--green); }
 html.dark .info-block strong { color: var(--ink); }
+html.dark .editorial-signature { border-top-color: rgba(255,255,255,.14); }
+html.dark .editorial-signature p { color: #a9bdb7; }
 html.dark .source-box { background: rgba(62, 201, 180, .08); border-left-color: var(--green); }
 html.dark .source-box p { color: #c5d6d0; }
 html.dark .article-card > p { color: #c5d6d0; }
