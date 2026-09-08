@@ -456,8 +456,10 @@ html.dark .news-catalog > .section-heading { border-top-color: rgba(255,255,255,
 /* Przy 1440 px wiersz akapitu sięgał ~95 znaków, wyraźnie powyżej progu
    czytelności (50–75). Akapity leżą w sekcjach (info-block, answer-first,
    tldr), nie bezpośrednio w karcie, więc limit obejmuje całą kartę.
-   Tabele, obrazy i siatki zachowują pełną szerokość — dotyczy tylko <p>. */
-.article-card p { max-width: 72ch; }
+   Tabele, obrazy i siatki zachowują pełną szerokość — dotyczy tylko <p>.
+   65ch dobrane pomiarem na produkcji: daje 75 znaków w wierszu (72ch dawało
+   83, przy progu czytelności 50–75). */
+.article-card p { max-width: 65ch; }
 /* Globalny reset `a { color: inherit; text-decoration: none }` sprawiał, że
    odnośniki w treści były nieodróżnialne od zwykłego zdania. Czytelnik nie
    widział, że tekst odsyła do komunikatu PZW, ustawy czy pliku z wynikami —
