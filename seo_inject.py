@@ -1769,6 +1769,9 @@ AUTO_BLOCK_RE = re.compile(r"<!--([a-z-]+):auto-->.*?<!--/\1:auto-->", re.S)
 SEO_BLOCK_RE = re.compile(
     r"<!--\s*seo:meta begin \(auto\)\s*-->.*?<!--\s*seo:meta end \(auto\)\s*-->", re.S)
 CSS_VERSION_RE = re.compile(r"(\.css|\.js)\?v=[0-9a-f]+")
+# Boczne bloki nawigacyjne: <aside class="side-nav"> i <aside class="side-rail">.
+SIDE_LINKS_RE = re.compile(
+    r'<aside\b[^>]*\bclass="(?:side-nav|side-rail)"[^>]*>.*?</aside>', re.S | re.I)
 
 
 # Strony o stanie prawnym, których tytuł, opis i H1 niosą rok obowiązywania.
@@ -1825,6 +1828,12 @@ def editorial_fingerprint(src):
     body = SEO_BLOCK_RE.sub("", body)
     for tag in ("header", "nav", "footer"):
         body = re.sub(rf"<{tag}\b[^>]*>.*?</{tag}>", "", body, flags=re.S | re.I)
+    # Boczne listy linków (side-nav, side-rail) też są chrome'em: zawierają
+    # wyłącznie nagłówek i odnośniki do innych stron. Dopisanie pozycji do
+    # działu przebudowuje je w kilkudziesięciu plikach naraz i nie jest
+    # zmianą treści żadnego z tych artykułów. Ramki redakcyjne w <aside>
+    # (tldr, field-note) zostają w odcisku — to treść, nie nawigacja.
+    body = SIDE_LINKS_RE.sub("", body)
     body = managed_meta_re.sub("", body)
     body = robots_meta_re.sub("", body)
     body = CSS_VERSION_RE.sub(r"\1", body)

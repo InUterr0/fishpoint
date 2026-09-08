@@ -1221,6 +1221,35 @@ def main() -> int:
     check(not stale,
           f"data aktualizacji rozjechała się z treścią: {stale[:5]}", failures)
 
+    # Odcisk treści musi pomijać boczne listy linków, a obejmować ramki
+    # redakcyjne. Audyt z 8 września 2026: commit d189df37 dopisał cztery
+    # pozycje do <aside class="side-nav"> i przez to podbił datę aktualizacji
+    # ~20 kartom kalendarza brań, w których nie zmieniło się ani jedno zdanie.
+    def fp_of(inner: str) -> str:
+        return seo_inject.editorial_fingerprint(
+            f"<html><body><article><p>Treść.</p>{inner}</article></body></html>")
+
+    baseline = fp_of('<aside class="side-nav"><h3>Dział</h3><a href="a.html">A</a></aside>')
+    navigation_only = [
+        ("side-nav", '<aside class="side-nav"><h3>Dział</h3>'
+                     '<a href="a.html">A</a><a href="b.html">B</a></aside>'),
+        ("side-rail", '<aside class="side-rail" aria-label="Informacje dodatkowe">'
+                      '<h3>Na blogu</h3><a href="c.html">C</a></aside>'),
+    ]
+    for name, inner in navigation_only:
+        check(fp_of(inner) == baseline,
+              f"zmiana w <aside class=\"{name}\"> nie może podbijać daty aktualizacji",
+              failures)
+
+    editorial = [
+        ("tldr", '<aside class="tldr" aria-label="W skrócie"><p>Szczupak ma 45 cm.</p></aside>'),
+        ("field-note", '<aside class="field-note field-note--record"><p>Pomiar z 2026 r.</p></aside>'),
+    ]
+    for name, inner in editorial:
+        check(fp_of(inner) != baseline,
+              f"zmiana w <aside class=\"{name}\"> musi podbijać datę aktualizacji",
+              failures)
+
     # Dz.U. 2023 poz. 1373 to samodzielne rozporządzenie MRiRW z 12 lipca 2023 r.
     # „w sprawie szczegółowych warunków ochrony i połowu ryb w powierzchniowych
     # wodach śródlądowych”. Uchyliło ono akt „w sprawie połowu ryb oraz warunków
