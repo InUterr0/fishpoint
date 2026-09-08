@@ -6,7 +6,28 @@
     <description>Blog wędkarski FishPoint: poradniki, relacje znad wody, sezon i sprzęt.</description>
     <language>pl-PL</language>
     <atom:link href="https://fish-point.pl/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 02 Sep 2026 00:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 00:00:00 -0000</lastBuildDate>
+    <item>
+      <title>Kontrola nad wodą: co mówi ustawa o uprawnieniach straży i karach</title>
+      <link>https://fish-point.pl/aktualnosci/kontrola-strazy-rybackiej-uprawnienia-kary.html</link>
+      <guid isPermaLink="true">https://fish-point.pl/aktualnosci/kontrola-strazy-rybackiej-uprawnienia-kary.html</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 -0000</pubDate>
+      <description>Co naprawdę może skontrolować Państwowa i Społeczna Straż Rybacka i jakie kary przewiduje ustawa o rybactwie śródlądowym — z rozróżnieniem od stawek mandatów.</description>
+    </item>
+    <item>
+      <title>Odra pod Szczecinem: 200 kg śniętych ryb i przyducha zamiast algi</title>
+      <link>https://fish-point.pl/aktualnosci/odra-szczecin-przyducha-2026.html</link>
+      <guid isPermaLink="true">https://fish-point.pl/aktualnosci/odra-szczecin-przyducha-2026.html</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 -0000</pubDate>
+      <description>Ze szczecińskiego odcinka Odry i Regalicy wyłowiono 200 kg śniętych ryb. WIOŚ wykluczył złotą algę i wskazał przyduchę. Jak odróżnić oba mechanizmy.</description>
+    </item>
+    <item>
+      <title>Zarybianie węgorzem: 370 kg narybku w jeziorach szczecineckich</title>
+      <link>https://fish-point.pl/aktualnosci/zarybianie-wegorzem-szczecinek-2026.html</link>
+      <guid isPermaLink="true">https://fish-point.pl/aktualnosci/zarybianie-wegorzem-szczecinek-2026.html</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 -0000</pubDate>
+      <description>370 kg narybku węgorza trafiło do siedmiu jezior pod Szczecinkiem. Dlaczego węgorz nie odbuduje populacji bez zarybień i jaki ma wymiar, okres i limit.</description>
+    </item>
     <item>
       <title>Od 1 września pod ochroną: pstrąg potokowy, troć jeziorowa i certa</title>
       <link>https://fish-point.pl/aktualnosci/okresy-ochronne-od-1-wrzesnia-2026.html</link>

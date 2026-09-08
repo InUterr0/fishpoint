@@ -2,9 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://fish-point.pl/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/wegorz.jpg</image:loc>
+      <image:title>Węgorz europejski trzymany nad wodą</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/rozlewisko-spinning.jpg</image:loc>
+      <image:title>Wędkarz spinningujący na rozlewisku</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jezioro-deszcz.jpg</image:loc>
+      <image:title>Powierzchnia wody podczas deszczu</image:title>
+    </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/pstrag.jpg</image:loc>
       <image:title>Pstrąg potokowy — ilustracja do materiału o okresach ochronnych</image:title>
@@ -17,24 +29,24 @@
       <image:loc>https://fish-point.pl/assets/img/tematy/stawy.jpg</image:loc>
       <image:title>Zarastający zbiornik wodny — ilustracja do materiału o rdestnicach</image:title>
     </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/ryby/szczupak.jpg</image:loc>
-      <image:title>Szczupak — ilustracja do materiału o okazowym połowie</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/wedki.jpg</image:loc>
-      <image:title>Wędki ustawione na brzegu — ilustracja wędkarstwa rzutowego</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://fish-point.pl/assets/img/tematy/jeziora.jpg</image:loc>
-      <image:title>Jezioro — lokalne zasady wędkowania na zbiorniku Świnna Poręba</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://fish-point.pl/aktualnosci/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/wegorz.jpg</image:loc>
+      <image:title>Węgorz europejski trzymany nad wodą</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/rozlewisko-spinning.jpg</image:loc>
+      <image:title>Wędkarz spinningujący na rozlewisku</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jezioro-deszcz.jpg</image:loc>
+      <image:title>Powierzchnia wody podczas deszczu</image:title>
+    </image:image>
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/pstrag.jpg</image:loc>
       <image:title>Pstrąg potokowy — ilustracja do materiału o okresach ochronnych</image:title>
@@ -333,6 +345,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://fish-point.pl/aktualnosci/kontrola-strazy-rybackiej-uprawnienia-kary.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/rozlewisko-spinning.jpg</image:loc>
+      <image:title>Wędka spinningowa nad płytkim rozlewiskiem rzecznym późną jesienią</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://fish-point.pl/aktualnosci/mikroguma-dla-poczatkujacych.html</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -370,6 +392,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/ryby/karp.jpg</image:loc>
       <image:title>Ilustracja do artykułu: Karp latem: przynęta, nęcenie i dobrostan w upale</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/odra-szczecin-przyducha-2026.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/tematy/jezioro-deszcz.jpg</image:loc>
+      <image:title>Jezioro w deszczowy, pochmurny dzień, ciemna tafla wody i niskie chmury</image:title>
     </image:image>
   </url>
   <url>
@@ -642,6 +674,16 @@
     <image:image>
       <image:loc>https://fish-point.pl/assets/img/tematy/schemat-monitoring-wody.svg</image:loc>
       <image:title>Schemat obserwacji rzeki, pobrania próbki i sprawdzenia komunikatu.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://fish-point.pl/aktualnosci/zarybianie-wegorzem-szczecinek-2026.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://fish-point.pl/assets/img/ryby/wegorz.jpg</image:loc>
+      <image:title>Ilustracja do artykułu: Zarybianie węgorzem: 370 kg narybku w jeziorach szczecineckich</image:title>
     </image:image>
   </url>
   <url>

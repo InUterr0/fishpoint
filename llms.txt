@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-09-05.
+> Najnowsza merytoryczna zmiana: 2026-09-08.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -32,10 +32,12 @@
 - [Karp w upały](https://fish-point.pl/aktualnosci/karp-w-upaly-taktyka-na-lipiec.html): Jak łowić karpia w lipcowe upały? Poznaj pory doby, miejsca na ciepłej wodzie, łowienie z powierzchni i przy dnie, przynęty, zanętę oraz bezpieczny C&R.
 - [Kiedy sezon na ryby 2026? Otwarcia, odcinki i § 7 ust. 2](https://fish-point.pl/aktualnosci/kiedy-sezon-na-ryby-2026.html): Kiedy sezon na ryby 2026: krajowa tabela okresów ochronnych, warianty odcinkowe i § 7 ust. 2 — osobno od planowania brań.
 - [PZW powołało Komisję ds. cyfryzacji: co już wiadomo](https://fish-point.pl/aktualnosci/komisja-cyfryzacji-pzw-2026.html): Komisja ds. cyfryzacji PZW, decyzje Okręgu Katowice i e-zezwolenia Rzeszowa: potwierdzone fakty oraz granice wniosków.
+- [Kontrola nad wodą: co mówi ustawa o uprawnieniach straży i karach](https://fish-point.pl/aktualnosci/kontrola-strazy-rybackiej-uprawnienia-kary.html): Co naprawdę może skontrolować Państwowa i Społeczna Straż Rybacka i jakie kary przewiduje ustawa o rybactwie śródlądowym — z rozróżnieniem od stawek mandatów.
 - [Mikroguma dla początkujących](https://fish-point.pl/aktualnosci/mikroguma-dla-poczatkujacych.html): Mikroguma dla początkujących: jak dobrać pierwszy zestaw LRF, jakie przynęty i montaże wybrać oraz jak nauczyć się techniki i rozpoznawania brań krok po kroku.
 - [Spławikowe MP 2026: Jasiczak i Pomykała](https://fish-point.pl/aktualnosci/mistrzostwa-polski-splawik-swierkocin-2026.html): Wyniki Spławikowych Mistrzostw Polski 2026 na Warcie w Świerkocinie: Dominik Jasiczak wygrał seniorów, a Wiktor Pomykała kategorię U-25.
 - [73. MP w wędkarstwie rzutowym: Bieruń 2026](https://fish-point.pl/aktualnosci/mistrzostwa-polski-wedkarstwo-rzutowe-bierun-2026.html): 73. Indywidualne Mistrzostwa Polski w wędkarstwie rzutowym: Bieruń, 25–26 lipca 2026. Relacja PZW podaje 47 startujących i dziewięć konkurencji.
 - [Na co bierze karp latem](https://fish-point.pl/aktualnosci/na-co-bierze-karp-latem.html): Jak dobrać przynętę i nęcenie na karpia latem do temperatury, pory, tlenu i presji. Praktyczne drzewo decyzji oraz protokół bezpiecznego wypuszczania.
+- [Odra pod Szczecinem: 200 kg śniętych ryb i przyducha zamiast algi](https://fish-point.pl/aktualnosci/odra-szczecin-przyducha-2026.html): Ze szczecińskiego odcinka Odry i Regalicy wyłowiono 200 kg śniętych ryb. WIOŚ wykluczył złotą algę i wskazał przyduchę. Jak odróżnić oba mechanizmy.
 - [PZW Zamość: 1 kg zanęty na czterech zbiornikach](https://fish-point.pl/aktualnosci/ograniczenie-zanet-pzw-zamosc-lato-2026.html): PZW Zamość: od 1 lipca 2026 r. limit 1 kg zanęty na dobę na Krynicach, Mirczu, Starej Wsi i Wereszynie; 5 l na turę zawodów.
 - [Okoń jesienią na mikrogumę i drop shot](https://fish-point.pl/aktualnosci/okon-jesienia-mikroguma.html): Okoń jesienią na mikrogumę i drop shot: jak znaleźć kotły i ławice, dobrać jig i gumki, prowadzić przynętę i rozgrzać branie. Poradnik spinningowy.
 - [Od 1 września pod ochroną: pstrąg potokowy, troć jeziorowa i certa](https://fish-point.pl/aktualnosci/okresy-ochronne-od-1-wrzesnia-2026.html): Od 1 września okres ochronny obejmuje pstrąga potokowego, troć jeziorową i certę na dolnej Wiśle. Na których wodach i do kiedy — za rozporządzeniem.
@@ -62,6 +64,7 @@
 - [Okresy ochronne ryb 2026 i wymiary: pełny zakres aktu](https://fish-point.pl/aktualnosci/wymiary-i-okresy-ochronne-2026.html): Okresy ochronne ryb 2026 i wymiary z pełnego § 6–7 aktu: odcinki, § 7 ust. 2, znaczenie „—” i kontrola lokalnych zasad.
 - [Nowe wytyczne dla Wód Polskich: co oznaczają dla łowisk?](https://fish-point.pl/aktualnosci/wytyczne-wody-polskie-obwody-rybackie-2026.html): MRiRW opublikowało wytyczne dla Wód Polskich dotyczące rybactwa śródlądowego. Wyjaśniamy ich wpływ na zarządzanie obwodami i zasady połowu.
 - [Bóbr pod Pilchowicami: monitoring i zakaz połowu](https://fish-point.pl/aktualnosci/zakaz-polowu-bobr-lipiec-2026.html): Bóbr w lipcu 2026: co potwierdziły pomiary WIOŚ, gdzie obowiązywał zakaz połowu i czego wędkarz nie powinien zakładać na podstawie samego monitoringu.
+- [Zarybianie węgorzem: 370 kg narybku w jeziorach szczecineckich](https://fish-point.pl/aktualnosci/zarybianie-wegorzem-szczecinek-2026.html): 370 kg narybku węgorza trafiło do siedmiu jezior pod Szczecinkiem. Dlaczego węgorz nie odbuduje populacji bez zarybień i jaki ma wymiar, okres i limit.
 - [Pierwsze zawody feederowe](https://fish-point.pl/aktualnosci/zawody-feederowe-poradnik.html): Poradnik startu w zawodach feederowych: dokumenty, regulamin sektora, losowanie, harmonogram, etyka i checklista debiutanta.
 - [Zawody wędkarskie 2026](https://fish-point.pl/aktualnosci/zawody-wedkarskie-2026-kalendarz.html): Kalendarz zawodów wędkarskich 2026 jako katalog oficjalnych źródeł: filtr metod i regionów, tabela kontroli oraz potwierdzone przykłady.
 - [Zezwolenia online 2026: PZW, Wody Polskie i łowiska prywatne](https://fish-point.pl/aktualnosci/zezwolenia-online-2026.html): Zezwolenia online 2026: drzewo PZW, Wody Polskie i prywatnych łowisk, dokument do kontroli oraz wyjątki karty z art. 7.
