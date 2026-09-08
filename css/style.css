@@ -454,9 +454,10 @@ html.dark .news-catalog > .section-heading { border-top-color: rgba(255,255,255,
 .article-card, .side-nav { background: var(--paper); border: 1px solid rgba(17,49,47,.08); border-radius: var(--radius); box-shadow: 0 12px 30px rgba(17,49,47,.07); }
 .article-card { padding: clamp(26px, 4vw, 46px); }
 /* Przy 1440 px wiersz akapitu sięgał ~95 znaków, wyraźnie powyżej progu
-   czytelności (50–75). Limit dotyczy wyłącznie akapitów będących bezpośrednim
-   dzieckiem karty — tabele, ramki i obrazy zachowują pełną szerokość. */
-.article-card > p { max-width: 72ch; }
+   czytelności (50–75). Akapity leżą w sekcjach (info-block, answer-first,
+   tldr), nie bezpośrednio w karcie, więc limit obejmuje całą kartę.
+   Tabele, obrazy i siatki zachowują pełną szerokość — dotyczy tylko <p>. */
+.article-card p { max-width: 72ch; }
 /* Globalny reset `a { color: inherit; text-decoration: none }` sprawiał, że
    odnośniki w treści były nieodróżnialne od zwykłego zdania. Czytelnik nie
    widział, że tekst odsyła do komunikatu PZW, ustawy czy pliku z wynikami —
