@@ -6,20 +6,21 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Dwa przebiegi odświeżające treść zależną od daty:
-  #   1. pierwszego dnia miesiąca — kalendarze brań niosą bieżący miesiąc
-  #      w tytule i w bloku month-now (kontrakt w scripts/audit-contracts.py
-  #      pilnuje, żeby tytuł nie został z miesiącem minionym);
-  #   2. w każdy czwartek — strona „Brania w ten weekend" przelicza daty
-  #      najbliższej soboty i niedzieli oraz fazę Księżyca, a czwartek jest
-  #      dniem, w którym wysyłamy ją w newsletterze;
-  #   3. codziennie — dział „Rzeki" niesie odczyty wodowskazów IMGW. Bez
-  #      codziennego przebiegu tabele pokazywałyby wyłącznie „—", bo pomiar
-  #      starszy niż trzy doby jest świadomie ukrywany.
-  # 04:10 UTC = po północy czasu polskiego.
+  # Jeden przebieg odświeżający dziennie, o 04:20 UTC (06:20 czasu polskiego).
+  # Obsługuje wszystkie treści zależne od daty naraz:
+  #   * kalendarze brań niosą bieżący miesiąc w tytule i w bloku month-now
+  #     (kontrakt w scripts/audit-contracts.py pilnuje, żeby tytuł nie został
+  #     z miesiącem minionym);
+  #   * strona „Brania w ten weekend" przelicza daty najbliższej soboty
+  #     i niedzieli oraz fazę Księżyca;
+  #   * dział „Rzeki" pobiera odczyty wodowskazów IMGW i dopisuje kolejny dzień
+  #     do serii historycznej, z której liczymy kierunek zmiany poziomu.
+  #
+  # Wcześniej stały tu osobne przebiegi miesięczny i czwartkowy, oba o 04:10.
+  # Codzienny je pochłania, a zostawione kolidowałyby z nim co dziesięć minut:
+  # przy `cancel-in-progress` nowszy przebieg anulowałby starszy i lista wdrożeń
+  # zapełniłaby się anulowaniami, wśród których łatwo przeoczyć prawdziwą awarię.
   schedule:
-    - cron: '10 4 1 * *'
-    - cron: '10 4 * * 4'
     - cron: '20 4 * * *'
 
 concurrency:

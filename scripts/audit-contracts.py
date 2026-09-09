@@ -1383,7 +1383,7 @@ def main() -> int:
     # Tytuł kalendarza brań musi nieść nazwę BIEŻĄCEGO miesiąca — tak robią oba
     # serwisy stojące nad nami w top 10 na „kalendarz brań <gatunek>". Wcześniej
     # kontrakt zabraniał miesiąca, bo strona nie była przebudowywana co miesiąc;
-    # harmonogram '10 4 1 * *' w .github/workflows/deploy.yml to zmienił.
+    # codzienny harmonogram '20 4 * * *' w .github/workflows/deploy.yml to zmienił.
     # Odwrócony kontrakt jest mocniejszy: łapie zarówno brak miesiąca, jak i tytuł
     # z miesiącem minionym, czyli dokładnie ten przypadek, którego baliśmy się
     # wcześniej — przeoczoną przebudowę.
