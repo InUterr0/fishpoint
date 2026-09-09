@@ -265,9 +265,24 @@ def main() -> int:
     failures: list[str] = []
     sitemap = ET.fromstring(read("sitemap.xml"))
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
-    # Twarda liczba, podnoszona świadomie przy każdej nowej stronie: 219 stron
-    # serwisu plus hub działu „Rzeki" i 40 stron rzek budowanych z danych IMGW.
-    check(len(urls) == 260 and len(set(urls)) == 260, "sitemap must contain 260 unique URLs", failures)
+    # Liczba stron redakcyjnych zostaje twarda i podnoszona świadomie: to ona
+    # łapie stronę, która wypadła z sitemapy przez pomyłkę. Dział „Rzeki" jest
+    # jednak budowany z wykazu wodowskazów IMGW i jego rozmiar zmienia się bez
+    # udziału redakcji — zamknięcie stacji albo dołożenie czwartej na małej
+    # rzece przesuwa liczbę stron. Twarda suma zatrzymałaby wtedy codzienne
+    # wdrożenie na tym kroku, a wdrożenie zatrzymane na audycie jest niewidoczne:
+    # 8 września 2026 produkcja stała przez dobę właśnie z takiego powodu.
+    # Dlatego dział zliczamy osobno i pilnujemy jego rozsądnego zakresu.
+    EDITORIAL_URLS = 219
+    river_urls = [u for u in urls if "/rzeki/" in u]
+    editorial_urls = [u for u in urls if "/rzeki/" not in u]
+    check(len(editorial_urls) == EDITORIAL_URLS and len(set(urls)) == len(urls),
+          f"sitemap must contain {EDITORIAL_URLS} unique editorial URLs"
+          f" (jest {len(editorial_urls)}), plus dział Rzeki", failures)
+    # Dolny próg łapie awarię generatora (pusty wykaz, zerwane pobranie danych),
+    # górny — wysyp stron z nazw, które nie są identyfikatorem rzeki.
+    check(25 <= len(river_urls) <= 90,
+          f"dział Rzeki ma {len(river_urls)} stron, poza spodziewanym zakresem 25–90", failures)
 
     visual_pages = 0
     regional_visuals = 0
