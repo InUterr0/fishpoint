@@ -29,6 +29,25 @@ import unicodedata
 import urllib.request
 from pathlib import Path
 
+try:
+    from zoneinfo import ZoneInfo
+    WARSAW = ZoneInfo("Europe/Warsaw")
+except Exception:  # noqa: BLE001 - brak bazy stref nie może wywracać budowania
+    WARSAW = None
+
+
+def now_pl() -> datetime.datetime:
+    """Czas polski, bez informacji o strefie.
+
+    Trzy zegary muszą się zgadzać, inaczej seria historyczna się rozjeżdża:
+    IMGW datuje pomiary czasem lokalnym, runner GitHuba chodzi na UTC, a stacja
+    dewelopera na CEST. Przy pchnięciu o 22:03 UTC repozytorium niosło już wpis
+    z „jutra", więc okno trendu wyszło zerowe („bez zmian / 0 d").
+    """
+    if WARSAW is None:
+        return datetime.datetime.now()
+    return datetime.datetime.now(WARSAW).replace(tzinfo=None)
+
 ROOT = Path(__file__).resolve().parent.parent
 SNAPSHOT = ROOT / "dane" / "imgw-hydro.json"
 BOUNDARIES = ROOT / "dane" / "wojewodztwa.geojson"
@@ -996,7 +1015,7 @@ def update_history(history: dict, rivers: list[River], today: datetime.date) -> 
                 continue
             series = [entry for entry in stations.get(row["id"], [])
                       if isinstance(entry, list) and len(entry) >= 2
-                      and entry[0] > horizon and entry[0] != stamp]
+                      and horizon < entry[0] < stamp]
             series.append([stamp, row["level"], row["temp"]])
             series.sort(key=lambda entry: entry[0])
             stations[row["id"]] = series
@@ -1027,8 +1046,11 @@ def attach_trends(history: dict, rivers: list[River], today: datetime.date) -> N
             reference = older[-1]
             if reference[0] == series[-1][0]:
                 continue
+            days = (today - datetime.date.fromisoformat(reference[0])).days
+            if days < 1:
+                continue
             row["trend"] = round(row["level"] - reference[1])
-            row["trend_days"] = (today - datetime.date.fromisoformat(reference[0])).days
+            row["trend_days"] = days
 
 
 def trend_cell(row: dict) -> str:
@@ -1157,7 +1179,7 @@ def inject_voivodeship_blocks(rivers: list[River]) -> int:
 # --- główny przebieg -------------------------------------------------------
 
 def main() -> int:
-    now = datetime.datetime.now()
+    now = now_pl()
     built = now.date()
     stations, live = fetch_stations()
 
