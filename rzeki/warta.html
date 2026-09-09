@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pl">
 <head>
-  <!--content-meta: published=2026-09-09; modified=2026-09-09; fp=b791178d44ab-->
+  <!--content-meta: published=2026-09-09; modified=2026-09-09; fp=027451081e1d-->
 <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stan wody na Warcie — 27 wodowskazów IMGW | FishPoint</title>
@@ -178,28 +178,34 @@
         var byName = {};
         rows.forEach(function (d) { byName[(d.stacja || "").toLowerCase()] = d; });
         var updated = 0;
-        document.querySelectorAll("tbody tr").forEach(function (tr) {
+        var table = document.querySelector("table.tool-table");
+        (table ? table.querySelectorAll("tbody tr") : []).forEach(function (tr) {
           var name = (tr.querySelector("th") || {}).textContent || "";
           name = name.replace(/\s*\([^)]*\)\s*$/, "").trim().toLowerCase();
           var d = byName[name];
           if (!d || d.stan_wody === null || d.stan_wody === "") return;
+          // Wiersz to <th> z nazwą stacji i pięć <td>: km, stan, zapas do progu,
+          // temperatura, godzina pomiaru. querySelectorAll("td") nie zwraca <th>,
+          // więc indeksy liczą się od kilometrażu, nie od nazwy.
           var cells = tr.querySelectorAll("td");
-          if (cells.length < 6) return;
-          cells[2].textContent = d.stan_wody + " cm";
+          if (cells.length < 5) return;
+          cells[1].textContent = d.stan_wody + " cm";
           var warn = parseFloat(d.stan_ostrzegawczy);
+          cells[2].textContent = "brak progu";
           if (!isNaN(warn)) {
             var delta = Math.round(warn - parseFloat(d.stan_wody));
-            cells[3].textContent = delta > 0 ? delta + " cm poniżej"
+            cells[2].textContent = delta > 0 ? delta + " cm poniżej"
               : (delta === 0 ? "na progu" : Math.abs(delta) + " cm powyżej");
           }
           var t = d.temperatura_wody;
-          cells[4].textContent = (t === null || t === "") ? "—" : t + " °C";
+          cells[3].textContent = (t === null || t === "") ? "—" : t + " °C";
           var m = /^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2})/.exec(d.stan_wody_data_pomiaru || "");
-          cells[5].textContent = m ? (m[3] + "." + m[2] + ", " + m[4] + ":" + m[5]) : "—";
+          cells[4].textContent = m ? (m[3] + "." + m[2] + ", " + m[4] + ":" + m[5]) : "—";
           updated += 1;
         });
+        var total = table ? table.querySelectorAll("tbody tr").length : 0;
         status.textContent = updated
-          ? "Zaktualizowano " + updated + " z " + document.querySelectorAll("tbody tr").length + "."
+          ? "Zaktualizowano " + updated + " z " + total + " wodowskazów."
           : "IMGW nie zwróciło teraz odczytów dla tej rzeki.";
       })
       .catch(function () {
