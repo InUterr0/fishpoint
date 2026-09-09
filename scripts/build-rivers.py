@@ -853,8 +853,9 @@ def render_hub(rivers: list[River], others: list[River], built: datetime.date,
     rows = []
     for river in rivers:
         temps = river.temps
-        direction, window = river_direction(river)
-        arrow = {"opada": "↓", "przybiera": "↑", "bez zmian": "→", "zmiennie": "↕"}.get(direction, "")
+        direction, window, _stats = river_direction(river)
+        arrow = {"opada": "↓", "przybiera": "↑", "bez zmian": "→",
+                 "prawie bez zmian": "→", "zmiennie": "↕"}.get(direction, "")
         summary = f"{arrow} {direction}".strip()
         if window:
             summary += f' <span class="muted">/ {window} d</span>' 
@@ -1081,67 +1082,73 @@ def trend_cell(row: dict) -> str:
     return f'<span class="trend">{arrow} {fmt(abs(change))} cm / {days} d</span>'
 
 
-def river_direction(river: River) -> tuple[str, int]:
-    """(kierunek, okno w dobach). Ta sama reguła co w zdaniu na stronie rzeki:
-    kierunek ogłaszamy dopiero, gdy obejmuje ponad połowę czynnych stacji."""
+def river_direction(river: River) -> tuple[str, int, dict]:
+    """Kierunek zmiany poziomu na całej rzece, wspólny dla strony i dla tabeli działu.
+
+    Progi: pojedyncze przesunięcie ponad 3 cm to jeszcze nie kierunek rzeki.
+    Dopóki ruszyła się najwyżej piąta część czynnych wodowskazów, mówimy, że
+    rzeka stoi — inaczej Warta z jednym wzrostem o 7 cm na 26 stacji byłaby
+    opisana jako „zmieniająca się różnie na różnych odcinkach", co jest
+    nieprawdą. Kierunek ogłaszamy dopiero, gdy obejmuje ponad połowę stacji.
+    """
     measured = [row for row in river.rows if row.get("trend") is not None]
+    stats = {"measured": measured, "rising": 0, "falling": 0, "steady": 0}
     if not measured:
-        return ("brak serii", 0)
+        return ("brak serii", 0, stats)
     window = max(row["trend_days"] for row in measured)
     rising = sum(1 for row in measured if row["trend"] > 3)
     falling = sum(1 for row in measured if row["trend"] < -3)
+    stats.update(rising=rising, falling=falling, steady=len(measured) - rising - falling)
+    moved = rising + falling
+    if moved == 0:
+        return ("bez zmian", window, stats)
+    if moved <= max(1, len(measured) // 5):
+        return ("prawie bez zmian", window, stats)
     half = len(measured) / 2
     if falling > half:
-        return ("opada", window)
+        return ("opada", window, stats)
     if rising > half:
-        return ("przybiera", window)
-    if not rising and not falling:
-        return ("bez zmian", window)
-    return ("zmiennie", window)
+        return ("przybiera", window, stats)
+    return ("zmiennie", window, stats)
 
 
 def trend_sentence(river: River, history_days: int, since: str | None = None) -> str:
-    """Kierunek zmiany na całej rzece — wyłącznie ze zmierzonych różnic."""
-    changes = [row["trend"] for row in river.rows if row.get("trend") is not None]
-    if not changes:
+    """Zdanie o kierunku zmiany — wyłącznie ze zmierzonych różnic."""
+    kind, window, stats = river_direction(river)
+    measured = stats["measured"]
+    if kind == "brak serii":
         if history_days <= 1:
             start = pl_date(datetime.date.fromisoformat(since)) if since else "dziś"
             return (f"Kierunku zmiany jeszcze nie pokażemy: własną serię odczytów zbieramy od {start}, "
                     "po jednym zapisie na dobę, a do policzenia różnicy potrzebne są dwa dni.")
-        return ("Żaden wodowskaz na tym odcinku nie ma jeszcze dwóch odczytów w naszej serii, "
+        return (f"Żaden wodowskaz na {river.locative} nie ma jeszcze dwóch odczytów w naszej serii, "
                 "więc kierunku zmiany nie podajemy.")
-    rising = sum(1 for value in changes if value > 3)
-    falling = sum(1 for value in changes if value < -3)
-    steady = len(changes) - rising - falling
-    measured = [row for row in river.rows if row.get("trend") is not None]
-    window = max(row["trend_days"] for row in measured)
-    # „W ciągu ostatnich 1 dobę" to nie jest polszczyzna; liczebnik 1 wymaga
-    # innej formy niż każdy kolejny.
-    since = "ostatniej doby" if window == 1 else f"ostatnich {window} dób"
 
-    if not rising and not falling:
-        return (f"W ciągu {since} poziom na {river.locative} praktycznie się nie zmienił: "
-                f"żaden z {len(measured)} {plural(len(measured), 'wodowskazu', 'wodowskazów', 'wodowskazów')} "
-                f"nie przesunął się o więcej niż 3 cm.")
+    since_txt = "ostatniej doby" if window == 1 else f"ostatnich {window} dób"
+    count = len(measured)
+    stations = plural(count, "wodowskazu", "wodowskazów", "wodowskazów")
 
-    # Kierunek ogłaszamy dopiero wtedy, gdy obejmuje ponad połowę czynnych
-    # wodowskazów. Przy 5 wzrostach i 4 spadkach na Sanie zdanie „woda
-    # przybiera" byłoby nadinterpretacją szumu — rzeka na 200 km potrafi
-    # jednocześnie opadać w górnym biegu i przybierać w dolnym.
-    half = len(measured) / 2
-    if falling > half:
-        lead = f"woda na {river.locative} opada"
-    elif rising > half:
-        lead = f"woda na {river.locative} przybiera"
-    else:
-        lead = f"poziom na {river.locative} zmienia się różnie na różnych odcinkach"
+    if kind == "bez zmian":
+        return (f"W ciągu {since_txt} poziom na {river.locative} praktycznie się nie zmienił: "
+                f"żaden z {count} {stations} nie przesunął się o więcej niż 3 cm.")
 
     biggest = max(measured, key=lambda row: abs(row["trend"]))
     change = biggest["trend"]
     direction = "wzrost" if change > 0 else "spadek"
-    return (f"W ciągu {since} {lead}: spadek notuje {falling} "
-            f"{plural(falling, 'wodowskaz', 'wodowskazy', 'wodowskazów')}, wzrost {rising}, "
-            f"a {steady} {plural(steady, 'stoi', 'stoją', 'stoi')} w granicach ±3 cm. "
+    moved = stats["rising"] + stats["falling"]
+
+    if kind == "prawie bez zmian":
+        return (f"W ciągu {since_txt} poziom na {river.locative} praktycznie stoi: z {count} {stations} "
+                f"o więcej niż 3 cm przesunął się {moved} "
+                f"({biggest['station']}, {direction} o {fmt(abs(change))} cm).")
+
+    lead = {"opada": f"woda na {river.locative} opada",
+            "przybiera": f"woda na {river.locative} przybiera",
+            "zmiennie": f"poziom na {river.locative} zmienia się różnie na różnych odcinkach"}[kind]
+    return (f"W ciągu {since_txt} {lead}: spadek notuje {stats['falling']} "
+            f"{plural(stats['falling'], 'wodowskaz', 'wodowskazy', 'wodowskazów')}, "
+            f"wzrost {stats['rising']}, a {stats['steady']} "
+            f"{plural(stats['steady'], 'stoi', 'stoją', 'stoi')} w granicach ±3 cm. "
             f"Najmocniej przesunął się poziom przy stacji {biggest['station']} — {direction} "
             f"o {fmt(abs(change))} cm.")
 
