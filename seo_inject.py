@@ -1441,6 +1441,7 @@ SECTIONS = {
     "pierwsze-kroki": "Pierwsze kroki",
     "narzedzia": "Narzędzia",
     "lowiska": "Łowiska",
+    "rzeki": "Rzeki",
     "forum": "Forum",
 }
 
@@ -1453,6 +1454,7 @@ NAV_TOP = [
     ("Techniki", "techniki/", "techniki"),
     ("Ryby", "ryby/", "ryby"),
     ("Łowiska", "lowiska/", "lowiska"),
+    ("Rzeki", "rzeki/", "rzeki"),
     ("Poradniki", "poradniki/", "poradniki"),
 ]
 # Limit pozycji wpisywanych do HTML każdej podstrony. Pełna lista działu
@@ -1490,6 +1492,11 @@ NAV_FEATURED = {
         "poradniki/wedkarstwo-z-brzegu.html", "poradniki/wedkarstwo-z-lodzi.html",
         "poradniki/wezly-wedkarskie.html", "poradniki/catch-and-release.html",
         "poradniki/lowienie-zima.html", "poradniki/lowienie-nocne.html",
+    ),
+    # Podmenu „Rzeki" prowadzi do największych wód — reszta działu jest na hubie.
+    "rzeki": (
+        "rzeki/wisla.html", "rzeki/odra.html", "rzeki/warta.html", "rzeki/narew.html",
+        "rzeki/bug.html", "rzeki/san.html", "rzeki/dunajec.html", "rzeki/drawa.html",
     ),
     "lowiska": (
         "lowiska/mazowieckie.html", "lowiska/wielkopolskie.html", "lowiska/slaskie.html",

@@ -12,11 +12,15 @@ on:
   #      pilnuje, żeby tytuł nie został z miesiącem minionym);
   #   2. w każdy czwartek — strona „Brania w ten weekend" przelicza daty
   #      najbliższej soboty i niedzieli oraz fazę Księżyca, a czwartek jest
-  #      dniem, w którym wysyłamy ją w newsletterze.
+  #      dniem, w którym wysyłamy ją w newsletterze;
+  #   3. codziennie — dział „Rzeki" niesie odczyty wodowskazów IMGW. Bez
+  #      codziennego przebiegu tabele pokazywałyby wyłącznie „—", bo pomiar
+  #      starszy niż trzy doby jest świadomie ukrywany.
   # 04:10 UTC = po północy czasu polskiego.
   schedule:
     - cron: '10 4 1 * *'
     - cron: '10 4 * * 4'
+    - cron: '20 4 * * *'
 
 concurrency:
   group: deploy-production
@@ -40,6 +44,12 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+
+      # Dane hydrologiczne muszą trafić do plików, zanim generator policzy
+      # z nich sitemapę, llms.txt i bloki nawigacji. Awaria IMGW nie przerywa
+      # wdrożenia — skrypt wraca wtedy do zrzutu z repozytorium.
+      - name: Build river pages from IMGW data
+        run: python3 scripts/build-rivers.py
 
       - name: Generate SEO artifacts
         run: python3 seo_inject.py

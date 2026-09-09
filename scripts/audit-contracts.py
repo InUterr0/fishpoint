@@ -265,7 +265,9 @@ def main() -> int:
     failures: list[str] = []
     sitemap = ET.fromstring(read("sitemap.xml"))
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
-    check(len(urls) == 219 and len(set(urls)) == 219, "sitemap must contain 219 unique URLs", failures)
+    # Twarda liczba, podnoszona świadomie przy każdej nowej stronie: 219 stron
+    # serwisu plus hub działu „Rzeki" i 40 stron rzek budowanych z danych IMGW.
+    check(len(urls) == 260 and len(set(urls)) == 260, "sitemap must contain 260 unique URLs", failures)
 
     visual_pages = 0
     regional_visuals = 0
@@ -654,7 +656,7 @@ def main() -> int:
     # artykułów udostępnia hub. Powielanie całego działu w menu każdej podstrony
     # rozdymało powtarzalną nawigację ponad objętość samej treści.
     menu = parse("index.html")
-    nav_sections = ("pierwsze-kroki", "sprzet", "techniki", "ryby", "lowiska", "poradniki")
+    nav_sections = ("pierwsze-kroki", "sprzet", "techniki", "ryby", "lowiska", "rzeki", "poradniki")
     check(len(menu.submenu_links) == len(nav_sections),
           "navigation needs one submenu per main section", failures)
     for section, links in zip(nav_sections, menu.submenu_links):
@@ -684,7 +686,7 @@ def main() -> int:
     hub_paths = {
         "pierwsze-kroki/index.html", "sprzet/index.html", "techniki/index.html",
         "ryby/index.html", "poradniki/index.html", "narzedzia/index.html",
-        "lowiska/index.html", "forum/index.html", "aktualnosci/index.html",
+        "lowiska/index.html", "rzeki/index.html", "forum/index.html", "aktualnosci/index.html",
         "kuchnia/index.html",
         "zgodnie-z-zasadami.html",
     }

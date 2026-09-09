@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-09-08.
+> Najnowsza merytoryczna zmiana: 2026-09-09.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -236,6 +236,50 @@
 - [Ukleja](https://fish-point.pl/ryby/ukleja.html): Ukleja: brak krajowego wymiaru i okresu ochronnego. Rozpoznawanie, stanowiska tuż pod powierzchnią, żerowanie i lekkie metody spławikowe.
 - [Węgorz](https://fish-point.pl/ryby/wegorz.html): Węgorz (Anguilla anguilla): wymiar 50 cm, okres 1 grudnia–31 marca, limit 2 sztuki. Gdzie stoi po zmroku, na co bierze i skąd wędrówka do Morza Sargassowego.
 - [Wzdręga](https://fish-point.pl/ryby/wzdrega.html): Wzdręga (Scardinius erythrophthalmus): wymiar ochronny 15 cm, brak krajowego okresu. Jak odróżnić ją od płoci, stanowiska i metody spławikowe.
+
+## Rzeki
+
+- [Stany wód na polskich rzekach](https://fish-point.pl/rzeki/): Aktualne stany wody i temperatura na polskich rzekach z wodowskazów IMGW-PIB. Progi ostrzegawcze, spadek odcinka i co poziom wody zmienia dla wędkarza.
+- [Stan wody na Baryczy](https://fish-point.pl/rzeki/barycz.html): Stan wody i temperatura na Baryczy: odczyty z 5 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Biebrzy](https://fish-point.pl/rzeki/biebrza.html): Stan wody i temperatura na Biebrzy: odczyty z 5 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Bobrze](https://fish-point.pl/rzeki/bobr.html): Stan wody i temperatura na Bobrze: odczyty z 14 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Brdzie](https://fish-point.pl/rzeki/brda.html): Stan wody i temperatura na Brdzie: odczyty z 4 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Bugu](https://fish-point.pl/rzeki/bug.html): Stan wody i temperatura na Bugu: odczyty z 9 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Drawie](https://fish-point.pl/rzeki/drawa.html): Stan wody i temperatura na Drawie: odczyty z 4 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Drwęcy](https://fish-point.pl/rzeki/drweca.html): Stan wody i temperatura na Drwęcy: odczyty z 6 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Dunajcu](https://fish-point.pl/rzeki/dunajec.html): Stan wody i temperatura na Dunajcu: odczyty z 8 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Kaczawie](https://fish-point.pl/rzeki/kaczawa.html): Stan wody i temperatura na Kaczawie: odczyty z 4 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Kłodnicy](https://fish-point.pl/rzeki/klodnica.html): Stan wody i temperatura na Kłodnicy: odczyty z 5 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Kwisie](https://fish-point.pl/rzeki/kwisa.html): Stan wody i temperatura na Kwisie: odczyty z 5 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Łupawie](https://fish-point.pl/rzeki/lupawa.html): Stan wody i temperatura na Łupawie: odczyty z 5 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Małej Panwi](https://fish-point.pl/rzeki/mala-panew.html): Stan wody i temperatura na Małej Panwi: odczyty z 4 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Narwi](https://fish-point.pl/rzeki/narew.html): Stan wody i temperatura na Narwi: odczyty z 13 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Noteci](https://fish-point.pl/rzeki/notec.html): Stan wody i temperatura na Noteci: odczyty z 12 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Nysie Kłodzkiej](https://fish-point.pl/rzeki/nysa-klodzka.html): Stan wody i temperatura na Nysie Kłodzkiej: odczyty z 10 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Nysie Łużyckiej](https://fish-point.pl/rzeki/nysa-luzycka.html): Stan wody i temperatura na Nysie Łużyckiej: odczyty z 8 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Odrze](https://fish-point.pl/rzeki/odra.html): Stan wody i temperatura na Odrze: odczyty z 28 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Parsęcie](https://fish-point.pl/rzeki/parseta.html): Stan wody i temperatura na Parsęcie: odczyty z 6 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Pasłęce](https://fish-point.pl/rzeki/pasleka.html): Stan wody i temperatura na Pasłęce: odczyty z 5 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Pilicy](https://fish-point.pl/rzeki/pilica.html): Stan wody i temperatura na Pilicy: odczyty z 6 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Prośnie](https://fish-point.pl/rzeki/prosna.html): Stan wody i temperatura na Prośnie: odczyty z 5 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Rabie](https://fish-point.pl/rzeki/raba.html): Stan wody i temperatura na Rabie: odczyty z 7 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Raduni](https://fish-point.pl/rzeki/radunia.html): Stan wody i temperatura na Raduni: odczyty z 4 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Redze](https://fish-point.pl/rzeki/rega.html): Stan wody i temperatura na Redze: odczyty z 5 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Ropie](https://fish-point.pl/rzeki/ropa.html): Stan wody i temperatura na Ropie: odczyty z 4 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Rudzie](https://fish-point.pl/rzeki/ruda.html): Stan wody i temperatura na Rudzie: odczyty z 4 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Sanie](https://fish-point.pl/rzeki/san.html): Stan wody i temperatura na Sanie: odczyty z 11 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Skawie](https://fish-point.pl/rzeki/skawa.html): Stan wody i temperatura na Skawie: odczyty z 5 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Słupi](https://fish-point.pl/rzeki/slupia.html): Stan wody i temperatura na Słupi: odczyty z 5 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Sole](https://fish-point.pl/rzeki/sola.html): Stan wody i temperatura na Sole: odczyty z 5 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Supraśli](https://fish-point.pl/rzeki/suprasl.html): Stan wody i temperatura na Supraśli: odczyty z 4 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Warcie](https://fish-point.pl/rzeki/warta.html): Stan wody i temperatura na Warcie: odczyty z 27 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Wdzie](https://fish-point.pl/rzeki/wda.html): Stan wody i temperatura na Wdzie: odczyty z 4 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Wieprzu](https://fish-point.pl/rzeki/wieprz.html): Stan wody i temperatura na Wieprzu: odczyty z 8 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Wieprzy](https://fish-point.pl/rzeki/wieprza.html): Stan wody i temperatura na Wieprzy: odczyty z 6 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Wierzycy](https://fish-point.pl/rzeki/wierzyca.html): Stan wody i temperatura na Wierzycy: odczyty z 4 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Wiśle](https://fish-point.pl/rzeki/wisla.html): Stan wody i temperatura na Wiśle: odczyty z 44 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Wisłoku](https://fish-point.pl/rzeki/wislok.html): Stan wody i temperatura na Wisłoku: odczyty z 9 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
+- [Stan wody na Wisłoce](https://fish-point.pl/rzeki/wisloka.html): Stan wody i temperatura na Wisłoce: odczyty z 6 wodowskazów IMGW, progi ostrzegawcze, spadek odcinka i co poziom zmienia dla wędkarza.
 
 ## Sprzęt
 
