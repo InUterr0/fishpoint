@@ -824,7 +824,8 @@ def render_river(river: River, built: datetime.date, history_days: int = 0,
     )
 
 
-def render_hub(rivers: list[River], others: list[River], built: datetime.date) -> str:
+def render_hub(rivers: list[River], others: list[River], built: datetime.date,
+               history_since: str | None = None) -> str:
     total_stations = sum(len(r.rows) for r in rivers) + sum(len(r.rows) for r in others)
     alarmed = [r for r in rivers if r.above_alarm]
     warned = [r for r in rivers if r.above_warning and not r.above_alarm]
@@ -852,7 +853,11 @@ def render_hub(rivers: list[River], others: list[River], built: datetime.date) -
     rows = []
     for river in rivers:
         temps = river.temps
-        summary = (f"{len(river.measured)} z {len(river.rows)}" if river.measured else "brak")
+        direction, window = river_direction(river)
+        arrow = {"opada": "↓", "przybiera": "↑", "bez zmian": "→", "zmiennie": "↕"}.get(direction, "")
+        summary = f"{arrow} {direction}".strip()
+        if window:
+            summary += f' <span class="muted">/ {window} d</span>' 
         label, _ = river.character
         if len(temps) > 1:
             temp_cell = fmt(min(r["temp"] for r in temps), "") + "–" + fmt(max(r["temp"] for r in temps), " °C")
@@ -870,8 +875,20 @@ def render_hub(rivers: list[River], others: list[River], built: datetime.date) -
 
     other_names = ", ".join(sorted((r.name for r in others), key=pl_key))
 
+    directions = [river_direction(river)[0] for river in rivers]
+    falling_count = directions.count("opada")
+    rising_count = directions.count("przybiera")
+    if falling_count or rising_count:
+        trend_line = (f" Z serii odczytów, którą zbieramy od {pl_date(datetime.date.fromisoformat(history_since))}, "
+                      f"wynika, że woda opada na {falling_count} "
+                      f"{plural(falling_count, 'rzece', 'rzekach', 'rzekach')} i przybiera na {rising_count}.")
+    elif any(river_direction(river)[1] for river in rivers):
+        trend_line = " W ostatniej dobie żadna z tych rzek nie zmieniła poziomu w sposób, który dałoby się nazwać kierunkiem."
+    else:
+        trend_line = ""
+
     body = f"""<h2 id="stan-teraz">Gdzie woda jest dziś wysoka</h2>
-<p>{state}{temp_line} Progi ostrzegawcze i alarmowe wyznacza IMGW dla ochrony przeciwpowodziowej — dla wędkarza są sygnałem o dojściu do brzegu i o rumowisku niesionym przez rzekę, a nie zakazem wjazdu nad wodę.</p>
+<p>{state}{temp_line}{trend_line} Progi ostrzegawcze i alarmowe wyznacza IMGW dla ochrony przeciwpowodziowej — dla wędkarza są sygnałem o dojściu do brzegu i o rumowisku niesionym przez rzekę, a nie zakazem wjazdu nad wodę.</p>
 
 <h2 id="jak-czytac">Jak czytać wodowskaz</h2>
 <p>Stan wody to wysokość lustra ponad <strong>zerem łaty</strong> danej stacji, a nie głębokość rzeki. Zero każdej łaty leży na innej rzędnej, ustalonej przy zakładaniu wodowskazu — czasem, jak przy ujściu Wisły, poniżej poziomu morza. Dlatego zestawianie dwóch stacji ze sobą nic nie mówi o tym, gdzie jest głębiej; sens ma wyłącznie porównanie jednej stacji w czasie.</p>
@@ -879,7 +896,7 @@ def render_hub(rivers: list[River], others: list[River], built: datetime.date) -
 
 <h2 id="rzeki">Rzeki z własną stroną</h2>
 <p>Stronę dostaje rzeka z co najmniej {MIN_STATIONS} wodowskazami: przy mniejszej liczbie punktów nie da się policzyć spadku odcinka ani opisać biegu, a strona powielałaby jeden wiersz tabeli. Pomijamy też nazwy, pod którymi w wykazie IMGW kryje się kilka odrębnych rzek — Biała, Bystrzyca, Czarna, Kamienna i Piława występują w Polsce wielokrotnie, a ich kilometraż liczony jest od różnych ujść.</p>
-<div class="tool-table-wrap"><table class="tool-table"><caption>Rzeki opisane w dziale — wodowskazy, spadek odcinka i zasięg</caption><thead><tr><th scope="col">Rzeka</th><th scope="col">Wodowskazy</th><th scope="col">Charakter</th><th scope="col">Spadek</th><th scope="col">Województwa</th><th scope="col">Świeże odczyty</th><th scope="col">Temperatura</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>
+<div class="tool-table-wrap"><table class="tool-table"><caption>Rzeki opisane w dziale — wodowskazy, spadek odcinka, zasięg i kierunek zmiany poziomu</caption><thead><tr><th scope="col">Rzeka</th><th scope="col">Wodowskazy</th><th scope="col">Charakter</th><th scope="col">Spadek</th><th scope="col">Województwa</th><th scope="col">Kierunek</th><th scope="col">Temperatura</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>
 
 <h2 id="pozostale">Pozostałe rzeki w wykazie IMGW</h2>
 <p>Te cieki mają w wykazie od jednego do trzech wodowskazów albo dzielą nazwę z inną rzeką. Własnej strony nie mają, ale ich odczyty są w narzędziu <a href="../narzedzia/stany-wod.html">Stany wód na żywo</a>, z filtrem po województwie i nazwie: {esc(other_names)}.</p>
@@ -1064,6 +1081,25 @@ def trend_cell(row: dict) -> str:
     return f'<span class="trend">{arrow} {fmt(abs(change))} cm / {days} d</span>'
 
 
+def river_direction(river: River) -> tuple[str, int]:
+    """(kierunek, okno w dobach). Ta sama reguła co w zdaniu na stronie rzeki:
+    kierunek ogłaszamy dopiero, gdy obejmuje ponad połowę czynnych stacji."""
+    measured = [row for row in river.rows if row.get("trend") is not None]
+    if not measured:
+        return ("brak serii", 0)
+    window = max(row["trend_days"] for row in measured)
+    rising = sum(1 for row in measured if row["trend"] > 3)
+    falling = sum(1 for row in measured if row["trend"] < -3)
+    half = len(measured) / 2
+    if falling > half:
+        return ("opada", window)
+    if rising > half:
+        return ("przybiera", window)
+    if not rising and not falling:
+        return ("bez zmian", window)
+    return ("zmiennie", window)
+
+
 def trend_sentence(river: River, history_days: int, since: str | None = None) -> str:
     """Kierunek zmiany na całej rzece — wyłącznie ze zmierzonych różnic."""
     changes = [row["trend"] for row in river.rows if row.get("trend") is not None]
@@ -1226,7 +1262,8 @@ def main() -> int:
         keep.add(target.name)
         target.write_text(render_river(river, built, history_days, history_since), encoding="utf-8")
 
-    (OUT_DIR / "index.html").write_text(render_hub(selected, others, built), encoding="utf-8")
+    (OUT_DIR / "index.html").write_text(render_hub(selected, others, built, history_since),
+                                        encoding="utf-8")
 
     # Rzeka mogła wypaść z progu (zamknięty wodowskaz) — nie zostawiamy po niej
     # osieroconej strony, bo hub przestałby ją wymieniać, a sitemapa dalej by ją niosła.
