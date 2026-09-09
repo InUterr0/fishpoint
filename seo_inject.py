@@ -1863,6 +1863,28 @@ def write_content_meta(src, published, modified, fingerprint):
     return new_src
 
 
+def restamp_fingerprint(src, path):
+    """Dopina odcisk treści do dokumentu, który naprawdę trafia na dysk.
+
+    `ensure_content_meta` liczy odcisk na wejściu, a build dokłada jeszcze
+    bloki :auto — m.in. opakowuje ramkę źródeł w <!--field-notes:auto-->.
+    Opakowanie przenosi istniejący tekst do bloku automatycznego, więc znika
+    on z odcisku i zapisana wartość przestaje pasować do pliku. Kontrakt
+    „data aktualizacji śledzi treść” wywracał na tym budowanie (wdrożenie
+    z 8 września 2026 stanęło na tym kroku). Daty zostają nietknięte: o tym,
+    czy tekst się zmienił, decyduje wcześniejsze porównanie odcisku wejścia
+    z zapisanym — a wejście to dokładnie wyjście poprzedniej przebudowy.
+    """
+    match = CONTENT_META_RE.search(src)
+    if not match:
+        return src
+    published, modified = parse_content_meta(src, path)
+    current = editorial_fingerprint(src)
+    if match.group(3) == current:
+        return src
+    return write_content_meta(src, published, modified, current)
+
+
 def content_change_date(path):
     """Data ostatniej realnej zmiany pliku: z gita, a dla niezacommitowanych
     zmian dzisiejsza. Nie używa mtime, bo przebudowa go nadpisuje."""
@@ -5119,6 +5141,7 @@ def main():
             print("POMINIĘTO (brak title/desc):", p)
             continue
         new_src, url, mtime, is_index, title_txt, desc_txt, page_images, noindex, pubdate = res
+        new_src = restamp_fingerprint(new_src, p)
         with open(p, "w", encoding="utf-8") as f:
             f.write(new_src)
         if not noindex:
