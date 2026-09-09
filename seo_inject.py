@@ -4554,9 +4554,13 @@ def build(path):
     # zbiera ponad tysiąc wyświetleń miesięcznie).
     if section in NEWSLETTER_SECTIONS and NEWSLETTER_EMBED:
         nl = (f'{NEWSLETTER_BEGIN}<section class="newsletter" aria-label="Newsletter">'
-              f'<h2>Bierze? Bądź pierwszy nad wodą</h2>'
-              f'<p>Zapisz się na newsletter FishPoint — najlepsze brania weekendu, nowe poradniki '
-              f'i sezonowe wskazówki prosto na e-mail. Bez spamu, wypiszesz się jednym kliknięciem.</p>'
+              f'<h2>List znad wody — raz w tygodniu</h2>'
+              # Obietnica musi być możliwa do dotrzymania i sprawdzalna: mówimy,
+              # co konkretnie przychodzi i jak często, zamiast obiecywać „najlepsze
+              # brania weekendu", czego żadne dane nie pozwalają zagwarantować.
+              f'<p>Stany wód na polskich rzekach, zmiany w przepisach i okresach ochronnych '
+              f'oraz nowe teksty z serwisu. Jeden e-mail tygodniowo, nigdy częściej. '
+              f'Wypiszesz się jednym kliknięciem.</p>'
               f'{NEWSLETTER_EMBED}</section>{NEWSLETTER_END}')
         # Huby nie mają <article>; wtedy zapis ląduje na końcu <main>.
         anchor = "</article>" if "</article>" in src else "</main>"
