@@ -7,3 +7,10 @@ node_modules
 .github
 scripts
 obrazy
+
+# Dane wejściowe budowania nie mają czego robić na produkcji: granice
+# województw (1,3 MB) i zrzut IMGW służą wyłącznie generatorowi.
+# Wyjątkiem jest historia odczytów — to jej wdrożona kopia jest magazynem,
+# z którego kolejna przebudowa czyta poprzednie dni.
+dane/wojewodztwa.geojson
+dane/imgw-hydro.json

@@ -238,6 +238,7 @@ class River:
             alarm = as_float(raw.get("stan_alarmowy"))
             temp = as_float(raw.get("temperatura_wody"))
             rows.append({
+                "id": (raw.get("id_stacji") or "").strip(),
                 "station": tidy_name(raw.get("stacja") or "—"),
                 "voivodeship": voivodeship_at(lat, lon) or _clean_voivodeship(raw.get("wojewodztwo")),
                 "km": km,
@@ -636,6 +637,7 @@ def render_table(river: River) -> str:
             "<th scope=\"col\">km od ujścia</th>"
             "<th scope=\"col\">Stan wody</th>"
             "<th scope=\"col\">Do stanu ostrzegawczego</th>"
+            "<th scope=\"col\">Zmiana poziomu</th>"
             "<th scope=\"col\">Temperatura wody</th>"
             "<th scope=\"col\">Pomiar</th>"
             "</tr></thead>")
@@ -658,6 +660,7 @@ def render_table(river: River) -> str:
             f'<tr><th scope="row">{esc(row["station"])}'
             + (f' <span class="muted">({esc(row["voivodeship"])})</span>' if row["voivodeship"] else "")
             + f'</th><td>{fmt(row["km"])}</td><td>{level}</td><td>{margin}</td>'
+            + f'<td>{trend_cell(row)}</td>'
             + f'<td>{fmt(row["temp"], " °C") if row["temp"] is not None else "—"}</td><td>{when}</td></tr>'
         )
     return ('<div class="tool-table-wrap"><table class="tool-table">'
@@ -718,11 +721,12 @@ REFRESH_SCRIPT = """<p class="live-refresh"><button type="button" class="btn-sec
           name = name.replace(/\\s*\\([^)]*\\)\\s*$/, "").trim().toLowerCase();
           var d = byName[name];
           if (!d || d.stan_wody === null || d.stan_wody === "") return;
-          // Wiersz to <th> z nazwą stacji i pięć <td>: km, stan, zapas do progu,
-          // temperatura, godzina pomiaru. querySelectorAll("td") nie zwraca <th>,
-          // więc indeksy liczą się od kilometrażu, nie od nazwy.
+          // Wiersz to <th> z nazwą stacji i sześć <td>: km, stan, zapas do progu,
+          // zmiana poziomu, temperatura, godzina pomiaru. querySelectorAll("td")
+          // nie zwraca <th>, więc indeksy liczą się od kilometrażu, nie od nazwy.
+          // Kolumny zmiany skrypt nie rusza — opisuje serię dobową, nie ten odczyt.
           var cells = tr.querySelectorAll("td");
-          if (cells.length < 5) return;
+          if (cells.length < 6) return;
           cells[1].textContent = String(d.stan_wody).replace(".", ",") + " cm";
           var warn = parseFloat(d.stan_ostrzegawczy);
           cells[2].textContent = "brak progu";
@@ -733,9 +737,9 @@ REFRESH_SCRIPT = """<p class="live-refresh"><button type="button" class="btn-sec
           }
           // Separator dziesiętny: strona pisze po polsku, API zwraca kropkę.
           var t = d.temperatura_wody;
-          cells[3].textContent = (t === null || t === "") ? "—" : String(t).replace(".", ",") + " °C";
+          cells[4].textContent = (t === null || t === "") ? "—" : String(t).replace(".", ",") + " °C";
           var m = /^(\\d{4})-(\\d{2})-(\\d{2})\\s+(\\d{2}):(\\d{2})/.exec(d.stan_wody_data_pomiaru || "");
-          cells[4].textContent = m ? (m[3] + "." + m[2] + ", " + m[4] + ":" + m[5]) : "—";
+          cells[5].textContent = m ? (m[3] + "." + m[2] + ", " + m[4] + ":" + m[5]) : "—";
           updated += 1;
         });
         var total = table ? table.querySelectorAll("tbody tr").length : 0;
@@ -752,7 +756,8 @@ REFRESH_SCRIPT = """<p class="live-refresh"><button type="button" class="btn-sec
 </script>"""
 
 
-def render_river(river: River, built: datetime.date) -> str:
+def render_river(river: River, built: datetime.date, history_days: int = 0,
+                 history_since: str | None = None) -> str:
     stamp = river.newest_stamp
     count = len(river.rows)
     title = (f"Stan wody na {river.locative} — {count} "
@@ -773,6 +778,7 @@ def render_river(river: River, built: datetime.date) -> str:
 
     body = f"""<h2 id="odczyty">Wodowskazy i ostatnie odczyty</h2>
 <p>{reading_sentence(river)}</p>
+<p>{trend_sentence(river, history_days, history_since)}</p>
 {render_table(river)}
 {REFRESH_SCRIPT.replace("{river}", esc(river.name))}
 <p class="muted">Pomiar starszy niż {FRESH_DAYS} doby pokazujemy jako „—”. Jak czytać łatę: <a href="./#jak-czytac">strona działu</a>.</p>
@@ -934,6 +940,154 @@ def locative_for(name: str) -> str | None:
 
 
 
+
+# --- historia odczytów -----------------------------------------------------
+# IMGW udostępnia wyłącznie stan bieżący: w API nie ma ani wczorajszego
+# odczytu, ani archiwum online (hydro2 zwraca pustą odpowiedź). Tymczasem dla
+# wędkarza kierunek zmiany jest ważniejszy niż sama liczba — woda opadająca
+# i klarująca się to inna decyzja niż woda przybierająca o tej samej wysokości.
+#
+# Historię zbieramy więc sami, a magazynem jest wdrożona strona: przy każdej
+# przebudowie pobieramy plik z poprzedniego wdrożenia, dopisujemy dzisiejsze
+# odczyty i publikujemy nowy. Dzięki temu nic nie musi zapisywać do
+# repozytorium z CI — a plik w `dane/` zostaje jako ziarno na wypadek, gdyby
+# produkcja była nieosiągalna.
+
+HISTORY = ROOT / "dane" / "hydro-historia.json"
+HISTORY_URL = "https://fish-point.pl/dane/hydro-historia.json"
+HISTORY_DAYS = 30
+
+
+def load_history() -> dict:
+    """Historia z ostatniego wdrożenia, a gdy niedostępna — ziarno z repozytorium."""
+    try:
+        request = urllib.request.Request(
+            HISTORY_URL, headers={"User-Agent": "FishPoint/1.0 (+https://fish-point.pl)"})
+        with urllib.request.urlopen(request, timeout=30) as response:
+            data = json.load(response)
+        if isinstance(data, dict) and isinstance(data.get("stacje"), dict):
+            log(f"historia z produkcji: {len(data['stacje'])} stacji")
+            return data
+        raise ValueError("nieoczekiwany kształt pliku historii")
+    except Exception as exc:  # noqa: BLE001
+        if HISTORY.exists():
+            log(f"historia z produkcji niedostępna ({exc}); używam ziarna z repozytorium")
+            try:
+                return json.loads(HISTORY.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                pass
+        log("brak historii — zaczynam od dzisiaj")
+        return {"stacje": {}}
+
+
+def update_history(history: dict, rivers: list[River], today: datetime.date) -> dict:
+    """Dopisuje dzisiejsze odczyty i przycina okno do HISTORY_DAYS dni.
+
+    Klucz to identyfikator stacji IMGW, nie nazwa: nazwy bywają zdublowane
+    („Nowa Sól" i „Nowa sól" na Odrze), a identyfikator jest stabilny.
+    Jeden wpis na dobę — kolejne wdrożenia tego samego dnia go nadpisują.
+    """
+    stamp = today.isoformat()
+    horizon = (today - datetime.timedelta(days=HISTORY_DAYS)).isoformat()
+    stations = history.setdefault("stacje", {})
+    for river in rivers:
+        for row in river.rows:
+            if row["level"] is None or not row["id"]:
+                continue
+            series = [entry for entry in stations.get(row["id"], [])
+                      if isinstance(entry, list) and len(entry) >= 2
+                      and entry[0] > horizon and entry[0] != stamp]
+            series.append([stamp, row["level"], row["temp"]])
+            series.sort(key=lambda entry: entry[0])
+            stations[row["id"]] = series
+    history["zapisano"] = stamp
+    history["stacji"] = len(stations)
+    HISTORY.parent.mkdir(parents=True, exist_ok=True)
+    HISTORY.write_text(json.dumps(history, ensure_ascii=False, separators=(",", ":")),
+                       encoding="utf-8")
+    log(f"historia: {len(stations)} stacji, plik {HISTORY.stat().st_size // 1024} kB")
+    return history
+
+
+def attach_trends(history: dict, rivers: list[River], today: datetime.date) -> None:
+    """Dokłada każdemu wierszowi zmianę poziomu i długość dostępnej serii."""
+    stations = history.get("stacje", {})
+    for river in rivers:
+        for row in river.rows:
+            row["trend"] = None
+            row["trend_days"] = 0
+            series = stations.get(row["id"] or "", [])
+            if row["level"] is None or len(series) < 2:
+                continue
+            # Punkt odniesienia: sprzed tygodnia, a gdy serii jest krócej —
+            # najstarszy dostępny odczyt. Okno podajemy obok wartości, żeby
+            # „-4 cm" nie sugerowało tygodnia, gdy opisuje dwa dni.
+            target = (today - datetime.timedelta(days=7)).isoformat()
+            older = [entry for entry in series if entry[0] <= target] or [series[0]]
+            reference = older[-1]
+            if reference[0] == series[-1][0]:
+                continue
+            row["trend"] = round(row["level"] - reference[1])
+            row["trend_days"] = (today - datetime.date.fromisoformat(reference[0])).days
+
+
+def trend_cell(row: dict) -> str:
+    if row.get("trend") is None:
+        return "—"
+    change = row["trend"]
+    days = row["trend_days"]
+    arrow = "↑" if change > 0 else ("↓" if change < 0 else "→")
+    if change == 0:
+        return f'<span class="trend">→ bez zmian / {days} d</span>'
+    return f'<span class="trend">{arrow} {fmt(abs(change))} cm / {days} d</span>'
+
+
+def trend_sentence(river: River, history_days: int, since: str | None = None) -> str:
+    """Kierunek zmiany na całej rzece — wyłącznie ze zmierzonych różnic."""
+    changes = [row["trend"] for row in river.rows if row.get("trend") is not None]
+    if not changes:
+        if history_days <= 1:
+            start = pl_date(datetime.date.fromisoformat(since)) if since else "dziś"
+            return (f"Kierunku zmiany jeszcze nie pokażemy: własną serię odczytów zbieramy od {start}, "
+                    "po jednym zapisie na dobę, a do policzenia różnicy potrzebne są dwa dni.")
+        return ("Żaden wodowskaz na tym odcinku nie ma jeszcze dwóch odczytów w naszej serii, "
+                "więc kierunku zmiany nie podajemy.")
+    rising = sum(1 for value in changes if value > 3)
+    falling = sum(1 for value in changes if value < -3)
+    steady = len(changes) - rising - falling
+    measured = [row for row in river.rows if row.get("trend") is not None]
+    window = max(row["trend_days"] for row in measured)
+    # „W ciągu ostatnich 1 dobę" to nie jest polszczyzna; liczebnik 1 wymaga
+    # innej formy niż każdy kolejny.
+    since = "ostatniej doby" if window == 1 else f"ostatnich {window} dób"
+
+    if not rising and not falling:
+        return (f"W ciągu {since} poziom na {river.locative} praktycznie się nie zmienił: "
+                f"żaden z {len(measured)} {plural(len(measured), 'wodowskazu', 'wodowskazów', 'wodowskazów')} "
+                f"nie przesunął się o więcej niż 3 cm.")
+
+    # Kierunek ogłaszamy dopiero wtedy, gdy obejmuje ponad połowę czynnych
+    # wodowskazów. Przy 5 wzrostach i 4 spadkach na Sanie zdanie „woda
+    # przybiera" byłoby nadinterpretacją szumu — rzeka na 200 km potrafi
+    # jednocześnie opadać w górnym biegu i przybierać w dolnym.
+    half = len(measured) / 2
+    if falling > half:
+        lead = f"woda na {river.locative} opada"
+    elif rising > half:
+        lead = f"woda na {river.locative} przybiera"
+    else:
+        lead = f"poziom na {river.locative} zmienia się różnie na różnych odcinkach"
+
+    biggest = max(measured, key=lambda row: abs(row["trend"]))
+    change = biggest["trend"]
+    direction = "wzrost" if change > 0 else "spadek"
+    return (f"W ciągu {since} {lead}: spadek notuje {falling} "
+            f"{plural(falling, 'wodowskaz', 'wodowskazy', 'wodowskazów')}, wzrost {rising}, "
+            f"a {steady} {plural(steady, 'stoi', 'stoją', 'stoi')} w granicach ±3 cm. "
+            f"Najmocniej przesunął się poziom przy stacji {biggest['station']} — {direction} "
+            f"o {fmt(abs(change))} cm.")
+
+
 # --- linkowanie zwrotne: strony województw -> rzeki --------------------------
 
 def inject_voivodeship_blocks(rivers: list[River]) -> int:
@@ -1035,14 +1189,20 @@ def main() -> int:
         else:
             others.append(river)
 
-    selected.sort(key=lambda r: (-len(r.rows), r.name.lower()))
+    selected.sort(key=lambda r: (-len(r.rows), pl_key(r.name)))
+
+    history = update_history(load_history(), selected, built)
+    attach_trends(history, selected, built)
+    dates = {entry[0] for series in history.get("stacje", {}).values() for entry in series}
+    history_days = len(dates)
+    history_since = min(dates) if dates else None
 
     OUT_DIR.mkdir(exist_ok=True)
     keep = {"index.html"}
     for river in selected:
         target = OUT_DIR / f"{river.slug}.html"
         keep.add(target.name)
-        target.write_text(render_river(river, built), encoding="utf-8")
+        target.write_text(render_river(river, built, history_days, history_since), encoding="utf-8")
 
     (OUT_DIR / "index.html").write_text(render_hub(selected, others, built), encoding="utf-8")
 
