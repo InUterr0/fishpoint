@@ -402,8 +402,26 @@ VOIVODESHIP_LOCATIVE = {
 }
 
 
-def voivodeships_locative(names: list[str]) -> str:
-    return join_pl([VOIVODESHIP_LOCATIVE.get(name, name) for name in names])
+def voivodeships_locative(names: list[str], link: bool = False) -> str:
+    forms = []
+    for name in names:
+        label = VOIVODESHIP_LOCATIVE.get(name, name)
+        slug = VOIVODESHIP_SLUG.get(name)
+        forms.append(f'<a href="../lowiska/{slug}.html">{label}</a>' if link and slug else label)
+    return join_pl(forms)
+
+
+# Nazwa województwa -> plik działu Łowiska. Bez tabeli nie da się z „łódzkie"
+# zrobić „lodzkie" bez zgadywania, a zły link psuje nawigację po regionach.
+VOIVODESHIP_SLUG = {
+    "dolnośląskie": "dolnoslaskie", "kujawsko-pomorskie": "kujawsko-pomorskie",
+    "lubelskie": "lubelskie", "lubuskie": "lubuskie", "łódzkie": "lodzkie",
+    "małopolskie": "malopolskie", "mazowieckie": "mazowieckie", "opolskie": "opolskie",
+    "podkarpackie": "podkarpackie", "podlaskie": "podlaskie", "pomorskie": "pomorskie",
+    "śląskie": "slaskie", "świętokrzyskie": "swietokrzyskie",
+    "warmińsko-mazurskie": "warminsko-mazurskie", "wielkopolskie": "wielkopolskie",
+    "zachodniopomorskie": "zachodniopomorskie",
+}
 
 
 def join_pl(items: list[str]) -> str:
@@ -463,7 +481,7 @@ def course_sentences(river: River) -> list[str]:
     if voivodeships:
         out.append(
             f"Wodowskazy leżą w {plural(len(voivodeships), 'województwie', 'województwach', 'województwach')} "
-            f"{voivodeships_locative(voivodeships)} — to również obszar, na którym szukać trzeba właściwego "
+            f"{voivodeships_locative(voivodeships, link=True)} — to również obszar, na którym szukać trzeba właściwego "
             f"gospodarza obwodu i zezwolenia na tę wodę."
         )
     gradient = river.gradient
@@ -705,7 +723,7 @@ REFRESH_SCRIPT = """<p class="live-refresh"><button type="button" class="btn-sec
           // więc indeksy liczą się od kilometrażu, nie od nazwy.
           var cells = tr.querySelectorAll("td");
           if (cells.length < 5) return;
-          cells[1].textContent = d.stan_wody + " cm";
+          cells[1].textContent = String(d.stan_wody).replace(".", ",") + " cm";
           var warn = parseFloat(d.stan_ostrzegawczy);
           cells[2].textContent = "brak progu";
           if (!isNaN(warn)) {
@@ -713,8 +731,9 @@ REFRESH_SCRIPT = """<p class="live-refresh"><button type="button" class="btn-sec
             cells[2].textContent = delta > 0 ? delta + " cm poniżej"
               : (delta === 0 ? "na progu" : Math.abs(delta) + " cm powyżej");
           }
+          // Separator dziesiętny: strona pisze po polsku, API zwraca kropkę.
           var t = d.temperatura_wody;
-          cells[3].textContent = (t === null || t === "") ? "—" : t + " °C";
+          cells[3].textContent = (t === null || t === "") ? "—" : String(t).replace(".", ",") + " °C";
           var m = /^(\\d{4})-(\\d{2})-(\\d{2})\\s+(\\d{2}):(\\d{2})/.exec(d.stan_wody_data_pomiaru || "");
           cells[4].textContent = m ? (m[3] + "." + m[2] + ", " + m[4] + ":" + m[5]) : "—";
           updated += 1;
@@ -914,6 +933,73 @@ def locative_for(name: str) -> str | None:
     return None
 
 
+
+# --- linkowanie zwrotne: strony województw -> rzeki --------------------------
+
+def inject_voivodeship_blocks(rivers: list[River]) -> int:
+    """Dokłada do stron działu Łowiska listę rzek z wodowskazami w regionie.
+
+    Dział „Rzeki" bez linków z reszty serwisu wisiałby wyłącznie na nawigacji.
+    Strona województwa to naturalne miejsce: czytelnik szuka wody w swoim
+    regionie, a stan wody rozstrzyga o dojściu do brzegu wcześniej niż wybór
+    przynęty. Blok jest oznaczony jako :auto, więc generator wymienia go przy
+    każdej przebudowie i nie podbija przy tym daty aktualizacji strony —
+    zmiana odczytów nie jest zmianą redakcyjną tekstu o województwie.
+    """
+    by_voivodeship: dict[str, list[tuple[River, int]]] = {}
+    for river in rivers:
+        counts: dict[str, int] = {}
+        for row in river.rows:
+            if row["voivodeship"]:
+                counts[row["voivodeship"]] = counts.get(row["voivodeship"], 0) + 1
+        for name, count in counts.items():
+            by_voivodeship.setdefault(name, []).append((river, count))
+
+    written = 0
+    for name, entries in by_voivodeship.items():
+        slug = VOIVODESHIP_SLUG.get(name)
+        if not slug:
+            continue
+        path = ROOT / "lowiska" / f"{slug}.html"
+        if not path.exists():
+            continue
+        entries.sort(key=lambda item: (-item[1], pl_key(item[0].name)))
+        stations = sum(count for _river, count in entries)
+        items = "".join(
+            f'<li><a href="../rzeki/{river.slug}.html">{esc(river.name)}</a> — '
+            f'{count} {plural(count, "wodowskaz", "wodowskazy", "wodowskazów")}, '
+            f'odcinek {esc(river.character[0])}</li>'
+            for river, count in entries
+        )
+        block = (
+            "<!--rzeki-woj:auto-->"
+            f'<section class="info-block"><h2 id="stan-wody-rzeki">Stan wody na rzekach '
+            f'w województwie {esc(VOIVODESHIP_LOCATIVE.get(name, name))}</h2>'
+            f"<p>W granicach województwa stoi {stations} "
+            f'{plural(stations, "wodowskaz", "wodowskazy", "wodowskazów")} IMGW na '
+            f'{len(entries)} {plural(len(entries), "rzece", "rzekach", "rzekach")} opisanych '
+            f'w dziale <a href="../rzeki/">Rzeki</a>. Poziom i temperatura wody rozstrzygają '
+            f"o dojściu do brzegu wcześniej niż wybór metody, a przy wezbraniu — o tym, czy "
+            f"w ogóle jechać.</p>"
+            f"<ul>{items}</ul></section>"
+            "<!--/rzeki-woj:auto-->"
+        )
+        source = path.read_text(encoding="utf-8")
+        source = re.sub(r"<!--rzeki-woj:auto-->.*?<!--/rzeki-woj:auto-->", "", source, flags=re.S)
+        # Nagłówek FAQ różni się między stronami („Najczęstsze pytania",
+        # „Pytania przed wyjazdem"), a ten jest na wszystkich szesnastu.
+        anchor = re.search(r'<h2[^>]*>\s*Od jakich wód zacząć', source)
+        if not anchor:
+            log(f"pominięto {path.name}: brak kotwicy „Od jakich wód zacząć”")
+            continue
+        start = source.rfind("<section", 0, anchor.start())
+        start = start if start != -1 else anchor.start()
+        source = source[:start] + block + source[start:]
+        path.write_text(source, encoding="utf-8")
+        written += 1
+    return written
+
+
 # --- główny przebieg -------------------------------------------------------
 
 def main() -> int:
@@ -969,6 +1055,8 @@ def main() -> int:
 
     if ambiguous:
         log("pominięte (kilka różnych rzek o tej samej nazwie): " + ", ".join(sorted(ambiguous)))
+    linked = inject_voivodeship_blocks(selected)
+    log(f"dopisano blok o stanie wody do {linked} stron województw")
     if missing_locative:
         log("pominięte (brak odmiany w tabeli LOCATIVE): " + ", ".join(sorted(missing_locative)))
     log(f"zapisano {len(selected)} stron rzek + hub; źródło: {'IMGW na żywo' if live else 'zrzut lokalny'}")
