@@ -51,6 +51,7 @@ def now_pl() -> datetime.datetime:
 ROOT = Path(__file__).resolve().parent.parent
 SNAPSHOT = ROOT / "dane" / "imgw-hydro.json"
 BOUNDARIES = ROOT / "dane" / "wojewodztwa.geojson"
+LOCAL_RULES = ROOT / "dane" / "zasady-okregowe.json"
 OUT_DIR = ROOT / "rzeki"
 API = "https://danepubliczne.imgw.pl/api/data/hydro/"
 
@@ -610,7 +611,58 @@ def angling_sentences(river: River) -> list[str]:
     return out
 
 
-def faq_pairs(river: River) -> list[tuple[str, str]]:
+def load_local_rules() -> dict[str, list[dict]]:
+    """Zasady lokalne okręgów PZW, zebrane w korespondencji, w układzie slug → wpisy.
+
+    Stan wody nie mówi nic o tym, co wolno zabrać, a rozporządzenie nie zna
+    zaostrzeń okręgowych. Do tej pory strony rzek odsyłały czytelnika ogólnie
+    „do gospodarza obwodu"; tam, gdzie okręg sam odpowiedział, podajemy konkret
+    i wskazujemy jego dokument.
+    """
+    if not LOCAL_RULES.exists():
+        return {}
+    try:
+        data = json.loads(LOCAL_RULES.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:  # noqa: BLE001 - błąd pliku nie może wywracać budowania
+        log(f"pomijam zasady okręgowe ({LOCAL_RULES.name}): {exc}")
+        return {}
+    by_slug: dict[str, list[dict]] = {}
+    for entry in data.get("okregi", []):
+        for slug in entry.get("rzeki", []):
+            by_slug.setdefault(slug, []).append(entry)
+    return by_slug
+
+
+def render_local_rules(river: River, entries: list[dict]) -> str:
+    if not entries:
+        return ""
+    blocks = []
+    for entry in entries:
+        sources = " ".join(
+            f'<a href="{esc(src["url"])}" rel="noopener external" target="_blank">{esc(src["nazwa"])}</a>'
+            for src in entry.get("zrodla", [])
+        )
+        confirmed = entry.get("potwierdzone")
+        when = f"{pl_date(datetime.date.fromisoformat(confirmed))} r." if confirmed else None
+        basis = f"{esc(entry['osoba'])}" if entry.get("osoba") else esc(entry["okreg"])
+        origin = (f'<p class="muted">Podstawa: odpowiedź {basis}'
+                  + (f" z {when}" if when else "")
+                  + " na nasze pytanie o zasady lokalne."
+                  + (f" Dokumenty okręgu: {sources}." if sources else "")
+                  + "</p>")
+        blocks.append(
+            f'<section class="info-block"><h3>{esc(entry["okreg"])}</h3>'
+            f'<p>{esc(entry["tresc"])}</p>{origin}</section>'
+        )
+    intro = (f"Rozporządzenie ustala wymiary i okresy ochronne dla całego kraju, ale gospodarzem wód na "
+             f"{esc(river.locative)} jest okręg PZW, a ten może je zaostrzyć — dodać wymiar górny, wyłączyć "
+             f"odcinek albo zakazać zabierania gatunku przez cały rok. Poniżej zasady tych okręgów, które "
+             f"potwierdziły nam je w korespondencji; na dłuższych rzekach gospodaruje kilka okręgów, więc lista "
+             f"nie zamyka tematu i nie zastępuje zezwolenia.")
+    return (f'<h2 id="zasady-lokalne">Zasady lokalne okręgów PZW</h2>\n<p>{intro}</p>\n' + "".join(blocks))
+
+
+def faq_pairs(river: River, local_rules: list[dict] | None = None) -> list[tuple[str, str]]:
     stamp = river.newest_stamp
     measured = river.measured
     rows = [row for row in river.rows if row["km"] is not None]
@@ -641,6 +693,19 @@ def faq_pairs(river: River) -> list[tuple[str, str]]:
         (f"Czy dane o {river.locative} zastępują sprawdzenie przepisów?",
          ("Nie. Stan wody nie mówi nic o okresach ochronnych, wymiarach ani o tym, kto gospodaruje wodą.")),
     ]
+    if local_rules:
+        okregi = join_pl([entry["okreg"] for entry in local_rules])
+        pairs.append((
+            f"Czy na {river.locative} obowiązują zasady lokalne poza rozporządzeniem?",
+            (f"Tak — {okregi} potwierdził nam, że na swoich wodach obowiązują zasady własne, których nie ma "
+             f"w rozporządzeniu. Szczegóły i dokumenty źródłowe zebraliśmy w sekcji "
+             f"„Zasady lokalne okręgów PZW” wyżej. Zasady bywają zmieniane co roku, więc przed wyjazdem "
+             f"sprawdzaj wersję na bieżący sezon.")
+            if len(local_rules) == 1 else
+            (f"Tak — zasady własne potwierdziły nam okręgi: {okregi}. Obejmują one między innymi zaostrzone "
+             f"wymiary, wymiary górne i wyłączone odcinki; szczegóły i dokumenty źródłowe zebraliśmy w sekcji "
+             f"„Zasady lokalne okręgów PZW” wyżej. Zasady bywają zmieniane co roku, więc przed wyjazdem "
+             f"sprawdzaj wersję na bieżący sezon.")))
     return pairs
 
 
@@ -776,7 +841,7 @@ REFRESH_SCRIPT = """<p class="live-refresh"><button type="button" class="btn-sec
 
 
 def render_river(river: River, built: datetime.date, history_days: int = 0,
-                 history_since: str | None = None) -> str:
+                 history_since: str | None = None, local_rules: list[dict] | None = None) -> str:
     stamp = river.newest_stamp
     count = len(river.rows)
     title = (f"Stan wody na {river.locative} — {count} "
@@ -790,8 +855,9 @@ def render_river(river: River, built: datetime.date, history_days: int = 0,
 
     faq_html = "".join(
         f'<section class="info-block"><h3>{esc(q)}</h3><p>{a}</p></section>'
-        for q, a in faq_pairs(river)
+        for q, a in faq_pairs(river, local_rules)
     )
+    rules_html = render_local_rules(river, local_rules or [])
     course = "".join(f"<p>{sentence}</p>" for sentence in course_sentences(river))
     angling = "".join(f"<p>{sentence}</p>" for sentence in angling_sentences(river))
 
@@ -809,6 +875,7 @@ def render_river(river: River, built: datetime.date, history_days: int = 0,
 {angling}
 <p>Więcej: <a href="../poradniki/pogoda-a-brania.html">pogoda a brania</a>, <a href="../pierwsze-kroki/lowiska/rzeki.html">łowiska rzeczne</a>, <a href="../poradniki/wedkarstwo-z-brzegu.html">wędkarstwo z brzegu</a>.</p>
 
+{rules_html}
 <h2 id="faq">FAQ — stan wody na {esc(river.locative)}</h2>
 {faq_html}
 
@@ -1263,11 +1330,14 @@ def main() -> int:
     history_since = min(dates) if dates else None
 
     OUT_DIR.mkdir(exist_ok=True)
+    rules_by_slug = load_local_rules()
     keep = {"index.html"}
     for river in selected:
         target = OUT_DIR / f"{river.slug}.html"
         keep.add(target.name)
-        target.write_text(render_river(river, built, history_days, history_since), encoding="utf-8")
+        target.write_text(
+            render_river(river, built, history_days, history_since, rules_by_slug.get(river.slug)),
+            encoding="utf-8")
 
     (OUT_DIR / "index.html").write_text(render_hub(selected, others, built, history_since),
                                         encoding="utf-8")

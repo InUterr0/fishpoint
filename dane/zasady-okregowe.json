@@ -1,0 +1,64 @@
+{
+  "_opis": "Zasady lokalne okręgów PZW na rzekach z działu /rzeki/, potwierdzone w korespondencji z okręgiem. Treść wpisujemy tylko wtedy, gdy okręg sam ją podał; w przeciwnym razie wskazujemy dokument, który okręg podał jako źródło. Nie streszczamy regulaminów, których nie przeczytaliśmy. Pole „osoba” zapisujemy w dopełniaczu, bo wchodzi w zdanie „odpowiedź …”.",
+  "okregi": [
+    {
+      "okreg": "Okręg PZW w Nowym Sączu",
+      "rzeki": [
+        "dunajec",
+        "raba"
+      ],
+      "potwierdzone": "2026-09-11",
+      "osoba": "Michała Kolasy, specjalisty ds. ochrony wód Okręgu PZW w Nowym Sączu",
+      "tresc": "Okręg potwierdza, że na poszczególnych rzekach i odcinkach obowiązują różne zasady, a część wymiarów ochronnych jest zaostrzona względem rozporządzenia. Obowiązują także wymiary górne oraz całoroczny zakaz zabierania lipienia i głowacicy. Zasady bywają zmieniane co roku — na wniosek kół i po uchwale zarządu okręgu — więc przed wyjazdem sprawdzaj wersję na dany rok.",
+      "zrodla": [
+        {
+          "nazwa": "Zasady połowu i składki — Okręg PZW w Nowym Sączu",
+          "url": "https://pzwns.info.pl/zasady-polowu-i-skladki/"
+        }
+      ]
+    },
+    {
+      "okreg": "Okręg PZW w Wałbrzychu",
+      "rzeki": [
+        "nysa-klodzka",
+        "bobr",
+        "kaczawa",
+        "odra"
+      ],
+      "potwierdzone": "2026-09-11",
+      "osoba": "Rafała Diuga z biura Zarządu Okręgu PZW w Wałbrzychu",
+      "tresc": "Okręg wskazał własne dokumenty jako źródło zasad lokalnych: wykaz wód, regulamin ogólny wędkowania w okręgu oraz informator o wodach krainy pstrąga i lipienia, który dzieli wody na odcinki z zakazami i dopuszczonymi metodami. Biuro okręgu zaznacza, że regulaminy i informator mogą być aktualizowane z początkiem każdego roku kalendarzowego.",
+      "zrodla": [
+        {
+          "nazwa": "Wykaz wód — Okręg PZW w Wałbrzychu",
+          "url": "https://walbrzych.pzw.pl/strefa-wedkarza/wykaz-wod"
+        },
+        {
+          "nazwa": "Dokumenty i regulaminy — Okręg PZW w Wałbrzychu",
+          "url": "https://walbrzych.pzw.pl/strefa-wedkarza/dokumenty-i-regulaminy"
+        },
+        {
+          "nazwa": "Wody krainy pstrąga i lipienia — informator na 2026 rok",
+          "url": "https://walbrzych.pzw.pl/strefa-wedkarza/wody-krainy-pstraga-i-lipienia-informator-na-rok-2026"
+        }
+      ]
+    },
+    {
+      "okreg": "Okręg PZW w Bielsku-Białej",
+      "rzeki": [
+        "sola",
+        "wisla",
+        "skawa"
+      ],
+      "potwierdzone": "2026-09-11",
+      "osoba": "biura Okręgu PZW w Bielsku-Białej",
+      "tresc": "Okręg wskazał jako źródło zasad lokalnych własny zestaw regulaminów amatorskiego połowu ryb na 2026 rok, w którym osobno opisane są wody krainy pstrąga i lipienia.",
+      "zrodla": [
+        {
+          "nazwa": "Regulaminy (RAPR) 2026 — Okręg PZW w Bielsku-Białej",
+          "url": "https://bielsko-biala.pzw.pl/strefa-wedkarza/regulaminy-rapr-2026"
+        }
+      ]
+    }
+  ]
+}
