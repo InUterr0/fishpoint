@@ -256,6 +256,222 @@ def image_width(path: Path) -> int:
     raise ValueError(f"{path}: unsupported or invalid image")
 
 
+# § 7 ust. 1 rozporządzenia Dz.U. 2023 poz. 1373 w niezależnym zapisie: dla
+# każdego miesiąca gatunki z tabeli narzędzia, które w tym miesiącu są chronione
+# WE WSZYSTKICH wodach. Wariant odcinkowy nie znaczy automatycznie „tylko na
+# części wód": pstrąg potokowy (pkt 8) jest chroniony od 1 IX w każdej wodzie,
+# różni się wyłącznie data końca, a wcześniej gubił się w podsumowaniu miesiąca.
+# Tabela jest celowo przepisana z aktu, a nie wyliczona z danych generatora —
+# inaczej kontrakt potwierdzałby sam siebie.
+ACT_PROTECTED_EVERYWHERE = {
+    1: {"Szczupak", "Sum", "Węgorz", "Miętus", "Troć jeziorowa", "Brzana",
+        "Świnka", "Jesiotr ostronosy"},
+    2: {"Szczupak", "Sum", "Węgorz", "Miętus", "Brzana", "Świnka",
+        "Jesiotr ostronosy"},
+    3: {"Szczupak", "Sum", "Węgorz", "Brzana", "Świnka", "Sandacz", "Lipień",
+        "Głowacica", "Jesiotr ostronosy"},
+    4: {"Szczupak", "Sum", "Brzana", "Świnka", "Sandacz", "Lipień",
+        "Głowacica", "Jesiotr ostronosy"},
+    5: {"Sum", "Brzana", "Świnka", "Sandacz", "Lipień", "Głowacica",
+        "Jesiotr ostronosy"},
+    6: {"Brzana", "Jesiotr ostronosy"},
+    7: {"Jesiotr ostronosy"},
+    8: {"Jesiotr ostronosy"},
+    9: {"Pstrąg potokowy", "Troć jeziorowa", "Jesiotr ostronosy"},
+    10: {"Pstrąg potokowy", "Troć jeziorowa", "Sieja", "Sielawa",
+         "Jesiotr ostronosy"},
+    11: {"Pstrąg potokowy", "Troć jeziorowa", "Sieja", "Sielawa",
+         "Jesiotr ostronosy"},
+    12: {"Pstrąg potokowy", "Troć jeziorowa", "Troć wędrowna / łosoś", "Sieja",
+         "Sielawa", "Węgorz", "Miętus", "Jesiotr ostronosy"},
+}
+
+
+def check_protection_month(failures: list[str]) -> None:
+    """Blok „ochrona w tym miesiącu" musi zgadzać się z § 7, nie z samym sobą."""
+    for month in range(1, 13):
+        summary, groups = seo_inject.build_protection_month(
+            datetime.date(2026, month, 15))
+        first = groups.split("</section>")[0]
+        listed = {re.sub(r"\s+—\s.*$", "", name).strip()
+                  for name in re.findall(r"<li>([^<]+)</li>", first)}
+        expected = ACT_PROTECTED_EVERYWHERE[month]
+        check(
+            listed == expected,
+            f"okresy ochronne, miesiąc {month}: grupa „we wszystkich wodach"
+            f" to {sorted(listed)}, a § 7 wskazuje {sorted(expected)}",
+            failures,
+        )
+        check(
+            f"{len(expected)} gat." in summary
+            or (not expected and "nie wskazuje" in summary),
+            f"okresy ochronne, miesiąc {month}: podsumowanie nie podaje"
+            f" liczby {len(expected)}",
+            failures,
+        )
+
+    # Skrypt strony przelicza ten blok na datę czytelnika, więc musi dzielić
+    # gatunki tak samo jak generator. Gdy rozjechał się poprzednio, czytelnik
+    # z JavaScriptem widział co innego niż robot i niż nasz własny artykuł.
+    page = read(seo_inject.PROTECTION_PAGE)
+    check("monthsAll" in page and "monthsSome" in page,
+          f"{seo_inject.PROTECTION_PAGE}: skrypt nie zna podziału"
+          " monthsAll/monthsSome", failures)
+    check("Zależne od odcinka lub wody" not in page,
+          f"{seo_inject.PROTECTION_PAGE}: skrypt używa dawnego podziału"
+          " „Zależne od odcinka lub wody”", failures)
+
+# Gatunki wymienione w załącznikach rozporządzenia Ministra Środowiska z 16
+# grudnia 2016 r. w sprawie ochrony gatunkowej zwierząt (t.j. Dz.U. 2022
+# poz. 2380), spośród tych, dla których atlas prowadzi kartę. Nazwa łacińska
+# jest jedynym pewnym kluczem: strzebla potokowa (Phoxinus phoxinus) nie jest
+# chroniona, a strzebla błotna (Eupallasella percnurus) jest — sama nazwa
+# polska myli. Jesiotr ostronosy trafia na listę z obu aktów naraz.
+SPECIES_PROTECTION_ACT = {
+    "Misgurnus fossilis",
+    "Cobitis taenia",
+    "Rhodeus amarus",
+    "Alburnoides bipunctatus",
+    "Lampetra fluviatilis",
+    "Cottus gobio",
+    "Acipenser oxyrinchus",
+    "Eupallasella percnurus",
+}
+NOT_PROTECTED_LATIN = {"Phoxinus phoxinus", "Leucaspius delineatus"}
+
+
+def check_protected_species_table(failures: list[str]) -> None:
+    """Tabela gatunków chronionych nie może wyprzedzać aktu."""
+    page = read("ryby/chronione.html")
+    body = re.search(r'<table class="decision-table">.*?</table>', page, re.S)
+    check(body is not None, "ryby/chronione.html: brak tabeli gatunków chronionych",
+          failures)
+    if body is None:
+        return
+    listed = set(re.findall(r"<em>([A-Z][a-z]+ [a-z]+)</em>", body.group(0)))
+    extra = listed - SPECIES_PROTECTION_ACT
+    check(
+        not extra,
+        "ryby/chronione.html: tabela podaje jako chronione gatunki spoza"
+        f" rozporządzenia: {sorted(extra)}",
+        failures,
+    )
+    for latin in NOT_PROTECTED_LATIN:
+        check(
+            latin not in listed,
+            f"ryby/chronione.html: {latin} nie jest objęty ochroną gatunkową",
+            failures,
+        )
+
+def check_itemlist_names(failures: list[str]) -> None:
+    """Pozycje ItemList muszą się od siebie różnić nazwą.
+
+    Dział Rzeki wystawiał czterdzieści pozycji o nazwie „Rzeki z własną stroną":
+    odsyłacze stoją w tabeli, więc dziedziczyły jeden nagłówek sprzed niej.
+    Lista, w której każdy element nazywa się tak samo, nie niesie informacji.
+    """
+    for index in sorted(ROOT.glob("*/index.html")) + sorted(
+            ROOT.glob("*/*/index.html")):
+        relative = index.relative_to(ROOT).as_posix()
+        url = f"https://fish-point.pl/{relative[:-len('index.html')]}"
+        items = seo_inject.extract_listitems(
+            index.read_text(encoding="utf-8"), url)
+        if not items:
+            continue
+        names = [name for name, _ in items]
+        duplicated = sorted({n for n in names if names.count(n) > 1})
+        check(
+            not duplicated,
+            f"{relative}: ItemList powtarza nazwy pozycji: {duplicated}",
+            failures,
+        )
+
+def check_generated_illustrations(failures: list[str]) -> None:
+    """Grafika generowana nie może ilustrować dwóch różnych zdarzeń.
+
+    Jeden wygenerowany obraz starorzecza stał przez miesiąc nad artykułem
+    o zakwicie złotej algi w Kanale Gliwickim i nad artykułem o dzierżawie
+    Wiśliska Krajskiego naraz. Serwis, który rozróżnia potwierdzone od
+    niepotwierdzonego, nie może ilustrować doniesienia środowiskowego
+    wymyślonym widokiem innego miejsca.
+    """
+    generated = set()
+    for meta_path in ROOT.glob("assets/img/*/_meta.json"):
+        directory = meta_path.parent.name
+        for key, entry in json.loads(
+                meta_path.read_text(encoding="utf-8")).items():
+            license_text = str(entry.get("license", ""))
+            if "Wygenerowano" in license_text or entry.get("artist") == "OpenAI":
+                generated.add(f"/assets/img/{directory}/{entry['file']}")
+
+    leads: dict[str, list[str]] = {}
+    for page in sorted(ROOT.glob("aktualnosci/*.html")):
+        if page.name == "index.html":
+            continue
+        found = re.search(r"<!--og-image:([^>]+)-->",
+                          page.read_text(encoding="utf-8"))
+        if found:
+            leads.setdefault(found.group(1).strip(), []).append(page.name)
+
+    for image, pages in sorted(leads.items()):
+        check(
+            not (image in generated and len(pages) > 1),
+            f"grafika generowana {image} ilustruje kilka artykułów:"
+            f" {sorted(pages)}",
+            failures,
+        )
+
+# Ślady po automatycznym usuwaniu nieudokumentowanych liczb. „zależna od testu"
+# trafiło w miejsce dwudziestu procentów wytrzymałości węzłów — także do
+# odpowiedzi FAQ w JSON-LD — zostawiając zdania, które udają, że coś mówią.
+EDITORIAL_PLACEHOLDERS = (
+    "zależna od testu",
+    "nawet o istotnie",
+    "istotna wytrzymałości",
+    "TODO",
+    "LOREM",
+)
+
+
+def check_no_placeholders(failures: list[str]) -> None:
+    """Żadna strona nie może wyjść z niewypełnionym miejscem po liczbie."""
+    for page in sorted(ROOT.glob("**/*.html")):
+        if any(part.startswith(".") for part in page.parts):
+            continue
+        text = page.read_text(encoding="utf-8")
+        for placeholder in EDITORIAL_PLACEHOLDERS:
+            check(
+                placeholder not in text,
+                f"{page.relative_to(ROOT).as_posix()}: pozostał placeholder"
+                f" „{placeholder}"'"',
+                failures,
+            )
+
+def check_scrollable_tables(failures: list[str]) -> None:
+    """Przewijana tabela musi być dostępna z klawiatury.
+
+    `.tool-table-wrap` przewija się poziomo na wąskim ekranie. Bez `tabindex`
+    nie da się jej przewinąć klawiaturą ani rozpoznać jako obszaru — a skrypt
+    strony stosuje ten wzorzec dla tabel artykułowych, więc rozjazd był
+    niespójnością wewnątrz jednego serwisu, nie decyzją.
+    """
+    offenders = []
+    for page in sorted(ROOT.glob("**/*.html")):
+        if any(part.startswith(".") for part in page.parts):
+            continue
+        for tag in re.findall(r'<div class="tool-table-wrap"[^>]*>',
+                              page.read_text(encoding="utf-8")):
+            if 'tabindex="0"' not in tag or 'aria-label=' not in tag:
+                offenders.append(page.relative_to(ROOT).as_posix())
+                break
+    check(
+        not offenders,
+        "przewijane tabele bez tabindex/aria-label: "
+        + ", ".join(sorted(offenders)[:10])
+        + (f" (+{len(offenders) - 10})" if len(offenders) > 10 else ""),
+        failures,
+    )
+
 def check(condition: bool, message: str, failures: list[str]) -> None:
     if not condition:
         failures.append(message)
@@ -263,6 +479,12 @@ def check(condition: bool, message: str, failures: list[str]) -> None:
 
 def main() -> int:
     failures: list[str] = []
+    check_protection_month(failures)
+    check_protected_species_table(failures)
+    check_itemlist_names(failures)
+    check_generated_illustrations(failures)
+    check_no_placeholders(failures)
+    check_scrollable_tables(failures)
     sitemap = ET.fromstring(read("sitemap.xml"))
     urls = [node.text or "" for node in sitemap.findall("s:url/s:loc", SITEMAP_NS)]
     # Liczba stron redakcyjnych zostaje twarda i podnoszona świadomie: to ona

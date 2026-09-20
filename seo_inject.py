@@ -6,7 +6,7 @@ Idempotentny: blok SEO jest oznaczony znacznikami i przy ponownym uruchomieniu
 zostaje podmieniony, a nie zdublowany. Wystarczy zmienić BASE po kupnie domeny
 i uruchomić ponownie: python3 seo_inject.py
 """
-import os, re, html, json, datetime, subprocess, functools, hashlib, sys, math, unicodedata
+import os, re, html, json, datetime, subprocess, functools, hashlib, sys, math, unicodedata, urllib.parse
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -897,16 +897,16 @@ PROTECTION_SPECIES = [
     {"slug": "jaz", "name": "Jaź", "cat": "spokojny", "size": 25, "period": "brak w § 7", "limit": "sprawdź wodę", "note": "§ 6; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
     {"slug": "klen", "name": "Kleń", "cat": "spokojny", "size": 25, "period": "brak w § 7", "limit": "sprawdź wodę", "note": "§ 6; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
     {"slug": "amur", "name": "Amur biały", "cat": "spokojny", "size": 0, "period": "brak w § 6–7", "limit": "sprawdź wodę", "note": "Brak wartości krajowej w tej tabeli nie wyłącza zasad lokalnych", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
-    {"slug": "pstrag", "name": "Pstrąg potokowy", "cat": "lososiowate", "size": 25, "sizeLabel": "25 albo 30 cm", "period": "sprawdź odcinek", "limit": "sprawdź wodę", "note": "§ 6 ust. 1 pkt 12: 25 cm w dorzeczu Wisły do ujścia Sanu i we wskazanym odcinku Odry, 30 cm w pozostałych wodach; okres 1 IX – 31 I albo 1 IX – 31 XII", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "local"}},
+    {"slug": "pstrag", "name": "Pstrąg potokowy", "cat": "lososiowate", "size": 25, "sizeLabel": "25 albo 30 cm", "period": "sprawdź odcinek", "limit": "sprawdź wodę", "note": "§ 6 ust. 1 pkt 12: 25 cm w dorzeczu Wisły do ujścia Sanu i we wskazanym odcinku Odry, 30 cm w pozostałych wodach; okres 1 IX – 31 I albo 1 IX – 31 XII", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "local", "monthsAll": [9, 10, 11, 12], "monthsSome": [1], "periodAll": "od 1 IX we wszystkich wodach; koniec zależy od odcinka — 31 I albo 31 XII"}},
     {"slug": "lipien", "name": "Lipień", "cat": "lososiowate", "size": 30, "period": "1 III – 31 V", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [3, 4, 5]}},
-    {"slug": "mietus", "name": "Miętus", "cat": "lososiowate", "size": 25, "sizeLabel": "25 albo 30 cm", "period": "1 XII – koniec II", "limit": "sprawdź wodę", "note": "§ 6 ust. 1 pkt 11: 30 cm w Odrze od ujścia Warty do granicy z wodami morskimi, 25 cm w pozostałych wodach; okres nie obejmuje tego odcinka Odry", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [12, 1, 2]}},
-    {"slug": "troc-losos", "name": "Troć wędrowna / łosoś", "cat": "lososiowate", "size": 35, "period": "sprawdź odcinek", "limit": "sprawdź wodę", "note": "§ 6–7 różnicuje okres według wody; troć jeziorowa ma odrębny wymiar 50 cm", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "local"}},
+    {"slug": "mietus", "name": "Miętus", "cat": "lososiowate", "size": 25, "sizeLabel": "25 albo 30 cm", "period": "1 XII – koniec II", "limit": "sprawdź wodę", "note": "§ 6 ust. 1 pkt 11: 30 cm w Odrze od ujścia Warty do granicy z wodami morskimi, 25 cm w pozostałych wodach; okres nie obejmuje tego odcinka Odry", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"periodAll": "1 XII – koniec II; § 7 ust. 1 pkt 7 wyłącza Odrę od ujścia Warty do granicy z wodami morskimi", "kind": "national", "months": [12, 1, 2]}},
+    {"slug": "troc-losos", "name": "Troć wędrowna / łosoś", "cat": "lososiowate", "size": 35, "period": "sprawdź odcinek", "limit": "sprawdź wodę", "note": "§ 7 ust. 1 pkt 6 i 15: 1 X – 31 XII w Wiśle powyżej zapory we Włocławku i w pozostałych wodach, 1 XII – koniec II w Wiśle poniżej zapory; troć jeziorowa ma odrębny wymiar 50 cm", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "local", "monthsAll": [12], "monthsSome": [1, 2, 10, 11], "periodAll": "1 XII — jedyny miesiąc wspólny dla wszystkich odcinków"}},
     {"slug": "troc-losos", "name": "Troć jeziorowa", "cat": "lososiowate", "size": 50, "period": "1 IX – 31 I", "limit": "sprawdź wodę", "note": "§ 6 ust. 1 pkt 21 oraz § 7 ust. 1 pkt 16 — wartości odrębne od troci wędrownej", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [9, 10, 11, 12, 1]}},
     {"slug": "sieja", "name": "Sieja", "cat": "lososiowate", "size": 35, "period": "15 X – 31 XII", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [10, 11, 12]}},
     {"slug": "sielawa", "name": "Sielawa", "cat": "lososiowate", "size": 18, "period": "15 X – 31 XII", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [10, 11, 12]}},
     {"slug": None, "name": "Głowacica", "cat": "lososiowate", "size": 70, "period": "1 III – 31 V", "limit": "sprawdź wodę", "note": "§ 6–7; gatunek rzadki, zwykle dodatkowe zasady w zezwoleniu", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [3, 4, 5]}},
     {"slug": "brzana", "name": "Brzana", "cat": "spokojny", "size": 40, "period": "1 I – 30 VI", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [1, 2, 3, 4, 5, 6]}},
-    {"slug": "certa", "name": "Certa", "cat": "spokojny", "size": 30, "period": "sprawdź odcinek", "limit": "sprawdź wodę", "note": "§ 7 ust. 1 pkt 2: 1 IX – 30 XI w Wiśle poniżej zapory we Włocławku, 1 I – 30 VI w pozostałych wodach", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "local"}},
+    {"slug": "certa", "name": "Certa", "cat": "spokojny", "size": 30, "period": "sprawdź odcinek", "limit": "sprawdź wodę", "note": "§ 7 ust. 1 pkt 2: 1 IX – 30 XI w Wiśle poniżej zapory we Włocławku, 1 I – 30 VI w pozostałych wodach", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "local", "monthsAll": [], "monthsSome": [1, 2, 3, 4, 5, 6, 9, 10, 11]}},
     {"slug": "swinka", "name": "Świnka", "cat": "spokojny", "size": 25, "period": "1 I – 15 V", "limit": "sprawdź wodę", "note": "§ 6–7; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "national", "months": [1, 2, 3, 4, 5]}},
     {"slug": "wzdrega", "name": "Wzdręga", "cat": "spokojny", "size": 15, "period": "brak w § 7", "limit": "sprawdź wodę", "note": "§ 6; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
     {"slug": "jelec", "name": "Jelec", "cat": "spokojny", "size": 15, "period": "brak w § 7", "limit": "sprawdź wodę", "note": "§ 6; sprawdź zezwolenie i regulamin", "basis": "Dz.U. 2023 poz. 1373, § 6–7; od 27 VII 2023", "protection": {"kind": "none"}},
@@ -983,14 +983,32 @@ def build_protection_rows():
     return "".join(out)
 
 
-def protection_month_group(title, entries, empty_text):
+def protection_month_group(title, entries, empty_text, label=None):
+    label = label or (lambda d: d["period"])
     if entries:
         items = "".join(
-            f'<li>{html.escape(d["name"])} — {html.escape(d["period"])}</li>'
+            f'<li>{html.escape(d["name"])} — {html.escape(label(d))}</li>'
             for d in entries)
     else:
         items = f"<li>{html.escape(empty_text)}</li>"
     return f"<section><h3>{html.escape(title)}</h3><ul>{items}</ul></section>"
+
+
+def protection_months(d):
+    """Miesiące ochrony gatunku: we wszystkich wodach i tylko na części wód.
+
+    Rozporządzenie różnicuje niektóre gatunki po odcinku, ale nie zawsze
+    znaczy to, że ochrona gdziekolwiek nie obowiązuje. Pstrąg potokowy jest
+    chroniony od 1 września w każdej wodzie (§ 7 ust. 1 pkt 8) — różni się
+    wyłącznie data końca. Traktowanie takiego wpisu jako „zależnego od
+    odcinka” gubiło go w podsumowaniu miesiąca.
+    """
+    p = d["protection"]
+    if p["kind"] == "national":
+        return set(p.get("months", [])), set()
+    if p["kind"] == "local":
+        return set(p.get("monthsAll", [])), set(p.get("monthsSome", []))
+    return set(), set()
 
 
 def build_protection_month(day):
@@ -1002,25 +1020,38 @@ def build_protection_month(day):
     znika przy pierwszym wdrożeniu w nowym miesiącu.
     """
     national = [d for d in PROTECTION_SPECIES
-                if d["protection"]["kind"] == "national"
-                and day.month in d["protection"].get("months", [])]
+                if day.month in protection_months(d)[0]]
+    partial = [d for d in PROTECTION_SPECIES
+               if day.month in protection_months(d)[1]]
     without = [d for d in PROTECTION_SPECIES if d["protection"]["kind"] == "none"]
-    local = [d for d in PROTECTION_SPECIES if d["protection"]["kind"] == "local"]
+
+    def all_waters_label(d):
+        return d["protection"].get("periodAll") or d["period"]
+
     groups = (
         protection_month_group(
-            "Krajowy okres ochronny w tym miesiącu", national,
+            "Krajowy okres ochronny w tym miesiącu — we wszystkich wodach", national,
             "W tym miesiącu tabela nie wskazuje krajowego okresu ochronnego"
-            " dla wymienionych gatunków.")
+            " obowiązującego we wszystkich wodach.",
+            label=all_waters_label)
         + protection_month_group(
-            "Brak krajowego okresu w tabeli", without, "Brak wierszy w tej grupie.")
+            "Ochrona tylko na części wód w tym miesiącu", partial,
+            "W tym miesiącu żaden wiersz nie jest chroniony wyłącznie"
+            " na części wód.",
+            label=lambda d: d["note"])
         + protection_month_group(
-            "Zależne od odcinka lub wody", local,
-            "Brak wierszy zależnych od odcinka w tym zestawieniu."))
+            "Brak krajowego okresu w tabeli", without, "Brak wierszy w tej grupie."))
     month = CALENDAR_MONTHS_PL[day.month - 1]
     if national:
-        verdict = f"Krajową ochroną objęto {len(national)} gat. "
+        verdict = (f"We wszystkich wodach krajową ochroną objęto"
+                   f" {len(national)} gat. ")
     else:
-        verdict = "Tabela nie wskazuje krajowej ochrony dla wymienionych gatunków. "
+        verdict = ("Tabela nie wskazuje gatunku chronionego w tym miesiącu"
+                   " we wszystkich wodach. ")
+    if len(partial) == 1:
+        verdict += "Kolejny 1 gat. jest chroniony tylko na części wód. "
+    elif partial:
+        verdict += f"Kolejne {len(partial)} gat. są chronione tylko na części wód. "
     summary = (f"Miesiąc: {month} {day.year}. {verdict}"
                "Pozostałe grupy nie oznaczają zgody na połów ani zabranie ryby.")
     return summary, groups
@@ -1997,6 +2028,33 @@ def parse_content_meta(src, path):
     if modified_date < published_date:
         raise ValueError(f"{path}: modified jest wcześniejsze niż published")
     return published, modified
+
+
+TOOL_TABLE_WRAP_RE = re.compile(
+    r'<div class="tool-table-wrap"(?P<attrs>[^>]*)>(?P<rest>\s*<table\b[^>]*>'
+    r'(?:\s*<caption[^>]*>(?P<caption>.*?)</caption>)?)', re.S)
+
+
+def ensure_scrollable_tables(src):
+    """Czyni przewijane tabele dostępnymi z klawiatury.
+
+    `.tool-table-wrap` ma `overflow-x: auto`, więc na wąskim ekranie tabela
+    wodowskazów przewija się w swoim kontenerze — ale bez `tabindex` nie da
+    się tego zrobić klawiaturą ani odczytać jako obszaru. Skrypt strony robi
+    dokładnie to dla tabel artykułowych (`.article-table-scroll`), tylko nigdy
+    nie objął tabel narzędziowych; robimy to po stronie serwera, żeby działało
+    także bez JavaScriptu.
+    """
+    def repl(match):
+        if "tabindex" in match.group("attrs"):
+            return match.group(0)
+        caption = _clean(re.sub(r"<[^>]+>", " ", match.group("caption") or ""))
+        label = f"Przewijana tabela: {caption}" if caption else "Przewijana tabela"
+        return (f'<div class="tool-table-wrap" tabindex="0" role="region"'
+                f' aria-label="{html.escape(label, quote=True)}"'
+                f'{match.group("attrs")}>{match.group("rest")}')
+
+    return TOOL_TABLE_WRAP_RE.sub(repl, src)
 
 
 def ensure_content_meta(src, path):
@@ -3370,6 +3428,25 @@ def inject_visible_faq(src, rel):
     return src[:position] + block + src[position:]
 
 
+MEDIA_CREDIT_HOSTS = (
+    "commons.wikimedia.org", "upload.wikimedia.org", "creativecommons.org",
+    "youtube.com", "youtu.be", "youtube-nocookie.com", "flickr.com",
+    "facebook.com", "inaturalist.org",
+)
+
+
+def _is_media_credit(href):
+    """Czy odsyłacz jest kredytem zdjęcia, osadzonym filmem albo profilem.
+
+    Takie linki nie są źródłem twierdzeń merytorycznych, a stanowią większość
+    odesłań na kartach gatunków. Wrzucone do jednej listy z ELI i IMGW kazały
+    czytającemu plik modelowi uznać Wikimedia za podstawę stanu prawnego.
+    """
+    host = urllib.parse.urlsplit(href).netloc.lower()
+    host = host[4:] if host.startswith("www.") else host
+    return any(host == h or host.endswith("." + h) for h in MEDIA_CREDIT_HOSTS)
+
+
 def llms_document_metadata(src, url, rel, published, modified, page_type):
     """Zwraca wyłącznie obserwowalną proweniencję pojedynczego dokumentu."""
     article = article_text(src)
@@ -3384,11 +3461,26 @@ def llms_document_metadata(src, url, rel, published, modified, page_type):
         f"Published: {published}",
         f"Modified: {modified}",
         f"Type: {page_type}",
-        "Sources:",
     ]
-    lines.extend(
-        f"- [{label or href}]({href})" for href, label in external[:12]
-    ) or lines.append("- No external source link is stated in the document.")
+    # `list.extend` zwraca None, więc dawne `lines.extend(...) or lines.append(...)`
+    # dopisywało zdanie o braku źródeł ZAWSZE — także pod listą dwunastu odesłań
+    # do ELI, ISAP czy IMGW. Model czytający ten plik dostawał na każdej z 260
+    # stron komunikat, że dokument nie podaje źródła.
+    merit, media = [], []
+    for href, label in external:
+        host = urllib.parse.urlsplit(href).netloc.lower()
+        if host.removeprefix("www.") == "fish-point.pl":
+            continue  # nawigacja po własnym serwisie nie jest źródłem
+        target = media if _is_media_credit(href) else merit
+        target.append(f"- [{label or href}]({href})")
+    lines.append("Sources:")
+    if merit:
+        lines.extend(merit[:12])
+    else:
+        lines.append("- No external source link is stated in the document.")
+    if media:
+        lines.append("Media credits and embeds:")
+        lines.extend(media[:12])
     if re.search(r"źródła?\s+i\s+(?:granice|weryfikacja)|granice informacji", article, re.I):
         lines.append("Evidence limitations: The document includes a visible sources-and-limitations note.")
     if re.search(r"\bkorekt", article, re.I):
@@ -3662,11 +3754,31 @@ def extract_recipe_meta(src):
     return out
 
 
+GENERIC_LINK_TEXT_RE = re.compile(
+    r"(?:czytaj(?:\s+więcej)?|więcej|zobacz(?:\s+więcej)?|szczegóły|otwórz|"
+    r"przejdź|tutaj|link)\s*[»→>›]*", re.I)
+
+
 def extract_listitems(src, url):
     """Dla strony-indeksu sekcji zwraca [(nazwa, absolutny_url)] z kart
     linkujących do podstron tej sekcji. Nazwa = tekst <h3> w karcie."""
     base_dir = url.rsplit("/", 1)[0] + "/"
     items, seen = [], set()
+
+    def in_list_context(position):
+        """Czy odsyłacz stoi w pozycji listy, czy w zdaniu.
+
+        Decyduje ostatni otwarty znacznik przed odsyłaczem: komórka tabeli,
+        element listy albo pasek podstron znaczą pozycję listy, akapit znaczy
+        tekst ciągły. Bez tego rozróżnienia nazwą pozycji stawał się ostatni
+        nagłówek przed odsyłaczem — a w tabeli rzek jeden nagłówek stał przed
+        czterdziestoma wierszami naraz.
+        """
+        head = src[:position]
+        structural = max(head.rfind("<li"), head.rfind("<td"),
+                         head.rfind("<th"), head.rfind("<aside"))
+        prose = max(head.rfind("<p>"), head.rfind("<p "))
+        return structural > prose
     for m in re.finditer(r'<a[^>]+href="([^"]+\.html)"[^>]*>(.*?)</a>', src, re.S):
         href, inner = m.group(1), m.group(2)
         if href.startswith(("http", "..", "/")) or "index.html" in href:
@@ -3674,7 +3786,16 @@ def extract_listitems(src, url):
         # 1) nagłówek wewnątrz karty-linku (kafelki kategorii)
         hm = re.search(r"<h[234][^>]*>(.*?)</h[234]>", inner, re.S)
         name = _clean(hm.group(1)) if hm else ""
-        # 2) fallback: najbliższy nagłówek PRZED linkiem (karty blog/artykuł,
+        # 2) w tabeli nazwą jest tekst samego odsyłacza. Wiersz nie ma nagłówka,
+        #    więc krok 3 przypisywał wszystkim wierszom jeden nagłówek sprzed
+        #    tabeli: ItemList działu Rzeki miał czterdzieści pozycji o tej samej
+        #    nazwie. Poza tabelą zostaje dawna kolejność, bo tam własny tekst
+        #    odsyłacza bywa fragmentem zdania („gatunki chronione”).
+        if not name and in_list_context(m.start()):
+            own = _clean(re.sub(r"<[^>]+>", " ", inner))
+            if own and not GENERIC_LINK_TEXT_RE.fullmatch(own):
+                name = own
+        # 3) fallback: najbliższy nagłówek PRZED linkiem (karty blog/artykuł,
         #    gdzie link to samo "Czytaj więcej →")
         if not name:
             before = src[:m.start()]
@@ -4578,6 +4699,10 @@ def build(path):
     # źródeł z końca artykułu i wciągał ją do bloku automatycznego.
     if og_type == "article":
         src = inject_editorial_signature(src, rel)
+    # Po wszystkich wstrzyknięciach: część bloków (kalendarze, porównania
+    # gatunków, tabela okresów) dokłada własne `.tool-table-wrap`, więc
+    # dostępność tabel domykamy na końcu, nie na początku potoku.
+    src = ensure_scrollable_tables(src)
     # Wstrzyknięty lead jest pierwszym lokalnym obrazem: jego dane obsługują
     # LCP, OpenGraph, schema.org oraz sitemapę obrazów.
     # LCP pozostaje przy leadzie; ilustracje śródtekstowe są zawsze lazy.

@@ -23,6 +23,23 @@ export function changedFiles(before = process.env.BEFORE_SHA, head = process.env
   return [...new Set([...committed, ...generatedDuringBuild])];
 }
 
+// Przebudowa dotyka każdego pliku (nowa wersja CSS, przeliczone bloki :auto),
+// więc `git diff` po buildzie zgłaszał do IndexNow cały serwis — 241 adresów
+// każdego dnia, identycznie, także wtedy gdy żadna treść się nie zmieniła.
+// Generator zna prawdę: podbija `modified` w komentarzu content-meta wyłącznie
+// wtedy, gdy zmienił się odcisk treści redakcyjnej. Zgłaszamy więc to, co on
+// uznał za zmienione dzisiaj, plus strony całkiem nowe.
+const CONTENT_META = /<!--content-meta:\s*published=(\d{4}-\d{2}-\d{2});\s*modified=(\d{4}-\d{2}-\d{2})/;
+
+export function editoriallyChanged(relative, today = new Date().toISOString().slice(0, 10)) {
+  const path = resolve(ROOT, relative);
+  if (!existsSync(path)) return false;
+  const meta = CONTENT_META.exec(readFileSync(path, 'utf8'));
+  if (!meta) return true; // bez znacznika nie zgadujemy — lepiej zgłosić
+  const [, published, modified] = meta;
+  return modified === today || published === today;
+}
+
 function isNoindex(relative) {
   const path = resolve(ROOT, relative);
   if (!existsSync(path)) return false;
@@ -72,7 +89,10 @@ async function main() {
   const dryRun = process.argv.includes('--dry-run');
   const separator = process.argv.indexOf('--files');
   const files = separator >= 0 ? process.argv.slice(separator + 1) : changedFiles();
-  const urls = urlsFromPaths(files);
+  const changedOnly = files.filter(
+    (file) => !file.endsWith('.html') || editoriallyChanged(file),
+  );
+  const urls = urlsFromPaths(changedOnly);
   console.log(`[indexnow] changed HTML URLs: ${urls.length}`);
   for (const url of urls) console.log(`[indexnow] ${url}`);
   if (dryRun || urls.length === 0) return;

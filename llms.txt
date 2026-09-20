@@ -5,7 +5,7 @@
 > Język: pl-PL.
 > Autor/redakcja: Maciej Baniewicz, redakcja FishPoint.
 > Zakres: Mapa wszystkich indeksowalnych stron FishPoint.
-> Najnowsza merytoryczna zmiana: 2026-09-11.
+> Najnowsza merytoryczna zmiana: 2026-09-20.
 > Polityka źródeł i korekt: https://fish-point.pl/o-autorze.html.
 > Kanoniczny URL: https://fish-point.pl/llms.txt.
 
@@ -47,11 +47,11 @@
 - [Puchar Komendanta Policji w Rawiczu dla Pawła Błasiaka](https://fish-point.pl/aktualnosci/puchar-komendanta-rawicz-zawody-wedkarskie-2026.html): Zawody wędkarskie policjantów nad Balatonem w Miejskiej Górce: podium Pucharu Komendanta Policji w Rawiczu i niemal 4-kilogramowy szczupak.
 - [Rdestnice zarastają łowiska: co wolno, a czego nie](https://fish-point.pl/aktualnosci/rdestnice-zarastanie-lowisk-2026.html): Rdestnice potrafią pokryć nawet 90% akwenu. Przyczyny, właściwy termin koszenia oraz to, dlaczego usuwanie roślin z wody wymaga pozwolenia wodnoprawnego.
 - [Rekord okonia 2026: czy jest potwierdzony?](https://fish-point.pl/aktualnosci/rekord-okonia-2026.html): Nie ma publicznego protokołu potwierdzającego rekord okonia 2026. Zobacz procedurę pomiaru, zgłoszenia i bezpiecznego C&R.
-- [Czy sum 292 cm jest potwierdzonym rekordem?](https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html): Brak publicznego protokołu potwierdzającego suma 292 cm. Zobacz zasady pomiaru, zgłoszenia i bezpiecznego C&R.
+- [Czy sum 292 cm jest potwierdzonym rekordem?](https://fish-point.pl/aktualnosci/rekordowy-sum-292-cm.html): Sum 292,0 cm jest w tabeli oficjalnych rekordów Polski w kategorii długości. Zasady pomiaru, zgłoszenia i bezpiecznego C&R.
 - [Plan nocnej zasiadki karpiowej: bezpieczeństwo i taktyka](https://fish-point.pl/aktualnosci/relacja-nocna-zasiadka.html): Plan nocnej zasiadki karpiowej: rozpoznanie wody, bezpieczny harmonogram, dobrostan ryb, światło, łączność i checklista.
 - [Sezon na szczupaka: legalny plan otwarcia i decyzje nad wodą](https://fish-point.pl/aktualnosci/sezon-na-szczupaka.html): Sezon na szczupaka bez zgadywania: legalność konkretnej wody, plan otwarcia, miejsca, przypony, C&R oraz warianty pogody.
 - [Śnięte ryby w Jeziorce: co ustalił WIOŚ w Wólce Kozodawskiej](https://fish-point.pl/aktualnosci/sniecie-ryb-jeziorka-wolka-kozodawska-2026.html): Kontrola oczyszczalni w Wólce Kozodawskiej zakończyła się zarządzeniem pokontrolnym, a sprawa trafiła do Wód Polskich. Przyczyna śnięcia ryb wciąż nieustalona.
-- [Śnięcie ryb w starorzeczu Warty w Radolinie: co ustalił WIOŚ](https://fish-point.pl/aktualnosci/sniecie-ryb-starorzecze-warty-radolina-2026.html): WIOŚ Poznań opisał zgłoszenie śniętego narybku w starorzeczu Warty w Radolinie: terenowo 2,6 mg/l tlenu, a analiza laboratoryjna próbek trwa.
+- [Śnięcie ryb w starorzeczu Warty w Radolinie: co ustalił WIOŚ](https://fish-point.pl/aktualnosci/sniecie-ryb-starorzecze-warty-radolina-2026.html): WIOŚ Poznań: w starorzeczu Warty w Radolinie śnięty był wyłącznie narybek, tlen 2,6 mg/l. Próbek do badań laboratoryjnych nie pobierano.
 - [Spinning na szczupaka jesienią](https://fish-point.pl/aktualnosci/spinning-na-szczupaka-jesienia.html): Spinning na szczupaka jesienią: gdzie szukać dużych ryb, jakie przynęty i tempo prowadzenia, dobór sprzętu, pogoda i bezpieczne wypuszczanie ikrzyc.
 - [Street fishing](https://fish-point.pl/aktualnosci/street-fishing-od-czego-zaczac.html): Street fishing bez ryzyka: plan jednej miejskiej sesji, legalny dostęp, mobilny zestaw, rozpoznanie konstrukcji i bezpieczne decyzje.
 - [Sum 125 cm ze Starej Odry: głośny połów z Kotowic](https://fish-point.pl/aktualnosci/sum-125-cm-stara-odra-2026.html): Według lokalnego reportażu Jan Zając złowił 20 lipca 2026 r. w Kotowicach suma 125 cm i 19,5 kg. Zebraliśmy potwierdzone granice tej informacji.
@@ -197,7 +197,7 @@
 - [Boleń](https://fish-point.pl/ryby/bolen.html): Boleń (Leuciscus aspius): wymiar ochronny 40 cm, brak krajowego okresu ochronnego. Rozpoznawanie, stanowiska w rzekach, żerowanie i metody spinningowe.
 - [Brzana](https://fish-point.pl/ryby/brzana.html): Brzana: wymiar ochronny 40 cm, okres ochronny 1 stycznia–30 czerwca. Rozpoznawanie, stanowiska w nurcie rzek, żerowanie i metody gruntowe.
 - [Certa](https://fish-point.pl/ryby/certa.html): Certa (Vimba vimba): wymiar ochronny 30 cm, okres ochronny zależny od odcinka Wisły i pozostałych wód. Rozpoznawanie, wędrówka tarłowa i metody połowu.
-- [Ryby chronione w Polsce](https://fish-point.pl/ryby/chronione.html): Ryby chronione w Polsce: osiem gatunków z atlasu FishPoint — piskorz, koza, różanka, strzebla, słonecznica, minóg, głowacz, jesiotr.
+- [Ryby chronione w Polsce](https://fish-point.pl/ryby/chronione.html): Ryby chronione w Polsce: siedem gatunków z atlasu FishPoint — piskorz, koza, różanka, piekielnica, minóg, głowacz, jesiotr — i czego w akcie nie ma.
 - [Ciernik](https://fish-point.pl/ryby/ciernik.html): Ciernik (Gasterosteus aculeatus): gatunek najmniejszej troski, bez wartości wędkarskiej. Rozpoznawanie, kolce grzbietowe, siedlisko i biologia gatunku.
 - [Dorsz](https://fish-point.pl/ryby/dorsz.html): Dorsz (Gadus morhua): w rybołówstwie rekreacyjnym okres ochronny trwa cały rok, więc rybę trzeba wypuścić. Rozpoznawanie, biologia i zasady na Bałtyku.
 - [Flądra (stornia)](https://fish-point.pl/ryby/fladra.html): Flądra: przed połowem sprawdź aktualne zasady, limity i komunikaty GIRM. Rozpoznawanie storni, stanowiska na Bałtyku, żerowanie i metody gruntowe z brzegu.
@@ -227,8 +227,8 @@
 - [Sieja](https://fish-point.pl/ryby/sieja.html): Sieja: wymiar ochronny 35 cm, okres ochronny 15 października–31 grudnia. Rozpoznawanie, stanowiska w jeziorach, tarło i metody połowu.
 - [Sielawa](https://fish-point.pl/ryby/sielawa.html): Sielawa (Coregonus albula): wymiar ochronny 18 cm, okres ochronny 15 października–31 grudnia. Rozpoznawanie, stanowiska w jeziorach i metody połowu.
 - [Śledź](https://fish-point.pl/ryby/sledz.html): Śledź: przed połowem sprawdź aktualne zasady, limity i komunikaty GIRM. Rozpoznawanie, wędrówki tarłowe, stanowiska z brzegu i metody połowu.
-- [Słonecznica](https://fish-point.pl/ryby/slonecznica.html): Słonecznica (Leucaspius delineatus) jest objęta systemem ochrony siedliskowej — nie wolno jej pozyskiwać. Rozpoznawanie, gdzie żyje, biologia i przyłów.
-- [Strzebla potokowa](https://fish-point.pl/ryby/strzebla-potokowa.html): Strzebla potokowa podlega ochronie i nie jest legalnym celem połowu ani przynętą. Jak ją rozpoznać, gdzie żyje i co zrobić po przypadkowym złowieniu.
+- [Słonecznica](https://fish-point.pl/ryby/slonecznica.html): Słonecznica (Leucaspius delineatus) nie jest objęta ochroną gatunkową. Rozpoznawanie, odróżnienie od uklei, siedlisko, biologia i przyłów.
+- [Strzebla potokowa](https://fish-point.pl/ryby/strzebla-potokowa.html): Strzebla potokowa nie jest objęta ochroną gatunkową — chroniona jest strzebla błotna. Jak ją rozpoznać, gdzie żyje i co zrobić po przypadkowym złowieniu.
 - [Sum](https://fish-point.pl/ryby/sum.html): Sum europejski: wymiar ochronny 70 cm, okres ochronny 1 stycznia–31 maja. Czy ma zęby, gdzie stoi za dnia, kiedy wychodzi żerować i jak go holować.
 - [Świnka](https://fish-point.pl/ryby/swinka.html): Świnka (Chondrostoma nasus): wymiar ochronny 25 cm, okres ochronny 1 stycznia–15 maja. Rozpoznawanie, stanowiska w rzekach i metody połowu.
 - [Atlas ryb: szczupak (Esox lucius)](https://fish-point.pl/ryby/szczupak.html): Szczupak (Esox lucius): wymiar 45 cm, okres ochronny 1 stycznia–30 kwietnia. Gdzie czeka w zasadzce, na co reaguje i jak bezpiecznie go odhaczyć.

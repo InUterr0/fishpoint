@@ -752,9 +752,31 @@ def render_table(river: River) -> str:
             + head + "<tbody>" + "".join(body) + "</tbody></table></div>")
 
 
+CONTENT_META_RE = re.compile(
+    r"<!--content-meta:\s*published=(\d{4}-\d{2}-\d{2});")
+
+
+def content_meta(target: Path, built: datetime.date) -> str:
+    """Trwałe daty redakcyjne strony budowanej z danych.
+
+    Strony rzek są nadpisywane w całości przy każdym przebiegu, więc gubiły
+    komentarz content-meta. seo_inject wracał wtedy do daty ostatniego commitu
+    i czterdzieści stron z odczytami sprzed godzin deklarowało aktualizację
+    sprzed tygodni. Datę publikacji przenosimy z poprzedniej wersji pliku,
+    a datę aktualizacji bierzemy z dnia pobrania danych.
+    """
+    published = built.isoformat()
+    if target.exists():
+        found = CONTENT_META_RE.search(target.read_text(encoding="utf-8"))
+        if found:
+            published = found.group(1)
+    return f"<!--content-meta: published={published}; modified={built.isoformat()}-->"
+
+
 PAGE = """<!doctype html>
 <html lang="pl">
 <head>
+  {content_meta}
 <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
@@ -840,8 +862,43 @@ REFRESH_SCRIPT = """<p class="live-refresh"><button type="button" class="btn-sec
 </script>"""
 
 
+def neighbour_rivers(river: River, all_rivers: list[River], limit: int = 6) -> str:
+    """Odsyłacze do rzek z tych samych województw.
+
+    Dwanaście rzek z menu miało po kilkaset linków wewnętrznych i cały ruch
+    działu, a pozostałe dwadzieścia osiem po pięć–osiem i zero wyświetleń —
+    przy identycznym szablonie i długości tekstu. Statyczne menu mieści tylko
+    początek listy, więc reszta działu istniała wyłącznie za przyciskiem
+    doczytywanym JavaScriptem. Sąsiedztwo dorzecza jest sensowne redakcyjnie
+    i daje każdej stronie kilka odsyłaczy z treści, nie z nawigacji.
+    """
+    mine = set(river.voivodeships)
+    if not mine:
+        return ""
+    scored = []
+    for other in all_rivers:
+        if other.slug == river.slug:
+            continue
+        shared = mine & set(other.voivodeships)
+        if shared:
+            scored.append((len(shared), -len(other.rows), other))
+    if not scored:
+        return ""
+    scored.sort(key=lambda item: (-item[0], item[1], item[2].name))
+    picked = [item[2] for item in scored[:limit]]
+    links = ", ".join(
+        f'<a href="{other.slug}.html">{esc(other.name)}</a>' for other in picked)
+    where = voivodeships_locative(sorted(mine), link=True)
+    word = plural(len(mine), "województwie", "województwach", "województwach")
+    return ('<h2 id="sasiednie">Inne rzeki w tych samych województwach</h2>\n'
+            f"<p>Wodowskazy {esc(river.genitive)} leżą w {word} {where}. Własne strony"
+            f" z odczytami mają tam również: {links}. Pełny wykaz działu jest na"
+            f' <a href="./">stronie Rzeki</a>.</p>\n')
+
+
 def render_river(river: River, built: datetime.date, history_days: int = 0,
-                 history_since: str | None = None, local_rules: list[dict] | None = None) -> str:
+                 history_since: str | None = None, local_rules: list[dict] | None = None,
+                 target: Path | None = None, all_rivers: list[River] | None = None) -> str:
     stamp = river.newest_stamp
     count = len(river.rows)
     title = (f"Stan wody na {river.locative} — {count} "
@@ -858,6 +915,7 @@ def render_river(river: River, built: datetime.date, history_days: int = 0,
         for q, a in faq_pairs(river, local_rules)
     )
     rules_html = render_local_rules(river, local_rules or [])
+    neighbours = neighbour_rivers(river, all_rivers or [])
     course = "".join(f"<p>{sentence}</p>" for sentence in course_sentences(river))
     angling = "".join(f"<p>{sentence}</p>" for sentence in angling_sentences(river))
 
@@ -875,6 +933,7 @@ def render_river(river: River, built: datetime.date, history_days: int = 0,
 {angling}
 <p>Więcej: <a href="../poradniki/pogoda-a-brania.html">pogoda a brania</a>, <a href="../pierwsze-kroki/lowiska/rzeki.html">łowiska rzeczne</a>, <a href="../poradniki/wedkarstwo-z-brzegu.html">wędkarstwo z brzegu</a>.</p>
 
+{neighbours}
 {rules_html}
 <h2 id="faq">FAQ — stan wody na {esc(river.locative)}</h2>
 {faq_html}
@@ -882,6 +941,7 @@ def render_river(river: River, built: datetime.date, history_days: int = 0,
 <div class="source-box"><h3>Skąd te dane i czego nie obejmują</h3><p>Odczyty, kilometraż, rzędne zer łat, progi i przepływy {esc(river.genitive)} pochodzą z <strong>publicznego API hydrologicznego IMGW-PIB</strong> (<a href="https://danepubliczne.imgw.pl/" rel="noopener" target="_blank">danepubliczne.imgw.pl</a>), zapis z {pl_date(built)}. Spadek {esc(river.genitive)} podajemy jako średnią dla {fmt(river.span_km)} km objętych pomiarami — nie jest to profil podłużny rzeki i nie opisuje wody powyżej stacji {esc(river.rows[-1]["station"])}. <a href="./#jak-czytac">Jak czytać wodowskaz</a>. Nie zastępuje sprawdzenia <a href="../narzedzia/okresy-ochronne.html">okresów ochronnych</a> ani zezwolenia.</p></div>"""
 
     return PAGE.format(
+        content_meta=content_meta(target, built) if target else "",
         title=esc(title),
         description=esc(description),
         image=LEAD_IMAGE,
@@ -892,7 +952,7 @@ def render_river(river: River, built: datetime.date, history_days: int = 0,
 
 
 def render_hub(rivers: list[River], others: list[River], built: datetime.date,
-               history_since: str | None = None) -> str:
+               history_since: str | None = None, target: Path | None = None) -> str:
     total_stations = sum(len(r.rows) for r in rivers) + sum(len(r.rows) for r in others)
     alarmed = [r for r in rivers if r.above_alarm]
     warned = [r for r in rivers if r.above_warning and not r.above_alarm]
@@ -941,7 +1001,23 @@ def render_hub(rivers: list[River], others: list[River], built: datetime.date,
             f'<td>{summary}</td><td>{temp_cell}</td></tr>'
         )
 
-    other_names = ", ".join(sorted((r.name for r in others), key=pl_key))
+    # Wykaz IMGW obejmuje też jeziora i pozycje bez nazwy. W sekcji „pozostałe
+    # rzeki" nie mają czego szukać, a wcześniej trafiały do wyliczanki razem
+    # z ciekami — razem z pustą pozycją „-" i dubletem różniącym się kropką.
+    other_rivers = sorted(
+        {r.name.strip() for r in others
+         if r.name and r.name.strip() not in {"-", "—"}
+         and not r.name.strip().startswith(("Jez.", "Jezioro", "Zb.", "Zbiornik"))},
+        key=pl_key)
+    other_lakes = sorted(
+        {r.name.strip() for r in others
+         if r.name and r.name.strip().startswith(("Jez.", "Jezioro", "Zb.", "Zbiornik"))})
+
+    lakes_line = (
+        f" Poza ciekami wykaz obejmuje {len(other_lakes)} "
+        + plural(len(other_lakes), "jezioro i zbiornik",
+                 "jeziora i zbiorniki", "jezior i zbiorników")
+        + " — te same filtry działają i na nie." if other_lakes else "")
 
     directions = [river_direction(river)[0] for river in rivers]
     falling_count = directions.count("opada")
@@ -967,7 +1043,7 @@ def render_hub(rivers: list[River], others: list[River], built: datetime.date,
 <div class="tool-table-wrap"><table class="tool-table"><caption>Rzeki opisane w dziale — wodowskazy, spadek odcinka, zasięg i kierunek zmiany poziomu</caption><thead><tr><th scope="col">Rzeka</th><th scope="col">Wodowskazy</th><th scope="col">Charakter</th><th scope="col">Spadek</th><th scope="col">Województwa</th><th scope="col">Kierunek</th><th scope="col">Temperatura</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>
 
 <h2 id="pozostale">Pozostałe rzeki w wykazie IMGW</h2>
-<p>Te cieki mają w wykazie od jednego do trzech wodowskazów albo dzielą nazwę z inną rzeką. Własnej strony nie mają, ale ich odczyty są w narzędziu <a href="../narzedzia/stany-wod.html">Stany wód na żywo</a>, z filtrem po województwie i nazwie: {esc(other_names)}.</p>
+<p>Kolejnych <strong>{len(other_rivers)}</strong> cieków ma w wykazie od jednego do trzech wodowskazów albo dzieli nazwę z inną rzeką, więc własnej strony nie dostaje. Ich odczyty znajdziesz w narzędziu <a href="../narzedzia/stany-wod.html">Stany wód na żywo</a>, gdzie filtr po województwie i nazwie odszuka konkretny wodowskaz szybciej niż lista nazw.{lakes_line}</p>
 
 <h2 id="po-co">Po co wędkarzowi wodowskaz</h2>
 <p>Stan wody odpowiada na pytanie, którego nie rozstrzygnie żaden kalendarz: czy da się dziś wejść na to stanowisko. Wysoka woda zalewa łachy i dojścia, przesuwa linię brzegu i niesie zawiesinę; niska odsłania strukturę dna, którą warto zapamiętać na resztę sezonu.</p>
@@ -982,6 +1058,7 @@ def render_hub(rivers: list[River], others: list[River], built: datetime.date,
 <div class="source-box"><h3>Źródła i granice działu</h3><p><strong>Dane: IMGW-PIB, publiczne API hydrologiczne</strong> (<a href="https://danepubliczne.imgw.pl/" rel="noopener" target="_blank">danepubliczne.imgw.pl</a>), zapis z {pl_date(built)}, {total_stations} wodowskazów w wykazie. Podział na charakter górski, podgórski i nizinny liczymy wyłącznie ze spadku zer łat między skrajnymi wodowskazami danej rzeki — to przybliżenie odcinka objętego pomiarami, nie klasyfikacja hydrologiczna całego cieku. Dział nie zastępuje sprawdzenia <a href="../narzedzia/okresy-ochronne.html">okresów ochronnych</a>, wymiarów ani zezwolenia na obwód rybacki.</p></div>"""
 
     return PAGE.format(
+        content_meta=content_meta(target, built) if target else "",
         title=esc(f"Stany wód na polskich rzekach — {len(rivers)} rzek, dane IMGW | FishPoint"),
         description=esc("Aktualne stany wody i temperatura na polskich rzekach z wodowskazów IMGW-PIB. "
                         "Progi ostrzegawcze, spadek odcinka i co poziom wody zmienia dla wędkarza."),
@@ -1336,11 +1413,13 @@ def main() -> int:
         target = OUT_DIR / f"{river.slug}.html"
         keep.add(target.name)
         target.write_text(
-            render_river(river, built, history_days, history_since, rules_by_slug.get(river.slug)),
+            render_river(river, built, history_days, history_since,
+                         rules_by_slug.get(river.slug), target, selected),
             encoding="utf-8")
 
-    (OUT_DIR / "index.html").write_text(render_hub(selected, others, built, history_since),
-                                        encoding="utf-8")
+    hub_target = OUT_DIR / "index.html"
+    hub_target.write_text(render_hub(selected, others, built, history_since, hub_target),
+                          encoding="utf-8")
 
     # Rzeka mogła wypaść z progu (zamknięty wodowskaz) — nie zostawiamy po niej
     # osieroconej strony, bo hub przestałby ją wymieniać, a sitemapa dalej by ją niosła.
